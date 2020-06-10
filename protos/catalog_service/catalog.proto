@@ -1,0 +1,133 @@
+syntax="proto3";
+
+package catalog;
+import 'category.proto';
+
+message Product {
+    message Price {
+        PriceType type = 1;
+        int64     price = 2;
+        int64     old_price = 3;
+    }
+    message Property {
+        ProductProperty property = 1;
+        string value = 2;
+    }
+    string id = 1;
+    string name = 2;
+    string slug = 3;
+    string unit = 4;
+    Category category = 5;
+    Brand  brand = 6;
+    string preview_text = 7;
+    string description = 8;
+    bool   active = 9;
+    repeated Property properties = 10;
+    repeated Price prices = 11;
+    int64  price = 12;
+    string created_at = 13;
+    string updated_at = 14;
+    string image = 15;
+}
+
+message Category {
+    string id = 1;
+    string name = 2;
+    string slug = 3;
+    Category parent = 4;
+    bool active = 5;
+    string description = 6;
+    int64 order = 7;
+    string image = 8;
+    string created_at = 9;
+    string updated_at = 10;
+    repeated Category children = 11;
+    repeated ProductPropertyGroup product_property_groups  = 12;
+}
+
+message Brand {
+    string id = 1;
+    string name = 2;
+    string slug = 3;
+    string image = 4;
+    string preview_text = 5;
+    string description = 6;
+    bool   active = 7;
+    string created_at = 8;
+    string updated_at = 9;
+}
+
+message ProductPropertyGroup {
+    string id = 1;
+    string name = 2;
+    string slug = 3;
+    repeated ProductProperty properties = 4;
+    string created_at = 5;
+    string updated_at = 6;
+}
+
+message ProductProperty {
+    string id = 1;
+    string name = 2;
+    string type = 3;
+    string description = 4;
+    int64  order = 5;
+    bool   active = 6;
+    Unit   unit = 7;
+    string created_at = 8;
+    string updated_at = 9;
+}
+
+message PriceType {
+    string id = 1;
+    bool   active = 2;
+    string name = 3;
+    string slug = 4;
+    string created_at = 5;
+    string updated_at = 6;
+}
+
+message Unit {
+    string id = 1;
+    string name = 2;
+    string code = 3;
+    string slug = 4;
+    bool active = 6;
+    string description = 7;
+    string created_at = 8;
+    string updated_at = 9;
+}
+
+message Shop {
+    message Stock {
+        Product product = 1;
+        int32 quantity = 2;
+    }
+    string id = 1;
+    string name = 2;
+    string slug = 3;
+    string phone = 4;
+    string working_hours = 5;
+    string address = 6;
+    string address2 = 7;
+    repeated Stock products = 8;
+    string created_at = 9;
+    string updated_at = 10;
+}
+
+message GetRequest {
+    string id = 1;
+}
+
+message GetAllRequest {
+    int64 page = 1;
+}
+
+message DeleteRequest {
+    string id = 1;
+}
+
+
+message Empty {
+
+}

@@ -1,0 +1,64 @@
+syntax="proto3";
+
+package catalog;
+
+import "catalog.proto";
+
+service CategoryService {
+    rpc Create(CreateCategoryRequest) returns (CreateCategoryResponse) {}
+    rpc Update(UpdateCategoryRequest) returns (UpdateCategoryResponse) {}
+    rpc Find(FindCategoriesRequest) returns (FindCategoriesResponse) {}
+    rpc Get(GetRequest) returns (GetCategoryResponse) {}
+    rpc Delete(DeleteRequest) returns (Empty) {}
+}
+
+message CreateCategoryRequest {
+    string name = 1;
+    string parent_id = 2;
+    bool active = 3;
+    string description = 4;
+    int64 order = 5;
+    string image = 6;
+    string product_property_groups = 7;
+}
+
+message UpdateCategoryRequest {
+    string id = 1;
+    string name = 2;
+    string parent_id = 3;
+    bool active = 4;
+    string description = 5;
+    int64 order = 6;
+    string image = 7;
+    string product_property_groups = 8;
+}
+
+message CreateCategoryResponse {
+    Category category = 1;
+}
+message UpdateCategoryResponse {
+    Category category = 1;
+}
+
+message FindCategoriesRequest {
+    int64   page = 1;
+    string  search = 2;
+    bool    active = 3;
+}
+
+message FindCategoriesResponse {
+    repeated Category categories = 1;
+}
+
+message GetCategoryResponse {
+    Category category = 1;
+}
+
+message UpdateCategoryResponse {
+    Category category = 1;
+}
+
+message CategoriesResponse {
+    repeated Category categories = 1;
+    int64 count = 2;
+}
