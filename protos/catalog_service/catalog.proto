@@ -117,10 +117,14 @@ message Shop {
 
 message GetRequest {
     string id = 1;
+    string slug = 2;
 }
 
-message GetAllRequest {
-    int64 page = 1;
+message FindRequest {
+    int64  page = 1;
+    string search = 2;
+    bool   active = 3;
+    bool   inactive = 4;
 }
 
 message DeleteRequest {

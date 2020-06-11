@@ -4,6 +4,7 @@ services:
     app:
         container_name: catalog-service
         build: .
+        command: nodemon index.js
         ports: 
             - "3000:3000"
         links:
