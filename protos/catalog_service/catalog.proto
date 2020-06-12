@@ -2,6 +2,7 @@ syntax="proto3";
 
 package catalog;
 import 'category.proto';
+import 'product.proto';
 
 message Product {
     message Price {
@@ -16,18 +17,17 @@ message Product {
     string id = 1;
     string name = 2;
     string slug = 3;
-    string unit = 4;
-    Category category = 5;
-    Brand  brand = 6;
-    string preview_text = 7;
-    string description = 8;
-    bool   active = 9;
-    repeated Property properties = 10;
-    repeated Price prices = 11;
-    int64  price = 12;
-    string created_at = 13;
-    string updated_at = 14;
-    string image = 15;
+    Category category = 4;
+    Brand  brand = 5;
+    string preview_text = 6;
+    string description = 7;
+    bool   active = 8;
+    repeated Property properties = 9;
+    repeated Price prices = 10;
+    int64  price = 11;
+    string created_at = 12;
+    string updated_at = 13;
+    string image = 14;
 }
 
 message Category {

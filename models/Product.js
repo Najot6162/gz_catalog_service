@@ -14,6 +14,21 @@ var ProductSchema = new mongoose.Schema({
         type: Types.ObjectId,
         ref: 'Category'
     },
+    brand: {
+        type: Types.ObjectId,
+        ref: 'Brand'
+    },
+    preview_text: {
+        type: String,
+        default: ''
+    },
+    description: {
+        type: String,
+        default: ''
+    },
+    image: {
+        type: String
+    },
     prices: [{
         type:{
             type: Types.ObjectId,
@@ -21,6 +36,15 @@ var ProductSchema = new mongoose.Schema({
         },
         price: Number,
         old_price: Number
+    }],
+    properties: [{
+        property: {
+            type: Types.ObjectId,
+            ref: 'ProductProperty'
+        },
+        value:{
+            type: String
+        }
     }],
     active:{
         type: Boolean,

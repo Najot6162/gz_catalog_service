@@ -30,6 +30,7 @@ function main(){
     var server = new grpc.Server();
 
     server.addService(catalogProto.CategoryService.service, require('./services/category.js'));
+    server.addService(catalogProto.ProductService.service, require('./services/product.js'));
 
     server.bind('0.0.0.0:' + cfg.RPCPort, grpc.ServerCredentials.createInsecure());
     server.start();

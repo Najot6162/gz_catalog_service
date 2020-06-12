@@ -2,11 +2,13 @@ const Category = require('../../models/Category');
 const Product = require('../../models/Product');
 
 let categoryStorage = {
-    create: (category) => {
+    create: (b) => {
         return new Promise((resolve, reject) => {
-            let c = new Category(category);
-
-            c.product_property_groups = category.product_property_groups.trim() ? category.product_property_groups.trim().split(',') : [];
+            if(!b.name) return reject(new Error('name is required'));
+            
+            let c = new Category(b);
+            c.parent     = b.parent_id || null;
+            c.product_property_groups = b.product_property_groups.trim() ? b.product_property_groups.trim().split(',') : [];
             c.created_at = Date.now();
             c.updated_at = Date.now();
 
@@ -19,7 +21,7 @@ let categoryStorage = {
     update: (b) => {
         return new Promise((resolve, reject) => {
             if(!b.id) return reject(new Error('ID is not provided'));
-            if(!b.name && b.name == null) return reject(new Error('name is required'));
+            if(!b.name) return reject(new Error('name is required'));
 
             Category.findById(b.id, (err, cat) => {
                 if(err) return reject(err);
@@ -31,6 +33,7 @@ let categoryStorage = {
                 cat.description = b.description;
                 cat.order = b.order;
                 cat.image = b.image;
+                cat.product_property_groups = b.product_property_groups.trim() ? b.product_property_groups.trim().split(',') : [];
 
                 cat.save((err, updatedCategory) => {
                     if(err) return reject(err);
