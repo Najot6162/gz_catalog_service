@@ -15,53 +15,51 @@ var packageDefinition = protoLoader.loadSync(
 var CatalogProto = grpc.loadPackageDefinition(packageDefinition).catalog;
 
 function main() {
-    var client = new CatalogProto.ProductService('localhost:7000', grpc.credentials.createInsecure());
+  var client = new CatalogProto.BrandService('localhost:7000', grpc.credentials.createInsecure());
 
-    // create Product
+    // create Brand
     client.Create({
-        name: 'my product',
-        category_id: '5ee1e1b06123a6296c4996af',
-        brand_id: '5ee36f67f8601328a86456bf',
-        preview_text: 'preview text of my product',
-        description: 'description of my product'
+        name: 'my Brand',
+        preview_text: 'preview text of my brand',
+        description: 'description of my brand',
+        active: true
     }, (err, createResponse) => {
-        console.log('Product Create');
+        console.log('Brand Create');
         if(err) return console.log('Error: ', err.message);
         console.log(createResponse);
-    
-        // find Product
+        
+        // find Brand
         client.Find({}, (err, findResponse) => {
-            console.log('Product Find');
-            if(err) return console.log('Error: ', err.message);
-            console.log(findResponse);
+        console.log('Brand Find');
+        if(err) return console.log('Error: ', err.message);
+        console.log(findResponse);
         });
         
-        // update Product
+        // update Brand
         client.Update({
-            id: createResponse.product.id,
-            name: 'my updated Product',
-            category_id: '5ee1e1b06123a6296c4996af',
-            brand_id: '5ee36f67f8601328a86456bf',
-            preview_text: 'preview text of my updated product',
-            description: 'description of my updated product'
+            id: createResponse.brand.id,
+            name: 'my updated Brand',
+            preview_text: 'preview text of my updated brand',
+            description: 'description of my updated brand',
+            active: true
         }, (err, updateResponse) => {
-            console.log('Product Update');
+            console.log('Brand Update');
             if(err) return console.log('Error: ', err.message);
             console.log(updateResponse);
 
-            // get Product
+            // get Brand
             client.Get({
-                id: updateResponse.product.id,
+                id: updateResponse.brand.id,
             }, (err, getResponse) => {
-                console.log('Product Get');
+                console.log('Brand Get');
                 if(err) return console.log('Error: ', err.message);
                 console.log(getResponse);
 
-                // delete Product
+                // delete Brand
                 client.Delete({
-                    id: updateResponse.product.id
+                    id: updateResponse.brand.id
                 }, (err, deleteResponse) => {
-                    console.log('Product Delete');
+                    console.log('Brand Delete');
                     if(err) return console.log('Error: ', err.message);
                     console.log(deleteResponse);
                 });

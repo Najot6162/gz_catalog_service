@@ -31,6 +31,7 @@ function main(){
 
     server.addService(catalogProto.CategoryService.service, require('./services/category.js'));
     server.addService(catalogProto.ProductService.service, require('./services/product.js'));
+    server.addService(catalogProto.BrandService.service, require('./services/brand.js'));
 
     server.bind('0.0.0.0:' + cfg.RPCPort, grpc.ServerCredentials.createInsecure());
     server.start();

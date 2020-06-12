@@ -3,6 +3,7 @@ syntax="proto3";
 package catalog;
 import 'category.proto';
 import 'product.proto';
+import 'brand.proto';
 
 message Product {
     message Price {

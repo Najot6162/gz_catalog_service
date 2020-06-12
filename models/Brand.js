@@ -11,6 +11,10 @@ var BrandSchema = new mongoose.Schema({
         slug: 'name',
         unique: true
     },
+    preview_text: {
+        type: String,
+        default: ''
+    },
     description:{
         type:String,
         default: ''
