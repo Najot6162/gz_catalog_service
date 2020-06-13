@@ -41,7 +41,7 @@ var CategorySchema = new mongoose.Schema({
     updated_at: {
         type: Date
     }
-},{
+}, {
     minimize: false
 });
 

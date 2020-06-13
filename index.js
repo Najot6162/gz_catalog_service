@@ -19,7 +19,9 @@ const catalogProto = grpc.loadPackageDefinition(packageDefinition).catalog;
 function main(){
     // Connecting to database
     const mongoDBUrl = 'mongodb://' + cfg.mongoHost + ':' + cfg.mongoPort + '/' + cfg.mongoDatabase;
-    mongoose.connect(mongoDBUrl, { useNewUrlParser:true });
+    mongoose.connect(mongoDBUrl, { 
+        useNewUrlParser:true 
+    });
     mongoose.connection.once('open',function(){
         console.log('Connected to the databasee');
     }).on('error',function(error){
