@@ -1,0 +1,9 @@
+syntax="proto3";
+
+package catalog;
+option go_package="genproto/catalog_service";
+
+import "category.proto";
+import "product.proto";
+import "brand.proto";
+

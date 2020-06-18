@@ -150,7 +150,7 @@ let productStorage = {
                 path: 'brand'
             }).exec((err, products) => {
                 if(err) return reject(err);
-                resolve(products);
+                resolve(products || []);
             });
         });
     },

@@ -1,7 +1,8 @@
 var grpc = require('grpc');
 var protoLoader = require('@grpc/proto-loader');
+const logger = require('../config/logger');
 
-var PROTO_PATH = __dirname + '/../protos/catalog_service/catalog.proto';
+var PROTO_PATH = __dirname + '/../protos/catalog_service/catalog_service.proto';
 var packageDefinition = protoLoader.loadSync(
   PROTO_PATH,
   {
@@ -25,15 +26,21 @@ function main() {
         preview_text: 'preview text of my product',
         description: 'description of my product'
     }, (err, createResponse) => {
-        console.log('Product Create');
         if(err) return console.log('Error: ', err.message);
-        console.log(createResponse);
+
+        logger.debug('Product Create response', {
+            response: createResponse,
+            label: 'test'
+        });
     
         // find Product
         client.Find({}, (err, findResponse) => {
-            console.log('Product Find');
             if(err) return console.log('Error: ', err.message);
-            console.log(findResponse);
+
+            logger.debug('Product Find response', {
+                response: findResponse,
+                label: 'test'
+            });
         });
         
         // update Product
@@ -45,25 +52,35 @@ function main() {
             preview_text: 'preview text of my updated product',
             description: 'description of my updated product'
         }, (err, updateResponse) => {
-            console.log('Product Update');
             if(err) return console.log('Error: ', err.message);
-            console.log(updateResponse);
+
+            logger.debug('Product Update response', {
+                response: updateResponse,
+                label: 'test'
+            });
 
             // get Product
             client.Get({
                 id: updateResponse.product.id,
             }, (err, getResponse) => {
-                console.log('Product Get');
                 if(err) return console.log('Error: ', err.message);
-                console.log(getResponse);
+
+                logger.debug('Product Get response', {
+                    response: getResponse,
+                    label: 'test'
+                });
 
                 // delete Product
                 client.Delete({
                     id: updateResponse.product.id
                 }, (err, deleteResponse) => {
-                    console.log('Product Delete');
                     if(err) return console.log('Error: ', err.message);
-                    console.log(deleteResponse);
+
+                    logger.debug('Product Delete response', {
+                        response: deleteResponse,
+                        label: 'test'
+                    });
+                    console.log('Product test completed!');
                 });
             });
         });

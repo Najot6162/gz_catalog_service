@@ -1,6 +1,7 @@
 syntax="proto3";
 
 package catalog;
+option go_package="genproto/catalog_service";
 
 import "catalog.proto";
 

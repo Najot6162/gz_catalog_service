@@ -1,6 +1,6 @@
 const config = {
     environment: getConf('NODE_ENV', 'dev'),
-    mongoHost: getConf('MONGO_HOST', 'localhost'),
+    mongoHost: getConf('MONGO_HOST', 'catalog-db'),
     mongoPort: getConf('MONGO_PORT', '27017'),
     mongoDatabase: getConf('MONGO_DATABASE', 'catalog_service'),
     RPCPort: getConf('RPC_PORT', 7000)

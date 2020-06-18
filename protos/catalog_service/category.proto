@@ -1,6 +1,7 @@
 syntax="proto3";
 
 package catalog;
+option go_package="genproto/catalog_service";
 
 import "catalog.proto";
 
@@ -38,10 +39,6 @@ message CategoryResponse {
 }
 
 message FindCategoriesResponse {
-    repeated Category categories = 1;
-}
-
-message CategoriesResponse {
     repeated Category categories = 1;
     int64 count = 2;
 }

@@ -3,11 +3,14 @@ const protoLoader = require('@grpc/proto-loader');
 const mongoose = require('mongoose');
 const slugUpdater = require('mongoose-slug-updater');
 
+const logger = require('./config/logger.js');
 const cfg = require('./config');
 
 mongoose.plugin(slugUpdater);
 
-const packageDefinition = protoLoader.loadSync(__dirname + '/protos/catalog_service/catalog.proto', {
+// loading proto file
+const PROTO_URL = __dirname + '/protos/catalog_service/catalog_service.proto';
+const packageDefinition = protoLoader.loadSync(PROTO_URL, {
     keepCase: true,
     longs: String,
     enums: String,
@@ -17,15 +20,19 @@ const packageDefinition = protoLoader.loadSync(__dirname + '/protos/catalog_serv
 const catalogProto = grpc.loadPackageDefinition(packageDefinition).catalog;
 
 function main(){
+    logger.info('Main function is running');
+
     // Connecting to database
     const mongoDBUrl = 'mongodb://' + cfg.mongoHost + ':' + cfg.mongoPort + '/' + cfg.mongoDatabase;
     mongoose.connect(mongoDBUrl, { 
         useNewUrlParser:true 
+    }, (err) => {
+        if(err){
+            logger.error('There is an error in connecting db: ' + err.message);
+        }
     });
     mongoose.connection.once('open',function(){
-        console.log('Connected to the databasee');
-    }).on('error',function(error){
-        console.log('There is an error in connecting db: '+ mongoDBUrl);
+        logger.info('Connected to the databasee');
     });
 
     // gRPC server
@@ -37,7 +44,7 @@ function main(){
 
     server.bind('0.0.0.0:' + cfg.RPCPort, grpc.ServerCredentials.createInsecure());
     server.start();
-    console.log('grpc server is running at %s', cfg.RPCPort);
+    logger.info('grpc server is running at %s', cfg.RPCPort);  
 }
 
 main();

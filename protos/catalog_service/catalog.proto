@@ -1,9 +1,7 @@
 syntax="proto3";
 
 package catalog;
-import 'category.proto';
-import 'product.proto';
-import 'brand.proto';
+option go_package="genproto/catalog_service";
 
 message Product {
     message Price {
@@ -32,10 +30,22 @@ message Product {
 }
 
 message Category {
+    message Parent {
+        string id = 1;
+        string name = 2;
+        string slug = 3;
+        bool active = 5;
+        string description = 6;
+        int64 order = 7;
+        string image = 8;
+        string created_at = 9;
+        string updated_at = 10;
+        repeated ProductPropertyGroup product_property_groups  = 12;
+    }
     string id = 1;
     string name = 2;
     string slug = 3;
-    Category parent = 4;
+    Parent parent = 4;
     bool active = 5;
     string description = 6;
     int64 order = 7;

@@ -1,0 +1,1 @@
+{"message":"There is an error in connecting db: failed to connect to server [localhost:27017] on first connect [Error: connect ECONNREFUSED 127.0.0.1:27017\n    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1141:16) {\n  name: 'MongoNetworkError'\n}]","level":"\u001b[31merror\u001b[39m","service":"catalog-service","timestamp":"2020-06-15T06:31:54.173Z"}
