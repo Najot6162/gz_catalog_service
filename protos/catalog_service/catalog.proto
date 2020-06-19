@@ -30,7 +30,7 @@ message Product {
 }
 
 message Category {
-    message Parent {
+    message SlimCategory {
         string id = 1;
         string name = 2;
         string slug = 3;
@@ -45,14 +45,14 @@ message Category {
     string id = 1;
     string name = 2;
     string slug = 3;
-    Parent parent = 4;
+    SlimCategory parent = 4;
     bool active = 5;
     string description = 6;
     int64 order = 7;
     string image = 8;
     string created_at = 9;
     string updated_at = 10;
-    repeated Category children = 11;
+    repeated SlimCategory children = 11;
     repeated ProductPropertyGroup product_property_groups  = 12;
 }
 
@@ -78,15 +78,21 @@ message ProductPropertyGroup {
 }
 
 message ProductProperty {
+    message Option {
+        string name = 1;
+        string value = 2;
+    }
     string id = 1;
     string name = 2;
-    string type = 3;
-    string description = 4;
-    int64  order = 5;
-    bool   active = 6;
-    Unit   unit = 7;
-    string created_at = 8;
-    string updated_at = 9;
+    string slug = 3;
+    string type = 4;
+    repeated Option options = 5;
+    string description = 6;
+    int64  order = 7;
+    bool   active = 8;
+    Unit   unit = 9;
+    string created_at = 10;
+    string updated_at = 11;
 }
 
 message PriceType {

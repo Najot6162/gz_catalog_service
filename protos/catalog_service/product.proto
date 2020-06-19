@@ -8,8 +8,8 @@ import "catalog.proto";
 service ProductService {
     rpc Create(CreateProductRequest) returns (ProductResponse) {}
     rpc Update(UpdateProductRequest) returns (ProductResponse) {}
-    rpc UpdatePrice(UpdateProductPriceRequeset) returns (Empty) {}
-    rpc UpdatePeoperty(UpdateProductPropertyRequest) returns (Empty) {}
+    rpc UpdatePrice(UpdateProductPriceRequest) returns (Empty) {}
+    rpc UpdateProperty(UpdateProductPropertyRequest) returns (Empty) {}
     rpc Find(FindProductsRequest) returns (FindProductsResponse) {}
     rpc Get(GetRequest) returns (ProductResponse) {}
     rpc Delete(DeleteRequest) returns (Empty) {}
@@ -38,7 +38,7 @@ message UpdateProductRequest {
     string image = 9;
 }
 
-message UpdateProductPriceRequeset {
+message UpdateProductPriceRequest {
     string product_id = 1;
     string price_type_id = 2;
     int64  price = 3;
