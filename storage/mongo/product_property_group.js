@@ -1,20 +1,20 @@
 const Product = require('../../models/Product');
-const ProductProperty = require('../../models/ProductProperty');
+const ProductPropertyGroup = require('../../models/ProductPropertyGroup');
 
 const logger = require('../../config/logger');
 
-let productPropertyStorage = {
+let productPropertyGroupStorage = {
     create: (b) => {
         return new Promise((resolve, reject) => {
             if(!b.name) return reject(new Error('name is required'));
             
-            let br = new ProductProperty(b);
+            let br = new ProductPropertyGroup(b);
             br.created_at = Date.now();
             br.updated_at = Date.now();
             
-            br.save((err, newProductProperty) => {
+            br.save((err, newProductPropertyGroup) => {
                 if(err) return reject(err);
-                return resolve(newProductProperty);
+                return resolve(newProductPropertyGroup);
             });
         });
     },
@@ -23,21 +23,20 @@ let productPropertyStorage = {
             if(!b.id) return reject(new Error('ID is not provided'));
             if(!b.name) return reject(new Error('name is required'));
 
-            ProductProperty.findById(b.id, (err, pp) => {
+            ProductPropertyGroup.findById(b.id, (err, ppg) => {
                 if(err) return reject(err);
-                if(!pp) return reject(new Error('Document with id:' + b.id + ' not found'));
+                if(!ppg) return reject(new Error('Document with id:' + b.id + ' not found'));
 
-                pp.name = b.name;
-                pp.active = b.active;
-                pp.options = b.options;
-                pp.description = b.description;
-                pp.order = b.order;
-                pp.image = b.image;
-                pp.updated_at = Date.now();
+                ppg.name = b.name;
+                ppg.description = b.description;
+                ppg.order = b.order;
+                ppg.active = b.active;
+                ppg.properties = b.properties;
+                ppg.updated_at = Date.now();
 
-                pp.save((err, updatedProductProperty) => {
+                ppg.save((err, updatedProductPropertyGroup) => {
                     if(err) return reject(err);
-                    resolve(updatedProductProperty);
+                    resolve(updatedProductPropertyGroup);
                 });
             });
         });
@@ -61,9 +60,9 @@ let productPropertyStorage = {
                 limit: filters.limit/1
             }
 
-            ProductProperty.find(query, {}, options, (err, ProductProperties) => {
+            ProductPropertyGroup.find(query, {}, options, (err, productPropertyGroups) => {
                 if(err) return reject(err);
-                resolve(ProductProperties);
+                resolve(productPropertyGroups);
             });
         });
     },
@@ -74,7 +73,7 @@ let productPropertyStorage = {
             let query = {}
             if(req.id) query._id = req.id;
             if(req.slug) query.slug = req.slug;
-            ProductProperty.findOne(query, (err, br) => {
+            ProductPropertyGroup.findOne(query, (err, br) => {
                 if(err) return reject(err);
                 if(!br) return reject(new Error('Document not found'));
                 return resolve(br);
@@ -85,25 +84,25 @@ let productPropertyStorage = {
         return new Promise((resolve, reject) => {
             if(!req.id) return reject(new Error('ID is not provided'));
 
-            // update products that has this ProductProperty
+            // update categories that has this ProductPropertyGroup
             Product.update({
-                properties:{ $elemMatch : { property: req.id} }
+                product_property_groups: req.id
             }, {
-                $pull: { properties: { property: req.id }},
+                $pull: { product_property_groups: { $eq: req.id } },
                 $set: { updated_at: Date.now() }
             }, (err, updateResult) => {
                 if(err){
-                    logger.error('error on updating product after productPropertyDeletion :' + err.message, {
-                        function: 'product update',
-                        productPropertyId: req.id
+                    logger.error('error on updating product after productPropertyGroupDeletion :' + err.message, {
+                        function: 'category update',
+                        productPropertyGroupId: req.id
                     });
                 }
-                logger.debug('products with property ' + req.id + ' were updated, because, this product property is going to be deleted', {
+                logger.debug('categories with propertyGroup ' + req.id + ' were updated, because, this product property group is going to be deleted', {
                     updateResult
                 });
             });
 
-            ProductProperty.findByIdAndDelete(req.id, (err, result) => {
+            ProductPropertyGroup.findByIdAndDelete(req.id, (err, result) => {
                 if(err) return reject(err);
                 return resolve(result);
             });
@@ -111,4 +110,4 @@ let productPropertyStorage = {
     }
 }
 
-module.exports = productPropertyStorage;
+module.exports = productPropertyGroupStorage;

@@ -1,6 +1,16 @@
 const mongoose = require('mongoose');
 const Types = mongoose.Schema.Types;
 
+const PropertyOptionSchema = new mongoose.Schema({
+    name:{
+        type:String,
+        required: true
+    },
+    value:{
+        type:String
+    }
+});
+
 var ProductPropertySchema = new mongoose.Schema({
     name: {
         type: String,
@@ -39,16 +49,6 @@ var ProductPropertySchema = new mongoose.Schema({
     minimize: false
 });
 
-const PropertyOptionSchema = new mongoose.Schema({
-    name:{
-        type:String,
-        required: true
-    },
-    value:{
-        type:String
-    }
-});
-
 ProductPropertySchema.path('options').validate(function(value) {
     // types that requrie options
     let types = ['select', 'checkbox', 'radio'];
@@ -58,4 +58,4 @@ ProductPropertySchema.path('options').validate(function(value) {
     return true;
 }, 'Options required');
 
-module.exports = mongoose.model('Product', ProductPropertySchema);
+module.exports = mongoose.model('ProductProperty', ProductPropertySchema);

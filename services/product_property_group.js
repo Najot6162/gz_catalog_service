@@ -1,18 +1,18 @@
 const grpc = require('grpc');
-const productPropertyStorage = require('../storage/mongo/product_property');
+const productPropertyGroupStorage = require('../storage/mongo/product_property_group');
 const logger = require('../config/logger');
 
-const productPropertyService = {
+const productPropertyGroupService = {
     Create: (call, callback) => {
-        logger.debug('productProperty Create Request', {
-            label: 'product property',
+        logger.debug('productPropertyGroup Create Request', {
+            label: 'product property group',
             request: call.request
         });
-        productPropertyStorage.create(call.request).then((result) => {
-            callback(null, {product_property: result});
+        productPropertyGroupStorage.create(call.request).then((result) => {
+            callback(null, {product_property_group: result});
         }).catch((err) => {
             logger.error(err.message, {
-                function: 'create productProperty',
+                function: 'create productPropertyGroup',
                 request: call.request
             });
             callback({
@@ -22,15 +22,15 @@ const productPropertyService = {
         });
     },
     Update: (call, callback) => {
-        logger.debug('productProperty Update Request', {
-            label: 'product property',
+        logger.debug('productPropertyGroup Update Request', {
+            label: 'product property group',
             request: call.request
         });
-        productPropertyStorage.update(call.request).then((result) => {
-            callback(null, {product_property: result});
+        productPropertyGroupStorage.update(call.request).then((result) => {
+            callback(null, {product_property_group: result});
         }).catch((err) => {
             logger.error(err.message, {
-                function: 'update productProperty',
+                function: 'update productPropertyGroup',
                 request: call.request
             });
             callback({
@@ -40,18 +40,18 @@ const productPropertyService = {
         });
     },
     Find: (call, callback) => {
-        logger.debug('productProperty Find Request', {
-            label: 'product property',
+        logger.debug('productPropertyGroup Find Request', {
+            label: 'product property group',
             request: call.request
         });
-        productPropertyStorage.find(call.request).then((result) => {
+        productPropertyGroupStorage.find(call.request).then((result) => {
             callback(null, {
-                product_properties: result,
+                product_property_groups: result,
                 count: result.length
             });
         }).catch((err) => {
             logger.error(err.message, {
-                function: 'find productProperties',
+                function: 'find productPropertyGroups',
                 request: call.request
             });
             callback({
@@ -61,15 +61,15 @@ const productPropertyService = {
         });
     },
     Get: (call, callback) => {
-        logger.debug('productProperty Get Request', {
-            label: 'product property',
+        logger.debug('productPropertyGroup Get Request', {
+            label: 'product property group',
             request: call.request
         });
-        productPropertyStorage.get(call.request).then((result) => {
-            callback(null, {product_property: result});
+        productPropertyGroupStorage.get(call.request).then((result) => {
+            callback(null, {product_property_group: result});
         }).catch((err) => {
             logger.error(err.message, {
-                function: 'get productProperty',
+                function: 'get productPropertyGroup',
                 request: call.request
             });
             callback({
@@ -79,15 +79,15 @@ const productPropertyService = {
         });
     },
     Delete: (call, callback) => {
-        logger.debug('productProperty Delete Request', {
-            label: 'product property',
+        logger.debug('productPropertyGroup Delete Request', {
+            label: 'product property group',
             request: call.request
         });
-        productPropertyStorage.delete(call.request).then((result) => {
+        productPropertyGroupStorage.delete(call.request).then((result) => {
             callback(null);
         }).catch((err) => {
             logger.error(err.message, {
-                function: 'delete productProperty',
+                function: 'delete productPropertyGroup',
                 request: call.request
             });
             callback({
@@ -98,4 +98,4 @@ const productPropertyService = {
     }
 }
 
-module.exports = productPropertyService;
+module.exports = productPropertyGroupService;
