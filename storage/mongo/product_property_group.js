@@ -9,6 +9,7 @@ let productPropertyGroupStorage = {
             if(!b.name) return reject(new Error('name is required'));
             
             let br = new ProductPropertyGroup(b);
+            br.properties = b.properties ? b.properties.split(',') : [];
             br.created_at = Date.now();
             br.updated_at = Date.now();
             
@@ -31,7 +32,7 @@ let productPropertyGroupStorage = {
                 ppg.description = b.description;
                 ppg.order = b.order;
                 ppg.active = b.active;
-                ppg.properties = b.properties;
+                ppg.properties = b.properties ? b.properties.split(',') : [];
                 ppg.updated_at = Date.now();
 
                 ppg.save((err, updatedProductPropertyGroup) => {
