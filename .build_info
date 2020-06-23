@@ -1,2 +1,2 @@
-APP=goodzone_catalog_service
+APP=gz_catalog_service
 REGISTRY=rjavlonbek
