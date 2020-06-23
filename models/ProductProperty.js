@@ -52,6 +52,7 @@ var ProductPropertySchema = new mongoose.Schema({
 ProductPropertySchema.path('options').validate(function(value) {
     // types that requrie options
     let types = ['select', 'checkbox', 'radio'];
+    
     if(types.indexOf(this.type) >= 0){
         return value.length > 0;
     }
