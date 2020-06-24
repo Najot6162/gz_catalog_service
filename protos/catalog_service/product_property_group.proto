@@ -1,0 +1,32 @@
+syntax="proto3";
+
+package catalog;
+option go_package="genproto/catalog_service";
+
+import "catalog.proto";
+
+service ProductPropertyGroupService {
+    rpc Create(CreateProductPropertyGroup) returns (ProductPropertyGroupResponse) {}
+    rpc Update(CreateProductPropertyGroup) returns (ProductPropertyGroupResponse) {}
+    rpc Find(FindRequest) returns (FindProductPropertyGroupsResponse) {}
+    rpc Get(GetRequest) returns (ProductPropertyGroupResponse) {}
+    rpc Delete(DeleteRequest) returns (Empty) {}
+}
+
+message CreateProductPropertyGroup {
+    string id = 1;
+    string name = 2;
+    string description = 3;
+    string properties = 4;
+    bool   active = 5;
+    int64  order = 6;
+}
+
+message ProductPropertyGroupResponse {
+    ProductPropertyGroup product_property_group = 1;
+}
+
+message FindProductPropertyGroupsResponse {
+    repeated ProductPropertyGroup product_property_groups = 1;
+    int64 count = 2;
+}
