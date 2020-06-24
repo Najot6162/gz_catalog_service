@@ -9,7 +9,7 @@ const cfg = require('./config');
 mongoose.plugin(slugUpdater);
 
 // loading proto file
-const PROTO_URL = __dirname + '/gz_protos/catalog_service/catalog_service.proto';
+const PROTO_URL = __dirname + '/protos/catalog_service/catalog_service.proto';
 const packageDefinition = protoLoader.loadSync(PROTO_URL, {
     keepCase: true,
     longs: String,
