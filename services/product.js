@@ -84,8 +84,8 @@ const productService = {
         });
         productStorage.find(call.request).then((result) => {
             callback(null, {
-                products: result,
-                count: result.length
+                products: result.products,
+                count: result.count
             });
         }).catch((err) => {
             logger.error(err.message, {

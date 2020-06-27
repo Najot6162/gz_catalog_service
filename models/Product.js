@@ -29,6 +29,10 @@ var ProductSchema = new mongoose.Schema({
     image: {
         type: String
     },
+    price: {
+        price: Number,
+        old_price: Number
+    },
     prices: [{
         type:{
             type: Types.ObjectId,

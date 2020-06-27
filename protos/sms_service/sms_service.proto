@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package genproto;
+option go_package="genproto/sms_service";
+
+import "sms.proto";
+
+service SmsService {
+    rpc Send(Sms) returns (Empty) {}
+}
+

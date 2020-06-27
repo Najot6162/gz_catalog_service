@@ -63,6 +63,7 @@ message FindProductsRequest {
     string category = 5;
     string brand = 6;
     int64  limit = 7;
+    string sort = 8;
 }
 
 message FindProductsResponse {

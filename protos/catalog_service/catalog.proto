@@ -9,6 +9,10 @@ message Product {
         int64     price = 2;
         int64     old_price = 3;
     }
+    message DefaultPrice {
+        int64 price = 1;
+        int64 old_price = 2;
+    }
     message Property {
         ProductProperty property = 1;
         string value = 2;
@@ -23,7 +27,7 @@ message Product {
     bool   active = 8;
     repeated Property properties = 9;
     repeated Price prices = 10;
-    int64  price = 11;
+    DefaultPrice price = 11;
     string created_at = 12;
     string updated_at = 13;
     string image = 14;
@@ -146,6 +150,7 @@ message FindRequest {
     bool   active = 3;
     bool   inactive = 4;
     int64  limit = 5;
+    string sort = 6;
 }
 
 message DeleteRequest {

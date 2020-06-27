@@ -1,6 +1,10 @@
+const mongoose = require('mongoose');
+const async = require('async');
 const Category = require('../../models/Category');
 const Product  = require('../../models/Product');
 const Brand    = require('../../models/Brand');
+
+const logger = require('../../config/logger');
 
 let productStorage = {
     create: (b) => {
@@ -67,27 +71,36 @@ let productStorage = {
     updatePrice: (b) => {
         return new Promise((resolve, reject) => {
             if(!b.product_id) return reject(new Error('Product ID is not provided'));
-            if(!b.price_type_id) return reject(new Error('price type ID is required'));
+            //if(!b.price_type_id) return reject(new Error('price type ID is required'));
 
             Product.findById(b.product_id, (err, product) => {
                 if(err) return reject(err);
                 if(!product) return reject(new Error('Document with id:' + b.product_id + ' not found'));
 
-                let updated = false;
-                product.prices = product.prices.map((price, i) => {
-                    if(price.type.toString() == b.price_type_id){
-                        price.price = b.price;
-                        price.old_price = b.old_price;
-                        updated = true;
+                if(mongoose.Types.ObjectId.isValid(b.price_type_id)){
+                    // valid price type is given, so we are updating 'prices' field
+                    let updated = false;
+                    product.prices = product.prices.map((price, i) => {
+                        if(price.type.toString() == b.price_type_id){
+                            price.price = b.price;
+                            price.old_price = b.old_price;
+                            updated = true;
+                        }
+                        return price;
+                    });
+                    if(!updated){
+                        product.prices.push({
+                            type: b.price_type_id,
+                            price: b.price,
+                            old_price: b.old_price
+                        });
                     }
-                    return price;
-                });
-                if(!updated){
-                    product.prices.push({
-                        type: b.price_type_id,
+                }else{
+                    // price type is NOT given, so we are saving it as a default price for the product
+                    product.price = {
                         price: b.price,
                         old_price: b.old_price
-                    });
+                    }
                 }
 
                 product.save((err, updatedProduct) => {
@@ -144,13 +157,58 @@ let productStorage = {
                 };
             }
 
-            Product.find(query).populate({
-                path: 'category'
-            }).populate({
-                path: 'brand'
-            }).exec((err, products) => {
+            if(mongoose.Types.ObjectId.isValid(filters.category)){
+                query = {
+                    ...query,
+                    category: filters.category
+                }
+            }
+
+            if(mongoose.Types.ObjectId.isValid(filters.brand)){
+                query = {
+                    ...query,
+                    brand: filters.brand
+                }
+            }
+
+            let options = {
+                skip: filters.page/1 * filters.limit/1,
+                limit: filters.limit/1
+            }
+
+            if(filters.sort){
+                let sortParams = filters.split('|');
+                if(sortParams.length == 2 && (sortParams[1] == 'asc' || sortParams[1] == 'desc')){
+                    options.sort = {};
+                    options.sort[sortParams[0]] = sortParams[1] == 'asc' ? 1 : -1;
+                }
+            }
+
+            logger.debug('options', options);
+
+            async.parallel([
+                (cb) => {
+                    Product.find(query, {}, options).populate({
+                        path: 'category'
+                    }).populate({
+                        path: 'brand'
+                    }).exec((err, products) => {
+                        if(err) return reject(err);
+                        return cb(null, products || []);
+                    });
+                },
+                (cb) => {
+                    Product.countDocuments(query, (err, count) => {
+                        if(err) return cb(err);
+                        return cb(null, count);
+                    });
+                }
+            ], (err, results) => {
                 if(err) return reject(err);
-                resolve(products || []);
+                return resolve({
+                    products: results[0],
+                    count: results[1]
+                });
             });
         });
     },
