@@ -144,6 +144,8 @@ let productStorage = {
     find: (filters) => {
         return new Promise((resolve, reject) => {
             let query = {};
+
+            // filter by search key
             if(filters.search.trim()){
                 query = { 
                     ...query,
@@ -157,6 +159,7 @@ let productStorage = {
                 };
             }
 
+            // filter by category
             if(mongoose.Types.ObjectId.isValid(filters.category)){
                 query = {
                     ...query,
@@ -164,12 +167,29 @@ let productStorage = {
                 }
             }
 
+            // filter by brand
             if(mongoose.Types.ObjectId.isValid(filters.brand)){
                 query = {
                     ...query,
                     brand: filters.brand
                 }
             }
+
+            // filter by price
+            let priceQuery = {};
+            if(filters.price_from){
+                priceQuery = {
+                    ...priceQuery,
+                    $gte: filters.price_from 
+                };
+            }
+            if(filters.price_till){
+                priceQuery = {
+                    ...priceQuery,
+                    $lte: filters.price_till
+                }
+            }
+            if(Object.keys(priceQuery).length) query["price.price"] = priceQuery;
 
             let options = {
                 skip: filters.page/1 * filters.limit/1,
@@ -184,7 +204,10 @@ let productStorage = {
                 }
             }
 
-            logger.debug('options', options);
+            logger.debug('filtering products', {
+                query,
+                options
+            });
 
             async.parallel([
                 (cb) => {

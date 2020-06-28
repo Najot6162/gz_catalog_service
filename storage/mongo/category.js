@@ -1,5 +1,7 @@
+const mongoose = require('mongoose');
 const Category = require('../../models/Category');
 const Product = require('../../models/Product');
+const logger = require('../../config/logger');
 
 let categoryStorage = {
     create: (b) => {
@@ -45,6 +47,10 @@ let categoryStorage = {
     find: (filters) => {
         return new Promise((resolve, reject) => {
             let query = {};
+            query = {
+                ...query,
+                parent: null
+            }
             if(filters.search.trim()){
                 query = { 
                     ...query,
@@ -56,8 +62,35 @@ let categoryStorage = {
                 };
             }
 
-            Category.find(query, (err, categories) => {
+            let a = Category.aggregate([
+                { $match: query },
+                { 
+                    $lookup: {
+                        from: 'categories',
+                        localField: '_id',
+                        foreignField: 'parent',
+                        as: 'children'
+                    }
+                }
+            ]);
+
+            if(filters.limit/1){
+                a.skip((filters.page - 1) * filters.limit/1);
+                a.limit(filters.limit/1);
+            }
+            
+            a.exec((err, categories) => {
                 if(err) return reject(err);
+
+                // aggregation returns simple js objects (not mongoose documents), so we should add 'id' field
+                categories = categories.map((c, i) => ({
+                    ...c,
+                    id: c._id,
+                    children: c.children ? c.children.map((ch, j) => ({
+                        ...ch,
+                        id: ch._id
+                    })) : null
+                }));
                 resolve(categories);
             });
         });
@@ -67,11 +100,47 @@ let categoryStorage = {
             if(!(req.id || req.slug)) return reject(new Error('ID is not given'));
 
             let query = {}
-            if(req.id) query._id = req.id;
+            if(mongoose.Types.ObjectId.isValid(req.id)) query._id = mongoose.Types.ObjectId(req.id);
             if(req.slug) query.slug = req.slug;
-            Category.findOne(query, (err, cat) => {
+            Category.aggregate([
+                { $match: query },
+                { $limit: 1},
+                {
+                    $lookup: {
+                        from: 'categories',
+                        localField: '_id',
+                        foreignField: 'parent',
+                        as: 'children'
+                    }
+                }, {
+                    $lookup: {
+                        from: 'categories',
+                        localField: 'parent',
+                        foreignField: '_id',
+                        as: 'parent'
+                    }
+                }, {
+                    $unwind: {
+                        path: '$parent',
+                        preserveNullAndEmptyArrays: true
+                    }
+                }
+            ]).exec((err, cat) => {
                 if(err) return reject(err);
-                if(!cat) return reject(new Error('Document not found'));
+                logger.debug('getting category result', { cat });
+                if(!cat.length) return reject(new Error('Document not found'));
+                cat = cat[0];
+                cat = {
+                    id: cat._id,
+                    children: cat.children ? cat.children.map((ch, i) => ({
+                        ...ch,
+                        id: ch._id
+                    })) : null,
+                    parent: cat.parent ? {
+                        ...cat.parent,
+                        id: cat.parent._id
+                    } : null
+                }
                 return resolve(cat);
             });
         });
