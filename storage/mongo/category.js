@@ -131,6 +131,7 @@ let categoryStorage = {
                 if(!cat.length) return reject(new Error('Document not found'));
                 cat = cat[0];
                 cat = {
+                    ...cat,
                     id: cat._id,
                     children: cat.children ? cat.children.map((ch, i) => ({
                         ...ch,
