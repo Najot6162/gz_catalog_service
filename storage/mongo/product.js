@@ -169,8 +169,8 @@ let productStorage = {
 
             // filter by brand
             let brands = filters.brand.split(',').filter((f) => {
-                return mongoose.Types.ObjectId.isValid(f);
-            });
+                return mongoose.Types.ObjectId.isValid(f.trim());
+            }).map((f, i) => f.trim());
             if(brands.length){
                 query = {
                     ...query,
