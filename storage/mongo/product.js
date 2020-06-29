@@ -168,10 +168,13 @@ let productStorage = {
             }
 
             // filter by brand
-            if(mongoose.Types.ObjectId.isValid(filters.brand)){
+            let brands = filters.brand.split(',').filter((f) => {
+                return mongoose.Types.ObjectId.isValid(f);
+            });
+            if(brands.length){
                 query = {
                     ...query,
-                    brand: filters.brand
+                    brand: { $in: brands }
                 }
             }
 
