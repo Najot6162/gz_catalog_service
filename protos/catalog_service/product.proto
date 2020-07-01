@@ -64,6 +64,8 @@ message FindProductsRequest {
     string brand = 6;
     int64  limit = 7;
     string sort = 8;
+    int64  price_from = 9;
+    int64  price_till = 10;
 }
 
 message FindProductsResponse {
