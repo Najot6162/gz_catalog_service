@@ -196,14 +196,19 @@ let productStorage = {
 
             let options = {
                 skip: filters.page/1 * filters.limit/1,
-                limit: filters.limit/1
+                limit: filters.limit/1,
+                sort: { created_at: -1 }
             }
 
             if(filters.sort){
-                let sortParams = filters.split('|');
+                let sortParams = filters.sort.split('|');
                 if(sortParams.length == 2 && (sortParams[1] == 'asc' || sortParams[1] == 'desc')){
                     options.sort = {};
-                    options.sort[sortParams[0]] = sortParams[1] == 'asc' ? 1 : -1;
+                    if(sortParams[0] == 'price'){
+                        options.sort['price.price'] = sortParams[1] == 'asc' ? 1 : -1;
+                    }else{
+                        options.sort[sortParams[0]] = sortParams[1] == 'asc' ? 1 : -1;
+                    }
                 }
             }
 

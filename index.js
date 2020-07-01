@@ -23,12 +23,12 @@ function main(){
     logger.info('Main function is running');
 
     // Connecting to database
-    const mongoDBUrl = 'mongodb://' + cfg.mongoHost + ':' + cfg.mongoPort + '/' + cfg.mongoDatabase;
+    const mongoDBUrl = 'mongodb://' + cfg.mongoUser + ':' + cfg.mongoPassword + '@' + cfg.mongoHost + ':' + cfg.mongoPort + '/' + cfg.mongoDatabase;
     mongoose.connect(mongoDBUrl, { 
         useNewUrlParser:true 
     }, (err) => {
         if(err){
-            logger.error('There is an error in connecting db: ' + err.message);
+            logger.error('There is an error in connecting db (' + mongoDBUrl + '): ' + err.message);
         }
     });
     mongoose.connection.once('open',function(){
