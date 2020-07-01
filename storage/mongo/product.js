@@ -180,13 +180,13 @@ let productStorage = {
 
             // filter by price
             let priceQuery = {};
-            if(filters.price_from){
+            if(filters.price_from/1){
                 priceQuery = {
                     ...priceQuery,
                     $gte: filters.price_from 
                 };
             }
-            if(filters.price_till){
+            if(filters.price_till/1){
                 priceQuery = {
                     ...priceQuery,
                     $lte: filters.price_till
