@@ -55,7 +55,7 @@ let shopStorage = {
                 let updated = false;
                 shop.products = shop.products.map((product, i) => {
                     if (product.product.toString() == b.product_id) {
-                        product.quantity = b.qunatity;
+                        product.quantity = b.quantity;
                         updated = true;
                     }
                     return product;
