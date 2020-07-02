@@ -1,0 +1,67 @@
+syntax="proto3";
+
+package catalog;
+option go_package="genproto/catalog_service";
+
+import "catalog.proto";
+
+service ShopService {
+    rpc Create(CreateShopRequest) returns (ShopResponse) {}
+    rpc Update(UpdateShopRequest) returns (ShopResponse) {}
+    rpc Find(FindShopsRequest) returns (FindShopsResponse) {}
+    rpc Get(GetRequest) returns (ShopResponse) {}
+    rpc Delete(DeleteRequest) returns (Empty) {}
+    rpc UpdateQuantity(UpdateProductQuantityRequest) returns (Empty) {}
+}
+
+message CreateShopRequest {
+    string name = 1;
+    string phone = 2;
+    string working_hours = 3;
+    string address = 4;
+    string address2 = 5;
+    string preview_text = 6;
+    string description = 7;
+    bool   active = 8;
+    string image = 9;
+    int64  order = 10;
+}
+
+message UpdateShopRequest {
+    string id = 1;
+    string name = 2;
+    string phone = 3;
+    string working_hours = 4;
+    string address = 5;
+    string address2 = 6;
+    string preview_text = 7;
+    string description = 8;
+    bool   active = 9;
+    string image = 10;
+    int64  order = 11;
+}
+
+message UpdateProductQuantityRequest {
+    string shop_id = 1;
+    string product_id = 2;
+    int32  quantity = 3;
+}
+message ShopResponse {
+    Shop shop = 1;
+}
+
+message FindShopsRequest {
+    int64  page = 1;
+    string search = 2;
+    bool   active = 3;
+    bool   inactive = 4;
+    int64  limit = 5;
+    string sort = 6;
+}
+
+message FindShopsResponse {
+    repeated Shop shops = 1;
+    int64    count = 2;
+}
+
+

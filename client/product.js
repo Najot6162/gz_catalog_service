@@ -2,7 +2,7 @@ var grpc = require('grpc');
 var protoLoader = require('@grpc/proto-loader');
 const logger = require('../config/logger');
 
-var PROTO_PATH = __dirname + '/../gz_protos/catalog_service/catalog_service.proto';
+var PROTO_PATH = __dirname + '/../protos/catalog_service/catalog_service.proto';
 var packageDefinition = protoLoader.loadSync(
   PROTO_PATH,
   {

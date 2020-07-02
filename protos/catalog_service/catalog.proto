@@ -134,9 +134,14 @@ message Shop {
     string working_hours = 5;
     string address = 6;
     string address2 = 7;
-    repeated Stock products = 8;
-    string created_at = 9;
-    string updated_at = 10;
+    string preview_text = 8;
+    string description = 9;
+    bool   active = 10;
+    string image = 11;
+    int64  order = 12;
+    repeated Stock products = 13;
+    string created_at = 14;
+    string updated_at = 15;
 }
 
 message GetRequest {

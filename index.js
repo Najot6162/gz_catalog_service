@@ -24,6 +24,7 @@ function main(){
 
     // Connecting to database
     const mongoDBUrl = 'mongodb://' + cfg.mongoUser + ':' + cfg.mongoPassword + '@' + cfg.mongoHost + ':' + cfg.mongoPort + '/' + cfg.mongoDatabase;
+    //mongoDBUrl = 'mongodb://localhost:27017/catalog_service';
     mongoose.connect(mongoDBUrl, { 
         useNewUrlParser:true 
     }, (err) => {
@@ -43,6 +44,7 @@ function main(){
     server.addService(catalogProto.BrandService.service, require('./services/brand.js'));
     server.addService(catalogProto.ProductPropertyService.service, require('./services/product_property'));
     server.addService(catalogProto.ProductPropertyGroupService.service, require('./services/product_property_group'));
+    server.addService(catalogProto.ShopService.service, require('./services/shop'))
 
     server.bind('0.0.0.0:' + cfg.RPCPort, grpc.ServerCredentials.createInsecure());
     server.start();

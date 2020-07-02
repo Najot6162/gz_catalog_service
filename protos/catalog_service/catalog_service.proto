@@ -8,4 +8,5 @@ import "product.proto";
 import "brand.proto";
 import "product_property.proto";
 import "product_property_group.proto";
+import "shop.proto";
 
