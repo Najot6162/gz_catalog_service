@@ -251,7 +251,10 @@ let productStorage = {
             if(req.id) query._id = req.id;
             if(req.slug) query.slug = req.slug;
             Product.findOne(query).populate({
-                path: 'category'
+                path: 'category',
+                populate: {
+                    path: 'parent'
+                }
             }).populate({
                 path: 'brand'
             }).exec((err, product) => {
