@@ -68,8 +68,9 @@ message Brand {
     string preview_text = 5;
     string description = 6;
     bool   active = 7;
-    string created_at = 8;
-    string updated_at = 9;
+    int64  order = 8;
+    string created_at = 9;
+    string updated_at = 10;
 }
 
 message ProductPropertyGroup {
