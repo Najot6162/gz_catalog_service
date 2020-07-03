@@ -54,6 +54,9 @@ var ProductSchema = new mongoose.Schema({
         type: Boolean,
         default: true
     },
+    external_id: {
+        type: Number
+    },
     created_at: {
         type: Date,
         default: Date.now

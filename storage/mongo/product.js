@@ -3,7 +3,7 @@ const async = require('async');
 const Category = require('../../models/Category');
 const Product  = require('../../models/Product');
 const Brand    = require('../../models/Brand');
-
+const Shop     = require('../../models/Shop');
 const logger = require('../../config/logger');
 
 let productStorage = {
@@ -259,6 +259,24 @@ let productStorage = {
                 if(!product) return reject(new Error('Document not found'));
                 return resolve(product);
             });
+        });
+    },
+    getShops: (req) => {
+        return new Promise((resolve,reject) => {
+            if (!req.product_id) return reject(new Error('Key is not given'));
+            Shop.find({
+                products: { $elemMatch: {product: req.product_id} }
+            }, (err, shops) => {
+                if(err) return reject(err);
+                if(!shops) return reject(new Error('Shops are not found'))
+                shops = shops.map((sh, i) => {
+                    return {
+                        ...sh,
+                        products: sh.products.filter((stock) => (stock.product == req.product_id))
+                    }
+                });
+                return resolve(shops);
+            }); 
         });
     },
     delete: (req) => {

@@ -69,7 +69,14 @@ function main() {
                     response: getResponse,
                     label: 'test'
                 });
-
+            client.GetShops({
+                product_id: updateResponse.product.id,
+            }, (err, getResponse) => {
+                    if (err) return console.log('Error: ', err.message);
+                    logger.debug('Shop Get response', {
+                    response: getResponse,
+                    label: 'test'
+                        });           
                 // delete Product
                 client.Delete({
                     id: updateResponse.product.id
@@ -86,5 +93,6 @@ function main() {
         });
     });
 }
+)}
 
 main();

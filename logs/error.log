@@ -49,3 +49,168 @@
   label: 'catalog-service',
   metadata: {}
 }
+{
+  message: 'There is an error in connecting db (mongodb://rj:mysecret@catalog-db:27017/catalog_service): failed to connect to server [catalog-db:27017] on first connect [Error: getaddrinfo ENOTFOUND catalog-db\n' +
+    '    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:66:26) {\n' +
+    "  name: 'MongoNetworkError'\n" +
+    '}]',
+  level: 'error',
+  timestamp: '2020-07-03T09:23:11.316Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'There is an error in connecting db (mongodb://rj:mysecret@catalog-db:27017/catalog_service): failed to connect to server [catalog-db:27017] on first connect [Error: getaddrinfo ENOTFOUND catalog-db\n' +
+    '    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:66:26) {\n' +
+    "  name: 'MongoNetworkError'\n" +
+    '}]',
+  level: 'error',
+  timestamp: '2020-07-03T09:23:58.294Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'There is an error in connecting db (mongodb://rj:mysecret@catalog-db:27017/catalog_service): failed to connect to server [catalog-db:27017] on first connect [Error: getaddrinfo ENOTFOUND catalog-db\n' +
+    '    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:66:26) {\n' +
+    "  name: 'MongoNetworkError'\n" +
+    '}]',
+  level: 'error',
+  timestamp: '2020-07-03T09:24:41.514Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'There is an error in connecting db (mongodb://rj:mysecret@catalog-db:27017/catalog_service): failed to connect to server [catalog-db:27017] on first connect [Error: getaddrinfo ENOTFOUND catalog-db\n' +
+    '    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:66:26) {\n' +
+    "  name: 'MongoNetworkError'\n" +
+    '}]',
+  level: 'error',
+  timestamp: '2020-07-03T09:26:33.370Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Key is not given',
+  level: 'error',
+  timestamp: '2020-07-03T09:26:52.818Z',
+  label: 'catalog-service',
+  metadata: { function: 'get shop', request: { product_id: '' } }
+}
+{
+  message: 'Key is not given',
+  level: 'error',
+  timestamp: '2020-07-03T09:29:08.919Z',
+  label: 'catalog-service',
+  metadata: { function: 'get shop', request: { product_id: '' } }
+}
+{
+  message: 'Key is not given',
+  level: 'error',
+  timestamp: '2020-07-03T09:32:17.446Z',
+  label: 'catalog-service',
+  metadata: { function: 'get shop', request: { product_id: '' } }
+}
+{
+  message: 'Key is not given',
+  level: 'error',
+  timestamp: '2020-07-03T09:32:35.011Z',
+  label: 'catalog-service',
+  metadata: { function: 'get shop', request: { product_id: '' } }
+}
+{
+  message: 'Key is not given',
+  level: 'error',
+  timestamp: '2020-07-03T09:37:35.299Z',
+  label: 'catalog-service',
+  metadata: { function: 'get shop', request: { product_id: '' } }
+}
+{
+  message: 'Key is not given',
+  level: 'error',
+  timestamp: '2020-07-03T09:38:12.682Z',
+  label: 'catalog-service',
+  metadata: { function: 'get shop', request: { product_id: '' } }
+}
+{
+  message: 'Key is not given',
+  level: 'error',
+  timestamp: '2020-07-03T09:38:48.737Z',
+  label: 'catalog-service',
+  metadata: { function: 'get shop', request: { product_id: '' } }
+}
+{
+  message: 'Key is not given',
+  level: 'error',
+  timestamp: '2020-07-03T09:40:32.074Z',
+  label: 'catalog-service',
+  metadata: { function: 'get shop', request: { product_id: '' } }
+}
+{
+  message: 'Key is not given',
+  level: 'error',
+  timestamp: '2020-07-03T09:43:53.427Z',
+  label: 'catalog-service',
+  metadata: { function: 'get shop', request: { product_id: '' } }
+}
+{
+  message: 'Key is not given',
+  level: 'error',
+  timestamp: '2020-07-03T09:44:36.211Z',
+  label: 'catalog-service',
+  metadata: { function: 'get shop', request: { product_id: '' } }
+}
+{
+  message: 'Key is not given',
+  level: 'error',
+  timestamp: '2020-07-03T09:44:46.054Z',
+  label: 'catalog-service',
+  metadata: { function: 'get shop', request: { product_id: '' } }
+}
+{
+  message: 'Key is not given',
+  level: 'error',
+  timestamp: '2020-07-03T09:45:38.090Z',
+  label: 'catalog-service',
+  metadata: {
+    function: 'get shop',
+    request: { product_id: '5efefe42ea86680ce9b56fd2' }
+  }
+}
+{
+  message: 'Key is not given',
+  level: 'error',
+  timestamp: '2020-07-03T09:52:19.744Z',
+  label: 'catalog-service',
+  metadata: { function: 'get shop', request: { product_id: '' } }
+}
+{
+  message: 'Key is not given',
+  level: 'error',
+  timestamp: '2020-07-03T09:54:56.357Z',
+  label: 'catalog-service',
+  metadata: { function: 'get shop', request: { product_id: '' } }
+}
+{
+  message: 'Key is not given',
+  level: 'error',
+  timestamp: '2020-07-03T09:55:59.999Z',
+  label: 'catalog-service',
+  metadata: { function: 'get shop', request: { product_id: '' } }
+}
+{
+  message: 'Key is not given',
+  level: 'error',
+  timestamp: '2020-07-03T10:02:06.796Z',
+  label: 'catalog-service',
+  metadata: { function: 'get shop', request: { product_id: '' } }
+}
+{
+  message: 'Key is not given',
+  level: 'error',
+  timestamp: '2020-07-03T10:05:18.446Z',
+  label: 'catalog-service',
+  metadata: {
+    function: 'get shop',
+    request: { product_id: '5eff02deea86680ce9b56fd7' }
+  }
+}

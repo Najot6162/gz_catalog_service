@@ -5,7 +5,7 @@ let shopStorage = {
     create: (b) => {
         return new Promise((resolve, reject) => {
             if (!b.name) return reject(new Error('name is required'));
-
+            if (!b.address) return reject(new Error('address is required'));
             let br = new Shop(b);
             br.created_at = Date.now();
             br.updated_at = Date.now();
