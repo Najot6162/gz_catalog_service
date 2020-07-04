@@ -55,7 +55,8 @@ var ProductSchema = new mongoose.Schema({
         default: true
     },
     external_id: {
-        type: Number
+        type: Number,
+        default: null
     },
     created_at: {
         type: Date,
