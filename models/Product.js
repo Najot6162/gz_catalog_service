@@ -14,6 +14,14 @@ var ProductSchema = new mongoose.Schema({
         type: Types.ObjectId,
         ref: 'Category'
     },
+    additionalCategories: [{
+        type: Types.ObjectId,
+        ref: 'Category'
+    }],
+    relatedProducts: [{
+        type: Types.ObjectId,
+        ref: 'Product'
+    }],
     brand: {
         type: Types.ObjectId,
         ref: 'Brand'
@@ -29,6 +37,9 @@ var ProductSchema = new mongoose.Schema({
     image: {
         type: String
     },
+    gallery: [{
+        type: String
+    }],
     price: {
         price: Number,
         old_price: Number
@@ -54,9 +65,25 @@ var ProductSchema = new mongoose.Schema({
         type: Boolean,
         default: true
     },
+<<<<<<< HEAD
     external_id: {
         type: Number,
         default: null
+=======
+    meta: {
+        title: {
+            type: String,
+            default: ''
+        },
+        description: {
+            type: String,
+            default: ''
+        },
+        tags: {
+            type: String,
+            default: ''
+        }
+>>>>>>> fac0216e4a6f8352b9678b90bbacaf203828366d
     },
     created_at: {
         type: Date,
