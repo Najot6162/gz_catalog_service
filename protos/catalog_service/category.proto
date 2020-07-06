@@ -14,7 +14,7 @@ service CategoryService {
 }
 
 message CreateCategoryRequest {
-      message CategoryMeta {
+    message CategoryMeta {
         string title = 1;
         string description = 2;
         string tags = 3;
@@ -30,7 +30,7 @@ message CreateCategoryRequest {
 }
 
 message UpdateCategoryRequest {
-        message CategoryMeta {
+    message CategoryMeta {
         string title = 1;
         string description = 2;
         string tags = 3;
