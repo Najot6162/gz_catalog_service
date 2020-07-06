@@ -265,7 +265,7 @@ let productStorage = {
                         image: p.image ? cnf.cloudUrl + p.image : '',
                         gallery: p.gallery ? p.gallery.map((g, j) => g ? (cnf.cloudUrl + g) : '') : []
                     }
-                }),
+                });
                 return resolve({
                     products,
                     count: results[1]
