@@ -217,7 +217,7 @@ let productStorage = {
             if(Object.keys(priceQuery).length) query["price.price"] = priceQuery;
 
             let options = {
-                skip: filters.page/1 * filters.limit/1,
+                skip: (filters.page/1 - 1) * filters.limit/1,
                 limit: filters.limit/1,
                 sort: { created_at: -1 }
             }
