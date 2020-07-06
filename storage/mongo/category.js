@@ -10,7 +10,9 @@ let categoryStorage = {
             
             let c = new Category(b);
             c.parent     = b.parent_id || null;
-            c.product_property_groups = b.product_property_groups.trim() ? b.product_property_groups.trim().split(',') : [];
+            c.product_property_groups = b.product_property_groups.split(',').filter((f) => {
+                return mongoose.Types.ObjectId.isValid(f.trim());
+            }).map((f, i) => f.trim());
             c.created_at = Date.now();
             c.updated_at = Date.now();
 
@@ -35,7 +37,14 @@ let categoryStorage = {
                 cat.description = b.description;
                 cat.order = b.order;
                 cat.image = b.image;
-                cat.product_property_groups = b.product_property_groups.trim() ? b.product_property_groups.trim().split(',') : [];
+                cat.meta = {
+                    title: b.meta ? b.meta.title : cat.meta.title,
+                    description: b.meta ? b.meta.description : cat.meta.description,
+                    tags: b.meta ? b.meta.tags : cat.meta.tags,
+                } 
+                cat.product_property_groups = b.product_property_groups.split(',').filter((f) => {
+                    return mongoose.Types.ObjectId.isValid(f.trim());
+                }).map((f, i) => f.trim());
 
                 cat.save((err, updatedCategory) => {
                     if(err) return reject(err);

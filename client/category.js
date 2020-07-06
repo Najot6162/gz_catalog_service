@@ -19,7 +19,13 @@ function main() {
 
   // create category
   client.Create({
-    name: 'my category'
+    name: 'my category',
+    meta: {
+      title: 'Category Meta',
+      description: 'Description of Meta',
+      tags: 'Tag of meta'
+    },
+    product_property_groups: '5ee1e1b06123sd296c4996af,5ee1e1b06123a6296c4996af'
   }, (err, createResponse) => {
     console.log('Category Create');
     if(err) return console.log('Error: ', err.message);
@@ -35,7 +41,13 @@ function main() {
     // update category
     client.Update({
       id: createResponse.category.id,
-      name: 'my updated category'
+      name: 'my updated category',
+      meta: {
+        title: 'Updated Category Meta',
+        description: 'Updated Description of Meta',
+        tags: 'Updated Tag of meta'
+      },
+      product_property_groups: '5ee1e1b06123sd296c4996af,5ee1e1b06123a6296c4996af'
     }, (err, updateResponse) => {
       console.log('Category Update');
       if(err) return console.log('Error: ', err.message);

@@ -25,8 +25,8 @@ message CreateProductRequest {
     string name = 1;
     string category_id = 2;
     string brand_id = 3;
-    string additional_category_id = 4;
-    string related_product_id = 5;
+    string additional_categories = 4;
+    string related_products = 5;
     string preview_text = 6;
     string description = 7;
     string gallery = 8;
@@ -47,8 +47,8 @@ message UpdateProductRequest {
     string name = 2;
     string category_id = 3;
     string brand_id = 4;
-    string additional_category_id = 5;
-    string related_product_id = 6;
+    string additional_categories = 5;
+    string related_products = 6;
     string preview_text = 7;
     string description = 8;
     string gallery = 9;

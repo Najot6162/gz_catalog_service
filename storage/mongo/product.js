@@ -12,13 +12,20 @@ let productStorage = {
             if(!b.name) return reject(new Error('name is required'));
             if(!b.category_id) return reject(new Error('category field is required'));
             if (!b.brand_id) return reject(new Error('Brand field is required'));
-            if (!b.additional_category_id) return reject(new Error('Additional category field is required'));
-            if (!b.related_product_id) return reject(new Error('Related product field is required'));
+            if (!b.additional_categories) return reject(new Error('Additional categories field is required'));
+            if (!b.related_products) return reject(new Error('Related products field is required'));
             let p = new Product(b);
             p.category   = b.category_id || null;
             p.brand      = b.brand_id || null;
-            p.additional_categories = b.additional_category_id || null;
-            p.related_products = b.related_product_id || null;
+
+            p.additional_categories = b.additional_categories.split(',').filter((f) => {
+                return mongoose.Types.ObjectId.isValid(f.trim());
+            }).map((f, i) => f.trim());
+
+            p.related_products = b.related_products.split(',').filter((f) => {
+                return mongoose.Types.ObjectId.isValid(f.trim());
+            }).map((f, i) => f.trim());
+
             p.created_at = Date.now();
             p.updated_at = Date.now();
 
@@ -55,8 +62,15 @@ let productStorage = {
                 product.name = b.name;
                 product.category = b.category_id || null;
                 product.brand = b.brand_id || null;
-                product.additional_categories = b.additional_category_id || null;
-                product.related_products = b.related_product_id || null;
+                
+                product.additional_categories = b.additional_categories.split(',').filter((f) => {
+                    return mongoose.Types.ObjectId.isValid(f.trim());
+                }).map((f, i) => f.trim());
+
+                product.related_products = b.related_products.split(',').filter((f) => {
+                    return mongoose.Types.ObjectId.isValid(f.trim());
+                }).map((f, i) => f.trim());
+
                 product.active = b.active;
                 product.preview_text = b.preview_text;
                 product.description = b.description;
