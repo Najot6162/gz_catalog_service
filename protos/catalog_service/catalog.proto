@@ -17,20 +17,60 @@ message Product {
         ProductProperty property = 1;
         string value = 2;
     }
+    message Meta {
+        string title = 1;
+        string description = 2;
+        string tags = 3;
+    }
     string id = 1;
     string name = 2;
     string slug = 3;
     Category category = 4;
     Brand  brand = 5;
-    string preview_text = 6;
-    string description = 7;
-    bool   active = 8;
-    repeated Property properties = 9;
-    repeated Price prices = 10;
-    DefaultPrice price = 11;
-    string created_at = 12;
-    string updated_at = 13;
-    string image = 14;
+    repeated Category additional_categories = 6;
+    repeated ProductSlim related_products = 7;
+    string preview_text = 8;
+    string description = 9;
+    bool   active = 10;
+    repeated string gallery = 11;
+    int64 external_id = 12;
+    Meta meta = 13;
+    repeated Property properties = 14;
+    repeated Price prices = 15;
+    DefaultPrice price = 16;
+    string created_at = 17;
+    string updated_at = 18;
+    string image = 19;
+}
+
+message ProductSlim {
+    message Price {
+        PriceType type = 1;
+        int64     price = 2;
+        int64     old_price = 3;
+    }
+    message DefaultPrice {
+        int64 price = 1;
+        int64 old_price = 2;
+    }
+    message Property {
+        ProductProperty property = 1;
+        string value = 2;
+    }
+    string id = 1;
+    string name = 2;
+    string slug = 3;
+    Category category = 4;
+    Brand  brand = 5;
+    string preview_text = 8;
+    string description = 9;
+    bool   active = 10;
+    repeated Property properties = 14;
+    repeated Price prices = 15;
+    DefaultPrice price = 16;
+    string created_at = 17;
+    string updated_at = 18;
+    string image = 19;
 }
 
 message Category {

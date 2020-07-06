@@ -14,11 +14,11 @@ var ProductSchema = new mongoose.Schema({
         type: Types.ObjectId,
         ref: 'Category'
     },
-    additionalCategories: [{
+    additional_categories: [{
         type: Types.ObjectId,
         ref: 'Category'
     }],
-    relatedProducts: [{
+    related_products: [{
         type: Types.ObjectId,
         ref: 'Product'
     }],
@@ -65,11 +65,10 @@ var ProductSchema = new mongoose.Schema({
         type: Boolean,
         default: true
     },
-<<<<<<< HEAD
     external_id: {
         type: Number,
         default: null
-=======
+    },
     meta: {
         title: {
             type: String,
@@ -83,7 +82,6 @@ var ProductSchema = new mongoose.Schema({
             type: String,
             default: ''
         }
->>>>>>> fac0216e4a6f8352b9678b90bbacaf203828366d
     },
     created_at: {
         type: Date,

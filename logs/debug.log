@@ -7502,3 +7502,2245 @@
   label: 'test',
   metadata: { response: {} }
 }
+{
+  message: 'Main function is running',
+  level: 'info',
+  timestamp: '2020-07-04T11:23:13.396Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'grpc server is running at 7000',
+  level: 'info',
+  timestamp: '2020-07-04T11:23:13.445Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'There is an error in connecting db (mongodb://rj:mysecret@catalog-db:27017/catalog_service): failed to connect to server [catalog-db:27017] on first connect [Error: getaddrinfo ENOTFOUND catalog-db\n' +
+    '    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:66:26) {\n' +
+    "  name: 'MongoNetworkError'\n" +
+    '}]',
+  level: 'error',
+  timestamp: '2020-07-04T11:23:13.509Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Main function is running',
+  level: 'info',
+  timestamp: '2020-07-04T11:23:29.965Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'grpc server is running at 7000',
+  level: 'info',
+  timestamp: '2020-07-04T11:23:30.011Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'There is an error in connecting db (mongodb://rj:mysecret@catalog-db:27017/catalog_service): failed to connect to server [catalog-db:27017] on first connect [Error: getaddrinfo ENOTFOUND catalog-db\n' +
+    '    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:66:26) {\n' +
+    "  name: 'MongoNetworkError'\n" +
+    '}]',
+  level: 'error',
+  timestamp: '2020-07-04T11:23:30.016Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Main function is running',
+  level: 'info',
+  timestamp: '2020-07-04T11:23:57.705Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'grpc server is running at 7000',
+  level: 'info',
+  timestamp: '2020-07-04T11:23:57.752Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'There is an error in connecting db (mongodb://rj:mysecret@catalog-db:27017/catalog_service): failed to connect to server [catalog-db:27017] on first connect [Error: getaddrinfo ENOTFOUND catalog-db\n' +
+    '    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:66:26) {\n' +
+    "  name: 'MongoNetworkError'\n" +
+    '}]',
+  level: 'error',
+  timestamp: '2020-07-04T11:23:57.758Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Main function is running',
+  level: 'info',
+  timestamp: '2020-07-04T11:24:07.292Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'grpc server is running at 7000',
+  level: 'info',
+  timestamp: '2020-07-04T11:24:07.336Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connected to the databasee',
+  level: 'info',
+  timestamp: '2020-07-04T11:24:07.362Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Product create request',
+  level: 'debug',
+  timestamp: '2020-07-04T11:24:29.765Z',
+  label: 'product',
+  metadata: {
+    request: {
+      name: 'my product',
+      category_id: '5ee1e1b06123a6296c4996af',
+      brand_id: '5ee36f67f8601328a86456bf',
+      additional_category_id: '5ee1e1b06123a6296c4996bd',
+      related_product_id: '5ee36f67f8601328a86456df',
+      preview_text: 'preview text of my product',
+      description: 'description of my product',
+      gallery: 'img/somephoto.jpg',
+      external_id: '15',
+      meta: {
+        title: 'Product Meta',
+        description: 'Description of Meta',
+        tags: 'Tag of meta'
+      },
+      active: false,
+      order: '0',
+      image: ''
+    }
+  }
+}
+{
+  message: 'product created',
+  level: 'info',
+  timestamp: '2020-07-04T11:24:29.803Z',
+  label: 'catalog-service',
+  metadata: { durationMs: 38 }
+}
+{
+  message: 'Product Create response',
+  level: 'debug',
+  timestamp: '2020-07-04T11:24:29.814Z',
+  label: 'test',
+  metadata: {
+    response: {
+      product: {
+        additional_categories: [],
+        related_products: [],
+        gallery: [ 'img/somephoto.jpg' ],
+        properties: [],
+        prices: [],
+        id: '5f0066ed8152ad3438e7e2e9',
+        name: 'my product',
+        slug: 'my-product',
+        category: null,
+        brand: null,
+        preview_text: 'preview text of my product',
+        description: 'description of my product',
+        active: false,
+        external_id: '15',
+        meta: {
+          title: 'Product Meta',
+          description: 'Description of Meta',
+          tags: 'Tag of meta'
+        },
+        price: { price: '0', old_price: '0' },
+        created_at: 'Sat Jul 04 2020 16:24:29 GMT+0500 (Uzbekistan Standard Time)',
+        updated_at: 'Sat Jul 04 2020 16:24:29 GMT+0500 (Uzbekistan Standard Time)',
+        image: ''
+      }
+    }
+  }
+}
+{
+  message: 'Product find request',
+  level: 'debug',
+  timestamp: '2020-07-04T11:24:29.823Z',
+  label: 'product',
+  metadata: {
+    request: {
+      page: '0',
+      search: '',
+      active: false,
+      inactive: false,
+      category: '',
+      brand: '',
+      limit: '0',
+      sort: '',
+      price_from: '0',
+      price_till: '0'
+    }
+  }
+}
+{
+  message: 'filtering products',
+  level: 'debug',
+  timestamp: '2020-07-04T11:24:29.824Z',
+  label: 'catalog-service',
+  metadata: {
+    query: {},
+    options: { skip: 0, limit: 0, sort: { created_at: -1 } }
+  }
+}
+{
+  message: 'Product update request',
+  level: 'debug',
+  timestamp: '2020-07-04T11:24:29.831Z',
+  label: 'product',
+  metadata: {
+    request: {
+      id: '5f0066ed8152ad3438e7e2e9',
+      name: 'my updated Product',
+      category_id: '5ee1e1b06123a6296c4996af',
+      brand_id: '5ee36f67f8601328a86456bf',
+      additional_categories: '',
+      related_products: '',
+      preview_text: 'preview text of my updated product',
+      description: 'description of my updated product',
+      gallery: 'img/some.jpg',
+      external_id: '16',
+      meta: {
+        title: ' Updated Product Meta',
+        description: 'Updatet Description of Meta',
+        tags: 'Updated Tag of meta'
+      },
+      active: false,
+      order: '0',
+      image: ''
+    }
+  }
+}
+{
+  message: 'Additional category field is required',
+  level: 'error',
+  timestamp: '2020-07-04T11:24:29.832Z',
+  label: 'catalog-service',
+  metadata: {
+    function: 'update product',
+    request: {
+      id: '5f0066ed8152ad3438e7e2e9',
+      name: 'my updated Product',
+      category_id: '5ee1e1b06123a6296c4996af',
+      brand_id: '5ee36f67f8601328a86456bf',
+      additional_categories: '',
+      related_products: '',
+      preview_text: 'preview text of my updated product',
+      description: 'description of my updated product',
+      gallery: 'img/some.jpg',
+      external_id: '16',
+      meta: {
+        title: ' Updated Product Meta',
+        description: 'Updatet Description of Meta',
+        tags: 'Updated Tag of meta'
+      },
+      active: false,
+      order: '0',
+      image: ''
+    }
+  }
+}
+{
+  message: 'Product Find response',
+  level: 'debug',
+  timestamp: '2020-07-04T11:24:29.872Z',
+  label: 'test',
+  metadata: {
+    response: {
+      products: [
+        {
+          properties: [],
+          prices: [],
+          id: '5f0066ed8152ad3438e7e2e9',
+          name: 'my product',
+          slug: 'my-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my product',
+          description: 'description of my product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Sat Jul 04 2020 16:24:29 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Sat Jul 04 2020 16:24:29 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5eff02deea86680ce9b56fd7',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 15:05:18 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 15:05:18 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5eff021eea86680ce9b56fd6',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 15:02:06 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 15:02:06 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5eff00afea86680ce9b56fd5',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:55:59 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:55:59 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5eff0070ea86680ce9b56fd4',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:54:56 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:54:56 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5efeffd3ea86680ce9b56fd3',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:52:19 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:52:19 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5efefe42ea86680ce9b56fd2',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:45:38 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:45:38 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5efefe0dea86680ce9b56fd1',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:44:45 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:44:45 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5efefe04ea86680ce9b56fd0',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:44:36 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:44:36 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5efefdd9ea86680ce9b56fcf',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:43:53 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:43:53 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5efefd10ea86680ce9b56fce',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:40:32 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:40:32 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5efefca8ea86680ce9b56fcd',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:38:48 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:38:48 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5efefc84ea86680ce9b56fcc',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:38:12 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:38:12 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5efefc5fea86680ce9b56fcb',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:37:35 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:37:35 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5efefb32ea86680ce9b56fca',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:32:34 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:32:34 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5efefb21ea86680ce9b56fc9',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:32:17 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:32:17 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5efefa64ea86680ce9b56fc8',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:29:08 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:29:08 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5efefa60ea86680ce9b56fc7',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:29:04 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:29:04 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5efefa3cea86680ce9b56fc6',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:28:28 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:28:28 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5efef9dcea86680ce9b56fc5',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:26:52 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:26:52 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        }
+      ],
+      count: '20'
+    }
+  }
+}
+{
+  message: 'Product create request',
+  level: 'debug',
+  timestamp: '2020-07-04T11:29:12.104Z',
+  label: 'product',
+  metadata: {
+    request: {
+      name: 'my product',
+      category_id: '5ee1e1b06123a6296c4996af',
+      brand_id: '5ee36f67f8601328a86456bf',
+      additional_category_id: '5ee1e1b06123a6296c4996bd',
+      related_product_id: '5ee36f67f8601328a86456df',
+      preview_text: 'preview text of my product',
+      description: 'description of my product',
+      gallery: 'img/somephoto.jpg',
+      external_id: '15',
+      meta: {
+        title: 'Product Meta',
+        description: 'Description of Meta',
+        tags: 'Tag of meta'
+      },
+      active: false,
+      order: '0',
+      image: ''
+    }
+  }
+}
+{
+  message: 'product created',
+  level: 'info',
+  timestamp: '2020-07-04T11:29:12.114Z',
+  label: 'catalog-service',
+  metadata: { durationMs: 10 }
+}
+{
+  message: 'Product Create response',
+  level: 'debug',
+  timestamp: '2020-07-04T11:29:12.120Z',
+  label: 'test',
+  metadata: {
+    response: {
+      product: {
+        additional_categories: [],
+        related_products: [],
+        gallery: [ 'img/somephoto.jpg' ],
+        properties: [],
+        prices: [],
+        id: '5f0068088152ad3438e7e2ea',
+        name: 'my product',
+        slug: 'my-product',
+        category: null,
+        brand: null,
+        preview_text: 'preview text of my product',
+        description: 'description of my product',
+        active: false,
+        external_id: '15',
+        meta: {
+          title: 'Product Meta',
+          description: 'Description of Meta',
+          tags: 'Tag of meta'
+        },
+        price: { price: '0', old_price: '0' },
+        created_at: 'Sat Jul 04 2020 16:29:12 GMT+0500 (Uzbekistan Standard Time)',
+        updated_at: 'Sat Jul 04 2020 16:29:12 GMT+0500 (Uzbekistan Standard Time)',
+        image: ''
+      }
+    }
+  }
+}
+{
+  message: 'Product find request',
+  level: 'debug',
+  timestamp: '2020-07-04T11:29:12.127Z',
+  label: 'product',
+  metadata: {
+    request: {
+      page: '0',
+      search: '',
+      active: false,
+      inactive: false,
+      category: '',
+      brand: '',
+      limit: '0',
+      sort: '',
+      price_from: '0',
+      price_till: '0'
+    }
+  }
+}
+{
+  message: 'filtering products',
+  level: 'debug',
+  timestamp: '2020-07-04T11:29:12.127Z',
+  label: 'catalog-service',
+  metadata: {
+    query: {},
+    options: { skip: 0, limit: 0, sort: { created_at: -1 } }
+  }
+}
+{
+  message: 'Product update request',
+  level: 'debug',
+  timestamp: '2020-07-04T11:29:12.129Z',
+  label: 'product',
+  metadata: {
+    request: {
+      id: '5f0068088152ad3438e7e2ea',
+      name: 'my updated Product',
+      category_id: '5ee1e1b06123a6296c4996af',
+      brand_id: '5ee36f67f8601328a86456bf',
+      additional_categories: '',
+      related_products: '',
+      preview_text: 'preview text of my updated product',
+      description: 'description of my updated product',
+      gallery: 'img/some.jpg',
+      external_id: '16',
+      meta: {
+        title: ' Updated Product Meta',
+        description: 'Updatet Description of Meta',
+        tags: 'Updated Tag of meta'
+      },
+      active: false,
+      order: '0',
+      image: ''
+    }
+  }
+}
+{
+  message: 'Additional category field is required',
+  level: 'error',
+  timestamp: '2020-07-04T11:29:12.129Z',
+  label: 'catalog-service',
+  metadata: {
+    function: 'update product',
+    request: {
+      id: '5f0068088152ad3438e7e2ea',
+      name: 'my updated Product',
+      category_id: '5ee1e1b06123a6296c4996af',
+      brand_id: '5ee36f67f8601328a86456bf',
+      additional_categories: '',
+      related_products: '',
+      preview_text: 'preview text of my updated product',
+      description: 'description of my updated product',
+      gallery: 'img/some.jpg',
+      external_id: '16',
+      meta: {
+        title: ' Updated Product Meta',
+        description: 'Updatet Description of Meta',
+        tags: 'Updated Tag of meta'
+      },
+      active: false,
+      order: '0',
+      image: ''
+    }
+  }
+}
+{
+  message: 'Product Find response',
+  level: 'debug',
+  timestamp: '2020-07-04T11:29:12.150Z',
+  label: 'test',
+  metadata: {
+    response: {
+      products: [
+        {
+          properties: [],
+          prices: [],
+          id: '5f0068088152ad3438e7e2ea',
+          name: 'my product',
+          slug: 'my-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my product',
+          description: 'description of my product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Sat Jul 04 2020 16:29:12 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Sat Jul 04 2020 16:29:12 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5f0066ed8152ad3438e7e2e9',
+          name: 'my product',
+          slug: 'my-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my product',
+          description: 'description of my product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Sat Jul 04 2020 16:24:29 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Sat Jul 04 2020 16:24:29 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5eff02deea86680ce9b56fd7',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 15:05:18 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 15:05:18 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5eff021eea86680ce9b56fd6',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 15:02:06 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 15:02:06 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5eff00afea86680ce9b56fd5',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:55:59 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:55:59 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5eff0070ea86680ce9b56fd4',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:54:56 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:54:56 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5efeffd3ea86680ce9b56fd3',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:52:19 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:52:19 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5efefe42ea86680ce9b56fd2',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:45:38 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:45:38 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5efefe0dea86680ce9b56fd1',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:44:45 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:44:45 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5efefe04ea86680ce9b56fd0',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:44:36 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:44:36 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5efefdd9ea86680ce9b56fcf',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:43:53 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:43:53 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5efefd10ea86680ce9b56fce',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:40:32 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:40:32 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5efefca8ea86680ce9b56fcd',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:38:48 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:38:48 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5efefc84ea86680ce9b56fcc',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:38:12 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:38:12 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5efefc5fea86680ce9b56fcb',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:37:35 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:37:35 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5efefb32ea86680ce9b56fca',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:32:34 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:32:34 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5efefb21ea86680ce9b56fc9',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:32:17 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:32:17 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5efefa64ea86680ce9b56fc8',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:29:08 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:29:08 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5efefa60ea86680ce9b56fc7',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:29:04 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:29:04 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5efefa3cea86680ce9b56fc6',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:28:28 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:28:28 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5efef9dcea86680ce9b56fc5',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:26:52 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:26:52 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        }
+      ],
+      count: '21'
+    }
+  }
+}
+{
+  message: 'Product create request',
+  level: 'debug',
+  timestamp: '2020-07-04T11:30:46.126Z',
+  label: 'product',
+  metadata: {
+    request: {
+      name: 'my product',
+      category_id: '5ee1e1b06123a6296c4996af',
+      brand_id: '5ee36f67f8601328a86456bf',
+      additional_category_id: '5ee1e1b06123a6296c4996bd',
+      related_product_id: '5ee36f67f8601328a86456df',
+      preview_text: 'preview text of my product',
+      description: 'description of my product',
+      gallery: 'img/somephoto.jpg',
+      external_id: '15',
+      meta: {
+        title: 'Product Meta',
+        description: 'Description of Meta',
+        tags: 'Tag of meta'
+      },
+      active: false,
+      order: '0',
+      image: ''
+    }
+  }
+}
+{
+  message: 'product created',
+  level: 'info',
+  timestamp: '2020-07-04T11:30:46.134Z',
+  label: 'catalog-service',
+  metadata: { durationMs: 8 }
+}
+{
+  message: 'Product Create response',
+  level: 'debug',
+  timestamp: '2020-07-04T11:30:46.141Z',
+  label: 'test',
+  metadata: {
+    response: {
+      product: {
+        additional_categories: [],
+        related_products: [],
+        gallery: [ 'img/somephoto.jpg' ],
+        properties: [],
+        prices: [],
+        id: '5f0068668152ad3438e7e2eb',
+        name: 'my product',
+        slug: 'my-product',
+        category: null,
+        brand: null,
+        preview_text: 'preview text of my product',
+        description: 'description of my product',
+        active: false,
+        external_id: '15',
+        meta: {
+          title: 'Product Meta',
+          description: 'Description of Meta',
+          tags: 'Tag of meta'
+        },
+        price: { price: '0', old_price: '0' },
+        created_at: 'Sat Jul 04 2020 16:30:46 GMT+0500 (Uzbekistan Standard Time)',
+        updated_at: 'Sat Jul 04 2020 16:30:46 GMT+0500 (Uzbekistan Standard Time)',
+        image: ''
+      }
+    }
+  }
+}
+{
+  message: 'Product find request',
+  level: 'debug',
+  timestamp: '2020-07-04T11:30:46.148Z',
+  label: 'product',
+  metadata: {
+    request: {
+      page: '0',
+      search: '',
+      active: false,
+      inactive: false,
+      category: '',
+      brand: '',
+      limit: '0',
+      sort: '',
+      price_from: '0',
+      price_till: '0'
+    }
+  }
+}
+{
+  message: 'filtering products',
+  level: 'debug',
+  timestamp: '2020-07-04T11:30:46.148Z',
+  label: 'catalog-service',
+  metadata: {
+    query: {},
+    options: { skip: 0, limit: 0, sort: { created_at: -1 } }
+  }
+}
+{
+  message: 'Product update request',
+  level: 'debug',
+  timestamp: '2020-07-04T11:30:46.150Z',
+  label: 'product',
+  metadata: {
+    request: {
+      id: '5f0068668152ad3438e7e2eb',
+      name: 'my updated Product',
+      category_id: '5ee1e1b06123a6296c4996af',
+      brand_id: '5ee36f67f8601328a86456bf',
+      additional_categories: '5ee1e1b06123a6296c4996bd',
+      related_products: '5ee36f67f8601328a86456df',
+      preview_text: 'preview text of my updated product',
+      description: 'description of my updated product',
+      gallery: 'img/some.jpg',
+      external_id: '16',
+      meta: {
+        title: ' Updated Product Meta',
+        description: 'Updatet Description of Meta',
+        tags: 'Updated Tag of meta'
+      },
+      active: false,
+      order: '0',
+      image: ''
+    }
+  }
+}
+{
+  message: 'Additional category field is required',
+  level: 'error',
+  timestamp: '2020-07-04T11:30:46.150Z',
+  label: 'catalog-service',
+  metadata: {
+    function: 'update product',
+    request: {
+      id: '5f0068668152ad3438e7e2eb',
+      name: 'my updated Product',
+      category_id: '5ee1e1b06123a6296c4996af',
+      brand_id: '5ee36f67f8601328a86456bf',
+      additional_categories: '5ee1e1b06123a6296c4996bd',
+      related_products: '5ee36f67f8601328a86456df',
+      preview_text: 'preview text of my updated product',
+      description: 'description of my updated product',
+      gallery: 'img/some.jpg',
+      external_id: '16',
+      meta: {
+        title: ' Updated Product Meta',
+        description: 'Updatet Description of Meta',
+        tags: 'Updated Tag of meta'
+      },
+      active: false,
+      order: '0',
+      image: ''
+    }
+  }
+}
+{
+  message: 'Product Find response',
+  level: 'debug',
+  timestamp: '2020-07-04T11:30:46.178Z',
+  label: 'test',
+  metadata: {
+    response: {
+      products: [
+        {
+          properties: [],
+          prices: [],
+          id: '5f0068668152ad3438e7e2eb',
+          name: 'my product',
+          slug: 'my-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my product',
+          description: 'description of my product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Sat Jul 04 2020 16:30:46 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Sat Jul 04 2020 16:30:46 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5f0068088152ad3438e7e2ea',
+          name: 'my product',
+          slug: 'my-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my product',
+          description: 'description of my product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Sat Jul 04 2020 16:29:12 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Sat Jul 04 2020 16:29:12 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5f0066ed8152ad3438e7e2e9',
+          name: 'my product',
+          slug: 'my-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my product',
+          description: 'description of my product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Sat Jul 04 2020 16:24:29 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Sat Jul 04 2020 16:24:29 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5eff02deea86680ce9b56fd7',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 15:05:18 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 15:05:18 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5eff021eea86680ce9b56fd6',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 15:02:06 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 15:02:06 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5eff00afea86680ce9b56fd5',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:55:59 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:55:59 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5eff0070ea86680ce9b56fd4',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:54:56 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:54:56 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5efeffd3ea86680ce9b56fd3',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:52:19 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:52:19 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5efefe42ea86680ce9b56fd2',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:45:38 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:45:38 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5efefe0dea86680ce9b56fd1',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:44:45 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:44:45 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5efefe04ea86680ce9b56fd0',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:44:36 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:44:36 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5efefdd9ea86680ce9b56fcf',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:43:53 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:43:53 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5efefd10ea86680ce9b56fce',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:40:32 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:40:32 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5efefca8ea86680ce9b56fcd',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:38:48 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:38:48 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5efefc84ea86680ce9b56fcc',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:38:12 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:38:12 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5efefc5fea86680ce9b56fcb',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:37:35 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:37:35 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5efefb32ea86680ce9b56fca',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:32:34 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:32:34 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5efefb21ea86680ce9b56fc9',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:32:17 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:32:17 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5efefa64ea86680ce9b56fc8',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:29:08 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:29:08 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5efefa60ea86680ce9b56fc7',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:29:04 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:29:04 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5efefa3cea86680ce9b56fc6',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:28:28 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:28:28 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5efef9dcea86680ce9b56fc5',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:26:52 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:26:52 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        }
+      ],
+      count: '22'
+    }
+  }
+}
+{
+  message: 'Main function is running',
+  level: 'info',
+  timestamp: '2020-07-04T11:30:56.866Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'grpc server is running at 7000',
+  level: 'info',
+  timestamp: '2020-07-04T11:30:56.910Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connected to the databasee',
+  level: 'info',
+  timestamp: '2020-07-04T11:30:56.923Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Product create request',
+  level: 'debug',
+  timestamp: '2020-07-04T11:31:01.629Z',
+  label: 'product',
+  metadata: {
+    request: {
+      name: 'my product',
+      category_id: '5ee1e1b06123a6296c4996af',
+      brand_id: '5ee36f67f8601328a86456bf',
+      additional_category_id: '5ee1e1b06123a6296c4996bd',
+      related_product_id: '5ee36f67f8601328a86456df',
+      preview_text: 'preview text of my product',
+      description: 'description of my product',
+      gallery: 'img/somephoto.jpg',
+      external_id: '15',
+      meta: {
+        title: 'Product Meta',
+        description: 'Description of Meta',
+        tags: 'Tag of meta'
+      },
+      active: false,
+      order: '0',
+      image: ''
+    }
+  }
+}
+{
+  message: 'product created',
+  level: 'info',
+  timestamp: '2020-07-04T11:31:01.661Z',
+  label: 'catalog-service',
+  metadata: { durationMs: 32 }
+}
+{
+  message: 'Product Create response',
+  level: 'debug',
+  timestamp: '2020-07-04T11:31:01.672Z',
+  label: 'test',
+  metadata: {
+    response: {
+      product: {
+        additional_categories: [],
+        related_products: [],
+        gallery: [ 'img/somephoto.jpg' ],
+        properties: [],
+        prices: [],
+        id: '5f006875f0e7483509d1ce4d',
+        name: 'my product',
+        slug: 'my-product',
+        category: null,
+        brand: null,
+        preview_text: 'preview text of my product',
+        description: 'description of my product',
+        active: false,
+        external_id: '15',
+        meta: {
+          title: 'Product Meta',
+          description: 'Description of Meta',
+          tags: 'Tag of meta'
+        },
+        price: { price: '0', old_price: '0' },
+        created_at: 'Sat Jul 04 2020 16:31:01 GMT+0500 (Uzbekistan Standard Time)',
+        updated_at: 'Sat Jul 04 2020 16:31:01 GMT+0500 (Uzbekistan Standard Time)',
+        image: ''
+      }
+    }
+  }
+}
+{
+  message: 'Product find request',
+  level: 'debug',
+  timestamp: '2020-07-04T11:31:01.684Z',
+  label: 'product',
+  metadata: {
+    request: {
+      page: '0',
+      search: '',
+      active: false,
+      inactive: false,
+      category: '',
+      brand: '',
+      limit: '0',
+      sort: '',
+      price_from: '0',
+      price_till: '0'
+    }
+  }
+}
+{
+  message: 'filtering products',
+  level: 'debug',
+  timestamp: '2020-07-04T11:31:01.686Z',
+  label: 'catalog-service',
+  metadata: {
+    query: {},
+    options: { skip: 0, limit: 0, sort: { created_at: -1 } }
+  }
+}
+{
+  message: 'Product update request',
+  level: 'debug',
+  timestamp: '2020-07-04T11:31:01.694Z',
+  label: 'product',
+  metadata: {
+    request: {
+      id: '5f006875f0e7483509d1ce4d',
+      name: 'my updated Product',
+      category_id: '5ee1e1b06123a6296c4996af',
+      brand_id: '5ee36f67f8601328a86456bf',
+      additional_category_id: '5ee1e1b06123a6296c4996bd',
+      related_product_id: '5ee36f67f8601328a86456df',
+      preview_text: 'preview text of my updated product',
+      description: 'description of my updated product',
+      gallery: 'img/some.jpg',
+      external_id: '16',
+      meta: {
+        title: ' Updated Product Meta',
+        description: 'Updatet Description of Meta',
+        tags: 'Updated Tag of meta'
+      },
+      active: false,
+      order: '0',
+      image: ''
+    }
+  }
+}
+{
+  message: 'Product Find response',
+  level: 'debug',
+  timestamp: '2020-07-04T11:31:01.739Z',
+  label: 'test',
+  metadata: {
+    response: {
+      products: [
+        {
+          properties: [],
+          prices: [],
+          id: '5f006875f0e7483509d1ce4d',
+          name: 'my product',
+          slug: 'my-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my product',
+          description: 'description of my product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Sat Jul 04 2020 16:31:01 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Sat Jul 04 2020 16:31:01 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5f0068668152ad3438e7e2eb',
+          name: 'my product',
+          slug: 'my-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my product',
+          description: 'description of my product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Sat Jul 04 2020 16:30:46 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Sat Jul 04 2020 16:30:46 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5f0068088152ad3438e7e2ea',
+          name: 'my product',
+          slug: 'my-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my product',
+          description: 'description of my product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Sat Jul 04 2020 16:29:12 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Sat Jul 04 2020 16:29:12 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5f0066ed8152ad3438e7e2e9',
+          name: 'my product',
+          slug: 'my-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my product',
+          description: 'description of my product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Sat Jul 04 2020 16:24:29 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Sat Jul 04 2020 16:24:29 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5eff02deea86680ce9b56fd7',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 15:05:18 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 15:05:18 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5eff021eea86680ce9b56fd6',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 15:02:06 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 15:02:06 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5eff00afea86680ce9b56fd5',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:55:59 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:55:59 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5eff0070ea86680ce9b56fd4',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:54:56 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:54:56 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5efeffd3ea86680ce9b56fd3',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:52:19 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:52:19 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5efefe42ea86680ce9b56fd2',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:45:38 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:45:38 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5efefe0dea86680ce9b56fd1',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:44:45 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:44:45 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5efefe04ea86680ce9b56fd0',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:44:36 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:44:36 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5efefdd9ea86680ce9b56fcf',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:43:53 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:43:53 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5efefd10ea86680ce9b56fce',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:40:32 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:40:32 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5efefca8ea86680ce9b56fcd',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:38:48 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:38:48 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5efefc84ea86680ce9b56fcc',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:38:12 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:38:12 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5efefc5fea86680ce9b56fcb',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:37:35 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:37:35 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5efefb32ea86680ce9b56fca',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:32:34 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:32:34 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5efefb21ea86680ce9b56fc9',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:32:17 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:32:17 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5efefa64ea86680ce9b56fc8',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:29:08 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:29:08 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5efefa60ea86680ce9b56fc7',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:29:04 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:29:04 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5efefa3cea86680ce9b56fc6',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:28:28 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:28:28 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        },
+        {
+          properties: [],
+          prices: [],
+          id: '5efef9dcea86680ce9b56fc5',
+          name: 'my updated Product',
+          slug: 'my-updated-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my updated product',
+          description: 'description of my updated product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Fri Jul 03 2020 14:26:52 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 03 2020 14:26:52 GMT+0500 (Uzbekistan Standard Time)',
+          image: ''
+        }
+      ],
+      count: '23'
+    }
+  }
+}
+{
+  message: 'Product Update response',
+  level: 'debug',
+  timestamp: '2020-07-04T11:31:01.742Z',
+  label: 'test',
+  metadata: {
+    response: {
+      product: {
+        additional_categories: [],
+        related_products: [],
+        gallery: [ 'img/some.jpg' ],
+        properties: [],
+        prices: [],
+        id: '5f006875f0e7483509d1ce4d',
+        name: 'my updated Product',
+        slug: 'my-updated-product',
+        category: null,
+        brand: null,
+        preview_text: 'preview text of my updated product',
+        description: 'description of my updated product',
+        active: false,
+        external_id: '16',
+        meta: {
+          title: ' Updated Product Meta',
+          description: 'Updatet Description of Meta',
+          tags: 'Updated Tag of meta'
+        },
+        price: { price: '0', old_price: '0' },
+        created_at: 'Sat Jul 04 2020 16:31:01 GMT+0500 (Uzbekistan Standard Time)',
+        updated_at: 'Sat Jul 04 2020 16:31:01 GMT+0500 (Uzbekistan Standard Time)',
+        image: ''
+      }
+    }
+  }
+}
+{
+  message: 'Product get request',
+  level: 'debug',
+  timestamp: '2020-07-04T11:31:01.745Z',
+  label: 'product',
+  metadata: { request: { id: '5f006875f0e7483509d1ce4d', slug: '' } }
+}
+{
+  message: 'Product Get response',
+  level: 'debug',
+  timestamp: '2020-07-04T11:31:01.753Z',
+  label: 'test',
+  metadata: {
+    response: {
+      product: {
+        additional_categories: [],
+        related_products: [],
+        gallery: [ 'img/some.jpg' ],
+        properties: [],
+        prices: [],
+        id: '5f006875f0e7483509d1ce4d',
+        name: 'my updated Product',
+        slug: 'my-updated-product',
+        category: null,
+        brand: null,
+        preview_text: 'preview text of my updated product',
+        description: 'description of my updated product',
+        active: false,
+        external_id: '16',
+        meta: {
+          title: ' Updated Product Meta',
+          description: 'Updatet Description of Meta',
+          tags: 'Updated Tag of meta'
+        },
+        price: { price: '0', old_price: '0' },
+        created_at: 'Sat Jul 04 2020 16:31:01 GMT+0500 (Uzbekistan Standard Time)',
+        updated_at: 'Sat Jul 04 2020 16:31:01 GMT+0500 (Uzbekistan Standard Time)',
+        image: ''
+      }
+    }
+  }
+}
+{
+  message: 'Shops get request',
+  level: 'debug',
+  timestamp: '2020-07-04T11:31:01.756Z',
+  label: 'shop',
+  metadata: { request: { product_id: '5f006875f0e7483509d1ce4d' } }
+}
+{
+  message: 'Shop Get response',
+  level: 'debug',
+  timestamp: '2020-07-04T11:31:01.761Z',
+  label: 'test',
+  metadata: { response: { shops: [] } }
+}
+{
+  message: 'Product delete request',
+  level: 'debug',
+  timestamp: '2020-07-04T11:31:01.763Z',
+  label: 'product',
+  metadata: { request: { id: '5f006875f0e7483509d1ce4d' } }
+}
+{
+  message: 'Product Delete response',
+  level: 'debug',
+  timestamp: '2020-07-04T11:31:01.768Z',
+  label: 'test',
+  metadata: { response: {} }
+}
