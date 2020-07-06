@@ -259,13 +259,11 @@ let productStorage = {
                 }
             ], (err, results) => {
                 if(err) return reject(err);
-                let products = results[0].map((p, i) => {
-                    return {
-                        ...p,
-                        image: p.image ? cnf.cloudUrl + p.image : '',
-                        gallery: p.gallery ? p.gallery.map((g, j) => g ? (cnf.cloudUrl + g) : '') : []
-                    }
-                });
+                let products = results[0];
+                for(let i = 0; i < products.length; i++) {
+                    products[i].image = products[i].image ? cnf.cloudUrl + products[i].image : '';
+                }
+                
                 return resolve({
                     products,
                     count: results[1]
