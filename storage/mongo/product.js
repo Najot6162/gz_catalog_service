@@ -11,10 +11,14 @@ let productStorage = {
         return new Promise((resolve, reject) => {
             if(!b.name) return reject(new Error('name is required'));
             if(!b.category_id) return reject(new Error('category field is required'));
-
+            if (!b.brand_id) return reject(new Error('Brand field is required'));
+            if (!b.additional_category_id) return reject(new Error('Additional category field is required'));
+            if (!b.related_product_id) return reject(new Error('Related product field is required'));
             let p = new Product(b);
             p.category   = b.category_id || null;
             p.brand      = b.brand_id || null;
+            p.additional_categories = b.additional_category_id || null;
+            p.related_products = b.related_product_id || null;
             p.created_at = Date.now();
             p.updated_at = Date.now();
 
@@ -24,6 +28,10 @@ let productStorage = {
                     path: 'category'
                 }).populate({
                     path: 'brand'
+                }).populate({
+                    path: "additional_categories"
+                }).populate({
+                    path: "related_products"
                 }).execPopulate().then((populatedProduct) => {
                     if(err) return reject(err);
                     return resolve(populatedProduct);
@@ -38,6 +46,7 @@ let productStorage = {
             if(!b.id) return reject(new Error('ID is not provided'));
             if(!b.name) return reject(new Error('name is required'));
             if(!b.category_id) return reject(new Error('category field is required'));
+            if (!b.brand_id) return reject(new Error('Brand field is required'));
 
             Product.findById(b.id, (err, product) => {
                 if(err) return reject(err);
@@ -46,9 +55,18 @@ let productStorage = {
                 product.name = b.name;
                 product.category = b.category_id || null;
                 product.brand = b.brand_id || null;
+                product.additional_categories = b.additional_category_id || null;
+                product.related_products = b.related_product_id || null;
                 product.active = b.active;
                 product.preview_text = b.preview_text;
                 product.description = b.description;
+                product.gallery = b.gallery
+                product.meta = {
+                    title: b.meta ? b.meta.title : product.meta.title,
+                    description: b.meta ? b.meta.description : product.meta.description,
+                    tags: b.meta ? b.meta.tags : product.meta.tags,       
+                } 
+                product.external_id = b.external_id;
                 product.order = b.order;
                 product.image = b.image;
 
@@ -58,6 +76,10 @@ let productStorage = {
                         path: 'category'
                     }).populate({
                         path: 'brand'
+                    }).populate({
+                        path: "additional_categories"
+                    }).populate({
+                        path: "related_products"
                     }).execPopulate().then((populatedProduct) => {
                         if(err) return reject(err);
                         return resolve(populatedProduct);
@@ -257,6 +279,10 @@ let productStorage = {
                 }
             }).populate({
                 path: 'brand'
+            }).populate({
+                path: "additional_categories"
+            }).populate({
+                path: "related_products"
             }).exec((err, product) => {
                 if(err) return reject(err);
                 if(!product) return reject(new Error('Document not found'));

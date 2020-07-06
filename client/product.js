@@ -23,8 +23,17 @@ function main() {
         name: 'my product',
         category_id: '5ee1e1b06123a6296c4996af',
         brand_id: '5ee36f67f8601328a86456bf',
+        additional_category_id: '5ee1e1b06123a6296c4996bd',
+        related_product_id: '5ee36f67f8601328a86456df',
         preview_text: 'preview text of my product',
-        description: 'description of my product'
+        description: 'description of my product',
+        external_id: '15',
+        gallery: 'img/somephoto.jpg',
+        meta: {
+            title: 'Product Meta',
+            description: 'Description of Meta',
+            tags: 'Tag of meta'
+        }
     }, (err, createResponse) => {
         if(err) return console.log('Error: ', err.message);
 
@@ -49,8 +58,17 @@ function main() {
             name: 'my updated Product',
             category_id: '5ee1e1b06123a6296c4996af',
             brand_id: '5ee36f67f8601328a86456bf',
+            additional_category_id: '5ee1e1b06123a6296c4996bd',
+            related_product_id: '5ee36f67f8601328a86456df',
             preview_text: 'preview text of my updated product',
-            description: 'description of my updated product'
+            description: 'description of my updated product',
+            external_id: '16',
+            gallery: 'img/some.jpg',
+            meta: {
+                title: ' Updated Product Meta',
+                description: 'Updatet Description of Meta',
+                tags: 'Updated Tag of meta'
+            }
         }, (err, updateResponse) => {
             if(err) return console.log('Error: ', err.message);
 

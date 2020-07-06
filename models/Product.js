@@ -14,11 +14,11 @@ var ProductSchema = new mongoose.Schema({
         type: Types.ObjectId,
         ref: 'Category'
     },
-    additionalCategories: [{
+    additional_categories: [{
         type: Types.ObjectId,
         ref: 'Category'
     }],
-    relatedProducts: [{
+    related_products: [{
         type: Types.ObjectId,
         ref: 'Product'
     }],
