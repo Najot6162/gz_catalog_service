@@ -5,6 +5,7 @@ const Product  = require('../../models/Product');
 const Brand    = require('../../models/Brand');
 const Shop     = require('../../models/Shop');
 const logger = require('../../config/logger');
+const cnf = require('../../config');
 
 let productStorage = {
     create: (b) => {
@@ -258,8 +259,15 @@ let productStorage = {
                 }
             ], (err, results) => {
                 if(err) return reject(err);
+                let products = results[0].map((p, i) => {
+                    return {
+                        ...p,
+                        image: p.image ? cnf.cloudUrl + p.image : '',
+                        gallery: p.gallery ? p.gallery.map((g, j) => g ? (cnf.cloudUrl + g) : '') : []
+                    }
+                }),
                 return resolve({
-                    products: results[0],
+                    products,
                     count: results[1]
                 });
             });
@@ -286,6 +294,10 @@ let productStorage = {
             }).exec((err, product) => {
                 if(err) return reject(err);
                 if(!product) return reject(new Error('Document not found'));
+                
+                // setting image fields
+                product.image = product.image ? (cnf.cloudUrl + product.image) : '';
+                product.gallery = product.gallery ? product.gallery.map((g, j) => g ? (cnf.cloudUrl + g) : '') : [];
                 return resolve(product);
             });
         });
