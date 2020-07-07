@@ -13,8 +13,8 @@ let productStorage = {
             if(!b.name) return reject(new Error('name is required'));
             if(!b.category_id) return reject(new Error('category field is required'));
             if (!b.brand_id) return reject(new Error('Brand field is required'));
-            if (!b.additional_category_id) return reject(new Error('Additional category field is required'));
-            if (!b.related_product_id) return reject(new Error('Related product field is required'));
+            // if (!b.additional_category_id) return reject(new Error('Additional category field is required'));
+            // if (!b.related_product_id) return reject(new Error('Related product field is required'));
             let p = new Product(b);
             p.category   = b.category_id || null;
             p.brand      = b.brand_id || null;
@@ -263,7 +263,7 @@ let productStorage = {
                 for(let i = 0; i < products.length; i++) {
                     products[i].image = products[i].image ? cnf.cloudUrl + products[i].image : '';
                 }
-                
+
                 return resolve({
                     products,
                     count: results[1]
@@ -276,8 +276,18 @@ let productStorage = {
             if(!(req.id || req.slug)) return reject(new Error('Key is not given'));
 
             let query = {}
-            if(req.id) query._id = req.id;
-            if(req.slug) query.slug = req.slug;
+
+            // making query
+            query = {
+                ...query,
+                $or: [{
+                    slug: req.slug
+                }]
+            }
+            if(mongoose.Types.ObjectId.isValid(req.id)) query.$or.push({ _id: req.id });
+
+            logger.debug('finding a product', { query });
+            
             Product.findOne(query).populate({
                 path: 'category',
                 populate: {

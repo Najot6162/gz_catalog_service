@@ -100,8 +100,16 @@ let categoryStorage = {
             if(!(req.id || req.slug)) return reject(new Error('ID is not given'));
 
             let query = {}
-            if(mongoose.Types.ObjectId.isValid(req.id)) query._id = mongoose.Types.ObjectId(req.id);
-            if(req.slug) query.slug = req.slug;
+
+            // making query
+            query = {
+                ...query,
+                $or: [{
+                    slug: req.slug
+                }]
+            }
+            if(mongoose.Types.ObjectId.isValid(req.id)) query.$or.push({ _id: req.id });
+            
             Category.aggregate([
                 { $match: query },
                 { $limit: 1},

@@ -21,22 +21,23 @@ let shopStorage = {
             if (!b.id) return reject(new Error('ID is not provided'));
             if (!b.name) return reject(new Error('name is required'));
 
-            Shop.findById(b.id, (err, br) => {
+            Shop.findById(b.id, (err, sh) => {
                 if (err) return reject(err);
-                if (!br) return reject(new Error('Document with id:' + b.id + ' not found'));
+                if (!sh) return reject(new Error('Document with id:' + b.id + ' not found'));
 
-                br.name = b.name;
-                br.phone = b.phone;
-                br.address = b.address;
-                br.address2 = b.address2
-                br.active = b.active;
-                br.preview_text = b.preview_text;
-                br.description = b.description;
-                br.order = b.order;
-                br.image = b.image;
-                br.updated_at = Date.now();
+                sh.name = b.name;
+                sh.phone = b.phone;
+                sh.address = b.address;
+                sh.address2 = b.address2
+                sh.active = b.active;
+                sh.preview_text = b.preview_text;
+                sh.description = b.description;
+                sh.working_hours = b.working_hours;
+                sh.order = b.order;
+                sh.image = b.image;
+                sh.updated_at = Date.now();
 
-                br.save((err, updatedShop) => {
+                sh.save((err, updatedShop) => {
                     if (err) return reject(err);
                     resolve(updatedShop);
                 });

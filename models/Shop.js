@@ -38,6 +38,9 @@ var ShopSchema = new mongoose.Schema({
         type:String,
         default: ''
     },
+    working_hours: {
+        type: String
+    },
     active:{
         type: Boolean,
         default: true
