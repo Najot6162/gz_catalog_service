@@ -1,5 +1,6 @@
 const Product = require('../../models/Product');
 const Shop = require('../../models/Shop');
+const cnf = require('../../config');
 
 let shopStorage = {
     create: (b) => {
@@ -91,6 +92,13 @@ let shopStorage = {
 
             Shop.find(query, (err, shops) => {
                 if (err) return reject(err);
+
+                // setting images
+                shops = shops ? shops.map((sh, i) => ({
+                    ...sh,
+                    image: sh.image ? (cnf.cloudUrl + sh.image) : ''
+                })) : [];
+
                 resolve(shops);
             });
         });
@@ -101,10 +109,14 @@ let shopStorage = {
             let query = {}
             if (req.id) query._id = req.id;
             if (req.slug) query.slug = req.slug;
-            Shop.findOne(query, (err, br) => {
+            Shop.findOne(query, (err, sh) => {
                 if (err) return reject(err);
-                if (!br) return reject(new Error('Document not found'));
-                return resolve(br);
+                if (!sh) return reject(new Error('Document not found'));
+
+                // setting image
+                sh.image = sh.image ? (cnf.cloudUrl + sh.image) : '';
+                
+                return resolve(sh);
             });
         });
     },

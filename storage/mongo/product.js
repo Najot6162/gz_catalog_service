@@ -311,8 +311,6 @@ let productStorage = {
                 path: 'brand'
             }).populate({
                 path: "additional_categories"
-            }).populate({
-                path: "related_products"
             }).exec((err, product) => {
                 if(err) return reject(err);
                 if(!product) return reject(new Error('Document not found'));
@@ -320,7 +318,11 @@ let productStorage = {
                 // setting image fields
                 product.image = product.image ? (cnf.cloudUrl + product.image) : '';
                 product.gallery = product.gallery ? product.gallery.map((g, j) => g ? (cnf.cloudUrl + g) : '') : [];
-                return resolve(product);
+                
+                getRelatedProducts(product._id, 10).then((related_products) => {
+                    product.related_products = related_products;
+                    return resolve(product);
+                });
             });
         });
     },
@@ -353,5 +355,33 @@ let productStorage = {
         });
     }
 }
+
+const getRelatedProducts = (product_id = '', limit = 10) => (
+    new Promise((resolve, reject) => {
+        let query = {};
+        if(mongoose.Types.ObjectId.isValid(product_id)) query._id = { $ne : product_id};
+        Product.find(query, {}, {limit}).populate({
+            path: 'category'
+        }).populate({
+            path: 'brand'
+        }).exec((err, products) => {
+            if(err) {
+                logger.error(err.message, {
+                    function: 'getting related products',
+                    product_id,
+                    limit
+                });
+                return resolve([]);
+            }
+
+            // setting images
+            for(let i = 0; i < products.length; i++) {
+                products[i].image = products[i].image ? cnf.cloudUrl + products[i].image : '';
+            }
+
+            return resolve(products);
+        });
+    })
+);
 
 module.exports = productStorage;

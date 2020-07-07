@@ -1,6 +1,6 @@
 const config = {
     environment: getConf('NODE_ENV', 'dev'),
-    mongoHost: getConf('MONGO_HOST', 'catalog-db'),
+    mongoHost: getConf('MONGO_HOST', 'dev.goodzone.uz'),
     mongoPort: getConf('MONGO_PORT', '27017'),
     mongoUser: getConf('MONGO_USER', 'rj'),
     mongoPassword: getConf('MONGO_PASSWORD', 'mysecret'),
