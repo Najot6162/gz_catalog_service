@@ -94,10 +94,9 @@ let shopStorage = {
                 if (err) return reject(err);
 
                 // setting images
-                shops = shops ? shops.map((sh, i) => ({
-                    ...sh,
-                    image: sh.image ? (cnf.cloudUrl + sh.image) : ''
-                })) : [];
+                for(let i = 0; i < shops.length; i++){
+                    shops[i].image = shops[i].image ? (cnf.cloudUrl + shops[i].image) : ''
+                }
 
                 resolve(shops);
             });
@@ -115,7 +114,7 @@ let shopStorage = {
 
                 // setting image
                 sh.image = sh.image ? (cnf.cloudUrl + sh.image) : '';
-                
+
                 return resolve(sh);
             });
         });

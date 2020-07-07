@@ -27,6 +27,10 @@ let productStorage = {
                 return mongoose.Types.ObjectId.isValid(f.trim());
             }).map((f, i) => f.trim());
 
+            p.gallery = b.gallery.split(',').filter((g) => {
+                return g.trim();
+            }).map((g, i) => g.trim());
+
             p.created_at = Date.now();
             p.updated_at = Date.now();
 
@@ -75,7 +79,9 @@ let productStorage = {
                 product.active = b.active;
                 product.preview_text = b.preview_text;
                 product.description = b.description;
-                product.gallery = b.gallery
+                product.gallery = b.gallery.split(',').filter((g) => {
+                    return g.trim();
+                }).map((g, i) => g.trim());
                 product.meta = {
                     title: b.meta ? b.meta.title : product.meta.title,
                     description: b.meta ? b.meta.description : product.meta.description,
