@@ -322,6 +322,13 @@ let productStorage = {
                 getRelatedProducts(product._id, 10).then((related_products) => {
                     product.related_products = related_products;
                     return resolve(product);
+                }).catch((err) => {
+                    logger.error(err.message, {
+                        function: 'getting related products',
+                        product_id,
+                        limit
+                    });
+                    return resolve(product);
                 });
             });
         });
@@ -358,28 +365,86 @@ let productStorage = {
 
 const getRelatedProducts = (product_id = '', limit = 10) => (
     new Promise((resolve, reject) => {
-        let query = {};
-        if(mongoose.Types.ObjectId.isValid(product_id)) query._id = { $ne : product_id};
-        Product.find(query, {}, {limit}).populate({
-            path: 'category'
-        }).populate({
-            path: 'brand'
-        }).exec((err, products) => {
-            if(err) {
-                logger.error(err.message, {
-                    function: 'getting related products',
-                    product_id,
-                    limit
-                });
-                return resolve([]);
-            }
+        let related_products = [];
+        Product.findById(product_id, (err, p) => {
+            if(err) reject(err);
 
-            // setting images
-            for(let i = 0; i < products.length; i++) {
-                products[i].image = products[i].image ? cnf.cloudUrl + products[i].image : '';
-            }
+            async.parallel({
+                relatedProducts: (cb) => {
+                    Product.find({
+                        _id: { $in: p.related_products}
+                    }, {}, {limit}).populate({
+                        path: 'category'
+                    }).populate({
+                        path: 'brand'
+                    }).exec((err, products) => {
+                        if(err) return cb(err)
+                        return cb(null, products);
+                    });
+                },
+                productsOfSameCategory: (cb) => {
+                    Product.find({
+                        _id: { $nin: p.related_products},
+                        category: p.category
+                    }, {}, {limit}).populate({
+                        path: 'category'
+                    }).populate({
+                        path: 'brand'
+                    }).exec((err, products) => {
+                        if(err) return cb(err)
+                        return cb(null, products);
+                    });
+                },
+                randomProducts: (cb) => {
+                    Product.find({
+                        _id: { $nin: p.related_products },
+                        category: { $ne: p.category}
+                    }, {}, {limit}).populate({
+                        path: 'category'
+                    }).populate({
+                        path: 'brand'
+                    }).exec((err, products) => {
+                        if(err) return cb(err)
+                        return cb(null, products);
+                    });
+                }
+            }, (err, results) => {
+                if(err) {
+                    logger.error(err.message, {
+                        function: 'getting related products',
+                        product_id,
+                        limit
+                    });
+                    return resolve([]);
+                }
 
-            return resolve(products);
+                related_products = results.relatedProducts;
+                let emptySpaces = limit - related_products.length;
+
+                for(let i = 0; i < emptySpaces; i++){
+                    if(results.productsOfSameCategory[i]){
+                        related_products.push(results.productsOfSameCategory[i]);
+                    }else{
+                        i = emptySpaces;
+                    }
+                }
+                emptySpaces = limit - related_products.length;
+
+                for(let i = 0; i < emptySpaces; i++){
+                    if(results.randomProducts[i]){
+                        related_products.push(results.randomProducts[i]);
+                    }else{
+                        i = emptySpaces;
+                    }
+                }
+
+                // setting images
+                for(let i = 0; i < related_products.length; i++) {
+                    related_products[i].image = related_products[i].image ? cnf.cloudUrl + related_products[i].image : '';
+                }
+
+                return resolve(related_products);
+            });
         });
     })
 );
