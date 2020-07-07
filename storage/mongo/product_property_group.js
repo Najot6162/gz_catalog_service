@@ -1,3 +1,4 @@
+const mongoose = require('mongoose');
 const Product = require('../../models/Product');
 const ProductPropertyGroup = require('../../models/ProductPropertyGroup');
 
@@ -9,7 +10,9 @@ let productPropertyGroupStorage = {
             if(!b.name) return reject(new Error('name is required'));
             
             let br = new ProductPropertyGroup(b);
-            br.properties = b.properties ? b.properties.split(',') : [];
+            br.properties = b.properties.split(',').filter((f) => {
+                return mongoose.Types.ObjectId.isValid(f.trim());
+            }).map((f, i) => f.trim());
             br.created_at = Date.now();
             br.updated_at = Date.now();
             
@@ -32,7 +35,9 @@ let productPropertyGroupStorage = {
                 ppg.description = b.description;
                 ppg.order = b.order;
                 ppg.active = b.active;
-                ppg.properties = b.properties ? b.properties.split(',') : [];
+                ppg.properties = b.properties.split(',').filter((f) => {
+                    return mongoose.Types.ObjectId.isValid(f.trim());
+                }).map((f, i) => f.trim());
                 ppg.updated_at = Date.now();
 
                 ppg.save((err, updatedProductPropertyGroup) => {

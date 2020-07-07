@@ -18,8 +18,15 @@ let productStorage = {
             let p = new Product(b);
             p.category   = b.category_id || null;
             p.brand      = b.brand_id || null;
-            p.additional_categories = b.additional_category_id || null;
-            p.related_products = b.related_product_id || null;
+
+            p.additional_categories = b.additional_categories.split(',').filter((f) => {
+                return mongoose.Types.ObjectId.isValid(f.trim());
+            }).map((f, i) => f.trim());
+
+            p.related_products = b.related_products.split(',').filter((f) => {
+                return mongoose.Types.ObjectId.isValid(f.trim());
+            }).map((f, i) => f.trim());
+
             p.created_at = Date.now();
             p.updated_at = Date.now();
 
@@ -56,8 +63,15 @@ let productStorage = {
                 product.name = b.name;
                 product.category = b.category_id || null;
                 product.brand = b.brand_id || null;
-                product.additional_categories = b.additional_category_id || null;
-                product.related_products = b.related_product_id || null;
+                
+                product.additional_categories = b.additional_categories.split(',').filter((f) => {
+                    return mongoose.Types.ObjectId.isValid(f.trim());
+                }).map((f, i) => f.trim());
+
+                product.related_products = b.related_products.split(',').filter((f) => {
+                    return mongoose.Types.ObjectId.isValid(f.trim());
+                }).map((f, i) => f.trim());
+
                 product.active = b.active;
                 product.preview_text = b.preview_text;
                 product.description = b.description;
@@ -287,7 +301,7 @@ let productStorage = {
             if(mongoose.Types.ObjectId.isValid(req.id)) query.$or.push({ _id: req.id });
 
             logger.debug('finding a product', { query });
-            
+
             Product.findOne(query).populate({
                 path: 'category',
                 populate: {

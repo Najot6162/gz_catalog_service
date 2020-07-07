@@ -34,6 +34,20 @@ var CategorySchema = new mongoose.Schema({
         type: Types.ObjectId,
         ref: 'ProductPropertyGroup'
     }],
+    meta: {
+        title: {
+            type: String,
+            default: ''
+        },
+        description: {
+            type: String,
+            default: ''
+        },
+        tags: {
+            type: String,
+            default: ''
+        }
+    },
     created_at: {
         type:Date,
         default: Date.now
