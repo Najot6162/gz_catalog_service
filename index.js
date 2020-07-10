@@ -23,8 +23,8 @@ function main(){
     logger.info('Main function is running');
 
     // Connecting to database
-    const mongoDBUrl = 'mongodb://' + cfg.mongoUser + ':' + cfg.mongoPassword + '@' + cfg.mongoHost + ':' + cfg.mongoPort + '/' + cfg.mongoDatabase;
-    //mongoDBUrl = 'mongodb://localhost:27017/catalog_service';
+    //const mongoDBUrl = 'mongodb://' + cfg.mongoUser + ':' + cfg.mongoPassword + '@' + cfg.mongoHost + ':' + cfg.mongoPort + '/' + cfg.mongoDatabase;
+    mongoDBUrl = 'mongodb://localhost:27017/catalog_service';
     mongoose.connect(mongoDBUrl, { 
         useNewUrlParser:true,
         useUnifiedTopology:true 
