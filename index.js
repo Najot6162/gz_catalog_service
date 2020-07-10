@@ -24,9 +24,10 @@ function main(){
 
     // Connecting to database
     const mongoDBUrl = 'mongodb://' + cfg.mongoUser + ':' + cfg.mongoPassword + '@' + cfg.mongoHost + ':' + cfg.mongoPort + '/' + cfg.mongoDatabase;
-    // mongoDBUrl = 'mongodb://localhost:27017/catalog_service';
+    //mongoDBUrl = 'mongodb://localhost:27017/catalog_service';
     mongoose.connect(mongoDBUrl, { 
-        useNewUrlParser:true 
+        useNewUrlParser:true,
+        useUnifiedTopology:true 
     }, (err) => {
         if(err){
             logger.error('There is an error in connecting db (' + mongoDBUrl + '): ' + err.message);

@@ -12031,3 +12031,452 @@
   label: 'test',
   metadata: { response: {} }
 }
+{
+  message: 'Main function is running',
+  level: 'info',
+  timestamp: '2020-07-10T06:04:15.029Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'grpc server is running at 7000',
+  level: 'info',
+  timestamp: '2020-07-10T06:04:15.086Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connected to the databasee',
+  level: 'info',
+  timestamp: '2020-07-10T06:04:17.486Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Shop Create Request',
+  level: 'debug',
+  timestamp: '2020-07-10T06:04:47.249Z',
+  label: 'shop',
+  metadata: {
+    request: {
+      name: 'my Shop',
+      phone: '',
+      working_hours: '',
+      address: 'Address of my shop',
+      address2: '',
+      preview_text: 'preview text of my shop',
+      description: 'description of my shop',
+      loc: { long: '72', lat: '43' },
+      active: true,
+      image: '',
+      order: '0'
+    }
+  }
+}
+{
+  message: 'Shop Find Request',
+  level: 'debug',
+  timestamp: '2020-07-10T06:04:48.397Z',
+  label: 'shop',
+  metadata: {
+    request: {
+      page: '0',
+      search: '',
+      active: false,
+      inactive: false,
+      limit: '0',
+      sort: ''
+    }
+  }
+}
+{
+  message: 'Shop Update Request',
+  level: 'debug',
+  timestamp: '2020-07-10T06:04:48.403Z',
+  label: 'shop',
+  metadata: {
+    request: {
+      id: '5f0804ffa8ecec8b4be71da5',
+      name: 'my updated Shop',
+      phone: '',
+      working_hours: '',
+      address: 'Address of my updated shop',
+      address2: '',
+      preview_text: 'preview text of my updated shop',
+      description: 'description of my updated shop',
+      loc: { long: '72', lat: '43' },
+      active: true,
+      image: '',
+      order: '0'
+    }
+  }
+}
+{
+  message: 'Shop Get Request',
+  level: 'debug',
+  timestamp: '2020-07-10T06:04:49.608Z',
+  label: 'shop',
+  metadata: { request: { id: '5f0804ffa8ecec8b4be71da5', slug: '' } }
+}
+{
+  message: 'Shop Delete Request',
+  level: 'debug',
+  timestamp: '2020-07-10T06:04:49.932Z',
+  label: 'shop',
+  metadata: { request: { id: '5f0804ffa8ecec8b4be71da5' } }
+}
+{
+  message: 'Shop Create Request',
+  level: 'debug',
+  timestamp: '2020-07-10T06:05:38.494Z',
+  label: 'shop',
+  metadata: {
+    request: {
+      name: 'my Shop',
+      phone: '',
+      working_hours: '',
+      address: 'Address of my shop',
+      address2: '',
+      preview_text: 'preview text of my shop',
+      description: 'description of my shop',
+      loc: { long: '72', lat: '43' },
+      active: true,
+      image: '',
+      order: '0'
+    }
+  }
+}
+{
+  message: 'Shop Find Request',
+  level: 'debug',
+  timestamp: '2020-07-10T06:05:39.534Z',
+  label: 'shop',
+  metadata: {
+    request: {
+      page: '0',
+      search: '',
+      active: false,
+      inactive: false,
+      limit: '0',
+      sort: ''
+    }
+  }
+}
+{
+  message: 'Shop Update Request',
+  level: 'debug',
+  timestamp: '2020-07-10T06:05:39.535Z',
+  label: 'shop',
+  metadata: {
+    request: {
+      id: '5f080532a8ecec8b4be71da6',
+      name: 'my updated Shop',
+      phone: '',
+      working_hours: '',
+      address: 'Address of my updated shop',
+      address2: '',
+      preview_text: 'preview text of my updated shop',
+      description: 'description of my updated shop',
+      loc: { long: '72', lat: '43' },
+      active: true,
+      image: '',
+      order: '0'
+    }
+  }
+}
+{
+  message: 'Shop Get Request',
+  level: 'debug',
+  timestamp: '2020-07-10T06:05:40.811Z',
+  label: 'shop',
+  metadata: { request: { id: '5f080532a8ecec8b4be71da6', slug: '' } }
+}
+{
+  message: 'Shop Delete Request',
+  level: 'debug',
+  timestamp: '2020-07-10T06:05:41.122Z',
+  label: 'shop',
+  metadata: { request: { id: '5f080532a8ecec8b4be71da6' } }
+}
+{
+  message: 'Shop Create Request',
+  level: 'debug',
+  timestamp: '2020-07-10T06:06:35.748Z',
+  label: 'shop',
+  metadata: {
+    request: {
+      name: 'my Shop',
+      phone: '',
+      working_hours: '',
+      address: 'Address of my shop',
+      address2: '',
+      preview_text: 'preview text of my shop',
+      description: 'description of my shop',
+      loc: { long: '72', lat: '43' },
+      active: true,
+      image: '',
+      order: '0'
+    }
+  }
+}
+{
+  message: 'Shop Find Request',
+  level: 'debug',
+  timestamp: '2020-07-10T06:06:36.607Z',
+  label: 'shop',
+  metadata: {
+    request: {
+      page: '0',
+      search: '',
+      active: false,
+      inactive: false,
+      limit: '0',
+      sort: ''
+    }
+  }
+}
+{
+  message: 'Shop Update Request',
+  level: 'debug',
+  timestamp: '2020-07-10T06:06:36.608Z',
+  label: 'shop',
+  metadata: {
+    request: {
+      id: '5f08056ba8ecec8b4be71da7',
+      name: 'my updated Shop',
+      phone: '',
+      working_hours: '',
+      address: 'Address of my updated shop',
+      address2: '',
+      preview_text: 'preview text of my updated shop',
+      description: 'description of my updated shop',
+      loc: { long: '72', lat: '43' },
+      active: true,
+      image: '',
+      order: '0'
+    }
+  }
+}
+{
+  message: 'Shop Get Request',
+  level: 'debug',
+  timestamp: '2020-07-10T06:06:37.543Z',
+  label: 'shop',
+  metadata: { request: { id: '5f08056ba8ecec8b4be71da7', slug: '' } }
+}
+{
+  message: 'Shop Delete Request',
+  level: 'debug',
+  timestamp: '2020-07-10T06:06:37.946Z',
+  label: 'shop',
+  metadata: { request: { id: '5f08056ba8ecec8b4be71da7' } }
+}
+{
+  message: 'Main function is running',
+  level: 'info',
+  timestamp: '2020-07-10T06:09:37.665Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'grpc server is running at 7000',
+  level: 'info',
+  timestamp: '2020-07-10T06:09:37.708Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connected to the databasee',
+  level: 'info',
+  timestamp: '2020-07-10T06:09:37.719Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Shop Create Request',
+  level: 'debug',
+  timestamp: '2020-07-10T06:09:43.939Z',
+  label: 'shop',
+  metadata: {
+    request: {
+      name: 'my Shop',
+      phone: '',
+      working_hours: '',
+      address: 'Address of my shop',
+      address2: '',
+      preview_text: 'preview text of my shop',
+      description: 'description of my shop',
+      loc: { long: '72', lat: '43' },
+      active: true,
+      image: '',
+      order: '0'
+    }
+  }
+}
+{
+  message: 'Shop Find Request',
+  level: 'debug',
+  timestamp: '2020-07-10T06:09:43.986Z',
+  label: 'shop',
+  metadata: {
+    request: {
+      page: '0',
+      search: '',
+      active: false,
+      inactive: false,
+      limit: '0',
+      sort: ''
+    }
+  }
+}
+{
+  message: 'Shop Update Request',
+  level: 'debug',
+  timestamp: '2020-07-10T06:09:43.993Z',
+  label: 'shop',
+  metadata: {
+    request: {
+      id: '5f080627e108448bc76912aa',
+      name: 'my updated Shop',
+      phone: '',
+      working_hours: '',
+      address: 'Address of my updated shop',
+      address2: '',
+      preview_text: 'preview text of my updated shop',
+      description: 'description of my updated shop',
+      loc: { long: '72', lat: '43' },
+      active: true,
+      image: '',
+      order: '0'
+    }
+  }
+}
+{
+  message: 'Shop Get Request',
+  level: 'debug',
+  timestamp: '2020-07-10T06:09:44.015Z',
+  label: 'shop',
+  metadata: { request: { id: '5f080627e108448bc76912aa', slug: '' } }
+}
+{
+  message: 'Shop Delete Request',
+  level: 'debug',
+  timestamp: '2020-07-10T06:09:44.020Z',
+  label: 'shop',
+  metadata: { request: { id: '5f080627e108448bc76912aa' } }
+}
+{
+  message: 'Main function is running',
+  level: 'info',
+  timestamp: '2020-07-10T06:10:49.976Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'grpc server is running at 7000',
+  level: 'info',
+  timestamp: '2020-07-10T06:10:50.024Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connected to the databasee',
+  level: 'info',
+  timestamp: '2020-07-10T06:10:50.066Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Main function is running',
+  level: 'info',
+  timestamp: '2020-07-10T06:11:23.731Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'grpc server is running at 7000',
+  level: 'info',
+  timestamp: '2020-07-10T06:11:23.780Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connected to the databasee',
+  level: 'info',
+  timestamp: '2020-07-10T06:11:23.797Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Shop Create Request',
+  level: 'debug',
+  timestamp: '2020-07-10T06:11:42.187Z',
+  label: 'shop',
+  metadata: {
+    request: {
+      name: 'my Shop',
+      phone: '',
+      working_hours: '',
+      address: 'Address of my shop',
+      address2: '',
+      preview_text: 'preview text of my shop',
+      description: 'description of my shop',
+      loc: { long: '72', lat: '43' },
+      active: true,
+      image: '',
+      order: '0'
+    }
+  }
+}
+{
+  message: 'Shop Find Request',
+  level: 'debug',
+  timestamp: '2020-07-10T06:11:42.226Z',
+  label: 'shop',
+  metadata: {
+    request: {
+      page: '0',
+      search: '',
+      active: false,
+      inactive: false,
+      limit: '0',
+      sort: ''
+    }
+  }
+}
+{
+  message: 'Shop Update Request',
+  level: 'debug',
+  timestamp: '2020-07-10T06:11:42.231Z',
+  label: 'shop',
+  metadata: {
+    request: {
+      id: '5f08069e6eb4538c14582d53',
+      name: 'my updated Shop',
+      phone: '',
+      working_hours: '',
+      address: 'Address of my updated shop',
+      address2: '',
+      preview_text: 'preview text of my updated shop',
+      description: 'description of my updated shop',
+      loc: { long: '72', lat: '43' },
+      active: true,
+      image: '',
+      order: '0'
+    }
+  }
+}
+{
+  message: 'Shop Get Request',
+  level: 'debug',
+  timestamp: '2020-07-10T06:11:42.250Z',
+  label: 'shop',
+  metadata: { request: { id: '5f08069e6eb4538c14582d53', slug: '' } }
+}
+{
+  message: 'Shop Delete Request',
+  level: 'debug',
+  timestamp: '2020-07-10T06:11:42.256Z',
+  label: 'shop',
+  metadata: { request: { id: '5f08069e6eb4538c14582d53' } }
+}

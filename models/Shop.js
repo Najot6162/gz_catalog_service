@@ -41,6 +41,14 @@ var ShopSchema = new mongoose.Schema({
     working_hours: {
         type: String
     },
+    loc: {
+        long: {
+            type: Number
+        },
+        lat: {
+            type: Number
+        } 
+    },
     active:{
         type: Boolean,
         default: true

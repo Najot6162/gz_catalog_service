@@ -23,6 +23,10 @@ function main() {
         preview_text: 'preview text of my shop',
         description: 'description of my shop',
         address: 'Address of my shop',
+        loc: {
+            long: 72.223,
+            lat:  43.213
+        },
         active: true
     }, (err, createResponse) => {
         console.log('Shop Create');
@@ -43,6 +47,10 @@ function main() {
             preview_text: 'preview text of my updated shop',
             description: 'description of my updated shop',
             address: 'Address of my updated shop',
+            loc: {
+                long: 72.252,
+                lat: 43.223
+            },
             active: true
         }, (err, updateResponse) => {
             console.log('Shop Update');
