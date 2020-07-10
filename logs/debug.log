@@ -12031,3 +12031,75 @@
   label: 'test',
   metadata: { response: {} }
 }
+{
+  message: 'Main function is running',
+  level: 'info',
+  timestamp: '2020-07-08T05:13:55.430Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connecting to db: mongodb://rj:mysecret@dev.goodzone.uz:27017/catalog_service',
+  level: 'info',
+  timestamp: '2020-07-08T05:13:55.434Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'grpc server is running at 7000',
+  level: 'info',
+  timestamp: '2020-07-08T05:13:55.509Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connected to the databasee',
+  level: 'info',
+  timestamp: '2020-07-08T05:13:57.033Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Main function is running',
+  level: 'info',
+  timestamp: '2020-07-08T05:33:04.914Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connecting to db: mongodb://rj:umysecret@dev.goodzone.uz:27017/catalog_service',
+  level: 'info',
+  timestamp: '2020-07-08T05:33:04.918Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'grpc server is running at 7000',
+  level: 'info',
+  timestamp: '2020-07-08T05:33:04.980Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'There is an error in connecting db (mongodb://rj:umysecret@dev.goodzone.uz:27017/catalog_service): failed to connect to server [dev.goodzone.uz:27017] on first connect [MongoError: Authentication failed.\n' +
+    '    at /Users/rjavlonbek/projects/go/src/bitbucket.org/alien_soft/gz_catalog_service/node_modules/mongodb/lib/core/auth/auth_provider.js:46:25\n' +
+    '    at /Users/rjavlonbek/projects/go/src/bitbucket.org/alien_soft/gz_catalog_service/node_modules/mongodb/lib/core/auth/scram.js:240:11\n' +
+    '    at _callback (/Users/rjavlonbek/projects/go/src/bitbucket.org/alien_soft/gz_catalog_service/node_modules/mongodb/lib/core/connection/connect.js:349:5)\n' +
+    '    at Connection.messageHandler (/Users/rjavlonbek/projects/go/src/bitbucket.org/alien_soft/gz_catalog_service/node_modules/mongodb/lib/core/connection/connect.js:378:5)\n' +
+    '    at Connection.emit (events.js:315:20)\n' +
+    '    at processMessage (/Users/rjavlonbek/projects/go/src/bitbucket.org/alien_soft/gz_catalog_service/node_modules/mongodb/lib/core/connection/connection.js:384:10)\n' +
+    '    at Socket.<anonymous> (/Users/rjavlonbek/projects/go/src/bitbucket.org/alien_soft/gz_catalog_service/node_modules/mongodb/lib/core/connection/connection.js:553:15)\n' +
+    '    at Socket.emit (events.js:315:20)\n' +
+    '    at addChunk (_stream_readable.js:295:12)\n' +
+    '    at readableAddChunk (_stream_readable.js:271:9)\n' +
+    '    at Socket.Readable.push (_stream_readable.js:212:10)\n' +
+    '    at TCP.onStreamRead (internal/stream_base_commons.js:186:23) {\n' +
+    '  ok: 0,\n' +
+    '  code: 18,\n' +
+    "  codeName: 'AuthenticationFailed'\n" +
+    '}]',
+  level: 'error',
+  timestamp: '2020-07-08T05:33:06.261Z',
+  label: 'catalog-service',
+  metadata: {}
+}
