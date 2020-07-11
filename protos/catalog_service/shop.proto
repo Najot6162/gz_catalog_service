@@ -16,8 +16,8 @@ service ShopService {
 
 message CreateShopRequest {
      message Loc {
-        int64 long = 1;
-        int64 lat = 2;
+        float long = 1;
+        float lat = 2;
     }
     string name = 1;
     string phone = 2;
@@ -34,8 +34,8 @@ message CreateShopRequest {
 
 message UpdateShopRequest {
      message Loc {
-        int64 long = 1;
-        int64 lat = 2;
+        float long = 1;
+        float lat = 2;
     }
     string id = 1;
     string name = 2;

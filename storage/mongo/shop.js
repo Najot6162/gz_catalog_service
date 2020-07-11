@@ -7,6 +7,7 @@ let shopStorage = {
         return new Promise((resolve, reject) => {
             if (!b.name) return reject(new Error('name is required'));
             if (!b.address) return reject(new Error('address is required'));
+            if (!b.loc) return reject(new Error('Location is required'));
             let br = new Shop(b);
             br.created_at = Date.now();
             br.updated_at = Date.now();
@@ -25,7 +26,6 @@ let shopStorage = {
             Shop.findById(b.id, (err, sh) => {
                 if (err) return reject(err);
                 if (!sh) return reject(new Error('Document with id:' + b.id + ' not found'));
-
                 sh.name = b.name;
                 sh.phone = b.phone;
                 sh.address = b.address;
