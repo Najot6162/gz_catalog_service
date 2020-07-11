@@ -29,7 +29,8 @@ function main(){
     logger.info('Connecting to db: ' + mongoDBUrl);
 
     mongoose.connect(mongoDBUrl, { 
-        useNewUrlParser:true 
+        useNewUrlParser:true,
+        useUnifiedTopology:true 
     }, (err) => {
         if(err){
             logger.error('There is an error in connecting db (' + mongoDBUrl + '): ' + err.message);

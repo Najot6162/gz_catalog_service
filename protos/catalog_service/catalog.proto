@@ -201,6 +201,10 @@ message Shop {
         Product product = 1;
         int32 quantity = 2;
     }
+    message Loc {
+        int64 long = 1;
+        int64 lat = 2;
+    }
     string id = 1;
     string name = 2;
     string slug = 3;
@@ -210,12 +214,13 @@ message Shop {
     string address2 = 7;
     string preview_text = 8;
     string description = 9;
-    bool   active = 10;
-    string image = 11;
-    int64  order = 12;
-    repeated Stock products = 13;
-    string created_at = 14;
-    string updated_at = 15;
+    Loc loc = 10;
+    bool   active = 11;
+    string image = 12;
+    int64  order = 13;
+    repeated Stock products = 14;
+    string created_at = 15;
+    string updated_at = 16;
 }
 
 message GetRequest {

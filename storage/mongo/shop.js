@@ -34,6 +34,10 @@ let shopStorage = {
                 sh.preview_text = b.preview_text;
                 sh.description = b.description;
                 sh.working_hours = b.working_hours;
+                sh.loc = {
+                    long: b.loc ? b.loc.long : sh.loc.long,
+                    lat: b.loc ? b.loc.lat : sh.loc.lat
+                } 
                 sh.order = b.order;
                 sh.image = b.image;
                 sh.updated_at = Date.now();
