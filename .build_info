@@ -1,2 +1,2 @@
-APP=gz_catalog_service
+APP=catalog_service
 REGISTRY=registry.delever.uz
