@@ -1,0 +1,887 @@
+{
+  message: 'Main function is running',
+  level: 'info',
+  timestamp: '2020-07-21T03:49:21.027Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connecting to db: mongodb://rj:mysecret@dev.goodzone.uz:27017/catalog_service',
+  level: 'info',
+  timestamp: '2020-07-21T03:49:21.032Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'grpc server is running at 7000',
+  level: 'info',
+  timestamp: '2020-07-21T03:49:21.113Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connected to the databasee',
+  level: 'info',
+  timestamp: '2020-07-21T03:49:23.036Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Product create request',
+  level: 'debug',
+  timestamp: '2020-07-21T03:50:08.953Z',
+  label: 'product',
+  metadata: {
+    request: {
+      name: 'my product',
+      category_id: '5ee1e1b06123a6296c4996af',
+      brand_id: '5ee36f67f8601328a86456bf',
+      additional_categories: '5ee1e1b06123a6296c4996bd,5ee1e1b06123a6296c4556bd,5ee1e1b06123a6296c4236bd',
+      related_products: '5ee36f67f8601328a86456df,5ee0d1b06123a6296c4996bd,5ee1sdb06123a6296c4996bd',
+      preview_text: 'preview text of my product',
+      description: 'description of my product',
+      gallery: 'img/somephoto.jpg',
+      external_id: '15',
+      meta: {
+        title: 'Product Meta',
+        description: 'Description of Meta',
+        tags: 'Tag of meta'
+      },
+      active: false,
+      order: '0',
+      image: '',
+      lang: 'ru'
+    }
+  }
+}
+{
+  message: 'product created',
+  level: 'info',
+  timestamp: '2020-07-21T03:50:10.282Z',
+  label: 'catalog-service',
+  metadata: { durationMs: 1328 }
+}
+{
+  message: 'Product Create response',
+  level: 'debug',
+  timestamp: '2020-07-21T03:50:10.300Z',
+  label: 'test',
+  metadata: {
+    response: {
+      product: {
+        additional_categories: [],
+        related_products: [],
+        gallery: [ 'img/somephoto.jpg' ],
+        properties: [],
+        prices: [],
+        id: '5f1665f0332a9fc4ec1abf56',
+        name: 'my product',
+        slug: 'my-product',
+        category: null,
+        brand: null,
+        preview_text: 'preview text of my product',
+        description: 'description of my product',
+        active: false,
+        external_id: '15',
+        meta: {
+          title: 'Product Meta',
+          description: 'Description of Meta',
+          tags: 'Tag of meta'
+        },
+        price: { price: '0', old_price: '0' },
+        created_at: 'Tue Jul 21 2020 08:50:08 GMT+0500 (Uzbekistan Standard Time)',
+        updated_at: 'Tue Jul 21 2020 08:50:08 GMT+0500 (Uzbekistan Standard Time)',
+        image: '',
+        lang: 'ru'
+      }
+    }
+  }
+}
+{
+  message: 'Product find request',
+  level: 'debug',
+  timestamp: '2020-07-21T03:50:10.316Z',
+  label: 'product',
+  metadata: {
+    request: {
+      page: '0',
+      search: '',
+      active: false,
+      inactive: false,
+      category: '',
+      brand: '',
+      limit: '0',
+      sort: '',
+      price_from: '0',
+      price_till: '0',
+      lang: ''
+    }
+  }
+}
+{
+  message: 'filtering products',
+  level: 'debug',
+  timestamp: '2020-07-21T03:50:10.317Z',
+  label: 'catalog-service',
+  metadata: {
+    query: {},
+    options: { skip: -0, limit: 50, sort: { created_at: -1 } }
+  }
+}
+{
+  message: 'Product update request',
+  level: 'debug',
+  timestamp: '2020-07-21T03:50:10.326Z',
+  label: 'product',
+  metadata: {
+    request: {
+      id: 'my-product',
+      name: 'my updated Product',
+      category_id: '5ee1e1b06123a6296c4996af',
+      brand_id: '5ee36f67f8601328a86456bf',
+      additional_categories: '5ee1e1b06123a6296c4996bd,5ee1e1b06123a6296c4556bd,5ee1e1b06123a6296c4236bd',
+      related_products: '5ee36f67f8601328a86456df,5ee0d1b06123a6296c4996bd,5ee1sdb06123a6296c4996bd',
+      preview_text: 'preview text of my updated product',
+      description: 'description of my updated product',
+      gallery: 'img/some.jpg',
+      external_id: '16',
+      meta: {
+        title: ' Updated Product Meta',
+        description: 'Updatet Description of Meta',
+        tags: 'Updated Tag of meta'
+      },
+      active: false,
+      order: '0',
+      image: '',
+      lang: 'ru'
+    }
+  }
+}
+{
+  message: 'product is created with lang en',
+  level: 'debug',
+  timestamp: '2020-07-21T03:50:10.356Z',
+  label: 'catalog-service',
+  metadata: {
+    result: {
+      price: {},
+      meta: {
+        title: 'Product Meta',
+        description: 'Description of Meta',
+        tags: 'Tag of meta'
+      },
+      additional_categories: [
+        5ee1e1b06123a6296c4996bd,
+        5ee1e1b06123a6296c4556bd,
+        5ee1e1b06123a6296c4236bd
+      ],
+      related_products: [ 5ee36f67f8601328a86456df, 5ee0d1b06123a6296c4996bd ],
+      preview_text: 'preview text of my product',
+      description: 'description of my product',
+      gallery: [ 'img/somephoto.jpg' ],
+      active: false,
+      external_id: 15,
+      lang: 'en',
+      _id: 5f1665f1332a9fc4ec1abf57,
+      name: 'my product',
+      image: '',
+      category: 5ee1e1b06123a6296c4996af,
+      brand: 5ee36f67f8601328a86456bf,
+      created_at: 2020-07-21T03:50:08.955Z,
+      updated_at: 2020-07-21T03:50:08.955Z,
+      slug: 'my-product',
+      prices: [],
+      properties: [],
+      __v: 0
+    }
+  }
+}
+{
+  message: 'product is created with lang uz',
+  level: 'debug',
+  timestamp: '2020-07-21T03:50:11.045Z',
+  label: 'catalog-service',
+  metadata: {
+    result: {
+      price: {},
+      meta: {
+        title: 'Product Meta',
+        description: 'Description of Meta',
+        tags: 'Tag of meta'
+      },
+      additional_categories: [
+        5ee1e1b06123a6296c4996bd,
+        5ee1e1b06123a6296c4556bd,
+        5ee1e1b06123a6296c4236bd
+      ],
+      related_products: [ 5ee36f67f8601328a86456df, 5ee0d1b06123a6296c4996bd ],
+      preview_text: 'preview text of my product',
+      description: 'description of my product',
+      gallery: [ 'img/somephoto.jpg' ],
+      active: false,
+      external_id: 15,
+      lang: 'uz',
+      _id: 5f1665f2332a9fc4ec1abf58,
+      name: 'my product',
+      image: '',
+      category: 5ee1e1b06123a6296c4996af,
+      brand: 5ee36f67f8601328a86456bf,
+      created_at: 2020-07-21T03:50:08.955Z,
+      updated_at: 2020-07-21T03:50:08.955Z,
+      slug: 'my-product',
+      prices: [],
+      properties: [],
+      __v: 0
+    }
+  }
+}
+{
+  message: 'Product Update response',
+  level: 'debug',
+  timestamp: '2020-07-21T03:50:11.687Z',
+  label: 'test',
+  metadata: {
+    response: {
+      product: {
+        additional_categories: [],
+        related_products: [],
+        gallery: [ 'img/some.jpg' ],
+        properties: [],
+        prices: [],
+        id: '5f1665f0332a9fc4ec1abf56',
+        name: 'my updated Product',
+        slug: 'my-product',
+        category: null,
+        brand: null,
+        preview_text: 'preview text of my updated product',
+        description: 'description of my updated product',
+        active: false,
+        external_id: '16',
+        meta: {
+          title: ' Updated Product Meta',
+          description: 'Updatet Description of Meta',
+          tags: 'Updated Tag of meta'
+        },
+        price: { price: '0', old_price: '0' },
+        created_at: 'Tue Jul 21 2020 08:50:08 GMT+0500 (Uzbekistan Standard Time)',
+        updated_at: 'Tue Jul 21 2020 08:50:08 GMT+0500 (Uzbekistan Standard Time)',
+        image: '',
+        lang: 'ru'
+      }
+    }
+  }
+}
+{
+  message: 'Product get request',
+  level: 'debug',
+  timestamp: '2020-07-21T03:50:11.690Z',
+  label: 'product',
+  metadata: { request: { id: '', slug: 'my-product', lang: 'ru' } }
+}
+{
+  message: 'finding a product',
+  level: 'debug',
+  timestamp: '2020-07-21T03:50:11.691Z',
+  label: 'catalog-service',
+  metadata: {
+    query: { lang: 'ru', '$or': [ { slug: 'my-product' } ] }
+  }
+}
+{
+  message: 'Product Find response',
+  level: 'debug',
+  timestamp: '2020-07-21T03:50:11.722Z',
+  label: 'test',
+  metadata: {
+    response: {
+      products: [
+        {
+          prices: [],
+          id: '5f1665f0332a9fc4ec1abf56',
+          name: 'my product',
+          slug: 'my-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Tue Jul 21 2020 08:50:08 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Tue Jul 21 2020 08:50:08 GMT+0500 (Uzbekistan Standard Time)',
+          image: '',
+          lang: 'ru'
+        },
+        {
+          prices: [],
+          id: '5f1665f1332a9fc4ec1abf57',
+          name: 'my product',
+          slug: 'my-product',
+          category: null,
+          brand: null,
+          preview_text: 'preview text of my product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Tue Jul 21 2020 08:50:08 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Tue Jul 21 2020 08:50:08 GMT+0500 (Uzbekistan Standard Time)',
+          image: '',
+          lang: 'en'
+        },
+        {
+          prices: [],
+          id: '5f0428622ebda700114df069',
+          name: 'Смартфон LG Q6 v2',
+          slug: 'smartfon-lg-q6-v2',
+          category: {
+            children: [],
+            product_property_groups: [],
+            id: '5efb0c06f68cf300114a3af0',
+            name: 'Смартфоны',
+            slug: 'smartfony-7lb6LMARu',
+            parent: {
+              product_property_groups: [],
+              id: '^�\u000b����\u0000\u0011J:�',
+              name: '',
+              slug: '',
+              active: false,
+              description: '',
+              order: '0',
+              image: '',
+              created_at: '',
+              updated_at: ''
+            },
+            active: true,
+            description: '',
+            order: '0',
+            image: '',
+            meta: { title: '', description: '', tags: '' },
+            created_at: 'Tue Jun 30 2020 14:55:18 GMT+0500 (Uzbekistan Standard Time)',
+            updated_at: 'Tue Jun 30 2020 14:55:18 GMT+0500 (Uzbekistan Standard Time)'
+          },
+          brand: {
+            id: '5efb0d0af68cf300114a3af3',
+            name: 'LG',
+            slug: 'lg',
+            image: 'https://goodzone.uz/storage/app/uploads/public/5eb/aad/4ea/5ebaad4ead521653189113.webp',
+            preview_text: '',
+            description: 'Life is Good',
+            active: true,
+            order: '0',
+            created_at: 'Tue Jun 30 2020 14:59:38 GMT+0500 (Uzbekistan Standard Time)',
+            updated_at: 'Thu Jul 02 2020 14:59:54 GMT+0500 (Uzbekistan Standard Time)'
+          },
+          preview_text: '',
+          active: true,
+          price: { price: '1000', old_price: '0' },
+          created_at: 'Tue Jul 07 2020 12:46:42 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Tue Jul 07 2020 12:46:42 GMT+0500 (Uzbekistan Standard Time)',
+          image: 'https://sdn.delever.uz/goodzone/odzone/6986ac54-1ddb-48cd-a524-edb86f2bc926',
+          lang: 'ru'
+        },
+        {
+          prices: [],
+          id: '5f0425ac2ebda700114df068',
+          name: 'Смартфон Samsung Galaxy A51 (Black)',
+          slug: 'smartfon-samsung-galaxy-a51-black',
+          category: {
+            children: [],
+            product_property_groups: [],
+            id: '5efb0c06f68cf300114a3af0',
+            name: 'Смартфоны',
+            slug: 'smartfony-7lb6LMARu',
+            parent: {
+              product_property_groups: [],
+              id: '^�\u000b����\u0000\u0011J:�',
+              name: '',
+              slug: '',
+              active: false,
+              description: '',
+              order: '0',
+              image: '',
+              created_at: '',
+              updated_at: ''
+            },
+            active: true,
+            description: '',
+            order: '0',
+            image: '',
+            meta: { title: '', description: '', tags: '' },
+            created_at: 'Tue Jun 30 2020 14:55:18 GMT+0500 (Uzbekistan Standard Time)',
+            updated_at: 'Tue Jun 30 2020 14:55:18 GMT+0500 (Uzbekistan Standard Time)'
+          },
+          brand: {
+            id: '5efb0cf9f68cf300114a3af2',
+            name: 'Samsung',
+            slug: 'samsung',
+            image: '',
+            preview_text: 'das',
+            description: '<p>Better than Apple</p>',
+            active: true,
+            order: '1',
+            created_at: 'Tue Jun 30 2020 14:59:21 GMT+0500 (Uzbekistan Standard Time)',
+            updated_at: 'Mon Jul 20 2020 12:46:09 GMT+0500 (Uzbekistan Standard Time)'
+          },
+          preview_text: '',
+          active: true,
+          price: { price: '3280000', old_price: '0' },
+          created_at: 'Tue Jul 07 2020 12:35:08 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Tue Jul 07 2020 12:35:08 GMT+0500 (Uzbekistan Standard Time)',
+          image: 'https://sdn.delever.uz/goodzone/a43553b2-977f-46e8-b068-782376db0d59',
+          lang: 'ru'
+        },
+        {
+          prices: [],
+          id: '5f0425642ebda700114df067',
+          name: 'Смартфон Samsung Note 8T 4/64 (Grey)',
+          slug: 'smartfon-samsung-note-8t-4-64-grey',
+          category: {
+            children: [],
+            product_property_groups: [],
+            id: '5efb0c06f68cf300114a3af0',
+            name: 'Смартфоны',
+            slug: 'smartfony-7lb6LMARu',
+            parent: {
+              product_property_groups: [],
+              id: '^�\u000b����\u0000\u0011J:�',
+              name: '',
+              slug: '',
+              active: false,
+              description: '',
+              order: '0',
+              image: '',
+              created_at: '',
+              updated_at: ''
+            },
+            active: true,
+            description: '',
+            order: '0',
+            image: '',
+            meta: { title: '', description: '', tags: '' },
+            created_at: 'Tue Jun 30 2020 14:55:18 GMT+0500 (Uzbekistan Standard Time)',
+            updated_at: 'Tue Jun 30 2020 14:55:18 GMT+0500 (Uzbekistan Standard Time)'
+          },
+          brand: {
+            id: '5efb0cf9f68cf300114a3af2',
+            name: 'Samsung',
+            slug: 'samsung',
+            image: '',
+            preview_text: 'das',
+            description: '<p>Better than Apple</p>',
+            active: true,
+            order: '1',
+            created_at: 'Tue Jun 30 2020 14:59:21 GMT+0500 (Uzbekistan Standard Time)',
+            updated_at: 'Mon Jul 20 2020 12:46:09 GMT+0500 (Uzbekistan Standard Time)'
+          },
+          preview_text: '',
+          active: true,
+          price: { price: '1998000', old_price: '0' },
+          created_at: 'Tue Jul 07 2020 12:33:56 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Tue Jul 07 2020 12:33:56 GMT+0500 (Uzbekistan Standard Time)',
+          image: 'https://sdn.delever.uz/goodzone/5a04344b-ef5f-4615-965c-097c56a785b1',
+          lang: 'ru'
+        },
+        {
+          prices: [],
+          id: '5f04239d2ebda700114df066',
+          name: 'Телевизор Roison KD-49XE8096',
+          slug: 'televizor-roison-kd-49xe8096',
+          category: {
+            children: [],
+            product_property_groups: [],
+            id: '5efb0c7ef68cf300114a3af1',
+            name: 'Телевизоры',
+            slug: 'televizory-0WeWNmG4B',
+            parent: {
+              product_property_groups: [],
+              id: '^�\u000b����\u0000\u0011J:�',
+              name: '',
+              slug: '',
+              active: false,
+              description: '',
+              order: '0',
+              image: '',
+              created_at: '',
+              updated_at: ''
+            },
+            active: true,
+            description: '',
+            order: '0',
+            image: '',
+            meta: { title: '', description: '', tags: '' },
+            created_at: 'Tue Jun 30 2020 14:57:18 GMT+0500 (Uzbekistan Standard Time)',
+            updated_at: 'Tue Jun 30 2020 14:57:18 GMT+0500 (Uzbekistan Standard Time)'
+          },
+          brand: {
+            id: '5f032abce89ad80011fa409a',
+            name: 'Roison',
+            slug: 'roison',
+            image: '0a4f063b-7ddf-4e48-86ce-e85de8bb2726',
+            preview_text: 'Roison TOP',
+            description: '<p>Roison is best electronic company</p>',
+            active: true,
+            order: '1',
+            created_at: 'Mon Jul 06 2020 18:44:28 GMT+0500 (Uzbekistan Standard Time)',
+            updated_at: 'Mon Jul 06 2020 18:44:28 GMT+0500 (Uzbekistan Standard Time)'
+          },
+          preview_text: '<div>Телевизор Sony KD49XE8096 создан с применением технологии TRILUMINOS. Его ультрасовременная матрица и тщательно настроенная LED-подсветка позволяют получить по-настоящему реалистичное изображение с насыщенными яркими цветами и плавными переходами между оттенками. Кроме того, он поддерживает функцию HDR, которая помогает увидеть мельчайшие детали наиболее тёмных и светлых сцен за счёт повышения контрастности.&nbsp;</div> \t<div>&nbsp;</div>',
+          active: true,
+          price: { price: '11609000', old_price: '0' },
+          created_at: 'Tue Jul 07 2020 12:26:21 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Tue Jul 07 2020 12:26:21 GMT+0500 (Uzbekistan Standard Time)',
+          image: 'https://sdn.delever.uz/goodzone/391d9d87-33d1-481d-ad4a-cd9cf44cce93',
+          lang: 'ru'
+        },
+        {
+          prices: [],
+          id: '5f0423422ebda700114df065',
+          name: 'Телевизор HAIER LE50K6500U',
+          slug: 'televizor-philips-wu1231a',
+          category: {
+            children: [],
+            product_property_groups: [],
+            id: '5efb0c7ef68cf300114a3af1',
+            name: 'Телевизоры',
+            slug: 'televizory-0WeWNmG4B',
+            parent: {
+              product_property_groups: [],
+              id: '^�\u000b����\u0000\u0011J:�',
+              name: '',
+              slug: '',
+              active: false,
+              description: '',
+              order: '0',
+              image: '',
+              created_at: '',
+              updated_at: ''
+            },
+            active: true,
+            description: '',
+            order: '0',
+            image: '',
+            meta: { title: '', description: '', tags: '' },
+            created_at: 'Tue Jun 30 2020 14:57:18 GMT+0500 (Uzbekistan Standard Time)',
+            updated_at: 'Tue Jun 30 2020 14:57:18 GMT+0500 (Uzbekistan Standard Time)'
+          },
+          brand: {
+            id: '5efb0d1df68cf300114a3af4',
+            name: 'Philips',
+            slug: 'philips',
+            image: 'https://goodzone.uz/storage/app/uploads/public/5eb/ab2/488/5ebab2488d6e1790966250.webp',
+            preview_text: '',
+            description: 'Philips brand is one of the ...',
+            active: true,
+            order: '0',
+            created_at: 'Tue Jun 30 2020 14:59:57 GMT+0500 (Uzbekistan Standard Time)',
+            updated_at: 'Thu Jul 02 2020 14:59:09 GMT+0500 (Uzbekistan Standard Time)'
+          },
+          preview_text: '<div>LED-телевизор HAIER 50K6500U имеет SmartTV, что значительно расширяет возможности устройства. Также можно просматривать личный контент с помощью двух портов USB2.0. Угол обзора составляет 160° / 150°, а яркость 280 Кд/м². Качественно изображение обеспечивает стандарт Ultra HD.</div>',
+          active: true,
+          price: { price: '6508000', old_price: '0' },
+          created_at: 'Tue Jul 07 2020 12:24:50 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Tue Jul 07 2020 12:24:50 GMT+0500 (Uzbekistan Standard Time)',
+          image: 'https://sdn.delever.uz/goodzone/c4552000-7fbb-4ee3-98d2-015371050ccc',
+          lang: 'ru'
+        },
+        {
+          prices: [],
+          id: '5f0422e12ebda700114df064',
+          name: 'Телевизор LG 32lj570',
+          slug: 'televizor-lg-32lj570',
+          category: {
+            children: [],
+            product_property_groups: [],
+            id: '5efb0c7ef68cf300114a3af1',
+            name: 'Телевизоры',
+            slug: 'televizory-0WeWNmG4B',
+            parent: {
+              product_property_groups: [],
+              id: '^�\u000b����\u0000\u0011J:�',
+              name: '',
+              slug: '',
+              active: false,
+              description: '',
+              order: '0',
+              image: '',
+              created_at: '',
+              updated_at: ''
+            },
+            active: true,
+            description: '',
+            order: '0',
+            image: '',
+            meta: { title: '', description: '', tags: '' },
+            created_at: 'Tue Jun 30 2020 14:57:18 GMT+0500 (Uzbekistan Standard Time)',
+            updated_at: 'Tue Jun 30 2020 14:57:18 GMT+0500 (Uzbekistan Standard Time)'
+          },
+          brand: {
+            id: '5efb0d0af68cf300114a3af3',
+            name: 'LG',
+            slug: 'lg',
+            image: 'https://goodzone.uz/storage/app/uploads/public/5eb/aad/4ea/5ebaad4ead521653189113.webp',
+            preview_text: '',
+            description: 'Life is Good',
+            active: true,
+            order: '0',
+            created_at: 'Tue Jun 30 2020 14:59:38 GMT+0500 (Uzbekistan Standard Time)',
+            updated_at: 'Thu Jul 02 2020 14:59:54 GMT+0500 (Uzbekistan Standard Time)'
+          },
+          preview_text: '<p>Диагональ экрана телевизора LG 32LJ570 равна 32 дюймам (80 см). Благодаря этому вы сможете закрепить его на стене в небольшой комнате, при этом оптимальное расстояние до экрана будет достигать 2-2,5 метров.</p>',
+          active: true,
+          price: { price: '2357000', old_price: '0' },
+          created_at: 'Tue Jul 07 2020 12:23:13 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Tue Jul 07 2020 12:23:13 GMT+0500 (Uzbekistan Standard Time)',
+          image: 'https://sdn.delever.uz/goodzone/e761535a-9c55-4cd9-9ed9-07536a7eb3e2',
+          lang: 'ru'
+        },
+        {
+          prices: [],
+          id: '5f0422522ebda700114df063',
+          name: 'Телевизор Samsung UE49N5500AU',
+          slug: 'televizor-samsung-ue49n5500au',
+          category: {
+            children: [],
+            product_property_groups: [],
+            id: '5efb0c7ef68cf300114a3af1',
+            name: 'Телевизоры',
+            slug: 'televizory-0WeWNmG4B',
+            parent: {
+              product_property_groups: [],
+              id: '^�\u000b����\u0000\u0011J:�',
+              name: '',
+              slug: '',
+              active: false,
+              description: '',
+              order: '0',
+              image: '',
+              created_at: '',
+              updated_at: ''
+            },
+            active: true,
+            description: '',
+            order: '0',
+            image: '',
+            meta: { title: '', description: '', tags: '' },
+            created_at: 'Tue Jun 30 2020 14:57:18 GMT+0500 (Uzbekistan Standard Time)',
+            updated_at: 'Tue Jun 30 2020 14:57:18 GMT+0500 (Uzbekistan Standard Time)'
+          },
+          brand: {
+            id: '5efb0cf9f68cf300114a3af2',
+            name: 'Samsung',
+            slug: 'samsung',
+            image: '',
+            preview_text: 'das',
+            description: '<p>Better than Apple</p>',
+            active: true,
+            order: '1',
+            created_at: 'Tue Jun 30 2020 14:59:21 GMT+0500 (Uzbekistan Standard Time)',
+            updated_at: 'Mon Jul 20 2020 12:46:09 GMT+0500 (Uzbekistan Standard Time)'
+          },
+          preview_text: '<p>Хотите видеть происходящее на экране в мельчайших подробностях? С телевизором Samsung N5500 это возможно! Качество изображения Full HD и технология цифрового подавления шума не оставят места для компромиссов.</p>',
+          active: true,
+          price: { price: '5278000', old_price: '0' },
+          created_at: 'Tue Jul 07 2020 12:20:50 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Tue Jul 07 2020 12:20:50 GMT+0500 (Uzbekistan Standard Time)',
+          image: 'https://sdn.delever.uz/goodzone/ccf62302-4a32-4417-b3c4-f913ccdbcd68',
+          lang: 'ru'
+        }
+      ],
+      count: '9'
+    }
+  }
+}
+{
+  message: 'Product Get response',
+  level: 'debug',
+  timestamp: '2020-07-21T03:50:13.166Z',
+  label: 'test',
+  metadata: {
+    response: {
+      product: {
+        additional_categories: [],
+        related_products: [
+          {
+            prices: [],
+            id: '5f1665f0332a9fc4ec1abf56',
+            name: 'my updated Product',
+            slug: 'my-product',
+            category: null,
+            brand: null,
+            preview_text: 'preview text of my updated product',
+            active: false,
+            price: { price: '0', old_price: '0' },
+            created_at: 'Tue Jul 21 2020 08:50:08 GMT+0500 (Uzbekistan Standard Time)',
+            updated_at: 'Tue Jul 21 2020 08:50:08 GMT+0500 (Uzbekistan Standard Time)',
+            image: '',
+            lang: 'ru'
+          }
+        ],
+        gallery: [ 'https://sdn.delever.uz/goodzone/img/some.jpg' ],
+        properties: [],
+        prices: [],
+        id: '5f1665f0332a9fc4ec1abf56',
+        name: 'my updated Product',
+        slug: 'my-product',
+        category: null,
+        brand: null,
+        preview_text: 'preview text of my updated product',
+        description: 'description of my updated product',
+        active: false,
+        external_id: '16',
+        meta: {
+          title: ' Updated Product Meta',
+          description: 'Updatet Description of Meta',
+          tags: 'Updated Tag of meta'
+        },
+        price: { price: '0', old_price: '0' },
+        created_at: 'Tue Jul 21 2020 08:50:08 GMT+0500 (Uzbekistan Standard Time)',
+        updated_at: 'Tue Jul 21 2020 08:50:08 GMT+0500 (Uzbekistan Standard Time)',
+        image: '',
+        lang: 'ru'
+      }
+    }
+  }
+}
+{
+  message: 'Shops get request',
+  level: 'debug',
+  timestamp: '2020-07-21T03:50:13.169Z',
+  label: 'shop',
+  metadata: { request: { product_id: '5f1665f0332a9fc4ec1abf56' } }
+}
+{
+  message: 'Shop Get response',
+  level: 'debug',
+  timestamp: '2020-07-21T03:50:13.447Z',
+  label: 'test',
+  metadata: { response: { shops: [] } }
+}
+{
+  message: 'Product delete request',
+  level: 'debug',
+  timestamp: '2020-07-21T03:50:13.450Z',
+  label: 'product',
+  metadata: { request: { id: '', slug: 'my-product' } }
+}
+{
+  message: 'Product Delete response',
+  level: 'debug',
+  timestamp: '2020-07-21T03:50:13.746Z',
+  label: 'test',
+  metadata: { response: {} }
+}
+{
+  message: 'Main function is running',
+  level: 'info',
+  timestamp: '2020-07-21T04:56:41.291Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connecting to db: mongodb://rj:mysecret@dev.goodzone.uz:27017/catalog_service',
+  level: 'info',
+  timestamp: '2020-07-21T04:56:41.296Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'grpc server is running at 7000',
+  level: 'info',
+  timestamp: '2020-07-21T04:56:41.379Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connected to the databasee',
+  level: 'info',
+  timestamp: '2020-07-21T04:56:43.280Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Main function is running',
+  level: 'info',
+  timestamp: '2020-07-21T05:03:30.600Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connecting to db: mongodb://rj:mysecret@dev.goodzone.uz:27017/catalog_service',
+  level: 'info',
+  timestamp: '2020-07-21T05:03:30.604Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'grpc server is running at 7000',
+  level: 'info',
+  timestamp: '2020-07-21T05:03:30.668Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connected to the databasee',
+  level: 'info',
+  timestamp: '2020-07-21T05:03:32.731Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Product find request',
+  level: 'debug',
+  timestamp: '2020-07-21T05:03:55.646Z',
+  label: 'product',
+  metadata: {
+    request: {
+      page: '1',
+      search: '',
+      active: false,
+      inactive: false,
+      category: '',
+      brand: '',
+      limit: '10',
+      sort: '',
+      price_from: '0',
+      price_till: '0',
+      lang: ''
+    }
+  }
+}
+{
+  message: 'filtering products',
+  level: 'debug',
+  timestamp: '2020-07-21T05:03:55.647Z',
+  label: 'catalog-service',
+  metadata: {
+    query: { lang: 'ru' },
+    options: { skip: 0, limit: 10, sort: { created_at: -1 } }
+  }
+}
+{
+  message: 'Product find request',
+  level: 'debug',
+  timestamp: '2020-07-21T05:04:18.380Z',
+  label: 'product',
+  metadata: {
+    request: {
+      page: '1',
+      search: '',
+      active: false,
+      inactive: false,
+      category: '',
+      brand: '',
+      limit: '10',
+      sort: '',
+      price_from: '0',
+      price_till: '0',
+      lang: ''
+    }
+  }
+}
+{
+  message: 'filtering products',
+  level: 'debug',
+  timestamp: '2020-07-21T05:04:18.381Z',
+  label: 'catalog-service',
+  metadata: {
+    query: { lang: 'ru' },
+    options: { skip: 0, limit: 10, sort: { created_at: -1 } }
+  }
+}

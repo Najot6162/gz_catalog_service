@@ -1,0 +1,262 @@
+{
+  message: 'Document with key:my-product not found',
+  level: 'error',
+  timestamp: '2020-07-19T14:03:51.172Z',
+  label: 'catalog-service',
+  metadata: {
+    function: 'update product',
+    request: {
+      id: 'my-product',
+      name: 'my updated Product',
+      category_id: '5ee1e1b06123a6296c4996af',
+      brand_id: '5ee36f67f8601328a86456bf',
+      additional_categories: '5ee1e1b06123a6296c4996bd,5ee1e1b06123a6296c4556bd,5ee1e1b06123a6296c4236bd',
+      related_products: '5ee36f67f8601328a86456df,5ee0d1b06123a6296c4996bd,5ee1sdb06123a6296c4996bd',
+      preview_text: 'preview text of my updated product',
+      description: 'description of my updated product',
+      gallery: 'img/some.jpg',
+      external_id: '16',
+      meta: {
+        title: ' Updated Product Meta',
+        description: 'Updatet Description of Meta',
+        tags: 'Updated Tag of meta'
+      },
+      active: false,
+      order: '0',
+      image: '',
+      lang: 'ru'
+    }
+  }
+}
+{
+  message: 'Document with key:my-product and with lang: ru not found',
+  level: 'error',
+  timestamp: '2020-07-19T14:25:48.903Z',
+  label: 'catalog-service',
+  metadata: {
+    function: 'update product',
+    request: {
+      id: 'my-product',
+      name: 'my updated Product',
+      category_id: '5ee1e1b06123a6296c4996af',
+      brand_id: '5ee36f67f8601328a86456bf',
+      additional_categories: '5ee1e1b06123a6296c4996bd,5ee1e1b06123a6296c4556bd,5ee1e1b06123a6296c4236bd',
+      related_products: '5ee36f67f8601328a86456df,5ee0d1b06123a6296c4996bd,5ee1sdb06123a6296c4996bd',
+      preview_text: 'preview text of my updated product',
+      description: 'description of my updated product',
+      gallery: 'img/some.jpg',
+      external_id: '16',
+      meta: {
+        title: ' Updated Product Meta',
+        description: 'Updatet Description of Meta',
+        tags: 'Updated Tag of meta'
+      },
+      active: false,
+      order: '0',
+      image: '',
+      lang: 'ru'
+    }
+  }
+}
+{
+  message: 'Document with key:my-product and with lang: ru not found',
+  level: 'error',
+  timestamp: '2020-07-19T14:33:01.740Z',
+  label: 'catalog-service',
+  metadata: {
+    function: 'update product',
+    request: {
+      id: 'my-product',
+      name: 'my updated Product',
+      category_id: '5ee1e1b06123a6296c4996af',
+      brand_id: '5ee36f67f8601328a86456bf',
+      additional_categories: '5ee1e1b06123a6296c4996bd,5ee1e1b06123a6296c4556bd,5ee1e1b06123a6296c4236bd',
+      related_products: '5ee36f67f8601328a86456df,5ee0d1b06123a6296c4996bd,5ee1sdb06123a6296c4996bd',
+      preview_text: 'preview text of my updated product',
+      description: 'description of my updated product',
+      gallery: 'img/some.jpg',
+      external_id: '16',
+      meta: {
+        title: ' Updated Product Meta',
+        description: 'Updatet Description of Meta',
+        tags: 'Updated Tag of meta'
+      },
+      active: false,
+      order: '0',
+      image: '',
+      lang: 'ru'
+    }
+  }
+}
+{
+  message: 'No document found for query "{ _id: 5f145ba86ea34ab5632ec4eb }" on model "Product"',
+  level: 'error',
+  timestamp: '2020-07-19T14:41:45.494Z',
+  label: 'catalog-service',
+  metadata: {
+    function: 'create product',
+    product: {
+      price: {},
+      meta: {
+        title: 'Product Meta',
+        description: 'Description of Meta',
+        tags: 'Tag of meta'
+      },
+      additional_categories: [],
+      related_products: [],
+      preview_text: 'preview text of my product',
+      description: 'description of my product',
+      gallery: [ 'img/somephoto.jpg' ],
+      active: false,
+      external_id: 15,
+      lang: 'en',
+      _id: 5f145ba86ea34ab5632ec4eb,
+      name: 'my product',
+      image: '',
+      prices: [],
+      properties: [],
+      created_at: 2020-07-19T14:41:44.434Z,
+      category: null,
+      brand: null,
+      updated_at: 2020-07-19T14:41:44.434Z,
+      slug: 'my-product',
+      __v: 0
+    }
+  }
+}
+{
+  message: 'No document found for query "{ _id: 5f145bdbc6ac05b59cd8cf8a }" on model "Product"',
+  level: 'error',
+  timestamp: '2020-07-19T14:42:36.186Z',
+  label: 'catalog-service',
+  metadata: {
+    function: 'create product',
+    product: {
+      price: {},
+      meta: {
+        title: 'Product Meta',
+        description: 'Description of Meta',
+        tags: 'Tag of meta'
+      },
+      additional_categories: [],
+      related_products: [],
+      preview_text: 'preview text of my product',
+      description: 'description of my product',
+      gallery: [ 'img/somephoto.jpg' ],
+      active: false,
+      external_id: 15,
+      lang: 'en',
+      _id: 5f145bdbc6ac05b59cd8cf8a,
+      name: 'my product',
+      image: '',
+      prices: [],
+      properties: [],
+      created_at: 2020-07-19T14:42:35.040Z,
+      category: null,
+      brand: null,
+      updated_at: 2020-07-19T14:42:35.040Z,
+      slug: 'my-product',
+      __v: 0
+    }
+  }
+}
+{
+  message: 'Document not found',
+  level: 'error',
+  timestamp: '2020-07-19T14:42:37.844Z',
+  label: 'catalog-service',
+  metadata: {
+    function: 'get product',
+    request: { id: '5f145b1e92094bb5209b6a23', slug: '', lang: '' }
+  }
+}
+{
+  message: 'There is an error in connecting db (mongodb://rj:mysecret@dev.goodzone.uz:27017/catalog_service): getaddrinfo ENOTFOUND dev.goodzone.uz',
+  level: 'error',
+  timestamp: '2020-07-21T02:09:11.012Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'No matching document found for id "5f164eba9bf5e2c192f8b638" version 0 modifiedPaths "price, meta, meta.title, meta.description, meta.tags, additional_categories, related_products, preview_text, description, gallery, active, external_id, lang, _id, name, image, prices, properties, created_at, category, brand, updated_at, slug, __v"',
+  level: 'error',
+  timestamp: '2020-07-21T02:11:07.819Z',
+  label: 'catalog-service',
+  metadata: {
+    function: 'create product for other lang',
+    product: {
+      price: {},
+      meta: {
+        title: 'Product Meta',
+        description: 'Description of Meta',
+        tags: 'Tag of meta'
+      },
+      additional_categories: [],
+      related_products: [],
+      preview_text: 'preview text of my product',
+      description: 'description of my product',
+      gallery: [ 'img/somephoto.jpg' ],
+      active: false,
+      external_id: 15,
+      lang: 'uz',
+      _id: 5f164eba9bf5e2c192f8b638,
+      name: 'my product',
+      image: '',
+      prices: [],
+      properties: [],
+      created_at: 2020-07-21T02:11:06.425Z,
+      category: null,
+      brand: null,
+      updated_at: 2020-07-21T02:11:06.425Z,
+      slug: 'my-product',
+      __v: 0
+    }
+  }
+}
+{
+  message: 'Document with key:my-product and with lang: ru not found',
+  level: 'error',
+  timestamp: '2020-07-21T02:11:08.170Z',
+  label: 'catalog-service',
+  metadata: {
+    function: 'update product',
+    request: {
+      id: 'my-product',
+      name: 'my updated Product',
+      category_id: '5ee1e1b06123a6296c4996af',
+      brand_id: '5ee36f67f8601328a86456bf',
+      additional_categories: '5ee1e1b06123a6296c4996bd,5ee1e1b06123a6296c4556bd,5ee1e1b06123a6296c4236bd',
+      related_products: '5ee36f67f8601328a86456df,5ee0d1b06123a6296c4996bd,5ee1sdb06123a6296c4996bd',
+      preview_text: 'preview text of my updated product',
+      description: 'description of my updated product',
+      gallery: 'img/some.jpg',
+      external_id: '16',
+      meta: {
+        title: ' Updated Product Meta',
+        description: 'Updatet Description of Meta',
+        tags: 'Updated Tag of meta'
+      },
+      active: false,
+      order: '0',
+      image: '',
+      lang: 'ru'
+    }
+  }
+}
+{
+  message: 'Document not found',
+  level: 'error',
+  timestamp: '2020-07-21T02:32:55.284Z',
+  label: 'catalog-service',
+  metadata: {
+    function: 'get product',
+    request: { id: '5f1653d44de702c27306ae1e', slug: '', lang: '' }
+  }
+}
+{
+  message: 'Cast to ObjectId failed for value "my-product" at path "product" for model "Shop"',
+  level: 'error',
+  timestamp: '2020-07-21T03:25:19.784Z',
+  label: 'catalog-service',
+  metadata: { function: 'get shop', request: { product_id: 'my-product' } }
+}

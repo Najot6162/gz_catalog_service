@@ -1,0 +1,48 @@
+syntax="proto3";
+
+package order;
+option go_package="genproto/order_service";
+
+service OrderService {
+    rpc Create(CreateOrderRequest) returns (OrderResponse) {}
+}
+
+message Order {
+    string id = 1;
+    string number = 2;
+    string customer_id = 3;
+    string customer_name = 4;
+    repeated OrderItem items = 5;
+    string address = 6;
+    string longlat = 7;
+    string note = 8;
+    string phone = 9;
+    string payment_method = 10;
+    string delivery_method = 11;
+    string created_at = 12;
+    string paid_at = 13;
+    string updated_at = 14;
+}
+
+message CreateOrderRequest {
+    string customer_id = 1;
+    string customer_name = 2;
+    repeated OrderItem items = 3;
+    string address = 4;
+    string longlat = 5;
+    string note = 6;
+    string phone = 7;
+    string payment_method = 8;
+    string delivery_method = 9;
+}
+
+message OrderItem {
+    string product_id = 1;
+    string product_name = 2;
+    float  price = 3;
+    int32  quantity = 4;
+}
+
+message OrderResponse {
+    Order order = 1;
+}

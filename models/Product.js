@@ -8,7 +8,8 @@ var ProductSchema = new mongoose.Schema({
     },
     slug: {
         type: String,
-        slug: 'name'
+        slug: 'name',
+        permanent: true
     },
     category: {
         type: Types.ObjectId,
@@ -82,6 +83,12 @@ var ProductSchema = new mongoose.Schema({
             type: String,
             default: ''
         }
+    },
+    lang: {
+        type: String,
+        enum: ['uz','ru','en'],
+        required: true,
+        default: 'ru'
     },
     created_at: {
         type: Date,

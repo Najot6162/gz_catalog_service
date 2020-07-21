@@ -33,7 +33,8 @@ function main() {
             title: 'Product Meta',
             description: 'Description of Meta',
             tags: 'Tag of meta'
-        }
+        },
+        lang:'ru'
     }, (err, createResponse) => {
         if(err) return console.log('Error: ', err.message);
 
@@ -54,7 +55,7 @@ function main() {
         
         // update Product
         client.Update({
-            id: createResponse.product.id,
+            id: createResponse.product.slug,
             name: 'my updated Product',
             category_id: '5ee1e1b06123a6296c4996af',
             brand_id: '5ee36f67f8601328a86456bf',
@@ -68,7 +69,8 @@ function main() {
                 title: ' Updated Product Meta',
                 description: 'Updatet Description of Meta',
                 tags: 'Updated Tag of meta'
-            }
+            },
+            lang: 'ru'
         }, (err, updateResponse) => {
             if(err) return console.log('Error: ', err.message);
 
@@ -79,7 +81,8 @@ function main() {
 
             // get Product
             client.Get({
-                id: updateResponse.product.id,
+                slug: updateResponse.product.slug,
+                lang: 'ru'
             }, (err, getResponse) => {
                 if(err) return console.log('Error: ', err.message);
 
@@ -90,14 +93,14 @@ function main() {
             client.GetShops({
                 product_id: updateResponse.product.id,
             }, (err, getResponse) => {
-                    if (err) return console.log('Error: ', err.message);
-                    logger.debug('Shop Get response', {
+                if (err) return console.log('Error: ', err.message);
+                logger.debug('Shop Get response', {
                     response: getResponse,
                     label: 'test'
-                        });           
+                });           
                 // delete Product
                 client.Delete({
-                    id: updateResponse.product.id
+                    slug: updateResponse.product.slug
                 }, (err, deleteResponse) => {
                     if(err) return console.log('Error: ', err.message);
 

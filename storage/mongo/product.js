@@ -6,6 +6,7 @@ const Brand    = require('../../models/Brand');
 const Shop     = require('../../models/Shop');
 const logger = require('../../config/logger');
 const cnf = require('../../config');
+const langs = ["en", "ru", "uz"];
 
 let productStorage = {
     create: (b) => {
@@ -15,9 +16,10 @@ let productStorage = {
             if (!b.brand_id) return reject(new Error('Brand field is required'));
             // if (!b.additional_category_id) return reject(new Error('Additional category field is required'));
             // if (!b.related_product_id) return reject(new Error('Related product field is required'));
-            let p = new Product(b);
+            let p = b;
             p.category   = b.category_id || null;
             p.brand      = b.brand_id || null;
+            p.lang       = b.lang ? b.lang : cnf.lang;
 
             p.additional_categories = b.additional_categories.split(',').filter((f) => {
                 return mongoose.Types.ObjectId.isValid(f.trim());
@@ -34,8 +36,33 @@ let productStorage = {
             p.created_at = Date.now();
             p.updated_at = Date.now();
 
+            let pCopy = p;
+            p = new Product(p);
+
             p.save((err, product) => {
                 if(err) return reject(err);
+
+                // creating for other languages
+                let otherLangs = langs.filter((lang, i) => lang != product.lang);
+                async.eachSeries(otherLangs, (otherLang, cb) => {
+                    let productWithOtherLang = pCopy;
+                    productWithOtherLang.lang = otherLang;
+                    productWithOtherLang.slug = product.slug;
+                    productWithOtherLang = new Product(productWithOtherLang);
+                    productWithOtherLang.save((err, r) => {
+                        if(err) return cb(err);
+                        logger.debug('product is created with lang ' + otherLang, {
+                            result: r
+                        });
+                        cb(null, r);
+                    });
+                }, (err) => {
+                    if(err) logger.error(err.message, {
+                        function: 'create product for other lang',
+                        product
+                    });
+                });
+
                 product.populate({
                     path: 'category'
                 }).populate({
@@ -55,14 +82,26 @@ let productStorage = {
     },
     update: (b) => {
         return new Promise((resolve, reject) => {
-            if(!b.id) return reject(new Error('ID is not provided'));
+            if(!b.id) return reject(new Error('Key is not provided'));
+            if(!b.lang) return reject(new Error('Lang is not provided'));
             if(!b.name) return reject(new Error('name is required'));
             if(!b.category_id) return reject(new Error('category field is required'));
-            if (!b.brand_id) return reject(new Error('Brand field is required'));
+            if(!b.brand_id) return reject(new Error('Brand field is required'));
 
-            Product.findById(b.id, (err, product) => {
+            let query = {}
+            // making query
+            query = {
+                ...query,
+                lang: b.lang,
+                $or: [{
+                    slug: b.id
+                }]
+            }
+            if(mongoose.Types.ObjectId.isValid(b.id)) query.$or.push({ _id: b.id });
+
+            Product.findOne(query, (err, product) => {
                 if(err) return reject(err);
-                if(!product) return reject(new Error('Document with id:' + b.id + ' not found'));
+                if(!product) return reject(new Error('Document with key:' + b.id + ' and with lang: ' + b.lang + ' not found'));
 
                 product.name = b.name;
                 product.category = b.category_id || null;
@@ -186,7 +225,9 @@ let productStorage = {
     },
     find: (filters) => {
         return new Promise((resolve, reject) => {
-            let query = {};
+            let query = {
+                lang: filters.lang ? filters.lang : cnf.lang
+            };
 
             // filter by search key
             if(filters.search.trim()){
@@ -239,7 +280,7 @@ let productStorage = {
 
             let options = {
                 skip: (filters.page/1 - 1) * filters.limit/1,
-                limit: filters.limit/1,
+                limit: filters.limit/1 ? filters.limit/1 : 50,
                 sort: { created_at: -1 }
             }
 
@@ -300,6 +341,7 @@ let productStorage = {
             // making query
             query = {
                 ...query,
+                lang: req.lang ? req.lang : cnf.lang,
                 $or: [{
                     slug: req.slug
                 }]
@@ -359,9 +401,9 @@ let productStorage = {
     },
     delete: (req) => {
         return new Promise((resolve, reject) => {
-            if(!req.id) return reject(new Error('ID is not provided'));
+            if(!req.slug) return reject(new Error('Key is not provided'));
 
-            Product.findByIdAndDelete(req.id, (err, result) => {
+            Product.deleteMany({slug: req.slug}, (err, result) => {
                 if(err) return reject(err);
                 return resolve(result);
             });
@@ -391,7 +433,8 @@ const getRelatedProducts = (product_id = '', limit = 10) => (
                 productsOfSameCategory: (cb) => {
                     Product.find({
                         _id: { $nin: p.related_products},
-                        category: p.category
+                        category: p.category,
+                        lang: p.lang
                     }, {}, {limit}).populate({
                         path: 'category'
                     }).populate({
@@ -404,7 +447,8 @@ const getRelatedProducts = (product_id = '', limit = 10) => (
                 randomProducts: (cb) => {
                     Product.find({
                         _id: { $nin: p.related_products },
-                        category: { $ne: p.category}
+                        category: { $ne: p.category},
+                        lang: p.lang
                     }, {}, {limit}).populate({
                         path: 'category'
                     }).populate({

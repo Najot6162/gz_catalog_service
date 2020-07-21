@@ -56,6 +56,11 @@ let brandStorage = {
 
             Brand.find(query, (err, brands) => {
                 if(err) return reject(err);
+
+                for(let i = 0; i < brands.length; i++) {
+                    brands[i].image = brands[i].image ? cnf.cloudUrl + brands[i].image : '';
+                }
+
                 resolve(brands);
             });
         });

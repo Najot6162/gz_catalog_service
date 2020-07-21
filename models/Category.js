@@ -48,6 +48,11 @@ var CategorySchema = new mongoose.Schema({
             default: ''
         }
     },
+    lang: {
+        type: String,
+        enum: ['uz','ru','en'],
+        required: true
+    },
     created_at: {
         type:Date,
         default: Date.now
