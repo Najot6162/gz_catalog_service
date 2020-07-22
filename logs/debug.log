@@ -885,3 +885,202 @@
     options: { skip: 0, limit: 10, sort: { created_at: -1 } }
   }
 }
+{
+  message: 'Main function is running',
+  level: 'info',
+  timestamp: '2020-07-21T05:20:54.787Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connecting to db: mongodb://rj:mysecret@dev.goodzone.uz:27017/catalog_service',
+  level: 'info',
+  timestamp: '2020-07-21T05:20:54.792Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'grpc server is running at 7000',
+  level: 'info',
+  timestamp: '2020-07-21T05:20:54.879Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connected to the databasee',
+  level: 'info',
+  timestamp: '2020-07-21T05:20:57.196Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Product find request',
+  level: 'debug',
+  timestamp: '2020-07-21T05:21:53.702Z',
+  label: 'product',
+  metadata: {
+    request: {
+      page: '1',
+      search: '',
+      active: false,
+      inactive: false,
+      category: '',
+      brand: '',
+      limit: '10',
+      sort: '',
+      price_from: '0',
+      price_till: '0',
+      lang: ''
+    }
+  }
+}
+{
+  message: 'filtering products',
+  level: 'debug',
+  timestamp: '2020-07-21T05:21:53.706Z',
+  label: 'catalog-service',
+  metadata: {
+    query: { lang: 'ru' },
+    options: { skip: 0, limit: 10, sort: { created_at: -1 } }
+  }
+}
+{
+  message: 'Product find request',
+  level: 'debug',
+  timestamp: '2020-07-21T05:25:52.691Z',
+  label: 'product',
+  metadata: {
+    request: {
+      page: '1',
+      search: '',
+      active: false,
+      inactive: false,
+      category: '',
+      brand: '',
+      limit: '10',
+      sort: '',
+      price_from: '0',
+      price_till: '0',
+      lang: ''
+    }
+  }
+}
+{
+  message: 'filtering products',
+  level: 'debug',
+  timestamp: '2020-07-21T05:25:52.700Z',
+  label: 'catalog-service',
+  metadata: {
+    query: { lang: 'ru' },
+    options: { skip: 0, limit: 10, sort: { created_at: -1 } }
+  }
+}
+{
+  message: 'Product find request',
+  level: 'debug',
+  timestamp: '2020-07-21T14:08:26.712Z',
+  label: 'product',
+  metadata: {
+    request: {
+      page: '1',
+      search: '',
+      active: false,
+      inactive: false,
+      category: '',
+      brand: '',
+      limit: '10',
+      sort: '',
+      price_from: '0',
+      price_till: '0',
+      lang: ''
+    }
+  }
+}
+{
+  message: 'filtering products',
+  level: 'debug',
+  timestamp: '2020-07-21T14:08:26.776Z',
+  label: 'catalog-service',
+  metadata: {
+    query: { lang: 'ru' },
+    options: { skip: 0, limit: 10, sort: { created_at: -1 } }
+  }
+}
+{
+  message: 'Product get request',
+  level: 'debug',
+  timestamp: '2020-07-21T14:09:04.314Z',
+  label: 'product',
+  metadata: {
+    request: {
+      id: 'televizor-samsung-ue49n5500au',
+      slug: 'televizor-samsung-ue49n5500au',
+      lang: ''
+    }
+  }
+}
+{
+  message: 'finding a product',
+  level: 'debug',
+  timestamp: '2020-07-21T14:09:04.329Z',
+  label: 'catalog-service',
+  metadata: {
+    query: {
+      lang: 'ru',
+      '$or': [ { slug: 'televizor-samsung-ue49n5500au' } ]
+    }
+  }
+}
+{
+  message: 'Main function is running',
+  level: 'info',
+  timestamp: '2020-07-21T14:13:15.950Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connecting to db: mongodb://rj:mysecret@dev.goodzone.uz:27017/catalog_service',
+  level: 'info',
+  timestamp: '2020-07-21T14:13:15.956Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'grpc server is running at 7000',
+  level: 'info',
+  timestamp: '2020-07-21T14:13:16.079Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connected to the databasee',
+  level: 'info',
+  timestamp: '2020-07-21T14:13:19.959Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Product get request',
+  level: 'debug',
+  timestamp: '2020-07-21T14:13:21.781Z',
+  label: 'product',
+  metadata: {
+    request: {
+      id: 'televizor-samsung-ue49n5500au',
+      slug: 'televizor-samsung-ue49n5500au',
+      lang: ''
+    }
+  }
+}
+{
+  message: 'finding a product',
+  level: 'debug',
+  timestamp: '2020-07-21T14:13:21.782Z',
+  label: 'catalog-service',
+  metadata: {
+    query: {
+      lang: 'ru',
+      '$or': [ { slug: 'televizor-samsung-ue49n5500au' } ]
+    }
+  }
+}

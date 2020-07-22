@@ -432,7 +432,10 @@ const getRelatedProducts = (product_id = '', limit = 10) => (
                 },
                 productsOfSameCategory: (cb) => {
                     Product.find({
-                        _id: { $nin: p.related_products},
+                        _id: { 
+                            $nin: p.related_products,
+                            $ne: p._id
+                        },
                         category: p.category,
                         lang: p.lang
                     }, {}, {limit}).populate({
@@ -446,7 +449,10 @@ const getRelatedProducts = (product_id = '', limit = 10) => (
                 },
                 randomProducts: (cb) => {
                     Product.find({
-                        _id: { $nin: p.related_products },
+                        _id: { 
+                            $nin: p.related_products,
+                            $ne: p._id
+                        },
                         category: { $ne: p.category},
                         lang: p.lang
                     }, {}, {limit}).populate({
