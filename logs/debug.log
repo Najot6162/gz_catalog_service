@@ -1084,3 +1084,138 @@
     }
   }
 }
+{
+  message: 'Main function is running',
+  level: 'info',
+  timestamp: '2020-07-22T02:41:04.972Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connecting to db: mongodb://rj:mysecret@dev.goodzone.uz:27017/catalog_service',
+  level: 'info',
+  timestamp: '2020-07-22T02:41:04.976Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'grpc server is running at 7000',
+  level: 'info',
+  timestamp: '2020-07-22T02:41:05.042Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connected to the databasee',
+  level: 'info',
+  timestamp: '2020-07-22T02:41:07.306Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Brand Find Request',
+  level: 'debug',
+  timestamp: '2020-07-22T02:42:25.623Z',
+  label: 'brand',
+  metadata: {
+    request: {
+      page: '1',
+      search: '',
+      active: false,
+      inactive: false,
+      limit: '0',
+      sort: '',
+      lang: ''
+    }
+  }
+}
+{
+  message: 'Main function is running',
+  level: 'info',
+  timestamp: '2020-07-22T02:43:54.089Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connecting to db: mongodb://rj:mysecret@dev.goodzone.uz:27017/catalog_service',
+  level: 'info',
+  timestamp: '2020-07-22T02:43:54.093Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'grpc server is running at 7000',
+  level: 'info',
+  timestamp: '2020-07-22T02:43:54.151Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connected to the databasee',
+  level: 'info',
+  timestamp: '2020-07-22T02:43:56.346Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Brand Find Request',
+  level: 'debug',
+  timestamp: '2020-07-22T02:44:10.319Z',
+  label: 'brand',
+  metadata: {
+    request: {
+      page: '1',
+      search: '',
+      active: false,
+      inactive: false,
+      limit: '0',
+      sort: '',
+      lang: ''
+    }
+  }
+}
+{
+  message: 'Main function is running',
+  level: 'info',
+  timestamp: '2020-07-22T06:19:10.019Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connecting to db: mongodb://rj:mysecret@dev.goodzone.uz:27017/catalog_service',
+  level: 'info',
+  timestamp: '2020-07-22T06:19:10.023Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'grpc server is running at 7000',
+  level: 'info',
+  timestamp: '2020-07-22T06:19:10.097Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connected to the databasee',
+  level: 'info',
+  timestamp: '2020-07-22T06:19:12.202Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Brand Find Request',
+  level: 'debug',
+  timestamp: '2020-07-22T06:19:33.771Z',
+  label: 'brand',
+  metadata: {
+    request: {
+      page: '1',
+      search: '',
+      active: false,
+      inactive: false,
+      limit: '0',
+      sort: '',
+      lang: ''
+    }
+  }
+}
