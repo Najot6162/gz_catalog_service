@@ -260,3 +260,492 @@
   label: 'catalog-service',
   metadata: { function: 'get shop', request: { product_id: 'my-product' } }
 }
+{
+  message: 'E11000 duplicate key error collection: catalog_service.categories index: slug_1 dup key: { slug: "my-category" }',
+  level: 'error',
+  timestamp: '2020-07-22T07:14:46.719Z',
+  label: 'catalog-service',
+  metadata: {
+    function: 'create category',
+    request: {
+      name: 'my category',
+      parent_id: '',
+      active: false,
+      description: '',
+      order: '0',
+      image: '',
+      meta: {
+        title: 'Category Meta',
+        description: 'Description of Meta',
+        tags: 'Tag of meta'
+      },
+      product_property_groups: [ '5ee1e1b06123a6296c4996af' ],
+      lang: 'ru',
+      parent: null,
+      created_at: 1595402086704,
+      updated_at: 1595402086704
+    }
+  }
+}
+{
+  message: 'E11000 duplicate key error collection: catalog_service.categories index: slug_1 dup key: { slug: "my-category" }',
+  level: 'error',
+  timestamp: '2020-07-22T07:18:28.812Z',
+  label: 'catalog-service',
+  metadata: {
+    function: 'create category',
+    request: {
+      name: 'my category',
+      parent_id: '',
+      active: false,
+      description: '',
+      order: '0',
+      image: '',
+      meta: {
+        title: 'Category Meta',
+        description: 'Description of Meta',
+        tags: 'Tag of meta'
+      },
+      product_property_groups: [ '5ee1e1b06123a6296c4996af' ],
+      lang: 'ru',
+      parent: null,
+      created_at: 1595402308798,
+      updated_at: 1595402308798
+    }
+  }
+}
+{
+  message: 'E11000 duplicate key error collection: catalog_service.categories index: slug_1 dup key: { slug: "my-category" }',
+  level: 'error',
+  timestamp: '2020-07-22T07:24:10.561Z',
+  label: 'catalog-service',
+  metadata: {
+    function: 'create category for other lang',
+    category: {
+      meta: {
+        title: 'Category Meta',
+        description: 'Description of Meta',
+        tags: 'Tag of meta'
+      },
+      description: '',
+      active: false,
+      order: 0,
+      product_property_groups: [ 5ee1e1b06123a6296c4996af ],
+      lang: 'ru',
+      _id: 5f17e99a67d92342f38e365e,
+      name: 'my category',
+      image: '',
+      parent: null,
+      created_at: 2020-07-22T07:24:10.539Z,
+      updated_at: 2020-07-22T07:24:10.539Z,
+      slug: 'my-category',
+      __v: 0
+    }
+  }
+}
+{
+  message: "Can't use $or",
+  level: 'error',
+  timestamp: '2020-07-22T07:24:10.580Z',
+  label: 'catalog-service',
+  metadata: {
+    function: 'update category',
+    request: {
+      id: 'my-category',
+      name: 'my updated category',
+      parent_id: '',
+      active: false,
+      description: '',
+      order: '0',
+      image: '',
+      meta: {
+        title: 'Updated Category Meta',
+        description: 'Updated Description of Meta',
+        tags: 'Updated Tag of meta'
+      },
+      product_property_groups: '5ee1e1b06123sd296c4996af,5ee1e1b06123a6296c4996af',
+      lang: 'ru'
+    }
+  }
+}
+{
+  message: 'E11000 duplicate key error collection: catalog_service.categories index: slug_1 dup key: { slug: "my-category" }',
+  level: 'error',
+  timestamp: '2020-07-22T07:30:49.778Z',
+  label: 'catalog-service',
+  metadata: {
+    function: 'create category',
+    request: {
+      name: 'my category',
+      parent_id: '',
+      active: false,
+      description: '',
+      order: '0',
+      image: '',
+      meta: {
+        title: 'Category Meta',
+        description: 'Description of Meta',
+        tags: 'Tag of meta'
+      },
+      product_property_groups: [ '5ee1e1b06123a6296c4996af' ],
+      lang: 'ru',
+      parent: null,
+      created_at: 1595403049763,
+      updated_at: 1595403049763
+    }
+  }
+}
+{
+  message: 'E11000 duplicate key error collection: catalog_service.categories index: slug_1 dup key: { slug: "my-category" }',
+  level: 'error',
+  timestamp: '2020-07-22T07:38:09.092Z',
+  label: 'catalog-service',
+  metadata: {
+    function: 'create category for other lang',
+    category: {
+      meta: {
+        title: 'Category Meta',
+        description: 'Description of Meta',
+        tags: 'Tag of meta'
+      },
+      description: '',
+      active: false,
+      order: 0,
+      product_property_groups: [ 5ee1e1b06123a6296c4996af ],
+      lang: 'ru',
+      _id: 5f17ece181ed4e4590e6a9f8,
+      name: 'my category',
+      image: '',
+      parent: null,
+      created_at: 2020-07-22T07:38:09.069Z,
+      updated_at: 2020-07-22T07:38:09.069Z,
+      slug: 'my-category',
+      __v: 0
+    }
+  }
+}
+{
+  message: 'E11000 duplicate key error collection: catalog_service.categories index: slug_1 dup key: { slug: "my-category" }',
+  level: 'error',
+  timestamp: '2020-07-22T07:38:46.485Z',
+  label: 'catalog-service',
+  metadata: {
+    function: 'create category for other lang',
+    category: {
+      meta: {
+        title: 'Category Meta',
+        description: 'Description of Meta',
+        tags: 'Tag of meta'
+      },
+      description: '',
+      active: false,
+      order: 0,
+      product_property_groups: [ 5ee1e1b06123a6296c4996af ],
+      lang: 'ru',
+      _id: 5f17ed0636174e45b08f1b2d,
+      name: 'my category',
+      image: '',
+      parent: null,
+      created_at: 2020-07-22T07:38:46.458Z,
+      updated_at: 2020-07-22T07:38:46.458Z,
+      slug: 'my-category',
+      __v: 0
+    }
+  }
+}
+{
+  message: "Can't use $or",
+  level: 'error',
+  timestamp: '2020-07-22T07:38:46.501Z',
+  label: 'catalog-service',
+  metadata: {
+    function: 'update category',
+    request: {
+      id: 'my-category',
+      name: 'my updated category',
+      parent_id: '',
+      active: false,
+      description: '',
+      order: '0',
+      image: '',
+      meta: {
+        title: 'Updated Category Meta',
+        description: 'Updated Description of Meta',
+        tags: 'Updated Tag of meta'
+      },
+      product_property_groups: '5ee1e1b06123sd296c4996af,5ee1e1b06123a6296c4996af',
+      lang: 'ru'
+    }
+  }
+}
+{
+  message: 'E11000 duplicate key error collection: catalog_service.categories index: slug_1 dup key: { slug: "my-category" }',
+  level: 'error',
+  timestamp: '2020-07-22T08:10:53.652Z',
+  label: 'catalog-service',
+  metadata: {
+    function: 'create category for other lang',
+    category: {
+      meta: {
+        title: 'Category Meta',
+        description: 'Description of Meta',
+        tags: 'Tag of meta'
+      },
+      description: '',
+      active: false,
+      order: 0,
+      product_property_groups: [ 5ee1e1b06123a6296c4996af ],
+      lang: 'ru',
+      _id: 5f17f48ddd716946283ef300,
+      name: 'my category',
+      image: '',
+      parent: null,
+      created_at: 2020-07-22T08:10:53.639Z,
+      updated_at: 2020-07-22T08:10:53.639Z,
+      slug: 'my-category',
+      __v: 0
+    }
+  }
+}
+{
+  message: "Can't use $or",
+  level: 'error',
+  timestamp: '2020-07-22T08:10:53.668Z',
+  label: 'catalog-service',
+  metadata: {
+    function: 'update category',
+    request: {
+      id: 'my-category',
+      name: 'my updated category',
+      parent_id: '',
+      active: false,
+      description: '',
+      order: '0',
+      image: '',
+      meta: {
+        title: 'Updated Category Meta',
+        description: 'Updated Description of Meta',
+        tags: 'Updated Tag of meta'
+      },
+      product_property_groups: '5ee1e1b06123sd296c4996af,5ee1e1b06123a6296c4996af',
+      lang: 'ru'
+    }
+  }
+}
+{
+  message: 'E11000 duplicate key error collection: catalog_service.categories index: slug_1 dup key: { slug: "my-category" }',
+  level: 'error',
+  timestamp: '2020-07-22T08:13:34.546Z',
+  label: 'catalog-service',
+  metadata: {
+    function: 'create category',
+    request: {
+      name: 'my category',
+      parent_id: '',
+      active: false,
+      description: '',
+      order: '0',
+      image: '',
+      meta: {
+        title: 'Category Meta',
+        description: 'Description of Meta',
+        tags: 'Tag of meta'
+      },
+      product_property_groups: [ '5ee1e1b06123a6296c4996af' ],
+      lang: 'ru',
+      parent: null,
+      created_at: 1595405614530,
+      updated_at: 1595405614530
+    }
+  }
+}
+{
+  message: 'E11000 duplicate key error collection: catalog_service.categories index: slug_1 dup key: { slug: "my-category" }',
+  level: 'error',
+  timestamp: '2020-07-22T08:13:48.427Z',
+  label: 'catalog-service',
+  metadata: {
+    function: 'create category for other lang',
+    category: {
+      meta: {
+        title: 'Category Meta',
+        description: 'Description of Meta',
+        tags: 'Tag of meta'
+      },
+      description: '',
+      active: false,
+      order: 0,
+      product_property_groups: [ 5ee1e1b06123a6296c4996af ],
+      lang: 'ru',
+      _id: 5f17f53c914ac1468da6c37f,
+      name: 'my category',
+      image: '',
+      parent: null,
+      created_at: 2020-07-22T08:13:48.412Z,
+      updated_at: 2020-07-22T08:13:48.412Z,
+      slug: 'my-category',
+      __v: 0
+    }
+  }
+}
+{
+  message: "Can't use $or",
+  level: 'error',
+  timestamp: '2020-07-22T08:13:48.444Z',
+  label: 'catalog-service',
+  metadata: {
+    function: 'update category',
+    request: {
+      id: 'my-category',
+      name: 'my updated category',
+      parent_id: '',
+      active: false,
+      description: '',
+      order: '0',
+      image: '',
+      meta: {
+        title: 'Updated Category Meta',
+        description: 'Updated Description of Meta',
+        tags: 'Updated Tag of meta'
+      },
+      product_property_groups: '5ee1e1b06123sd296c4996af,5ee1e1b06123a6296c4996af',
+      lang: 'ru'
+    }
+  }
+}
+{
+  message: 'E11000 duplicate key error collection: catalog_service.categories index: slug_1 dup key: { slug: "my-category" }',
+  level: 'error',
+  timestamp: '2020-07-22T10:15:52.688Z',
+  label: 'catalog-service',
+  metadata: {
+    function: 'create category for other lang',
+    category: {
+      meta: {
+        title: 'Category Meta',
+        description: 'Description of Meta',
+        tags: 'Tag of meta'
+      },
+      description: '',
+      active: false,
+      order: 0,
+      product_property_groups: [ 5ee1e1b06123a6296c4996af ],
+      lang: 'ru',
+      _id: 5f1811d8ee1f8247f87f67af,
+      name: 'my category',
+      image: '',
+      parent: null,
+      created_at: 2020-07-22T10:15:52.660Z,
+      updated_at: 2020-07-22T10:15:52.660Z,
+      slug: 'my-category',
+      __v: 0
+    }
+  }
+}
+{
+  message: "Can't use $or",
+  level: 'error',
+  timestamp: '2020-07-22T10:15:52.707Z',
+  label: 'catalog-service',
+  metadata: {
+    function: 'update category',
+    request: {
+      id: 'my-category',
+      name: 'my updated category',
+      parent_id: '',
+      active: false,
+      description: '',
+      order: '0',
+      image: '',
+      meta: {
+        title: 'Updated Category Meta',
+        description: 'Updated Description of Meta',
+        tags: 'Updated Tag of meta'
+      },
+      product_property_groups: '5ee1e1b06123sd296c4996af,5ee1e1b06123a6296c4996af',
+      lang: 'ru'
+    }
+  }
+}
+{
+  message: 'E11000 duplicate key error collection: catalog_service.categories index: slug_1 dup key: { slug: "my-category" }',
+  level: 'error',
+  timestamp: '2020-07-22T10:28:44.688Z',
+  label: 'catalog-service',
+  metadata: {
+    function: 'create category',
+    request: {
+      name: 'my category',
+      parent_id: '',
+      active: false,
+      description: '',
+      order: '0',
+      image: '',
+      meta: {
+        title: 'Category Meta',
+        description: 'Description of Meta',
+        tags: 'Tag of meta'
+      },
+      product_property_groups: [ '5ee1e1b06123a6296c4996af' ],
+      lang: 'ru',
+      parent: null,
+      created_at: 1595413724672,
+      updated_at: 1595413724672
+    }
+  }
+}
+{
+  message: "Can't use $or",
+  level: 'error',
+  timestamp: '2020-07-22T10:31:16.344Z',
+  label: 'catalog-service',
+  metadata: {
+    function: 'update category',
+    request: {
+      id: 'my-category',
+      name: 'my updated category',
+      parent_id: '',
+      active: false,
+      description: '',
+      order: '0',
+      image: '',
+      meta: {
+        title: 'Updated Category Meta',
+        description: 'Updated Description of Meta',
+        tags: 'Updated Tag of meta'
+      },
+      product_property_groups: '5ee1e1b06123sd296c4996af,5ee1e1b06123a6296c4996af',
+      lang: 'ru'
+    }
+  }
+}
+{
+  message: 'Key is not provided',
+  level: 'error',
+  timestamp: '2020-07-22T10:48:28.540Z',
+  label: 'catalog-service',
+  metadata: {
+    function: 'delete category',
+    request: { id: '5f18197c9e0d974a26ba3bd6', slug: '' }
+  }
+}
+{
+  message: 'Key is not provided',
+  level: 'error',
+  timestamp: '2020-07-22T10:57:13.376Z',
+  label: 'catalog-service',
+  metadata: {
+    function: 'delete category',
+    request: { id: '', slug: 'my-category' }
+  }
+}
+{
+  message: 'Cast to ObjectId failed for value "" at path "_id" for model "Category"',
+  level: 'error',
+  timestamp: '2020-07-22T11:04:16.200Z',
+  label: 'catalog-service',
+  metadata: {
+    function: 'delete category',
+    request: { id: '', slug: 'my-category' }
+  }
+}

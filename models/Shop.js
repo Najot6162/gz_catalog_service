@@ -1,75 +1,85 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const Types = mongoose.Schema.Types;
 
-var ShopSchema = new mongoose.Schema({
-    name:{
-        type:String,
-        required: true
+var ShopSchema = new mongoose.Schema(
+  {
+    name: {
+      type: String,
+      required: true,
     },
-    slug:{
-        type: String,
-        slug: 'name',
-        unique: true
+    slug: {
+      type: String,
+      slug: "name",
+      permanent: true,
     },
-    products: [{
+    products: [
+      {
         product: {
-            type: Types.ObjectId
+          type: Types.ObjectId,
         },
         quantity: {
-            type: Number
-        }
-    }],
+          type: Number,
+        },
+      },
+    ],
     phone: {
-        type: String,
-        default: ''
+      type: String,
+      default: "",
     },
     address: {
-        type: String,
-        required: true
+      type: String,
+      required: true,
     },
     address2: {
-        type: String
+      type: String,
     },
     preview_text: {
-        type: String,
-        default: ''
+      type: String,
+      default: "",
     },
-    description:{
-        type:String,
-        default: ''
+    description: {
+      type: String,
+      default: "",
     },
     working_hours: {
-        type: String
+      type: String,
     },
     loc: {
-        long: {
-            type: Number
-        },
-        lat: {
-            type: Number
-        } 
+      long: {
+        type: Number,
+      },
+      lat: {
+        type: Number,
+      },
     },
-    active:{
-        type: Boolean,
-        default: true
+    active: {
+      type: Boolean,
+      default: true,
     },
     order: {
-        type:Number,
-        default: 0
+      type: Number,
+      default: 0,
     },
     image: {
-        type: String
+      type: String,
     },
     created_at: {
-        type:Date,
-        default: Date.now
+      type: Date,
+      default: Date.now,
     },
     updated_at: {
-        type: Date
-    }
-}, {
-    minimize: false
-});
+      type: Date,
+    },
+    lang: {
+      type: String,
+      enum: ["uz", "ru", "en"],
+      required: true,
+      default: "ru",
+    },
+  },
+  {
+    minimize: false,
+  }
+);
 
-module.exports = mongoose.model('Shop', ShopSchema);
-
+module.exports = mongoose.model("Shop", ShopSchema);

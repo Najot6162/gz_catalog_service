@@ -30,6 +30,7 @@ message CreateShopRequest {
     bool   active = 9;
     string image = 10;
     int64  order = 11;
+    string lang = 12;
 }
 
 message UpdateShopRequest {
@@ -49,6 +50,7 @@ message UpdateShopRequest {
     bool   active = 10;
     string image = 11;
     int64  order = 12;
+    string lang = 13;
 }
 
 message UpdateProductQuantityRequest {

@@ -1,68 +1,73 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const Types = mongoose.Schema.Types;
 
-var CategorySchema = new mongoose.Schema({
-    name:{
-        type:String,
-        required: true
+var CategorySchema = new mongoose.Schema(
+  {
+    name: {
+      type: String,
+      required: true,
     },
-    slug:{
-        type: String,
-        slug: 'name',
-        unique: true
+    slug: {
+      type: String,
+      slug: "name",
+      permanent: true,
     },
-    parent:{
-        type: Types.ObjectId,
-        ref: 'Category'
+    parent: {
+      type: Types.ObjectId,
+      ref: "Category",
     },
-    description:{
-        type:String,
-        default: ''
+    description: {
+      type: String,
+      default: "",
     },
-    active:{
-        type: Boolean,
-        default: true
+    active: {
+      type: Boolean,
+      default: true,
     },
     order: {
-        type:Number,
-        default: 0
+      type: Number,
+      default: 0,
     },
     image: {
-        type: String
+      type: String,
     },
-    product_property_groups : [{
+    product_property_groups: [
+      {
         type: Types.ObjectId,
-        ref: 'ProductPropertyGroup'
-    }],
+        ref: "ProductPropertyGroup",
+      },
+    ],
     meta: {
-        title: {
-            type: String,
-            default: ''
-        },
-        description: {
-            type: String,
-            default: ''
-        },
-        tags: {
-            type: String,
-            default: ''
-        }
+      title: {
+        type: String,
+        default: "",
+      },
+      description: {
+        type: String,
+        default: "",
+      },
+      tags: {
+        type: String,
+        default: "",
+      },
     },
     lang: {
-        type: String,
-        enum: ['uz','ru','en'],
-        required: true
+      type: String,
+      enum: ["uz", "ru", "en"],
+      required: true,
+      default: "ru",
     },
     created_at: {
-        type:Date,
-        default: Date.now
+      type: Date,
+      default: Date.now,
     },
     updated_at: {
-        type: Date
-    }
-}, {
-    minimize: false
-});
+      type: Date,
+    },
+  },
+  {
+    minimize: false,
+  }
+);
 
-module.exports = mongoose.model('Category', CategorySchema);
-
+module.exports = mongoose.model("Category", CategorySchema);

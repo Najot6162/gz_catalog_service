@@ -100,6 +100,7 @@ message Category {
     string updated_at = 11;
     repeated SlimCategory children = 12;
     repeated ProductPropertyGroup product_property_groups  = 13;
+    string lang = 14;
 }
 
 message MainCategorySlim {
@@ -127,6 +128,7 @@ message MainCategorySlim {
     string updated_at = 10;
     repeated SlimCategory children = 11;
     repeated ProductPropertyGroup product_property_groups  = 12;
+    string lang = 13;
 }
 
 message Brand {
@@ -217,6 +219,7 @@ message Shop {
     repeated Stock products = 14;
     string created_at = 15;
     string updated_at = 16;
+    string lang = 17;
 }
 
 message GetRequest {
