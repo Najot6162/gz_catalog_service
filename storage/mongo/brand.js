@@ -1,5 +1,7 @@
 const Product = require('../../models/Product');
 const Brand   = require('../../models/Brand');
+const logger = require('../../config/logger');
+const cnf = require('../../config');
 
 let brandStorage = {
     create: (b) => {
