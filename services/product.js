@@ -47,7 +47,7 @@ const productService = {
             label: 'product'
         });
         productStorage.updatePrice(call.request).then((result) => {
-            callback(null, {product: result});
+            callback(null);
         }).catch((err) => {
             logger.error(err.message, {
                 function: 'create product price',

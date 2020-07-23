@@ -749,3 +749,18 @@
     request: { id: '', slug: 'my-category' }
   }
 }
+{
+  message: 'Product key is not provided',
+  level: 'error',
+  timestamp: '2020-07-23T09:17:51.200Z',
+  label: 'catalog-service',
+  metadata: {
+    function: 'create product price',
+    request: {
+      product_id: '',
+      price_type_id: '',
+      price: '2000',
+      old_price: '3000'
+    }
+  }
+}

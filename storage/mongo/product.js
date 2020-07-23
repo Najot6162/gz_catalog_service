@@ -151,43 +151,50 @@ let productStorage = {
         });
     },
     updatePrice: (b) => {
+        // NOTE: slug comes as product_id
         return new Promise((resolve, reject) => {
-            if(!b.product_id) return reject(new Error('Product ID is not provided'));
+            if(!b.product_id) return reject(new Error('Product key is not provided'));
             //if(!b.price_type_id) return reject(new Error('price type ID is required'));
 
-            Product.findById(b.product_id, (err, product) => {
+            Product.find({slug: b.product_id}, (err, products) => {
                 if(err) return reject(err);
-                if(!product) return reject(new Error('Document with id:' + b.product_id + ' not found'));
+                if(!products.length) return reject(new Error('Documents with key:' + b.product_id + ' not found'));
+                if(products.length > 3) return reject(new Error('With key: ' + b.product_id + ', found ' + products.length + ' documents. It seems there is duplication error'));
 
-                if(mongoose.Types.ObjectId.isValid(b.price_type_id)){
-                    // valid price type is given, so we are updating 'prices' field
-                    let updated = false;
-                    product.prices = product.prices.map((price, i) => {
-                        if(price.type.toString() == b.price_type_id){
-                            price.price = b.price;
-                            price.old_price = b.old_price;
-                            updated = true;
+                async.eachSeries(products, (product, cb) => {
+                    if(mongoose.Types.ObjectId.isValid(b.price_type_id)){
+                        // valid price type is given, so we are updating 'prices' field
+                        let updated = false;
+                        product.prices = product.prices.map((price, i) => {
+                            if(price.type.toString() == b.price_type_id){
+                                price.price = b.price;
+                                price.old_price = b.old_price;
+                                updated = true;
+                            }
+                            return price;
+                        });
+                        if(!updated){
+                            product.prices.push({
+                                type: b.price_type_id,
+                                price: b.price,
+                                old_price: b.old_price
+                            });
                         }
-                        return price;
-                    });
-                    if(!updated){
-                        product.prices.push({
-                            type: b.price_type_id,
+                    }else{
+                        // price type is NOT given, so we are saving it as a default price for the product
+                        product.price = {
                             price: b.price,
                             old_price: b.old_price
-                        });
+                        }
                     }
-                }else{
-                    // price type is NOT given, so we are saving it as a default price for the product
-                    product.price = {
-                        price: b.price,
-                        old_price: b.old_price
-                    }
-                }
-
-                product.save((err, updatedProduct) => {
+    
+                    product.save((err, updatedProduct) => {
+                        if(err) return cb(err);
+                        cb();
+                    });
+                }, (err) => {
                     if(err) return reject(err);
-                    resolve(updatedProduct);
+                    return resolve("Price updated");
                 });
             });
         });
