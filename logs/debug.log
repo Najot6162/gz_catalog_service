@@ -1,0 +1,815 @@
+{
+  message: 'Main function is running',
+  level: 'info',
+  timestamp: '2020-07-22T12:48:56.293Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connecting to db: mongodb://rj:mysecret@dev.goodzone.uz:27017/catalog_service',
+  level: 'info',
+  timestamp: '2020-07-22T12:48:56.297Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'grpc server is running at 7000',
+  level: 'info',
+  timestamp: '2020-07-22T12:48:56.340Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connected to the databasee',
+  level: 'info',
+  timestamp: '2020-07-22T12:48:58.936Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Category create request',
+  level: 'debug',
+  timestamp: '2020-07-22T12:49:32.644Z',
+  label: 'category',
+  metadata: {
+    request: {
+      name: 'my category',
+      parent_id: '',
+      active: false,
+      description: '',
+      order: '0',
+      image: '',
+      meta: {
+        title: 'Category Meta',
+        description: 'Description of Meta',
+        tags: 'Tag of meta'
+      },
+      product_property_groups: '5ee1e1b06123sd296c4996af,5ee1e1b06123a6296c4996af',
+      lang: 'ru'
+    }
+  }
+}
+{
+  message: 'Category Create response',
+  level: 'debug',
+  timestamp: '2020-07-22T12:49:33.152Z',
+  label: 'test',
+  metadata: {
+    response: {
+      category: {
+        children: [],
+        product_property_groups: [
+          {
+            properties: [],
+            id: '^��a#�)lI��',
+            name: '',
+            slug: '',
+            description: '',
+            order: '0',
+            active: false,
+            created_at: '',
+            updated_at: ''
+          }
+        ],
+        id: '5f1835dcff9ffc54eccc19be',
+        name: 'my category',
+        slug: 'my-category',
+        parent: null,
+        active: false,
+        description: '',
+        order: '0',
+        image: '',
+        meta: {
+          title: 'Category Meta',
+          description: 'Description of Meta',
+          tags: 'Tag of meta'
+        },
+        created_at: 'Wed Jul 22 2020 17:49:32 GMT+0500 (Uzbekistan Standard Time)',
+        updated_at: 'Wed Jul 22 2020 17:49:32 GMT+0500 (Uzbekistan Standard Time)',
+        lang: 'ru'
+      }
+    }
+  }
+}
+{
+  message: 'Category find request',
+  level: 'debug',
+  timestamp: '2020-07-22T12:49:33.160Z',
+  label: 'category',
+  metadata: {
+    request: {
+      page: '0',
+      search: '',
+      active: false,
+      inactive: false,
+      limit: '0',
+      sort: '',
+      lang: ''
+    }
+  }
+}
+{
+  message: 'Category update request',
+  level: 'debug',
+  timestamp: '2020-07-22T12:49:33.165Z',
+  label: 'category',
+  metadata: {
+    request: {
+      id: 'my-category',
+      name: 'my updated category',
+      parent_id: '',
+      active: false,
+      description: '',
+      order: '0',
+      image: '',
+      meta: {
+        title: 'Updated Category Meta',
+        description: 'Updated Description of Meta',
+        tags: 'Updated Tag of meta'
+      },
+      product_property_groups: '5ee1e1b06123sd296c4996af,5ee1e1b06123a6296c4996af',
+      lang: 'ru'
+    }
+  }
+}
+{
+  message: 'E11000 duplicate key error collection: catalog_service.categories index: slug_1 dup key: { slug: "my-category" }',
+  level: 'error',
+  timestamp: '2020-07-22T12:49:33.543Z',
+  label: 'catalog-service',
+  metadata: {
+    function: 'create category for other lang',
+    category: {
+      meta: {
+        title: 'Category Meta',
+        description: 'Description of Meta',
+        tags: 'Tag of meta'
+      },
+      description: '',
+      active: false,
+      order: 0,
+      product_property_groups: [ 5ee1e1b06123a6296c4996af ],
+      lang: 'ru',
+      _id: 5f1835dcff9ffc54eccc19be,
+      name: 'my category',
+      image: '',
+      parent: null,
+      created_at: 2020-07-22T12:49:32.645Z,
+      updated_at: 2020-07-22T12:49:32.645Z,
+      slug: 'my-category',
+      __v: 0
+    }
+  }
+}
+{
+  message: 'Category Find response',
+  level: 'debug',
+  timestamp: '2020-07-22T12:49:33.962Z',
+  label: 'test',
+  metadata: {
+    response: {
+      categories: [
+        {
+          children: [],
+          product_property_groups: [
+            {
+              properties: [],
+              id: '^��a#�)lI��',
+              name: '',
+              slug: '',
+              description: '',
+              order: '0',
+              active: false,
+              created_at: '',
+              updated_at: ''
+            }
+          ],
+          id: '5f1835dcff9ffc54eccc19be',
+          name: 'my category',
+          slug: 'my-category',
+          parent: null,
+          active: false,
+          description: '',
+          order: '0',
+          image: '',
+          created_at: 'Wed Jul 22 2020 17:49:32 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Wed Jul 22 2020 17:49:32 GMT+0500 (Uzbekistan Standard Time)',
+          lang: 'ru'
+        }
+      ],
+      count: '1'
+    }
+  }
+}
+{
+  message: 'Product Update response',
+  level: 'debug',
+  timestamp: '2020-07-22T12:49:34.680Z',
+  label: 'test',
+  metadata: {
+    response: {
+      category: {
+        children: [],
+        product_property_groups: [
+          {
+            properties: [],
+            id: '^��a#�)lI��',
+            name: '',
+            slug: '',
+            description: '',
+            order: '0',
+            active: false,
+            created_at: '',
+            updated_at: ''
+          }
+        ],
+        id: '5f1835dcff9ffc54eccc19be',
+        name: 'my updated category',
+        slug: 'my-category',
+        parent: null,
+        active: false,
+        description: '',
+        order: '0',
+        image: '',
+        meta: {
+          title: 'Updated Category Meta',
+          description: 'Updated Description of Meta',
+          tags: 'Updated Tag of meta'
+        },
+        created_at: 'Wed Jul 22 2020 17:49:32 GMT+0500 (Uzbekistan Standard Time)',
+        updated_at: 'Wed Jul 22 2020 17:49:32 GMT+0500 (Uzbekistan Standard Time)',
+        lang: 'ru'
+      }
+    }
+  }
+}
+{
+  message: 'Category get request',
+  level: 'debug',
+  timestamp: '2020-07-22T12:49:34.683Z',
+  label: 'category',
+  metadata: { request: { id: '', slug: 'my-category', lang: 'ru' } }
+}
+{
+  message: 'finding a category',
+  level: 'debug',
+  timestamp: '2020-07-22T12:49:34.683Z',
+  label: 'catalog-service',
+  metadata: {
+    query: { lang: 'ru', '$or': [ { slug: 'my-category' } ] }
+  }
+}
+{
+  message: 'getting category result',
+  level: 'debug',
+  timestamp: '2020-07-22T12:49:35.181Z',
+  label: 'catalog-service',
+  metadata: {
+    cat: [
+      {
+        _id: 5f1835dcff9ffc54eccc19be,
+        meta: {
+          title: 'Updated Category Meta',
+          description: 'Updated Description of Meta',
+          tags: 'Updated Tag of meta'
+        },
+        description: '',
+        active: false,
+        order: 0,
+        product_property_groups: [ 5ee1e1b06123a6296c4996af ],
+        lang: 'ru',
+        name: 'my updated category',
+        image: '',
+        created_at: 2020-07-22T12:49:32.645Z,
+        updated_at: 2020-07-22T12:49:32.645Z,
+        slug: 'my-category',
+        __v: 0,
+        children: []
+      }
+    ]
+  }
+}
+{
+  message: 'Product Get response',
+  level: 'debug',
+  timestamp: '2020-07-22T12:49:35.184Z',
+  label: 'test',
+  metadata: {
+    response: {
+      category: {
+        children: [],
+        product_property_groups: [
+          {
+            properties: [],
+            id: '^��a#�)lI��',
+            name: '',
+            slug: '',
+            description: '',
+            order: '0',
+            active: false,
+            created_at: '',
+            updated_at: ''
+          }
+        ],
+        id: '5f1835dcff9ffc54eccc19be',
+        name: 'my updated category',
+        slug: 'my-category',
+        parent: null,
+        active: false,
+        description: '',
+        order: '0',
+        image: '',
+        meta: {
+          title: 'Updated Category Meta',
+          description: 'Updated Description of Meta',
+          tags: 'Updated Tag of meta'
+        },
+        created_at: 'Wed Jul 22 2020 17:49:32 GMT+0500 (Uzbekistan Standard Time)',
+        updated_at: 'Wed Jul 22 2020 17:49:32 GMT+0500 (Uzbekistan Standard Time)',
+        lang: 'ru'
+      }
+    }
+  }
+}
+{
+  message: 'Category delete request',
+  level: 'debug',
+  timestamp: '2020-07-22T12:49:35.187Z',
+  label: 'category',
+  metadata: { request: { id: '', slug: 'my-category' } }
+}
+{
+  message: 'Category Delete response',
+  level: 'debug',
+  timestamp: '2020-07-22T12:49:35.593Z',
+  label: 'test',
+  metadata: { response: {} }
+}
+{
+  message: 'Main function is running',
+  level: 'info',
+  timestamp: '2020-07-22T17:42:06.255Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connecting to db: mongodb://rj:mysecret@dev.goodzone.uz:27017/catalog_service',
+  level: 'info',
+  timestamp: '2020-07-22T17:42:06.259Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'grpc server is running at 7000',
+  level: 'info',
+  timestamp: '2020-07-22T17:42:06.302Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connected to the databasee',
+  level: 'info',
+  timestamp: '2020-07-22T17:42:08.708Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Shop Create Request',
+  level: 'debug',
+  timestamp: '2020-07-23T02:53:07.943Z',
+  label: 'shop',
+  metadata: {
+    request: {
+      name: 'my Shop',
+      phone: '',
+      working_hours: '',
+      address: 'Address of my shop',
+      address2: '',
+      preview_text: 'preview text of my shop',
+      description: 'description of my shop',
+      loc: { long: 72.2229995727539, lat: 43.2130012512207 },
+      active: true,
+      image: '',
+      order: '0',
+      lang: 'ru'
+    }
+  }
+}
+{
+  message: 'Shop Create response',
+  level: 'debug',
+  timestamp: '2020-07-23T02:53:11.683Z',
+  label: 'test',
+  metadata: {
+    response: {
+      shop: {
+        products: [],
+        id: '5f18fb93592f0458c361f4c7',
+        name: 'my Shop',
+        slug: 'my-shop',
+        phone: '',
+        working_hours: '',
+        address: 'Address of my shop',
+        address2: '',
+        preview_text: 'preview text of my shop',
+        description: 'description of my shop',
+        loc: { long: 72.2229995727539, lat: 43.2130012512207 },
+        active: true,
+        image: '',
+        order: '0',
+        created_at: 'Thu Jul 23 2020 07:53:07 GMT+0500 (Uzbekistan Standard Time)',
+        updated_at: 'Thu Jul 23 2020 07:53:07 GMT+0500 (Uzbekistan Standard Time)',
+        lang: 'ru'
+      }
+    }
+  }
+}
+{
+  message: 'Shop Find Request',
+  level: 'debug',
+  timestamp: '2020-07-23T02:53:11.691Z',
+  label: 'shop',
+  metadata: {
+    request: {
+      page: '0',
+      search: '',
+      active: false,
+      inactive: false,
+      limit: '0',
+      sort: ''
+    }
+  }
+}
+{
+  message: 'Shop Update Request',
+  level: 'debug',
+  timestamp: '2020-07-23T02:53:11.701Z',
+  label: 'shop',
+  metadata: {
+    request: {
+      id: 'my-shop',
+      name: 'my updated Shop',
+      phone: '',
+      working_hours: '',
+      address: 'Address of my updated shop',
+      address2: '',
+      preview_text: 'preview text of my updated shop',
+      description: 'description of my updated shop',
+      loc: { long: 72.25199890136719, lat: 43.222999572753906 },
+      active: true,
+      image: '',
+      order: '0',
+      lang: 'ru'
+    }
+  }
+}
+{
+  message: 'Main function is running',
+  level: 'info',
+  timestamp: '2020-07-23T02:54:22.366Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connecting to db: mongodb://rj:mysecret@dev.goodzone.uz:27017/catalog_service',
+  level: 'info',
+  timestamp: '2020-07-23T02:54:22.369Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'grpc server is running at 7000',
+  level: 'info',
+  timestamp: '2020-07-23T02:54:22.428Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connected to the databasee',
+  level: 'info',
+  timestamp: '2020-07-23T02:54:25.395Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Main function is running',
+  level: 'info',
+  timestamp: '2020-07-23T02:56:35.976Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connecting to db: mongodb://rj:mysecret@dev.goodzone.uz:27017/catalog_service',
+  level: 'info',
+  timestamp: '2020-07-23T02:56:35.979Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'grpc server is running at 7000',
+  level: 'info',
+  timestamp: '2020-07-23T02:56:36.032Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connected to the databasee',
+  level: 'info',
+  timestamp: '2020-07-23T02:56:38.725Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Main function is running',
+  level: 'info',
+  timestamp: '2020-07-23T02:56:45.594Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connecting to db: mongodb://localhost:27017/catalog_service',
+  level: 'info',
+  timestamp: '2020-07-23T02:56:45.597Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'grpc server is running at 7000',
+  level: 'info',
+  timestamp: '2020-07-23T02:56:45.637Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connected to the databasee',
+  level: 'info',
+  timestamp: '2020-07-23T02:56:45.651Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Shop Create Request',
+  level: 'debug',
+  timestamp: '2020-07-23T02:56:50.928Z',
+  label: 'shop',
+  metadata: {
+    request: {
+      name: 'my Shop',
+      phone: '',
+      working_hours: '',
+      address: 'Address of my shop',
+      address2: '',
+      preview_text: 'preview text of my shop',
+      description: 'description of my shop',
+      loc: { long: 72.2229995727539, lat: 43.2130012512207 },
+      active: true,
+      image: '',
+      order: '0',
+      lang: 'ru'
+    }
+  }
+}
+{
+  message: 'shop is created with lang en',
+  level: 'debug',
+  timestamp: '2020-07-23T02:56:50.955Z',
+  label: 'catalog-service',
+  metadata: {
+    result: {
+      phone: '',
+      preview_text: 'preview text of my shop',
+      description: 'description of my shop',
+      active: true,
+      order: 0,
+      lang: 'en',
+      _id: 5f18fc72fbb77f5c126dae61,
+      name: 'my Shop',
+      working_hours: '',
+      address: 'Address of my shop',
+      address2: '',
+      loc: { long: 72.2229995727539, lat: 43.2130012512207 },
+      image: '',
+      created_at: 2020-07-23T02:56:50.929Z,
+      updated_at: 2020-07-23T02:56:50.929Z,
+      slug: 'my-shop',
+      products: [],
+      __v: 0
+    }
+  }
+}
+{
+  message: 'Shop Create response',
+  level: 'debug',
+  timestamp: '2020-07-23T02:56:50.959Z',
+  label: 'test',
+  metadata: {
+    response: {
+      shop: {
+        products: [],
+        id: '5f18fc72fbb77f5c126dae60',
+        name: 'my Shop',
+        slug: 'my-shop',
+        phone: '',
+        working_hours: '',
+        address: 'Address of my shop',
+        address2: '',
+        preview_text: 'preview text of my shop',
+        description: 'description of my shop',
+        loc: { long: 72.2229995727539, lat: 43.2130012512207 },
+        active: true,
+        image: '',
+        order: '0',
+        created_at: 'Thu Jul 23 2020 07:56:50 GMT+0500 (Uzbekistan Standard Time)',
+        updated_at: 'Thu Jul 23 2020 07:56:50 GMT+0500 (Uzbekistan Standard Time)',
+        lang: 'ru'
+      }
+    }
+  }
+}
+{
+  message: 'shop is created with lang uz',
+  level: 'debug',
+  timestamp: '2020-07-23T02:56:50.967Z',
+  label: 'catalog-service',
+  metadata: {
+    result: {
+      phone: '',
+      preview_text: 'preview text of my shop',
+      description: 'description of my shop',
+      active: true,
+      order: 0,
+      lang: 'uz',
+      _id: 5f18fc72fbb77f5c126dae62,
+      name: 'my Shop',
+      working_hours: '',
+      address: 'Address of my shop',
+      address2: '',
+      loc: { long: 72.2229995727539, lat: 43.2130012512207 },
+      image: '',
+      created_at: 2020-07-23T02:56:50.929Z,
+      updated_at: 2020-07-23T02:56:50.929Z,
+      slug: 'my-shop',
+      products: [],
+      __v: 0
+    }
+  }
+}
+{
+  message: 'Shop Find Request',
+  level: 'debug',
+  timestamp: '2020-07-23T02:56:50.968Z',
+  label: 'shop',
+  metadata: {
+    request: {
+      page: '0',
+      search: '',
+      active: false,
+      inactive: false,
+      limit: '0',
+      sort: ''
+    }
+  }
+}
+{
+  message: 'Shop Update Request',
+  level: 'debug',
+  timestamp: '2020-07-23T02:56:50.977Z',
+  label: 'shop',
+  metadata: {
+    request: {
+      id: 'my-shop',
+      name: 'my updated Shop',
+      phone: '',
+      working_hours: '',
+      address: 'Address of my updated shop',
+      address2: '',
+      preview_text: 'preview text of my updated shop',
+      description: 'description of my updated shop',
+      loc: { long: 72.25199890136719, lat: 43.222999572753906 },
+      active: true,
+      image: '',
+      order: '0',
+      lang: 'ru'
+    }
+  }
+}
+{
+  message: 'Shop Find response',
+  level: 'debug',
+  timestamp: '2020-07-23T02:56:50.987Z',
+  label: 'test',
+  metadata: {
+    response: {
+      shops: [
+        {
+          products: [],
+          id: '5f18fc72fbb77f5c126dae60',
+          name: 'my Shop',
+          slug: 'my-shop',
+          phone: '',
+          working_hours: '',
+          address: 'Address of my shop',
+          address2: '',
+          preview_text: 'preview text of my shop',
+          description: 'description of my shop',
+          loc: { long: 72.2229995727539, lat: 43.2130012512207 },
+          active: true,
+          image: '',
+          order: '0',
+          created_at: 'Thu Jul 23 2020 07:56:50 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Thu Jul 23 2020 07:56:50 GMT+0500 (Uzbekistan Standard Time)',
+          lang: 'ru'
+        }
+      ],
+      count: '1'
+    }
+  }
+}
+{
+  message: 'Shop Update response',
+  level: 'debug',
+  timestamp: '2020-07-23T02:56:50.992Z',
+  label: 'test',
+  metadata: {
+    response: {
+      shop: {
+        products: [],
+        id: '5f18fc72fbb77f5c126dae60',
+        name: 'my updated Shop',
+        slug: 'my-shop',
+        phone: '',
+        working_hours: '',
+        address: 'Address of my updated shop',
+        address2: '',
+        preview_text: 'preview text of my updated shop',
+        description: 'description of my updated shop',
+        loc: { long: 72.25199890136719, lat: 43.222999572753906 },
+        active: true,
+        image: '',
+        order: '0',
+        created_at: 'Thu Jul 23 2020 07:56:50 GMT+0500 (Uzbekistan Standard Time)',
+        updated_at: 'Thu Jul 23 2020 07:56:50 GMT+0500 (Uzbekistan Standard Time)',
+        lang: 'ru'
+      }
+    }
+  }
+}
+{
+  message: 'Shop Get Request',
+  level: 'debug',
+  timestamp: '2020-07-23T02:56:50.995Z',
+  label: 'shop',
+  metadata: { request: { id: '', slug: 'my-shop', lang: '' } }
+}
+{
+  message: 'finding a category',
+  level: 'debug',
+  timestamp: '2020-07-23T02:56:50.995Z',
+  label: 'catalog-service',
+  metadata: {
+    query: { lang: 'ru', '$or': [ { slug: 'my-shop' } ] }
+  }
+}
+{
+  message: 'Shop Get response',
+  level: 'debug',
+  timestamp: '2020-07-23T02:56:51.005Z',
+  label: 'test',
+  metadata: {
+    response: {
+      shop: {
+        products: [],
+        id: '5f18fc72fbb77f5c126dae60',
+        name: 'my updated Shop',
+        slug: 'my-shop',
+        phone: '',
+        working_hours: '',
+        address: 'Address of my updated shop',
+        address2: '',
+        preview_text: 'preview text of my updated shop',
+        description: 'description of my updated shop',
+        loc: { long: 72.25199890136719, lat: 43.222999572753906 },
+        active: true,
+        image: '',
+        order: '0',
+        created_at: 'Thu Jul 23 2020 07:56:50 GMT+0500 (Uzbekistan Standard Time)',
+        updated_at: 'Thu Jul 23 2020 07:56:50 GMT+0500 (Uzbekistan Standard Time)',
+        lang: 'ru'
+      }
+    }
+  }
+}
+{
+  message: 'Shop Delete Request',
+  level: 'debug',
+  timestamp: '2020-07-23T02:56:51.008Z',
+  label: 'shop',
+  metadata: { request: { id: '', slug: 'my-shop' } }
+}
+{
+  message: 'Shop Delete response',
+  level: 'debug',
+  timestamp: '2020-07-23T02:56:51.012Z',
+  label: 'test',
+  metadata: { response: {} }
+}

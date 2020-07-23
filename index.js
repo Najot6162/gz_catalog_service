@@ -22,7 +22,7 @@ const catalogProto = grpc.loadPackageDefinition(packageDefinition).catalog;
 function main() {
   logger.info("Main function is running");
 
-  // Connecting to database
+  //Connecting to database
   const mongoDBUrl =
     "mongodb://" +
     cfg.mongoUser +

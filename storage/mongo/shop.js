@@ -39,7 +39,7 @@ let shopStorage = {
             if (err)
               logger.error(err.message, {
                 function: "create shop for other lang",
-                category,
+                newShop,
               });
           }
         );
