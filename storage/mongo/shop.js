@@ -131,7 +131,6 @@ let shopStorage = {
       query = {
         ...query,
         lang: filters.lang ? filters.lang : cnf.lang,
-        parent: null,
       };
       if (filters.search.trim()) {
         query = {

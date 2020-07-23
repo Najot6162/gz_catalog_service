@@ -69,6 +69,7 @@ message FindShopsRequest {
     bool   inactive = 4;
     int64  limit = 5;
     string sort = 6;
+    string lang = 7;
 }
 
 message FindShopsResponse {
