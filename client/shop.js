@@ -80,6 +80,7 @@ function main() {
           client.Get(
             {
               slug: updateResponse.shop.slug,
+              lang: "ru",
             },
             (err, getResponse) => {
               console.log("Shop Get");

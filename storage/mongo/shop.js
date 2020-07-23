@@ -39,7 +39,7 @@ let shopStorage = {
             if (err)
               logger.error(err.message, {
                 function: "create shop for other lang",
-                category,
+                newShop,
               });
           }
         );
@@ -131,7 +131,6 @@ let shopStorage = {
       query = {
         ...query,
         lang: filters.lang ? filters.lang : cnf.lang,
-        parent: null,
       };
       if (filters.search.trim()) {
         query = {
@@ -147,16 +146,69 @@ let shopStorage = {
         };
       }
 
-      Shop.find(query, (err, shops) => {
-        if (err) return reject(err);
+      let options = {
+        skip: ((filters.page / 1 - 1) * filters.limit) / 1,
+        limit: filters.limit / 1 ? filters.limit / 1 : 50,
+        sort: { created_at: -1 },
+      };
 
-        // setting images
-        for (let i = 0; i < shops.length; i++) {
-          shops[i].image = shops[i].image ? cnf.cloudUrl + shops[i].image : "";
+      if (filters.sort) {
+        let sortParams = filters.sort.split("|");
+        if (
+          sortParams.length == 2 &&
+          (sortParams[1] == "asc" || sortParams[1] == "desc")
+        ) {
+          options.sort = {};
+          options.sort[sortParams[0]] = sortParams[1] == "asc" ? 1 : -1;
         }
+      }
 
-        resolve(shops);
+      logger.debug("filtering shops", {
+        query,
+        options,
       });
+
+      async.parallel(
+        [
+          (cb) => {
+            Shop.find(query, {}, options, (err, shops) => {
+              if (err) return reject(err);
+              return cb(null, shops || []);
+            });
+          },
+          (cb) => {
+            Shop.countDocuments(query, (err, count) => {
+              if (err) return cb(err);
+              return cb(null, count);
+            });
+          },
+        ],
+        (err, results) => {
+          if (err) return reject(err);
+          let shops = results[0];
+          for (let i = 0; i < shops.length; i++) {
+            shops[i].image = shops[i].image
+              ? cnf.cloudUrl + shops[i].image
+              : "";
+          }
+
+          return resolve({
+            shops,
+            count: results[1],
+          });
+        }
+      );
+
+      // Shop.find(query, (err, shops) => {
+      //   if (err) return reject(err);
+
+      //   // setting images
+      //   for (let i = 0; i < shops.length; i++) {
+      //     shops[i].image = shops[i].image ? cnf.cloudUrl + shops[i].image : "";
+      //   }
+
+      //   resolve(shops);
+      // });
     });
   },
   get: (req) => {
