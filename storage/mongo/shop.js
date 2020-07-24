@@ -191,7 +191,6 @@ let shopStorage = {
               ? cnf.cloudUrl + shops[i].image
               : "";
           }
-
           return resolve({
             shops,
             count: results[1],
@@ -227,7 +226,7 @@ let shopStorage = {
       };
       if (mongoose.Types.ObjectId.isValid(req.id))
         query.$or.push({ _id: req.id });
-      logger.debug("finding a category", { query });
+      logger.debug("finding a shop", { query });
       Shop.findOne(query, (err, sh) => {
         if (err) return reject(err);
         if (!sh) return reject(new Error("Document not found"));
