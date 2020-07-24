@@ -157,6 +157,11 @@ let categoryStorage = {
               }))
             : null,
         }));
+        for (let i = 0; i < categories.length; i++) {
+          categories[i].image = categories[i].image
+            ? cnf.cloudUrl + categories[i].image
+            : "";
+        }
         resolve(categories);
       });
     });
@@ -227,6 +232,7 @@ let categoryStorage = {
               }
             : null,
         };
+        cat.image = cat.image ? cnf.cloudUrl + cat.image : "";
         return resolve(cat);
       });
     });

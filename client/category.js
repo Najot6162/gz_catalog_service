@@ -29,6 +29,7 @@ function main() {
       },
       product_property_groups:
         "5ee1e1b06123sd296c4996af,5ee1e1b06123a6296c4996af",
+      image: "src/img.jpg",
       lang: "ru",
     },
     (err, createResponse) => {
@@ -61,6 +62,7 @@ function main() {
           },
           product_property_groups:
             "5ee1e1b06123sd296c4996af,5ee1e1b06123a6296c4996af",
+          image: "src/img.jpg",
           lang: "ru",
         },
         (err, updateResponse) => {

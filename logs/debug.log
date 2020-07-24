@@ -2722,3 +2722,751 @@
   label: 'test',
   metadata: { response: {} }
 }
+{
+  message: 'Main function is running',
+  level: 'info',
+  timestamp: '2020-07-24T16:06:32.044Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connecting to db: mongodb://localhost:27017/catalog_service',
+  level: 'info',
+  timestamp: '2020-07-24T16:06:32.049Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'grpc server is running at 7000',
+  level: 'info',
+  timestamp: '2020-07-24T16:06:32.102Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connected to the databasee',
+  level: 'info',
+  timestamp: '2020-07-24T16:06:32.140Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Category create request',
+  level: 'debug',
+  timestamp: '2020-07-24T16:06:51.765Z',
+  label: 'category',
+  metadata: {
+    request: {
+      name: 'my category',
+      parent_id: '',
+      active: false,
+      description: '',
+      order: '0',
+      image: 'src/img.jpg',
+      meta: {
+        title: 'Category Meta',
+        description: 'Description of Meta',
+        tags: 'Tag of meta'
+      },
+      product_property_groups: '5ee1e1b06123sd296c4996af,5ee1e1b06123a6296c4996af',
+      lang: 'ru'
+    }
+  }
+}
+{
+  message: 'category is created with lang en',
+  level: 'debug',
+  timestamp: '2020-07-24T16:06:51.798Z',
+  label: 'catalog-service',
+  metadata: {
+    result: {
+      meta: {
+        title: 'Category Meta',
+        description: 'Description of Meta',
+        tags: 'Tag of meta'
+      },
+      description: '',
+      active: false,
+      order: 0,
+      product_property_groups: [ 5ee1e1b06123a6296c4996af ],
+      lang: 'en',
+      _id: 5f1b071b3df2b285e88c4bd4,
+      name: 'my category',
+      image: 'src/img.jpg',
+      parent: null,
+      created_at: 2020-07-24T16:06:51.766Z,
+      updated_at: 2020-07-24T16:06:51.766Z,
+      slug: 'my-category',
+      __v: 0
+    }
+  }
+}
+{
+  message: 'Category Create response',
+  level: 'debug',
+  timestamp: '2020-07-24T16:06:51.801Z',
+  label: 'test',
+  metadata: {
+    response: {
+      category: {
+        children: [],
+        product_property_groups: [
+          {
+            properties: [],
+            id: '^��a#�)lI��',
+            name: '',
+            slug: '',
+            description: '',
+            order: '0',
+            active: false,
+            created_at: '',
+            updated_at: ''
+          }
+        ],
+        id: '5f1b071b3df2b285e88c4bd3',
+        name: 'my category',
+        slug: 'my-category',
+        parent: null,
+        active: false,
+        description: '',
+        order: '0',
+        image: 'src/img.jpg',
+        meta: {
+          title: 'Category Meta',
+          description: 'Description of Meta',
+          tags: 'Tag of meta'
+        },
+        created_at: 'Fri Jul 24 2020 21:06:51 GMT+0500 (Uzbekistan Standard Time)',
+        updated_at: 'Fri Jul 24 2020 21:06:51 GMT+0500 (Uzbekistan Standard Time)',
+        lang: 'ru'
+      }
+    }
+  }
+}
+{
+  message: 'category is created with lang uz',
+  level: 'debug',
+  timestamp: '2020-07-24T16:06:51.808Z',
+  label: 'catalog-service',
+  metadata: {
+    result: {
+      meta: {
+        title: 'Category Meta',
+        description: 'Description of Meta',
+        tags: 'Tag of meta'
+      },
+      description: '',
+      active: false,
+      order: 0,
+      product_property_groups: [ 5ee1e1b06123a6296c4996af ],
+      lang: 'uz',
+      _id: 5f1b071b3df2b285e88c4bd5,
+      name: 'my category',
+      image: 'src/img.jpg',
+      parent: null,
+      created_at: 2020-07-24T16:06:51.766Z,
+      updated_at: 2020-07-24T16:06:51.766Z,
+      slug: 'my-category',
+      __v: 0
+    }
+  }
+}
+{
+  message: 'Category find request',
+  level: 'debug',
+  timestamp: '2020-07-24T16:06:51.810Z',
+  label: 'category',
+  metadata: {
+    request: {
+      page: '0',
+      search: '',
+      active: false,
+      inactive: false,
+      limit: '0',
+      sort: '',
+      lang: ''
+    }
+  }
+}
+{
+  message: 'Category update request',
+  level: 'debug',
+  timestamp: '2020-07-24T16:06:51.814Z',
+  label: 'category',
+  metadata: {
+    request: {
+      id: 'my-category',
+      name: 'my updated category',
+      parent_id: '',
+      active: false,
+      description: '',
+      order: '0',
+      image: 'src/img.jpg',
+      meta: {
+        title: 'Updated Category Meta',
+        description: 'Updated Description of Meta',
+        tags: 'Updated Tag of meta'
+      },
+      product_property_groups: '5ee1e1b06123sd296c4996af,5ee1e1b06123a6296c4996af',
+      lang: 'ru'
+    }
+  }
+}
+{
+  message: 'Category Find response',
+  level: 'debug',
+  timestamp: '2020-07-24T16:06:51.824Z',
+  label: 'test',
+  metadata: {
+    response: {
+      categories: [
+        {
+          children: [],
+          product_property_groups: [
+            {
+              properties: [],
+              id: '^��a#�)lI��',
+              name: '',
+              slug: '',
+              description: '',
+              order: '0',
+              active: false,
+              created_at: '',
+              updated_at: ''
+            }
+          ],
+          id: '5f1b071b3df2b285e88c4bd3',
+          name: 'my category',
+          slug: 'my-category',
+          parent: null,
+          active: false,
+          description: '',
+          order: '0',
+          image: 'src/img.jpg',
+          created_at: 'Fri Jul 24 2020 21:06:51 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 24 2020 21:06:51 GMT+0500 (Uzbekistan Standard Time)',
+          lang: 'ru'
+        }
+      ],
+      count: '1'
+    }
+  }
+}
+{
+  message: 'Product Update response',
+  level: 'debug',
+  timestamp: '2020-07-24T16:06:51.839Z',
+  label: 'test',
+  metadata: {
+    response: {
+      category: {
+        children: [],
+        product_property_groups: [
+          {
+            properties: [],
+            id: '^��a#�)lI��',
+            name: '',
+            slug: '',
+            description: '',
+            order: '0',
+            active: false,
+            created_at: '',
+            updated_at: ''
+          }
+        ],
+        id: '5f1b071b3df2b285e88c4bd3',
+        name: 'my updated category',
+        slug: 'my-category',
+        parent: null,
+        active: false,
+        description: '',
+        order: '0',
+        image: 'src/img.jpg',
+        meta: {
+          title: 'Updated Category Meta',
+          description: 'Updated Description of Meta',
+          tags: 'Updated Tag of meta'
+        },
+        created_at: 'Fri Jul 24 2020 21:06:51 GMT+0500 (Uzbekistan Standard Time)',
+        updated_at: 'Fri Jul 24 2020 21:06:51 GMT+0500 (Uzbekistan Standard Time)',
+        lang: 'ru'
+      }
+    }
+  }
+}
+{
+  message: 'Category get request',
+  level: 'debug',
+  timestamp: '2020-07-24T16:06:51.843Z',
+  label: 'category',
+  metadata: { request: { id: '', slug: 'my-category', lang: 'ru' } }
+}
+{
+  message: 'finding a category',
+  level: 'debug',
+  timestamp: '2020-07-24T16:06:51.843Z',
+  label: 'catalog-service',
+  metadata: {
+    query: { lang: 'ru', '$or': [ { slug: 'my-category' } ] }
+  }
+}
+{
+  message: 'getting category result',
+  level: 'debug',
+  timestamp: '2020-07-24T16:06:51.845Z',
+  label: 'catalog-service',
+  metadata: {
+    cat: [
+      {
+        _id: 5f1b071b3df2b285e88c4bd3,
+        meta: {
+          title: 'Updated Category Meta',
+          description: 'Updated Description of Meta',
+          tags: 'Updated Tag of meta'
+        },
+        description: '',
+        active: false,
+        order: 0,
+        product_property_groups: [ 5ee1e1b06123a6296c4996af ],
+        lang: 'ru',
+        name: 'my updated category',
+        image: 'src/img.jpg',
+        created_at: 2020-07-24T16:06:51.766Z,
+        updated_at: 2020-07-24T16:06:51.766Z,
+        slug: 'my-category',
+        __v: 0,
+        children: []
+      }
+    ]
+  }
+}
+{
+  message: 'Product Get response',
+  level: 'debug',
+  timestamp: '2020-07-24T16:06:51.847Z',
+  label: 'test',
+  metadata: {
+    response: {
+      category: {
+        children: [],
+        product_property_groups: [
+          {
+            properties: [],
+            id: '^��a#�)lI��',
+            name: '',
+            slug: '',
+            description: '',
+            order: '0',
+            active: false,
+            created_at: '',
+            updated_at: ''
+          }
+        ],
+        id: '5f1b071b3df2b285e88c4bd3',
+        name: 'my updated category',
+        slug: 'my-category',
+        parent: null,
+        active: false,
+        description: '',
+        order: '0',
+        image: 'src/img.jpg',
+        meta: {
+          title: 'Updated Category Meta',
+          description: 'Updated Description of Meta',
+          tags: 'Updated Tag of meta'
+        },
+        created_at: 'Fri Jul 24 2020 21:06:51 GMT+0500 (Uzbekistan Standard Time)',
+        updated_at: 'Fri Jul 24 2020 21:06:51 GMT+0500 (Uzbekistan Standard Time)',
+        lang: 'ru'
+      }
+    }
+  }
+}
+{
+  message: 'Category delete request',
+  level: 'debug',
+  timestamp: '2020-07-24T16:06:51.849Z',
+  label: 'category',
+  metadata: { request: { id: '', slug: 'my-category' } }
+}
+{
+  message: 'Category Delete response',
+  level: 'debug',
+  timestamp: '2020-07-24T16:06:51.855Z',
+  label: 'test',
+  metadata: { response: {} }
+}
+{
+  message: 'Main function is running',
+  level: 'info',
+  timestamp: '2020-07-24T16:10:46.374Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connecting to db: mongodb://localhost:27017/catalog_service',
+  level: 'info',
+  timestamp: '2020-07-24T16:10:46.377Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'grpc server is running at 7000',
+  level: 'info',
+  timestamp: '2020-07-24T16:10:46.418Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connected to the databasee',
+  level: 'info',
+  timestamp: '2020-07-24T16:10:46.430Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Category create request',
+  level: 'debug',
+  timestamp: '2020-07-24T16:10:50.390Z',
+  label: 'category',
+  metadata: {
+    request: {
+      name: 'my category',
+      parent_id: '',
+      active: false,
+      description: '',
+      order: '0',
+      image: 'src/img.jpg',
+      meta: {
+        title: 'Category Meta',
+        description: 'Description of Meta',
+        tags: 'Tag of meta'
+      },
+      product_property_groups: '5ee1e1b06123sd296c4996af,5ee1e1b06123a6296c4996af',
+      lang: 'ru'
+    }
+  }
+}
+{
+  message: 'category is created with lang en',
+  level: 'debug',
+  timestamp: '2020-07-24T16:10:50.415Z',
+  label: 'catalog-service',
+  metadata: {
+    result: {
+      meta: {
+        title: 'Category Meta',
+        description: 'Description of Meta',
+        tags: 'Tag of meta'
+      },
+      description: '',
+      active: false,
+      order: 0,
+      product_property_groups: [ 5ee1e1b06123a6296c4996af ],
+      lang: 'en',
+      _id: 5f1b080aa98f0f86a8167592,
+      name: 'my category',
+      image: 'src/img.jpg',
+      parent: null,
+      created_at: 2020-07-24T16:10:50.391Z,
+      updated_at: 2020-07-24T16:10:50.391Z,
+      slug: 'my-category',
+      __v: 0
+    }
+  }
+}
+{
+  message: 'Category Create response',
+  level: 'debug',
+  timestamp: '2020-07-24T16:10:50.418Z',
+  label: 'test',
+  metadata: {
+    response: {
+      category: {
+        children: [],
+        product_property_groups: [
+          {
+            properties: [],
+            id: '^��a#�)lI��',
+            name: '',
+            slug: '',
+            description: '',
+            order: '0',
+            active: false,
+            created_at: '',
+            updated_at: ''
+          }
+        ],
+        id: '5f1b080aa98f0f86a8167591',
+        name: 'my category',
+        slug: 'my-category',
+        parent: null,
+        active: false,
+        description: '',
+        order: '0',
+        image: 'src/img.jpg',
+        meta: {
+          title: 'Category Meta',
+          description: 'Description of Meta',
+          tags: 'Tag of meta'
+        },
+        created_at: 'Fri Jul 24 2020 21:10:50 GMT+0500 (Uzbekistan Standard Time)',
+        updated_at: 'Fri Jul 24 2020 21:10:50 GMT+0500 (Uzbekistan Standard Time)',
+        lang: 'ru'
+      }
+    }
+  }
+}
+{
+  message: 'Category find request',
+  level: 'debug',
+  timestamp: '2020-07-24T16:10:50.427Z',
+  label: 'category',
+  metadata: {
+    request: {
+      page: '0',
+      search: '',
+      active: false,
+      inactive: false,
+      limit: '0',
+      sort: '',
+      lang: ''
+    }
+  }
+}
+{
+  message: 'Category update request',
+  level: 'debug',
+  timestamp: '2020-07-24T16:10:50.430Z',
+  label: 'category',
+  metadata: {
+    request: {
+      id: 'my-category',
+      name: 'my updated category',
+      parent_id: '',
+      active: false,
+      description: '',
+      order: '0',
+      image: 'src/img.jpg',
+      meta: {
+        title: 'Updated Category Meta',
+        description: 'Updated Description of Meta',
+        tags: 'Updated Tag of meta'
+      },
+      product_property_groups: '5ee1e1b06123sd296c4996af,5ee1e1b06123a6296c4996af',
+      lang: 'ru'
+    }
+  }
+}
+{
+  message: 'category is created with lang uz',
+  level: 'debug',
+  timestamp: '2020-07-24T16:10:50.437Z',
+  label: 'catalog-service',
+  metadata: {
+    result: {
+      meta: {
+        title: 'Category Meta',
+        description: 'Description of Meta',
+        tags: 'Tag of meta'
+      },
+      description: '',
+      active: false,
+      order: 0,
+      product_property_groups: [ 5ee1e1b06123a6296c4996af ],
+      lang: 'uz',
+      _id: 5f1b080aa98f0f86a8167593,
+      name: 'my category',
+      image: 'src/img.jpg',
+      parent: null,
+      created_at: 2020-07-24T16:10:50.391Z,
+      updated_at: 2020-07-24T16:10:50.391Z,
+      slug: 'my-category',
+      __v: 0
+    }
+  }
+}
+{
+  message: 'Category Find response',
+  level: 'debug',
+  timestamp: '2020-07-24T16:10:50.444Z',
+  label: 'test',
+  metadata: {
+    response: {
+      categories: [
+        {
+          children: [],
+          product_property_groups: [
+            {
+              properties: [],
+              id: '^��a#�)lI��',
+              name: '',
+              slug: '',
+              description: '',
+              order: '0',
+              active: false,
+              created_at: '',
+              updated_at: ''
+            }
+          ],
+          id: '5f1b080aa98f0f86a8167591',
+          name: 'my category',
+          slug: 'my-category',
+          parent: null,
+          active: false,
+          description: '',
+          order: '0',
+          image: 'https://sdn.delever.uz/goodzone/src/img.jpg',
+          created_at: 'Fri Jul 24 2020 21:10:50 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Jul 24 2020 21:10:50 GMT+0500 (Uzbekistan Standard Time)',
+          lang: 'ru'
+        }
+      ],
+      count: '1'
+    }
+  }
+}
+{
+  message: 'Product Update response',
+  level: 'debug',
+  timestamp: '2020-07-24T16:10:50.451Z',
+  label: 'test',
+  metadata: {
+    response: {
+      category: {
+        children: [],
+        product_property_groups: [
+          {
+            properties: [],
+            id: '^��a#�)lI��',
+            name: '',
+            slug: '',
+            description: '',
+            order: '0',
+            active: false,
+            created_at: '',
+            updated_at: ''
+          }
+        ],
+        id: '5f1b080aa98f0f86a8167591',
+        name: 'my updated category',
+        slug: 'my-category',
+        parent: null,
+        active: false,
+        description: '',
+        order: '0',
+        image: 'src/img.jpg',
+        meta: {
+          title: 'Updated Category Meta',
+          description: 'Updated Description of Meta',
+          tags: 'Updated Tag of meta'
+        },
+        created_at: 'Fri Jul 24 2020 21:10:50 GMT+0500 (Uzbekistan Standard Time)',
+        updated_at: 'Fri Jul 24 2020 21:10:50 GMT+0500 (Uzbekistan Standard Time)',
+        lang: 'ru'
+      }
+    }
+  }
+}
+{
+  message: 'Category get request',
+  level: 'debug',
+  timestamp: '2020-07-24T16:10:50.454Z',
+  label: 'category',
+  metadata: { request: { id: '', slug: 'my-category', lang: 'ru' } }
+}
+{
+  message: 'finding a category',
+  level: 'debug',
+  timestamp: '2020-07-24T16:10:50.455Z',
+  label: 'catalog-service',
+  metadata: {
+    query: { lang: 'ru', '$or': [ { slug: 'my-category' } ] }
+  }
+}
+{
+  message: 'getting category result',
+  level: 'debug',
+  timestamp: '2020-07-24T16:10:50.458Z',
+  label: 'catalog-service',
+  metadata: {
+    cat: [
+      {
+        _id: 5f1b080aa98f0f86a8167591,
+        meta: {
+          title: 'Updated Category Meta',
+          description: 'Updated Description of Meta',
+          tags: 'Updated Tag of meta'
+        },
+        description: '',
+        active: false,
+        order: 0,
+        product_property_groups: [ 5ee1e1b06123a6296c4996af ],
+        lang: 'ru',
+        name: 'my updated category',
+        image: 'src/img.jpg',
+        created_at: 2020-07-24T16:10:50.391Z,
+        updated_at: 2020-07-24T16:10:50.391Z,
+        slug: 'my-category',
+        __v: 0,
+        children: []
+      }
+    ]
+  }
+}
+{
+  message: 'Product Get response',
+  level: 'debug',
+  timestamp: '2020-07-24T16:10:50.459Z',
+  label: 'test',
+  metadata: {
+    response: {
+      category: {
+        children: [],
+        product_property_groups: [
+          {
+            properties: [],
+            id: '^��a#�)lI��',
+            name: '',
+            slug: '',
+            description: '',
+            order: '0',
+            active: false,
+            created_at: '',
+            updated_at: ''
+          }
+        ],
+        id: '5f1b080aa98f0f86a8167591',
+        name: 'my updated category',
+        slug: 'my-category',
+        parent: null,
+        active: false,
+        description: '',
+        order: '0',
+        image: 'https://sdn.delever.uz/goodzone/src/img.jpg',
+        meta: {
+          title: 'Updated Category Meta',
+          description: 'Updated Description of Meta',
+          tags: 'Updated Tag of meta'
+        },
+        created_at: 'Fri Jul 24 2020 21:10:50 GMT+0500 (Uzbekistan Standard Time)',
+        updated_at: 'Fri Jul 24 2020 21:10:50 GMT+0500 (Uzbekistan Standard Time)',
+        lang: 'ru'
+      }
+    }
+  }
+}
+{
+  message: 'Category delete request',
+  level: 'debug',
+  timestamp: '2020-07-24T16:10:50.462Z',
+  label: 'category',
+  metadata: { request: { id: '', slug: 'my-category' } }
+}
+{
+  message: 'Category Delete response',
+  level: 'debug',
+  timestamp: '2020-07-24T16:10:50.469Z',
+  label: 'test',
+  metadata: { response: {} }
+}
