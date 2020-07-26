@@ -21,7 +21,7 @@ function main() {
   // create category
   client.Create(
     {
-      name: "my category",
+      name: "my categoryy",
       meta: {
         title: "Category Meta",
         description: "Description of Meta",

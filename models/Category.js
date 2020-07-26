@@ -9,8 +9,9 @@ var CategorySchema = new mongoose.Schema(
     },
     slug: {
       type: String,
-      slug: "name",
-      permanent: true,
+      slug: 'name',
+			permanent: true,
+			unique: false
     },
     parent: {
       type: Types.ObjectId,
