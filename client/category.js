@@ -82,7 +82,7 @@ function main() {
             (err, getResponse) => {
               if (err) return console.log("Error: ", err.message);
 
-              logger.debug("Product Get response", {
+              logger.debug("Category Get response", {
                 response: getResponse,
                 label: "test",
               });
