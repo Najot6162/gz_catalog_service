@@ -16,6 +16,7 @@ var ShopSchema = new mongoose.Schema(
       {
         product: {
           type: Types.ObjectId,
+          ref: "Product",
         },
         quantity: {
           type: Number,
