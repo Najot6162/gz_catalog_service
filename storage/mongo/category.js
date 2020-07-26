@@ -128,6 +128,7 @@ let categoryStorage = {
 
       let a = Category.aggregate([
         { $match: query },
+        { $sort: { order: -1 } },
         {
           $lookup: {
             from: "categories",
@@ -184,8 +185,6 @@ let categoryStorage = {
       };
       if (mongoose.Types.ObjectId.isValid(req.id))
         query.$or.push({ _id: req.id });
-
-      logger.debug("finding a category", { query });
       Category.aggregate([
         { $match: query },
         { $limit: 1 },
@@ -231,8 +230,9 @@ let categoryStorage = {
                 id: cat.parent._id,
               }
             : null,
+          image: cat.image ? cnf.cloudUrl + cat.image : "",
         };
-        cat.image = cat.image ? cnf.cloudUrl + cat.image : "";
+
         return resolve(cat);
       });
     });
