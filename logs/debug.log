@@ -2151,3 +2151,76 @@
   label: 'test',
   metadata: { response: {} }
 }
+{
+  message: 'Main function is running',
+  level: 'info',
+  timestamp: '2020-07-27T12:18:16.647Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connecting to db: mongodb://rj:mysecret@dev.goodzone.uz:27017/catalog_service',
+  level: 'info',
+  timestamp: '2020-07-27T12:18:16.651Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'grpc server is running at 7000',
+  level: 'info',
+  timestamp: '2020-07-27T12:18:16.727Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connected to the databasee',
+  level: 'info',
+  timestamp: '2020-07-27T12:18:20.670Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Product find request',
+  level: 'debug',
+  timestamp: '2020-07-27T12:19:27.627Z',
+  label: 'product',
+  metadata: {
+    request: {
+      page: '1',
+      search: '',
+      active: false,
+      inactive: false,
+      category: '',
+      brand: '',
+      limit: '10',
+      sort: '',
+      price_from: '0',
+      price_till: '0',
+      lang: ''
+    }
+  }
+}
+{
+  message: 'filtering products',
+  level: 'debug',
+  timestamp: '2020-07-27T12:19:27.629Z',
+  label: 'catalog-service',
+  metadata: {
+    query: { lang: 'ru' },
+    options: { skip: 0, limit: 10, sort: { created_at: -1 } }
+  }
+}
+{
+  message: 'Shops get request',
+  level: 'debug',
+  timestamp: '2020-07-27T12:19:51.672Z',
+  label: 'shop',
+  metadata: { request: { product_id: 'smartfon-samsung-galaxy-a51-black' } }
+}
+{
+  message: 'Shops get request',
+  level: 'debug',
+  timestamp: '2020-07-27T12:21:44.454Z',
+  label: 'shop',
+  metadata: { request: { product_id: 'smartfon-samsung-galaxy-a51-black' } }
+}

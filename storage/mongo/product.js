@@ -489,26 +489,45 @@ let productStorage = {
   },
   getShops: (req) => {
     return new Promise((resolve, reject) => {
-      if (!req.product_id) return reject(new Error("Key is not given"));
-      let query = {
-        lang: req.lang ? req.lang : cnf.lang,
-        active: true,
+			if (!req.product_id) return reject(new Error("Key is not given"));
+			
+			// making query
+			let productQuery = {};
+      productQuery = {
+				...productQuery,
+				lang: cnf.lang,
+        $or: [
+          {
+            slug: req.product_id,
+          },
+        ],
       };
-      Shop.find(query, (err, shops) => {
-        if (err) return reject(err);
-        if (!shops) return reject(new Error("Shops are not found"));
-        shops = shops.map((sh, i) => {
-          let products = sh.products.filter((stock) => {
-            return stock.product == req.product_id;
-          });
-          return {
-            // ...sh,
-            shop: sh,
-            quantity: products.length ? products[0].quantity : 0,
-          };
-        });
-        return resolve({ shops });
-      });
+      if (mongoose.Types.ObjectId.isValid(req.product_id)) productQuery.$or.push({ _id: req.product_id });
+			
+			Product.findOne(productQuery, (err, product) => {
+				if(err) return reject(err);
+				if(!product) return reject(new Error("Product not found"));
+
+				let query = {
+					lang: req.lang ? req.lang : cnf.lang,
+					active: true,
+				};
+				Shop.find(query, (err, shops) => {
+					if (err) return reject(err);
+					if (!shops) return reject(new Error("Shops are not found"));
+					
+					shops = shops.map((sh, i) => {
+						let products = sh.products.filter((stock) => {
+							return stock.product == product._id;
+						});
+						return {
+							shop: sh,
+							quantity: products.length ? products[0].quantity : 0,
+						};
+					});
+					return resolve({ shops });
+				});
+			})
     });
   },
   delete: (req) => {
