@@ -72,6 +72,12 @@ function main() {
 			// }).catch((err) => {
 			// 	console.log("error on importing Categories: " + err);
 			// });
+
+			importer.importProducts().then((result) => {
+				console.log("Products have been imported");
+			}).catch((err) => {
+				console.log("error on importing Products: " + err);
+			});
 		}, 2000);
 		
   });

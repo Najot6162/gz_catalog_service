@@ -9,7 +9,8 @@ var ProductSchema = new mongoose.Schema({
     slug: {
         type: String,
         slug: 'name',
-        permanent: true
+        permanent: true,
+        required: true
     },
     category: {
         type: Types.ObjectId,
@@ -47,8 +48,7 @@ var ProductSchema = new mongoose.Schema({
     },
     prices: [{
         type:{
-            type: Types.ObjectId,
-            ref: 'PriceType'
+            type: Number
         },
         price: Number,
         old_price: Number
