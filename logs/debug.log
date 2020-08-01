@@ -1,2226 +1,1845 @@
 {
   message: 'Main function is running',
   level: 'info',
-  timestamp: '2020-07-26T12:15:15.662Z',
-  label: 'catalog-service',
-  metadata: {}
-}
-{
-  message: 'Connecting to db: mongodb://localhost:27017/catalog_service',
-  level: 'info',
-  timestamp: '2020-07-26T12:15:15.665Z',
-  label: 'catalog-service',
-  metadata: {}
-}
-{
-  message: 'grpc server is running at 7000',
-  level: 'info',
-  timestamp: '2020-07-26T12:15:15.717Z',
-  label: 'catalog-service',
-  metadata: {}
-}
-{
-  message: 'Connected to the databasee',
-  level: 'info',
-  timestamp: '2020-07-26T12:15:15.734Z',
-  label: 'catalog-service',
-  metadata: {}
-}
-{
-  message: 'Category create request',
-  level: 'debug',
-  timestamp: '2020-07-26T12:15:18.807Z',
-  label: 'category',
-  metadata: {
-    request: {
-      name: 'my categoryy',
-      parent_id: '',
-      active: false,
-      description: '',
-      order: '0',
-      image: 'src/img.jpg',
-      meta: {
-        title: 'Category Meta',
-        description: 'Description of Meta',
-        tags: 'Tag of meta'
-      },
-      product_property_groups: '5ee1e1b06123sd296c4996af,5ee1e1b06123a6296c4996af',
-      lang: 'ru'
-    }
-  }
-}
-{
-  message: 'category is created with lang en',
-  level: 'debug',
-  timestamp: '2020-07-26T12:15:18.832Z',
-  label: 'catalog-service',
-  metadata: {
-    result: {
-      meta: {
-        title: 'Category Meta',
-        description: 'Description of Meta',
-        tags: 'Tag of meta'
-      },
-      description: '',
-      active: false,
-      order: 0,
-      product_property_groups: [ 5ee1e1b06123a6296c4996af ],
-      lang: 'en',
-      _id: 5f1d73d67aa4b41ec9cd9fe2,
-      name: 'my categoryy',
-      image: 'src/img.jpg',
-      parent: null,
-      created_at: 2020-07-26T12:15:18.807Z,
-      updated_at: 2020-07-26T12:15:18.807Z,
-      slug: 'my-categoryy',
-      __v: 0
-    }
-  }
-}
-{
-  message: 'Category Create response',
-  level: 'debug',
-  timestamp: '2020-07-26T12:15:18.835Z',
-  label: 'test',
-  metadata: {
-    response: {
-      category: {
-        children: [],
-        product_property_groups: [
-          {
-            properties: [],
-            id: '^��a#�)lI��',
-            name: '',
-            slug: '',
-            description: '',
-            order: '0',
-            active: false,
-            created_at: '',
-            updated_at: ''
-          }
-        ],
-        id: '5f1d73d67aa4b41ec9cd9fe1',
-        name: 'my categoryy',
-        slug: 'my-categoryy',
-        parent: null,
-        active: false,
-        description: '',
-        order: '0',
-        image: 'src/img.jpg',
-        meta: {
-          title: 'Category Meta',
-          description: 'Description of Meta',
-          tags: 'Tag of meta'
-        },
-        created_at: 'Sun Jul 26 2020 17:15:18 GMT+0500 (Uzbekistan Standard Time)',
-        updated_at: 'Sun Jul 26 2020 17:15:18 GMT+0500 (Uzbekistan Standard Time)',
-        lang: 'ru'
-      }
-    }
-  }
-}
-{
-  message: 'category is created with lang uz',
-  level: 'debug',
-  timestamp: '2020-07-26T12:15:18.840Z',
-  label: 'catalog-service',
-  metadata: {
-    result: {
-      meta: {
-        title: 'Category Meta',
-        description: 'Description of Meta',
-        tags: 'Tag of meta'
-      },
-      description: '',
-      active: false,
-      order: 0,
-      product_property_groups: [ 5ee1e1b06123a6296c4996af ],
-      lang: 'uz',
-      _id: 5f1d73d67aa4b41ec9cd9fe3,
-      name: 'my categoryy',
-      image: 'src/img.jpg',
-      parent: null,
-      created_at: 2020-07-26T12:15:18.807Z,
-      updated_at: 2020-07-26T12:15:18.807Z,
-      slug: 'my-categoryy',
-      __v: 0
-    }
-  }
-}
-{
-  message: 'Category find request',
-  level: 'debug',
-  timestamp: '2020-07-26T12:15:18.844Z',
-  label: 'category',
-  metadata: {
-    request: {
-      page: '0',
-      search: '',
-      active: false,
-      inactive: false,
-      limit: '0',
-      sort: '',
-      lang: ''
-    }
-  }
-}
-{
-  message: 'Category update request',
-  level: 'debug',
-  timestamp: '2020-07-26T12:15:18.847Z',
-  label: 'category',
-  metadata: {
-    request: {
-      id: 'my-categoryy',
-      name: 'my updated category',
-      parent_id: '',
-      active: false,
-      description: '',
-      order: '0',
-      image: 'src/img.jpg',
-      meta: {
-        title: 'Updated Category Meta',
-        description: 'Updated Description of Meta',
-        tags: 'Updated Tag of meta'
-      },
-      product_property_groups: '5ee1e1b06123sd296c4996af,5ee1e1b06123a6296c4996af',
-      lang: 'ru'
-    }
-  }
-}
-{
-  message: 'Category Find response',
-  level: 'debug',
-  timestamp: '2020-07-26T12:15:18.859Z',
-  label: 'test',
-  metadata: {
-    response: {
-      categories: [
-        {
-          children: [],
-          product_property_groups: [
-            {
-              properties: [],
-              id: '^��a#�)lI��',
-              name: '',
-              slug: '',
-              description: '',
-              order: '0',
-              active: false,
-              created_at: '',
-              updated_at: ''
-            }
-          ],
-          id: '5f1d73d67aa4b41ec9cd9fe1',
-          name: 'my categoryy',
-          slug: 'my-categoryy',
-          parent: null,
-          active: false,
-          description: '',
-          order: '0',
-          image: 'https://sdn.delever.uz/goodzone/src/img.jpg',
-          created_at: 'Sun Jul 26 2020 17:15:18 GMT+0500 (Uzbekistan Standard Time)',
-          updated_at: 'Sun Jul 26 2020 17:15:18 GMT+0500 (Uzbekistan Standard Time)',
-          lang: 'ru'
-        }
-      ],
-      count: '1'
-    }
-  }
-}
-{
-  message: 'Product Update response',
-  level: 'debug',
-  timestamp: '2020-07-26T12:15:18.864Z',
-  label: 'test',
-  metadata: {
-    response: {
-      category: {
-        children: [],
-        product_property_groups: [
-          {
-            properties: [],
-            id: '^��a#�)lI��',
-            name: '',
-            slug: '',
-            description: '',
-            order: '0',
-            active: false,
-            created_at: '',
-            updated_at: ''
-          }
-        ],
-        id: '5f1d73d67aa4b41ec9cd9fe1',
-        name: 'my updated category',
-        slug: 'my-categoryy',
-        parent: null,
-        active: false,
-        description: '',
-        order: '0',
-        image: 'src/img.jpg',
-        meta: {
-          title: 'Updated Category Meta',
-          description: 'Updated Description of Meta',
-          tags: 'Updated Tag of meta'
-        },
-        created_at: 'Sun Jul 26 2020 17:15:18 GMT+0500 (Uzbekistan Standard Time)',
-        updated_at: 'Sun Jul 26 2020 17:15:18 GMT+0500 (Uzbekistan Standard Time)',
-        lang: 'ru'
-      }
-    }
-  }
-}
-{
-  message: 'Category get request',
-  level: 'debug',
-  timestamp: '2020-07-26T12:15:18.871Z',
-  label: 'category',
-  metadata: { request: { id: '', slug: 'my-categoryy', lang: 'ru' } }
-}
-{
-  message: 'getting category result',
-  level: 'debug',
-  timestamp: '2020-07-26T12:15:18.875Z',
-  label: 'catalog-service',
-  metadata: {
-    cat: [
-      {
-        _id: 5f1d73d67aa4b41ec9cd9fe1,
-        meta: {
-          title: 'Updated Category Meta',
-          description: 'Updated Description of Meta',
-          tags: 'Updated Tag of meta'
-        },
-        description: '',
-        active: false,
-        order: 0,
-        product_property_groups: [ 5ee1e1b06123a6296c4996af ],
-        lang: 'ru',
-        name: 'my updated category',
-        image: 'src/img.jpg',
-        created_at: 2020-07-26T12:15:18.807Z,
-        updated_at: 2020-07-26T12:15:18.807Z,
-        slug: 'my-categoryy',
-        __v: 0,
-        children: []
-      }
-    ]
-  }
-}
-{
-  message: 'Category Get response',
-  level: 'debug',
-  timestamp: '2020-07-26T12:15:18.876Z',
-  label: 'test',
-  metadata: {
-    response: {
-      category: {
-        children: [],
-        product_property_groups: [
-          {
-            properties: [],
-            id: '^��a#�)lI��',
-            name: '',
-            slug: '',
-            description: '',
-            order: '0',
-            active: false,
-            created_at: '',
-            updated_at: ''
-          }
-        ],
-        id: '5f1d73d67aa4b41ec9cd9fe1',
-        name: 'my updated category',
-        slug: 'my-categoryy',
-        parent: null,
-        active: false,
-        description: '',
-        order: '0',
-        image: 'https://sdn.delever.uz/goodzone/src/img.jpg',
-        meta: {
-          title: 'Updated Category Meta',
-          description: 'Updated Description of Meta',
-          tags: 'Updated Tag of meta'
-        },
-        created_at: 'Sun Jul 26 2020 17:15:18 GMT+0500 (Uzbekistan Standard Time)',
-        updated_at: 'Sun Jul 26 2020 17:15:18 GMT+0500 (Uzbekistan Standard Time)',
-        lang: 'ru'
-      }
-    }
-  }
-}
-{
-  message: 'Category delete request',
-  level: 'debug',
-  timestamp: '2020-07-26T12:15:18.878Z',
-  label: 'category',
-  metadata: { request: { id: '', slug: 'my-categoryy' } }
-}
-{
-  message: 'Category Delete response',
-  level: 'debug',
-  timestamp: '2020-07-26T12:15:18.892Z',
-  label: 'test',
-  metadata: { response: {} }
-}
-{
-  message: 'Main function is running',
-  level: 'info',
-  timestamp: '2020-07-26T12:17:46.811Z',
-  label: 'catalog-service',
-  metadata: {}
-}
-{
-  message: 'Connecting to db: mongodb://localhost:27017/catalog_service',
-  level: 'info',
-  timestamp: '2020-07-26T12:17:46.815Z',
-  label: 'catalog-service',
-  metadata: {}
-}
-{
-  message: 'grpc server is running at 7000',
-  level: 'info',
-  timestamp: '2020-07-26T12:17:46.858Z',
-  label: 'catalog-service',
-  metadata: {}
-}
-{
-  message: 'Connected to the databasee',
-  level: 'info',
-  timestamp: '2020-07-26T12:17:46.910Z',
-  label: 'catalog-service',
-  metadata: {}
-}
-{
-  message: 'Category create request',
-  level: 'debug',
-  timestamp: '2020-07-26T12:17:50.169Z',
-  label: 'category',
-  metadata: {
-    request: {
-      name: 'my categoryy',
-      parent_id: '',
-      active: false,
-      description: '',
-      order: '0',
-      image: 'src/img.jpg',
-      meta: {
-        title: 'Category Meta',
-        description: 'Description of Meta',
-        tags: 'Tag of meta'
-      },
-      product_property_groups: '5ee1e1b06123sd296c4996af,5ee1e1b06123a6296c4996af',
-      lang: 'ru'
-    }
-  }
-}
-{
-  message: 'category is created with lang en',
-  level: 'debug',
-  timestamp: '2020-07-26T12:17:50.195Z',
-  label: 'catalog-service',
-  metadata: {
-    result: {
-      meta: {
-        title: 'Category Meta',
-        description: 'Description of Meta',
-        tags: 'Tag of meta'
-      },
-      description: '',
-      active: false,
-      order: 0,
-      product_property_groups: [ 5ee1e1b06123a6296c4996af ],
-      lang: 'en',
-      _id: 5f1d746e0cee841ef138666d,
-      name: 'my categoryy',
-      image: 'src/img.jpg',
-      parent: null,
-      created_at: 2020-07-26T12:17:50.170Z,
-      updated_at: 2020-07-26T12:17:50.170Z,
-      slug: 'my-categoryy',
-      __v: 0
-    }
-  }
-}
-{
-  message: 'Category Create response',
-  level: 'debug',
-  timestamp: '2020-07-26T12:17:50.197Z',
-  label: 'test',
-  metadata: {
-    response: {
-      category: {
-        children: [],
-        product_property_groups: [
-          {
-            properties: [],
-            id: '^��a#�)lI��',
-            name: '',
-            slug: '',
-            description: '',
-            order: '0',
-            active: false,
-            created_at: '',
-            updated_at: ''
-          }
-        ],
-        id: '5f1d746e0cee841ef138666c',
-        name: 'my categoryy',
-        slug: 'my-categoryy',
-        parent: null,
-        active: false,
-        description: '',
-        order: '0',
-        image: 'src/img.jpg',
-        meta: {
-          title: 'Category Meta',
-          description: 'Description of Meta',
-          tags: 'Tag of meta'
-        },
-        created_at: 'Sun Jul 26 2020 17:17:50 GMT+0500 (Uzbekistan Standard Time)',
-        updated_at: 'Sun Jul 26 2020 17:17:50 GMT+0500 (Uzbekistan Standard Time)',
-        lang: 'ru'
-      }
-    }
-  }
-}
-{
-  message: 'category is created with lang uz',
-  level: 'debug',
-  timestamp: '2020-07-26T12:17:50.201Z',
-  label: 'catalog-service',
-  metadata: {
-    result: {
-      meta: {
-        title: 'Category Meta',
-        description: 'Description of Meta',
-        tags: 'Tag of meta'
-      },
-      description: '',
-      active: false,
-      order: 0,
-      product_property_groups: [ 5ee1e1b06123a6296c4996af ],
-      lang: 'uz',
-      _id: 5f1d746e0cee841ef138666e,
-      name: 'my categoryy',
-      image: 'src/img.jpg',
-      parent: null,
-      created_at: 2020-07-26T12:17:50.170Z,
-      updated_at: 2020-07-26T12:17:50.170Z,
-      slug: 'my-categoryy',
-      __v: 0
-    }
-  }
-}
-{
-  message: 'Category find request',
-  level: 'debug',
-  timestamp: '2020-07-26T12:17:50.206Z',
-  label: 'category',
-  metadata: {
-    request: {
-      page: '0',
-      search: '',
-      active: false,
-      inactive: false,
-      limit: '0',
-      sort: '',
-      lang: ''
-    }
-  }
-}
-{
-  message: 'Category update request',
-  level: 'debug',
-  timestamp: '2020-07-26T12:17:50.210Z',
-  label: 'category',
-  metadata: {
-    request: {
-      id: 'my-categoryy',
-      name: 'my updated category',
-      parent_id: '',
-      active: false,
-      description: '',
-      order: '0',
-      image: 'src/img.jpg',
-      meta: {
-        title: 'Updated Category Meta',
-        description: 'Updated Description of Meta',
-        tags: 'Updated Tag of meta'
-      },
-      product_property_groups: '5ee1e1b06123sd296c4996af,5ee1e1b06123a6296c4996af',
-      lang: 'ru'
-    }
-  }
-}
-{
-  message: 'Category Find response',
-  level: 'debug',
-  timestamp: '2020-07-26T12:17:50.221Z',
-  label: 'test',
-  metadata: {
-    response: {
-      categories: [
-        {
-          children: [],
-          product_property_groups: [
-            {
-              properties: [],
-              id: '^��a#�)lI��',
-              name: '',
-              slug: '',
-              description: '',
-              order: '0',
-              active: false,
-              created_at: '',
-              updated_at: ''
-            }
-          ],
-          id: '5f1d746e0cee841ef138666c',
-          name: 'my categoryy',
-          slug: 'my-categoryy',
-          parent: null,
-          active: false,
-          description: '',
-          order: '0',
-          image: 'https://sdn.delever.uz/goodzone/src/img.jpg',
-          created_at: 'Sun Jul 26 2020 17:17:50 GMT+0500 (Uzbekistan Standard Time)',
-          updated_at: 'Sun Jul 26 2020 17:17:50 GMT+0500 (Uzbekistan Standard Time)',
-          lang: 'ru'
-        }
-      ],
-      count: '1'
-    }
-  }
-}
-{
-  message: 'Product Update response',
-  level: 'debug',
-  timestamp: '2020-07-26T12:17:50.227Z',
-  label: 'test',
-  metadata: {
-    response: {
-      category: {
-        children: [],
-        product_property_groups: [
-          {
-            properties: [],
-            id: '^��a#�)lI��',
-            name: '',
-            slug: '',
-            description: '',
-            order: '0',
-            active: false,
-            created_at: '',
-            updated_at: ''
-          }
-        ],
-        id: '5f1d746e0cee841ef138666c',
-        name: 'my updated category',
-        slug: 'my-categoryy',
-        parent: null,
-        active: false,
-        description: '',
-        order: '0',
-        image: 'src/img.jpg',
-        meta: {
-          title: 'Updated Category Meta',
-          description: 'Updated Description of Meta',
-          tags: 'Updated Tag of meta'
-        },
-        created_at: 'Sun Jul 26 2020 17:17:50 GMT+0500 (Uzbekistan Standard Time)',
-        updated_at: 'Sun Jul 26 2020 17:17:50 GMT+0500 (Uzbekistan Standard Time)',
-        lang: 'ru'
-      }
-    }
-  }
-}
-{
-  message: 'Category get request',
-  level: 'debug',
-  timestamp: '2020-07-26T12:17:50.230Z',
-  label: 'category',
-  metadata: { request: { id: '', slug: 'my-categoryy', lang: 'ru' } }
-}
-{
-  message: 'getting category result',
-  level: 'debug',
-  timestamp: '2020-07-26T12:17:50.233Z',
-  label: 'catalog-service',
-  metadata: {
-    cat: [
-      {
-        _id: 5f1d746e0cee841ef138666c,
-        meta: {
-          title: 'Updated Category Meta',
-          description: 'Updated Description of Meta',
-          tags: 'Updated Tag of meta'
-        },
-        description: '',
-        active: false,
-        order: 0,
-        product_property_groups: [ 5ee1e1b06123a6296c4996af ],
-        lang: 'ru',
-        name: 'my updated category',
-        image: 'src/img.jpg',
-        created_at: 2020-07-26T12:17:50.170Z,
-        updated_at: 2020-07-26T12:17:50.170Z,
-        slug: 'my-categoryy',
-        __v: 0,
-        children: []
-      }
-    ]
-  }
-}
-{
-  message: 'Category Get response',
-  level: 'debug',
-  timestamp: '2020-07-26T12:17:50.235Z',
-  label: 'test',
-  metadata: {
-    response: {
-      category: {
-        children: [],
-        product_property_groups: [
-          {
-            properties: [],
-            id: '^��a#�)lI��',
-            name: '',
-            slug: '',
-            description: '',
-            order: '0',
-            active: false,
-            created_at: '',
-            updated_at: ''
-          }
-        ],
-        id: '5f1d746e0cee841ef138666c',
-        name: 'my updated category',
-        slug: 'my-categoryy',
-        parent: null,
-        active: false,
-        description: '',
-        order: '0',
-        image: 'https://sdn.delever.uz/goodzone/src/img.jpg',
-        meta: {
-          title: 'Updated Category Meta',
-          description: 'Updated Description of Meta',
-          tags: 'Updated Tag of meta'
-        },
-        created_at: 'Sun Jul 26 2020 17:17:50 GMT+0500 (Uzbekistan Standard Time)',
-        updated_at: 'Sun Jul 26 2020 17:17:50 GMT+0500 (Uzbekistan Standard Time)',
-        lang: 'ru'
-      }
-    }
-  }
-}
-{
-  message: 'Category delete request',
-  level: 'debug',
-  timestamp: '2020-07-26T12:17:50.239Z',
-  label: 'category',
-  metadata: { request: { id: '', slug: 'my-categoryy' } }
-}
-{
-  message: 'Category Delete response',
-  level: 'debug',
-  timestamp: '2020-07-26T12:17:50.249Z',
-  label: 'test',
-  metadata: { response: {} }
-}
-{
-  message: 'Main function is running',
-  level: 'info',
-  timestamp: '2020-07-26T12:23:34.433Z',
-  label: 'catalog-service',
-  metadata: {}
-}
-{
-  message: 'Connecting to db: mongodb://localhost:27017/catalog_service',
-  level: 'info',
-  timestamp: '2020-07-26T12:23:34.436Z',
-  label: 'catalog-service',
-  metadata: {}
-}
-{
-  message: 'grpc server is running at 7000',
-  level: 'info',
-  timestamp: '2020-07-26T12:23:34.486Z',
-  label: 'catalog-service',
-  metadata: {}
-}
-{
-  message: 'Connected to the databasee',
-  level: 'info',
-  timestamp: '2020-07-26T12:23:34.515Z',
-  label: 'catalog-service',
-  metadata: {}
-}
-{
-  message: 'Category create request',
-  level: 'debug',
-  timestamp: '2020-07-26T12:23:39.551Z',
-  label: 'category',
-  metadata: {
-    request: {
-      name: 'my categoryy',
-      parent_id: '',
-      active: false,
-      description: '',
-      order: '0',
-      image: 'src/img.jpg',
-      meta: {
-        title: 'Category Meta',
-        description: 'Description of Meta',
-        tags: 'Tag of meta'
-      },
-      product_property_groups: '5ee1e1b06123sd296c4996af,5ee1e1b06123a6296c4996af',
-      lang: 'ru'
-    }
-  }
-}
-{
-  message: 'category is created with lang en',
-  level: 'debug',
-  timestamp: '2020-07-26T12:23:39.576Z',
-  label: 'catalog-service',
-  metadata: {
-    result: {
-      meta: {
-        title: 'Category Meta',
-        description: 'Description of Meta',
-        tags: 'Tag of meta'
-      },
-      description: '',
-      active: false,
-      order: 0,
-      product_property_groups: [ 5ee1e1b06123a6296c4996af ],
-      lang: 'en',
-      _id: 5f1d75cb1a83901f36278b1a,
-      name: 'my categoryy',
-      image: 'src/img.jpg',
-      parent: null,
-      created_at: 2020-07-26T12:23:39.552Z,
-      updated_at: 2020-07-26T12:23:39.552Z,
-      slug: 'my-categoryy',
-      __v: 0
-    }
-  }
-}
-{
-  message: 'Category Create response',
-  level: 'debug',
-  timestamp: '2020-07-26T12:23:39.579Z',
-  label: 'test',
-  metadata: {
-    response: {
-      category: {
-        children: [],
-        product_property_groups: [
-          {
-            properties: [],
-            id: '^��a#�)lI��',
-            name: '',
-            slug: '',
-            description: '',
-            order: '0',
-            active: false,
-            created_at: '',
-            updated_at: ''
-          }
-        ],
-        id: '5f1d75cb1a83901f36278b19',
-        name: 'my categoryy',
-        slug: 'my-categoryy',
-        parent: null,
-        active: false,
-        description: '',
-        order: '0',
-        image: 'src/img.jpg',
-        meta: {
-          title: 'Category Meta',
-          description: 'Description of Meta',
-          tags: 'Tag of meta'
-        },
-        created_at: 'Sun Jul 26 2020 17:23:39 GMT+0500 (Uzbekistan Standard Time)',
-        updated_at: 'Sun Jul 26 2020 17:23:39 GMT+0500 (Uzbekistan Standard Time)',
-        lang: 'ru'
-      }
-    }
-  }
-}
-{
-  message: 'category is created with lang uz',
-  level: 'debug',
-  timestamp: '2020-07-26T12:23:39.584Z',
-  label: 'catalog-service',
-  metadata: {
-    result: {
-      meta: {
-        title: 'Category Meta',
-        description: 'Description of Meta',
-        tags: 'Tag of meta'
-      },
-      description: '',
-      active: false,
-      order: 0,
-      product_property_groups: [ 5ee1e1b06123a6296c4996af ],
-      lang: 'uz',
-      _id: 5f1d75cb1a83901f36278b1b,
-      name: 'my categoryy',
-      image: 'src/img.jpg',
-      parent: null,
-      created_at: 2020-07-26T12:23:39.552Z,
-      updated_at: 2020-07-26T12:23:39.552Z,
-      slug: 'my-categoryy',
-      __v: 0
-    }
-  }
-}
-{
-  message: 'Category find request',
-  level: 'debug',
-  timestamp: '2020-07-26T12:23:39.587Z',
-  label: 'category',
-  metadata: {
-    request: {
-      page: '0',
-      search: '',
-      active: false,
-      inactive: false,
-      limit: '0',
-      sort: '',
-      lang: ''
-    }
-  }
-}
-{
-  message: 'Category update request',
-  level: 'debug',
-  timestamp: '2020-07-26T12:23:39.591Z',
-  label: 'category',
-  metadata: {
-    request: {
-      id: 'my-categoryy',
-      name: 'my updated category',
-      parent_id: '',
-      active: false,
-      description: '',
-      order: '0',
-      image: 'src/img.jpg',
-      meta: {
-        title: 'Updated Category Meta',
-        description: 'Updated Description of Meta',
-        tags: 'Updated Tag of meta'
-      },
-      product_property_groups: '5ee1e1b06123sd296c4996af,5ee1e1b06123a6296c4996af',
-      lang: 'ru'
-    }
-  }
-}
-{
-  message: 'Category Find response',
-  level: 'debug',
-  timestamp: '2020-07-26T12:23:39.603Z',
-  label: 'test',
-  metadata: {
-    response: {
-      categories: [
-        {
-          children: [],
-          product_property_groups: [
-            {
-              properties: [],
-              id: '^��a#�)lI��',
-              name: '',
-              slug: '',
-              description: '',
-              order: '0',
-              active: false,
-              created_at: '',
-              updated_at: ''
-            }
-          ],
-          id: '5f1d75cb1a83901f36278b19',
-          name: 'my categoryy',
-          slug: 'my-categoryy',
-          parent: null,
-          active: false,
-          description: '',
-          order: '0',
-          image: 'https://sdn.delever.uz/goodzone/src/img.jpg',
-          created_at: 'Sun Jul 26 2020 17:23:39 GMT+0500 (Uzbekistan Standard Time)',
-          updated_at: 'Sun Jul 26 2020 17:23:39 GMT+0500 (Uzbekistan Standard Time)',
-          lang: 'ru'
-        }
-      ],
-      count: '1'
-    }
-  }
-}
-{
-  message: 'Product Update response',
-  level: 'debug',
-  timestamp: '2020-07-26T12:23:39.607Z',
-  label: 'test',
-  metadata: {
-    response: {
-      category: {
-        children: [],
-        product_property_groups: [
-          {
-            properties: [],
-            id: '^��a#�)lI��',
-            name: '',
-            slug: '',
-            description: '',
-            order: '0',
-            active: false,
-            created_at: '',
-            updated_at: ''
-          }
-        ],
-        id: '5f1d75cb1a83901f36278b19',
-        name: 'my updated category',
-        slug: 'my-categoryy',
-        parent: null,
-        active: false,
-        description: '',
-        order: '0',
-        image: 'src/img.jpg',
-        meta: {
-          title: 'Updated Category Meta',
-          description: 'Updated Description of Meta',
-          tags: 'Updated Tag of meta'
-        },
-        created_at: 'Sun Jul 26 2020 17:23:39 GMT+0500 (Uzbekistan Standard Time)',
-        updated_at: 'Sun Jul 26 2020 17:23:39 GMT+0500 (Uzbekistan Standard Time)',
-        lang: 'ru'
-      }
-    }
-  }
-}
-{
-  message: 'Category get request',
-  level: 'debug',
-  timestamp: '2020-07-26T12:23:39.610Z',
-  label: 'category',
-  metadata: { request: { id: '', slug: 'my-categoryy', lang: 'ru' } }
-}
-{
-  message: 'getting category result',
-  level: 'debug',
-  timestamp: '2020-07-26T12:23:39.612Z',
-  label: 'catalog-service',
-  metadata: {
-    cat: [
-      {
-        _id: 5f1d75cb1a83901f36278b19,
-        meta: {
-          title: 'Updated Category Meta',
-          description: 'Updated Description of Meta',
-          tags: 'Updated Tag of meta'
-        },
-        description: '',
-        active: false,
-        order: 0,
-        product_property_groups: [ 5ee1e1b06123a6296c4996af ],
-        lang: 'ru',
-        name: 'my updated category',
-        image: 'src/img.jpg',
-        created_at: 2020-07-26T12:23:39.552Z,
-        updated_at: 2020-07-26T12:23:39.552Z,
-        slug: 'my-categoryy',
-        __v: 0,
-        children: []
-      }
-    ]
-  }
-}
-{
-  message: 'Category Get response',
-  level: 'debug',
-  timestamp: '2020-07-26T12:23:39.615Z',
-  label: 'test',
-  metadata: {
-    response: {
-      category: {
-        children: [],
-        product_property_groups: [
-          {
-            properties: [],
-            id: '^��a#�)lI��',
-            name: '',
-            slug: '',
-            description: '',
-            order: '0',
-            active: false,
-            created_at: '',
-            updated_at: ''
-          }
-        ],
-        id: '5f1d75cb1a83901f36278b19',
-        name: 'my updated category',
-        slug: 'my-categoryy',
-        parent: null,
-        active: false,
-        description: '',
-        order: '0',
-        image: 'https://sdn.delever.uz/goodzone/src/img.jpg',
-        meta: {
-          title: 'Updated Category Meta',
-          description: 'Updated Description of Meta',
-          tags: 'Updated Tag of meta'
-        },
-        created_at: 'Sun Jul 26 2020 17:23:39 GMT+0500 (Uzbekistan Standard Time)',
-        updated_at: 'Sun Jul 26 2020 17:23:39 GMT+0500 (Uzbekistan Standard Time)',
-        lang: 'ru'
-      }
-    }
-  }
-}
-{
-  message: 'Category delete request',
-  level: 'debug',
-  timestamp: '2020-07-26T12:23:39.619Z',
-  label: 'category',
-  metadata: { request: { id: '', slug: 'my-categoryy' } }
-}
-{
-  message: 'Category Delete response',
-  level: 'debug',
-  timestamp: '2020-07-26T12:23:39.629Z',
-  label: 'test',
-  metadata: { response: {} }
-}
-{
-  message: 'Main function is running',
-  level: 'info',
-  timestamp: '2020-07-26T12:28:42.311Z',
-  label: 'catalog-service',
-  metadata: {}
-}
-{
-  message: 'Connecting to db: mongodb://localhost:27017/catalog_service',
-  level: 'info',
-  timestamp: '2020-07-26T12:28:42.314Z',
-  label: 'catalog-service',
-  metadata: {}
-}
-{
-  message: 'grpc server is running at 7000',
-  level: 'info',
-  timestamp: '2020-07-26T12:28:42.366Z',
-  label: 'catalog-service',
-  metadata: {}
-}
-{
-  message: 'Connected to the databasee',
-  level: 'info',
-  timestamp: '2020-07-26T12:28:42.401Z',
-  label: 'catalog-service',
-  metadata: {}
-}
-{
-  message: 'Category create request',
-  level: 'debug',
-  timestamp: '2020-07-26T12:28:45.594Z',
-  label: 'category',
-  metadata: {
-    request: {
-      name: 'my categoryy',
-      parent_id: '',
-      active: false,
-      description: '',
-      order: '0',
-      image: 'src/img.jpg',
-      meta: {
-        title: 'Category Meta',
-        description: 'Description of Meta',
-        tags: 'Tag of meta'
-      },
-      product_property_groups: '5ee1e1b06123sd296c4996af,5ee1e1b06123a6296c4996af',
-      lang: 'ru'
-    }
-  }
-}
-{
-  message: 'category is created with lang en',
-  level: 'debug',
-  timestamp: '2020-07-26T12:28:45.619Z',
-  label: 'catalog-service',
-  metadata: {
-    result: {
-      meta: {
-        title: 'Category Meta',
-        description: 'Description of Meta',
-        tags: 'Tag of meta'
-      },
-      description: '',
-      active: false,
-      order: 0,
-      product_property_groups: [ 5ee1e1b06123a6296c4996af ],
-      lang: 'en',
-      _id: 5f1d76fdcec2b61f8a0c96d1,
-      name: 'my categoryy',
-      image: 'src/img.jpg',
-      parent: null,
-      created_at: 2020-07-26T12:28:45.595Z,
-      updated_at: 2020-07-26T12:28:45.595Z,
-      slug: 'my-categoryy',
-      __v: 0
-    }
-  }
-}
-{
-  message: 'Category Create response',
-  level: 'debug',
-  timestamp: '2020-07-26T12:28:45.622Z',
-  label: 'test',
-  metadata: {
-    response: {
-      category: {
-        children: [],
-        product_property_groups: [
-          {
-            properties: [],
-            id: '^��a#�)lI��',
-            name: '',
-            slug: '',
-            description: '',
-            order: '0',
-            active: false,
-            created_at: '',
-            updated_at: ''
-          }
-        ],
-        id: '5f1d76fdcec2b61f8a0c96d0',
-        name: 'my categoryy',
-        slug: 'my-categoryy',
-        parent: null,
-        active: false,
-        description: '',
-        order: '0',
-        image: 'src/img.jpg',
-        meta: {
-          title: 'Category Meta',
-          description: 'Description of Meta',
-          tags: 'Tag of meta'
-        },
-        created_at: 'Sun Jul 26 2020 17:28:45 GMT+0500 (Uzbekistan Standard Time)',
-        updated_at: 'Sun Jul 26 2020 17:28:45 GMT+0500 (Uzbekistan Standard Time)',
-        lang: 'ru'
-      }
-    }
-  }
-}
-{
-  message: 'category is created with lang uz',
-  level: 'debug',
-  timestamp: '2020-07-26T12:28:45.627Z',
-  label: 'catalog-service',
-  metadata: {
-    result: {
-      meta: {
-        title: 'Category Meta',
-        description: 'Description of Meta',
-        tags: 'Tag of meta'
-      },
-      description: '',
-      active: false,
-      order: 0,
-      product_property_groups: [ 5ee1e1b06123a6296c4996af ],
-      lang: 'uz',
-      _id: 5f1d76fdcec2b61f8a0c96d2,
-      name: 'my categoryy',
-      image: 'src/img.jpg',
-      parent: null,
-      created_at: 2020-07-26T12:28:45.595Z,
-      updated_at: 2020-07-26T12:28:45.595Z,
-      slug: 'my-categoryy',
-      __v: 0
-    }
-  }
-}
-{
-  message: 'Category find request',
-  level: 'debug',
-  timestamp: '2020-07-26T12:28:45.632Z',
-  label: 'category',
-  metadata: {
-    request: {
-      page: '0',
-      search: '',
-      active: false,
-      inactive: false,
-      limit: '0',
-      sort: '',
-      lang: ''
-    }
-  }
-}
-{
-  message: 'Category update request',
-  level: 'debug',
-  timestamp: '2020-07-26T12:28:45.636Z',
-  label: 'category',
-  metadata: {
-    request: {
-      id: 'my-categoryy',
-      name: 'my updated category',
-      parent_id: '',
-      active: false,
-      description: '',
-      order: '0',
-      image: 'src/img.jpg',
-      meta: {
-        title: 'Updated Category Meta',
-        description: 'Updated Description of Meta',
-        tags: 'Updated Tag of meta'
-      },
-      product_property_groups: '5ee1e1b06123sd296c4996af,5ee1e1b06123a6296c4996af',
-      lang: 'ru'
-    }
-  }
-}
-{
-  message: 'Category Find response',
-  level: 'debug',
-  timestamp: '2020-07-26T12:28:45.649Z',
-  label: 'test',
-  metadata: {
-    response: {
-      categories: [
-        {
-          children: [],
-          product_property_groups: [
-            {
-              properties: [],
-              id: '^��a#�)lI��',
-              name: '',
-              slug: '',
-              description: '',
-              order: '0',
-              active: false,
-              created_at: '',
-              updated_at: ''
-            }
-          ],
-          id: '5f1d76fdcec2b61f8a0c96d0',
-          name: 'my categoryy',
-          slug: 'my-categoryy',
-          parent: null,
-          active: false,
-          description: '',
-          order: '0',
-          image: 'https://sdn.delever.uz/goodzone/src/img.jpg',
-          created_at: 'Sun Jul 26 2020 17:28:45 GMT+0500 (Uzbekistan Standard Time)',
-          updated_at: 'Sun Jul 26 2020 17:28:45 GMT+0500 (Uzbekistan Standard Time)',
-          lang: 'ru'
-        }
-      ],
-      count: '1'
-    }
-  }
-}
-{
-  message: 'Product Update response',
-  level: 'debug',
-  timestamp: '2020-07-26T12:28:45.650Z',
-  label: 'test',
-  metadata: {
-    response: {
-      category: {
-        children: [],
-        product_property_groups: [
-          {
-            properties: [],
-            id: '^��a#�)lI��',
-            name: '',
-            slug: '',
-            description: '',
-            order: '0',
-            active: false,
-            created_at: '',
-            updated_at: ''
-          }
-        ],
-        id: '5f1d76fdcec2b61f8a0c96d0',
-        name: 'my updated category',
-        slug: 'my-categoryy',
-        parent: null,
-        active: false,
-        description: '',
-        order: '0',
-        image: 'src/img.jpg',
-        meta: {
-          title: 'Updated Category Meta',
-          description: 'Updated Description of Meta',
-          tags: 'Updated Tag of meta'
-        },
-        created_at: 'Sun Jul 26 2020 17:28:45 GMT+0500 (Uzbekistan Standard Time)',
-        updated_at: 'Sun Jul 26 2020 17:28:45 GMT+0500 (Uzbekistan Standard Time)',
-        lang: 'ru'
-      }
-    }
-  }
-}
-{
-  message: 'Category get request',
-  level: 'debug',
-  timestamp: '2020-07-26T12:28:45.654Z',
-  label: 'category',
-  metadata: { request: { id: '', slug: 'my-categoryy', lang: 'ru' } }
-}
-{
-  message: 'getting category result',
-  level: 'debug',
-  timestamp: '2020-07-26T12:28:45.656Z',
-  label: 'catalog-service',
-  metadata: {
-    cat: [
-      {
-        _id: 5f1d76fdcec2b61f8a0c96d0,
-        meta: {
-          title: 'Updated Category Meta',
-          description: 'Updated Description of Meta',
-          tags: 'Updated Tag of meta'
-        },
-        description: '',
-        active: false,
-        order: 0,
-        product_property_groups: [ 5ee1e1b06123a6296c4996af ],
-        lang: 'ru',
-        name: 'my updated category',
-        image: 'src/img.jpg',
-        created_at: 2020-07-26T12:28:45.595Z,
-        updated_at: 2020-07-26T12:28:45.595Z,
-        slug: 'my-categoryy',
-        __v: 0,
-        children: []
-      }
-    ]
-  }
-}
-{
-  message: 'Category Get response',
-  level: 'debug',
-  timestamp: '2020-07-26T12:28:45.657Z',
-  label: 'test',
-  metadata: {
-    response: {
-      category: {
-        children: [],
-        product_property_groups: [
-          {
-            properties: [],
-            id: '^��a#�)lI��',
-            name: '',
-            slug: '',
-            description: '',
-            order: '0',
-            active: false,
-            created_at: '',
-            updated_at: ''
-          }
-        ],
-        id: '5f1d76fdcec2b61f8a0c96d0',
-        name: 'my updated category',
-        slug: 'my-categoryy',
-        parent: null,
-        active: false,
-        description: '',
-        order: '0',
-        image: 'https://sdn.delever.uz/goodzone/src/img.jpg',
-        meta: {
-          title: 'Updated Category Meta',
-          description: 'Updated Description of Meta',
-          tags: 'Updated Tag of meta'
-        },
-        created_at: 'Sun Jul 26 2020 17:28:45 GMT+0500 (Uzbekistan Standard Time)',
-        updated_at: 'Sun Jul 26 2020 17:28:45 GMT+0500 (Uzbekistan Standard Time)',
-        lang: 'ru'
-      }
-    }
-  }
-}
-{
-  message: 'Category delete request',
-  level: 'debug',
-  timestamp: '2020-07-26T12:28:45.662Z',
-  label: 'category',
-  metadata: { request: { id: '', slug: 'my-categoryy' } }
-}
-{
-  message: 'Category Delete response',
-  level: 'debug',
-  timestamp: '2020-07-26T12:28:45.675Z',
-  label: 'test',
-  metadata: { response: {} }
-}
-{
-  message: 'Main function is running',
-  level: 'info',
-  timestamp: '2020-07-26T12:30:04.599Z',
-  label: 'catalog-service',
-  metadata: {}
-}
-{
-  message: 'Connecting to db: mongodb://localhost:27017/catalog_service',
-  level: 'info',
-  timestamp: '2020-07-26T12:30:04.602Z',
-  label: 'catalog-service',
-  metadata: {}
-}
-{
-  message: 'grpc server is running at 7000',
-  level: 'info',
-  timestamp: '2020-07-26T12:30:04.648Z',
-  label: 'catalog-service',
-  metadata: {}
-}
-{
-  message: 'Connected to the databasee',
-  level: 'info',
-  timestamp: '2020-07-26T12:30:04.685Z',
-  label: 'catalog-service',
-  metadata: {}
-}
-{
-  message: 'Brand Create Request',
-  level: 'debug',
-  timestamp: '2020-07-26T12:30:14.098Z',
-  label: 'brand',
-  metadata: {
-    request: {
-      id: '',
-      name: 'my Brand',
-      slug: '',
-      image: '',
-      preview_text: 'preview text of my brand',
-      description: 'description of my brand',
-      active: true,
-      order: '0',
-      created_at: '',
-      updated_at: ''
-    }
-  }
-}
-{
-  message: 'Brand Find Request',
-  level: 'debug',
-  timestamp: '2020-07-26T12:30:14.130Z',
-  label: 'brand',
-  metadata: {
-    request: {
-      page: '0',
-      search: '',
-      active: false,
-      inactive: false,
-      limit: '0',
-      sort: '',
-      lang: ''
-    }
-  }
-}
-{
-  message: 'filtering products',
-  level: 'debug',
-  timestamp: '2020-07-26T12:30:14.131Z',
-  label: 'catalog-service',
-  metadata: {
-    query: {},
-    options: { skip: -0, limit: 10, sort: { created_at: -1 } }
-  }
-}
-{
-  message: 'Brand Update Request',
-  level: 'debug',
-  timestamp: '2020-07-26T12:30:14.135Z',
-  label: 'brand',
-  metadata: {
-    request: {
-      id: '5f1d77566e72341fc0dec881',
-      name: 'my updated Brand',
-      slug: '',
-      image: '',
-      preview_text: 'preview text of my updated brand',
-      description: 'description of my updated brand',
-      active: true,
-      order: '0',
-      created_at: '',
-      updated_at: ''
-    }
-  }
-}
-{
-  message: 'Projection cannot have a mix of inclusion and exclusion.',
-  level: 'error',
-  timestamp: '2020-07-26T12:30:14.137Z',
-  label: 'catalog-service',
-  metadata: {
-    function: 'find brands',
-    request: {
-      page: '0',
-      search: '',
-      active: false,
-      inactive: false,
-      limit: '0',
-      sort: '',
-      lang: ''
-    }
-  }
-}
-{
-  message: 'Brand Get Request',
-  level: 'debug',
-  timestamp: '2020-07-26T12:30:14.153Z',
-  label: 'brand',
-  metadata: { request: { id: '5f1d77566e72341fc0dec881', slug: '', lang: '' } }
-}
-{
-  message: 'Main function is running',
-  level: 'info',
-  timestamp: '2020-07-26T12:31:24.060Z',
-  label: 'catalog-service',
-  metadata: {}
-}
-{
-  message: 'Connecting to db: mongodb://localhost:27017/catalog_service',
-  level: 'info',
-  timestamp: '2020-07-26T12:31:24.064Z',
-  label: 'catalog-service',
-  metadata: {}
-}
-{
-  message: 'grpc server is running at 7000',
-  level: 'info',
-  timestamp: '2020-07-26T12:31:24.109Z',
-  label: 'catalog-service',
-  metadata: {}
-}
-{
-  message: 'Connected to the databasee',
-  level: 'info',
-  timestamp: '2020-07-26T12:31:24.124Z',
-  label: 'catalog-service',
-  metadata: {}
-}
-{
-  message: 'Brand Create Request',
-  level: 'debug',
-  timestamp: '2020-07-26T12:31:27.960Z',
-  label: 'brand',
-  metadata: {
-    request: {
-      id: '',
-      name: 'my Brand',
-      slug: '',
-      image: '',
-      preview_text: 'preview text of my brand',
-      description: 'description of my brand',
-      active: true,
-      order: '0',
-      created_at: '',
-      updated_at: ''
-    }
-  }
-}
-{
-  message: 'Brand Find Request',
-  level: 'debug',
-  timestamp: '2020-07-26T12:31:27.992Z',
-  label: 'brand',
-  metadata: {
-    request: {
-      page: '0',
-      search: '',
-      active: false,
-      inactive: false,
-      limit: '0',
-      sort: '',
-      lang: ''
-    }
-  }
-}
-{
-  message: 'filtering products',
-  level: 'debug',
-  timestamp: '2020-07-26T12:31:27.992Z',
-  label: 'catalog-service',
-  metadata: {
-    query: {},
-    options: { skip: -0, limit: 10, sort: { created_at: -1 } }
-  }
-}
-{
-  message: 'Brand Update Request',
-  level: 'debug',
-  timestamp: '2020-07-26T12:31:27.994Z',
-  label: 'brand',
-  metadata: {
-    request: {
-      id: '5f1d779fa941601fec4ab1a9',
-      name: 'my updated Brand',
-      slug: '',
-      image: '',
-      preview_text: 'preview text of my updated brand',
-      description: 'description of my updated brand',
-      active: true,
-      order: '0',
-      created_at: '',
-      updated_at: ''
-    }
-  }
-}
-{
-  message: 'Projection cannot have a mix of inclusion and exclusion.',
-  level: 'error',
-  timestamp: '2020-07-26T12:31:27.997Z',
-  label: 'catalog-service',
-  metadata: {
-    function: 'find brands',
-    request: {
-      page: '0',
-      search: '',
-      active: false,
-      inactive: false,
-      limit: '0',
-      sort: '',
-      lang: ''
-    }
-  }
-}
-{
-  message: 'Brand Get Request',
-  level: 'debug',
-  timestamp: '2020-07-26T12:31:28.012Z',
-  label: 'brand',
-  metadata: { request: { id: '5f1d779fa941601fec4ab1a9', slug: '', lang: '' } }
-}
-{
-  message: 'Brand Delete Request',
-  level: 'debug',
-  timestamp: '2020-07-26T12:31:28.020Z',
-  label: 'brand',
-  metadata: { request: { id: '5f1d779fa941601fec4ab1a9', slug: '' } }
-}
-{
-  message: 'Main function is running',
-  level: 'info',
-  timestamp: '2020-07-26T12:32:04.348Z',
-  label: 'catalog-service',
-  metadata: {}
-}
-{
-  message: 'Connecting to db: mongodb://localhost:27017/catalog_service',
-  level: 'info',
-  timestamp: '2020-07-26T12:32:04.351Z',
-  label: 'catalog-service',
-  metadata: {}
-}
-{
-  message: 'grpc server is running at 7000',
-  level: 'info',
-  timestamp: '2020-07-26T12:32:04.396Z',
-  label: 'catalog-service',
-  metadata: {}
-}
-{
-  message: 'Connected to the databasee',
-  level: 'info',
-  timestamp: '2020-07-26T12:32:04.415Z',
-  label: 'catalog-service',
-  metadata: {}
-}
-{
-  message: 'Brand Create Request',
-  level: 'debug',
-  timestamp: '2020-07-26T12:32:10.175Z',
-  label: 'brand',
-  metadata: {
-    request: {
-      id: '',
-      name: 'my Brand',
-      slug: '',
-      image: '',
-      preview_text: 'preview text of my brand',
-      description: 'description of my brand',
-      active: true,
-      order: '0',
-      created_at: '',
-      updated_at: ''
-    }
-  }
-}
-{
-  message: 'Brand Find Request',
-  level: 'debug',
-  timestamp: '2020-07-26T12:32:10.205Z',
-  label: 'brand',
-  metadata: {
-    request: {
-      page: '0',
-      search: '',
-      active: false,
-      inactive: false,
-      limit: '0',
-      sort: '',
-      lang: ''
-    }
-  }
-}
-{
-  message: 'filtering products',
-  level: 'debug',
-  timestamp: '2020-07-26T12:32:10.206Z',
-  label: 'catalog-service',
-  metadata: {
-    query: {},
-    options: { skip: -0, limit: 10, sort: { created_at: -1 } }
-  }
-}
-{
-  message: 'Brand Update Request',
-  level: 'debug',
-  timestamp: '2020-07-26T12:32:10.208Z',
-  label: 'brand',
-  metadata: {
-    request: {
-      id: '5f1d77ca45a44a2007fb7c33',
-      name: 'my updated Brand',
-      slug: '',
-      image: '',
-      preview_text: 'preview text of my updated brand',
-      description: 'description of my updated brand',
-      active: true,
-      order: '0',
-      created_at: '',
-      updated_at: ''
-    }
-  }
-}
-{
-  message: 'Brand Get Request',
-  level: 'debug',
-  timestamp: '2020-07-26T12:32:10.230Z',
-  label: 'brand',
-  metadata: { request: { id: '5f1d77ca45a44a2007fb7c33', slug: '', lang: '' } }
-}
-{
-  message: 'Brand Delete Request',
-  level: 'debug',
-  timestamp: '2020-07-26T12:32:10.240Z',
-  label: 'brand',
-  metadata: { request: { id: '5f1d77ca45a44a2007fb7c33', slug: '' } }
-}
-{
-  message: 'Category create request',
-  level: 'debug',
-  timestamp: '2020-07-26T12:41:16.255Z',
-  label: 'category',
-  metadata: {
-    request: {
-      name: 'my categoryy',
-      parent_id: '',
-      active: false,
-      description: '',
-      order: '0',
-      image: 'src/img.jpg',
-      meta: {
-        title: 'Category Meta',
-        description: 'Description of Meta',
-        tags: 'Tag of meta'
-      },
-      product_property_groups: '5ee1e1b06123sd296c4996af,5ee1e1b06123a6296c4996af',
-      lang: 'ru'
-    }
-  }
-}
-{
-  message: 'category is created with lang en',
-  level: 'debug',
-  timestamp: '2020-07-26T12:41:16.271Z',
-  label: 'catalog-service',
-  metadata: {
-    result: {
-      meta: {
-        title: 'Category Meta',
-        description: 'Description of Meta',
-        tags: 'Tag of meta'
-      },
-      description: '',
-      active: false,
-      order: 0,
-      product_property_groups: [ 5ee1e1b06123a6296c4996af ],
-      lang: 'en',
-      _id: 5f1d79ec45a44a2007fb7c35,
-      name: 'my categoryy',
-      image: 'src/img.jpg',
-      parent: null,
-      created_at: 2020-07-26T12:41:16.255Z,
-      updated_at: 2020-07-26T12:41:16.255Z,
-      slug: 'my-categoryy',
-      __v: 0
-    }
-  }
-}
-{
-  message: 'Category Create response',
-  level: 'debug',
-  timestamp: '2020-07-26T12:41:16.275Z',
-  label: 'test',
-  metadata: {
-    response: {
-      category: {
-        children: [],
-        product_property_groups: [
-          {
-            properties: [],
-            id: '^��a#�)lI��',
-            name: '',
-            slug: '',
-            description: '',
-            order: '0',
-            active: false,
-            created_at: '',
-            updated_at: ''
-          }
-        ],
-        id: '5f1d79ec45a44a2007fb7c34',
-        name: 'my categoryy',
-        slug: 'my-categoryy',
-        parent: null,
-        active: false,
-        description: '',
-        order: '0',
-        image: 'src/img.jpg',
-        meta: {
-          title: 'Category Meta',
-          description: 'Description of Meta',
-          tags: 'Tag of meta'
-        },
-        created_at: 'Sun Jul 26 2020 17:41:16 GMT+0500 (Uzbekistan Standard Time)',
-        updated_at: 'Sun Jul 26 2020 17:41:16 GMT+0500 (Uzbekistan Standard Time)',
-        lang: 'ru'
-      }
-    }
-  }
-}
-{
-  message: 'category is created with lang uz',
-  level: 'debug',
-  timestamp: '2020-07-26T12:41:16.278Z',
-  label: 'catalog-service',
-  metadata: {
-    result: {
-      meta: {
-        title: 'Category Meta',
-        description: 'Description of Meta',
-        tags: 'Tag of meta'
-      },
-      description: '',
-      active: false,
-      order: 0,
-      product_property_groups: [ 5ee1e1b06123a6296c4996af ],
-      lang: 'uz',
-      _id: 5f1d79ec45a44a2007fb7c36,
-      name: 'my categoryy',
-      image: 'src/img.jpg',
-      parent: null,
-      created_at: 2020-07-26T12:41:16.255Z,
-      updated_at: 2020-07-26T12:41:16.255Z,
-      slug: 'my-categoryy',
-      __v: 0
-    }
-  }
-}
-{
-  message: 'Category find request',
-  level: 'debug',
-  timestamp: '2020-07-26T12:41:16.281Z',
-  label: 'category',
-  metadata: {
-    request: {
-      page: '0',
-      search: '',
-      active: false,
-      inactive: false,
-      limit: '0',
-      sort: '',
-      lang: ''
-    }
-  }
-}
-{
-  message: 'Category update request',
-  level: 'debug',
-  timestamp: '2020-07-26T12:41:16.288Z',
-  label: 'category',
-  metadata: {
-    request: {
-      id: 'my-categoryy',
-      name: 'my updated category',
-      parent_id: '',
-      active: false,
-      description: '',
-      order: '0',
-      image: 'src/img.jpg',
-      meta: {
-        title: 'Updated Category Meta',
-        description: 'Updated Description of Meta',
-        tags: 'Updated Tag of meta'
-      },
-      product_property_groups: '5ee1e1b06123sd296c4996af,5ee1e1b06123a6296c4996af',
-      lang: 'ru'
-    }
-  }
-}
-{
-  message: 'Category Find response',
-  level: 'debug',
-  timestamp: '2020-07-26T12:41:16.296Z',
-  label: 'test',
-  metadata: {
-    response: {
-      categories: [
-        {
-          children: [],
-          product_property_groups: [
-            {
-              properties: [],
-              id: '^��a#�)lI��',
-              name: '',
-              slug: '',
-              description: '',
-              order: '0',
-              active: false,
-              created_at: '',
-              updated_at: ''
-            }
-          ],
-          id: '5f1d79ec45a44a2007fb7c34',
-          name: 'my categoryy',
-          slug: 'my-categoryy',
-          parent: null,
-          active: false,
-          description: '',
-          order: '0',
-          image: 'https://sdn.delever.uz/goodzone/src/img.jpg',
-          created_at: 'Sun Jul 26 2020 17:41:16 GMT+0500 (Uzbekistan Standard Time)',
-          updated_at: 'Sun Jul 26 2020 17:41:16 GMT+0500 (Uzbekistan Standard Time)',
-          lang: 'ru'
-        }
-      ],
-      count: '1'
-    }
-  }
-}
-{
-  message: 'Product Update response',
-  level: 'debug',
-  timestamp: '2020-07-26T12:41:16.299Z',
-  label: 'test',
-  metadata: {
-    response: {
-      category: {
-        children: [],
-        product_property_groups: [
-          {
-            properties: [],
-            id: '^��a#�)lI��',
-            name: '',
-            slug: '',
-            description: '',
-            order: '0',
-            active: false,
-            created_at: '',
-            updated_at: ''
-          }
-        ],
-        id: '5f1d79ec45a44a2007fb7c34',
-        name: 'my updated category',
-        slug: 'my-categoryy',
-        parent: null,
-        active: false,
-        description: '',
-        order: '0',
-        image: 'src/img.jpg',
-        meta: {
-          title: 'Updated Category Meta',
-          description: 'Updated Description of Meta',
-          tags: 'Updated Tag of meta'
-        },
-        created_at: 'Sun Jul 26 2020 17:41:16 GMT+0500 (Uzbekistan Standard Time)',
-        updated_at: 'Sun Jul 26 2020 17:41:16 GMT+0500 (Uzbekistan Standard Time)',
-        lang: 'ru'
-      }
-    }
-  }
-}
-{
-  message: 'Category get request',
-  level: 'debug',
-  timestamp: '2020-07-26T12:41:16.300Z',
-  label: 'category',
-  metadata: { request: { id: '', slug: 'my-categoryy', lang: 'ru' } }
-}
-{
-  message: 'getting category result',
-  level: 'debug',
-  timestamp: '2020-07-26T12:41:16.305Z',
-  label: 'catalog-service',
-  metadata: {
-    cat: [
-      {
-        _id: 5f1d79ec45a44a2007fb7c34,
-        meta: {
-          title: 'Updated Category Meta',
-          description: 'Updated Description of Meta',
-          tags: 'Updated Tag of meta'
-        },
-        description: '',
-        active: false,
-        order: 0,
-        product_property_groups: [ 5ee1e1b06123a6296c4996af ],
-        lang: 'ru',
-        name: 'my updated category',
-        image: 'src/img.jpg',
-        created_at: 2020-07-26T12:41:16.255Z,
-        updated_at: 2020-07-26T12:41:16.255Z,
-        slug: 'my-categoryy',
-        __v: 0,
-        children: []
-      }
-    ]
-  }
-}
-{
-  message: 'Category Get response',
-  level: 'debug',
-  timestamp: '2020-07-26T12:41:16.309Z',
-  label: 'test',
-  metadata: {
-    response: {
-      category: {
-        children: [],
-        product_property_groups: [
-          {
-            properties: [],
-            id: '^��a#�)lI��',
-            name: '',
-            slug: '',
-            description: '',
-            order: '0',
-            active: false,
-            created_at: '',
-            updated_at: ''
-          }
-        ],
-        id: '5f1d79ec45a44a2007fb7c34',
-        name: 'my updated category',
-        slug: 'my-categoryy',
-        parent: null,
-        active: false,
-        description: '',
-        order: '0',
-        image: 'https://sdn.delever.uz/goodzone/src/img.jpg',
-        meta: {
-          title: 'Updated Category Meta',
-          description: 'Updated Description of Meta',
-          tags: 'Updated Tag of meta'
-        },
-        created_at: 'Sun Jul 26 2020 17:41:16 GMT+0500 (Uzbekistan Standard Time)',
-        updated_at: 'Sun Jul 26 2020 17:41:16 GMT+0500 (Uzbekistan Standard Time)',
-        lang: 'ru'
-      }
-    }
-  }
-}
-{
-  message: 'Category delete request',
-  level: 'debug',
-  timestamp: '2020-07-26T12:41:16.311Z',
-  label: 'category',
-  metadata: { request: { id: '', slug: 'my-categoryy' } }
-}
-{
-  message: 'Category Delete response',
-  level: 'debug',
-  timestamp: '2020-07-26T12:41:16.318Z',
-  label: 'test',
-  metadata: { response: {} }
-}
-{
-  message: 'Main function is running',
-  level: 'info',
-  timestamp: '2020-07-27T12:18:16.647Z',
+  timestamp: '2020-08-01T04:04:30.043Z',
   label: 'catalog-service',
   metadata: {}
 }
 {
   message: 'Connecting to db: mongodb://rj:mysecret@dev.goodzone.uz:27017/catalog_service',
   level: 'info',
-  timestamp: '2020-07-27T12:18:16.651Z',
+  timestamp: '2020-08-01T04:04:30.047Z',
   label: 'catalog-service',
   metadata: {}
 }
 {
   message: 'grpc server is running at 7000',
   level: 'info',
-  timestamp: '2020-07-27T12:18:16.727Z',
+  timestamp: '2020-08-01T04:04:30.092Z',
   label: 'catalog-service',
   metadata: {}
 }
 {
   message: 'Connected to the databasee',
   level: 'info',
-  timestamp: '2020-07-27T12:18:20.670Z',
+  timestamp: '2020-08-01T04:04:32.288Z',
   label: 'catalog-service',
   metadata: {}
 }
 {
-  message: 'Product find request',
+  message: 'categories imported',
+  level: 'info',
+  timestamp: '2020-08-01T04:05:11.563Z',
+  label: 'catalog-service',
+  metadata: { durationMs: 37239 }
+}
+{
+  message: 'existing categories',
   level: 'debug',
-  timestamp: '2020-07-27T12:19:27.627Z',
-  label: 'product',
+  timestamp: '2020-08-01T04:05:11.564Z',
+  label: 'catalog-service',
+  metadata: {
+    entities: [
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: '<p>NULL</p>',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946cf8,
+        external_id: 1,
+        slug: 'noutbuki-i-kompyutery',
+        name: 'Ноутбуки и компьютеры',
+        created_at: 2020-08-01T04:04:34.305Z,
+        parent: null,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: 'NULL',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946cf9,
+        external_id: 2,
+        slug: 'noutbuki',
+        name: 'Ноутбуки',
+        created_at: 2020-08-01T04:04:34.306Z,
+        parent: 5f24e9d25aa3da35d8946cf8,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: '<p>NULL</p>',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946cfa,
+        external_id: 3,
+        slug: 'smartfoni i gadjeti',
+        name: 'Смартфоны и гаджеты',
+        created_at: 2020-08-01T04:04:34.306Z,
+        parent: null,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: 'NULL',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946cfb,
+        external_id: 4,
+        slug: 'stiralnye-mashiny',
+        name: 'Стиральные машины',
+        created_at: 2020-08-01T04:04:34.306Z,
+        parent: 5f24e9d25aa3da35d8946d28,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: '<p>NULL</p>',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946cfc,
+        external_id: 5,
+        slug: 'kholodilniki',
+        name: 'Холодильники',
+        created_at: 2020-08-01T04:04:34.306Z,
+        parent: 5f24e9d25aa3da35d8946d26,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: '<p>NULL</p>',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946cfd,
+        external_id: 6,
+        slug: 'televizory-hi-fi-audio',
+        name: 'Телевизоры, Hi-Fi, аудио',
+        created_at: 2020-08-01T04:04:34.307Z,
+        parent: null,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: 'NULL',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946cfe,
+        external_id: 7,
+        slug: 'monobloki',
+        name: 'Моноблоки',
+        created_at: 2020-08-01T04:04:34.307Z,
+        parent: 5f24e9d25aa3da35d8946cf8,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: '<p>NULL</p>',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946cff,
+        external_id: 8,
+        slug: 'televizory',
+        name: 'Телевизоры',
+        created_at: 2020-08-01T04:04:34.307Z,
+        parent: 5f24e9d25aa3da35d8946cfd,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: 'NULL',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d00,
+        external_id: 9,
+        slug: 'mikrovolnovye-pechi',
+        name: 'Микроволновые печи',
+        created_at: 2020-08-01T04:04:34.307Z,
+        parent: 5f24e9d25aa3da35d8946d10,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: 'NULL',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d01,
+        external_id: 10,
+        slug: 'pylesosy',
+        name: 'Пылесосы',
+        created_at: 2020-08-01T04:04:34.307Z,
+        parent: 5f24e9d25aa3da35d8946d1d,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: 'NULL',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d02,
+        external_id: 11,
+        slug: 'konditsionery',
+        name: 'Кондиционеры',
+        created_at: 2020-08-01T04:04:34.307Z,
+        parent: 5f24e9d25aa3da35d8946d29,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: 'NULL',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d03,
+        external_id: 13,
+        slug: 'elektricheskie-vodonagrevateli',
+        name: 'Электрические водонагреватели',
+        created_at: 2020-08-01T04:04:34.308Z,
+        parent: 5f24e9d25aa3da35d8946d29,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: 'NULL',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d04,
+        external_id: 15,
+        slug: 'morozilniki',
+        name: 'Морозильники',
+        created_at: 2020-08-01T04:04:34.308Z,
+        parent: 5f24e9d25aa3da35d8946d26,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: 'NULL',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d05,
+        external_id: 16,
+        slug: 'varochnye-paneli',
+        name: 'Варочные панели',
+        created_at: 2020-08-01T04:04:34.308Z,
+        parent: 5f24e9d25aa3da35d8946d26,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: 'NULL',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d06,
+        external_id: 17,
+        slug: 'vstraivaemye-dukhovki',
+        name: 'Встраиваемые духовки',
+        created_at: 2020-08-01T04:04:34.308Z,
+        parent: 5f24e9d25aa3da35d8946d26,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: 'NULL',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d07,
+        external_id: 18,
+        slug: 'vytyazhki',
+        name: 'Вытяжки',
+        created_at: 2020-08-01T04:04:34.308Z,
+        parent: 5f24e9d25aa3da35d8946d26,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: 'NULL',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d08,
+        external_id: 19,
+        slug: 'gazovye-plity',
+        name: 'Газовые плиты',
+        created_at: 2020-08-01T04:04:34.308Z,
+        parent: 5f24e9d25aa3da35d8946d26,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: 'NULL',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d09,
+        external_id: 21,
+        slug: 'elektricheskie-britvy',
+        name: 'Электрические бритвы',
+        created_at: 2020-08-01T04:04:34.308Z,
+        parent: 5f24e9d25aa3da35d8946d2a,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: 'NULL',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d0a,
+        external_id: 22,
+        slug: 'trimmery',
+        name: 'Триммеры',
+        created_at: 2020-08-01T04:04:34.309Z,
+        parent: 5f24e9d25aa3da35d8946d2a,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: 'NULL',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d0b,
+        external_id: 23,
+        slug: 'mashinki-dlya-strizhki-volos',
+        name: 'Машинки для стрижки волос',
+        created_at: 2020-08-01T04:04:34.309Z,
+        parent: 5f24e9d25aa3da35d8946d2a,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: 'NULL',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d0c,
+        external_id: 24,
+        slug: 'feny',
+        name: 'Фены',
+        created_at: 2020-08-01T04:04:34.309Z,
+        parent: 5f24e9d25aa3da35d8946d2a,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: 'NULL',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d0d,
+        external_id: 25,
+        slug: 'feny-shchetki',
+        name: 'Фены-щетки',
+        created_at: 2020-08-01T04:04:34.309Z,
+        parent: 5f24e9d25aa3da35d8946d2a,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: 'NULL',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d0e,
+        external_id: 26,
+        slug: 'pasta-mashiny',
+        name: 'Паста машины',
+        created_at: 2020-08-01T04:04:34.309Z,
+        parent: 5f24e9d25aa3da35d8946d10,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: 'NULL',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d0f,
+        external_id: 27,
+        slug: 'miksery',
+        name: 'Миксеры',
+        created_at: 2020-08-01T04:04:34.309Z,
+        parent: 5f24e9d25aa3da35d8946d10,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: '<p>NULL</p>',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d10,
+        external_id: 28,
+        slug: 'melkaya-tekhnika-dlya-kukhni',
+        name: 'Мелкая техника для кухни',
+        created_at: 2020-08-01T04:04:34.309Z,
+        parent: 5f24e9d25aa3da35d8946d27,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: 'NULL',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d11,
+        external_id: 29,
+        slug: 'sokovyzhimalki',
+        name: 'Соковыжималки',
+        created_at: 2020-08-01T04:04:34.310Z,
+        parent: 5f24e9d25aa3da35d8946d10,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: 'NULL',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d12,
+        external_id: 30,
+        slug: 'blendery',
+        name: 'Блендеры',
+        created_at: 2020-08-01T04:04:34.310Z,
+        parent: 5f24e9d25aa3da35d8946d10,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: 'NULL',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d13,
+        external_id: 31,
+        slug: 'epilyatory',
+        name: 'Эпиляторы',
+        created_at: 2020-08-01T04:04:34.310Z,
+        parent: 5f24e9d25aa3da35d8946d2a,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: 'NULL',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d14,
+        external_id: 32,
+        slug: 'myasorubki',
+        name: 'Mясорубки',
+        created_at: 2020-08-01T04:04:34.310Z,
+        parent: 5f24e9d25aa3da35d8946d10,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: '<p>NULL</p>',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d15,
+        external_id: 33,
+        slug: 'elektrochayniki',
+        name: 'Электрочайники',
+        created_at: 2020-08-01T04:04:34.310Z,
+        parent: 5f24e9d25aa3da35d8946d10,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: 'NULL',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d16,
+        external_id: 35,
+        slug: 'vypryamiteli',
+        name: 'Выпрямители',
+        created_at: 2020-08-01T04:04:34.310Z,
+        parent: 5f24e9d25aa3da35d8946d2a,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: 'NULL',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d17,
+        external_id: 38,
+        slug: 'multivarki',
+        name: 'Мультиварки',
+        created_at: 2020-08-01T04:04:34.310Z,
+        parent: 5f24e9d25aa3da35d8946d10,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: 'NULL',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d18,
+        external_id: 39,
+        slug: 'uvlazhniteli-vozdukha',
+        name: 'Увлажнители воздуха',
+        created_at: 2020-08-01T04:04:34.311Z,
+        parent: 5f24e9d25aa3da35d8946d29,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: 'NULL',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d19,
+        external_id: 40,
+        slug: 'parogeneratory',
+        name: 'Парогенераторы',
+        created_at: 2020-08-01T04:04:34.311Z,
+        parent: 5f24e9d25aa3da35d8946d1d,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: 'NULL',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d1a,
+        external_id: 41,
+        slug: 'utyugi',
+        name: 'Утюги',
+        created_at: 2020-08-01T04:04:34.311Z,
+        parent: 5f24e9d25aa3da35d8946d1d,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: 'NULL',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d1b,
+        external_id: 43,
+        slug: 'kofemashiny',
+        name: 'Кофемашины',
+        created_at: 2020-08-01T04:04:34.311Z,
+        parent: 5f24e9d25aa3da35d8946d10,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: 'NULL',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d1c,
+        external_id: 44,
+        slug: 'kofevarki',
+        name: 'Кофеварки',
+        created_at: 2020-08-01T04:04:34.312Z,
+        parent: 5f24e9d25aa3da35d8946d10,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: 'NULL',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d1d,
+        external_id: 45,
+        slug: 'melkaya-bytovaya-tekhnika',
+        name: 'Мелкая бытовая техника',
+        created_at: 2020-08-01T04:04:34.312Z,
+        parent: 5f24e9d25aa3da35d8946d2c,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: 'NULL',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d1e,
+        external_id: 46,
+        slug: 'tostery',
+        name: 'Тостеры',
+        created_at: 2020-08-01T04:04:34.312Z,
+        parent: 5f24e9d25aa3da35d8946d10,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: 'NULL',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d1f,
+        external_id: 47,
+        slug: 'termopoty',
+        name: 'Термопоты',
+        created_at: 2020-08-01T04:04:34.313Z,
+        parent: 5f24e9d25aa3da35d8946d10,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: 'NULL',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d20,
+        external_id: 49,
+        slug: 'obogrevateli',
+        name: 'Обогреватели',
+        created_at: 2020-08-01T04:04:34.313Z,
+        parent: 5f24e9d25aa3da35d8946d29,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: 'NULL',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d21,
+        external_id: 50,
+        slug: 'lapsharezki',
+        name: 'Лапшарезки',
+        created_at: 2020-08-01T04:04:34.313Z,
+        parent: 5f24e9d25aa3da35d8946d10,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: 'NULL',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d22,
+        external_id: 51,
+        slug: 'risovarki',
+        name: 'Рисоварки',
+        created_at: 2020-08-01T04:04:34.313Z,
+        parent: 5f24e9d25aa3da35d8946d10,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: 'NULL',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d23,
+        external_id: 52,
+        slug: 'kukhonnye-kombayny',
+        name: 'Кухонные комбайны',
+        created_at: 2020-08-01T04:04:34.313Z,
+        parent: 5f24e9d25aa3da35d8946d10,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: '',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d24,
+        external_id: 53,
+        slug: 'smartfony',
+        name: 'Смартфоны',
+        created_at: 2020-08-01T04:04:34.313Z,
+        parent: 5f24e9d25aa3da35d8946cfa,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: 'NULL',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d25,
+        external_id: 54,
+        slug: 'posudomoechnye-mashiny',
+        name: 'Посудомоечные машины',
+        created_at: 2020-08-01T04:04:34.314Z,
+        parent: 5f24e9d25aa3da35d8946d26,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: 'NULL',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d26,
+        external_id: 55,
+        slug: 'krupnaya-tekhnika-dlya-kukhni',
+        name: 'Крупная техника для кухни',
+        created_at: 2020-08-01T04:04:34.314Z,
+        parent: 5f24e9d25aa3da35d8946d27,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: '<p>NULL</p>',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d27,
+        external_id: 56,
+        slug: 'tekhnika-dlya-kukhni',
+        name: 'Техника для кухни',
+        created_at: 2020-08-01T04:04:34.314Z,
+        parent: null,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: 'NULL',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d28,
+        external_id: 57,
+        slug: 'krupnaya-bytovaya-tekhnika',
+        name: 'Крупная бытовая техника',
+        created_at: 2020-08-01T04:04:34.314Z,
+        parent: 5f24e9d25aa3da35d8946d2c,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: 'NULL',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d29,
+        external_id: 58,
+        slug: 'klimaticheskaya-tekhnika',
+        name: 'Климатическая техника',
+        created_at: 2020-08-01T04:04:34.316Z,
+        parent: 5f24e9d25aa3da35d8946d2c,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: 'NULL',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d2a,
+        external_id: 59,
+        slug: 'krasota-i-zdorove',
+        name: 'Красота и здоровье',
+        created_at: 2020-08-01T04:04:34.316Z,
+        parent: null,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: '<p>NULL</p>',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d2b,
+        external_id: 60,
+        slug: 'kulery-dlya-vody',
+        name: 'Кулеры для воды',
+        created_at: 2020-08-01T04:04:34.316Z,
+        parent: 5f24e9d25aa3da35d8946d2c,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: '<p>NULL</p>',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d2c,
+        external_id: 61,
+        slug: 'tekhnika-dlya-doma',
+        name: 'Техника для дома',
+        created_at: 2020-08-01T04:04:34.317Z,
+        parent: null,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: 'NULL',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d2d,
+        external_id: 62,
+        slug: 'massazhery',
+        name: 'Массажеры',
+        created_at: 2020-08-01T04:04:34.317Z,
+        parent: 5f24e9d25aa3da35d8946d2a,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: 'NULL',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d2e,
+        external_id: 63,
+        slug: 'vesy',
+        name: 'Весы',
+        created_at: 2020-08-01T04:04:34.317Z,
+        parent: 5f24e9d25aa3da35d8946d2a,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: 'NULL',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d2f,
+        external_id: 66,
+        slug: 'printery',
+        name: 'Принтеры',
+        created_at: 2020-08-01T04:04:34.317Z,
+        parent: 5f24e9d25aa3da35d8946cf8,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: '<p>NULL</p>',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d30,
+        external_id: 68,
+        slug: 'aksessuary',
+        name: 'Аксессуары',
+        created_at: 2020-08-01T04:04:34.317Z,
+        parent: 5f24e9d25aa3da35d8946d0d,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: '<p>NULL</p>',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d31,
+        external_id: 69,
+        slug: 'aksessuary-dlya-smartfonov',
+        name: 'Аксессуары для смартфонов',
+        created_at: 2020-08-01T04:04:34.317Z,
+        parent: 5f24e9d25aa3da35d8946cfa,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: 'NULL',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d32,
+        external_id: 76,
+        slug: 'komplektuyushchie',
+        name: 'Комплектующие',
+        created_at: 2020-08-01T04:04:34.318Z,
+        parent: 5f24e9d25aa3da35d8946cf8,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: 'NULL',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d33,
+        external_id: 77,
+        slug: 'monitory',
+        name: 'Мониторы',
+        created_at: 2020-08-01T04:04:34.318Z,
+        parent: 5f24e9d25aa3da35d8946d32,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: 'NULL',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d34,
+        external_id: 80,
+        slug: 'myshki',
+        name: 'Мышки',
+        created_at: 2020-08-01T04:04:34.318Z,
+        parent: 5f24e9d25aa3da35d8946d32,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: 'NULL',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d35,
+        external_id: 83,
+        slug: 'protsessory',
+        name: 'Процессоры',
+        created_at: 2020-08-01T04:04:34.318Z,
+        parent: 5f24e9d25aa3da35d8946d32,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: 'NULL',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d36,
+        external_id: 86,
+        slug: 'nakopiteli-dannykh',
+        name: 'Накопители данных',
+        created_at: 2020-08-01T04:04:34.318Z,
+        parent: 5f24e9d25aa3da35d8946d32,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: 'NULL',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d37,
+        external_id: 91,
+        slug: 'elektricheskie-kaminy',
+        name: 'Электрические камины',
+        created_at: 2020-08-01T04:04:34.318Z,
+        parent: 5f24e9d25aa3da35d8946d29,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: 'NULL',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d38,
+        external_id: 94,
+        slug: 'dvd-pleeery',
+        name: 'DVD-плеееры',
+        created_at: 2020-08-01T04:04:34.319Z,
+        parent: 5f24e9d25aa3da35d8946cfd,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: 'NULL',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d39,
+        external_id: 97,
+        slug: 'aksessuary-dlya-kompyutera',
+        name: 'Аксессуары для компьютера',
+        created_at: 2020-08-01T04:04:34.319Z,
+        parent: 5f24e9d25aa3da35d8946d2a,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: '<p>NULL</p>',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d3a,
+        external_id: 100,
+        slug: 'klaviatury',
+        name: 'Клавиатуры',
+        created_at: 2020-08-01T04:04:34.319Z,
+        parent: 5f24e9d25aa3da35d8946d32,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: 'NULL',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d3b,
+        external_id: 101,
+        slug: 'bloki-pitaniya',
+        name: 'Блоки питания',
+        created_at: 2020-08-01T04:04:34.319Z,
+        parent: 5f24e9d25aa3da35d8946d32,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: 'NULL',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d3c,
+        external_id: 104,
+        slug: 'materinskie-platy',
+        name: 'Материнские платы',
+        created_at: 2020-08-01T04:04:34.320Z,
+        parent: 5f24e9d25aa3da35d8946d32,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: 'NULL',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d3d,
+        external_id: 105,
+        slug: 'shveynye-mashinki',
+        name: 'Швейные машинки',
+        created_at: 2020-08-01T04:04:34.320Z,
+        parent: 5f24e9d25aa3da35d8946d1d,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: 'NULL',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d3e,
+        external_id: 106,
+        slug: 'kompyuternye-ochki',
+        name: 'Компьютерные очки',
+        created_at: 2020-08-01T04:04:34.320Z,
+        parent: 5f24e9d25aa3da35d8946d39,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: 'NULL',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d3f,
+        external_id: 107,
+        slug: 'mini-pechi',
+        name: 'Мини-печи',
+        created_at: 2020-08-01T04:04:34.320Z,
+        parent: 5f24e9d25aa3da35d8946d10,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: 'NULL',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d40,
+        external_id: 108,
+        slug: 'interernoe-osveshchenie',
+        name: 'Интерьерное освещение',
+        created_at: 2020-08-01T04:04:34.320Z,
+        parent: 5f24e9d25aa3da35d8946d39,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: 'NULL',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d41,
+        external_id: 109,
+        slug: 'teplovye-pushki',
+        name: 'Тепловые пушки',
+        created_at: 2020-08-01T04:04:34.320Z,
+        parent: 5f24e9d25aa3da35d8946d29,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: 'NULL',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d42,
+        external_id: 110,
+        slug: 'domashniy-kinoteatr-i-hi-fi-tekhnika',
+        name: 'Домашний кинотеатр и Hi-Fi техника',
+        created_at: 2020-08-01T04:04:34.320Z,
+        parent: 5f24e9d25aa3da35d8946cfd,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: 'NULL',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d43,
+        external_id: 111,
+        slug: 'ratsii',
+        name: 'Рации',
+        created_at: 2020-08-01T04:04:34.321Z,
+        parent: 5f24e9d25aa3da35d8946d30,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: '',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d44,
+        external_id: 1121,
+        slug: 'cifrovoe-tv',
+        name: 'Цифровое ТВ',
+        created_at: 2020-08-01T04:04:34.321Z,
+        parent: 5f24e9d25aa3da35d8946cfd,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: '',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d45,
+        external_id: 1122,
+        slug: 'aksessuary_tv',
+        name: 'Аксессуары',
+        created_at: 2020-08-01T04:04:34.321Z,
+        parent: 5f24e9d25aa3da35d8946cfd,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: '',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d46,
+        external_id: 1123,
+        slug: 'telefony',
+        name: 'Телефоны',
+        created_at: 2020-08-01T04:04:34.321Z,
+        parent: 5f24e9d25aa3da35d8946cfa,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: '',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d47,
+        external_id: 1124,
+        slug: 'planshety',
+        name: 'Планшеты',
+        created_at: 2020-08-01T04:04:34.321Z,
+        parent: 5f24e9d25aa3da35d8946cfa,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: '',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d48,
+        external_id: 1125,
+        slug: 'gadzhety',
+        name: 'Гаджеты',
+        created_at: 2020-08-01T04:04:34.321Z,
+        parent: 5f24e9d25aa3da35d8946cfa,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: '',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d49,
+        external_id: 1126,
+        slug: 'tovary-dlya-avto',
+        name: 'Товары для авто',
+        created_at: 2020-08-01T04:04:34.321Z,
+        parent: 5f24e9d25aa3da35d8946d2c,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: '',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d4a,
+        external_id: 1128,
+        slug: 'ventilyatory',
+        name: 'Вентиляторы',
+        created_at: 2020-08-01T04:04:34.322Z,
+        parent: 5f24e9d25aa3da35d8946d29,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: '',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d4b,
+        external_id: 1129,
+        slug: 'kresla',
+        name: 'Кресла',
+        created_at: 2020-08-01T04:04:34.322Z,
+        parent: 5f24e9d25aa3da35d8946d2c,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: '',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d4c,
+        external_id: 1130,
+        slug: 'filtry',
+        name: 'Фильтры',
+        created_at: 2020-08-01T04:04:34.323Z,
+        parent: 5f24e9d25aa3da35d8946d2c,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: '',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d4d,
+        external_id: 1131,
+        slug: 'ekshen-kamery-go-pro-kamery-dlya-blogerov',
+        name: 'Экшн-камеры, Go Pro, камеры для блогеров',
+        created_at: 2020-08-01T04:04:34.323Z,
+        parent: 5f24e9d25aa3da35d8946cfa,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: '',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d4e,
+        external_id: 1132,
+        slug: 'elektroinstrumenty',
+        name: 'Электроинструменты',
+        created_at: 2020-08-01T04:04:34.323Z,
+        parent: 5f24e9d25aa3da35d8946cfa,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: '',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d4f,
+        external_id: 1133,
+        slug: 'frityurnicy',
+        name: 'Фритюрницы',
+        created_at: 2020-08-01T04:04:34.323Z,
+        parent: 5f24e9d25aa3da35d8946d10,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: '',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d50,
+        external_id: 1134,
+        slug: 'posuda',
+        name: 'Посуда',
+        created_at: 2020-08-01T04:04:34.323Z,
+        parent: 5f24e9d25aa3da35d8946d27,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: '',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d51,
+        external_id: 1135,
+        slug: 'kazany',
+        name: 'Казаны',
+        created_at: 2020-08-01T04:04:34.323Z,
+        parent: 5f24e9d25aa3da35d8946d50,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: '',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d52,
+        external_id: 1136,
+        slug: 'kastryuli',
+        name: 'Кастрюли',
+        created_at: 2020-08-01T04:04:34.324Z,
+        parent: 5f24e9d25aa3da35d8946d50,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: '',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d53,
+        external_id: 1137,
+        slug: 'skovorodki',
+        name: 'Сковородки',
+        created_at: 2020-08-01T04:04:34.324Z,
+        parent: 5f24e9d25aa3da35d8946d50,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: '',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d54,
+        external_id: 1138,
+        slug: 'chajniki',
+        name: 'Чайники',
+        created_at: 2020-08-01T04:04:34.324Z,
+        parent: 5f24e9d25aa3da35d8946d50,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: '',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d55,
+        external_id: 1139,
+        slug: 'hozyajstvennye-tovary',
+        name: 'Хозяйственные товары',
+        created_at: 2020-08-01T04:04:34.324Z,
+        parent: 5f24e9d25aa3da35d8946d2c,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: '',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d56,
+        external_id: 1140,
+        slug: 'gril',
+        name: 'Гриль',
+        created_at: 2020-08-01T04:04:34.324Z,
+        parent: null,
+        __v: 0
+      },
+      {
+        meta: { title: '', description: '', tags: '' },
+        description: '',
+        active: true,
+        order: 0,
+        product_property_groups: [],
+        lang: 'ru',
+        _id: 5f24e9d25aa3da35d8946d57,
+        external_id: 1142,
+        slug: 'naushniki',
+        name: 'Наушники',
+        created_at: 2020-08-01T04:04:34.324Z,
+        parent: null,
+        __v: 0
+      }
+    ]
+  }
+}
+{
+  message: 'Main function is running',
+  level: 'info',
+  timestamp: '2020-08-01T04:22:45.263Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connecting to db: mongodb://rj:mysecret@dev.goodzone.uz:27017/catalog_service',
+  level: 'info',
+  timestamp: '2020-08-01T04:22:45.267Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'grpc server is running at 7000',
+  level: 'info',
+  timestamp: '2020-08-01T04:22:45.311Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connected to the databasee',
+  level: 'info',
+  timestamp: '2020-08-01T04:22:47.222Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Category find request',
+  level: 'debug',
+  timestamp: '2020-08-01T04:23:32.655Z',
+  label: 'category',
   metadata: {
     request: {
       page: '1',
       search: '',
       active: false,
       inactive: false,
-      category: '',
-      brand: '',
-      limit: '10',
+      limit: '0',
       sort: '',
-      price_from: '0',
-      price_till: '0',
       lang: ''
     }
   }
 }
 {
-  message: 'filtering products',
-  level: 'debug',
-  timestamp: '2020-07-27T12:19:27.629Z',
+  message: "'pipeline' option must be specified as an array",
+  level: 'error',
+  timestamp: '2020-08-01T04:23:33.598Z',
   label: 'catalog-service',
   metadata: {
-    query: { lang: 'ru' },
-    options: { skip: 0, limit: 10, sort: { created_at: -1 } }
+    function: 'find category',
+    request: {
+      page: '1',
+      search: '',
+      active: false,
+      inactive: false,
+      limit: '0',
+      sort: '',
+      lang: ''
+    }
   }
 }
 {
-  message: 'Shops get request',
-  level: 'debug',
-  timestamp: '2020-07-27T12:19:51.672Z',
-  label: 'shop',
-  metadata: { request: { product_id: 'smartfon-samsung-galaxy-a51-black' } }
+  message: 'Main function is running',
+  level: 'info',
+  timestamp: '2020-08-01T04:24:30.998Z',
+  label: 'catalog-service',
+  metadata: {}
 }
 {
-  message: 'Shops get request',
+  message: 'Connecting to db: mongodb://rj:mysecret@dev.goodzone.uz:27017/catalog_service',
+  level: 'info',
+  timestamp: '2020-08-01T04:24:31.004Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'grpc server is running at 7000',
+  level: 'info',
+  timestamp: '2020-08-01T04:24:31.071Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connected to the databasee',
+  level: 'info',
+  timestamp: '2020-08-01T04:24:32.826Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Category find request',
   level: 'debug',
-  timestamp: '2020-07-27T12:21:44.454Z',
-  label: 'shop',
-  metadata: { request: { product_id: 'smartfon-samsung-galaxy-a51-black' } }
+  timestamp: '2020-08-01T04:24:57.816Z',
+  label: 'category',
+  metadata: {
+    request: {
+      page: '1',
+      search: '',
+      active: false,
+      inactive: false,
+      limit: '0',
+      sort: '',
+      lang: ''
+    }
+  }
+}
+{
+  message: "$lookup with 'pipeline' may not specify 'localField' or 'foreignField'",
+  level: 'error',
+  timestamp: '2020-08-01T04:24:58.125Z',
+  label: 'catalog-service',
+  metadata: {
+    function: 'find category',
+    request: {
+      page: '1',
+      search: '',
+      active: false,
+      inactive: false,
+      limit: '0',
+      sort: '',
+      lang: ''
+    }
+  }
+}
+{
+  message: 'Main function is running',
+  level: 'info',
+  timestamp: '2020-08-01T05:42:48.871Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connecting to db: mongodb://rj:mysecret@dev.goodzone.uz:27017/catalog_service',
+  level: 'info',
+  timestamp: '2020-08-01T05:42:48.876Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'grpc server is running at 7000',
+  level: 'info',
+  timestamp: '2020-08-01T05:42:48.924Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connected to the databasee',
+  level: 'info',
+  timestamp: '2020-08-01T05:42:50.821Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Category find request',
+  level: 'debug',
+  timestamp: '2020-08-01T05:43:06.526Z',
+  label: 'category',
+  metadata: {
+    request: {
+      page: '1',
+      search: '',
+      active: false,
+      inactive: false,
+      limit: '0',
+      sort: '',
+      lang: ''
+    }
+  }
+}
+{
+  message: "FieldPath field names may not start with '$'.",
+  level: 'error',
+  timestamp: '2020-08-01T05:43:07.192Z',
+  label: 'catalog-service',
+  metadata: {
+    function: 'find category',
+    request: {
+      page: '1',
+      search: '',
+      active: false,
+      inactive: false,
+      limit: '0',
+      sort: '',
+      lang: ''
+    }
+  }
+}
+{
+  message: 'Main function is running',
+  level: 'info',
+  timestamp: '2020-08-01T05:57:41.038Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connecting to db: mongodb://rj:mysecret@dev.goodzone.uz:27017/catalog_service',
+  level: 'info',
+  timestamp: '2020-08-01T05:57:41.043Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'grpc server is running at 7000',
+  level: 'info',
+  timestamp: '2020-08-01T05:57:41.094Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connected to the databasee',
+  level: 'info',
+  timestamp: '2020-08-01T05:57:43.132Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Category find request',
+  level: 'debug',
+  timestamp: '2020-08-01T05:57:56.795Z',
+  label: 'category',
+  metadata: {
+    request: {
+      page: '1',
+      search: '',
+      active: false,
+      inactive: false,
+      limit: '0',
+      sort: '',
+      lang: ''
+    }
+  }
+}
+{
+  message: "FieldPath field names may not start with '$'.",
+  level: 'error',
+  timestamp: '2020-08-01T05:57:57.262Z',
+  label: 'catalog-service',
+  metadata: {
+    function: 'find category',
+    request: {
+      page: '1',
+      search: '',
+      active: false,
+      inactive: false,
+      limit: '0',
+      sort: '',
+      lang: ''
+    }
+  }
+}
+{
+  message: 'Main function is running',
+  level: 'info',
+  timestamp: '2020-08-01T06:30:14.911Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connecting to db: mongodb://rj:mysecret@dev.goodzone.uz:27017/catalog_service',
+  level: 'info',
+  timestamp: '2020-08-01T06:30:14.917Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'grpc server is running at 7000',
+  level: 'info',
+  timestamp: '2020-08-01T06:30:14.978Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connected to the databasee',
+  level: 'info',
+  timestamp: '2020-08-01T06:30:16.492Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Category find request',
+  level: 'debug',
+  timestamp: '2020-08-01T06:30:44.660Z',
+  label: 'category',
+  metadata: {
+    request: {
+      page: '1',
+      search: '',
+      active: false,
+      inactive: false,
+      limit: '0',
+      sort: '',
+      lang: ''
+    }
+  }
+}
+{
+  message: "FieldPath field names may not start with '$'.",
+  level: 'error',
+  timestamp: '2020-08-01T06:31:18.382Z',
+  label: 'catalog-service',
+  metadata: {
+    function: 'find category',
+    request: {
+      page: '1',
+      search: '',
+      active: false,
+      inactive: false,
+      limit: '0',
+      sort: '',
+      lang: ''
+    }
+  }
+}
+{
+  message: 'Main function is running',
+  level: 'info',
+  timestamp: '2020-08-01T06:35:37.527Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connecting to db: mongodb://rj:mysecret@dev.goodzone.uz:27017/catalog_service',
+  level: 'info',
+  timestamp: '2020-08-01T06:35:37.531Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'grpc server is running at 7000',
+  level: 'info',
+  timestamp: '2020-08-01T06:35:37.586Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connected to the databasee',
+  level: 'info',
+  timestamp: '2020-08-01T06:35:39.909Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Category find request',
+  level: 'debug',
+  timestamp: '2020-08-01T06:36:17.041Z',
+  label: 'category',
+  metadata: {
+    request: {
+      page: '1',
+      search: '',
+      active: false,
+      inactive: false,
+      limit: '0',
+      sort: '',
+      lang: ''
+    }
+  }
 }

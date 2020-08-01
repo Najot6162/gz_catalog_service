@@ -28,7 +28,11 @@ var BrandSchema = new mongoose.Schema({
         default: 0
     },
     image: {
-        type: String
+        type: String,
+        default: ""
+    },
+    external_id: {
+        type: Number
     },
     created_at: {
         type:Date,

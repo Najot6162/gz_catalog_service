@@ -5,6 +5,7 @@ const logger = require("../../config/logger");
 const langs = ["en", "ru", "uz"];
 const cnf = require("../../config");
 const async = require("async");
+const shopService = require("../../services/shop");
 
 let categoryStorage = {
   create: (b) => {
@@ -131,10 +132,19 @@ let categoryStorage = {
         { $sort: { order: -1 } },
         {
           $lookup: {
-            from: "categories",
-            localField: "_id",
-            foreignField: "parent",
-            as: "children",
+						from: "categories",
+						let: {parent_id: "$_id"},
+						as: "children",
+						pipeline: [{
+							$match: {
+								$expr: {
+									$and: [
+										{ $eq: ["$lang", query.lang]},
+										{ $eq: ["$parent", "$$parent_id"]}
+									]
+								}
+							}
+						}]
           },
         },
       ]);
