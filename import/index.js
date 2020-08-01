@@ -1,6 +1,7 @@
 const fs =require("fs");
 const path = require("path");
 const async = require("async");
+const mongoose = require("mongoose");
 const Brand = require("../models/Brand");
 const Category = require("../models/Category");
 const Product = require("../models/Product");
@@ -8,6 +9,7 @@ const Product = require("../models/Product");
 const logger = require("../config/logger.js");
 
 Brand.syncIndexes();
+Product.syncIndexes();
 
 const importBrands = () => (
     new Promise((resolve, reject) => {
@@ -137,7 +139,7 @@ const importProducts = () => (
                 if(err) return reject(err);
 
                 logger.profile("products imported");
-                async.eachSeries([products[0]], (p, cb) => {
+                async.eachSeries(products, (p, cb) => {
                     let brand = result.brands.filter((b, i) => {
                         return p.brand_id && b.external_id == p.brand_id;
                     });
@@ -158,7 +160,8 @@ const importProducts = () => (
                             type: 1, // unired price
                             price: p.u_price,
                             old_price: p.u_old_price
-                        }]
+                        }],
+                        updated_at: Date.now()
                     }
 
                     let entityLangs = [
@@ -176,7 +179,9 @@ const importProducts = () => (
                         })
                     ];
 
-                    Product.insertMany(entityLangs, (err, result) => {
+                    //entityLangs[0].save(cb)
+
+                    Product.create(entityLangs, (err, result) => {
                         if(err) return cb(err);
                         cb(null)
                     });

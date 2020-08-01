@@ -26,3 +26,943 @@
   label: 'catalog-service',
   metadata: {}
 }
+{
+  message: 'Main function is running',
+  level: 'info',
+  timestamp: '2020-08-01T13:02:08.291Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connecting to db: mongodb://rj:mysecret@dev.goodzone.uz:27017/catalog_service',
+  level: 'info',
+  timestamp: '2020-08-01T13:02:08.296Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'grpc server is running at 7000',
+  level: 'info',
+  timestamp: '2020-08-01T13:02:08.374Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connected to the databasee',
+  level: 'info',
+  timestamp: '2020-08-01T13:02:10.436Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Main function is running',
+  level: 'info',
+  timestamp: '2020-08-01T13:06:00.912Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connecting to db: mongodb://rj:mysecret@dev.goodzone.uz:27017/catalog_service',
+  level: 'info',
+  timestamp: '2020-08-01T13:06:00.924Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'grpc server is running at 7000',
+  level: 'info',
+  timestamp: '2020-08-01T13:06:01.013Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connected to the databasee',
+  level: 'info',
+  timestamp: '2020-08-01T13:06:02.709Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Main function is running',
+  level: 'info',
+  timestamp: '2020-08-01T13:06:24.318Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connecting to db: mongodb://rj:mysecret@dev.goodzone.uz:27017/catalog_service',
+  level: 'info',
+  timestamp: '2020-08-01T13:06:24.322Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'grpc server is running at 7000',
+  level: 'info',
+  timestamp: '2020-08-01T13:06:24.383Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connected to the databasee',
+  level: 'info',
+  timestamp: '2020-08-01T13:06:26.249Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Product create request',
+  level: 'debug',
+  timestamp: '2020-08-01T13:06:49.356Z',
+  label: 'product',
+  metadata: {
+    request: {
+      name: 'test for slug',
+      category_id: '5f24e9d25aa3da35d8946cf9',
+      brand_id: '5f24d720e5fba43358f295a9',
+      additional_categories: '',
+      related_products: '',
+      preview_text: 'string',
+      description: 'test',
+      gallery: '',
+      external_id: '0',
+      meta: { title: 'string', description: 'string', tags: 'string' },
+      active: true,
+      order: '0',
+      image: '',
+      lang: 'ru'
+    }
+  }
+}
+{
+  message: 'Product validation failed: slug: Path `slug` is required.',
+  level: 'error',
+  timestamp: '2020-08-01T13:06:49.371Z',
+  label: 'catalog-service',
+  metadata: {
+    function: 'create product',
+    request: {
+      name: 'test for slug',
+      category_id: '5f24e9d25aa3da35d8946cf9',
+      brand_id: '5f24d720e5fba43358f295a9',
+      additional_categories: [],
+      related_products: [],
+      preview_text: 'string',
+      description: 'test',
+      gallery: [],
+      external_id: '0',
+      meta: { title: 'string', description: 'string', tags: 'string' },
+      active: true,
+      order: '0',
+      image: '',
+      lang: 'ru',
+      category: '5f24e9d25aa3da35d8946cf9',
+      brand: '5f24d720e5fba43358f295a9',
+      created_at: 1596287209357,
+      updated_at: 1596287209357
+    }
+  }
+}
+{
+  message: 'Main function is running',
+  level: 'info',
+  timestamp: '2020-08-01T13:07:50.158Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connecting to db: mongodb://rj:mysecret@dev.goodzone.uz:27017/catalog_service',
+  level: 'info',
+  timestamp: '2020-08-01T13:07:50.164Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'grpc server is running at 7000',
+  level: 'info',
+  timestamp: '2020-08-01T13:07:50.246Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connected to the databasee',
+  level: 'info',
+  timestamp: '2020-08-01T13:07:52.151Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Product create request',
+  level: 'debug',
+  timestamp: '2020-08-01T13:08:05.414Z',
+  label: 'product',
+  metadata: {
+    request: {
+      name: 'test for slug',
+      category_id: '5f24e9d25aa3da35d8946cf9',
+      brand_id: '5f24d720e5fba43358f295a9',
+      additional_categories: '',
+      related_products: '',
+      preview_text: 'string',
+      description: 'test',
+      gallery: '',
+      external_id: '0',
+      meta: { title: 'string', description: 'string', tags: 'string' },
+      active: true,
+      order: '0',
+      image: '',
+      lang: 'ru'
+    }
+  }
+}
+{
+  message: 'Product validation failed: slug: Path `slug` is required.',
+  level: 'error',
+  timestamp: '2020-08-01T13:08:05.432Z',
+  label: 'catalog-service',
+  metadata: {
+    function: 'create product',
+    request: {
+      name: 'test for slug',
+      category_id: '5f24e9d25aa3da35d8946cf9',
+      brand_id: '5f24d720e5fba43358f295a9',
+      additional_categories: [],
+      related_products: [],
+      preview_text: 'string',
+      description: 'test',
+      gallery: [],
+      external_id: '0',
+      meta: { title: 'string', description: 'string', tags: 'string' },
+      active: true,
+      order: '0',
+      image: '',
+      lang: 'ru',
+      category: '5f24e9d25aa3da35d8946cf9',
+      brand: '5f24d720e5fba43358f295a9',
+      created_at: 1596287285415,
+      updated_at: 1596287285415
+    }
+  }
+}
+{
+  message: 'Product create request',
+  level: 'debug',
+  timestamp: '2020-08-01T13:08:13.441Z',
+  label: 'product',
+  metadata: {
+    request: {
+      name: 'test for slug',
+      category_id: '5f24e9d25aa3da35d8946cf9',
+      brand_id: '5f24d720e5fba43358f295a9',
+      additional_categories: '',
+      related_products: '',
+      preview_text: 'string',
+      description: 'test',
+      gallery: '',
+      external_id: '0',
+      meta: { title: 'string', description: 'string', tags: 'string' },
+      active: true,
+      order: '0',
+      image: '',
+      lang: 'ru'
+    }
+  }
+}
+{
+  message: 'product created',
+  level: 'info',
+  timestamp: '2020-08-01T13:08:13.442Z',
+  label: 'catalog-service',
+  metadata: { durationMs: 8027 }
+}
+{
+  message: 'Product validation failed: slug: Path `slug` is required.',
+  level: 'error',
+  timestamp: '2020-08-01T13:08:13.444Z',
+  label: 'catalog-service',
+  metadata: {
+    function: 'create product',
+    request: {
+      name: 'test for slug',
+      category_id: '5f24e9d25aa3da35d8946cf9',
+      brand_id: '5f24d720e5fba43358f295a9',
+      additional_categories: [],
+      related_products: [],
+      preview_text: 'string',
+      description: 'test',
+      gallery: [],
+      external_id: '0',
+      meta: { title: 'string', description: 'string', tags: 'string' },
+      active: true,
+      order: '0',
+      image: '',
+      lang: 'ru',
+      category: '5f24e9d25aa3da35d8946cf9',
+      brand: '5f24d720e5fba43358f295a9',
+      created_at: 1596287293442,
+      updated_at: 1596287293442
+    }
+  }
+}
+{
+  message: 'Product create request',
+  level: 'debug',
+  timestamp: '2020-08-01T13:09:18.642Z',
+  label: 'product',
+  metadata: {
+    request: {
+      name: 'test for slug',
+      category_id: '5f24e9d25aa3da35d8946cf9',
+      brand_id: '5f24d720e5fba43358f295a9',
+      additional_categories: '',
+      related_products: '',
+      preview_text: 'string',
+      description: 'test',
+      gallery: '',
+      external_id: '0',
+      meta: { title: 'string', description: 'string', tags: 'string' },
+      active: true,
+      order: '0',
+      image: '',
+      lang: 'ru'
+    }
+  }
+}
+{
+  message: 'Product validation failed: slug: Path `slug` is required.',
+  level: 'error',
+  timestamp: '2020-08-01T13:09:18.645Z',
+  label: 'catalog-service',
+  metadata: {
+    function: 'create product',
+    request: {
+      name: 'test for slug',
+      category_id: '5f24e9d25aa3da35d8946cf9',
+      brand_id: '5f24d720e5fba43358f295a9',
+      additional_categories: [],
+      related_products: [],
+      preview_text: 'string',
+      description: 'test',
+      gallery: [],
+      external_id: '0',
+      meta: { title: 'string', description: 'string', tags: 'string' },
+      active: true,
+      order: '0',
+      image: '',
+      lang: 'ru',
+      category: '5f24e9d25aa3da35d8946cf9',
+      brand: '5f24d720e5fba43358f295a9',
+      created_at: 1596287358643,
+      updated_at: 1596287358643
+    }
+  }
+}
+{
+  message: 'Category create request',
+  level: 'debug',
+  timestamp: '2020-08-01T13:10:36.195Z',
+  label: 'category',
+  metadata: {
+    request: {
+      name: 'test for slug',
+      parent_id: '',
+      active: true,
+      description: 'test',
+      order: '0',
+      image: '',
+      meta: { title: 'string', description: 'string', tags: 'string' },
+      product_property_groups: '',
+      lang: 'ru'
+    }
+  }
+}
+{
+  message: 'category is created with lang en',
+  level: 'debug',
+  timestamp: '2020-08-01T13:10:37.080Z',
+  label: 'catalog-service',
+  metadata: {
+    result: {
+      meta: { title: 'string', description: 'string', tags: 'string' },
+      description: 'test',
+      active: true,
+      order: 0,
+      product_property_groups: [],
+      lang: 'en',
+      _id: 5f2569cce131a843eb91bd47,
+      name: 'test for slug',
+      image: '',
+      parent: null,
+      created_at: 2020-08-01T13:10:36.195Z,
+      updated_at: 2020-08-01T13:10:36.195Z,
+      slug: 'test-for-slug',
+      __v: 0
+    }
+  }
+}
+{
+  message: 'category is created with lang uz',
+  level: 'debug',
+  timestamp: '2020-08-01T13:10:37.374Z',
+  label: 'catalog-service',
+  metadata: {
+    result: {
+      meta: { title: 'string', description: 'string', tags: 'string' },
+      description: 'test',
+      active: true,
+      order: 0,
+      product_property_groups: [],
+      lang: 'uz',
+      _id: 5f2569cde131a843eb91bd48,
+      name: 'test for slug',
+      image: '',
+      parent: null,
+      created_at: 2020-08-01T13:10:36.195Z,
+      updated_at: 2020-08-01T13:10:36.195Z,
+      slug: 'test-for-slug',
+      __v: 0
+    }
+  }
+}
+{
+  message: 'Product create request',
+  level: 'debug',
+  timestamp: '2020-08-01T13:12:04.534Z',
+  label: 'product',
+  metadata: {
+    request: {
+      name: 'test for slug',
+      category_id: '5f24e9d25aa3da35d8946cf9',
+      brand_id: '5f24d720e5fba43358f295a9',
+      additional_categories: '',
+      related_products: '',
+      preview_text: 'string',
+      description: 'test',
+      gallery: '',
+      external_id: '0',
+      meta: { title: 'string', description: 'string', tags: 'string' },
+      active: true,
+      order: '0',
+      image: '',
+      lang: 'ru'
+    }
+  }
+}
+{
+  message: 'product created',
+  level: 'info',
+  timestamp: '2020-08-01T13:12:04.535Z',
+  label: 'catalog-service',
+  metadata: { durationMs: 165892 }
+}
+{
+  message: 'Product validation failed: slug: Path `slug` is required.',
+  level: 'error',
+  timestamp: '2020-08-01T13:12:04.537Z',
+  label: 'catalog-service',
+  metadata: {
+    function: 'create product',
+    request: {
+      name: 'test for slug',
+      category_id: '5f24e9d25aa3da35d8946cf9',
+      brand_id: '5f24d720e5fba43358f295a9',
+      additional_categories: [],
+      related_products: [],
+      preview_text: 'string',
+      description: 'test',
+      gallery: [],
+      external_id: '0',
+      meta: { title: 'string', description: 'string', tags: 'string' },
+      active: true,
+      order: '0',
+      image: '',
+      lang: 'ru',
+      category: '5f24e9d25aa3da35d8946cf9',
+      brand: '5f24d720e5fba43358f295a9',
+      created_at: 1596287524535,
+      updated_at: 1596287524535
+    }
+  }
+}
+{
+  message: 'Main function is running',
+  level: 'info',
+  timestamp: '2020-08-01T13:12:36.316Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connecting to db: mongodb://rj:mysecret@dev.goodzone.uz:27017/catalog_service',
+  level: 'info',
+  timestamp: '2020-08-01T13:12:36.320Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'grpc server is running at 7000',
+  level: 'info',
+  timestamp: '2020-08-01T13:12:36.384Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connected to the databasee',
+  level: 'info',
+  timestamp: '2020-08-01T13:12:38.791Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Product create request',
+  level: 'debug',
+  timestamp: '2020-08-01T13:12:48.434Z',
+  label: 'product',
+  metadata: {
+    request: {
+      name: 'test for slug',
+      category_id: '5f24e9d25aa3da35d8946cf9',
+      brand_id: '5f24d720e5fba43358f295a9',
+      additional_categories: '',
+      related_products: '',
+      preview_text: 'string',
+      description: 'test',
+      gallery: '',
+      external_id: '0',
+      meta: { title: 'string', description: 'string', tags: 'string' },
+      active: true,
+      order: '0',
+      image: '',
+      lang: 'ru'
+    }
+  }
+}
+{
+  message: 'product created',
+  level: 'info',
+  timestamp: '2020-08-01T13:12:49.067Z',
+  label: 'catalog-service',
+  metadata: { durationMs: 633 }
+}
+{
+  message: 'product is created with lang en',
+  level: 'debug',
+  timestamp: '2020-08-01T13:12:49.086Z',
+  label: 'catalog-service',
+  metadata: {
+    result: {
+      price: {},
+      meta: { title: 'string', description: 'string', tags: 'string' },
+      additional_categories: [],
+      related_products: [],
+      preview_text: 'string',
+      description: 'test',
+      gallery: [],
+      active: true,
+      external_id: 0,
+      lang: 'en',
+      _id: 5f256a507b1d354437f22dad,
+      name: 'test for slug',
+      image: '',
+      category: 5f24e9d25aa3da35d8946cf9,
+      brand: 5f24d720e5fba43358f295a9,
+      created_at: 2020-08-01T13:12:48.435Z,
+      updated_at: 2020-08-01T13:12:48.435Z,
+      slug: 'test-for-slug',
+      prices: [],
+      properties: [],
+      __v: 0
+    }
+  }
+}
+{
+  message: 'product is created with lang uz',
+  level: 'debug',
+  timestamp: '2020-08-01T13:12:49.416Z',
+  label: 'catalog-service',
+  metadata: {
+    result: {
+      price: {},
+      meta: { title: 'string', description: 'string', tags: 'string' },
+      additional_categories: [],
+      related_products: [],
+      preview_text: 'string',
+      description: 'test',
+      gallery: [],
+      active: true,
+      external_id: 0,
+      lang: 'uz',
+      _id: 5f256a517b1d354437f22dae,
+      name: 'test for slug',
+      image: '',
+      category: 5f24e9d25aa3da35d8946cf9,
+      brand: 5f24d720e5fba43358f295a9,
+      created_at: 2020-08-01T13:12:48.435Z,
+      updated_at: 2020-08-01T13:12:48.435Z,
+      slug: 'test-for-slug',
+      prices: [],
+      properties: [],
+      __v: 0
+    }
+  }
+}
+{
+  message: 'Main function is running',
+  level: 'info',
+  timestamp: '2020-08-01T13:13:50.133Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connecting to db: mongodb://rj:mysecret@dev.goodzone.uz:27017/catalog_service',
+  level: 'info',
+  timestamp: '2020-08-01T13:13:50.137Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'grpc server is running at 7000',
+  level: 'info',
+  timestamp: '2020-08-01T13:13:50.214Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connected to the databasee',
+  level: 'info',
+  timestamp: '2020-08-01T13:13:52.189Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'products imported',
+  level: 'info',
+  timestamp: '2020-08-01T13:14:03.350Z',
+  label: 'catalog-service',
+  metadata: { durationMs: 933 }
+}
+{
+  message: 'Product create request',
+  level: 'debug',
+  timestamp: '2020-08-01T13:14:49.439Z',
+  label: 'product',
+  metadata: {
+    request: {
+      name: 'test for slug',
+      category_id: '5f24e9d25aa3da35d8946cf9',
+      brand_id: '5f24d720e5fba43358f295a9',
+      additional_categories: '',
+      related_products: '',
+      preview_text: 'string',
+      description: 'test',
+      gallery: '',
+      external_id: '0',
+      meta: { title: 'string', description: 'string', tags: 'string' },
+      active: true,
+      order: '0',
+      image: '',
+      lang: 'ru'
+    }
+  }
+}
+{
+  message: 'product is created with lang en',
+  level: 'debug',
+  timestamp: '2020-08-01T13:14:50.155Z',
+  label: 'catalog-service',
+  metadata: {
+    result: {
+      price: {},
+      meta: { title: 'string', description: 'string', tags: 'string' },
+      additional_categories: [],
+      related_products: [],
+      preview_text: 'string',
+      description: 'test',
+      gallery: [],
+      active: true,
+      external_id: 0,
+      lang: 'en',
+      _id: 5f256ac92e1bc0448247cadf,
+      name: 'test for slug',
+      image: '',
+      category: 5f24e9d25aa3da35d8946cf9,
+      brand: 5f24d720e5fba43358f295a9,
+      created_at: 2020-08-01T13:14:49.441Z,
+      updated_at: 2020-08-01T13:14:49.441Z,
+      slug: 'test-for-slug',
+      prices: [],
+      properties: [],
+      __v: 0
+    }
+  }
+}
+{
+  message: 'product is created with lang uz',
+  level: 'debug',
+  timestamp: '2020-08-01T13:14:50.444Z',
+  label: 'catalog-service',
+  metadata: {
+    result: {
+      price: {},
+      meta: { title: 'string', description: 'string', tags: 'string' },
+      additional_categories: [],
+      related_products: [],
+      preview_text: 'string',
+      description: 'test',
+      gallery: [],
+      active: true,
+      external_id: 0,
+      lang: 'uz',
+      _id: 5f256aca2e1bc0448247cae0,
+      name: 'test for slug',
+      image: '',
+      category: 5f24e9d25aa3da35d8946cf9,
+      brand: 5f24d720e5fba43358f295a9,
+      created_at: 2020-08-01T13:14:49.441Z,
+      updated_at: 2020-08-01T13:14:49.441Z,
+      slug: 'test-for-slug',
+      prices: [],
+      properties: [],
+      __v: 0
+    }
+  }
+}
+{
+  message: 'product created',
+  level: 'info',
+  timestamp: '2020-08-01T13:14:50.795Z',
+  label: 'catalog-service',
+  metadata: { durationMs: 1355 }
+}
+{
+  message: 'Main function is running',
+  level: 'info',
+  timestamp: '2020-08-01T13:17:31.034Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connecting to db: mongodb://rj:mysecret@dev.goodzone.uz:27017/catalog_service',
+  level: 'info',
+  timestamp: '2020-08-01T13:17:31.039Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'grpc server is running at 7000',
+  level: 'info',
+  timestamp: '2020-08-01T13:17:31.134Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connected to the databasee',
+  level: 'info',
+  timestamp: '2020-08-01T13:17:33.472Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'products imported',
+  level: 'info',
+  timestamp: '2020-08-01T13:17:37.590Z',
+  label: 'catalog-service',
+  metadata: { durationMs: 837 }
+}
+{
+  message: 'Product create request',
+  level: 'debug',
+  timestamp: '2020-08-01T13:20:20.269Z',
+  label: 'product',
+  metadata: {
+    request: {
+      name: 'test for slug',
+      category_id: '5f24e9d25aa3da35d8946cf9',
+      brand_id: '5f24d720e5fba43358f295a9',
+      additional_categories: '',
+      related_products: '',
+      preview_text: 'string',
+      description: 'test',
+      gallery: '',
+      external_id: '0',
+      meta: { title: 'string', description: 'string', tags: 'string' },
+      active: true,
+      order: '0',
+      image: '',
+      lang: 'ru'
+    }
+  }
+}
+{
+  message: 'product created',
+  level: 'info',
+  timestamp: '2020-08-01T13:20:20.999Z',
+  label: 'catalog-service',
+  metadata: { durationMs: 729 }
+}
+{
+  message: 'product is created with lang en',
+  level: 'debug',
+  timestamp: '2020-08-01T13:20:21.017Z',
+  label: 'catalog-service',
+  metadata: {
+    result: {
+      price: {},
+      meta: { title: 'string', description: 'string', tags: 'string' },
+      additional_categories: [],
+      related_products: [],
+      preview_text: 'string',
+      description: 'test',
+      gallery: [],
+      active: true,
+      external_id: 0,
+      lang: 'en',
+      _id: 5f256c1472713544bd9757c9,
+      name: 'test for slug',
+      image: '',
+      category: 5f24e9d25aa3da35d8946cf9,
+      brand: 5f24d720e5fba43358f295a9,
+      created_at: 2020-08-01T13:20:20.270Z,
+      updated_at: 2020-08-01T13:20:20.270Z,
+      slug: 'test-for-slug',
+      prices: [],
+      properties: [],
+      __v: 0
+    }
+  }
+}
+{
+  message: 'product is created with lang uz',
+  level: 'debug',
+  timestamp: '2020-08-01T13:20:21.815Z',
+  label: 'catalog-service',
+  metadata: {
+    result: {
+      price: {},
+      meta: { title: 'string', description: 'string', tags: 'string' },
+      additional_categories: [],
+      related_products: [],
+      preview_text: 'string',
+      description: 'test',
+      gallery: [],
+      active: true,
+      external_id: 0,
+      lang: 'uz',
+      _id: 5f256c1572713544bd9757ca,
+      name: 'test for slug',
+      image: '',
+      category: 5f24e9d25aa3da35d8946cf9,
+      brand: 5f24d720e5fba43358f295a9,
+      created_at: 2020-08-01T13:20:20.270Z,
+      updated_at: 2020-08-01T13:20:20.270Z,
+      slug: 'test-for-slug',
+      prices: [],
+      properties: [],
+      __v: 0
+    }
+  }
+}
+{
+  message: 'Main function is running',
+  level: 'info',
+  timestamp: '2020-08-01T13:21:19.869Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connecting to db: mongodb://rj:mysecret@dev.goodzone.uz:27017/catalog_service',
+  level: 'info',
+  timestamp: '2020-08-01T13:21:19.873Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'grpc server is running at 7000',
+  level: 'info',
+  timestamp: '2020-08-01T13:21:19.935Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connected to the databasee',
+  level: 'info',
+  timestamp: '2020-08-01T13:21:21.825Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'products imported',
+  level: 'info',
+  timestamp: '2020-08-01T13:21:29.598Z',
+  label: 'catalog-service',
+  metadata: { durationMs: 1295 }
+}
+{
+  message: 'Main function is running',
+  level: 'info',
+  timestamp: '2020-08-01T13:26:01.109Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connecting to db: mongodb://rj:mysecret@dev.goodzone.uz:27017/catalog_service',
+  level: 'info',
+  timestamp: '2020-08-01T13:26:01.116Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'grpc server is running at 7000',
+  level: 'info',
+  timestamp: '2020-08-01T13:26:01.193Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connected to the databasee',
+  level: 'info',
+  timestamp: '2020-08-01T13:26:04.051Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'products imported',
+  level: 'info',
+  timestamp: '2020-08-01T13:26:11.455Z',
+  label: 'catalog-service',
+  metadata: { durationMs: 587 }
+}
+{
+  message: 'Main function is running',
+  level: 'info',
+  timestamp: '2020-08-01T13:27:49.590Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connecting to db: mongodb://rj:mysecret@dev.goodzone.uz:27017/catalog_service',
+  level: 'info',
+  timestamp: '2020-08-01T13:27:49.594Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'grpc server is running at 7000',
+  level: 'info',
+  timestamp: '2020-08-01T13:27:49.658Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connected to the databasee',
+  level: 'info',
+  timestamp: '2020-08-01T13:27:51.777Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'products imported',
+  level: 'info',
+  timestamp: '2020-08-01T13:27:58.739Z',
+  label: 'catalog-service',
+  metadata: { durationMs: 458 }
+}

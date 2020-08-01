@@ -9,8 +9,7 @@ var ProductSchema = new mongoose.Schema({
     slug: {
         type: String,
         slug: 'name',
-        permanent: true,
-        required: true
+        permanent: true
     },
     category: {
         type: Types.ObjectId,

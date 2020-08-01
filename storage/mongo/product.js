@@ -8,6 +8,8 @@ const logger = require("../../config/logger");
 const cnf = require("../../config");
 const langs = ["en", "ru", "uz"];
 
+Product.syncIndexes();
+
 let productStorage = {
   create: (b) => {
     return new Promise((resolve, reject) => {
@@ -515,7 +517,7 @@ let productStorage = {
 				Shop.find(query, (err, shops) => {
 					if (err) return reject(err);
 					if (!shops) return reject(new Error("Shops are not found"));
-					
+
 					shops = shops.map((sh, i) => {
 						let products = sh.products.filter((stock) => {
 							return stock.product == product._id;
