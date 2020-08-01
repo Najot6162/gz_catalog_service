@@ -2,6 +2,8 @@ const Product = require("../../models/Product");
 const Brand = require("../../models/Brand");
 const logger = require("../../config/logger");
 const cnf = require("../../config");
+const mongoose = require("mongoose");
+const async = require("async");
 
 let brandStorage = {
   create: (b) => {
@@ -64,23 +66,52 @@ let brandStorage = {
         limit: filters.limit / 1 ? filters.limit / 1 : 10,
         sort: { created_at: -1 },
       };
-
+      if (filters.sort) {
+        let sortParams = filters.sort.split("|");
+        if (
+          sortParams.length == 2 &&
+          (sortParams[1] == "asc" || sortParams[1] == "desc")
+        ) {
+          options.sort = {};
+          options.sort[sortParams[0]] = sortParams[1] == "asc" ? 1 : -1;
+        }
+      }
       logger.debug("filtering brands", {
         query,
         options,
       });
+      async.parallel(
+        [
+          (cb) => {
+            Brand.find(query, {}, options, (err, brands) => {
+              if (err) return reject(err);
+              return cb(null, brands || []);
+            });
+          },
+          (cb) => {
+            Brand.countDocuments(query, (err, count) => {
+              if (err) return cb(err);
+              return cb(null, count);
+            });
+          },
+        ],
+        (err, results) => {
+          if (err) return reject(err);
+          let brands = results[0];
+          //setting images
 
-      Brand.find(query, {}, options, (err, brands) => {
-        if (err) return reject(err);
-
-        for (let i = 0; i < brands.length; i++) {
-          brands[i].image = brands[i].image
-            ? cnf.cloudUrl + brands[i].image
-            : "";
+          // setting image
+          for (let i = 0; i < brands.length; i++) {
+            brands[i].image = brands[i].image
+              ? cnf.cloudUrl + brands[i].image
+              : "";
+          }
+          return resolve({
+            brands,
+            count: results[1],
+          });
         }
-
-        resolve(brands);
-      });
+      );
     });
   },
   get: (req) => {

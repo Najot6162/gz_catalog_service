@@ -50,9 +50,9 @@ function main() {
       if (err) {
         logger.error(
           "There is an error in connecting db (" +
-            mongoDBUrl +
-            "): " +
-            err.message
+          mongoDBUrl +
+          "): " +
+          err.message
         );
       }
     }
