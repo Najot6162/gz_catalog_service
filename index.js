@@ -3,6 +3,7 @@ const protoLoader = require("@grpc/proto-loader");
 const mongoose = require("mongoose");
 const slugUpdater = require("mongoose-slug-updater");
 
+const importer = require("./import");
 const logger = require("./config/logger.js");
 const cfg = require("./config");
 
@@ -57,7 +58,22 @@ function main() {
     }
   );
   mongoose.connection.once("open", function () {
-    logger.info("Connected to the databasee");
+		logger.info("Connected to the databasee");
+		
+		setTimeout(() => {
+			// importer.importBrands().then((result) => {
+			// 	console.log("Brands have been imported");
+			// }).catch((err) => {
+			// 	console.log("error on importing brands: " + err);
+			// });
+
+			// importer.importCategories().then((result) => {
+			// 	console.log("Categories have been imported");
+			// }).catch((err) => {
+			// 	console.log("error on importing Categories: " + err);
+			// });
+		}, 2000);
+		
   });
 
   // gRPC server

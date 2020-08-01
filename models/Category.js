@@ -57,7 +57,10 @@ var CategorySchema = new mongoose.Schema(
       enum: ["uz", "ru", "en"],
       required: true,
       default: "ru",
-    },
+		},
+		external_id: {
+			type: Number
+		},
     created_at: {
       type: Date,
       default: Date.now,

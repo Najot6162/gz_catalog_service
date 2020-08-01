@@ -52,8 +52,9 @@ let shopStorage = {
       if (!b.id) return reject(new Error("Key is not provided"));
       if (!b.name) return reject(new Error("name is required"));
       if (!b.lang) return reject(new Error("Lang is not provided"));
-      let query = {};
+      
       // making query
+      let query = {};
       query = {
         ...query,
         lang: b.lang,
@@ -64,6 +65,7 @@ let shopStorage = {
         ],
       };
       if (mongoose.Types.ObjectId.isValid(b.id)) query.$or.push({ _id: b.id });
+
       Shop.findOne(query, (err, sh) => {
         if (err) return reject(err);
         if (!sh)
