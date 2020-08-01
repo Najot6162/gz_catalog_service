@@ -9,7 +9,7 @@ const brandService = {
             request: call.request
         });
         brandStorage.create(call.request).then((result) => {
-            callback(null, {brand: result});
+            callback(null, { brand: result });
         }).catch((err) => {
             logger.error(err.message, {
                 function: 'create brand',
@@ -27,7 +27,7 @@ const brandService = {
             request: call.request
         });
         brandStorage.update(call.request).then((result) => {
-            callback(null, {brand: result});
+            callback(null, { brand: result });
         }).catch((err) => {
             logger.error(err.message, {
                 function: 'update brand',
@@ -46,8 +46,8 @@ const brandService = {
         });
         brandStorage.find(call.request).then((result) => {
             callback(null, {
-                brands: result,
-                count: result.length
+                brands: result.brands,
+                count: result.count
             });
         }).catch((err) => {
             logger.error(err.message, {
@@ -66,7 +66,7 @@ const brandService = {
             request: call.request
         });
         brandStorage.get(call.request).then((result) => {
-            callback(null, {brand: result});
+            callback(null, { brand: result });
         }).catch((err) => {
             logger.error(err.message, {
                 function: 'get brand',

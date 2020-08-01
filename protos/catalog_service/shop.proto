@@ -10,6 +10,7 @@ service ShopService {
     rpc Update(UpdateShopRequest) returns (ShopResponse) {}
     rpc Find(FindShopsRequest) returns (FindShopsResponse) {}
     rpc Get(GetRequest) returns (ShopResponse) {}
+    rpc GetProducts(ProductsRequest) returns (ProductsResponse) {}
     rpc Delete(DeleteRequest) returns (Empty) {}
     rpc UpdateQuantity(UpdateProductQuantityRequest) returns (Empty) {}
 }
@@ -60,6 +61,21 @@ message UpdateProductQuantityRequest {
 }
 message ShopResponse {
     Shop shop = 1;
+}
+message ProductsRequest {
+    string id = 1;
+    string slug = 2;
+    int64 page = 3;
+    int64 limit = 4;
+}
+
+message ProductsResponse {
+  message ProductResponse{
+    ProductSlim product = 1;
+    int64 quantity = 2;
+}
+repeated ProductResponse products = 1;
+
 }
 
 message FindShopsRequest {

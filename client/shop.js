@@ -91,27 +91,39 @@ function main() {
               });
               console.log(getResponse);
 
-              // delete Shop
-              client.Delete(
-                {
-                  slug: updateResponse.shop.slug,
-                },
-                (err, deleteResponse) => {
-                  if (err) return console.log("Error: ", err.message);
+              client.GetProducts({
+                id: updateResponse.shop.id,
+                slug: updateResponse.shop.slug,
+                lang: "ru"
+              }, (err, getResponse) => {
+                if (err) return console.log('Error: ', err.message);
+                logger.debug('Products Get response', {
+                  response: getResponse,
+                  label: 'test'
+                });
 
-                  logger.debug("Shop Delete response", {
-                    response: deleteResponse,
-                    label: "test",
-                  });
-                  console.log("Shop test completed!");
-                }
+                // delete Shop
+                client.Delete(
+                  {
+                    slug: updateResponse.shop.slug,
+                  },
+                  (err, deleteResponse) => {
+                    if (err) return console.log("Error: ", err.message);
+
+                    logger.debug("Shop Delete response", {
+                      response: deleteResponse,
+                      label: "test",
+                    });
+                    console.log("Shop test completed!");
+                  }
+                );
+              }
               );
             }
           );
         }
       );
     }
-  );
+  )
 }
-
 main();

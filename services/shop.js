@@ -111,6 +111,27 @@ const shopService = {
         });
       });
   },
+  GetProducts: (call, callback) => {
+    logger.debug("Products get request", {
+      request: call.request,
+      label: "product",
+    });
+    shopStorage
+      .getProducts(call.request)
+      .then((result) => {
+        callback(null, { products: result.products });
+      })
+      .catch((err) => {
+        logger.error(err.message, {
+          function: "get products",
+          request: call.request,
+        });
+        callback({
+          code: grpc.status.INTERNAL,
+          message: err.message,
+        });
+      });
+  },
   Delete: (call, callback) => {
     logger.debug("Shop Delete Request", {
       label: "shop",

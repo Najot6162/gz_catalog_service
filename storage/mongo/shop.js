@@ -238,6 +238,47 @@ let shopStorage = {
       });
     });
   },
+  getProducts: (req) => {
+    return new Promise((resolve, reject) => {
+      if (!(req.id || req.slug)) return reject(new Error("Key is not given"));
+      let query = {};
+      // making query
+      query = {
+        ...query,
+        lang: req.lang ? req.lang : cnf.lang,
+        $or: [
+          {
+            slug: req.slug,
+          },
+        ],
+      };
+
+      if (mongoose.Types.ObjectId.isValid(req.id))
+        query.$or.push({ _id: req.id });
+      let options = {
+        skip: ((req.page / 1 - 1) * req.limit) / 1,
+        limit: req.limit / 1 ? req.limit / 1 : 10
+      };
+
+      Shop.findOne(query, (err, shop) => {
+        if (err) return reject(err);
+        if (!shop) return reject(new Error("Shops is not found"));
+        Product.find().skip(options.skip).limit(options.limit).exec((err, products) => {
+          if (err) return reject(err);
+          products = products.map((product, i) => {
+            let p = shop.products.filter((p, i) => {
+              return p.product == product.id
+            });
+            return {
+              product: product,
+              quantity: p.length ? p[0].quantity : 0
+            };
+          });
+          return resolve({ products });
+        })
+      });
+    });
+  },
   delete: (req) => {
     return new Promise((resolve, reject) => {
       if (!req.slug) return reject(new Error("Key is not provided"));
