@@ -28,3 +28,5 @@ node_modules
 
 server/*.spec.js
 kubernetes
+
+import/public
