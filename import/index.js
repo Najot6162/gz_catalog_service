@@ -207,7 +207,8 @@ const importProductImages = () => (
 
             Product.find({
                 active: true,
-                lang: 'ru'
+                lang: 'ru',
+                external_id: {$gt: 26}
             }, (err, products) => {
                 if(err) return reject(err);
 
@@ -275,7 +276,12 @@ const uploadImage = (file) => {
             console.log("request finished");
             //console.log(resp);
             //console.log(body);
-            return resolve(JSON.parse(body).filename);
+            try {
+                return resolve(JSON.parse(body).filename);
+            } catch (error) {
+                console.log("invalid response from upload request: " + body);
+                return resolve("");
+            } 
         });
 
         // getting local image directory
