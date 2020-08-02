@@ -1843,3 +1843,112 @@
     }
   }
 }
+{
+  message: 'Main function is running',
+  level: 'info',
+  timestamp: '2020-08-02T04:05:43.053Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connecting to db: mongodb://localhost:27017/catalog_service',
+  level: 'info',
+  timestamp: '2020-08-02T04:05:43.057Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'grpc server is running at 7000',
+  level: 'info',
+  timestamp: '2020-08-02T04:05:43.094Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connected to the databasee',
+  level: 'info',
+  timestamp: '2020-08-02T04:05:43.110Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Brand Create Request',
+  level: 'debug',
+  timestamp: '2020-08-02T04:05:56.469Z',
+  label: 'brand',
+  metadata: {
+    request: {
+      id: '',
+      name: 'my Brand',
+      slug: '',
+      image: '',
+      preview_text: 'preview text of my brand',
+      description: 'description of my brand',
+      active: true,
+      order: '0',
+      created_at: '',
+      updated_at: ''
+    }
+  }
+}
+{
+  message: 'Brand Find Request',
+  level: 'debug',
+  timestamp: '2020-08-02T04:05:56.495Z',
+  label: 'brand',
+  metadata: {
+    request: {
+      page: '0',
+      search: '',
+      active: false,
+      inactive: false,
+      limit: '0',
+      sort: '',
+      lang: ''
+    }
+  }
+}
+{
+  message: 'filtering brands',
+  level: 'debug',
+  timestamp: '2020-08-02T04:05:56.497Z',
+  label: 'catalog-service',
+  metadata: {
+    query: {},
+    options: { skip: -0, limit: 10, sort: { created_at: -1 } }
+  }
+}
+{
+  message: 'Brand Update Request',
+  level: 'debug',
+  timestamp: '2020-08-02T04:05:56.504Z',
+  label: 'brand',
+  metadata: {
+    request: {
+      id: '5f263ba47fcb988426da444f',
+      name: 'my updated Brand',
+      slug: '',
+      image: '',
+      preview_text: 'preview text of my updated brand',
+      description: 'description of my updated brand',
+      active: true,
+      order: '0',
+      created_at: '',
+      updated_at: ''
+    }
+  }
+}
+{
+  message: 'Brand Get Request',
+  level: 'debug',
+  timestamp: '2020-08-02T04:05:56.522Z',
+  label: 'brand',
+  metadata: { request: { id: '5f263ba47fcb988426da444f', slug: '', lang: '' } }
+}
+{
+  message: 'Brand Delete Request',
+  level: 'debug',
+  timestamp: '2020-08-02T04:05:56.545Z',
+  label: 'brand',
+  metadata: { request: { id: '5f263ba47fcb988426da444f', slug: '' } }
+}
