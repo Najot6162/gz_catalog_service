@@ -25,6 +25,7 @@
     "grpc": "^1.24.3",
     "mongoose": "^5.9.18",
     "mongoose-slug-updater": "^3.2.3",
+    "request": "^2.88.2",
     "winston": "^3.2.1"
   }
 }

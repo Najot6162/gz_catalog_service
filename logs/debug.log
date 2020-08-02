@@ -966,3 +966,31 @@
   label: 'catalog-service',
   metadata: { durationMs: 458 }
 }
+{
+  message: 'Main function is running',
+  level: 'info',
+  timestamp: '2020-08-02T04:48:30.336Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connecting to db: mongodb://rj:mysecret@dev.goodzone.uz:27017/catalog_service',
+  level: 'info',
+  timestamp: '2020-08-02T04:48:30.341Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'grpc server is running at 7000',
+  level: 'info',
+  timestamp: '2020-08-02T04:48:30.444Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connected to the databasee',
+  level: 'info',
+  timestamp: '2020-08-02T04:48:32.554Z',
+  label: 'catalog-service',
+  metadata: {}
+}

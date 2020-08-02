@@ -198,6 +198,38 @@ const importProducts = () => (
     })
 )
 
+const importProductImages = () => (
+    new Promise((resolve, reject) => {
+        fs.readFile(path.join(__dirname, "active_product_files.json"), 'utf8', (err, fileContent) => {
+            if(err) return reject(err);
+            files = JSON.parse(fileContent);
+            console.log("files file loaded, " + files.length + " entities");
+
+            Products.find({
+                active: true,
+                lang: 'ru'
+            }, (err, products) => {
+                if(err) return reject(err);
+
+                logger.profile("files imported");
+                async.eachSeries(products, (p, cb) => {
+                    let brand = result.brands.filter((b, i) => {
+                        return p.brand_id && b.external_id == p.brand_id;
+                    });
+                    let category = result.categories.filter((c, i) => {
+                        return c.external_id == p.category_id;
+                    });
+                    cb();
+                }, (err) => {
+                    if(err) return reject(err);
+                    logger.profile("files imported");
+                    return resolve();
+                });
+            })
+        });
+    })
+)
+
 module.exports = {
     importBrands,
     importCategories,
