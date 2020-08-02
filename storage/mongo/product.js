@@ -132,10 +132,10 @@ let productStorage = {
           return reject(
             new Error(
               "Document with key:" +
-                b.id +
-                " and with lang: " +
-                b.lang +
-                " not found"
+              b.id +
+              " and with lang: " +
+              b.lang +
+              " not found"
             )
           );
 
@@ -219,10 +219,10 @@ let productStorage = {
           return reject(
             new Error(
               "With key: " +
-                b.product_id +
-                ", found " +
-                products.length +
-                " documents. It seems there is duplication error"
+              b.product_id +
+              ", found " +
+              products.length +
+              " documents. It seems there is duplication error"
             )
           );
 
@@ -472,6 +472,7 @@ let productStorage = {
           product.gallery = product.gallery
             ? product.gallery.map((g, j) => (g ? cnf.cloudUrl + g : ""))
             : [];
+          brand.image = brand.image ? cnf.cloudUrl + brand.image : "";
 
           getRelatedProducts(product._id, 10)
             .then((related_products) => {
@@ -491,13 +492,13 @@ let productStorage = {
   },
   getShops: (req) => {
     return new Promise((resolve, reject) => {
-			if (!req.product_id) return reject(new Error("Key is not given"));
-			
-			// making query
-			let productQuery = {};
+      if (!req.product_id) return reject(new Error("Key is not given"));
+
+      // making query
+      let productQuery = {};
       productQuery = {
-				...productQuery,
-				lang: cnf.lang,
+        ...productQuery,
+        lang: cnf.lang,
         $or: [
           {
             slug: req.product_id,
@@ -505,31 +506,31 @@ let productStorage = {
         ],
       };
       if (mongoose.Types.ObjectId.isValid(req.product_id)) productQuery.$or.push({ _id: req.product_id });
-			
-			Product.findOne(productQuery, (err, product) => {
-				if(err) return reject(err);
-				if(!product) return reject(new Error("Product not found"));
 
-				let query = {
-					lang: req.lang ? req.lang : cnf.lang,
-					active: true,
-				};
-				Shop.find(query, (err, shops) => {
-					if (err) return reject(err);
-					if (!shops) return reject(new Error("Shops are not found"));
+      Product.findOne(productQuery, (err, product) => {
+        if (err) return reject(err);
+        if (!product) return reject(new Error("Product not found"));
 
-					shops = shops.map((sh, i) => {
-						let products = sh.products.filter((stock) => {
-							return stock.product == product._id;
-						});
-						return {
-							shop: sh,
-							quantity: products.length ? products[0].quantity : 0,
-						};
-					});
-					return resolve({ shops });
-				});
-			})
+        let query = {
+          lang: req.lang ? req.lang : cnf.lang,
+          active: true,
+        };
+        Shop.find(query, (err, shops) => {
+          if (err) return reject(err);
+          if (!shops) return reject(new Error("Shops are not found"));
+
+          shops = shops.map((sh, i) => {
+            let products = sh.products.filter((stock) => {
+              return stock.product == product._id;
+            });
+            return {
+              shop: sh,
+              quantity: products.length ? products[0].quantity : 0,
+            };
+          });
+          return resolve({ shops });
+        });
+      })
     });
   },
   delete: (req) => {
