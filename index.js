@@ -56,21 +56,21 @@ function main() {
     }
   );
   mongoose.connection.once("open", function () {
-		logger.info("Connected to the databasee");
-		
-		setTimeout(() => {
-			const importer = require("./import");
-			// importer.importBrands().then((result) => {
-			// 	console.log("Brands have been imported");
-			// }).catch((err) => {
-			// 	console.log("error on importing brands: " + err);
-			// });
+    logger.info("Connected to the databasee");
 
-			// importer.importCategories().then((result) => {
-			// 	console.log("Categories have been imported");
-			// }).catch((err) => {
-			// 	console.log("error on importing Categories: " + err);
-			// });
+    setTimeout(() => {
+      const importer = require("./import");
+      // importer.importBrands().then((result) => {
+      // 	console.log("Brands have been imported");
+      // }).catch((err) => {
+      // 	console.log("error on importing brands: " + err);
+      // });
+
+      // importer.importCategories().then((result) => {
+      // 	console.log("Categories have been imported");
+      // }).catch((err) => {
+      // 	console.log("error on importing Categories: " + err);
+      // });
 
 			// importer.importProducts().then((result) => {
 			// 	console.log("Products have been imported");

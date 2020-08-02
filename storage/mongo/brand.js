@@ -66,16 +66,6 @@ let brandStorage = {
         limit: filters.limit / 1 ? filters.limit / 1 : 10,
         sort: { created_at: -1 },
       };
-      if (filters.sort) {
-        let sortParams = filters.sort.split("|");
-        if (
-          sortParams.length == 2 &&
-          (sortParams[1] == "asc" || sortParams[1] == "desc")
-        ) {
-          options.sort = {};
-          options.sort[sortParams[0]] = sortParams[1] == "asc" ? 1 : -1;
-        }
-      }
       logger.debug("filtering brands", {
         query,
         options,
