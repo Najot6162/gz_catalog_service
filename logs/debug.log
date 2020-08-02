@@ -969,27 +969,47 @@
 {
   message: 'Main function is running',
   level: 'info',
+<<<<<<< HEAD
+  timestamp: '2020-08-02T04:48:30.336Z',
+=======
   timestamp: '2020-08-02T04:05:43.053Z',
+>>>>>>> 2942ff81189ee803debcc0caf845afe8989b5d95
   label: 'catalog-service',
   metadata: {}
 }
 {
+<<<<<<< HEAD
+  message: 'Connecting to db: mongodb://rj:mysecret@dev.goodzone.uz:27017/catalog_service',
+  level: 'info',
+  timestamp: '2020-08-02T04:48:30.341Z',
+=======
   message: 'Connecting to db: mongodb://localhost:27017/catalog_service',
   level: 'info',
   timestamp: '2020-08-02T04:05:43.057Z',
+>>>>>>> 2942ff81189ee803debcc0caf845afe8989b5d95
   label: 'catalog-service',
   metadata: {}
 }
 {
   message: 'grpc server is running at 7000',
   level: 'info',
+<<<<<<< HEAD
+  timestamp: '2020-08-02T04:48:30.444Z',
+=======
   timestamp: '2020-08-02T04:05:43.094Z',
+>>>>>>> 2942ff81189ee803debcc0caf845afe8989b5d95
   label: 'catalog-service',
   metadata: {}
 }
 {
   message: 'Connected to the databasee',
   level: 'info',
+<<<<<<< HEAD
+  timestamp: '2020-08-02T04:48:32.554Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+=======
   timestamp: '2020-08-02T04:05:43.110Z',
   label: 'catalog-service',
   metadata: {}
@@ -1075,3 +1095,4 @@
   label: 'brand',
   metadata: { request: { id: '5f263ba47fcb988426da444f', slug: '' } }
 }
+>>>>>>> 2942ff81189ee803debcc0caf845afe8989b5d95
