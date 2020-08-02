@@ -1,0 +1,46 @@
+syntax="proto3";
+
+package content;
+option go_package="genproto/content_service";
+
+import "content.proto";
+
+service BannerService {
+    rpc Create(CreateBannerRequest) returns (BannerResponse) {}
+    rpc Update(UpdateBannerRequest) returns (BannerResponse) {}
+    rpc Find(FindRequest) returns (BannersResponse) {}
+    rpc Get(GetRequest) returns (BannerResponse) {}
+    rpc Delete(DeleteRequest) returns (Empty) {}
+}
+message CreateBannerRequest {
+    string id = 1;
+    string title = 2;
+    string slug = 3;
+    string position_id = 4;
+    string image = 5;
+    string url = 6;
+    string description = 7;
+    bool   active = 8;
+    string created_at = 9;
+    string updated_at = 10;
+}
+message UpdateBannerRequest {
+    string id = 1;
+    string title = 2;
+    string slug = 3;
+    string position_id = 4;
+    string image = 5;
+    string url = 6;
+    string description = 7;
+    bool   active = 8;
+    string created_at = 9;
+    string updated_at = 10;
+}
+message BannerResponse {
+    Banner banner = 1;
+}
+
+message BannersResponse {
+    repeated Banner banners = 1;
+    int64 count = 2;
+}

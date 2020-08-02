@@ -47,8 +47,7 @@ var ProductSchema = new mongoose.Schema({
     },
     prices: [{
         type:{
-            type: Types.ObjectId,
-            ref: 'PriceType'
+            type: Number
         },
         price: Number,
         old_price: Number

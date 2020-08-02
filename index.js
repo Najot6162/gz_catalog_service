@@ -2,8 +2,6 @@ const grpc = require("grpc");
 const protoLoader = require("@grpc/proto-loader");
 const mongoose = require("mongoose");
 const slugUpdater = require("mongoose-slug-updater");
-
-const importer = require("./import");
 const logger = require("./config/logger.js");
 const cfg = require("./config");
 
@@ -61,6 +59,7 @@ function main() {
     logger.info("Connected to the databasee");
 
     setTimeout(() => {
+      const importer = require("./import");
       // importer.importBrands().then((result) => {
       // 	console.log("Brands have been imported");
       // }).catch((err) => {
@@ -72,7 +71,13 @@ function main() {
       // }).catch((err) => {
       // 	console.log("error on importing Categories: " + err);
       // });
-    }, 2000);
+
+      importer.importProducts().then((result) => {
+        console.log("Products have been imported");
+      }).catch((err) => {
+        console.log("error on importing Products: " + err);
+      });
+    }, 5000);
 
   });
 
