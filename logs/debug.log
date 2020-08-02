@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   message: 'Main function is running',
   level: 'info',
@@ -1418,3 +1419,5 @@
   label: 'catalog-service',
   metadata: { durationMs: 18682 }
 }
+=======
+>>>>>>> 9e40e99a5033de041b144691127ea481781f9fb3

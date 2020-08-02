@@ -88,8 +88,6 @@ let brandStorage = {
         (err, results) => {
           if (err) return reject(err);
           let brands = results[0];
-          //setting images
-
           // setting image
           for (let i = 0; i < brands.length; i++) {
             brands[i].image = brands[i].image
