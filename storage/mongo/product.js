@@ -472,8 +472,8 @@ let productStorage = {
           product.gallery = product.gallery
             ? product.gallery.map((g, j) => (g ? cnf.cloudUrl + g : ""))
             : [];
-          brand.image = brand.image ? cnf.cloudUrl + brand.image : "";
-
+          product.brand.image = product.brand.image ? cnf.cloudUrl + product.brand.image : "";
+          console.log(product);
           getRelatedProducts(product._id, 10)
             .then((related_products) => {
               product.related_products = related_products;
