@@ -229,17 +229,17 @@ let productStorage = {
         async.eachSeries(
           products,
           (product, cb) => {
-            if (!b.price_type_id) {
+            if (b.price_type_id && b.price_type_id == 1) {
               // valid price type is given, so we are updating 'prices' field
               let updated = false;
               product.prices = product.prices.map((price, i) => {
-                if (price.type.toString() == b.price_type_id || price.type.toString() == "") {
+                if (price.type.toString() == b.price_type_id) {
                   price.price = b.price;
                   price.old_price = b.old_price;
                   updated = true;
                 }
-                else if (price.type.toString() == "1") {
-                  price.type = "1";
+                else if (price.type.toString() == 1) {
+                  price.type = 1;
                   price.price = b.price;
                   price.old_price = b.old_price;
                   updated = true;
@@ -255,12 +255,15 @@ let productStorage = {
                   old_price: b.old_price,
                 });
               }
-            } else {
+            } else if (!b.price_type_id) {
               // price type is NOT given, so we are saving it as a default price for the product
               product.price = {
                 price: b.price,
                 old_price: b.old_price,
               };
+            }
+            else {
+              return reject(new Error("Something went wrong in Update price"));
             }
 
             product.save((err, updatedProduct) => {
