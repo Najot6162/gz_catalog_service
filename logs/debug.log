@@ -526,3 +526,125 @@
   label: 'test',
   metadata: { response: {} }
 }
+{
+  message: 'Main function is running',
+  level: 'info',
+  timestamp: '2020-08-03T09:23:40.882Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connecting to db: mongodb://rj:mysecret@dev.goodzone.uz:27017/catalog_service',
+  level: 'info',
+  timestamp: '2020-08-03T09:23:40.886Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'grpc server is running at 7000',
+  level: 'info',
+  timestamp: '2020-08-03T09:23:40.958Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connected to the databasee',
+  level: 'info',
+  timestamp: '2020-08-03T09:23:42.513Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Brand Find Request',
+  level: 'debug',
+  timestamp: '2020-08-03T09:24:16.353Z',
+  label: 'brand',
+  metadata: {
+    request: {
+      page: '1',
+      search: '',
+      active: false,
+      inactive: false,
+      limit: '0',
+      sort: '',
+      lang: ''
+    }
+  }
+}
+{
+  message: 'filtering brands',
+  level: 'debug',
+  timestamp: '2020-08-03T09:24:16.354Z',
+  label: 'catalog-service',
+  metadata: {
+    query: {},
+    options: { skip: 0, limit: 10, sort: { created_at: -1 } }
+  }
+}
+{
+  message: 'Product get request',
+  level: 'debug',
+  timestamp: '2020-08-03T09:29:58.139Z',
+  label: 'product',
+  metadata: {
+    request: {
+      id: 'fen-panasonic-eh-ne83-k865',
+      slug: 'fen-panasonic-eh-ne83-k865',
+      lang: ''
+    }
+  }
+}
+{
+  message: 'finding a product',
+  level: 'debug',
+  timestamp: '2020-08-03T09:29:58.140Z',
+  label: 'catalog-service',
+  metadata: {
+    query: { lang: 'ru', '$or': [ { slug: 'fen-panasonic-eh-ne83-k865' } ] }
+  }
+}
+{
+  message: 'Main function is running',
+  level: 'info',
+  timestamp: '2020-08-03T12:11:49.280Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connecting to db: mongodb://rj:mysecret@dev.goodzone.uz:27017/catalog_service',
+  level: 'info',
+  timestamp: '2020-08-03T12:11:49.285Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'grpc server is running at 7000',
+  level: 'info',
+  timestamp: '2020-08-03T12:11:49.393Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connected to the databasee',
+  level: 'info',
+  timestamp: '2020-08-03T12:11:52.973Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Category find request',
+  level: 'debug',
+  timestamp: '2020-08-03T12:12:18.003Z',
+  label: 'category',
+  metadata: {
+    request: {
+      page: '1',
+      search: '',
+      active: false,
+      inactive: false,
+      limit: '0',
+      sort: '',
+      lang: ''
+    }
+  }
+}

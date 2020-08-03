@@ -5,6 +5,8 @@ option go_package="genproto/order_service";
 
 service OrderService {
     rpc Create(CreateOrderRequest) returns (OrderResponse) {}
+    rpc Get(GetOrderRequest) returns (OrderResponse) {}
+    rpc Find(FindOrdersRequest) returns (OrdersResponse) {}
 }
 
 message Order {
@@ -45,4 +47,21 @@ message OrderItem {
 
 message OrderResponse {
     Order order = 1;
+}
+
+message OrdersResponse {
+    repeated Order orders = 1;
+    int64 count = 2;
+}
+
+message GetOrderRequest {
+    string number = 1;
+}
+
+message FindOrdersRequest {
+    int64  page = 1;
+    string search = 2;
+    int64  limit = 3;
+    string sort = 4;
+    string customer_id = 5;
 }

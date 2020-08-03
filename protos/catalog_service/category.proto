@@ -13,6 +13,41 @@ service CategoryService {
     rpc Delete(DeleteRequest) returns (Empty) {}
 }
 
+message MainCategorySlim {
+    message ChildCategory {
+        string id = 1;
+        string name = 2;
+        string slug = 3;
+        bool active = 5;
+        string description = 6;
+        int64 order = 7;
+        string image = 8;
+        string created_at = 9;
+        string updated_at = 10;
+        repeated GrandChildCategory children = 11;
+    }
+    message GrandChildCategory {
+        string id = 1;
+        string name = 2;
+        string slug = 3;
+        bool active = 5;
+        string description = 6;
+        int64 order = 7;
+        string image = 8;
+        string created_at = 9;
+        string updated_at = 10;
+    }
+    string id = 1;
+    string name = 2;
+    string slug = 3;
+    bool active = 4;
+    string description = 5;
+    int64 order = 6;
+    string image = 7;
+    repeated ChildCategory children = 8;
+    string lang = 9;
+}
+
 message CreateCategoryRequest {
     message CategoryMeta {
         string title = 1;

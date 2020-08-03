@@ -75,7 +75,7 @@ message UpdateProductPropertyRequest {
 }
 message ShopsRequest {
     string product_id = 1;
-    // string slug = 2;
+    string product_slug = 2;
 }
 message ShopsResponse {
    message ShopResponse{

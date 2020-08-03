@@ -82,7 +82,7 @@ message Category {
         string updated_at = 10;
         repeated ProductPropertyGroup product_property_groups  = 12;
     }
-     message CategoryMeta {
+    message CategoryMeta {
         string title = 1;
         string description = 2;
         string tags = 3;
@@ -101,34 +101,6 @@ message Category {
     repeated SlimCategory children = 12;
     repeated ProductPropertyGroup product_property_groups  = 13;
     string lang = 14;
-}
-
-message MainCategorySlim {
-    message SlimCategory {
-        string id = 1;
-        string name = 2;
-        string slug = 3;
-        bool active = 5;
-        string description = 6;
-        int64 order = 7;
-        string image = 8;
-        string created_at = 9;
-        string updated_at = 10;
-        repeated ProductPropertyGroup product_property_groups  = 12;
-    }
-    string id = 1;
-    string name = 2;
-    string slug = 3;
-    SlimCategory parent = 4;
-    bool active = 5;
-    string description = 6;
-    int64 order = 7;
-    string image = 8;
-    string created_at = 9;
-    string updated_at = 10;
-    repeated SlimCategory children = 11;
-    repeated ProductPropertyGroup product_property_groups  = 12;
-    string lang = 13;
 }
 
 message Brand {
