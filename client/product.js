@@ -81,18 +81,11 @@ function main() {
                 label: 'test'
             });
             client.UpdatePrice({
-                id: updateResponse.product.slug,
-                prices: [{
-                    type: "1",
-                    price: 2200,
-                    old_price: 2000
-                },
-                {
-                    type: "",
-                    price: 2000,
-                    old_price: 1800
-                }],
-                lang: 'ru'
+                product_id: updateResponse.product.slug,
+                old_price: "10",
+                price: "1",
+                price_type_id: ""
+
             }, (err, updateResponse) => {
                 if (err) return console.log('Error: ', err.message);
 

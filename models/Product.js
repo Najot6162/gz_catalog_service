@@ -46,8 +46,8 @@ var ProductSchema = new mongoose.Schema({
         old_price: Number
     },
     prices: [{
-        type:{
-            type: Number
+        type: {
+            type: String
         },
         price: Number,
         old_price: Number
@@ -57,11 +57,11 @@ var ProductSchema = new mongoose.Schema({
             type: Types.ObjectId,
             ref: 'ProductProperty'
         },
-        value:{
+        value: {
             type: String
         }
     }],
-    active:{
+    active: {
         type: Boolean,
         default: true
     },
@@ -85,7 +85,7 @@ var ProductSchema = new mongoose.Schema({
     },
     lang: {
         type: String,
-        enum: ['uz','ru','en'],
+        enum: ['uz', 'ru', 'en'],
         required: true,
         default: 'ru'
     },
@@ -96,7 +96,7 @@ var ProductSchema = new mongoose.Schema({
     updated_at: {
         type: Date
     }
-},{
+}, {
     minimize: false
 });
 
