@@ -23,18 +23,18 @@ function main() {
 
   //Connecting to database
 
-  // const mongoDBUrl =
-  //   "mongodb://" +
-  //   cfg.mongoUser +
-  //   ":" +
-  //   cfg.mongoPassword +
-  //   "@" +
-  //   cfg.mongoHost +
-  //   ":" +
-  //   cfg.mongoPort +
-  //   "/" +
-  //   cfg.mongoDatabase;
-  mongoDBUrl = "mongodb://localhost:27017/catalog_service";
+  const mongoDBUrl =
+    "mongodb://" +
+    cfg.mongoUser +
+    ":" +
+    cfg.mongoPassword +
+    "@" +
+    cfg.mongoHost +
+    ":" +
+    cfg.mongoPort +
+    "/" +
+    cfg.mongoDatabase;
+  //mongoDBUrl = "mongodb://localhost:27017/catalog_service";
 
   logger.info("Connecting to db: " + mongoDBUrl);
 
@@ -77,6 +77,20 @@ function main() {
       // }).catch((err) => {
       // 	console.log("error on importing Products: " + err);
       // });
+
+      // importer.removeDuplicateProducts().then((result) => {
+      // 	console.log("Duplicate Products have been removed");
+      // }).catch((err) => {
+      // 	console.log("error on removing Products: " + err);
+      // });
+
+      // importer.importProductImages().then((result) => {
+      // 	console.log("Product images have been processed");
+      // }).catch((err) => {
+      // 	console.log("error on importing files: " + err);
+      // });
+
+
     }, 5000);
 
   });

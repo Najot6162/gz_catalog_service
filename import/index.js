@@ -2,14 +2,14 @@ const fs =require("fs");
 const path = require("path");
 const async = require("async");
 const mongoose = require("mongoose");
+const request = require("request")
 const Brand = require("../models/Brand");
 const Category = require("../models/Category");
 const Product = require("../models/Product");
 
 const logger = require("../config/logger.js");
 
-Brand.syncIndexes();
-Product.syncIndexes();
+const uploadUrl = "https://dev.goodzone.uz/v1/upload";
 
 const importBrands = () => (
     new Promise((resolve, reject) => {
@@ -205,33 +205,120 @@ const importProductImages = () => (
             files = JSON.parse(fileContent);
             console.log("files file loaded, " + files.length + " entities");
 
-            Products.find({
+            Product.find({
                 active: true,
-                lang: 'ru'
+                lang: 'ru',
+                external_id: {$gt: 26}
             }, (err, products) => {
                 if(err) return reject(err);
 
-                logger.profile("files imported");
+                // products = products.filter((p, i) => {
+                //     return p.external_id == 124;
+                // });
+                console.log('products ' + products.length); // 1
+
+                logger.profile("files processed");
                 async.eachSeries(products, (p, cb) => {
-                    let brand = result.brands.filter((b, i) => {
-                        return p.brand_id && b.external_id == p.brand_id;
+                    let images = files.filter((f, i) => {
+                        return f.attachment_id/1 == p.external_id;
                     });
-                    let category = result.categories.filter((c, i) => {
-                        return c.external_id == p.category_id;
+                    console.log(images.length + " images for product " + p.external_id);
+
+                    let processed = 0;
+                    let image = "";
+                    let gallery = [];
+
+                    async.eachSeries(images, (f, callb) => {
+                        uploadImage(f).then((filename) => {
+                            if(f.field == "preview_image") image = filename;
+                            if(f.field == "images") gallery.push(filename);
+                            processed++;
+                            callb();
+                        }).catch((err) => {
+                            console.log("Error on uploading file for product " + p.external_id + ": " + err);
+                            callb();
+                        });
+                    }, (err) => {
+                        if(err) return cb(err);
+                        console.log(processed + " of " + images.length + " files processed for product " + p.external_id);
+                        if(image || gallery.length){
+                            Product.updateMany({
+                                slug: p.slug
+                            }, {
+                                $set: {
+                                    image,
+                                    gallery
+                                }
+                            }, (err, updateResult) => {
+                                if(err) return cb(err);
+                                console.log("product " + p.external_id + " is updated");
+                                cb();
+                            });
+                        }else{
+                            return cb();
+                        }
                     });
-                    cb();
+                    
                 }, (err) => {
                     if(err) return reject(err);
-                    logger.profile("files imported");
+                    logger.profile("files processed");
                     return resolve();
                 });
-            })
+            });
         });
     })
 )
 
+const uploadImage = (file) => {
+    return new Promise((resolve, reject) => {
+        var req = request.post(uploadUrl, function (err, resp, body) {
+            if (err) return reject(err);
+            console.log("request finished");
+            //console.log(resp);
+            //console.log(body);
+            try {
+                return resolve(JSON.parse(body).filename);
+            } catch (error) {
+                console.log("invalid response from upload request: " + body);
+                return resolve("");
+            } 
+        });
+
+        // getting local image directory
+        let folder1 = file.disk_name.substring(0, 3);
+        let folder2 = file.disk_name.substring(3, 6);
+        let folder3 = file.disk_name.substring(6, 9);
+        let fileAddress = path.join(__dirname, "public", folder1, folder2, folder3, file.disk_name);
+        //console.log("file address " + fileAddress);
+
+        var form = req.form();
+            form.append('file', fs.createReadStream(fileAddress), {
+            filename: file.file_name,
+            contentType: file.content_type
+        });
+    })
+}
+
+const removeDuplicateProducts = () => (
+    new Promise((resolve, reject) => {
+        Product.find({}, {_id: 1}).limit(2648).sort({created_at: -1}).exec((err, ids) => {
+            if(err) return reject(err);
+            ids = ids.map((p, i) => p._id);
+            Product.remove({
+                _id: {$in: ids}
+            }, (err, result) => {
+                if(err) return reject(err);
+                resolve(result);
+            });
+        });
+        
+    })
+);
+
 module.exports = {
     importBrands,
     importCategories,
-    importProducts
+    importProducts,
+    removeDuplicateProducts,
+    importProductImages
 }
