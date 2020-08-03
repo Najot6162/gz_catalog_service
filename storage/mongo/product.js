@@ -229,7 +229,7 @@ let productStorage = {
         async.eachSeries(
           products,
           (product, cb) => {
-            if (b.price_type_id.toString() && b.price_type_id.toString() == 1) {
+            if (b.price_type_id && b.price_type_id.toString() == 1) {
               // valid price type is given, so we are updating 'prices' field
               let updated = false;
               product.prices = product.prices.map((price, i) => {

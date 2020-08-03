@@ -63,7 +63,7 @@ message UpdateProductRequest {
 
 message UpdateProductPriceRequest {
     string product_id = 1;
-    int64 price_type_id = 2;
+    string price_type_id = 2;
     int64  price = 3;
     int64  old_price = 4;
 }
