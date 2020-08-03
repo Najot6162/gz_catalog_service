@@ -48,7 +48,7 @@ const productService = {
       });
   },
   UpdatePrice: (call, callback) => {
-    logger.debug("Product price create request", {
+    logger.debug("Product price update request", {
       request: call.request,
       label: "product",
     });
@@ -59,7 +59,7 @@ const productService = {
       })
       .catch((err) => {
         logger.error(err.message, {
-          function: "create product price",
+          function: "update product price",
           request: call.request,
         });
         callback({
@@ -69,7 +69,7 @@ const productService = {
       });
   },
   UpdateProperty: (call, callback) => {
-    logger.debug("Product property create request", {
+    logger.debug("Product property update request", {
       request: call.request,
       label: "product",
     });
@@ -80,7 +80,7 @@ const productService = {
       })
       .catch((err) => {
         logger.error(err.message, {
-          function: "create product property",
+          function: "update product property",
           request: call.request,
         });
         callback({

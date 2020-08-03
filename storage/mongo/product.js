@@ -229,14 +229,22 @@ let productStorage = {
         async.eachSeries(
           products,
           (product, cb) => {
-            if (mongoose.Types.ObjectId.isValid(b.price_type_id)) {
+            if (!b.price_type_id) {
               // valid price type is given, so we are updating 'prices' field
               let updated = false;
               product.prices = product.prices.map((price, i) => {
-                if (price.type.toString() == b.price_type_id) {
+                if (price.type.toString() == b.price_type_id || price.type.toString() == "") {
                   price.price = b.price;
                   price.old_price = b.old_price;
                   updated = true;
+                }
+                else if (price.type.toString() == "1") {
+                  price.type = "1";
+                  price.price = b.price;
+                  price.old_price = b.old_price;
+                  updated = true;
+                } else {
+                  return reject(new Error("Invalid Price Type!"));
                 }
                 return price;
               });
