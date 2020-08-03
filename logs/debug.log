@@ -1,2386 +1,2298 @@
 {
-  message: 'Main function is running',
-  level: 'info',
-  timestamp: '2020-08-03T08:52:53.908Z',
-  label: 'catalog-service',
-  metadata: {}
-}
-{
-  message: 'Connecting to db: mongodb://localhost:27017/catalog_service',
-  level: 'info',
-  timestamp: '2020-08-03T08:52:53.911Z',
-  label: 'catalog-service',
-  metadata: {}
-}
-{
-  message: 'grpc server is running at 7000',
-  level: 'info',
-  timestamp: '2020-08-03T08:52:53.960Z',
-  label: 'catalog-service',
-  metadata: {}
-}
-{
-  message: 'Connected to the databasee',
-  level: 'info',
-  timestamp: '2020-08-03T08:52:53.984Z',
-  label: 'catalog-service',
-  metadata: {}
-}
-{
-  message: 'Product create request',
+  message: 'Category Find response',
   level: 'debug',
-  timestamp: '2020-08-03T08:52:57.400Z',
-  label: 'product',
-  metadata: {
-    request: {
-      name: 'my product',
-      category_id: '5ee1e1b06123a6296c4996af',
-      brand_id: '5f2667419be6c18d2c1545cb',
-      additional_categories: '5ee1e1b06123a6296c4996bd,5ee1e1b06123a6296c4556bd,5ee1e1b06123a6296c4236bd',
-      related_products: '5ee36f67f8601328a86456df,5ee0d1b06123a6296c4996bd,5ee1sdb06123a6296c4996bd',
-      preview_text: 'preview text of my product',
-      description: 'description of my product',
-      gallery: 'img/somephoto.jpg',
-      external_id: '15',
-      meta: {
-        title: 'Product Meta',
-        description: 'Description of Meta',
-        tags: 'Tag of meta'
-      },
-      active: false,
-      order: '0',
-      image: 'some.jpg',
-      lang: 'ru'
-    }
-  }
-}
-{
-  message: 'product created',
-  level: 'info',
-  timestamp: '2020-08-03T08:52:57.432Z',
-  label: 'catalog-service',
-  metadata: { durationMs: 32 }
-}
-{
-  message: 'product is created with lang en',
-  level: 'debug',
-  timestamp: '2020-08-03T08:52:57.438Z',
-  label: 'catalog-service',
-  metadata: {
-    result: {
-      price: {},
-      meta: {
-        title: 'Product Meta',
-        description: 'Description of Meta',
-        tags: 'Tag of meta'
-      },
-      additional_categories: [
-        5ee1e1b06123a6296c4996bd,
-        5ee1e1b06123a6296c4556bd,
-        5ee1e1b06123a6296c4236bd
-      ],
-      related_products: [ 5ee36f67f8601328a86456df, 5ee0d1b06123a6296c4996bd ],
-      preview_text: 'preview text of my product',
-      description: 'description of my product',
-      gallery: [ 'img/somephoto.jpg' ],
-      active: false,
-      external_id: 15,
-      lang: 'en',
-      _id: 5f27d069abf6a3ad661b8439,
-      name: 'my product',
-      image: 'some.jpg',
-      category: 5ee1e1b06123a6296c4996af,
-      brand: 5f2667419be6c18d2c1545cb,
-      created_at: 2020-08-03T08:52:57.401Z,
-      updated_at: 2020-08-03T08:52:57.401Z,
-      slug: 'my-product',
-      prices: [],
-      properties: [],
-      __v: 0
-    }
-  }
-}
-{
-  message: 'Product Create response',
-  level: 'debug',
-  timestamp: '2020-08-03T08:52:57.444Z',
+  timestamp: '2020-08-03T15:30:56.962Z',
   label: 'test',
   metadata: {
     response: {
-      product: {
-        additional_categories: [],
-        related_products: [],
-        gallery: [ 'img/somephoto.jpg' ],
-        properties: [],
-        prices: [],
-        id: '5f27d069abf6a3ad661b8438',
-        name: 'my product',
-        slug: 'my-product',
-        category: null,
-        brand: {
-          id: '5f2667419be6c18d2c1545cb',
-          name: 'my updated Brand',
-          slug: 'my-updated-brand',
-          image: 'img.jpg',
-          preview_text: 'preview text of my updated brand',
-          description: 'description of my updated brand',
-          active: true,
-          order: '0',
-          created_at: 'Sun Aug 02 2020 12:12:01 GMT+0500 (Uzbekistan Standard Time)',
-          updated_at: 'Sun Aug 02 2020 12:12:01 GMT+0500 (Uzbekistan Standard Time)'
-        },
-        preview_text: 'preview text of my product',
-        description: 'description of my product',
-        active: false,
-        external_id: '15',
-        meta: {
-          title: 'Product Meta',
-          description: 'Description of Meta',
-          tags: 'Tag of meta'
-        },
-        price: { price: '0', old_price: '0' },
-        created_at: 'Mon Aug 03 2020 13:52:57 GMT+0500 (Uzbekistan Standard Time)',
-        updated_at: 'Mon Aug 03 2020 13:52:57 GMT+0500 (Uzbekistan Standard Time)',
-        image: 'some.jpg',
-        lang: 'ru'
-      }
-    }
-  }
-}
-{
-  message: 'product is created with lang uz',
-  level: 'debug',
-  timestamp: '2020-08-03T08:52:57.447Z',
-  label: 'catalog-service',
-  metadata: {
-    result: {
-      price: {},
-      meta: {
-        title: 'Product Meta',
-        description: 'Description of Meta',
-        tags: 'Tag of meta'
-      },
-      additional_categories: [
-        5ee1e1b06123a6296c4996bd,
-        5ee1e1b06123a6296c4556bd,
-        5ee1e1b06123a6296c4236bd
-      ],
-      related_products: [ 5ee36f67f8601328a86456df, 5ee0d1b06123a6296c4996bd ],
-      preview_text: 'preview text of my product',
-      description: 'description of my product',
-      gallery: [ 'img/somephoto.jpg' ],
-      active: false,
-      external_id: 15,
-      lang: 'uz',
-      _id: 5f27d069abf6a3ad661b843a,
-      name: 'my product',
-      image: 'some.jpg',
-      category: 5ee1e1b06123a6296c4996af,
-      brand: 5f2667419be6c18d2c1545cb,
-      created_at: 2020-08-03T08:52:57.401Z,
-      updated_at: 2020-08-03T08:52:57.401Z,
-      slug: 'my-product',
-      prices: [],
-      properties: [],
-      __v: 0
-    }
-  }
-}
-{
-  message: 'Product find request',
-  level: 'debug',
-  timestamp: '2020-08-03T08:52:57.453Z',
-  label: 'product',
-  metadata: {
-    request: {
-      page: '0',
-      search: '',
-      active: false,
-      inactive: false,
-      category: '',
-      brand: '',
-      limit: '0',
-      sort: '',
-      price_from: '0',
-      price_till: '0',
-      lang: ''
-    }
-  }
-}
-{
-  message: 'filtering products',
-  level: 'debug',
-  timestamp: '2020-08-03T08:52:57.454Z',
-  label: 'catalog-service',
-  metadata: {
-    query: { lang: 'ru' },
-    options: { skip: -0, limit: 50, sort: { created_at: -1 } }
-  }
-}
-{
-  message: 'Product update request',
-  level: 'debug',
-  timestamp: '2020-08-03T08:52:57.459Z',
-  label: 'product',
-  metadata: {
-    request: {
-      id: 'my-product',
-      name: 'my updated Product',
-      category_id: '5ee1e1b06123a6296c4996af',
-      brand_id: '5f2667419be6c18d2c1545cb',
-      additional_categories: '5ee1e1b06123a6296c4996bd,5ee1e1b06123a6296c4556bd,5ee1e1b06123a6296c4236bd',
-      related_products: '5ee36f67f8601328a86456df,5ee0d1b06123a6296c4996bd,5ee1sdb06123a6296c4996bd',
-      preview_text: 'preview text of my updated product',
-      description: 'description of my updated product',
-      gallery: 'img/some.jpg',
-      external_id: '16',
-      meta: {
-        title: ' Updated Product Meta',
-        description: 'Updatet Description of Meta',
-        tags: 'Updated Tag of meta'
-      },
-      active: false,
-      order: '0',
-      image: 'some.jpg',
-      lang: 'ru'
-    }
-  }
-}
-{
-  message: 'Product Find response',
-  level: 'debug',
-  timestamp: '2020-08-03T08:52:57.478Z',
-  label: 'test',
-  metadata: {
-    response: {
-      products: [
+      categories: [
         {
-          prices: [],
-          id: '5f27d069abf6a3ad661b8438',
-          name: 'my product',
-          slug: 'my-product',
-          category: null,
-          brand: {
-            id: '5f2667419be6c18d2c1545cb',
-            name: 'my updated Brand',
-            slug: 'my-updated-brand',
-            image: 'img.jpg',
-            preview_text: 'preview text of my updated brand',
-            description: 'description of my updated brand',
-            active: true,
-            order: '0',
-            created_at: 'Sun Aug 02 2020 12:12:01 GMT+0500 (Uzbekistan Standard Time)',
-            updated_at: 'Sun Aug 02 2020 12:12:01 GMT+0500 (Uzbekistan Standard Time)'
-          },
-          preview_text: 'preview text of my product',
+          children: [
+            {
+              children: [],
+              id: '',
+              name: '',
+              slug: '',
+              active: false,
+              description: '',
+              order: '0',
+              image: '',
+              created_at: '',
+              updated_at: ''
+            }
+          ],
+          id: '5f24e9d25aa3da35d8946d57',
+          name: 'Наушники',
+          slug: '',
           active: false,
-          price: { price: '0', old_price: '0' },
-          created_at: 'Mon Aug 03 2020 13:52:57 GMT+0500 (Uzbekistan Standard Time)',
-          updated_at: 'Mon Aug 03 2020 13:52:57 GMT+0500 (Uzbekistan Standard Time)',
-          image: 'https://sdn.delever.uz/goodzone/some.jpg',
-          lang: 'ru'
+          description: '',
+          order: '0',
+          image: '',
+          lang: ''
+        },
+        {
+          children: [
+            {
+              children: [],
+              id: '5f24e9d25aa3da35d8946cf9',
+              name: 'Ноутбуки',
+              slug: 'noutbuki',
+              active: true,
+              description: 'NULL',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            },
+            {
+              children: [],
+              id: '5f24e9d25aa3da35d8946cfe',
+              name: 'Моноблоки',
+              slug: 'monobloki',
+              active: true,
+              description: 'NULL',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            },
+            {
+              children: [],
+              id: '5f24e9d25aa3da35d8946d2f',
+              name: 'Принтеры',
+              slug: 'printery',
+              active: true,
+              description: 'NULL',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            },
+            {
+              children: [
+                {
+                  id: '5f24e9d25aa3da35d8946d33',
+                  name: 'Мониторы',
+                  slug: 'monitory',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d34',
+                  name: 'Мышки',
+                  slug: 'myshki',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d35',
+                  name: 'Процессоры',
+                  slug: 'protsessory',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d36',
+                  name: 'Накопители данных',
+                  slug: 'nakopiteli-dannykh',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d3a',
+                  name: 'Клавиатуры',
+                  slug: 'klaviatury',
+                  active: true,
+                  description: '<p>NULL</p>',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d3b',
+                  name: 'Блоки питания',
+                  slug: 'bloki-pitaniya',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d3c',
+                  name: 'Материнские платы',
+                  slug: 'materinskie-platy',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                }
+              ],
+              id: '5f24e9d25aa3da35d8946d32',
+              name: 'Комплектующие',
+              slug: 'komplektuyushchie',
+              active: true,
+              description: 'NULL',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            }
+          ],
+          id: '5f24e9d25aa3da35d8946cf8',
+          name: 'Ноутбуки и компьютеры',
+          slug: '',
+          active: false,
+          description: '',
+          order: '0',
+          image: '',
+          lang: ''
+        },
+        {
+          children: [
+            {
+              children: [
+                {
+                  id: '5f24e9d25aa3da35d8946d01',
+                  name: 'Пылесосы',
+                  slug: 'pylesosy',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d19',
+                  name: 'Парогенераторы',
+                  slug: 'parogeneratory',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d1a',
+                  name: 'Утюги',
+                  slug: 'utyugi',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d3d',
+                  name: 'Швейные машинки',
+                  slug: 'shveynye-mashinki',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                }
+              ],
+              id: '5f24e9d25aa3da35d8946d1d',
+              name: 'Мелкая бытовая техника',
+              slug: 'melkaya-bytovaya-tekhnika',
+              active: true,
+              description: 'NULL',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            },
+            {
+              children: [
+                {
+                  id: '5f24e9d25aa3da35d8946cfb',
+                  name: 'Стиральные машины',
+                  slug: 'stiralnye-mashiny',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                }
+              ],
+              id: '5f24e9d25aa3da35d8946d28',
+              name: 'Крупная бытовая техника',
+              slug: 'krupnaya-bytovaya-tekhnika',
+              active: true,
+              description: 'NULL',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            },
+            {
+              children: [
+                {
+                  id: '5f24e9d25aa3da35d8946d02',
+                  name: 'Кондиционеры',
+                  slug: 'konditsionery',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d03',
+                  name: 'Электрические водонагреватели',
+                  slug: 'elektricheskie-vodonagrevateli',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d18',
+                  name: 'Увлажнители воздуха',
+                  slug: 'uvlazhniteli-vozdukha',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d20',
+                  name: 'Обогреватели',
+                  slug: 'obogrevateli',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d37',
+                  name: 'Электрические камины',
+                  slug: 'elektricheskie-kaminy',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d41',
+                  name: 'Тепловые пушки',
+                  slug: 'teplovye-pushki',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d4a',
+                  name: 'Вентиляторы',
+                  slug: 'ventilyatory',
+                  active: true,
+                  description: '',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                }
+              ],
+              id: '5f24e9d25aa3da35d8946d29',
+              name: 'Климатическая техника',
+              slug: 'klimaticheskaya-tekhnika',
+              active: true,
+              description: 'NULL',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            },
+            {
+              children: [],
+              id: '5f24e9d25aa3da35d8946d2b',
+              name: 'Кулеры для воды',
+              slug: 'kulery-dlya-vody',
+              active: true,
+              description: '<p>NULL</p>',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            },
+            {
+              children: [],
+              id: '5f24e9d25aa3da35d8946d49',
+              name: 'Товары для авто',
+              slug: 'tovary-dlya-avto',
+              active: true,
+              description: '',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            },
+            {
+              children: [],
+              id: '5f24e9d25aa3da35d8946d4b',
+              name: 'Кресла',
+              slug: 'kresla',
+              active: true,
+              description: '',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            },
+            {
+              children: [],
+              id: '5f24e9d25aa3da35d8946d4c',
+              name: 'Фильтры',
+              slug: 'filtry',
+              active: true,
+              description: '',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            },
+            {
+              children: [],
+              id: '5f24e9d25aa3da35d8946d55',
+              name: 'Хозяйственные товары',
+              slug: 'hozyajstvennye-tovary',
+              active: true,
+              description: '',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            }
+          ],
+          id: '5f24e9d25aa3da35d8946d2c',
+          name: 'Техника для дома',
+          slug: '',
+          active: false,
+          description: '',
+          order: '0',
+          image: '',
+          lang: ''
+        },
+        {
+          children: [
+            {
+              children: [],
+              id: '',
+              name: '',
+              slug: '',
+              active: false,
+              description: '',
+              order: '0',
+              image: '',
+              created_at: '',
+              updated_at: ''
+            }
+          ],
+          id: '5f24e9d25aa3da35d8946d56',
+          name: 'Гриль',
+          slug: '',
+          active: false,
+          description: '',
+          order: '0',
+          image: '',
+          lang: ''
+        },
+        {
+          children: [
+            {
+              children: [],
+              id: '5f24e9d25aa3da35d8946d24',
+              name: 'Смартфоны',
+              slug: 'smartfony',
+              active: true,
+              description: '',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            },
+            {
+              children: [],
+              id: '5f24e9d25aa3da35d8946d31',
+              name: 'Аксессуары для смартфонов',
+              slug: 'aksessuary-dlya-smartfonov',
+              active: true,
+              description: '<p>NULL</p>',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            },
+            {
+              children: [],
+              id: '5f24e9d25aa3da35d8946d46',
+              name: 'Телефоны',
+              slug: 'telefony',
+              active: true,
+              description: '',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            },
+            {
+              children: [],
+              id: '5f24e9d25aa3da35d8946d47',
+              name: 'Планшеты',
+              slug: 'planshety',
+              active: true,
+              description: '',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            },
+            {
+              children: [],
+              id: '5f24e9d25aa3da35d8946d48',
+              name: 'Гаджеты',
+              slug: 'gadzhety',
+              active: true,
+              description: '',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            },
+            {
+              children: [],
+              id: '5f24e9d25aa3da35d8946d4d',
+              name: 'Экшн-камеры, Go Pro, камеры для блогеров',
+              slug: 'ekshen-kamery-go-pro-kamery-dlya-blogerov',
+              active: true,
+              description: '',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            },
+            {
+              children: [],
+              id: '5f24e9d25aa3da35d8946d4e',
+              name: 'Электроинструменты',
+              slug: 'elektroinstrumenty',
+              active: true,
+              description: '',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            }
+          ],
+          id: '5f24e9d25aa3da35d8946cfa',
+          name: 'Смартфоны и гаджеты',
+          slug: '',
+          active: false,
+          description: '',
+          order: '0',
+          image: '',
+          lang: ''
+        },
+        {
+          children: [
+            {
+              children: [],
+              id: '5f24e9d25aa3da35d8946cff',
+              name: 'Телевизоры',
+              slug: 'televizory',
+              active: true,
+              description: '<p>NULL</p>',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            },
+            {
+              children: [],
+              id: '5f24e9d25aa3da35d8946d38',
+              name: 'DVD-плеееры',
+              slug: 'dvd-pleeery',
+              active: true,
+              description: 'NULL',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            },
+            {
+              children: [],
+              id: '5f24e9d25aa3da35d8946d42',
+              name: 'Домашний кинотеатр и Hi-Fi техника',
+              slug: 'domashniy-kinoteatr-i-hi-fi-tekhnika',
+              active: true,
+              description: 'NULL',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            },
+            {
+              children: [],
+              id: '5f24e9d25aa3da35d8946d44',
+              name: 'Цифровое ТВ',
+              slug: 'cifrovoe-tv',
+              active: true,
+              description: '',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            },
+            {
+              children: [],
+              id: '5f24e9d25aa3da35d8946d45',
+              name: 'Аксессуары',
+              slug: 'aksessuary_tv',
+              active: true,
+              description: '',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            }
+          ],
+          id: '5f24e9d25aa3da35d8946cfd',
+          name: 'Телевизоры, Hi-Fi, аудио',
+          slug: '',
+          active: false,
+          description: '',
+          order: '0',
+          image: '',
+          lang: ''
+        },
+        {
+          children: [
+            {
+              children: [
+                {
+                  id: '5f24e9d25aa3da35d8946d00',
+                  name: 'Микроволновые печи',
+                  slug: 'mikrovolnovye-pechi',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d0e',
+                  name: 'Паста машины',
+                  slug: 'pasta-mashiny',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d0f',
+                  name: 'Миксеры',
+                  slug: 'miksery',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d11',
+                  name: 'Соковыжималки',
+                  slug: 'sokovyzhimalki',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d12',
+                  name: 'Блендеры',
+                  slug: 'blendery',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d14',
+                  name: 'Mясорубки',
+                  slug: 'myasorubki',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d15',
+                  name: 'Электрочайники',
+                  slug: 'elektrochayniki',
+                  active: true,
+                  description: '<p>NULL</p>',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d17',
+                  name: 'Мультиварки',
+                  slug: 'multivarki',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d1b',
+                  name: 'Кофемашины',
+                  slug: 'kofemashiny',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d1c',
+                  name: 'Кофеварки',
+                  slug: 'kofevarki',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d1e',
+                  name: 'Тостеры',
+                  slug: 'tostery',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d1f',
+                  name: 'Термопоты',
+                  slug: 'termopoty',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d21',
+                  name: 'Лапшарезки',
+                  slug: 'lapsharezki',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d22',
+                  name: 'Рисоварки',
+                  slug: 'risovarki',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d23',
+                  name: 'Кухонные комбайны',
+                  slug: 'kukhonnye-kombayny',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d3f',
+                  name: 'Мини-печи',
+                  slug: 'mini-pechi',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d4f',
+                  name: 'Фритюрницы',
+                  slug: 'frityurnicy',
+                  active: true,
+                  description: '',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                }
+              ],
+              id: '5f24e9d25aa3da35d8946d10',
+              name: 'Мелкая техника для кухни',
+              slug: 'melkaya-tekhnika-dlya-kukhni',
+              active: true,
+              description: '<p>NULL</p>',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            },
+            {
+              children: [
+                {
+                  id: '5f24e9d25aa3da35d8946cfc',
+                  name: 'Холодильники',
+                  slug: 'kholodilniki',
+                  active: true,
+                  description: '<p>NULL</p>',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d04',
+                  name: 'Морозильники',
+                  slug: 'morozilniki',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d05',
+                  name: 'Варочные панели',
+                  slug: 'varochnye-paneli',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d06',
+                  name: 'Встраиваемые духовки',
+                  slug: 'vstraivaemye-dukhovki',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d07',
+                  name: 'Вытяжки',
+                  slug: 'vytyazhki',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d08',
+                  name: 'Газовые плиты',
+                  slug: 'gazovye-plity',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d25',
+                  name: 'Посудомоечные машины',
+                  slug: 'posudomoechnye-mashiny',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                }
+              ],
+              id: '5f24e9d25aa3da35d8946d26',
+              name: 'Крупная техника для кухни',
+              slug: 'krupnaya-tekhnika-dlya-kukhni',
+              active: true,
+              description: 'NULL',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            },
+            {
+              children: [
+                {
+                  id: '5f24e9d25aa3da35d8946d51',
+                  name: 'Казаны',
+                  slug: 'kazany',
+                  active: true,
+                  description: '',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d52',
+                  name: 'Кастрюли',
+                  slug: 'kastryuli',
+                  active: true,
+                  description: '',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d53',
+                  name: 'Сковородки',
+                  slug: 'skovorodki',
+                  active: true,
+                  description: '',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d54',
+                  name: 'Чайники',
+                  slug: 'chajniki',
+                  active: true,
+                  description: '',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                }
+              ],
+              id: '5f24e9d25aa3da35d8946d50',
+              name: 'Посуда',
+              slug: 'posuda',
+              active: true,
+              description: '',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            }
+          ],
+          id: '5f24e9d25aa3da35d8946d27',
+          name: 'Техника для кухни',
+          slug: '',
+          active: false,
+          description: '',
+          order: '0',
+          image: '',
+          lang: ''
+        },
+        {
+          children: [
+            {
+              children: [],
+              id: '5f24e9d25aa3da35d8946d09',
+              name: 'Электрические бритвы',
+              slug: 'elektricheskie-britvy',
+              active: true,
+              description: 'NULL',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            },
+            {
+              children: [],
+              id: '5f24e9d25aa3da35d8946d0a',
+              name: 'Триммеры',
+              slug: 'trimmery',
+              active: true,
+              description: 'NULL',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            },
+            {
+              children: [],
+              id: '5f24e9d25aa3da35d8946d0b',
+              name: 'Машинки для стрижки волос',
+              slug: 'mashinki-dlya-strizhki-volos',
+              active: true,
+              description: 'NULL',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            },
+            {
+              children: [],
+              id: '5f24e9d25aa3da35d8946d0c',
+              name: 'Фены',
+              slug: 'feny',
+              active: true,
+              description: 'NULL',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            },
+            {
+              children: [
+                {
+                  id: '5f24e9d25aa3da35d8946d30',
+                  name: 'Аксессуары',
+                  slug: 'aksessuary',
+                  active: true,
+                  description: '<p>NULL</p>',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                }
+              ],
+              id: '5f24e9d25aa3da35d8946d0d',
+              name: 'Фены-щетки',
+              slug: 'feny-shchetki',
+              active: true,
+              description: 'NULL',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            },
+            {
+              children: [],
+              id: '5f24e9d25aa3da35d8946d13',
+              name: 'Эпиляторы',
+              slug: 'epilyatory',
+              active: true,
+              description: 'NULL',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            },
+            {
+              children: [],
+              id: '5f24e9d25aa3da35d8946d16',
+              name: 'Выпрямители',
+              slug: 'vypryamiteli',
+              active: true,
+              description: 'NULL',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            },
+            {
+              children: [],
+              id: '5f24e9d25aa3da35d8946d2d',
+              name: 'Массажеры',
+              slug: 'massazhery',
+              active: true,
+              description: 'NULL',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            },
+            {
+              children: [],
+              id: '5f24e9d25aa3da35d8946d2e',
+              name: 'Весы',
+              slug: 'vesy',
+              active: true,
+              description: 'NULL',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            },
+            {
+              children: [
+                {
+                  id: '5f24e9d25aa3da35d8946d3e',
+                  name: 'Компьютерные очки',
+                  slug: 'kompyuternye-ochki',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d40',
+                  name: 'Интерьерное освещение',
+                  slug: 'interernoe-osveshchenie',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                }
+              ],
+              id: '5f24e9d25aa3da35d8946d39',
+              name: 'Аксессуары для компьютера',
+              slug: 'aksessuary-dlya-kompyutera',
+              active: true,
+              description: 'NULL',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            }
+          ],
+          id: '5f24e9d25aa3da35d8946d2a',
+          name: 'Красота и здоровье',
+          slug: '',
+          active: false,
+          description: '',
+          order: '0',
+          image: '',
+          lang: ''
         }
       ],
-      count: '1'
+      count: '8'
     }
   }
-}
-{
-  message: 'Product Update response',
-  level: 'debug',
-  timestamp: '2020-08-03T08:52:57.483Z',
-  label: 'test',
-  metadata: {
-    response: {
-      product: {
-        additional_categories: [],
-        related_products: [],
-        gallery: [ 'img/some.jpg' ],
-        properties: [],
-        prices: [],
-        id: '5f27d069abf6a3ad661b8438',
-        name: 'my updated Product',
-        slug: 'my-product',
-        category: null,
-        brand: {
-          id: '5f2667419be6c18d2c1545cb',
-          name: 'my updated Brand',
-          slug: 'my-updated-brand',
-          image: 'img.jpg',
-          preview_text: 'preview text of my updated brand',
-          description: 'description of my updated brand',
-          active: true,
-          order: '0',
-          created_at: 'Sun Aug 02 2020 12:12:01 GMT+0500 (Uzbekistan Standard Time)',
-          updated_at: 'Sun Aug 02 2020 12:12:01 GMT+0500 (Uzbekistan Standard Time)'
-        },
-        preview_text: 'preview text of my updated product',
-        description: 'description of my updated product',
-        active: false,
-        external_id: '16',
-        meta: {
-          title: ' Updated Product Meta',
-          description: 'Updatet Description of Meta',
-          tags: 'Updated Tag of meta'
-        },
-        price: { price: '0', old_price: '0' },
-        created_at: 'Mon Aug 03 2020 13:52:57 GMT+0500 (Uzbekistan Standard Time)',
-        updated_at: 'Mon Aug 03 2020 13:52:57 GMT+0500 (Uzbekistan Standard Time)',
-        image: 'some.jpg',
-        lang: 'ru'
-      }
-    }
-  }
-}
-{
-  message: 'Product price update request',
-  level: 'debug',
-  timestamp: '2020-08-03T08:52:57.490Z',
-  label: 'product',
-  metadata: {
-    request: {
-      product_id: 'my-product',
-      price_type_id: '1',
-      price: '1',
-      old_price: '10'
-    }
-  }
-}
-{
-  message: 'Product get request',
-  level: 'debug',
-  timestamp: '2020-08-03T08:52:57.492Z',
-  label: 'product',
-  metadata: { request: { id: '', slug: 'my-product', lang: 'ru' } }
-}
-{
-  message: 'finding a product',
-  level: 'debug',
-  timestamp: '2020-08-03T08:52:57.492Z',
-  label: 'catalog-service',
-  metadata: {
-    query: { lang: 'ru', '$or': [ { slug: 'my-product' } ] }
-  }
-}
-{
-  message: 'Product price Update response',
-  level: 'debug',
-  timestamp: '2020-08-03T08:52:57.520Z',
-  label: 'test',
-  metadata: { response: {} }
-}
-{
-  message: 'Product Get response',
-  level: 'debug',
-  timestamp: '2020-08-03T08:52:57.526Z',
-  label: 'test',
-  metadata: {
-    response: {
-      product: {
-        additional_categories: [],
-        related_products: [],
-        gallery: [ 'https://sdn.delever.uz/goodzone/img/some.jpg' ],
-        properties: [],
-        prices: [],
-        id: '5f27d069abf6a3ad661b8438',
-        name: 'my updated Product',
-        slug: 'my-product',
-        category: null,
-        brand: {
-          id: '5f2667419be6c18d2c1545cb',
-          name: 'my updated Brand',
-          slug: 'my-updated-brand',
-          image: 'https://sdn.delever.uz/goodzone/img.jpg',
-          preview_text: 'preview text of my updated brand',
-          description: 'description of my updated brand',
-          active: true,
-          order: '0',
-          created_at: 'Sun Aug 02 2020 12:12:01 GMT+0500 (Uzbekistan Standard Time)',
-          updated_at: 'Sun Aug 02 2020 12:12:01 GMT+0500 (Uzbekistan Standard Time)'
-        },
-        preview_text: 'preview text of my updated product',
-        description: 'description of my updated product',
-        active: false,
-        external_id: '16',
-        meta: {
-          title: ' Updated Product Meta',
-          description: 'Updatet Description of Meta',
-          tags: 'Updated Tag of meta'
-        },
-        price: { price: '0', old_price: '0' },
-        created_at: 'Mon Aug 03 2020 13:52:57 GMT+0500 (Uzbekistan Standard Time)',
-        updated_at: 'Mon Aug 03 2020 13:52:57 GMT+0500 (Uzbekistan Standard Time)',
-        image: 'https://sdn.delever.uz/goodzone/some.jpg',
-        lang: 'ru'
-      }
-    }
-  }
-}
-{
-  message: 'Shops get request',
-  level: 'debug',
-  timestamp: '2020-08-03T08:52:57.528Z',
-  label: 'shop',
-  metadata: { request: { product_id: '5f27d069abf6a3ad661b8438' } }
-}
-{
-  message: 'Shop Get response',
-  level: 'debug',
-  timestamp: '2020-08-03T08:52:57.540Z',
-  label: 'test',
-  metadata: { response: { shops: [] } }
-}
-{
-  message: 'Product delete request',
-  level: 'debug',
-  timestamp: '2020-08-03T08:52:57.543Z',
-  label: 'product',
-  metadata: { request: { id: '', slug: 'my-product' } }
-}
-{
-  message: 'Product Delete response',
-  level: 'debug',
-  timestamp: '2020-08-03T08:52:57.548Z',
-  label: 'test',
-  metadata: { response: {} }
 }
 {
   message: 'Main function is running',
   level: 'info',
-  timestamp: '2020-08-03T08:53:30.326Z',
-  label: 'catalog-service',
-  metadata: {}
-}
-{
-  message: 'Connecting to db: mongodb://localhost:27017/catalog_service',
-  level: 'info',
-  timestamp: '2020-08-03T08:53:30.329Z',
-  label: 'catalog-service',
-  metadata: {}
-}
-{
-  message: 'grpc server is running at 7000',
-  level: 'info',
-  timestamp: '2020-08-03T08:53:30.370Z',
-  label: 'catalog-service',
-  metadata: {}
-}
-{
-  message: 'Connected to the databasee',
-  level: 'info',
-  timestamp: '2020-08-03T08:53:30.402Z',
-  label: 'catalog-service',
-  metadata: {}
-}
-{
-  message: 'Product create request',
-  level: 'debug',
-  timestamp: '2020-08-03T08:53:33.532Z',
-  label: 'product',
-  metadata: {
-    request: {
-      name: 'my product',
-      category_id: '5ee1e1b06123a6296c4996af',
-      brand_id: '5f2667419be6c18d2c1545cb',
-      additional_categories: '5ee1e1b06123a6296c4996bd,5ee1e1b06123a6296c4556bd,5ee1e1b06123a6296c4236bd',
-      related_products: '5ee36f67f8601328a86456df,5ee0d1b06123a6296c4996bd,5ee1sdb06123a6296c4996bd',
-      preview_text: 'preview text of my product',
-      description: 'description of my product',
-      gallery: 'img/somephoto.jpg',
-      external_id: '15',
-      meta: {
-        title: 'Product Meta',
-        description: 'Description of Meta',
-        tags: 'Tag of meta'
-      },
-      active: false,
-      order: '0',
-      image: 'some.jpg',
-      lang: 'ru'
-    }
-  }
-}
-{
-  message: 'product created',
-  level: 'info',
-  timestamp: '2020-08-03T08:53:33.564Z',
-  label: 'catalog-service',
-  metadata: { durationMs: 32 }
-}
-{
-  message: 'product is created with lang en',
-  level: 'debug',
-  timestamp: '2020-08-03T08:53:33.570Z',
-  label: 'catalog-service',
-  metadata: {
-    result: {
-      price: {},
-      meta: {
-        title: 'Product Meta',
-        description: 'Description of Meta',
-        tags: 'Tag of meta'
-      },
-      additional_categories: [
-        5ee1e1b06123a6296c4996bd,
-        5ee1e1b06123a6296c4556bd,
-        5ee1e1b06123a6296c4236bd
-      ],
-      related_products: [ 5ee36f67f8601328a86456df, 5ee0d1b06123a6296c4996bd ],
-      preview_text: 'preview text of my product',
-      description: 'description of my product',
-      gallery: [ 'img/somephoto.jpg' ],
-      active: false,
-      external_id: 15,
-      lang: 'en',
-      _id: 5f27d08d18f840ada1c583e6,
-      name: 'my product',
-      image: 'some.jpg',
-      category: 5ee1e1b06123a6296c4996af,
-      brand: 5f2667419be6c18d2c1545cb,
-      created_at: 2020-08-03T08:53:33.533Z,
-      updated_at: 2020-08-03T08:53:33.533Z,
-      slug: 'my-product',
-      prices: [],
-      properties: [],
-      __v: 0
-    }
-  }
-}
-{
-  message: 'Product Create response',
-  level: 'debug',
-  timestamp: '2020-08-03T08:53:33.576Z',
-  label: 'test',
-  metadata: {
-    response: {
-      product: {
-        additional_categories: [],
-        related_products: [],
-        gallery: [ 'img/somephoto.jpg' ],
-        properties: [],
-        prices: [],
-        id: '5f27d08d18f840ada1c583e5',
-        name: 'my product',
-        slug: 'my-product',
-        category: null,
-        brand: {
-          id: '5f2667419be6c18d2c1545cb',
-          name: 'my updated Brand',
-          slug: 'my-updated-brand',
-          image: 'img.jpg',
-          preview_text: 'preview text of my updated brand',
-          description: 'description of my updated brand',
-          active: true,
-          order: '0',
-          created_at: 'Sun Aug 02 2020 12:12:01 GMT+0500 (Uzbekistan Standard Time)',
-          updated_at: 'Sun Aug 02 2020 12:12:01 GMT+0500 (Uzbekistan Standard Time)'
-        },
-        preview_text: 'preview text of my product',
-        description: 'description of my product',
-        active: false,
-        external_id: '15',
-        meta: {
-          title: 'Product Meta',
-          description: 'Description of Meta',
-          tags: 'Tag of meta'
-        },
-        price: { price: '0', old_price: '0' },
-        created_at: 'Mon Aug 03 2020 13:53:33 GMT+0500 (Uzbekistan Standard Time)',
-        updated_at: 'Mon Aug 03 2020 13:53:33 GMT+0500 (Uzbekistan Standard Time)',
-        image: 'some.jpg',
-        lang: 'ru'
-      }
-    }
-  }
-}
-{
-  message: 'product is created with lang uz',
-  level: 'debug',
-  timestamp: '2020-08-03T08:53:33.579Z',
-  label: 'catalog-service',
-  metadata: {
-    result: {
-      price: {},
-      meta: {
-        title: 'Product Meta',
-        description: 'Description of Meta',
-        tags: 'Tag of meta'
-      },
-      additional_categories: [
-        5ee1e1b06123a6296c4996bd,
-        5ee1e1b06123a6296c4556bd,
-        5ee1e1b06123a6296c4236bd
-      ],
-      related_products: [ 5ee36f67f8601328a86456df, 5ee0d1b06123a6296c4996bd ],
-      preview_text: 'preview text of my product',
-      description: 'description of my product',
-      gallery: [ 'img/somephoto.jpg' ],
-      active: false,
-      external_id: 15,
-      lang: 'uz',
-      _id: 5f27d08d18f840ada1c583e7,
-      name: 'my product',
-      image: 'some.jpg',
-      category: 5ee1e1b06123a6296c4996af,
-      brand: 5f2667419be6c18d2c1545cb,
-      created_at: 2020-08-03T08:53:33.533Z,
-      updated_at: 2020-08-03T08:53:33.533Z,
-      slug: 'my-product',
-      prices: [],
-      properties: [],
-      __v: 0
-    }
-  }
-}
-{
-  message: 'Product find request',
-  level: 'debug',
-  timestamp: '2020-08-03T08:53:33.585Z',
-  label: 'product',
-  metadata: {
-    request: {
-      page: '0',
-      search: '',
-      active: false,
-      inactive: false,
-      category: '',
-      brand: '',
-      limit: '0',
-      sort: '',
-      price_from: '0',
-      price_till: '0',
-      lang: ''
-    }
-  }
-}
-{
-  message: 'filtering products',
-  level: 'debug',
-  timestamp: '2020-08-03T08:53:33.586Z',
-  label: 'catalog-service',
-  metadata: {
-    query: { lang: 'ru' },
-    options: { skip: -0, limit: 50, sort: { created_at: -1 } }
-  }
-}
-{
-  message: 'Product update request',
-  level: 'debug',
-  timestamp: '2020-08-03T08:53:33.590Z',
-  label: 'product',
-  metadata: {
-    request: {
-      id: 'my-product',
-      name: 'my updated Product',
-      category_id: '5ee1e1b06123a6296c4996af',
-      brand_id: '5f2667419be6c18d2c1545cb',
-      additional_categories: '5ee1e1b06123a6296c4996bd,5ee1e1b06123a6296c4556bd,5ee1e1b06123a6296c4236bd',
-      related_products: '5ee36f67f8601328a86456df,5ee0d1b06123a6296c4996bd,5ee1sdb06123a6296c4996bd',
-      preview_text: 'preview text of my updated product',
-      description: 'description of my updated product',
-      gallery: 'img/some.jpg',
-      external_id: '16',
-      meta: {
-        title: ' Updated Product Meta',
-        description: 'Updatet Description of Meta',
-        tags: 'Updated Tag of meta'
-      },
-      active: false,
-      order: '0',
-      image: 'some.jpg',
-      lang: 'ru'
-    }
-  }
-}
-{
-  message: 'Product Find response',
-  level: 'debug',
-  timestamp: '2020-08-03T08:53:33.610Z',
-  label: 'test',
-  metadata: {
-    response: {
-      products: [
-        {
-          prices: [],
-          id: '5f27d08d18f840ada1c583e5',
-          name: 'my product',
-          slug: 'my-product',
-          category: null,
-          brand: {
-            id: '5f2667419be6c18d2c1545cb',
-            name: 'my updated Brand',
-            slug: 'my-updated-brand',
-            image: 'img.jpg',
-            preview_text: 'preview text of my updated brand',
-            description: 'description of my updated brand',
-            active: true,
-            order: '0',
-            created_at: 'Sun Aug 02 2020 12:12:01 GMT+0500 (Uzbekistan Standard Time)',
-            updated_at: 'Sun Aug 02 2020 12:12:01 GMT+0500 (Uzbekistan Standard Time)'
-          },
-          preview_text: 'preview text of my product',
-          active: false,
-          price: { price: '0', old_price: '0' },
-          created_at: 'Mon Aug 03 2020 13:53:33 GMT+0500 (Uzbekistan Standard Time)',
-          updated_at: 'Mon Aug 03 2020 13:53:33 GMT+0500 (Uzbekistan Standard Time)',
-          image: 'https://sdn.delever.uz/goodzone/some.jpg',
-          lang: 'ru'
-        }
-      ],
-      count: '1'
-    }
-  }
-}
-{
-  message: 'Product Update response',
-  level: 'debug',
-  timestamp: '2020-08-03T08:53:33.616Z',
-  label: 'test',
-  metadata: {
-    response: {
-      product: {
-        additional_categories: [],
-        related_products: [],
-        gallery: [ 'img/some.jpg' ],
-        properties: [],
-        prices: [],
-        id: '5f27d08d18f840ada1c583e5',
-        name: 'my updated Product',
-        slug: 'my-product',
-        category: null,
-        brand: {
-          id: '5f2667419be6c18d2c1545cb',
-          name: 'my updated Brand',
-          slug: 'my-updated-brand',
-          image: 'img.jpg',
-          preview_text: 'preview text of my updated brand',
-          description: 'description of my updated brand',
-          active: true,
-          order: '0',
-          created_at: 'Sun Aug 02 2020 12:12:01 GMT+0500 (Uzbekistan Standard Time)',
-          updated_at: 'Sun Aug 02 2020 12:12:01 GMT+0500 (Uzbekistan Standard Time)'
-        },
-        preview_text: 'preview text of my updated product',
-        description: 'description of my updated product',
-        active: false,
-        external_id: '16',
-        meta: {
-          title: ' Updated Product Meta',
-          description: 'Updatet Description of Meta',
-          tags: 'Updated Tag of meta'
-        },
-        price: { price: '0', old_price: '0' },
-        created_at: 'Mon Aug 03 2020 13:53:33 GMT+0500 (Uzbekistan Standard Time)',
-        updated_at: 'Mon Aug 03 2020 13:53:33 GMT+0500 (Uzbekistan Standard Time)',
-        image: 'some.jpg',
-        lang: 'ru'
-      }
-    }
-  }
-}
-{
-  message: 'Product price update request',
-  level: 'debug',
-  timestamp: '2020-08-03T08:53:33.622Z',
-  label: 'product',
-  metadata: {
-    request: {
-      product_id: 'my-product',
-      price_type_id: '',
-      price: '1',
-      old_price: '10'
-    }
-  }
-}
-{
-  message: 'Product get request',
-  level: 'debug',
-  timestamp: '2020-08-03T08:53:33.625Z',
-  label: 'product',
-  metadata: { request: { id: '', slug: 'my-product', lang: 'ru' } }
-}
-{
-  message: 'finding a product',
-  level: 'debug',
-  timestamp: '2020-08-03T08:53:33.625Z',
-  label: 'catalog-service',
-  metadata: {
-    query: { lang: 'ru', '$or': [ { slug: 'my-product' } ] }
-  }
-}
-{
-  message: 'Product price Update response',
-  level: 'debug',
-  timestamp: '2020-08-03T08:53:33.652Z',
-  label: 'test',
-  metadata: { response: {} }
-}
-{
-  message: 'Product Get response',
-  level: 'debug',
-  timestamp: '2020-08-03T08:53:33.658Z',
-  label: 'test',
-  metadata: {
-    response: {
-      product: {
-        additional_categories: [],
-        related_products: [],
-        gallery: [ 'https://sdn.delever.uz/goodzone/img/some.jpg' ],
-        properties: [],
-        prices: [],
-        id: '5f27d08d18f840ada1c583e5',
-        name: 'my updated Product',
-        slug: 'my-product',
-        category: null,
-        brand: {
-          id: '5f2667419be6c18d2c1545cb',
-          name: 'my updated Brand',
-          slug: 'my-updated-brand',
-          image: 'https://sdn.delever.uz/goodzone/img.jpg',
-          preview_text: 'preview text of my updated brand',
-          description: 'description of my updated brand',
-          active: true,
-          order: '0',
-          created_at: 'Sun Aug 02 2020 12:12:01 GMT+0500 (Uzbekistan Standard Time)',
-          updated_at: 'Sun Aug 02 2020 12:12:01 GMT+0500 (Uzbekistan Standard Time)'
-        },
-        preview_text: 'preview text of my updated product',
-        description: 'description of my updated product',
-        active: false,
-        external_id: '16',
-        meta: {
-          title: ' Updated Product Meta',
-          description: 'Updatet Description of Meta',
-          tags: 'Updated Tag of meta'
-        },
-        price: { price: '0', old_price: '0' },
-        created_at: 'Mon Aug 03 2020 13:53:33 GMT+0500 (Uzbekistan Standard Time)',
-        updated_at: 'Mon Aug 03 2020 13:53:33 GMT+0500 (Uzbekistan Standard Time)',
-        image: 'https://sdn.delever.uz/goodzone/some.jpg',
-        lang: 'ru'
-      }
-    }
-  }
-}
-{
-  message: 'Shops get request',
-  level: 'debug',
-  timestamp: '2020-08-03T08:53:33.660Z',
-  label: 'shop',
-  metadata: { request: { product_id: '5f27d08d18f840ada1c583e5' } }
-}
-{
-  message: 'Shop Get response',
-  level: 'debug',
-  timestamp: '2020-08-03T08:53:33.671Z',
-  label: 'test',
-  metadata: { response: { shops: [] } }
-}
-{
-  message: 'Product delete request',
-  level: 'debug',
-  timestamp: '2020-08-03T08:53:33.675Z',
-  label: 'product',
-  metadata: { request: { id: '', slug: 'my-product' } }
-}
-{
-  message: 'Product Delete response',
-  level: 'debug',
-  timestamp: '2020-08-03T08:53:33.687Z',
-  label: 'test',
-  metadata: { response: {} }
-}
-{
-  message: 'Main function is running',
-  level: 'info',
-  timestamp: '2020-08-03T08:54:32.042Z',
-  label: 'catalog-service',
-  metadata: {}
-}
-{
-  message: 'Connecting to db: mongodb://localhost:27017/catalog_service',
-  level: 'info',
-  timestamp: '2020-08-03T08:54:32.045Z',
-  label: 'catalog-service',
-  metadata: {}
-}
-{
-  message: 'grpc server is running at 7000',
-  level: 'info',
-  timestamp: '2020-08-03T08:54:32.084Z',
-  label: 'catalog-service',
-  metadata: {}
-}
-{
-  message: 'Connected to the databasee',
-  level: 'info',
-  timestamp: '2020-08-03T08:54:32.098Z',
-  label: 'catalog-service',
-  metadata: {}
-}
-{
-  message: 'Product create request',
-  level: 'debug',
-  timestamp: '2020-08-03T08:54:35.234Z',
-  label: 'product',
-  metadata: {
-    request: {
-      name: 'my product',
-      category_id: '5ee1e1b06123a6296c4996af',
-      brand_id: '5f2667419be6c18d2c1545cb',
-      additional_categories: '5ee1e1b06123a6296c4996bd,5ee1e1b06123a6296c4556bd,5ee1e1b06123a6296c4236bd',
-      related_products: '5ee36f67f8601328a86456df,5ee0d1b06123a6296c4996bd,5ee1sdb06123a6296c4996bd',
-      preview_text: 'preview text of my product',
-      description: 'description of my product',
-      gallery: 'img/somephoto.jpg',
-      external_id: '15',
-      meta: {
-        title: 'Product Meta',
-        description: 'Description of Meta',
-        tags: 'Tag of meta'
-      },
-      active: false,
-      order: '0',
-      image: 'some.jpg',
-      lang: 'ru'
-    }
-  }
-}
-{
-  message: 'product created',
-  level: 'info',
-  timestamp: '2020-08-03T08:54:35.266Z',
-  label: 'catalog-service',
-  metadata: { durationMs: 31 }
-}
-{
-  message: 'product is created with lang en',
-  level: 'debug',
-  timestamp: '2020-08-03T08:54:35.272Z',
-  label: 'catalog-service',
-  metadata: {
-    result: {
-      price: {},
-      meta: {
-        title: 'Product Meta',
-        description: 'Description of Meta',
-        tags: 'Tag of meta'
-      },
-      additional_categories: [
-        5ee1e1b06123a6296c4996bd,
-        5ee1e1b06123a6296c4556bd,
-        5ee1e1b06123a6296c4236bd
-      ],
-      related_products: [ 5ee36f67f8601328a86456df, 5ee0d1b06123a6296c4996bd ],
-      preview_text: 'preview text of my product',
-      description: 'description of my product',
-      gallery: [ 'img/somephoto.jpg' ],
-      active: false,
-      external_id: 15,
-      lang: 'en',
-      _id: 5f27d0cbf093a3ade6bfd7ab,
-      name: 'my product',
-      image: 'some.jpg',
-      category: 5ee1e1b06123a6296c4996af,
-      brand: 5f2667419be6c18d2c1545cb,
-      created_at: 2020-08-03T08:54:35.235Z,
-      updated_at: 2020-08-03T08:54:35.235Z,
-      slug: 'my-product',
-      prices: [],
-      properties: [],
-      __v: 0
-    }
-  }
-}
-{
-  message: 'product is created with lang uz',
-  level: 'debug',
-  timestamp: '2020-08-03T08:54:35.277Z',
-  label: 'catalog-service',
-  metadata: {
-    result: {
-      price: {},
-      meta: {
-        title: 'Product Meta',
-        description: 'Description of Meta',
-        tags: 'Tag of meta'
-      },
-      additional_categories: [
-        5ee1e1b06123a6296c4996bd,
-        5ee1e1b06123a6296c4556bd,
-        5ee1e1b06123a6296c4236bd
-      ],
-      related_products: [ 5ee36f67f8601328a86456df, 5ee0d1b06123a6296c4996bd ],
-      preview_text: 'preview text of my product',
-      description: 'description of my product',
-      gallery: [ 'img/somephoto.jpg' ],
-      active: false,
-      external_id: 15,
-      lang: 'uz',
-      _id: 5f27d0cbf093a3ade6bfd7ac,
-      name: 'my product',
-      image: 'some.jpg',
-      category: 5ee1e1b06123a6296c4996af,
-      brand: 5f2667419be6c18d2c1545cb,
-      created_at: 2020-08-03T08:54:35.235Z,
-      updated_at: 2020-08-03T08:54:35.235Z,
-      slug: 'my-product',
-      prices: [],
-      properties: [],
-      __v: 0
-    }
-  }
-}
-{
-  message: 'Product Create response',
-  level: 'debug',
-  timestamp: '2020-08-03T08:54:35.283Z',
-  label: 'test',
-  metadata: {
-    response: {
-      product: {
-        additional_categories: [],
-        related_products: [],
-        gallery: [ 'img/somephoto.jpg' ],
-        properties: [],
-        prices: [],
-        id: '5f27d0cbf093a3ade6bfd7aa',
-        name: 'my product',
-        slug: 'my-product',
-        category: null,
-        brand: {
-          id: '5f2667419be6c18d2c1545cb',
-          name: 'my updated Brand',
-          slug: 'my-updated-brand',
-          image: 'img.jpg',
-          preview_text: 'preview text of my updated brand',
-          description: 'description of my updated brand',
-          active: true,
-          order: '0',
-          created_at: 'Sun Aug 02 2020 12:12:01 GMT+0500 (Uzbekistan Standard Time)',
-          updated_at: 'Sun Aug 02 2020 12:12:01 GMT+0500 (Uzbekistan Standard Time)'
-        },
-        preview_text: 'preview text of my product',
-        description: 'description of my product',
-        active: false,
-        external_id: '15',
-        meta: {
-          title: 'Product Meta',
-          description: 'Description of Meta',
-          tags: 'Tag of meta'
-        },
-        price: { price: '0', old_price: '0' },
-        created_at: 'Mon Aug 03 2020 13:54:35 GMT+0500 (Uzbekistan Standard Time)',
-        updated_at: 'Mon Aug 03 2020 13:54:35 GMT+0500 (Uzbekistan Standard Time)',
-        image: 'some.jpg',
-        lang: 'ru'
-      }
-    }
-  }
-}
-{
-  message: 'Product find request',
-  level: 'debug',
-  timestamp: '2020-08-03T08:54:35.292Z',
-  label: 'product',
-  metadata: {
-    request: {
-      page: '0',
-      search: '',
-      active: false,
-      inactive: false,
-      category: '',
-      brand: '',
-      limit: '0',
-      sort: '',
-      price_from: '0',
-      price_till: '0',
-      lang: ''
-    }
-  }
-}
-{
-  message: 'filtering products',
-  level: 'debug',
-  timestamp: '2020-08-03T08:54:35.293Z',
-  label: 'catalog-service',
-  metadata: {
-    query: { lang: 'ru' },
-    options: { skip: -0, limit: 50, sort: { created_at: -1 } }
-  }
-}
-{
-  message: 'Product update request',
-  level: 'debug',
-  timestamp: '2020-08-03T08:54:35.298Z',
-  label: 'product',
-  metadata: {
-    request: {
-      id: 'my-product',
-      name: 'my updated Product',
-      category_id: '5ee1e1b06123a6296c4996af',
-      brand_id: '5f2667419be6c18d2c1545cb',
-      additional_categories: '5ee1e1b06123a6296c4996bd,5ee1e1b06123a6296c4556bd,5ee1e1b06123a6296c4236bd',
-      related_products: '5ee36f67f8601328a86456df,5ee0d1b06123a6296c4996bd,5ee1sdb06123a6296c4996bd',
-      preview_text: 'preview text of my updated product',
-      description: 'description of my updated product',
-      gallery: 'img/some.jpg',
-      external_id: '16',
-      meta: {
-        title: ' Updated Product Meta',
-        description: 'Updatet Description of Meta',
-        tags: 'Updated Tag of meta'
-      },
-      active: false,
-      order: '0',
-      image: 'some.jpg',
-      lang: 'ru'
-    }
-  }
-}
-{
-  message: 'Product Find response',
-  level: 'debug',
-  timestamp: '2020-08-03T08:54:35.326Z',
-  label: 'test',
-  metadata: {
-    response: {
-      products: [
-        {
-          prices: [],
-          id: '5f27d0cbf093a3ade6bfd7aa',
-          name: 'my product',
-          slug: 'my-product',
-          category: null,
-          brand: {
-            id: '5f2667419be6c18d2c1545cb',
-            name: 'my updated Brand',
-            slug: 'my-updated-brand',
-            image: 'img.jpg',
-            preview_text: 'preview text of my updated brand',
-            description: 'description of my updated brand',
-            active: true,
-            order: '0',
-            created_at: 'Sun Aug 02 2020 12:12:01 GMT+0500 (Uzbekistan Standard Time)',
-            updated_at: 'Sun Aug 02 2020 12:12:01 GMT+0500 (Uzbekistan Standard Time)'
-          },
-          preview_text: 'preview text of my product',
-          active: false,
-          price: { price: '0', old_price: '0' },
-          created_at: 'Mon Aug 03 2020 13:54:35 GMT+0500 (Uzbekistan Standard Time)',
-          updated_at: 'Mon Aug 03 2020 13:54:35 GMT+0500 (Uzbekistan Standard Time)',
-          image: 'https://sdn.delever.uz/goodzone/some.jpg',
-          lang: 'ru'
-        }
-      ],
-      count: '1'
-    }
-  }
-}
-{
-  message: 'Product Update response',
-  level: 'debug',
-  timestamp: '2020-08-03T08:54:35.327Z',
-  label: 'test',
-  metadata: {
-    response: {
-      product: {
-        additional_categories: [],
-        related_products: [],
-        gallery: [ 'img/some.jpg' ],
-        properties: [],
-        prices: [],
-        id: '5f27d0cbf093a3ade6bfd7aa',
-        name: 'my updated Product',
-        slug: 'my-product',
-        category: null,
-        brand: {
-          id: '5f2667419be6c18d2c1545cb',
-          name: 'my updated Brand',
-          slug: 'my-updated-brand',
-          image: 'img.jpg',
-          preview_text: 'preview text of my updated brand',
-          description: 'description of my updated brand',
-          active: true,
-          order: '0',
-          created_at: 'Sun Aug 02 2020 12:12:01 GMT+0500 (Uzbekistan Standard Time)',
-          updated_at: 'Sun Aug 02 2020 12:12:01 GMT+0500 (Uzbekistan Standard Time)'
-        },
-        preview_text: 'preview text of my updated product',
-        description: 'description of my updated product',
-        active: false,
-        external_id: '16',
-        meta: {
-          title: ' Updated Product Meta',
-          description: 'Updatet Description of Meta',
-          tags: 'Updated Tag of meta'
-        },
-        price: { price: '0', old_price: '0' },
-        created_at: 'Mon Aug 03 2020 13:54:35 GMT+0500 (Uzbekistan Standard Time)',
-        updated_at: 'Mon Aug 03 2020 13:54:35 GMT+0500 (Uzbekistan Standard Time)',
-        image: 'some.jpg',
-        lang: 'ru'
-      }
-    }
-  }
-}
-{
-  message: 'Product price update request',
-  level: 'debug',
-  timestamp: '2020-08-03T08:54:35.330Z',
-  label: 'product',
-  metadata: {
-    request: {
-      product_id: 'my-product',
-      price_type_id: '0',
-      price: '1',
-      old_price: '10'
-    }
-  }
-}
-{
-  message: 'Product get request',
-  level: 'debug',
-  timestamp: '2020-08-03T08:54:35.334Z',
-  label: 'product',
-  metadata: { request: { id: '', slug: 'my-product', lang: 'ru' } }
-}
-{
-  message: 'finding a product',
-  level: 'debug',
-  timestamp: '2020-08-03T08:54:35.334Z',
-  label: 'catalog-service',
-  metadata: {
-    query: { lang: 'ru', '$or': [ { slug: 'my-product' } ] }
-  }
-}
-{
-  message: 'Invalid Price Type!',
-  level: 'error',
-  timestamp: '2020-08-03T08:54:35.338Z',
-  label: 'catalog-service',
-  metadata: {
-    function: 'update product price',
-    request: {
-      product_id: 'my-product',
-      price_type_id: '0',
-      price: '1',
-      old_price: '10'
-    }
-  }
-}
-{
-  message: 'Product Get response',
-  level: 'debug',
-  timestamp: '2020-08-03T08:54:35.355Z',
-  label: 'test',
-  metadata: {
-    response: {
-      product: {
-        additional_categories: [],
-        related_products: [],
-        gallery: [ 'https://sdn.delever.uz/goodzone/img/some.jpg' ],
-        properties: [],
-        prices: [],
-        id: '5f27d0cbf093a3ade6bfd7aa',
-        name: 'my updated Product',
-        slug: 'my-product',
-        category: null,
-        brand: {
-          id: '5f2667419be6c18d2c1545cb',
-          name: 'my updated Brand',
-          slug: 'my-updated-brand',
-          image: 'https://sdn.delever.uz/goodzone/img.jpg',
-          preview_text: 'preview text of my updated brand',
-          description: 'description of my updated brand',
-          active: true,
-          order: '0',
-          created_at: 'Sun Aug 02 2020 12:12:01 GMT+0500 (Uzbekistan Standard Time)',
-          updated_at: 'Sun Aug 02 2020 12:12:01 GMT+0500 (Uzbekistan Standard Time)'
-        },
-        preview_text: 'preview text of my updated product',
-        description: 'description of my updated product',
-        active: false,
-        external_id: '16',
-        meta: {
-          title: ' Updated Product Meta',
-          description: 'Updatet Description of Meta',
-          tags: 'Updated Tag of meta'
-        },
-        price: { price: '0', old_price: '0' },
-        created_at: 'Mon Aug 03 2020 13:54:35 GMT+0500 (Uzbekistan Standard Time)',
-        updated_at: 'Mon Aug 03 2020 13:54:35 GMT+0500 (Uzbekistan Standard Time)',
-        image: 'https://sdn.delever.uz/goodzone/some.jpg',
-        lang: 'ru'
-      }
-    }
-  }
-}
-{
-  message: 'Shops get request',
-  level: 'debug',
-  timestamp: '2020-08-03T08:54:35.357Z',
-  label: 'shop',
-  metadata: { request: { product_id: '5f27d0cbf093a3ade6bfd7aa' } }
-}
-{
-  message: 'Shop Get response',
-  level: 'debug',
-  timestamp: '2020-08-03T08:54:35.362Z',
-  label: 'test',
-  metadata: { response: { shops: [] } }
-}
-{
-  message: 'Product delete request',
-  level: 'debug',
-  timestamp: '2020-08-03T08:54:35.369Z',
-  label: 'product',
-  metadata: { request: { id: '', slug: 'my-product' } }
-}
-{
-  message: 'Product Delete response',
-  level: 'debug',
-  timestamp: '2020-08-03T08:54:35.375Z',
-  label: 'test',
-  metadata: { response: {} }
-}
-{
-  message: 'Main function is running',
-  level: 'info',
-  timestamp: '2020-08-03T08:56:06.576Z',
+  timestamp: '2020-08-03T15:42:37.862Z',
   label: 'catalog-service',
   metadata: {}
 }
 {
   message: 'Connecting to db: mongodb://rj:mysecret@dev.goodzone.uz:27017/catalog_service',
   level: 'info',
-  timestamp: '2020-08-03T08:56:06.580Z',
+  timestamp: '2020-08-03T15:42:37.868Z',
   label: 'catalog-service',
   metadata: {}
 }
 {
   message: 'grpc server is running at 7000',
   level: 'info',
-  timestamp: '2020-08-03T08:56:06.625Z',
+  timestamp: '2020-08-03T15:42:37.974Z',
   label: 'catalog-service',
   metadata: {}
 }
 {
   message: 'Connected to the databasee',
   level: 'info',
-  timestamp: '2020-08-03T08:56:09.160Z',
-  label: 'catalog-service',
-  metadata: {}
-}
-{
-  message: 'Main function is running',
-  level: 'info',
-  timestamp: '2020-08-03T08:56:18.394Z',
-  label: 'catalog-service',
-  metadata: {}
-}
-{
-  message: 'Connecting to db: mongodb://localhost:27017/catalog_service',
-  level: 'info',
-  timestamp: '2020-08-03T08:56:18.398Z',
-  label: 'catalog-service',
-  metadata: {}
-}
-{
-  message: 'grpc server is running at 7000',
-  level: 'info',
-  timestamp: '2020-08-03T08:56:18.439Z',
-  label: 'catalog-service',
-  metadata: {}
-}
-{
-  message: 'Connected to the databasee',
-  level: 'info',
-  timestamp: '2020-08-03T08:56:18.452Z',
-  label: 'catalog-service',
-  metadata: {}
-}
-{
-  message: 'Product create request',
-  level: 'debug',
-  timestamp: '2020-08-03T08:56:23.019Z',
-  label: 'product',
-  metadata: {
-    request: {
-      name: 'my product',
-      category_id: '5ee1e1b06123a6296c4996af',
-      brand_id: '5f2667419be6c18d2c1545cb',
-      additional_categories: '5ee1e1b06123a6296c4996bd,5ee1e1b06123a6296c4556bd,5ee1e1b06123a6296c4236bd',
-      related_products: '5ee36f67f8601328a86456df,5ee0d1b06123a6296c4996bd,5ee1sdb06123a6296c4996bd',
-      preview_text: 'preview text of my product',
-      description: 'description of my product',
-      gallery: 'img/somephoto.jpg',
-      external_id: '15',
-      meta: {
-        title: 'Product Meta',
-        description: 'Description of Meta',
-        tags: 'Tag of meta'
-      },
-      active: false,
-      order: '0',
-      image: 'some.jpg',
-      lang: 'ru'
-    }
-  }
-}
-{
-  message: 'product created',
-  level: 'info',
-  timestamp: '2020-08-03T08:56:23.051Z',
-  label: 'catalog-service',
-  metadata: { durationMs: 31 }
-}
-{
-  message: 'product is created with lang en',
-  level: 'debug',
-  timestamp: '2020-08-03T08:56:23.057Z',
-  label: 'catalog-service',
-  metadata: {
-    result: {
-      price: {},
-      meta: {
-        title: 'Product Meta',
-        description: 'Description of Meta',
-        tags: 'Tag of meta'
-      },
-      additional_categories: [
-        5ee1e1b06123a6296c4996bd,
-        5ee1e1b06123a6296c4556bd,
-        5ee1e1b06123a6296c4236bd
-      ],
-      related_products: [ 5ee36f67f8601328a86456df, 5ee0d1b06123a6296c4996bd ],
-      preview_text: 'preview text of my product',
-      description: 'description of my product',
-      gallery: [ 'img/somephoto.jpg' ],
-      active: false,
-      external_id: 15,
-      lang: 'en',
-      _id: 5f27d1370ea5e4ae3d1e9b41,
-      name: 'my product',
-      image: 'some.jpg',
-      category: 5ee1e1b06123a6296c4996af,
-      brand: 5f2667419be6c18d2c1545cb,
-      created_at: 2020-08-03T08:56:23.020Z,
-      updated_at: 2020-08-03T08:56:23.020Z,
-      slug: 'my-product',
-      prices: [],
-      properties: [],
-      __v: 0
-    }
-  }
-}
-{
-  message: 'Product Create response',
-  level: 'debug',
-  timestamp: '2020-08-03T08:56:23.063Z',
-  label: 'test',
-  metadata: {
-    response: {
-      product: {
-        additional_categories: [],
-        related_products: [],
-        gallery: [ 'img/somephoto.jpg' ],
-        properties: [],
-        prices: [],
-        id: '5f27d1370ea5e4ae3d1e9b40',
-        name: 'my product',
-        slug: 'my-product',
-        category: null,
-        brand: {
-          id: '5f2667419be6c18d2c1545cb',
-          name: 'my updated Brand',
-          slug: 'my-updated-brand',
-          image: 'img.jpg',
-          preview_text: 'preview text of my updated brand',
-          description: 'description of my updated brand',
-          active: true,
-          order: '0',
-          created_at: 'Sun Aug 02 2020 12:12:01 GMT+0500 (Uzbekistan Standard Time)',
-          updated_at: 'Sun Aug 02 2020 12:12:01 GMT+0500 (Uzbekistan Standard Time)'
-        },
-        preview_text: 'preview text of my product',
-        description: 'description of my product',
-        active: false,
-        external_id: '15',
-        meta: {
-          title: 'Product Meta',
-          description: 'Description of Meta',
-          tags: 'Tag of meta'
-        },
-        price: { price: '0', old_price: '0' },
-        created_at: 'Mon Aug 03 2020 13:56:23 GMT+0500 (Uzbekistan Standard Time)',
-        updated_at: 'Mon Aug 03 2020 13:56:23 GMT+0500 (Uzbekistan Standard Time)',
-        image: 'some.jpg',
-        lang: 'ru'
-      }
-    }
-  }
-}
-{
-  message: 'product is created with lang uz',
-  level: 'debug',
-  timestamp: '2020-08-03T08:56:23.066Z',
-  label: 'catalog-service',
-  metadata: {
-    result: {
-      price: {},
-      meta: {
-        title: 'Product Meta',
-        description: 'Description of Meta',
-        tags: 'Tag of meta'
-      },
-      additional_categories: [
-        5ee1e1b06123a6296c4996bd,
-        5ee1e1b06123a6296c4556bd,
-        5ee1e1b06123a6296c4236bd
-      ],
-      related_products: [ 5ee36f67f8601328a86456df, 5ee0d1b06123a6296c4996bd ],
-      preview_text: 'preview text of my product',
-      description: 'description of my product',
-      gallery: [ 'img/somephoto.jpg' ],
-      active: false,
-      external_id: 15,
-      lang: 'uz',
-      _id: 5f27d1370ea5e4ae3d1e9b42,
-      name: 'my product',
-      image: 'some.jpg',
-      category: 5ee1e1b06123a6296c4996af,
-      brand: 5f2667419be6c18d2c1545cb,
-      created_at: 2020-08-03T08:56:23.020Z,
-      updated_at: 2020-08-03T08:56:23.020Z,
-      slug: 'my-product',
-      prices: [],
-      properties: [],
-      __v: 0
-    }
-  }
-}
-{
-  message: 'Product find request',
-  level: 'debug',
-  timestamp: '2020-08-03T08:56:23.072Z',
-  label: 'product',
-  metadata: {
-    request: {
-      page: '0',
-      search: '',
-      active: false,
-      inactive: false,
-      category: '',
-      brand: '',
-      limit: '0',
-      sort: '',
-      price_from: '0',
-      price_till: '0',
-      lang: ''
-    }
-  }
-}
-{
-  message: 'filtering products',
-  level: 'debug',
-  timestamp: '2020-08-03T08:56:23.073Z',
-  label: 'catalog-service',
-  metadata: {
-    query: { lang: 'ru' },
-    options: { skip: -0, limit: 50, sort: { created_at: -1 } }
-  }
-}
-{
-  message: 'Product update request',
-  level: 'debug',
-  timestamp: '2020-08-03T08:56:23.079Z',
-  label: 'product',
-  metadata: {
-    request: {
-      id: 'my-product',
-      name: 'my updated Product',
-      category_id: '5ee1e1b06123a6296c4996af',
-      brand_id: '5f2667419be6c18d2c1545cb',
-      additional_categories: '5ee1e1b06123a6296c4996bd,5ee1e1b06123a6296c4556bd,5ee1e1b06123a6296c4236bd',
-      related_products: '5ee36f67f8601328a86456df,5ee0d1b06123a6296c4996bd,5ee1sdb06123a6296c4996bd',
-      preview_text: 'preview text of my updated product',
-      description: 'description of my updated product',
-      gallery: 'img/some.jpg',
-      external_id: '16',
-      meta: {
-        title: ' Updated Product Meta',
-        description: 'Updatet Description of Meta',
-        tags: 'Updated Tag of meta'
-      },
-      active: false,
-      order: '0',
-      image: 'some.jpg',
-      lang: 'ru'
-    }
-  }
-}
-{
-  message: 'Product Find response',
-  level: 'debug',
-  timestamp: '2020-08-03T08:56:23.101Z',
-  label: 'test',
-  metadata: {
-    response: {
-      products: [
-        {
-          prices: [],
-          id: '5f27d1370ea5e4ae3d1e9b40',
-          name: 'my product',
-          slug: 'my-product',
-          category: null,
-          brand: {
-            id: '5f2667419be6c18d2c1545cb',
-            name: 'my updated Brand',
-            slug: 'my-updated-brand',
-            image: 'img.jpg',
-            preview_text: 'preview text of my updated brand',
-            description: 'description of my updated brand',
-            active: true,
-            order: '0',
-            created_at: 'Sun Aug 02 2020 12:12:01 GMT+0500 (Uzbekistan Standard Time)',
-            updated_at: 'Sun Aug 02 2020 12:12:01 GMT+0500 (Uzbekistan Standard Time)'
-          },
-          preview_text: 'preview text of my product',
-          active: false,
-          price: { price: '0', old_price: '0' },
-          created_at: 'Mon Aug 03 2020 13:56:23 GMT+0500 (Uzbekistan Standard Time)',
-          updated_at: 'Mon Aug 03 2020 13:56:23 GMT+0500 (Uzbekistan Standard Time)',
-          image: 'https://sdn.delever.uz/goodzone/some.jpg',
-          lang: 'ru'
-        }
-      ],
-      count: '1'
-    }
-  }
-}
-{
-  message: 'Product Update response',
-  level: 'debug',
-  timestamp: '2020-08-03T08:56:23.106Z',
-  label: 'test',
-  metadata: {
-    response: {
-      product: {
-        additional_categories: [],
-        related_products: [],
-        gallery: [ 'img/some.jpg' ],
-        properties: [],
-        prices: [],
-        id: '5f27d1370ea5e4ae3d1e9b40',
-        name: 'my updated Product',
-        slug: 'my-product',
-        category: null,
-        brand: {
-          id: '5f2667419be6c18d2c1545cb',
-          name: 'my updated Brand',
-          slug: 'my-updated-brand',
-          image: 'img.jpg',
-          preview_text: 'preview text of my updated brand',
-          description: 'description of my updated brand',
-          active: true,
-          order: '0',
-          created_at: 'Sun Aug 02 2020 12:12:01 GMT+0500 (Uzbekistan Standard Time)',
-          updated_at: 'Sun Aug 02 2020 12:12:01 GMT+0500 (Uzbekistan Standard Time)'
-        },
-        preview_text: 'preview text of my updated product',
-        description: 'description of my updated product',
-        active: false,
-        external_id: '16',
-        meta: {
-          title: ' Updated Product Meta',
-          description: 'Updatet Description of Meta',
-          tags: 'Updated Tag of meta'
-        },
-        price: { price: '0', old_price: '0' },
-        created_at: 'Mon Aug 03 2020 13:56:23 GMT+0500 (Uzbekistan Standard Time)',
-        updated_at: 'Mon Aug 03 2020 13:56:23 GMT+0500 (Uzbekistan Standard Time)',
-        image: 'some.jpg',
-        lang: 'ru'
-      }
-    }
-  }
-}
-{
-  message: 'Product price update request',
-  level: 'debug',
-  timestamp: '2020-08-03T08:56:23.109Z',
-  label: 'product',
-  metadata: {
-    request: {
-      product_id: 'my-product',
-      price_type_id: '0',
-      price: '1',
-      old_price: '10'
-    }
-  }
-}
-{
-  message: 'Product get request',
-  level: 'debug',
-  timestamp: '2020-08-03T08:56:23.111Z',
-  label: 'product',
-  metadata: { request: { id: '', slug: 'my-product', lang: 'ru' } }
-}
-{
-  message: 'finding a product',
-  level: 'debug',
-  timestamp: '2020-08-03T08:56:23.112Z',
-  label: 'catalog-service',
-  metadata: {
-    query: { lang: 'ru', '$or': [ { slug: 'my-product' } ] }
-  }
-}
-{
-  message: 'Invalid Price Type!',
-  level: 'error',
-  timestamp: '2020-08-03T08:56:23.120Z',
-  label: 'catalog-service',
-  metadata: {
-    function: 'update product price',
-    request: {
-      product_id: 'my-product',
-      price_type_id: '0',
-      price: '1',
-      old_price: '10'
-    }
-  }
-}
-{
-  message: 'Product Get response',
-  level: 'debug',
-  timestamp: '2020-08-03T08:56:23.133Z',
-  label: 'test',
-  metadata: {
-    response: {
-      product: {
-        additional_categories: [],
-        related_products: [],
-        gallery: [ 'https://sdn.delever.uz/goodzone/img/some.jpg' ],
-        properties: [],
-        prices: [],
-        id: '5f27d1370ea5e4ae3d1e9b40',
-        name: 'my updated Product',
-        slug: 'my-product',
-        category: null,
-        brand: {
-          id: '5f2667419be6c18d2c1545cb',
-          name: 'my updated Brand',
-          slug: 'my-updated-brand',
-          image: 'https://sdn.delever.uz/goodzone/img.jpg',
-          preview_text: 'preview text of my updated brand',
-          description: 'description of my updated brand',
-          active: true,
-          order: '0',
-          created_at: 'Sun Aug 02 2020 12:12:01 GMT+0500 (Uzbekistan Standard Time)',
-          updated_at: 'Sun Aug 02 2020 12:12:01 GMT+0500 (Uzbekistan Standard Time)'
-        },
-        preview_text: 'preview text of my updated product',
-        description: 'description of my updated product',
-        active: false,
-        external_id: '16',
-        meta: {
-          title: ' Updated Product Meta',
-          description: 'Updatet Description of Meta',
-          tags: 'Updated Tag of meta'
-        },
-        price: { price: '0', old_price: '0' },
-        created_at: 'Mon Aug 03 2020 13:56:23 GMT+0500 (Uzbekistan Standard Time)',
-        updated_at: 'Mon Aug 03 2020 13:56:23 GMT+0500 (Uzbekistan Standard Time)',
-        image: 'https://sdn.delever.uz/goodzone/some.jpg',
-        lang: 'ru'
-      }
-    }
-  }
-}
-{
-  message: 'Shops get request',
-  level: 'debug',
-  timestamp: '2020-08-03T08:56:23.135Z',
-  label: 'shop',
-  metadata: { request: { product_id: '5f27d1370ea5e4ae3d1e9b40' } }
-}
-{
-  message: 'Shop Get response',
-  level: 'debug',
-  timestamp: '2020-08-03T08:56:23.145Z',
-  label: 'test',
-  metadata: { response: { shops: [] } }
-}
-{
-  message: 'Product delete request',
-  level: 'debug',
-  timestamp: '2020-08-03T08:56:23.147Z',
-  label: 'product',
-  metadata: { request: { id: '', slug: 'my-product' } }
-}
-{
-  message: 'Product Delete response',
-  level: 'debug',
-  timestamp: '2020-08-03T08:56:23.153Z',
-  label: 'test',
-  metadata: { response: {} }
-}
-{
-  message: 'Main function is running',
-  level: 'info',
-  timestamp: '2020-08-03T08:56:39.813Z',
-  label: 'catalog-service',
-  metadata: {}
-}
-{
-  message: 'Connecting to db: mongodb://localhost:27017/catalog_service',
-  level: 'info',
-  timestamp: '2020-08-03T08:56:39.816Z',
-  label: 'catalog-service',
-  metadata: {}
-}
-{
-  message: 'grpc server is running at 7000',
-  level: 'info',
-  timestamp: '2020-08-03T08:56:39.862Z',
-  label: 'catalog-service',
-  metadata: {}
-}
-{
-  message: 'Connected to the databasee',
-  level: 'info',
-  timestamp: '2020-08-03T08:56:39.880Z',
-  label: 'catalog-service',
-  metadata: {}
-}
-{
-  message: 'Product create request',
-  level: 'debug',
-  timestamp: '2020-08-03T08:56:44.979Z',
-  label: 'product',
-  metadata: {
-    request: {
-      name: 'my product',
-      category_id: '5ee1e1b06123a6296c4996af',
-      brand_id: '5f2667419be6c18d2c1545cb',
-      additional_categories: '5ee1e1b06123a6296c4996bd,5ee1e1b06123a6296c4556bd,5ee1e1b06123a6296c4236bd',
-      related_products: '5ee36f67f8601328a86456df,5ee0d1b06123a6296c4996bd,5ee1sdb06123a6296c4996bd',
-      preview_text: 'preview text of my product',
-      description: 'description of my product',
-      gallery: 'img/somephoto.jpg',
-      external_id: '15',
-      meta: {
-        title: 'Product Meta',
-        description: 'Description of Meta',
-        tags: 'Tag of meta'
-      },
-      active: false,
-      order: '0',
-      image: 'some.jpg',
-      lang: 'ru'
-    }
-  }
-}
-{
-  message: 'product created',
-  level: 'info',
-  timestamp: '2020-08-03T08:56:45.016Z',
-  label: 'catalog-service',
-  metadata: { durationMs: 36 }
-}
-{
-  message: 'product is created with lang en',
-  level: 'debug',
-  timestamp: '2020-08-03T08:56:45.023Z',
-  label: 'catalog-service',
-  metadata: {
-    result: {
-      price: {},
-      meta: {
-        title: 'Product Meta',
-        description: 'Description of Meta',
-        tags: 'Tag of meta'
-      },
-      additional_categories: [
-        5ee1e1b06123a6296c4996bd,
-        5ee1e1b06123a6296c4556bd,
-        5ee1e1b06123a6296c4236bd
-      ],
-      related_products: [ 5ee36f67f8601328a86456df, 5ee0d1b06123a6296c4996bd ],
-      preview_text: 'preview text of my product',
-      description: 'description of my product',
-      gallery: [ 'img/somephoto.jpg' ],
-      active: false,
-      external_id: 15,
-      lang: 'en',
-      _id: 5f27d14d2e6d12ae6b2a2a56,
-      name: 'my product',
-      image: 'some.jpg',
-      category: 5ee1e1b06123a6296c4996af,
-      brand: 5f2667419be6c18d2c1545cb,
-      created_at: 2020-08-03T08:56:44.981Z,
-      updated_at: 2020-08-03T08:56:44.981Z,
-      slug: 'my-product',
-      prices: [],
-      properties: [],
-      __v: 0
-    }
-  }
-}
-{
-  message: 'Product Create response',
-  level: 'debug',
-  timestamp: '2020-08-03T08:56:45.029Z',
-  label: 'test',
-  metadata: {
-    response: {
-      product: {
-        additional_categories: [],
-        related_products: [],
-        gallery: [ 'img/somephoto.jpg' ],
-        properties: [],
-        prices: [],
-        id: '5f27d14c2e6d12ae6b2a2a55',
-        name: 'my product',
-        slug: 'my-product',
-        category: null,
-        brand: {
-          id: '5f2667419be6c18d2c1545cb',
-          name: 'my updated Brand',
-          slug: 'my-updated-brand',
-          image: 'img.jpg',
-          preview_text: 'preview text of my updated brand',
-          description: 'description of my updated brand',
-          active: true,
-          order: '0',
-          created_at: 'Sun Aug 02 2020 12:12:01 GMT+0500 (Uzbekistan Standard Time)',
-          updated_at: 'Sun Aug 02 2020 12:12:01 GMT+0500 (Uzbekistan Standard Time)'
-        },
-        preview_text: 'preview text of my product',
-        description: 'description of my product',
-        active: false,
-        external_id: '15',
-        meta: {
-          title: 'Product Meta',
-          description: 'Description of Meta',
-          tags: 'Tag of meta'
-        },
-        price: { price: '0', old_price: '0' },
-        created_at: 'Mon Aug 03 2020 13:56:44 GMT+0500 (Uzbekistan Standard Time)',
-        updated_at: 'Mon Aug 03 2020 13:56:44 GMT+0500 (Uzbekistan Standard Time)',
-        image: 'some.jpg',
-        lang: 'ru'
-      }
-    }
-  }
-}
-{
-  message: 'product is created with lang uz',
-  level: 'debug',
-  timestamp: '2020-08-03T08:56:45.043Z',
-  label: 'catalog-service',
-  metadata: {
-    result: {
-      price: {},
-      meta: {
-        title: 'Product Meta',
-        description: 'Description of Meta',
-        tags: 'Tag of meta'
-      },
-      additional_categories: [
-        5ee1e1b06123a6296c4996bd,
-        5ee1e1b06123a6296c4556bd,
-        5ee1e1b06123a6296c4236bd
-      ],
-      related_products: [ 5ee36f67f8601328a86456df, 5ee0d1b06123a6296c4996bd ],
-      preview_text: 'preview text of my product',
-      description: 'description of my product',
-      gallery: [ 'img/somephoto.jpg' ],
-      active: false,
-      external_id: 15,
-      lang: 'uz',
-      _id: 5f27d14d2e6d12ae6b2a2a57,
-      name: 'my product',
-      image: 'some.jpg',
-      category: 5ee1e1b06123a6296c4996af,
-      brand: 5f2667419be6c18d2c1545cb,
-      created_at: 2020-08-03T08:56:44.981Z,
-      updated_at: 2020-08-03T08:56:44.981Z,
-      slug: 'my-product',
-      prices: [],
-      properties: [],
-      __v: 0
-    }
-  }
-}
-{
-  message: 'Product find request',
-  level: 'debug',
-  timestamp: '2020-08-03T08:56:45.049Z',
-  label: 'product',
-  metadata: {
-    request: {
-      page: '0',
-      search: '',
-      active: false,
-      inactive: false,
-      category: '',
-      brand: '',
-      limit: '0',
-      sort: '',
-      price_from: '0',
-      price_till: '0',
-      lang: ''
-    }
-  }
-}
-{
-  message: 'filtering products',
-  level: 'debug',
-  timestamp: '2020-08-03T08:56:45.052Z',
-  label: 'catalog-service',
-  metadata: {
-    query: { lang: 'ru' },
-    options: { skip: -0, limit: 50, sort: { created_at: -1 } }
-  }
-}
-{
-  message: 'Product update request',
-  level: 'debug',
-  timestamp: '2020-08-03T08:56:45.063Z',
-  label: 'product',
-  metadata: {
-    request: {
-      id: 'my-product',
-      name: 'my updated Product',
-      category_id: '5ee1e1b06123a6296c4996af',
-      brand_id: '5f2667419be6c18d2c1545cb',
-      additional_categories: '5ee1e1b06123a6296c4996bd,5ee1e1b06123a6296c4556bd,5ee1e1b06123a6296c4236bd',
-      related_products: '5ee36f67f8601328a86456df,5ee0d1b06123a6296c4996bd,5ee1sdb06123a6296c4996bd',
-      preview_text: 'preview text of my updated product',
-      description: 'description of my updated product',
-      gallery: 'img/some.jpg',
-      external_id: '16',
-      meta: {
-        title: ' Updated Product Meta',
-        description: 'Updatet Description of Meta',
-        tags: 'Updated Tag of meta'
-      },
-      active: false,
-      order: '0',
-      image: 'some.jpg',
-      lang: 'ru'
-    }
-  }
-}
-{
-  message: 'Product Find response',
-  level: 'debug',
-  timestamp: '2020-08-03T08:56:45.076Z',
-  label: 'test',
-  metadata: {
-    response: {
-      products: [
-        {
-          prices: [],
-          id: '5f27d14c2e6d12ae6b2a2a55',
-          name: 'my product',
-          slug: 'my-product',
-          category: null,
-          brand: {
-            id: '5f2667419be6c18d2c1545cb',
-            name: 'my updated Brand',
-            slug: 'my-updated-brand',
-            image: 'img.jpg',
-            preview_text: 'preview text of my updated brand',
-            description: 'description of my updated brand',
-            active: true,
-            order: '0',
-            created_at: 'Sun Aug 02 2020 12:12:01 GMT+0500 (Uzbekistan Standard Time)',
-            updated_at: 'Sun Aug 02 2020 12:12:01 GMT+0500 (Uzbekistan Standard Time)'
-          },
-          preview_text: 'preview text of my product',
-          active: false,
-          price: { price: '0', old_price: '0' },
-          created_at: 'Mon Aug 03 2020 13:56:44 GMT+0500 (Uzbekistan Standard Time)',
-          updated_at: 'Mon Aug 03 2020 13:56:44 GMT+0500 (Uzbekistan Standard Time)',
-          image: 'https://sdn.delever.uz/goodzone/some.jpg',
-          lang: 'ru'
-        }
-      ],
-      count: '1'
-    }
-  }
-}
-{
-  message: 'Product Update response',
-  level: 'debug',
-  timestamp: '2020-08-03T08:56:45.085Z',
-  label: 'test',
-  metadata: {
-    response: {
-      product: {
-        additional_categories: [],
-        related_products: [],
-        gallery: [ 'img/some.jpg' ],
-        properties: [],
-        prices: [],
-        id: '5f27d14c2e6d12ae6b2a2a55',
-        name: 'my updated Product',
-        slug: 'my-product',
-        category: null,
-        brand: {
-          id: '5f2667419be6c18d2c1545cb',
-          name: 'my updated Brand',
-          slug: 'my-updated-brand',
-          image: 'img.jpg',
-          preview_text: 'preview text of my updated brand',
-          description: 'description of my updated brand',
-          active: true,
-          order: '0',
-          created_at: 'Sun Aug 02 2020 12:12:01 GMT+0500 (Uzbekistan Standard Time)',
-          updated_at: 'Sun Aug 02 2020 12:12:01 GMT+0500 (Uzbekistan Standard Time)'
-        },
-        preview_text: 'preview text of my updated product',
-        description: 'description of my updated product',
-        active: false,
-        external_id: '16',
-        meta: {
-          title: ' Updated Product Meta',
-          description: 'Updatet Description of Meta',
-          tags: 'Updated Tag of meta'
-        },
-        price: { price: '0', old_price: '0' },
-        created_at: 'Mon Aug 03 2020 13:56:44 GMT+0500 (Uzbekistan Standard Time)',
-        updated_at: 'Mon Aug 03 2020 13:56:44 GMT+0500 (Uzbekistan Standard Time)',
-        image: 'some.jpg',
-        lang: 'ru'
-      }
-    }
-  }
-}
-{
-  message: 'Product price update request',
-  level: 'debug',
-  timestamp: '2020-08-03T08:56:45.089Z',
-  label: 'product',
-  metadata: {
-    request: {
-      product_id: 'my-product',
-      price_type_id: '',
-      price: '1',
-      old_price: '10'
-    }
-  }
-}
-{
-  message: 'Product get request',
-  level: 'debug',
-  timestamp: '2020-08-03T08:56:45.091Z',
-  label: 'product',
-  metadata: { request: { id: '', slug: 'my-product', lang: 'ru' } }
-}
-{
-  message: 'finding a product',
-  level: 'debug',
-  timestamp: '2020-08-03T08:56:45.092Z',
-  label: 'catalog-service',
-  metadata: {
-    query: { lang: 'ru', '$or': [ { slug: 'my-product' } ] }
-  }
-}
-{
-  message: 'Product price Update response',
-  level: 'debug',
-  timestamp: '2020-08-03T08:56:45.118Z',
-  label: 'test',
-  metadata: { response: {} }
-}
-{
-  message: 'Product Get response',
-  level: 'debug',
-  timestamp: '2020-08-03T08:56:45.120Z',
-  label: 'test',
-  metadata: {
-    response: {
-      product: {
-        additional_categories: [],
-        related_products: [],
-        gallery: [ 'https://sdn.delever.uz/goodzone/img/some.jpg' ],
-        properties: [],
-        prices: [],
-        id: '5f27d14c2e6d12ae6b2a2a55',
-        name: 'my updated Product',
-        slug: 'my-product',
-        category: null,
-        brand: {
-          id: '5f2667419be6c18d2c1545cb',
-          name: 'my updated Brand',
-          slug: 'my-updated-brand',
-          image: 'https://sdn.delever.uz/goodzone/img.jpg',
-          preview_text: 'preview text of my updated brand',
-          description: 'description of my updated brand',
-          active: true,
-          order: '0',
-          created_at: 'Sun Aug 02 2020 12:12:01 GMT+0500 (Uzbekistan Standard Time)',
-          updated_at: 'Sun Aug 02 2020 12:12:01 GMT+0500 (Uzbekistan Standard Time)'
-        },
-        preview_text: 'preview text of my updated product',
-        description: 'description of my updated product',
-        active: false,
-        external_id: '16',
-        meta: {
-          title: ' Updated Product Meta',
-          description: 'Updatet Description of Meta',
-          tags: 'Updated Tag of meta'
-        },
-        price: { price: '0', old_price: '0' },
-        created_at: 'Mon Aug 03 2020 13:56:44 GMT+0500 (Uzbekistan Standard Time)',
-        updated_at: 'Mon Aug 03 2020 13:56:44 GMT+0500 (Uzbekistan Standard Time)',
-        image: 'https://sdn.delever.uz/goodzone/some.jpg',
-        lang: 'ru'
-      }
-    }
-  }
-}
-{
-  message: 'Shops get request',
-  level: 'debug',
-  timestamp: '2020-08-03T08:56:45.122Z',
-  label: 'shop',
-  metadata: { request: { product_id: '5f27d14c2e6d12ae6b2a2a55' } }
-}
-{
-  message: 'Shop Get response',
-  level: 'debug',
-  timestamp: '2020-08-03T08:56:45.130Z',
-  label: 'test',
-  metadata: { response: { shops: [] } }
-}
-{
-  message: 'Product delete request',
-  level: 'debug',
-  timestamp: '2020-08-03T08:56:45.133Z',
-  label: 'product',
-  metadata: { request: { id: '', slug: 'my-product' } }
-}
-{
-  message: 'Product Delete response',
-  level: 'debug',
-  timestamp: '2020-08-03T08:56:45.136Z',
-  label: 'test',
-  metadata: { response: {} }
-}
-{
-  message: 'Main function is running',
-  level: 'info',
-  timestamp: '2020-08-03T09:23:40.882Z',
-  label: 'catalog-service',
-  metadata: {}
-}
-{
-  message: 'Connecting to db: mongodb://rj:mysecret@dev.goodzone.uz:27017/catalog_service',
-  level: 'info',
-  timestamp: '2020-08-03T09:23:40.886Z',
-  label: 'catalog-service',
-  metadata: {}
-}
-{
-  message: 'grpc server is running at 7000',
-  level: 'info',
-  timestamp: '2020-08-03T09:23:40.958Z',
-  label: 'catalog-service',
-  metadata: {}
-}
-{
-  message: 'Connected to the databasee',
-  level: 'info',
-  timestamp: '2020-08-03T09:23:42.513Z',
-  label: 'catalog-service',
-  metadata: {}
-}
-{
-  message: 'Brand Find Request',
-  level: 'debug',
-  timestamp: '2020-08-03T09:24:16.353Z',
-  label: 'brand',
-  metadata: {
-    request: {
-      page: '1',
-      search: '',
-      active: false,
-      inactive: false,
-      limit: '0',
-      sort: '',
-      lang: ''
-    }
-  }
-}
-{
-  message: 'filtering brands',
-  level: 'debug',
-  timestamp: '2020-08-03T09:24:16.354Z',
-  label: 'catalog-service',
-  metadata: {
-    query: {},
-    options: { skip: 0, limit: 10, sort: { created_at: -1 } }
-  }
-}
-{
-  message: 'Product get request',
-  level: 'debug',
-  timestamp: '2020-08-03T09:29:58.139Z',
-  label: 'product',
-  metadata: {
-    request: {
-      id: 'fen-panasonic-eh-ne83-k865',
-      slug: 'fen-panasonic-eh-ne83-k865',
-      lang: ''
-    }
-  }
-}
-{
-  message: 'finding a product',
-  level: 'debug',
-  timestamp: '2020-08-03T09:29:58.140Z',
-  label: 'catalog-service',
-  metadata: {
-    query: { lang: 'ru', '$or': [ { slug: 'fen-panasonic-eh-ne83-k865' } ] }
-  }
-}
-{
-  message: 'Main function is running',
-  level: 'info',
-  timestamp: '2020-08-03T12:11:49.280Z',
-  label: 'catalog-service',
-  metadata: {}
-}
-{
-  message: 'Connecting to db: mongodb://rj:mysecret@dev.goodzone.uz:27017/catalog_service',
-  level: 'info',
-  timestamp: '2020-08-03T12:11:49.285Z',
-  label: 'catalog-service',
-  metadata: {}
-}
-{
-  message: 'grpc server is running at 7000',
-  level: 'info',
-  timestamp: '2020-08-03T12:11:49.393Z',
-  label: 'catalog-service',
-  metadata: {}
-}
-{
-  message: 'Connected to the databasee',
-  level: 'info',
-  timestamp: '2020-08-03T12:11:52.973Z',
+  timestamp: '2020-08-03T15:42:40.000Z',
   label: 'catalog-service',
   metadata: {}
 }
 {
   message: 'Category find request',
   level: 'debug',
-  timestamp: '2020-08-03T12:12:18.003Z',
+  timestamp: '2020-08-03T15:42:44.626Z',
+  label: 'category',
+  metadata: {
+    request: {
+      page: '0',
+      search: '',
+      active: false,
+      inactive: false,
+      limit: '0',
+      sort: '',
+      lang: ''
+    }
+  }
+}
+{
+  message: 'Category Find response',
+  level: 'debug',
+  timestamp: '2020-08-03T15:42:45.769Z',
+  label: 'test',
+  metadata: {
+    response: {
+      categories: [
+        {
+          children: [
+            {
+              children: [],
+              id: '5f24e9d25aa3da35d8946cf9',
+              name: 'Ноутбуки',
+              slug: 'noutbuki',
+              active: true,
+              description: 'NULL',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            },
+            {
+              children: [],
+              id: '5f24e9d25aa3da35d8946cfe',
+              name: 'Моноблоки',
+              slug: 'monobloki',
+              active: true,
+              description: 'NULL',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            },
+            {
+              children: [],
+              id: '5f24e9d25aa3da35d8946d2f',
+              name: 'Принтеры',
+              slug: 'printery',
+              active: true,
+              description: 'NULL',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            },
+            {
+              children: [
+                {
+                  id: '5f24e9d25aa3da35d8946d33',
+                  name: 'Мониторы',
+                  slug: 'monitory',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d34',
+                  name: 'Мышки',
+                  slug: 'myshki',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d35',
+                  name: 'Процессоры',
+                  slug: 'protsessory',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d36',
+                  name: 'Накопители данных',
+                  slug: 'nakopiteli-dannykh',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d3a',
+                  name: 'Клавиатуры',
+                  slug: 'klaviatury',
+                  active: true,
+                  description: '<p>NULL</p>',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d3b',
+                  name: 'Блоки питания',
+                  slug: 'bloki-pitaniya',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d3c',
+                  name: 'Материнские платы',
+                  slug: 'materinskie-platy',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                }
+              ],
+              id: '5f24e9d25aa3da35d8946d32',
+              name: 'Комплектующие',
+              slug: 'komplektuyushchie',
+              active: true,
+              description: 'NULL',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            }
+          ],
+          id: '5f24e9d25aa3da35d8946cf8',
+          name: 'Ноутбуки и компьютеры',
+          slug: 'noutbuki-i-kompyutery',
+          active: true,
+          description: '<p>NULL</p>',
+          order: '0',
+          image: 'https://sdn.delever.uz/goodzone/6e4e6485-7fbf-431d-b493-d40e9d914353',
+          lang: 'ru'
+        },
+        {
+          children: [
+            {
+              children: [],
+              id: '5f24e9d25aa3da35d8946d24',
+              name: 'Смартфоны',
+              slug: 'smartfony',
+              active: true,
+              description: '',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            },
+            {
+              children: [],
+              id: '5f24e9d25aa3da35d8946d31',
+              name: 'Аксессуары для смартфонов',
+              slug: 'aksessuary-dlya-smartfonov',
+              active: true,
+              description: '<p>NULL</p>',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            },
+            {
+              children: [],
+              id: '5f24e9d25aa3da35d8946d46',
+              name: 'Телефоны',
+              slug: 'telefony',
+              active: true,
+              description: '',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            },
+            {
+              children: [],
+              id: '5f24e9d25aa3da35d8946d47',
+              name: 'Планшеты',
+              slug: 'planshety',
+              active: true,
+              description: '',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            },
+            {
+              children: [],
+              id: '5f24e9d25aa3da35d8946d48',
+              name: 'Гаджеты',
+              slug: 'gadzhety',
+              active: true,
+              description: '',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            },
+            {
+              children: [],
+              id: '5f24e9d25aa3da35d8946d4d',
+              name: 'Экшн-камеры, Go Pro, камеры для блогеров',
+              slug: 'ekshen-kamery-go-pro-kamery-dlya-blogerov',
+              active: true,
+              description: '',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            },
+            {
+              children: [],
+              id: '5f24e9d25aa3da35d8946d4e',
+              name: 'Электроинструменты',
+              slug: 'elektroinstrumenty',
+              active: true,
+              description: '',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            }
+          ],
+          id: '5f24e9d25aa3da35d8946cfa',
+          name: 'Смартфоны и гаджеты',
+          slug: 'smartfoni i gadjeti',
+          active: true,
+          description: '<p>NULL</p>',
+          order: '0',
+          image: 'https://sdn.delever.uz/goodzone/bb0a695f-dea1-4381-a2d1-712bf94a942c',
+          lang: 'ru'
+        },
+        {
+          children: [
+            {
+              children: [],
+              id: '5f24e9d25aa3da35d8946cff',
+              name: 'Телевизоры',
+              slug: 'televizory',
+              active: true,
+              description: '<p>NULL</p>',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            },
+            {
+              children: [],
+              id: '5f24e9d25aa3da35d8946d38',
+              name: 'DVD-плеееры',
+              slug: 'dvd-pleeery',
+              active: true,
+              description: 'NULL',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            },
+            {
+              children: [],
+              id: '5f24e9d25aa3da35d8946d42',
+              name: 'Домашний кинотеатр и Hi-Fi техника',
+              slug: 'domashniy-kinoteatr-i-hi-fi-tekhnika',
+              active: true,
+              description: 'NULL',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            },
+            {
+              children: [],
+              id: '5f24e9d25aa3da35d8946d44',
+              name: 'Цифровое ТВ',
+              slug: 'cifrovoe-tv',
+              active: true,
+              description: '',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            },
+            {
+              children: [],
+              id: '5f24e9d25aa3da35d8946d45',
+              name: 'Аксессуары',
+              slug: 'aksessuary_tv',
+              active: true,
+              description: '',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            }
+          ],
+          id: '5f24e9d25aa3da35d8946cfd',
+          name: 'Телевизоры, Hi-Fi, аудио',
+          slug: 'televizory-hi-fi-audio',
+          active: true,
+          description: '<p>NULL</p>',
+          order: '0',
+          image: 'https://sdn.delever.uz/goodzone/d350333a-bf61-421b-abbc-3af592c04688',
+          lang: 'ru'
+        },
+        {
+          children: [
+            {
+              children: [
+                {
+                  id: '5f24e9d25aa3da35d8946d00',
+                  name: 'Микроволновые печи',
+                  slug: 'mikrovolnovye-pechi',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d0e',
+                  name: 'Паста машины',
+                  slug: 'pasta-mashiny',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d0f',
+                  name: 'Миксеры',
+                  slug: 'miksery',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d11',
+                  name: 'Соковыжималки',
+                  slug: 'sokovyzhimalki',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d12',
+                  name: 'Блендеры',
+                  slug: 'blendery',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d14',
+                  name: 'Mясорубки',
+                  slug: 'myasorubki',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d15',
+                  name: 'Электрочайники',
+                  slug: 'elektrochayniki',
+                  active: true,
+                  description: '<p>NULL</p>',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d17',
+                  name: 'Мультиварки',
+                  slug: 'multivarki',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d1b',
+                  name: 'Кофемашины',
+                  slug: 'kofemashiny',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d1c',
+                  name: 'Кофеварки',
+                  slug: 'kofevarki',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d1e',
+                  name: 'Тостеры',
+                  slug: 'tostery',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d1f',
+                  name: 'Термопоты',
+                  slug: 'termopoty',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d21',
+                  name: 'Лапшарезки',
+                  slug: 'lapsharezki',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d22',
+                  name: 'Рисоварки',
+                  slug: 'risovarki',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d23',
+                  name: 'Кухонные комбайны',
+                  slug: 'kukhonnye-kombayny',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d3f',
+                  name: 'Мини-печи',
+                  slug: 'mini-pechi',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d4f',
+                  name: 'Фритюрницы',
+                  slug: 'frityurnicy',
+                  active: true,
+                  description: '',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                }
+              ],
+              id: '5f24e9d25aa3da35d8946d10',
+              name: 'Мелкая техника для кухни',
+              slug: 'melkaya-tekhnika-dlya-kukhni',
+              active: true,
+              description: '<p>NULL</p>',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            },
+            {
+              children: [
+                {
+                  id: '5f24e9d25aa3da35d8946cfc',
+                  name: 'Холодильники',
+                  slug: 'kholodilniki',
+                  active: true,
+                  description: '<p>NULL</p>',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d04',
+                  name: 'Морозильники',
+                  slug: 'morozilniki',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d05',
+                  name: 'Варочные панели',
+                  slug: 'varochnye-paneli',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d06',
+                  name: 'Встраиваемые духовки',
+                  slug: 'vstraivaemye-dukhovki',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d07',
+                  name: 'Вытяжки',
+                  slug: 'vytyazhki',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d08',
+                  name: 'Газовые плиты',
+                  slug: 'gazovye-plity',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d25',
+                  name: 'Посудомоечные машины',
+                  slug: 'posudomoechnye-mashiny',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                }
+              ],
+              id: '5f24e9d25aa3da35d8946d26',
+              name: 'Крупная техника для кухни',
+              slug: 'krupnaya-tekhnika-dlya-kukhni',
+              active: true,
+              description: 'NULL',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            },
+            {
+              children: [
+                {
+                  id: '5f24e9d25aa3da35d8946d51',
+                  name: 'Казаны',
+                  slug: 'kazany',
+                  active: true,
+                  description: '',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d52',
+                  name: 'Кастрюли',
+                  slug: 'kastryuli',
+                  active: true,
+                  description: '',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d53',
+                  name: 'Сковородки',
+                  slug: 'skovorodki',
+                  active: true,
+                  description: '',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d54',
+                  name: 'Чайники',
+                  slug: 'chajniki',
+                  active: true,
+                  description: '',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                }
+              ],
+              id: '5f24e9d25aa3da35d8946d50',
+              name: 'Посуда',
+              slug: 'posuda',
+              active: true,
+              description: '',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            }
+          ],
+          id: '5f24e9d25aa3da35d8946d27',
+          name: 'Техника для кухни',
+          slug: 'tekhnika-dlya-kukhni',
+          active: true,
+          description: '<p>NULL</p>',
+          order: '0',
+          image: 'https://sdn.delever.uz/goodzone/b25aa391-778e-4528-b717-668235e1305a',
+          lang: 'ru'
+        },
+        {
+          children: [
+            {
+              children: [],
+              id: '5f24e9d25aa3da35d8946d09',
+              name: 'Электрические бритвы',
+              slug: 'elektricheskie-britvy',
+              active: true,
+              description: 'NULL',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            },
+            {
+              children: [],
+              id: '5f24e9d25aa3da35d8946d0a',
+              name: 'Триммеры',
+              slug: 'trimmery',
+              active: true,
+              description: 'NULL',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            },
+            {
+              children: [],
+              id: '5f24e9d25aa3da35d8946d0b',
+              name: 'Машинки для стрижки волос',
+              slug: 'mashinki-dlya-strizhki-volos',
+              active: true,
+              description: 'NULL',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            },
+            {
+              children: [],
+              id: '5f24e9d25aa3da35d8946d0c',
+              name: 'Фены',
+              slug: 'feny',
+              active: true,
+              description: 'NULL',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            },
+            {
+              children: [
+                {
+                  id: '5f24e9d25aa3da35d8946d30',
+                  name: 'Аксессуары',
+                  slug: 'aksessuary',
+                  active: true,
+                  description: '<p>NULL</p>',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                }
+              ],
+              id: '5f24e9d25aa3da35d8946d0d',
+              name: 'Фены-щетки',
+              slug: 'feny-shchetki',
+              active: true,
+              description: 'NULL',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            },
+            {
+              children: [],
+              id: '5f24e9d25aa3da35d8946d13',
+              name: 'Эпиляторы',
+              slug: 'epilyatory',
+              active: true,
+              description: 'NULL',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            },
+            {
+              children: [],
+              id: '5f24e9d25aa3da35d8946d16',
+              name: 'Выпрямители',
+              slug: 'vypryamiteli',
+              active: true,
+              description: 'NULL',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            },
+            {
+              children: [],
+              id: '5f24e9d25aa3da35d8946d2d',
+              name: 'Массажеры',
+              slug: 'massazhery',
+              active: true,
+              description: 'NULL',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            },
+            {
+              children: [],
+              id: '5f24e9d25aa3da35d8946d2e',
+              name: 'Весы',
+              slug: 'vesy',
+              active: true,
+              description: 'NULL',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            },
+            {
+              children: [
+                {
+                  id: '5f24e9d25aa3da35d8946d3e',
+                  name: 'Компьютерные очки',
+                  slug: 'kompyuternye-ochki',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d40',
+                  name: 'Интерьерное освещение',
+                  slug: 'interernoe-osveshchenie',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                }
+              ],
+              id: '5f24e9d25aa3da35d8946d39',
+              name: 'Аксессуары для компьютера',
+              slug: 'aksessuary-dlya-kompyutera',
+              active: true,
+              description: 'NULL',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            }
+          ],
+          id: '5f24e9d25aa3da35d8946d2a',
+          name: 'Красота и здоровье',
+          slug: 'krasota-i-zdorove',
+          active: true,
+          description: 'NULL',
+          order: '0',
+          image: '',
+          lang: 'ru'
+        },
+        {
+          children: [
+            {
+              children: [
+                {
+                  id: '5f24e9d25aa3da35d8946d01',
+                  name: 'Пылесосы',
+                  slug: 'pylesosy',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d19',
+                  name: 'Парогенераторы',
+                  slug: 'parogeneratory',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d1a',
+                  name: 'Утюги',
+                  slug: 'utyugi',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d3d',
+                  name: 'Швейные машинки',
+                  slug: 'shveynye-mashinki',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                }
+              ],
+              id: '5f24e9d25aa3da35d8946d1d',
+              name: 'Мелкая бытовая техника',
+              slug: 'melkaya-bytovaya-tekhnika',
+              active: true,
+              description: 'NULL',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            },
+            {
+              children: [
+                {
+                  id: '5f24e9d25aa3da35d8946cfb',
+                  name: 'Стиральные машины',
+                  slug: 'stiralnye-mashiny',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                }
+              ],
+              id: '5f24e9d25aa3da35d8946d28',
+              name: 'Крупная бытовая техника',
+              slug: 'krupnaya-bytovaya-tekhnika',
+              active: true,
+              description: 'NULL',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            },
+            {
+              children: [
+                {
+                  id: '5f24e9d25aa3da35d8946d02',
+                  name: 'Кондиционеры',
+                  slug: 'konditsionery',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d03',
+                  name: 'Электрические водонагреватели',
+                  slug: 'elektricheskie-vodonagrevateli',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d18',
+                  name: 'Увлажнители воздуха',
+                  slug: 'uvlazhniteli-vozdukha',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d20',
+                  name: 'Обогреватели',
+                  slug: 'obogrevateli',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d37',
+                  name: 'Электрические камины',
+                  slug: 'elektricheskie-kaminy',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d41',
+                  name: 'Тепловые пушки',
+                  slug: 'teplovye-pushki',
+                  active: true,
+                  description: 'NULL',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                },
+                {
+                  id: '5f24e9d25aa3da35d8946d4a',
+                  name: 'Вентиляторы',
+                  slug: 'ventilyatory',
+                  active: true,
+                  description: '',
+                  order: '0',
+                  image: '',
+                  created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+                  updated_at: ''
+                }
+              ],
+              id: '5f24e9d25aa3da35d8946d29',
+              name: 'Климатическая техника',
+              slug: 'klimaticheskaya-tekhnika',
+              active: true,
+              description: 'NULL',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            },
+            {
+              children: [],
+              id: '5f24e9d25aa3da35d8946d2b',
+              name: 'Кулеры для воды',
+              slug: 'kulery-dlya-vody',
+              active: true,
+              description: '<p>NULL</p>',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            },
+            {
+              children: [],
+              id: '5f24e9d25aa3da35d8946d49',
+              name: 'Товары для авто',
+              slug: 'tovary-dlya-avto',
+              active: true,
+              description: '',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            },
+            {
+              children: [],
+              id: '5f24e9d25aa3da35d8946d4b',
+              name: 'Кресла',
+              slug: 'kresla',
+              active: true,
+              description: '',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            },
+            {
+              children: [],
+              id: '5f24e9d25aa3da35d8946d4c',
+              name: 'Фильтры',
+              slug: 'filtry',
+              active: true,
+              description: '',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            },
+            {
+              children: [],
+              id: '5f24e9d25aa3da35d8946d55',
+              name: 'Хозяйственные товары',
+              slug: 'hozyajstvennye-tovary',
+              active: true,
+              description: '',
+              order: '0',
+              image: '',
+              created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+              updated_at: ''
+            }
+          ],
+          id: '5f24e9d25aa3da35d8946d2c',
+          name: 'Техника для дома',
+          slug: 'tekhnika-dlya-doma',
+          active: true,
+          description: '<p>NULL</p>',
+          order: '0',
+          image: 'https://sdn.delever.uz/goodzone/ce0f23e7-ad03-490b-8bad-9db4659bb29c',
+          lang: 'ru'
+        },
+        {
+          children: [],
+          id: '5f24e9d25aa3da35d8946d56',
+          name: 'Гриль',
+          slug: 'gril',
+          active: true,
+          description: '',
+          order: '0',
+          image: '',
+          lang: 'ru'
+        },
+        {
+          children: [],
+          id: '5f24e9d25aa3da35d8946d57',
+          name: 'Наушники',
+          slug: 'naushniki',
+          active: true,
+          description: '',
+          order: '0',
+          image: 'https://sdn.delever.uz/goodzone/1aecc6de-0dd9-496d-8511-f65483f49d43',
+          lang: 'ru'
+        }
+      ],
+      count: '8'
+    }
+  }
+}
+{
+  message: 'Category find request',
+  level: 'debug',
+  timestamp: '2020-08-03T15:44:34.083Z',
   label: 'category',
   metadata: {
     request: {

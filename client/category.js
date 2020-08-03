@@ -31,8 +31,7 @@ function main() {
         "5ee1e1b06123sd296c4996af,5ee1e1b06123a6296c4996af",
       image: "src/img.jpg",
       lang: "ru",
-    },
-    (err, createResponse) => {
+    }, (err, createResponse) => {
       if (err) return console.log("Error: ", err.message);
 
       logger.debug("Category Create response", {
@@ -108,6 +107,15 @@ function main() {
       );
     }
   );
+
+  // client.Find({}, (err, findResponse) => {
+  //   if (err) return console.log("Error: ", err.message);
+
+  //   logger.debug("Category Find response", {
+  //     response: findResponse,
+  //     label: "test",
+  //   });
+  // });
 }
 
 main();

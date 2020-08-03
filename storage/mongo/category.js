@@ -128,8 +128,8 @@ let categoryStorage = {
       }
 
       let a = Category.aggregate([
-        { $match: query },
-        { $sort: { order: -1 } },
+				{ $match: query },
+				{ $sort: { order: -1 }},
         {
           $lookup: {
 						from: "categories",
@@ -144,9 +144,25 @@ let categoryStorage = {
 									]
 								}
 							}
+						}, {
+							$lookup: {
+								from: "categories",
+								let: {parent_id: "$_id"},
+								as: "children",
+								pipeline: [{
+									$match: {
+										$expr: {
+											$and: [
+												{ $eq: ["$lang", query.lang]},
+												{ $eq: ["$parent", "$$parent_id"]}
+											]
+										}
+									}
+								}]
+							},
 						}]
           },
-        },
+				}
       ]);
 
       if (filters.limit / 1) {
@@ -164,7 +180,11 @@ let categoryStorage = {
           children: c.children
             ? c.children.map((ch, j) => ({
                 ...ch,
-                id: ch._id,
+								id: ch._id,
+								children: ch.children ? ch.children.map((gch, k) => ({
+									...gch,
+									id: gch._id
+								})) : null
               }))
             : null,
         }));
