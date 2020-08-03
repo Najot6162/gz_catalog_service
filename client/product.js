@@ -35,20 +35,6 @@ function main() {
             description: 'Description of Meta',
             tags: 'Tag of meta'
         },
-        price: {
-            price: 2000,
-            old_price: 1800,
-        },
-        prices: [{
-            type: "1",
-            price: 2100,
-            old_price: 1900
-        },
-        {
-            type: "",
-            price: 2000,
-            old_price: 1800
-        }],
         lang: 'ru'
     }, (err, createResponse) => {
         if (err) return console.log('Error: ', err.message);
@@ -81,20 +67,6 @@ function main() {
             external_id: '16',
             image: 'some.jpg',
             gallery: 'img/some.jpg',
-            price: {
-                price: 2000,
-                old_price: 1800,
-            },
-            prices: [{
-                type: "1",
-                price: 2100,
-                old_price: 1900
-            },
-            {
-                type: "",
-                price: 2000,
-                old_price: 1800
-            }],
             meta: {
                 title: ' Updated Product Meta',
                 description: 'Updatet Description of Meta',

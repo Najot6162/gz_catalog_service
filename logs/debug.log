@@ -1,0 +1,528 @@
+{
+  message: 'Main function is running',
+  level: 'info',
+  timestamp: '2020-08-03T07:30:26.603Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connecting to db: mongodb://rj:mysecret@dev.goodzone.uz:27017/catalog_service',
+  level: 'info',
+  timestamp: '2020-08-03T07:30:26.607Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'grpc server is running at 7000',
+  level: 'info',
+  timestamp: '2020-08-03T07:30:26.672Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connected to the databasee',
+  level: 'info',
+  timestamp: '2020-08-03T07:30:29.692Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Main function is running',
+  level: 'info',
+  timestamp: '2020-08-03T07:30:57.712Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connecting to db: mongodb://localhost:27017/catalog_service',
+  level: 'info',
+  timestamp: '2020-08-03T07:30:57.716Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'grpc server is running at 7000',
+  level: 'info',
+  timestamp: '2020-08-03T07:30:57.758Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connected to the databasee',
+  level: 'info',
+  timestamp: '2020-08-03T07:30:57.772Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Main function is running',
+  level: 'info',
+  timestamp: '2020-08-03T07:32:53.752Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connecting to db: mongodb://localhost:27017/catalog_service',
+  level: 'info',
+  timestamp: '2020-08-03T07:32:53.755Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'grpc server is running at 7000',
+  level: 'info',
+  timestamp: '2020-08-03T07:32:53.807Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connected to the databasee',
+  level: 'info',
+  timestamp: '2020-08-03T07:32:53.832Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Main function is running',
+  level: 'info',
+  timestamp: '2020-08-03T07:33:33.972Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connecting to db: mongodb://localhost:27017/catalog_service',
+  level: 'info',
+  timestamp: '2020-08-03T07:33:33.975Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'grpc server is running at 7000',
+  level: 'info',
+  timestamp: '2020-08-03T07:33:34.019Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connected to the databasee',
+  level: 'info',
+  timestamp: '2020-08-03T07:33:34.050Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Product create request',
+  level: 'debug',
+  timestamp: '2020-08-03T07:33:40.157Z',
+  label: 'product',
+  metadata: {
+    request: {
+      name: 'my product',
+      category_id: '5ee1e1b06123a6296c4996af',
+      brand_id: '5f2667419be6c18d2c1545cb',
+      additional_categories: '5ee1e1b06123a6296c4996bd,5ee1e1b06123a6296c4556bd,5ee1e1b06123a6296c4236bd',
+      related_products: '5ee36f67f8601328a86456df,5ee0d1b06123a6296c4996bd,5ee1sdb06123a6296c4996bd',
+      preview_text: 'preview text of my product',
+      description: 'description of my product',
+      gallery: 'img/somephoto.jpg',
+      external_id: '15',
+      meta: {
+        title: 'Product Meta',
+        description: 'Description of Meta',
+        tags: 'Tag of meta'
+      },
+      active: false,
+      order: '0',
+      image: 'some.jpg',
+      lang: 'ru'
+    }
+  }
+}
+{
+  message: 'product created',
+  level: 'info',
+  timestamp: '2020-08-03T07:33:40.194Z',
+  label: 'catalog-service',
+  metadata: { durationMs: 36 }
+}
+{
+  message: 'product is created with lang en',
+  level: 'debug',
+  timestamp: '2020-08-03T07:33:40.205Z',
+  label: 'catalog-service',
+  metadata: {
+    result: {
+      price: {},
+      meta: {
+        title: 'Product Meta',
+        description: 'Description of Meta',
+        tags: 'Tag of meta'
+      },
+      additional_categories: [
+        5ee1e1b06123a6296c4996bd,
+        5ee1e1b06123a6296c4556bd,
+        5ee1e1b06123a6296c4236bd
+      ],
+      related_products: [ 5ee36f67f8601328a86456df, 5ee0d1b06123a6296c4996bd ],
+      preview_text: 'preview text of my product',
+      description: 'description of my product',
+      gallery: [ 'img/somephoto.jpg' ],
+      active: false,
+      external_id: 15,
+      lang: 'en',
+      _id: 5f27bdd41950eba5a62a7e51,
+      name: 'my product',
+      image: 'some.jpg',
+      category: 5ee1e1b06123a6296c4996af,
+      brand: 5f2667419be6c18d2c1545cb,
+      created_at: 2020-08-03T07:33:40.158Z,
+      updated_at: 2020-08-03T07:33:40.158Z,
+      slug: 'my-product',
+      prices: [],
+      properties: [],
+      __v: 0
+    }
+  }
+}
+{
+  message: 'product is created with lang uz',
+  level: 'debug',
+  timestamp: '2020-08-03T07:33:40.215Z',
+  label: 'catalog-service',
+  metadata: {
+    result: {
+      price: {},
+      meta: {
+        title: 'Product Meta',
+        description: 'Description of Meta',
+        tags: 'Tag of meta'
+      },
+      additional_categories: [
+        5ee1e1b06123a6296c4996bd,
+        5ee1e1b06123a6296c4556bd,
+        5ee1e1b06123a6296c4236bd
+      ],
+      related_products: [ 5ee36f67f8601328a86456df, 5ee0d1b06123a6296c4996bd ],
+      preview_text: 'preview text of my product',
+      description: 'description of my product',
+      gallery: [ 'img/somephoto.jpg' ],
+      active: false,
+      external_id: 15,
+      lang: 'uz',
+      _id: 5f27bdd41950eba5a62a7e52,
+      name: 'my product',
+      image: 'some.jpg',
+      category: 5ee1e1b06123a6296c4996af,
+      brand: 5f2667419be6c18d2c1545cb,
+      created_at: 2020-08-03T07:33:40.158Z,
+      updated_at: 2020-08-03T07:33:40.158Z,
+      slug: 'my-product',
+      prices: [],
+      properties: [],
+      __v: 0
+    }
+  }
+}
+{
+  message: 'Product Create response',
+  level: 'debug',
+  timestamp: '2020-08-03T07:33:40.213Z',
+  label: 'test',
+  metadata: {
+    response: {
+      product: {
+        additional_categories: [],
+        related_products: [],
+        gallery: [ 'img/somephoto.jpg' ],
+        properties: [],
+        prices: [],
+        id: '5f27bdd41950eba5a62a7e50',
+        name: 'my product',
+        slug: 'my-product',
+        category: null,
+        brand: {
+          id: '5f2667419be6c18d2c1545cb',
+          name: 'my updated Brand',
+          slug: 'my-updated-brand',
+          image: 'img.jpg',
+          preview_text: 'preview text of my updated brand',
+          description: 'description of my updated brand',
+          active: true,
+          order: '0',
+          created_at: 'Sun Aug 02 2020 12:12:01 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Sun Aug 02 2020 12:12:01 GMT+0500 (Uzbekistan Standard Time)'
+        },
+        preview_text: 'preview text of my product',
+        description: 'description of my product',
+        active: false,
+        external_id: '15',
+        meta: {
+          title: 'Product Meta',
+          description: 'Description of Meta',
+          tags: 'Tag of meta'
+        },
+        price: { price: '0', old_price: '0' },
+        created_at: 'Mon Aug 03 2020 12:33:40 GMT+0500 (Uzbekistan Standard Time)',
+        updated_at: 'Mon Aug 03 2020 12:33:40 GMT+0500 (Uzbekistan Standard Time)',
+        image: 'some.jpg',
+        lang: 'ru'
+      }
+    }
+  }
+}
+{
+  message: 'Product find request',
+  level: 'debug',
+  timestamp: '2020-08-03T07:33:40.222Z',
+  label: 'product',
+  metadata: {
+    request: {
+      page: '0',
+      search: '',
+      active: false,
+      inactive: false,
+      category: '',
+      brand: '',
+      limit: '0',
+      sort: '',
+      price_from: '0',
+      price_till: '0',
+      lang: ''
+    }
+  }
+}
+{
+  message: 'filtering products',
+  level: 'debug',
+  timestamp: '2020-08-03T07:33:40.223Z',
+  label: 'catalog-service',
+  metadata: {
+    query: { lang: 'ru' },
+    options: { skip: -0, limit: 50, sort: { created_at: -1 } }
+  }
+}
+{
+  message: 'Product update request',
+  level: 'debug',
+  timestamp: '2020-08-03T07:33:40.228Z',
+  label: 'product',
+  metadata: {
+    request: {
+      id: 'my-product',
+      name: 'my updated Product',
+      category_id: '5ee1e1b06123a6296c4996af',
+      brand_id: '5f2667419be6c18d2c1545cb',
+      additional_categories: '5ee1e1b06123a6296c4996bd,5ee1e1b06123a6296c4556bd,5ee1e1b06123a6296c4236bd',
+      related_products: '5ee36f67f8601328a86456df,5ee0d1b06123a6296c4996bd,5ee1sdb06123a6296c4996bd',
+      preview_text: 'preview text of my updated product',
+      description: 'description of my updated product',
+      gallery: 'img/some.jpg',
+      external_id: '16',
+      meta: {
+        title: ' Updated Product Meta',
+        description: 'Updatet Description of Meta',
+        tags: 'Updated Tag of meta'
+      },
+      active: false,
+      order: '0',
+      image: 'some.jpg',
+      lang: 'ru'
+    }
+  }
+}
+{
+  message: 'Product Find response',
+  level: 'debug',
+  timestamp: '2020-08-03T07:33:40.249Z',
+  label: 'test',
+  metadata: {
+    response: {
+      products: [
+        {
+          prices: [],
+          id: '5f27bdd41950eba5a62a7e50',
+          name: 'my product',
+          slug: 'my-product',
+          category: null,
+          brand: {
+            id: '5f2667419be6c18d2c1545cb',
+            name: 'my updated Brand',
+            slug: 'my-updated-brand',
+            image: 'img.jpg',
+            preview_text: 'preview text of my updated brand',
+            description: 'description of my updated brand',
+            active: true,
+            order: '0',
+            created_at: 'Sun Aug 02 2020 12:12:01 GMT+0500 (Uzbekistan Standard Time)',
+            updated_at: 'Sun Aug 02 2020 12:12:01 GMT+0500 (Uzbekistan Standard Time)'
+          },
+          preview_text: 'preview text of my product',
+          active: false,
+          price: { price: '0', old_price: '0' },
+          created_at: 'Mon Aug 03 2020 12:33:40 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Mon Aug 03 2020 12:33:40 GMT+0500 (Uzbekistan Standard Time)',
+          image: 'https://sdn.delever.uz/goodzone/some.jpg',
+          lang: 'ru'
+        }
+      ],
+      count: '1'
+    }
+  }
+}
+{
+  message: 'Product Update response',
+  level: 'debug',
+  timestamp: '2020-08-03T07:33:40.257Z',
+  label: 'test',
+  metadata: {
+    response: {
+      product: {
+        additional_categories: [],
+        related_products: [],
+        gallery: [ 'img/some.jpg' ],
+        properties: [],
+        prices: [],
+        id: '5f27bdd41950eba5a62a7e50',
+        name: 'my updated Product',
+        slug: 'my-product',
+        category: null,
+        brand: {
+          id: '5f2667419be6c18d2c1545cb',
+          name: 'my updated Brand',
+          slug: 'my-updated-brand',
+          image: 'img.jpg',
+          preview_text: 'preview text of my updated brand',
+          description: 'description of my updated brand',
+          active: true,
+          order: '0',
+          created_at: 'Sun Aug 02 2020 12:12:01 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Sun Aug 02 2020 12:12:01 GMT+0500 (Uzbekistan Standard Time)'
+        },
+        preview_text: 'preview text of my updated product',
+        description: 'description of my updated product',
+        active: false,
+        external_id: '16',
+        meta: {
+          title: ' Updated Product Meta',
+          description: 'Updatet Description of Meta',
+          tags: 'Updated Tag of meta'
+        },
+        price: { price: '0', old_price: '0' },
+        created_at: 'Mon Aug 03 2020 12:33:40 GMT+0500 (Uzbekistan Standard Time)',
+        updated_at: 'Mon Aug 03 2020 12:33:40 GMT+0500 (Uzbekistan Standard Time)',
+        image: 'some.jpg',
+        lang: 'ru'
+      }
+    }
+  }
+}
+{
+  message: 'Product price update request',
+  level: 'debug',
+  timestamp: '2020-08-03T07:33:40.260Z',
+  label: 'product',
+  metadata: {
+    request: { product_id: '', price_type_id: '0', price: '0', old_price: '0' }
+  }
+}
+{
+  message: 'Product key is not provided',
+  level: 'error',
+  timestamp: '2020-08-03T07:33:40.261Z',
+  label: 'catalog-service',
+  metadata: {
+    function: 'update product price',
+    request: { product_id: '', price_type_id: '0', price: '0', old_price: '0' }
+  }
+}
+{
+  message: 'Product get request',
+  level: 'debug',
+  timestamp: '2020-08-03T07:33:40.263Z',
+  label: 'product',
+  metadata: { request: { id: '', slug: 'my-product', lang: 'ru' } }
+}
+{
+  message: 'finding a product',
+  level: 'debug',
+  timestamp: '2020-08-03T07:33:40.263Z',
+  label: 'catalog-service',
+  metadata: {
+    query: { lang: 'ru', '$or': [ { slug: 'my-product' } ] }
+  }
+}
+{
+  message: 'Product Get response',
+  level: 'debug',
+  timestamp: '2020-08-03T07:33:40.287Z',
+  label: 'test',
+  metadata: {
+    response: {
+      product: {
+        additional_categories: [],
+        related_products: [],
+        gallery: [ 'https://sdn.delever.uz/goodzone/img/some.jpg' ],
+        properties: [],
+        prices: [],
+        id: '5f27bdd41950eba5a62a7e50',
+        name: 'my updated Product',
+        slug: 'my-product',
+        category: null,
+        brand: {
+          id: '5f2667419be6c18d2c1545cb',
+          name: 'my updated Brand',
+          slug: 'my-updated-brand',
+          image: 'https://sdn.delever.uz/goodzone/img.jpg',
+          preview_text: 'preview text of my updated brand',
+          description: 'description of my updated brand',
+          active: true,
+          order: '0',
+          created_at: 'Sun Aug 02 2020 12:12:01 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Sun Aug 02 2020 12:12:01 GMT+0500 (Uzbekistan Standard Time)'
+        },
+        preview_text: 'preview text of my updated product',
+        description: 'description of my updated product',
+        active: false,
+        external_id: '16',
+        meta: {
+          title: ' Updated Product Meta',
+          description: 'Updatet Description of Meta',
+          tags: 'Updated Tag of meta'
+        },
+        price: { price: '0', old_price: '0' },
+        created_at: 'Mon Aug 03 2020 12:33:40 GMT+0500 (Uzbekistan Standard Time)',
+        updated_at: 'Mon Aug 03 2020 12:33:40 GMT+0500 (Uzbekistan Standard Time)',
+        image: 'https://sdn.delever.uz/goodzone/some.jpg',
+        lang: 'ru'
+      }
+    }
+  }
+}
+{
+  message: 'Shops get request',
+  level: 'debug',
+  timestamp: '2020-08-03T07:33:40.289Z',
+  label: 'shop',
+  metadata: { request: { product_id: '5f27bdd41950eba5a62a7e50' } }
+}
+{
+  message: 'Shop Get response',
+  level: 'debug',
+  timestamp: '2020-08-03T07:33:40.298Z',
+  label: 'test',
+  metadata: { response: { shops: [] } }
+}
+{
+  message: 'Product delete request',
+  level: 'debug',
+  timestamp: '2020-08-03T07:33:40.303Z',
+  label: 'product',
+  metadata: { request: { id: '', slug: 'my-product' } }
+}
+{
+  message: 'Product Delete response',
+  level: 'debug',
+  timestamp: '2020-08-03T07:33:40.308Z',
+  label: 'test',
+  metadata: { response: {} }
+}
