@@ -2306,3 +2306,1448 @@
     }
   }
 }
+{
+  message: 'Main function is running',
+  level: 'info',
+  timestamp: '2020-08-04T05:58:36.950Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connecting to db: mongodb://rj:mysecret@dev.goodzone.uz:27017/catalog_service',
+  level: 'info',
+  timestamp: '2020-08-04T05:58:36.953Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'grpc server is running at 7000',
+  level: 'info',
+  timestamp: '2020-08-04T05:58:36.999Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connected to the databasee',
+  level: 'info',
+  timestamp: '2020-08-04T05:58:38.738Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Main function is running',
+  level: 'info',
+  timestamp: '2020-08-04T06:03:11.969Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connecting to db: mongodb://rj:mysecret@dev.goodzone.uz:27017/catalog_service',
+  level: 'info',
+  timestamp: '2020-08-04T06:03:11.972Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'grpc server is running at 7000',
+  level: 'info',
+  timestamp: '2020-08-04T06:03:12.021Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connected to the databasee',
+  level: 'info',
+  timestamp: '2020-08-04T06:03:13.990Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Main function is running',
+  level: 'info',
+  timestamp: '2020-08-04T06:08:04.416Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connecting to db: mongodb://rj:mysecret@dev.goodzone.uz:27017/catalog_service',
+  level: 'info',
+  timestamp: '2020-08-04T06:08:04.419Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'grpc server is running at 7000',
+  level: 'info',
+  timestamp: '2020-08-04T06:08:04.460Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connected to the databasee',
+  level: 'info',
+  timestamp: '2020-08-04T06:08:06.658Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Main function is running',
+  level: 'info',
+  timestamp: '2020-08-04T06:28:47.783Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connecting to db: mongodb://rj:mysecret@dev.goodzone.uz:27017/catalog_service',
+  level: 'info',
+  timestamp: '2020-08-04T06:28:47.788Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'grpc server is running at 7000',
+  level: 'info',
+  timestamp: '2020-08-04T06:28:47.856Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connected to the databasee',
+  level: 'info',
+  timestamp: '2020-08-04T06:28:49.853Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Main function is running',
+  level: 'info',
+  timestamp: '2020-08-04T06:48:35.566Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connecting to db: mongodb://rj:mysecret@dev.goodzone.uz:27017/catalog_service',
+  level: 'info',
+  timestamp: '2020-08-04T06:48:35.569Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'grpc server is running at 7000',
+  level: 'info',
+  timestamp: '2020-08-04T06:48:35.618Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connected to the databasee',
+  level: 'info',
+  timestamp: '2020-08-04T06:48:37.457Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Main function is running',
+  level: 'info',
+  timestamp: '2020-08-04T10:31:36.857Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connecting to db: mongodb://localhost:27017/catalog_service',
+  level: 'info',
+  timestamp: '2020-08-04T10:31:36.861Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'grpc server is running at 7000',
+  level: 'info',
+  timestamp: '2020-08-04T10:31:36.916Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connected to the databasee',
+  level: 'info',
+  timestamp: '2020-08-04T10:31:36.938Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Product create request',
+  level: 'debug',
+  timestamp: '2020-08-04T10:31:41.545Z',
+  label: 'product',
+  metadata: {
+    request: {
+      name: 'my product',
+      category_id: '5ee1e1b06123a6296c4996af',
+      brand_id: '5f2667419be6c18d2c1545cb',
+      additional_categories: '5ee1e1b06123a6296c4996bd,5ee1e1b06123a6296c4556bd,5ee1e1b06123a6296c4236bd',
+      related_products: '5ee36f67f8601328a86456df,5ee0d1b06123a6296c4996bd,5ee1sdb06123a6296c4996bd',
+      preview_text: 'preview text of my product',
+      description: 'description of my product',
+      gallery: 'img/somephoto.jpg',
+      external_id: '15',
+      meta: {
+        title: 'Product Meta',
+        description: 'Description of Meta',
+        tags: 'Tag of meta'
+      },
+      active: false,
+      order: '0',
+      image: 'some.jpg',
+      lang: 'ru',
+      recommended: false
+    }
+  }
+}
+{
+  message: 'product is created with lang en',
+  level: 'debug',
+  timestamp: '2020-08-04T10:31:41.576Z',
+  label: 'catalog-service',
+  metadata: {
+    result: {
+      price: {},
+      meta: {
+        title: 'Product Meta',
+        description: 'Description of Meta',
+        tags: 'Tag of meta'
+      },
+      additional_categories: [
+        5ee1e1b06123a6296c4996bd,
+        5ee1e1b06123a6296c4556bd,
+        5ee1e1b06123a6296c4236bd
+      ],
+      related_products: [ 5ee36f67f8601328a86456df, 5ee0d1b06123a6296c4996bd ],
+      preview_text: 'preview text of my product',
+      description: 'description of my product',
+      gallery: [ 'img/somephoto.jpg' ],
+      active: false,
+      external_id: 15,
+      recommended: false,
+      lang: 'en',
+      _id: 5f29390dbc0617cd168b5b91,
+      name: 'my product',
+      image: 'some.jpg',
+      category: 5ee1e1b06123a6296c4996af,
+      brand: 5f2667419be6c18d2c1545cb,
+      created_at: 2020-08-04T10:31:41.546Z,
+      updated_at: 2020-08-04T10:31:41.546Z,
+      slug: 'my-product',
+      prices: [],
+      properties: [],
+      __v: 0
+    }
+  }
+}
+{
+  message: 'product created',
+  level: 'info',
+  timestamp: '2020-08-04T10:31:41.582Z',
+  label: 'catalog-service',
+  metadata: { durationMs: 37 }
+}
+{
+  message: 'product is created with lang uz',
+  level: 'debug',
+  timestamp: '2020-08-04T10:31:41.589Z',
+  label: 'catalog-service',
+  metadata: {
+    result: {
+      price: {},
+      meta: {
+        title: 'Product Meta',
+        description: 'Description of Meta',
+        tags: 'Tag of meta'
+      },
+      additional_categories: [
+        5ee1e1b06123a6296c4996bd,
+        5ee1e1b06123a6296c4556bd,
+        5ee1e1b06123a6296c4236bd
+      ],
+      related_products: [ 5ee36f67f8601328a86456df, 5ee0d1b06123a6296c4996bd ],
+      preview_text: 'preview text of my product',
+      description: 'description of my product',
+      gallery: [ 'img/somephoto.jpg' ],
+      active: false,
+      external_id: 15,
+      recommended: false,
+      lang: 'uz',
+      _id: 5f29390dbc0617cd168b5b92,
+      name: 'my product',
+      image: 'some.jpg',
+      category: 5ee1e1b06123a6296c4996af,
+      brand: 5f2667419be6c18d2c1545cb,
+      created_at: 2020-08-04T10:31:41.546Z,
+      updated_at: 2020-08-04T10:31:41.546Z,
+      slug: 'my-product',
+      prices: [],
+      properties: [],
+      __v: 0
+    }
+  }
+}
+{
+  message: 'Product Create response',
+  level: 'debug',
+  timestamp: '2020-08-04T10:31:41.594Z',
+  label: 'test',
+  metadata: {
+    response: {
+      product: {
+        additional_categories: [],
+        related_products: [],
+        gallery: [ 'img/somephoto.jpg' ],
+        properties: [],
+        prices: [],
+        id: '5f29390dbc0617cd168b5b90',
+        name: 'my product',
+        slug: 'my-product',
+        category: null,
+        brand: {
+          id: '5f2667419be6c18d2c1545cb',
+          name: 'my updated Brand',
+          slug: 'my-updated-brand',
+          image: 'img.jpg',
+          preview_text: 'preview text of my updated brand',
+          description: 'description of my updated brand',
+          active: true,
+          order: '0',
+          created_at: 'Sun Aug 02 2020 12:12:01 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Sun Aug 02 2020 12:12:01 GMT+0500 (Uzbekistan Standard Time)'
+        },
+        preview_text: 'preview text of my product',
+        description: 'description of my product',
+        active: false,
+        external_id: '15',
+        meta: {
+          title: 'Product Meta',
+          description: 'Description of Meta',
+          tags: 'Tag of meta'
+        },
+        price: { price: '0', old_price: '0' },
+        created_at: 'Tue Aug 04 2020 15:31:41 GMT+0500 (Uzbekistan Standard Time)',
+        updated_at: 'Tue Aug 04 2020 15:31:41 GMT+0500 (Uzbekistan Standard Time)',
+        image: 'some.jpg',
+        lang: 'ru',
+        recommended: false
+      }
+    }
+  }
+}
+{
+  message: 'Product find request',
+  level: 'debug',
+  timestamp: '2020-08-04T10:31:41.603Z',
+  label: 'product',
+  metadata: {
+    request: {
+      page: '0',
+      search: '',
+      active: false,
+      inactive: false,
+      category: '',
+      brand: '',
+      limit: '0',
+      sort: '',
+      price_from: '0',
+      price_till: '0',
+      lang: '',
+      recommended: true
+    }
+  }
+}
+{
+  message: 'filtering products',
+  level: 'debug',
+  timestamp: '2020-08-04T10:31:41.603Z',
+  label: 'catalog-service',
+  metadata: {
+    query: { lang: 'ru', recommended: true },
+    options: { skip: -0, limit: 10, sort: { created_at: -1 } }
+  }
+}
+{
+  message: 'Product update request',
+  level: 'debug',
+  timestamp: '2020-08-04T10:31:41.609Z',
+  label: 'product',
+  metadata: {
+    request: {
+      id: 'my-product',
+      name: 'my updated Product',
+      category_id: '5ee1e1b06123a6296c4996af',
+      brand_id: '5f2667419be6c18d2c1545cb',
+      additional_categories: '5ee1e1b06123a6296c4996bd,5ee1e1b06123a6296c4556bd,5ee1e1b06123a6296c4236bd',
+      related_products: '5ee36f67f8601328a86456df,5ee0d1b06123a6296c4996bd,5ee1sdb06123a6296c4996bd',
+      preview_text: 'preview text of my updated product',
+      description: 'description of my updated product',
+      gallery: 'img/some.jpg',
+      external_id: '16',
+      meta: {
+        title: ' Updated Product Meta',
+        description: 'Updatet Description of Meta',
+        tags: 'Updated Tag of meta'
+      },
+      active: false,
+      order: '0',
+      image: 'some.jpg',
+      lang: 'ru',
+      recommended: false
+    }
+  }
+}
+{
+  message: 'Product Find response',
+  level: 'debug',
+  timestamp: '2020-08-04T10:31:41.617Z',
+  label: 'test',
+  metadata: { response: { products: [], count: '0' } }
+}
+{
+  message: 'Product Update response',
+  level: 'debug',
+  timestamp: '2020-08-04T10:31:41.628Z',
+  label: 'test',
+  metadata: {
+    response: {
+      product: {
+        additional_categories: [],
+        related_products: [],
+        gallery: [ 'img/some.jpg' ],
+        properties: [],
+        prices: [],
+        id: '5f29390dbc0617cd168b5b90',
+        name: 'my updated Product',
+        slug: 'my-product',
+        category: null,
+        brand: {
+          id: '5f2667419be6c18d2c1545cb',
+          name: 'my updated Brand',
+          slug: 'my-updated-brand',
+          image: 'img.jpg',
+          preview_text: 'preview text of my updated brand',
+          description: 'description of my updated brand',
+          active: true,
+          order: '0',
+          created_at: 'Sun Aug 02 2020 12:12:01 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Sun Aug 02 2020 12:12:01 GMT+0500 (Uzbekistan Standard Time)'
+        },
+        preview_text: 'preview text of my updated product',
+        description: 'description of my updated product',
+        active: false,
+        external_id: '16',
+        meta: {
+          title: ' Updated Product Meta',
+          description: 'Updatet Description of Meta',
+          tags: 'Updated Tag of meta'
+        },
+        price: { price: '0', old_price: '0' },
+        created_at: 'Tue Aug 04 2020 15:31:41 GMT+0500 (Uzbekistan Standard Time)',
+        updated_at: 'Tue Aug 04 2020 15:31:41 GMT+0500 (Uzbekistan Standard Time)',
+        image: 'some.jpg',
+        lang: 'ru',
+        recommended: false
+      }
+    }
+  }
+}
+{
+  message: 'Product price update request',
+  level: 'debug',
+  timestamp: '2020-08-04T10:31:41.631Z',
+  label: 'product',
+  metadata: {
+    request: {
+      product_id: 'my-product',
+      price_type_id: '',
+      price: '1',
+      old_price: '10'
+    }
+  }
+}
+{
+  message: 'Product get request',
+  level: 'debug',
+  timestamp: '2020-08-04T10:31:41.634Z',
+  label: 'product',
+  metadata: { request: { id: '', slug: 'my-product', lang: 'ru' } }
+}
+{
+  message: 'finding a product',
+  level: 'debug',
+  timestamp: '2020-08-04T10:31:41.634Z',
+  label: 'catalog-service',
+  metadata: {
+    query: { lang: 'ru', '$or': [ { slug: 'my-product' } ] }
+  }
+}
+{
+  message: 'Product price Update response',
+  level: 'debug',
+  timestamp: '2020-08-04T10:31:41.666Z',
+  label: 'test',
+  metadata: { response: {} }
+}
+{
+  message: 'Product Get response',
+  level: 'debug',
+  timestamp: '2020-08-04T10:31:41.667Z',
+  label: 'test',
+  metadata: {
+    response: {
+      product: {
+        additional_categories: [],
+        related_products: [],
+        gallery: [ 'https://sdn.delever.uz/goodzone/img/some.jpg' ],
+        properties: [],
+        prices: [],
+        id: '5f29390dbc0617cd168b5b90',
+        name: 'my updated Product',
+        slug: 'my-product',
+        category: null,
+        brand: {
+          id: '5f2667419be6c18d2c1545cb',
+          name: 'my updated Brand',
+          slug: 'my-updated-brand',
+          image: 'https://sdn.delever.uz/goodzone/img.jpg',
+          preview_text: 'preview text of my updated brand',
+          description: 'description of my updated brand',
+          active: true,
+          order: '0',
+          created_at: 'Sun Aug 02 2020 12:12:01 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Sun Aug 02 2020 12:12:01 GMT+0500 (Uzbekistan Standard Time)'
+        },
+        preview_text: 'preview text of my updated product',
+        description: 'description of my updated product',
+        active: false,
+        external_id: '16',
+        meta: {
+          title: ' Updated Product Meta',
+          description: 'Updatet Description of Meta',
+          tags: 'Updated Tag of meta'
+        },
+        price: { price: '0', old_price: '0' },
+        created_at: 'Tue Aug 04 2020 15:31:41 GMT+0500 (Uzbekistan Standard Time)',
+        updated_at: 'Tue Aug 04 2020 15:31:41 GMT+0500 (Uzbekistan Standard Time)',
+        image: 'https://sdn.delever.uz/goodzone/some.jpg',
+        lang: 'ru',
+        recommended: false
+      }
+    }
+  }
+}
+{
+  message: 'Shops get request',
+  level: 'debug',
+  timestamp: '2020-08-04T10:31:41.670Z',
+  label: 'shop',
+  metadata: {
+    request: { product_id: '5f29390dbc0617cd168b5b90', product_slug: '' }
+  }
+}
+{
+  message: 'Shop Get response',
+  level: 'debug',
+  timestamp: '2020-08-04T10:31:41.676Z',
+  label: 'test',
+  metadata: { response: { shops: [] } }
+}
+{
+  message: 'Product delete request',
+  level: 'debug',
+  timestamp: '2020-08-04T10:31:41.677Z',
+  label: 'product',
+  metadata: { request: { id: '', slug: 'my-product' } }
+}
+{
+  message: 'Product Delete response',
+  level: 'debug',
+  timestamp: '2020-08-04T10:31:41.680Z',
+  label: 'test',
+  metadata: { response: {} }
+}
+{
+  message: 'Main function is running',
+  level: 'info',
+  timestamp: '2020-08-04T10:35:17.740Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connecting to db: mongodb://localhost:27017/catalog_service',
+  level: 'info',
+  timestamp: '2020-08-04T10:35:17.743Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'grpc server is running at 7000',
+  level: 'info',
+  timestamp: '2020-08-04T10:35:17.788Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connected to the databasee',
+  level: 'info',
+  timestamp: '2020-08-04T10:35:17.802Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Main function is running',
+  level: 'info',
+  timestamp: '2020-08-04T10:35:36.103Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connecting to db: mongodb://rj:mysecret@dev.goodzone.uz:27017/catalog_service',
+  level: 'info',
+  timestamp: '2020-08-04T10:35:36.106Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'grpc server is running at 7000',
+  level: 'info',
+  timestamp: '2020-08-04T10:35:36.152Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connected to the databasee',
+  level: 'info',
+  timestamp: '2020-08-04T10:35:37.892Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Product create request',
+  level: 'debug',
+  timestamp: '2020-08-04T10:35:46.403Z',
+  label: 'product',
+  metadata: {
+    request: {
+      name: 'my product',
+      category_id: '5ee1e1b06123a6296c4996af',
+      brand_id: '5f2667419be6c18d2c1545cb',
+      additional_categories: '5ee1e1b06123a6296c4996bd,5ee1e1b06123a6296c4556bd,5ee1e1b06123a6296c4236bd',
+      related_products: '5ee36f67f8601328a86456df,5ee0d1b06123a6296c4996bd,5ee1sdb06123a6296c4996bd',
+      preview_text: 'preview text of my product',
+      description: 'description of my product',
+      gallery: 'img/somephoto.jpg',
+      external_id: '15',
+      meta: {
+        title: 'Product Meta',
+        description: 'Description of Meta',
+        tags: 'Tag of meta'
+      },
+      active: false,
+      order: '0',
+      image: 'some.jpg',
+      lang: 'ru',
+      recommended: false
+    }
+  }
+}
+{
+  message: 'product is created with lang en',
+  level: 'debug',
+  timestamp: '2020-08-04T10:35:47.279Z',
+  label: 'catalog-service',
+  metadata: {
+    result: {
+      price: {},
+      meta: {
+        title: 'Product Meta',
+        description: 'Description of Meta',
+        tags: 'Tag of meta'
+      },
+      additional_categories: [
+        5ee1e1b06123a6296c4996bd,
+        5ee1e1b06123a6296c4556bd,
+        5ee1e1b06123a6296c4236bd
+      ],
+      related_products: [ 5ee36f67f8601328a86456df, 5ee0d1b06123a6296c4996bd ],
+      preview_text: 'preview text of my product',
+      description: 'description of my product',
+      gallery: [ 'img/somephoto.jpg' ],
+      active: false,
+      external_id: 15,
+      recommended: false,
+      lang: 'en',
+      _id: 5f293a02c47883cd6b079e3d,
+      name: 'my product',
+      image: 'some.jpg',
+      category: 5ee1e1b06123a6296c4996af,
+      brand: 5f2667419be6c18d2c1545cb,
+      created_at: 2020-08-04T10:35:46.404Z,
+      updated_at: 2020-08-04T10:35:46.404Z,
+      slug: 'my-product',
+      prices: [],
+      properties: [],
+      __v: 0
+    }
+  }
+}
+{
+  message: 'product created',
+  level: 'info',
+  timestamp: '2020-08-04T10:35:47.284Z',
+  label: 'catalog-service',
+  metadata: { durationMs: 881 }
+}
+{
+  message: 'Product Create response',
+  level: 'debug',
+  timestamp: '2020-08-04T10:35:47.297Z',
+  label: 'test',
+  metadata: {
+    response: {
+      product: {
+        additional_categories: [],
+        related_products: [],
+        gallery: [ 'img/somephoto.jpg' ],
+        properties: [],
+        prices: [],
+        id: '5f293a02c47883cd6b079e3c',
+        name: 'my product',
+        slug: 'my-product',
+        category: null,
+        brand: null,
+        preview_text: 'preview text of my product',
+        description: 'description of my product',
+        active: false,
+        external_id: '15',
+        meta: {
+          title: 'Product Meta',
+          description: 'Description of Meta',
+          tags: 'Tag of meta'
+        },
+        price: { price: '0', old_price: '0' },
+        created_at: 'Tue Aug 04 2020 15:35:46 GMT+0500 (Uzbekistan Standard Time)',
+        updated_at: 'Tue Aug 04 2020 15:35:46 GMT+0500 (Uzbekistan Standard Time)',
+        image: 'some.jpg',
+        lang: 'ru',
+        recommended: false
+      }
+    }
+  }
+}
+{
+  message: 'Product find request',
+  level: 'debug',
+  timestamp: '2020-08-04T10:35:47.307Z',
+  label: 'product',
+  metadata: {
+    request: {
+      page: '0',
+      search: '',
+      active: false,
+      inactive: false,
+      category: '',
+      brand: '',
+      limit: '0',
+      sort: '',
+      price_from: '0',
+      price_till: '0',
+      lang: '',
+      recommended: true
+    }
+  }
+}
+{
+  message: 'filtering products',
+  level: 'debug',
+  timestamp: '2020-08-04T10:35:47.307Z',
+  label: 'catalog-service',
+  metadata: {
+    query: { lang: 'ru', recommended: true },
+    options: { skip: -0, limit: 10, sort: { created_at: -1 } }
+  }
+}
+{
+  message: 'Product update request',
+  level: 'debug',
+  timestamp: '2020-08-04T10:35:47.315Z',
+  label: 'product',
+  metadata: {
+    request: {
+      id: 'my-product',
+      name: 'my updated Product',
+      category_id: '5ee1e1b06123a6296c4996af',
+      brand_id: '5f2667419be6c18d2c1545cb',
+      additional_categories: '5ee1e1b06123a6296c4996bd,5ee1e1b06123a6296c4556bd,5ee1e1b06123a6296c4236bd',
+      related_products: '5ee36f67f8601328a86456df,5ee0d1b06123a6296c4996bd,5ee1sdb06123a6296c4996bd',
+      preview_text: 'preview text of my updated product',
+      description: 'description of my updated product',
+      gallery: 'img/some.jpg',
+      external_id: '16',
+      meta: {
+        title: ' Updated Product Meta',
+        description: 'Updatet Description of Meta',
+        tags: 'Updated Tag of meta'
+      },
+      active: false,
+      order: '0',
+      image: 'some.jpg',
+      lang: 'ru',
+      recommended: false
+    }
+  }
+}
+{
+  message: 'product is created with lang uz',
+  level: 'debug',
+  timestamp: '2020-08-04T10:35:47.687Z',
+  label: 'catalog-service',
+  metadata: {
+    result: {
+      price: {},
+      meta: {
+        title: 'Product Meta',
+        description: 'Description of Meta',
+        tags: 'Tag of meta'
+      },
+      additional_categories: [
+        5ee1e1b06123a6296c4996bd,
+        5ee1e1b06123a6296c4556bd,
+        5ee1e1b06123a6296c4236bd
+      ],
+      related_products: [ 5ee36f67f8601328a86456df, 5ee0d1b06123a6296c4996bd ],
+      preview_text: 'preview text of my product',
+      description: 'description of my product',
+      gallery: [ 'img/somephoto.jpg' ],
+      active: false,
+      external_id: 15,
+      recommended: false,
+      lang: 'uz',
+      _id: 5f293a03c47883cd6b079e3e,
+      name: 'my product',
+      image: 'some.jpg',
+      category: 5ee1e1b06123a6296c4996af,
+      brand: 5f2667419be6c18d2c1545cb,
+      created_at: 2020-08-04T10:35:46.404Z,
+      updated_at: 2020-08-04T10:35:46.404Z,
+      slug: 'my-product',
+      prices: [],
+      properties: [],
+      __v: 0
+    }
+  }
+}
+{
+  message: 'Product Update response',
+  level: 'debug',
+  timestamp: '2020-08-04T10:35:48.291Z',
+  label: 'test',
+  metadata: {
+    response: {
+      product: {
+        additional_categories: [],
+        related_products: [],
+        gallery: [ 'img/some.jpg' ],
+        properties: [],
+        prices: [],
+        id: '5f293a02c47883cd6b079e3c',
+        name: 'my updated Product',
+        slug: 'my-product',
+        category: null,
+        brand: null,
+        preview_text: 'preview text of my updated product',
+        description: 'description of my updated product',
+        active: false,
+        external_id: '16',
+        meta: {
+          title: ' Updated Product Meta',
+          description: 'Updatet Description of Meta',
+          tags: 'Updated Tag of meta'
+        },
+        price: { price: '0', old_price: '0' },
+        created_at: 'Tue Aug 04 2020 15:35:46 GMT+0500 (Uzbekistan Standard Time)',
+        updated_at: 'Tue Aug 04 2020 15:35:46 GMT+0500 (Uzbekistan Standard Time)',
+        image: 'some.jpg',
+        lang: 'ru',
+        recommended: false
+      }
+    }
+  }
+}
+{
+  message: 'Product price update request',
+  level: 'debug',
+  timestamp: '2020-08-04T10:35:48.299Z',
+  label: 'product',
+  metadata: {
+    request: {
+      product_id: 'my-product',
+      price_type_id: '',
+      price: '1',
+      old_price: '10'
+    }
+  }
+}
+{
+  message: 'Product get request',
+  level: 'debug',
+  timestamp: '2020-08-04T10:35:48.302Z',
+  label: 'product',
+  metadata: { request: { id: '', slug: 'my-product', lang: 'ru' } }
+}
+{
+  message: 'finding a product',
+  level: 'debug',
+  timestamp: '2020-08-04T10:35:48.302Z',
+  label: 'catalog-service',
+  metadata: {
+    query: { lang: 'ru', '$or': [ { slug: 'my-product' } ] }
+  }
+}
+{
+  message: 'Product Find response',
+  level: 'debug',
+  timestamp: '2020-08-04T10:35:48.577Z',
+  label: 'test',
+  metadata: {
+    response: {
+      products: [
+        {
+          prices: [ { type: '1', price: '0', old_price: '0' } ],
+          id: '5f256eefbc7bd40012af22e4',
+          name: 'Фен Panasonic EH-NE83-K865',
+          slug: 'fen-panasonic-eh-ne83-k865',
+          category: {
+            children: [],
+            product_property_groups: [],
+            id: '5f24e9d25aa3da35d8946d0c',
+            name: 'Фены',
+            slug: 'feny',
+            parent: {
+              product_property_groups: [],
+              id: '_$��Z��5ؔm*',
+              name: '',
+              slug: '',
+              active: false,
+              description: '',
+              order: '0',
+              image: '',
+              created_at: '',
+              updated_at: ''
+            },
+            active: true,
+            description: 'NULL',
+            order: '0',
+            image: '',
+            meta: { title: '', description: '', tags: '' },
+            created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+            updated_at: '',
+            lang: 'ru'
+          },
+          brand: {
+            id: '5f24d71fe5fba43358f294fe',
+            name: 'Panasonic',
+            slug: 'panasonic',
+            image: '',
+            preview_text: '',
+            description: '<p>NULL</p>',
+            active: true,
+            order: '32',
+            created_at: 'Sat Aug 01 2020 07:44:47 GMT+0500 (Uzbekistan Standard Time)',
+            updated_at: ''
+          },
+          preview_text: '',
+          active: true,
+          price: { price: '759700', old_price: '0' },
+          created_at: 'Sat Aug 01 2020 18:32:31 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Sat Aug 01 2020 18:32:31 GMT+0500 (Uzbekistan Standard Time)',
+          image: 'https://sdn.delever.uz/goodzone/04c9ef23-22a0-4d8b-956c-eb0618d71d86',
+          lang: 'ru',
+          recommended: true
+        },
+        {
+          prices: [ { type: '1', price: '0', old_price: '0' } ],
+          id: '5f256eefbc7bd40012af22de',
+          name: 'Фен Panasonic EH-ND63-P865',
+          slug: 'fen-panasonic-eh-nd63-p865',
+          category: {
+            children: [],
+            product_property_groups: [],
+            id: '5f24e9d25aa3da35d8946d0c',
+            name: 'Фены',
+            slug: 'feny',
+            parent: {
+              product_property_groups: [],
+              id: '_$��Z��5ؔm*',
+              name: '',
+              slug: '',
+              active: false,
+              description: '',
+              order: '0',
+              image: '',
+              created_at: '',
+              updated_at: ''
+            },
+            active: true,
+            description: 'NULL',
+            order: '0',
+            image: '',
+            meta: { title: '', description: '', tags: '' },
+            created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+            updated_at: '',
+            lang: 'ru'
+          },
+          brand: {
+            id: '5f24d71fe5fba43358f294fe',
+            name: 'Panasonic',
+            slug: 'panasonic',
+            image: '',
+            preview_text: '',
+            description: '<p>NULL</p>',
+            active: true,
+            order: '32',
+            created_at: 'Sat Aug 01 2020 07:44:47 GMT+0500 (Uzbekistan Standard Time)',
+            updated_at: ''
+          },
+          preview_text: '',
+          active: true,
+          price: { price: '342400', old_price: '0' },
+          created_at: 'Sat Aug 01 2020 18:32:31 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Sat Aug 01 2020 18:32:31 GMT+0500 (Uzbekistan Standard Time)',
+          image: 'https://sdn.delever.uz/goodzone/34b3f41a-3d39-4c68-aedb-bcf162e33bcb',
+          lang: 'ru',
+          recommended: true
+        },
+        {
+          prices: [ { type: '1', price: '0', old_price: '0' } ],
+          id: '5f256eefbc7bd40012af22d8',
+          name: 'Фен Remington D2400 U51',
+          slug: 'fen-remington-d2400-u51',
+          category: {
+            children: [],
+            product_property_groups: [],
+            id: '5f24e9d25aa3da35d8946d0c',
+            name: 'Фены',
+            slug: 'feny',
+            parent: {
+              product_property_groups: [],
+              id: '_$��Z��5ؔm*',
+              name: '',
+              slug: '',
+              active: false,
+              description: '',
+              order: '0',
+              image: '',
+              created_at: '',
+              updated_at: ''
+            },
+            active: true,
+            description: 'NULL',
+            order: '0',
+            image: '',
+            meta: { title: '', description: '', tags: '' },
+            created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+            updated_at: '',
+            lang: 'ru'
+          },
+          brand: {
+            id: '5f24d720e5fba43358f29508',
+            name: 'Remington',
+            slug: 'remington',
+            image: '',
+            preview_text: '',
+            description: '<p>NULL</p>',
+            active: true,
+            order: '42',
+            created_at: 'Sat Aug 01 2020 07:44:48 GMT+0500 (Uzbekistan Standard Time)',
+            updated_at: ''
+          },
+          preview_text: '',
+          active: true,
+          price: { price: '321000', old_price: '0' },
+          created_at: 'Sat Aug 01 2020 18:32:31 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Sat Aug 01 2020 18:32:31 GMT+0500 (Uzbekistan Standard Time)',
+          image: 'https://sdn.delever.uz/goodzone/9291fbd9-eb1c-4ec8-a0b3-006e83c66ae1',
+          lang: 'ru',
+          recommended: true
+        },
+        {
+          prices: [ { type: '1', price: '0', old_price: '0' } ],
+          id: '5f256eefbc7bd40012af22d2',
+          name: 'Смартфон VIVO Y91c black',
+          slug: 'smartfon-vivo-y91c-black',
+          category: {
+            children: [],
+            product_property_groups: [],
+            id: '5f24e9d25aa3da35d8946d24',
+            name: 'Смартфоны',
+            slug: 'smartfony',
+            parent: {
+              product_property_groups: [],
+              id: '_$��Z��5ؔl�',
+              name: '',
+              slug: '',
+              active: false,
+              description: '',
+              order: '0',
+              image: '',
+              created_at: '',
+              updated_at: ''
+            },
+            active: true,
+            description: '',
+            order: '0',
+            image: '',
+            meta: { title: '', description: '', tags: '' },
+            created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+            updated_at: '',
+            lang: 'ru'
+          },
+          brand: {
+            id: '5f24d720e5fba43358f295a1',
+            name: 'VIVO',
+            slug: 'vivo',
+            image: '',
+            preview_text: '',
+            description: '<p>VIVO -&nbsp;китайский бренд потребительской электроники. Компания<span>&nbsp;</span><strong>Vivo</strong>, основанная в 2009 году, является подразделением китайской корпорации BBK Electronics и производит<span>&nbsp;</span><strong>смартфоны</strong>, периферийные устройства, программное обеспечение и другую продукцию, связанную с мобильными телефонами.</p>',
+            active: true,
+            order: '195',
+            created_at: 'Sat Aug 01 2020 07:44:48 GMT+0500 (Uzbekistan Standard Time)',
+            updated_at: ''
+          },
+          preview_text: '',
+          active: true,
+          price: { price: '1366800', old_price: '0' },
+          created_at: 'Sat Aug 01 2020 18:32:31 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Sat Aug 01 2020 18:32:31 GMT+0500 (Uzbekistan Standard Time)',
+          image: 'https://sdn.delever.uz/goodzone/6221151b-9efa-4a67-9d60-73d2dac07382',
+          lang: 'ru',
+          recommended: true
+        },
+        {
+          prices: [ { type: '1', price: '0', old_price: '0' } ],
+          id: '5f256eefbc7bd40012af22cc',
+          name: 'Фен Remington D0100 U5I/U52',
+          slug: 'fen-remington-d0100-u5i-u52',
+          category: {
+            children: [],
+            product_property_groups: [],
+            id: '5f24e9d25aa3da35d8946d0c',
+            name: 'Фены',
+            slug: 'feny',
+            parent: {
+              product_property_groups: [],
+              id: '_$��Z��5ؔm*',
+              name: '',
+              slug: '',
+              active: false,
+              description: '',
+              order: '0',
+              image: '',
+              created_at: '',
+              updated_at: ''
+            },
+            active: true,
+            description: 'NULL',
+            order: '0',
+            image: '',
+            meta: { title: '', description: '', tags: '' },
+            created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+            updated_at: '',
+            lang: 'ru'
+          },
+          brand: {
+            id: '5f24d720e5fba43358f29508',
+            name: 'Remington',
+            slug: 'remington',
+            image: '',
+            preview_text: '',
+            description: '<p>NULL</p>',
+            active: true,
+            order: '42',
+            created_at: 'Sat Aug 01 2020 07:44:48 GMT+0500 (Uzbekistan Standard Time)',
+            updated_at: ''
+          },
+          preview_text: '',
+          active: true,
+          price: { price: '428000', old_price: '0' },
+          created_at: 'Sat Aug 01 2020 18:32:31 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Sat Aug 01 2020 18:32:31 GMT+0500 (Uzbekistan Standard Time)',
+          image: 'https://sdn.delever.uz/goodzone/c27b1277-0705-4884-ab68-7421c6cd7834',
+          lang: 'ru',
+          recommended: true
+        },
+        {
+          prices: [ { type: '1', price: '0', old_price: '0' } ],
+          id: '5f256eefbc7bd40012af22c6',
+          name: 'Фен Philips HP8233/00',
+          slug: 'fen-philips-hp8233-00',
+          category: {
+            children: [],
+            product_property_groups: [],
+            id: '5f24e9d25aa3da35d8946d0c',
+            name: 'Фены',
+            slug: 'feny',
+            parent: {
+              product_property_groups: [],
+              id: '_$��Z��5ؔm*',
+              name: '',
+              slug: '',
+              active: false,
+              description: '',
+              order: '0',
+              image: '',
+              created_at: '',
+              updated_at: ''
+            },
+            active: true,
+            description: 'NULL',
+            order: '0',
+            image: '',
+            meta: { title: '', description: '', tags: '' },
+            created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+            updated_at: '',
+            lang: 'ru'
+          },
+          brand: {
+            id: '5f24d71fe5fba43358f294ed',
+            name: 'Philips',
+            slug: 'philips',
+            image: '',
+            preview_text: '',
+            description: '<p>NULL</p>',
+            active: true,
+            order: '15',
+            created_at: 'Sat Aug 01 2020 07:44:47 GMT+0500 (Uzbekistan Standard Time)',
+            updated_at: ''
+          },
+          preview_text: '',
+          active: true,
+          price: { price: '642000', old_price: '0' },
+          created_at: 'Sat Aug 01 2020 18:32:31 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Sat Aug 01 2020 18:32:31 GMT+0500 (Uzbekistan Standard Time)',
+          image: 'https://sdn.delever.uz/goodzone/3d5a8771-569c-46bf-92e3-b858ce353c83',
+          lang: 'ru',
+          recommended: true
+        },
+        {
+          prices: [ { type: '1', price: '0', old_price: '0' } ],
+          id: '5f256eefbc7bd40012af22c0',
+          name: 'Смартфон VIVO Y19 white',
+          slug: 'smartfon-vivo-y19-white',
+          category: {
+            children: [],
+            product_property_groups: [],
+            id: '5f24e9d25aa3da35d8946d24',
+            name: 'Смартфоны',
+            slug: 'smartfony',
+            parent: {
+              product_property_groups: [],
+              id: '_$��Z��5ؔl�',
+              name: '',
+              slug: '',
+              active: false,
+              description: '',
+              order: '0',
+              image: '',
+              created_at: '',
+              updated_at: ''
+            },
+            active: true,
+            description: '',
+            order: '0',
+            image: '',
+            meta: { title: '', description: '', tags: '' },
+            created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+            updated_at: '',
+            lang: 'ru'
+          },
+          brand: {
+            id: '5f24d720e5fba43358f295a1',
+            name: 'VIVO',
+            slug: 'vivo',
+            image: '',
+            preview_text: '',
+            description: '<p>VIVO -&nbsp;китайский бренд потребительской электроники. Компания<span>&nbsp;</span><strong>Vivo</strong>, основанная в 2009 году, является подразделением китайской корпорации BBK Electronics и производит<span>&nbsp;</span><strong>смартфоны</strong>, периферийные устройства, программное обеспечение и другую продукцию, связанную с мобильными телефонами.</p>',
+            active: true,
+            order: '195',
+            created_at: 'Sat Aug 01 2020 07:44:48 GMT+0500 (Uzbekistan Standard Time)',
+            updated_at: ''
+          },
+          preview_text: '',
+          active: true,
+          price: { price: '2244000', old_price: '0' },
+          created_at: 'Sat Aug 01 2020 18:32:31 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Sat Aug 01 2020 18:32:31 GMT+0500 (Uzbekistan Standard Time)',
+          image: 'https://sdn.delever.uz/goodzone/9b3b97bf-8f47-4527-b05f-99e26c2b022a',
+          lang: 'ru',
+          recommended: true
+        },
+        {
+          prices: [ { type: '1', price: '0', old_price: '0' } ],
+          id: '5f256eefbc7bd40012af22ba',
+          name: 'Смартфон VIVO Y19 black',
+          slug: 'smartfon-vivo-y19-black',
+          category: {
+            children: [],
+            product_property_groups: [],
+            id: '5f24e9d25aa3da35d8946d24',
+            name: 'Смартфоны',
+            slug: 'smartfony',
+            parent: {
+              product_property_groups: [],
+              id: '_$��Z��5ؔl�',
+              name: '',
+              slug: '',
+              active: false,
+              description: '',
+              order: '0',
+              image: '',
+              created_at: '',
+              updated_at: ''
+            },
+            active: true,
+            description: '',
+            order: '0',
+            image: '',
+            meta: { title: '', description: '', tags: '' },
+            created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+            updated_at: '',
+            lang: 'ru'
+          },
+          brand: {
+            id: '5f24d720e5fba43358f295a1',
+            name: 'VIVO',
+            slug: 'vivo',
+            image: '',
+            preview_text: '',
+            description: '<p>VIVO -&nbsp;китайский бренд потребительской электроники. Компания<span>&nbsp;</span><strong>Vivo</strong>, основанная в 2009 году, является подразделением китайской корпорации BBK Electronics и производит<span>&nbsp;</span><strong>смартфоны</strong>, периферийные устройства, программное обеспечение и другую продукцию, связанную с мобильными телефонами.</p>',
+            active: true,
+            order: '195',
+            created_at: 'Sat Aug 01 2020 07:44:48 GMT+0500 (Uzbekistan Standard Time)',
+            updated_at: ''
+          },
+          preview_text: '',
+          active: true,
+          price: { price: '2244000', old_price: '0' },
+          created_at: 'Sat Aug 01 2020 18:32:31 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Sat Aug 01 2020 18:32:31 GMT+0500 (Uzbekistan Standard Time)',
+          image: 'https://sdn.delever.uz/goodzone/4f2402b0-51a0-427e-9dfb-0ab3f0f5e075',
+          lang: 'ru',
+          recommended: true
+        },
+        {
+          prices: [ { type: '1', price: '0', old_price: '0' } ],
+          id: '5f256eefbc7bd40012af22b4',
+          name: 'Фен Philips HPS 920/00',
+          slug: 'fen-philips-hps-920-00',
+          category: {
+            children: [],
+            product_property_groups: [],
+            id: '5f24e9d25aa3da35d8946d0c',
+            name: 'Фены',
+            slug: 'feny',
+            parent: {
+              product_property_groups: [],
+              id: '_$��Z��5ؔm*',
+              name: '',
+              slug: '',
+              active: false,
+              description: '',
+              order: '0',
+              image: '',
+              created_at: '',
+              updated_at: ''
+            },
+            active: true,
+            description: 'NULL',
+            order: '0',
+            image: '',
+            meta: { title: '', description: '', tags: '' },
+            created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+            updated_at: '',
+            lang: 'ru'
+          },
+          brand: {
+            id: '5f24d71fe5fba43358f294ed',
+            name: 'Philips',
+            slug: 'philips',
+            image: '',
+            preview_text: '',
+            description: '<p>NULL</p>',
+            active: true,
+            order: '15',
+            created_at: 'Sat Aug 01 2020 07:44:47 GMT+0500 (Uzbekistan Standard Time)',
+            updated_at: ''
+          },
+          preview_text: '',
+          active: true,
+          price: { price: '984400', old_price: '0' },
+          created_at: 'Sat Aug 01 2020 18:32:31 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Sat Aug 01 2020 18:32:31 GMT+0500 (Uzbekistan Standard Time)',
+          image: 'https://sdn.delever.uz/goodzone/fe7d75ee-47ba-4c56-8380-ee8947360622',
+          lang: 'ru',
+          recommended: true
+        },
+        {
+          prices: [ { type: '1', price: '0', old_price: '0' } ],
+          id: '5f256eefbc7bd40012af22ae',
+          name: 'Смартфон Oppo A1K 2/32 красный',
+          slug: 'smartfon-oppo-a1k-2-32-krasnyi',
+          category: {
+            children: [],
+            product_property_groups: [],
+            id: '5f24e9d25aa3da35d8946d24',
+            name: 'Смартфоны',
+            slug: 'smartfony',
+            parent: {
+              product_property_groups: [],
+              id: '_$��Z��5ؔl�',
+              name: '',
+              slug: '',
+              active: false,
+              description: '',
+              order: '0',
+              image: '',
+              created_at: '',
+              updated_at: ''
+            },
+            active: true,
+            description: '',
+            order: '0',
+            image: '',
+            meta: { title: '', description: '', tags: '' },
+            created_at: 'Sat Aug 01 2020 09:04:34 GMT+0500 (Uzbekistan Standard Time)',
+            updated_at: '',
+            lang: 'ru'
+          },
+          brand: {
+            id: '5f24d720e5fba43358f295a5',
+            name: 'Oppo',
+            slug: 'oppo',
+            image: '',
+            preview_text: '',
+            description: '',
+            active: true,
+            order: '199',
+            created_at: 'Sat Aug 01 2020 07:44:48 GMT+0500 (Uzbekistan Standard Time)',
+            updated_at: ''
+          },
+          preview_text: '',
+          active: true,
+          price: { price: '1519400', old_price: '0' },
+          created_at: 'Sat Aug 01 2020 18:32:31 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Sat Aug 01 2020 18:32:31 GMT+0500 (Uzbekistan Standard Time)',
+          image: 'https://sdn.delever.uz/goodzone/ea7a62ca-fa25-44cc-9578-cff2f214ba90',
+          lang: 'ru',
+          recommended: true
+        }
+      ],
+      count: '1293'
+    }
+  }
+}

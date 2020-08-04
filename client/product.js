@@ -45,7 +45,7 @@ function main() {
         });
 
         // find Product
-        client.Find({}, (err, findResponse) => {
+        client.Find({ recommended: true }, (err, findResponse) => {
             if (err) return console.log('Error: ', err.message);
 
             logger.debug('Product Find response', {

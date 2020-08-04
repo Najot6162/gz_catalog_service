@@ -1,4 +1,4 @@
-const fs =require("fs");
+const fs = require("fs");
 const path = require("path");
 const async = require("async");
 const mongoose = require("mongoose");
@@ -8,13 +8,14 @@ const Category = require("../models/Category");
 const Product = require("../models/Product");
 
 const logger = require("../config/logger.js");
+const { resolve } = require("path");
 
 const uploadUrl = "https://dev.goodzone.uz/v1/upload";
 
 const importBrands = () => (
     new Promise((resolve, reject) => {
         fs.readFile(path.join(__dirname, "brands.json"), 'utf8', (err, fileContent) => {
-            if(err) return reject(err);
+            if (err) return reject(err);
             brands = JSON.parse(fileContent);
             console.log("brands file loaded, " + brands.length + " entities");
 
@@ -36,9 +37,9 @@ const importBrands = () => (
             //         resolve(saveResult);
             //     });
             // }
-            
+
             Brand.create(entities, (err, result) => {
-                if(err) return reject(err);
+                if (err) return reject(err);
                 resolve(result);
             });
         });
@@ -48,7 +49,7 @@ const importBrands = () => (
 const importCategories = () => (
     new Promise((resolve, reject) => {
         fs.readFile(path.join(__dirname, "categories.json"), 'utf8', (err, fileContent) => {
-            if(err) return reject(err);
+            if (err) return reject(err);
             categories = JSON.parse(fileContent);
             console.log("categories file loaded, " + categories.length + " entities");
 
@@ -82,7 +83,7 @@ const importCategories = () => (
                 entityRu.parent = entity.parent;
 
                 let entityLangs = [
-                    entityRu, 
+                    entityRu,
                     new Category({
                         ...entity,
                         lang: 'uz'
@@ -94,14 +95,14 @@ const importCategories = () => (
                 ];
 
                 Category.insertMany(entityLangs, (err, result) => {
-                    if(err) return cb(err);
+                    if (err) return cb(err);
                     cb(null)
                 });
 
             }, (err) => {
-                if(err) return reject(err);
+                if (err) return reject(err);
                 logger.profile("categories imported");
-                logger.debug('existing categories', {entities});
+                logger.debug('existing categories', { entities });
                 return resolve();
             });
         });
@@ -111,7 +112,7 @@ const importCategories = () => (
 const importProducts = () => (
     new Promise((resolve, reject) => {
         fs.readFile(path.join(__dirname, "products.json"), 'utf8', (err, fileContent) => {
-            if(err) return reject(err);
+            if (err) return reject(err);
             products = JSON.parse(fileContent);
             console.log("products file loaded, " + products.length + " entities");
 
@@ -127,7 +128,7 @@ const importProducts = () => (
 
             async.parallel({
                 brands: (cb) => {
-                    Brand.find({active: true}, cb);
+                    Brand.find({ active: true }, cb);
                 },
                 categories: (cb) => {
                     Category.find({
@@ -136,7 +137,7 @@ const importProducts = () => (
                     }, cb);
                 }
             }, (err, result) => {
-                if(err) return reject(err);
+                if (err) return reject(err);
 
                 logger.profile("products imported");
                 async.eachSeries(products, (p, cb) => {
@@ -168,7 +169,7 @@ const importProducts = () => (
                         new Product({
                             ...entity,
                             lang: 'ru'
-                        }), 
+                        }),
                         new Product({
                             ...entity,
                             lang: 'uz'
@@ -182,18 +183,18 @@ const importProducts = () => (
                     //entityLangs[0].save(cb)
 
                     Product.create(entityLangs, (err, result) => {
-                        if(err) return cb(err);
+                        if (err) return cb(err);
                         cb(null)
                     });
 
                 }, (err) => {
-                    if(err) return reject(err);
+                    if (err) return reject(err);
                     logger.profile("products imported");
                     return resolve();
                 });
             })
 
-            
+
         });
     })
 )
@@ -201,16 +202,16 @@ const importProducts = () => (
 const importProductImages = () => (
     new Promise((resolve, reject) => {
         fs.readFile(path.join(__dirname, "active_product_files.json"), 'utf8', (err, fileContent) => {
-            if(err) return reject(err);
+            if (err) return reject(err);
             files = JSON.parse(fileContent);
             console.log("files file loaded, " + files.length + " entities");
 
             Product.find({
                 active: true,
                 lang: 'ru',
-                external_id: {$gt: 26}
+                external_id: { $gt: 26 }
             }, (err, products) => {
-                if(err) return reject(err);
+                if (err) return reject(err);
 
                 // products = products.filter((p, i) => {
                 //     return p.external_id == 124;
@@ -220,7 +221,7 @@ const importProductImages = () => (
                 logger.profile("files processed");
                 async.eachSeries(products, (p, cb) => {
                     let images = files.filter((f, i) => {
-                        return f.attachment_id/1 == p.external_id;
+                        return f.attachment_id / 1 == p.external_id;
                     });
                     console.log(images.length + " images for product " + p.external_id);
 
@@ -230,8 +231,8 @@ const importProductImages = () => (
 
                     async.eachSeries(images, (f, callb) => {
                         uploadImage(f).then((filename) => {
-                            if(f.field == "preview_image") image = filename;
-                            if(f.field == "images") gallery.push(filename);
+                            if (f.field == "preview_image") image = filename;
+                            if (f.field == "images") gallery.push(filename);
                             processed++;
                             callb();
                         }).catch((err) => {
@@ -239,9 +240,9 @@ const importProductImages = () => (
                             callb();
                         });
                     }, (err) => {
-                        if(err) return cb(err);
+                        if (err) return cb(err);
                         console.log(processed + " of " + images.length + " files processed for product " + p.external_id);
-                        if(image || gallery.length){
+                        if (image || gallery.length) {
                             Product.updateMany({
                                 slug: p.slug
                             }, {
@@ -250,17 +251,17 @@ const importProductImages = () => (
                                     gallery
                                 }
                             }, (err, updateResult) => {
-                                if(err) return cb(err);
+                                if (err) return cb(err);
                                 console.log("product " + p.external_id + " is updated");
                                 cb();
                             });
-                        }else{
+                        } else {
                             return cb();
                         }
                     });
-                    
+
                 }, (err) => {
-                    if(err) return reject(err);
+                    if (err) return reject(err);
                     logger.profile("files processed");
                     return resolve();
                 });
@@ -281,7 +282,7 @@ const uploadImage = (file) => {
             } catch (error) {
                 console.log("invalid response from upload request: " + body);
                 return resolve("");
-            } 
+            }
         });
 
         // getting local image directory
@@ -292,7 +293,7 @@ const uploadImage = (file) => {
         //console.log("file address " + fileAddress);
 
         var form = req.form();
-            form.append('file', fs.createReadStream(fileAddress), {
+        form.append('file', fs.createReadStream(fileAddress), {
             filename: file.file_name,
             contentType: file.content_type
         });
@@ -301,24 +302,39 @@ const uploadImage = (file) => {
 
 const removeDuplicateProducts = () => (
     new Promise((resolve, reject) => {
-        Product.find({}, {_id: 1}).limit(2648).sort({created_at: -1}).exec((err, ids) => {
-            if(err) return reject(err);
+        Product.find({}, { _id: 1 }).limit(2648).sort({ created_at: -1 }).exec((err, ids) => {
+            if (err) return reject(err);
             ids = ids.map((p, i) => p._id);
             Product.remove({
-                _id: {$in: ids}
+                _id: { $in: ids }
             }, (err, result) => {
-                if(err) return reject(err);
+                if (err) return reject(err);
                 resolve(result);
             });
         });
-        
+
     })
 );
+//{ $expr: { $gt: ["$price.price", "$price.old_price"] } }
+const addRecommendedField = () => {
+    return new Promise((resolve, reject) => {
+        Product.update({ $expr: { $gt: ["$price.price", "$price.old_price"] } },
+            { $set: { recommended: true } },
+            { multi: true },
+            (err, products) => {
+                if (err) return reject(err);
+                console.log(products);
+                return resolve();
+
+            })
+    })
+}
 
 module.exports = {
     importBrands,
     importCategories,
     importProducts,
     removeDuplicateProducts,
-    importProductImages
+    importProductImages,
+    addRecommendedField
 }
