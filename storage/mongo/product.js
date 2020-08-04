@@ -229,11 +229,11 @@ let productStorage = {
         async.eachSeries(
           products,
           (product, cb) => {
-            if (b.price_type_id && b.price_type_id.toString() == 1) {
+            if (b.price_type_id && b.price_type_id/1 == 1) {
               // valid price type is given, so we are updating 'prices' field
               let updated = false;
               product.prices = product.prices.map((price, i) => {
-                if (price.type.toString() == b.price_type_id.toString()) {
+                if (price.type == '1') {
                   price.price = b.price;
                   price.old_price = b.old_price;
                   updated = true;
@@ -247,7 +247,7 @@ let productStorage = {
                   old_price: b.old_price,
                 });
               }
-            } else if (!b.price_type_id) {
+            } else if (!b.price_type_id/1) {
               // price type is NOT given, so we are saving it as a default price for the product
               product.price = {
                 price: b.price,
@@ -255,7 +255,7 @@ let productStorage = {
               };
             }
             else {
-              return reject(new Error("Invalid Price Type!"));
+              return cb(new Error("Invalid Price Type!"));
             }
 
             product.save((err, updatedProduct) => {
@@ -479,8 +479,11 @@ let productStorage = {
           product.gallery = product.gallery
             ? product.gallery.map((g, j) => (g ? cnf.cloudUrl + g : ""))
             : [];
-          product.brand.image = product.brand.image ? cnf.cloudUrl + product.brand.image : "";
-          console.log(product);
+          product.brand = product.brand ? {
+						...product.brand,
+						image: product.brand.image ? cnf.cloudUrl + product.brand.image : ""
+					} : null;
+
           getRelatedProducts(product._id, 10)
             .then((related_products) => {
               product.related_products = related_products;

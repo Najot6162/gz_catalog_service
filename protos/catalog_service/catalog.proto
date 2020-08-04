@@ -5,7 +5,7 @@ option go_package="genproto/catalog_service";
 
 message Product {
     message Price {
-        string     type = 1;
+        int64     type = 1;
         int64     price = 2;
         int64     old_price = 3;
     }
@@ -47,7 +47,7 @@ message Product {
 
 message ProductSlim {
     message Price {
-        string     type = 1;
+        int64     type = 1;
         int64     price = 2;
         int64     old_price = 3;
     }
