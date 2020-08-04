@@ -9730,3 +9730,45 @@
     }
   }
 }
+{
+  message: 'Main function is running',
+  level: 'info',
+  timestamp: '2020-08-04T04:46:49.543Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connecting to db: mongodb://rj:mysecret@dev.goodzone.uz:27017/catalog_service',
+  level: 'info',
+  timestamp: '2020-08-04T04:46:49.547Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'grpc server is running at 7000',
+  level: 'info',
+  timestamp: '2020-08-04T04:46:49.622Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connected to the databasee',
+  level: 'info',
+  timestamp: '2020-08-04T04:46:51.513Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Product price update request',
+  level: 'debug',
+  timestamp: '2020-08-04T04:47:58.373Z',
+  label: 'product',
+  metadata: {
+    request: {
+      product_id: 'kholodilnik-haier-a2f737cbxg',
+      price_type_id: '',
+      price: '9897500',
+      old_price: '9897500'
+    }
+  }
+}
