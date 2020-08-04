@@ -82,48 +82,49 @@ function main() {
             });
             client.UpdatePrice({
                 product_id: updateResponse.product.slug,
-                old_price: "10",
-                price: "1",
+                old_price: "10000",
+                price: "1000",
                 price_type_id: ""
 
-            }, (err, updateResponse) => {
+            }, (err, updatePriceResponse) => {
                 if (err) return console.log('Error: ', err.message);
 
                 logger.debug('Product price Update response', {
-                    response: updateResponse,
+                    response: updatePriceResponse,
                     label: 'test'
                 })
-            });
-            // get Product
-            client.Get({
-                slug: updateResponse.product.slug,
-                lang: 'ru'
-            }, (err, getResponse) => {
-                if (err) return console.log('Error: ', err.message);
 
-                logger.debug('Product Get response', {
-                    response: getResponse,
-                    label: 'test'
-                });
-                client.GetShops({
-                    product_id: updateResponse.product.id,
+                // get Product
+                client.Get({
+                    slug: updateResponse.product.slug,
+                    lang: 'ru'
                 }, (err, getResponse) => {
                     if (err) return console.log('Error: ', err.message);
-                    logger.debug('Shop Get response', {
+
+                    logger.debug('Product Get response', {
                         response: getResponse,
                         label: 'test'
                     });
-                    // delete Product
-                    client.Delete({
-                        slug: updateResponse.product.slug
-                    }, (err, deleteResponse) => {
+                    client.GetShops({
+                        product_id: updateResponse.product.id,
+                    }, (err, getResponse) => {
                         if (err) return console.log('Error: ', err.message);
-
-                        logger.debug('Product Delete response', {
-                            response: deleteResponse,
+                        logger.debug('Shop Get response', {
+                            response: getResponse,
                             label: 'test'
                         });
-                        console.log('Product test completed!');
+                        // delete Product
+                        client.Delete({
+                            slug: updateResponse.product.slug
+                        }, (err, deleteResponse) => {
+                            if (err) return console.log('Error: ', err.message);
+
+                            logger.debug('Product Delete response', {
+                                response: deleteResponse,
+                                label: 'test'
+                            });
+                            console.log('Product test completed!');
+                        });
                     });
                 });
             });
