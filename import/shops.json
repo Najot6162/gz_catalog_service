@@ -1,0 +1,47 @@
+[
+  {
+    "id": 2,
+    "address": "<p>г. Ташкент, Юнусабадский р-н, ул. А. Тимура 129Б</p>",
+    "phone": "(+99871) 207−03−07",
+    "working_hours": "с 10-00 до 21-00 (без выходных)",
+    "reference_point": "<p>станция метро \"Шахристан\"</p>",
+    "name": "GOODZONE Шахристан",
+    "slug": "magazin-1"
+  },
+  {
+    "id": 3,
+    "address": "<p>г. Ташкент, массив Чиланзар-6, ТЦ Bunyodkor</p>",
+    "phone": "(+99871) 207-03-07",
+    "working_hours": "с 10-00 до 21-00 (без выходных)",
+    "reference_point": "<p>станция метро Мирзо-Улугбек</p>",
+    "name": "GOODZONE Бунёдкор",
+    "slug": "magazin-2"
+  },
+  {
+    "id": 4,
+    "address": "<p>г. Ташкент, Яшнободский р-н, ул. Махтумкули, ТРЦ Atrium</p>",
+    "phone": "(+99871) 207−03−07",
+    "working_hours": "с 10-00 до 21-00 (без выходных)",
+    "reference_point": "<p>Парк Ашхабад</p>",
+    "name": "GOODZONE Atrium",
+    "slug": "goodzone-atrium"
+  },
+  {
+    "id": 5,
+    "address": "<p>г. Ташкент, Яшнободский р-н, ул. Сивца</p>",
+    "phone": "(+99871) 207-03-07",
+    "working_hours": "с 10-00 до 21-00 (без выходных)",
+    "reference_point": "<p>Рынок Авиасозлар (Кадышева), магазин Havas</p>",
+    "name": "GOODZONE Кадышева",
+    "slug": "goodzone-kadysheva"
+  },
+  {
+    "id": 6,
+    "address": "<p>г. Самарканд, ул. Гагарина, 178</p>",
+    "phone": "(+99898) 1880014, (+99871) 207-03-07",
+    "working_hours": "с 09:00 до 21:00 (без выходных)",
+    "reference_point": "<p>Трастбанк</p>",
+    "name": "GOODZONE Самарканд",
+    "slug": "goodzone-samarkand"
+  }
+]

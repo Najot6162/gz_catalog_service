@@ -77,6 +77,9 @@ var ShopSchema = new mongoose.Schema(
       required: true,
       default: "ru",
     },
+    external_id: {
+      type: Number
+    }
   },
   {
     minimize: false,

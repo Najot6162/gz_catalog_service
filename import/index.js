@@ -6,6 +6,7 @@ const request = require("request")
 const Brand = require("../models/Brand");
 const Category = require("../models/Category");
 const Product = require("../models/Product");
+const Shop = require("../models/Shop");
 
 const logger = require("../config/logger.js");
 const { resolve } = require("path");
@@ -270,6 +271,58 @@ const importProductImages = () => (
     })
 )
 
+const importShops = () => (
+    new Promise((resolve, reject) => {
+        fs.readFile(path.join(__dirname, "shops.json"), 'utf8', (err, fileContent) => {
+            if (err) return reject(err);
+            shops = JSON.parse(fileContent);
+            console.log("shops file loaded, " + shops.length + " entities");
+
+            logger.profile("shops imported");
+            async.eachSeries(shops, (sh, cb) => {
+                let entity = {
+                    external_id: sh.id,
+                    name: sh.name,
+                    slug: sh.slug,
+                    address: sh.address,
+                    address2: sh.reference_point,
+                    phone: sh.phone,
+                    working_hours: sh.working_hours,
+                    order: sh.id,
+                    updated_at: Date.now()
+                }
+
+                let entityLangs = [
+                    new Product({
+                        ...entity,
+                        lang: 'ru'
+                    }),
+                    new Product({
+                        ...entity,
+                        lang: 'uz'
+                    }),
+                    new Product({
+                        ...entity,
+                        lang: 'en'
+                    })
+                ];
+
+                //entityLangs[0].save(cb)
+
+                Product.create(entityLangs, (err, result) => {
+                    if (err) return cb(err);
+                    cb(null)
+                });
+
+            }, (err) => {
+                if (err) return reject(err);
+                logger.profile("shops imported");
+                return resolve();
+            });
+        });
+    })
+)
+
 const uploadImage = (file) => {
     return new Promise((resolve, reject) => {
         var req = request.post(uploadUrl, function (err, resp, body) {
@@ -334,6 +387,7 @@ module.exports = {
     importBrands,
     importCategories,
     importProducts,
+    importShops,
     removeDuplicateProducts,
     importProductImages,
     addRecommendedField
