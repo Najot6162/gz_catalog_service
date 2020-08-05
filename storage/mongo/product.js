@@ -618,6 +618,85 @@ let productStorage = {
       );
     });
   },
+  findPopular: (filters) => {
+    return new Promise((resolve, reject) => {
+      let query = {
+        lang: filters.lang ? filters.lang : cnf.lang,
+        popular: true
+      };
+
+      // filter by search key
+      if (filters.search.trim()) {
+        query = {
+          ...query,
+          $or: [
+            {
+              name: { $regex: ".*" + filters.search + ".*" },
+            },
+            {
+              slug: { $regex: ".*" + filters.search + ".*" },
+            },
+            {
+              description: { $regex: ".*" + filters.search + ".*" },
+            },
+          ],
+        };
+      }
+
+      // let options = {
+      //   skip: ((filters.page / 1 - 1) * filters.limit) / 1,
+      //   limit: filters.limit / 1 ? filters.limit / 1 : 10,
+      //   sort: { created_at: -1 },
+      // };
+
+      // logger.debug("filtering products", {
+      //   query,
+      //   options,
+      // });
+      const a = Category.aggregate([
+        { $match: query.lang },
+        { $sort: { created_at: -1 } },
+        {
+          $lookup: {
+            from: "products",
+            let: { category: "$_id" },
+            as: "popular_products",
+            pipeline: [{
+              $match: {
+                $expr:
+                {
+                  $and: [
+                    { $eq: ["$lang", query.lang] },
+                    { $eq: ["$slug", query.slug] }
+                  ]
+                },
+              }
+            },
+            { $sort: { "$price.price": -1 } },
+            { $limit: 1 }
+            ]
+          }
+        }
+      ])
+      // if (filters.limit / 1) {
+      //   a.skip((filters.page / 1 - 1) * filters.limit / 1);
+      //   a.limit(filters.limit / 1);
+      // }
+
+      a.exec((err, products) => {
+        if (err) return reject(err);
+        products = products.map((p, i) => {
+
+        })
+        for (let i = 0; i < products.length; i++) {
+          products[i].image = products[i].image
+            ? cnf.cloudUrl + products[i].image
+            : "";
+        }
+        return resolve(products);
+      })
+    });
+  },
   delete: (req) => {
     return new Promise((resolve, reject) => {
       if (!req.slug) return reject(new Error("Key is not provided"));

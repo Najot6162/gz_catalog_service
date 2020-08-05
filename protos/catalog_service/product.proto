@@ -104,6 +104,7 @@ message FindProductsRequest {
     int64  price_till = 10;
     string lang = 11;
     bool recommended = 12;
+    bool popular = 13;
 }
 
 message FindProductsResponse {
