@@ -3389,3 +3389,127 @@
     }
   }
 }
+{
+  message: 'Main function is running',
+  level: 'info',
+  timestamp: '2020-08-05T12:05:26.120Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connecting to db: mongodb://rj:mysecret@dev.goodzone.uz:27017/catalog_service',
+  level: 'info',
+  timestamp: '2020-08-05T12:05:26.124Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'grpc server is running at 7000',
+  level: 'info',
+  timestamp: '2020-08-05T12:05:26.187Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connected to the databasee',
+  level: 'info',
+  timestamp: '2020-08-05T12:05:28.342Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Category find request',
+  level: 'debug',
+  timestamp: '2020-08-05T12:05:46.737Z',
+  label: 'category',
+  metadata: {
+    request: {
+      page: '1',
+      search: '',
+      active: false,
+      inactive: false,
+      limit: '0',
+      sort: '',
+      lang: ''
+    }
+  }
+}
+{
+  message: 'Category find request',
+  level: 'debug',
+  timestamp: '2020-08-05T12:07:16.585Z',
+  label: 'category',
+  metadata: {
+    request: {
+      page: '1',
+      search: '',
+      active: false,
+      inactive: false,
+      limit: '0',
+      sort: '',
+      lang: ''
+    }
+  }
+}
+{
+  message: 'Category find request',
+  level: 'debug',
+  timestamp: '2020-08-05T12:07:39.223Z',
+  label: 'category',
+  metadata: {
+    request: {
+      page: '1',
+      search: '',
+      active: false,
+      inactive: false,
+      limit: '0',
+      sort: '',
+      lang: ''
+    }
+  }
+}
+{
+  message: 'Main function is running',
+  level: 'info',
+  timestamp: '2020-08-05T12:08:12.693Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connecting to db: mongodb://rj:mysecret@dev.goodzone.uz:27017/catalog_service',
+  level: 'info',
+  timestamp: '2020-08-05T12:08:12.697Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'grpc server is running at 7000',
+  level: 'info',
+  timestamp: '2020-08-05T12:08:12.759Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Category find request',
+  level: 'debug',
+  timestamp: '2020-08-05T12:08:16.768Z',
+  label: 'category',
+  metadata: {
+    request: {
+      page: '1',
+      search: '',
+      active: false,
+      inactive: false,
+      limit: '0',
+      sort: '',
+      lang: ''
+    }
+  }
+}
+{
+  message: 'Connected to the databasee',
+  level: 'info',
+  timestamp: '2020-08-05T12:08:20.435Z',
+  label: 'catalog-service',
+  metadata: {}
+}

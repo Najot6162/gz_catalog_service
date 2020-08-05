@@ -42,7 +42,6 @@ message Product {
     string updated_at = 18;
     string image = 19;
     string lang = 20;
-    bool recommended = 21;
 }
 
 message ProductSlim {
@@ -68,7 +67,7 @@ message ProductSlim {
     string updated_at = 11;
     string image = 12;
     string lang = 13;
-     bool recommended = 14;
+    int64 external_id = 14;
 }
 
 message Category {

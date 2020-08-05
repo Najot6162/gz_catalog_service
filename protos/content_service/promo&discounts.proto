@@ -23,7 +23,8 @@ message PromoSlim {
     string end_time = 8;
     string created_at = 9;
     string updated_at = 10;
-    string lang = 11;
+    string formatted_date = 11;
+    string lang = 12;
 }
 message PromoResponse {
     Promo promo = 1;

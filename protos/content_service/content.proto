@@ -20,7 +20,8 @@ message News {
     Meta meta = 9;
     string created_at = 10;
     string updated_at = 11;
-    string lang = 12;
+    string formatted_date = 12;
+    string lang = 13;
 }
 
 message Promo {
@@ -42,7 +43,8 @@ message Promo {
     Meta meta = 11;
     string created_at = 12;
     string updated_at = 13;
-    string lang = 14;
+    string formatted_date = 14;
+    string lang = 15;
 }
 
 message Menu {
