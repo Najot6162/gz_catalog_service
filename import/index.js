@@ -319,7 +319,7 @@ const removeDuplicateProducts = () => (
 const addRecommendedField = () => {
     return new Promise((resolve, reject) => {
         Product.update({ $expr: { $gt: ["$price.price", "$price.old_price"] } },
-            { $set: { recommended: true } },
+            { $set: { recommended: false } },
             { multi: true },
             (err, products) => {
                 if (err) return reject(err);

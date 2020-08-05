@@ -229,7 +229,7 @@ let productStorage = {
         async.eachSeries(
           products,
           (product, cb) => {
-            if (b.price_type_id && b.price_type_id/1 == 1) {
+            if (b.price_type_id && b.price_type_id / 1 == 1) {
               // valid price type is given, so we are updating 'prices' field
               let updated = false;
               product.prices = product.prices.map((price, i) => {
@@ -247,7 +247,7 @@ let productStorage = {
                   old_price: b.old_price,
                 });
               }
-            } else if (!b.price_type_id/1) {
+            } else if (!b.price_type_id / 1) {
               // price type is NOT given, so we are saving it as a default price for the product
               product.price = {
                 price: b.price,
@@ -480,9 +480,9 @@ let productStorage = {
             ? product.gallery.map((g, j) => (g ? cnf.cloudUrl + g : ""))
             : [];
           product.brand = product.brand ? {
-						...product.brand,
-						image: product.brand.image ? cnf.cloudUrl + product.brand.image : ""
-					} : null;
+            ...product.brand,
+            image: product.brand.image ? cnf.cloudUrl + product.brand.image : ""
+          } : null;
 
           getRelatedProducts(product._id, 10)
             .then((related_products) => {
@@ -541,6 +541,81 @@ let productStorage = {
           return resolve({ shops });
         });
       })
+    });
+  },
+  findRecommended: (filters) => {
+    return new Promise((resolve, reject) => {
+      let query = {
+        lang: filters.lang ? filters.lang : cnf.lang,
+        recommended: true
+      };
+
+      // filter by search key
+      if (filters.search.trim()) {
+        query = {
+          ...query,
+          $or: [
+            {
+              name: { $regex: ".*" + filters.search + ".*" },
+            },
+            {
+              slug: { $regex: ".*" + filters.search + ".*" },
+            },
+            {
+              description: { $regex: ".*" + filters.search + ".*" },
+            },
+          ],
+        };
+      }
+
+      let options = {
+        skip: ((filters.page / 1 - 1) * filters.limit) / 1,
+        limit: filters.limit / 1 ? filters.limit / 1 : 10,
+        sort: { created_at: -1 },
+      };
+
+      logger.debug("filtering products", {
+        query,
+        options,
+      });
+
+      async.parallel(
+        [
+          (cb) => {
+            Product.find(query, {}, options)
+              .populate({
+                path: "category",
+              })
+              .populate({
+                path: "brand",
+              })
+              .exec((err, products) => {
+                if (err) return reject(err);
+                return cb(null, products || []);
+              });
+          },
+          (cb) => {
+            Product.countDocuments(query, (err, count) => {
+              if (err) return cb(err);
+              return cb(null, count);
+            });
+          },
+        ],
+        (err, results) => {
+          if (err) return reject(err);
+          let products = results[0];
+          for (let i = 0; i < products.length; i++) {
+            products[i].image = products[i].image
+              ? cnf.cloudUrl + products[i].image
+              : "";
+          }
+
+          return resolve({
+            products,
+            count: results[1],
+          });
+        }
+      );
     });
   },
   delete: (req) => {
