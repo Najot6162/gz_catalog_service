@@ -160,7 +160,7 @@ let categoryStorage = {
 									}
 								}]
 							},
-						}]
+						}] // pipeline end
           },
 				}
       ]);
@@ -173,7 +173,7 @@ let categoryStorage = {
       a.exec((err, categories) => {
         if (err) return reject(err);
 
-        // aggregation returns simple js objects (not mongoose documents), so we should add 'id' field
+        // aggregation returns simple js objects (not mongoose documents), so we should add 'id' field by hand*
         categories = categories.map((c, i) => ({
           ...c,
           id: c._id,

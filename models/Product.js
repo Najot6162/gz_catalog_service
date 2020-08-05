@@ -83,6 +83,10 @@ var ProductSchema = new mongoose.Schema({
             default: ''
         }
     },
+    recommended: {
+        type: Boolean,
+        default: false
+    },
     lang: {
         type: String,
         enum: ['uz', 'ru', 'en'],

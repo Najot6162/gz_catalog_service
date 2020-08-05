@@ -1,5 +1,6 @@
 const grpc = require("grpc");
 const productStorage = require("../storage/mongo/product");
+const getRecommendedStorage = require("../storage/mongo/getRecommended");
 const logger = require("../config/logger.js");
 
 const productService = {
@@ -94,24 +95,45 @@ const productService = {
       request: call.request,
       label: "product",
     });
-    productStorage
-      .find(call.request)
-      .then((result) => {
-        callback(null, {
-          products: result.products,
-          count: result.count,
+    if (!call.request.recommended) {
+      productStorage
+        .find(call.request)
+        .then((result) => {
+          callback(null, {
+            products: result.products,
+            count: result.count,
+          });
+        })
+        .catch((err) => {
+          logger.error(err.message, {
+            function: "find products",
+            request: call.request,
+          });
+          callback({
+            code: grpc.status.INTERNAL,
+            message: err.message,
+          });
         });
-      })
-      .catch((err) => {
-        logger.error(err.message, {
-          function: "find products",
-          request: call.request,
+    } else {
+      getRecommendedStorage
+        .find(call.request)
+        .then((result) => {
+          callback(null, {
+            products: result.products,
+            count: result.count,
+          });
+        })
+        .catch((err) => {
+          logger.error(err.message, {
+            function: "find recommended products",
+            request: call.request,
+          });
+          callback({
+            code: grpc.status.INTERNAL,
+            message: err.message,
+          });
         });
-        callback({
-          code: grpc.status.INTERNAL,
-          message: err.message,
-        });
-      });
+    }
   },
   Get: (call, callback) => {
     logger.debug("Product get request", {

@@ -90,6 +90,12 @@ function main() {
       // 	console.log("error on importing files: " + err);
       // });
 
+      // importer.addRecommendedField().then((result) => {
+      //   console.log("Product recommended field added");
+      // }).catch((err) => {
+      //   console.log("error on adding recommended field: " + err);
+      // });
+
 
     }, 5000);
 
