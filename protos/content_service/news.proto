@@ -22,7 +22,8 @@ message NewsSlim {
     bool   active = 6;
     string created_at = 7;
     string updated_at = 8;
-    string lang = 9;
+    string formatted_date = 9;
+    string lang = 10;
 }
 
 

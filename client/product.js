@@ -45,7 +45,7 @@ function main() {
         });
 
         // find Product
-        client.Find({ popular: true }, (err, findResponse) => {
+        client.Find({ recommended: false }, (err, findResponse) => {
             if (err) return console.log('Error: ', err.message);
 
             logger.debug('Product Find response', {
@@ -129,8 +129,7 @@ function main() {
                 });
             });
         });
-    }
-    )
+    })
 }
 
 
