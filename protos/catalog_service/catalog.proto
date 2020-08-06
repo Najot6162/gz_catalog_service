@@ -195,6 +195,34 @@ message Shop {
     string lang = 17;
 }
 
+message ShopSlim {
+    message StockSlim {
+        string product = 1;
+        int32 quantity = 2;
+    }
+    message Loc {
+        float long = 1;
+        float lat = 2;
+    }
+    string id = 1;
+    string name = 2;
+    string slug = 3;
+    string phone = 4;
+    string working_hours = 5;
+    string address = 6;
+    string address2 = 7;
+    string preview_text = 8;
+    string description = 9;
+    Loc loc = 10;
+    bool   active = 11;
+    string image = 12;
+    int64  order = 13;
+    repeated StockSlim products = 14;
+    string created_at = 15;
+    string updated_at = 16;
+    string lang = 17;
+}
+
 message GetRequest {
     string id = 1;
     string slug = 2;

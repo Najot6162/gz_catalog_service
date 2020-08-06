@@ -96,11 +96,11 @@ function main() {
       //   console.log("error on adding recommended field: " + err);
       // });
 
-			importer.importShops().then((result) => {
-        console.log("Shops have been imported");
-      }).catch((err) => {
-        console.log("error on importing shops: " + err);
-      });
+			// importer.importShopStocks().then((result) => {
+      //   console.log("Shops have been imported");
+      // }).catch((err) => {
+      //   console.log("error on importing shops: " + err);
+      // });
     }, 5000);
 
   });

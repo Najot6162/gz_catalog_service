@@ -79,7 +79,7 @@ message ShopsRequest {
 }
 message ShopsResponse {
    message ShopResponse{
-   Shop shop = 1;
+   ShopSlim shop = 1;
    int64 quantity = 2;
 }
    repeated ShopResponse shops = 1;

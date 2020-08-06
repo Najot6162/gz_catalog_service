@@ -280,6 +280,7 @@ const importShops = () => (
 
             logger.profile("shops imported");
             async.eachSeries(shops, (sh, cb) => {
+                logger.debug('importing shop', {shop:sh})
                 let entity = {
                     external_id: sh.id,
                     name: sh.name,
@@ -293,15 +294,15 @@ const importShops = () => (
                 }
 
                 let entityLangs = [
-                    new Product({
+                    new Shop({
                         ...entity,
                         lang: 'ru'
                     }),
-                    new Product({
+                    new Shop({
                         ...entity,
                         lang: 'uz'
                     }),
-                    new Product({
+                    new Shop({
                         ...entity,
                         lang: 'en'
                     })
@@ -309,7 +310,7 @@ const importShops = () => (
 
                 //entityLangs[0].save(cb)
 
-                Product.create(entityLangs, (err, result) => {
+                Shop.create(entityLangs, (err, result) => {
                     if (err) return cb(err);
                     cb(null)
                 });
@@ -318,6 +319,61 @@ const importShops = () => (
                 if (err) return reject(err);
                 logger.profile("shops imported");
                 return resolve();
+            });
+        });
+    })
+)
+
+const importShopStocks = () => (
+    new Promise((resolve, reject) => {
+        fs.readFile(path.join(__dirname, "shops_stock.json"), 'utf8', (err, fileContent) => {
+            if (err) return reject(err);
+            stock = JSON.parse(fileContent);
+            console.log("stock file loaded, " + stock.length + " entities");
+
+            async.parallel({
+                products: (cb) => {
+                    return Product.find({
+                        active: true,
+                        lang: 'ru',
+                        external_id: 1
+                    }, cb);
+                },
+                shops: (cb) => {
+                    return Shop.find({
+                        lang:'ru'
+                    }, cb);
+                }
+            }, (err, result) => {
+                if (err) return reject(err);
+
+                console.log('products ' + result.products.length); // 1
+
+                logger.profile("shops stock imported");
+                async.eachSeries(result.shops, (sh, cb) => {
+                    let shopStock = stock.filter((s, i) => s.shop_id == sh.external_id);
+                    shopStock = shopStock.map((s, i) => {
+                        let product = result.products.filter((p, j) => p.external_id == s.product_id);
+                        return {
+                            quantity: s.quantity,
+                            product: product.length ? product[0]._id : 0 
+                        }
+                    }).filter((s, i) => s.product);
+
+                    Shop.updateMany({
+                        external_id: sh.external_id
+                    }, {
+                        $set: {products: shopStock}
+                    }, (err, updateResult) => {
+                        if (err) return cb(err);
+                        console.log("shop " + sh.external_id + " is updated");
+                        cb();
+                    });
+                }, (err) => {
+                    if (err) return reject(err);
+                    logger.profile("shops stock imported");
+                    return resolve();
+                });
             });
         });
     })
@@ -388,6 +444,7 @@ module.exports = {
     importCategories,
     importProducts,
     importShops,
+    importShopStocks,
     removeDuplicateProducts,
     importProductImages,
     addRecommendedField

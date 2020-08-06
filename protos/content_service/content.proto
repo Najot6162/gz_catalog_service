@@ -44,7 +44,9 @@ message Promo {
     string created_at = 12;
     string updated_at = 13;
     string formatted_date = 14;
-    string lang = 15;
+    string formatted_start_date = 15;
+    string formatted_end_date = 16;
+    string lang = 17;
 }
 
 message Menu {
