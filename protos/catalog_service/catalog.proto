@@ -168,10 +168,6 @@ message Unit {
 }
 
 message Shop {
-    message Stock {
-        Product product = 1;
-        int32 quantity = 2;
-    }
     message Loc {
         float long = 1;
         float lat = 2;
@@ -189,17 +185,12 @@ message Shop {
     bool   active = 11;
     string image = 12;
     int64  order = 13;
-    repeated Stock products = 14;
-    string created_at = 15;
-    string updated_at = 16;
-    string lang = 17;
+    string created_at = 14;
+    string updated_at = 15;
+    string lang = 16;
 }
 
 message ShopSlim {
-    message StockSlim {
-        string product = 1;
-        int32 quantity = 2;
-    }
     message Loc {
         float long = 1;
         float lat = 2;
@@ -217,7 +208,6 @@ message ShopSlim {
     bool   active = 11;
     string image = 12;
     int64  order = 13;
-    repeated StockSlim products = 14;
     string created_at = 15;
     string updated_at = 16;
     string lang = 17;

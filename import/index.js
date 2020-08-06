@@ -335,8 +335,7 @@ const importShopStocks = () => (
                 products: (cb) => {
                     return Product.find({
                         active: true,
-                        lang: 'ru',
-                        external_id: 1
+                        lang: 'ru'
                     }, cb);
                 },
                 shops: (cb) => {

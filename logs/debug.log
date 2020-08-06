@@ -7382,3 +7382,114 @@
   label: 'test',
   metadata: { response: {} }
 }
+{
+  message: 'Main function is running',
+  level: 'info',
+  timestamp: '2020-08-06T04:53:34.882Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connecting to db: mongodb://rj:mysecret@dev.goodzone.uz:27017/catalog_service',
+  level: 'info',
+  timestamp: '2020-08-06T04:53:34.886Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'grpc server is running at 7000',
+  level: 'info',
+  timestamp: '2020-08-06T04:53:34.956Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connected to the databasee',
+  level: 'info',
+  timestamp: '2020-08-06T04:53:36.661Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Shops get request',
+  level: 'debug',
+  timestamp: '2020-08-06T04:53:56.812Z',
+  label: 'shop',
+  metadata: {
+    request: {
+      product_id: 'kholodilnik-hitachi-r-bg410puc6-gbk',
+      product_slug: 'kholodilnik-hitachi-r-bg410puc6-gbk'
+    }
+  }
+}
+{
+  message: 'Shops get request',
+  level: 'debug',
+  timestamp: '2020-08-06T04:55:19.929Z',
+  label: 'shop',
+  metadata: {
+    request: {
+      product_id: 'kholodilnik-hitachi-r-bg410puc6-gbk',
+      product_slug: 'kholodilnik-hitachi-r-bg410puc6-gbk'
+    }
+  }
+}
+{
+  message: 'Main function is running',
+  level: 'info',
+  timestamp: '2020-08-06T11:23:03.424Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connecting to db: mongodb://rj:mysecret@dev.goodzone.uz:27017/catalog_service',
+  level: 'info',
+  timestamp: '2020-08-06T11:23:03.429Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'grpc server is running at 7000',
+  level: 'info',
+  timestamp: '2020-08-06T11:23:03.564Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connected to the databasee',
+  level: 'info',
+  timestamp: '2020-08-06T11:23:06.113Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'shops stock imported',
+  level: 'info',
+  timestamp: '2020-08-06T11:23:43.292Z',
+  label: 'catalog-service',
+  metadata: { durationMs: 14593 }
+}
+{
+  message: 'Shops get request',
+  level: 'debug',
+  timestamp: '2020-08-06T11:33:52.771Z',
+  label: 'shop',
+  metadata: {
+    request: {
+      product_id: 'ventilyator-gree-fd-4017h5',
+      product_slug: 'ventilyator-gree-fd-4017h5'
+    }
+  }
+}
+{
+  message: 'Shops get request',
+  level: 'debug',
+  timestamp: '2020-08-06T11:34:11.485Z',
+  label: 'shop',
+  metadata: {
+    request: {
+      product_id: 'ventilyator-gree-fd-4017h5',
+      product_slug: 'ventilyator-gree-fd-4017h5'
+    }
+  }
+}
