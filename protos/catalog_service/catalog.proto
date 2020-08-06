@@ -5,7 +5,7 @@ option go_package="genproto/catalog_service";
 
 message Product {
     message Price {
-        int64     type = 1;
+        string     type = 1;
         int64     price = 2;
         int64     old_price = 3;
     }
@@ -46,7 +46,7 @@ message Product {
 
 message ProductSlim {
     message Price {
-        int64     type = 1;
+        string     type = 1;
         int64     price = 2;
         int64     old_price = 3;
     }
@@ -76,12 +76,8 @@ message Category {
         string name = 2;
         string slug = 3;
         bool active = 5;
-        string description = 6;
         int64 order = 7;
         string image = 8;
-        string created_at = 9;
-        string updated_at = 10;
-        repeated ProductPropertyGroup product_property_groups  = 12;
     }
     message CategoryMeta {
         string title = 1;
@@ -99,9 +95,8 @@ message Category {
     CategoryMeta meta = 9;
     string created_at = 10;
     string updated_at = 11;
-    repeated SlimCategory children = 12;
-    repeated ProductPropertyGroup product_property_groups  = 13;
-    string lang = 14;
+    repeated ProductPropertyGroup product_property_groups  = 12;
+    string lang = 13;
 }
 
 message Brand {
