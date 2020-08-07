@@ -618,14 +618,14 @@ let productStorage = {
   findPopular: (filters) => {
     return new Promise((resolve, reject) => {
       let query = {
-        lang: filters.lang ? filters.lang : cnf.lang,
-        popular: true
+        lang: filters.lang ? filters.lang : cnf.lang
       };
+      let productQuery = {}
 
       // filter by search key
       if (filters.search.trim()) {
-        query = {
-          ...query,
+        productQuery = {
+          ...productQuery,
           $or: [
             {
               name: { $regex: ".*" + filters.search + ".*" },
@@ -651,27 +651,50 @@ let productStorage = {
       //   options,
       // });
       const a = Category.aggregate([
-        { $match: query.lang },
-        { $sort: { created_at: -1 } },
+        { $match: query },
         {
           $lookup: {
             from: "products",
-            let: { category: "$_id" },
-            as: "popular_products",
-            pipeline: [{
-              $match: {
-                $expr:
-                {
-                  $and: [
-                    { $eq: ["$lang", query.lang] },
-                    { $eq: ["$slug", query.slug] }
-                  ]
-                },
+            let: { category_id: "$_id" },
+            as: "product",
+            pipeline: [
+              {
+                $match: {
+                  $expr: {
+                    $and: [
+                      { $eq: ["$lang", query.lang] },
+                      { $eq: ["$category", "$$category_id"]}
+                    ]
+                  },
+                  ...productQuery
+                }
+              }, { 
+                $sort: { "price.price": 1 } 
+              }, { 
+                $limit: 1 
+              }, {
+                $project: {
+                  _id: 0,
+                  id: "$_id",
+                  name: 1,
+                  slug: 1,
+                  image: 1,
+                  price: 1,
+                  prices: 1
+                }
               }
-            },
-            { $sort: { "$price.price": -1 } },
-            { $limit: 1 }
             ]
+          }
+        }, {
+          $unwind: "$product"
+        }, {
+          $limit: 10
+        }, {
+          $project: {
+            id: "$_id",
+            name: 1,
+            product: 1,
+            _id: 0
           }
         }
       ])
@@ -680,17 +703,19 @@ let productStorage = {
       //   a.limit(filters.limit / 1);
       // }
 
-      a.exec((err, products) => {
+      a.exec((err, categories) => {
         if (err) return reject(err);
-        products = products.map((p, i) => {
 
-        })
-        for (let i = 0; i < products.length; i++) {
-          products[i].image = products[i].image
-            ? cnf.cloudUrl + products[i].image
-            : "";
-        }
-        return resolve(products);
+        logger.debug("popular products query result", {categories});
+        return resolve({
+          products: categories.map((c, i) => {
+            return {
+              ...c.product,
+              image: c.product.image ? cnf.cloudUrl + c.product.image : ""
+            }
+          }),
+          count: categories.length
+        });
       })
     });
   },

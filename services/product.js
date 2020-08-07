@@ -114,26 +114,26 @@ const productService = {
           });
         });
     }
-    // else if (call.request.popular) {
-    //   productStorage
-    //     .findPopular(call.request)
-    //     .then((result) => {
-    //       callback(null, {
-    //         products: result,
-    //         count: result.length,
-    //       });
-    //     })
-    //     .catch((err) => {
-    //       logger.error(err.message, {
-    //         function: "find popular products",
-    //         request: call.request,
-    //       });
-    //       callback({
-    //         code: grpc.status.INTERNAL,
-    //         message: err.message,
-    //       });
-    //     });
-    // }
+    else if (call.request.popular) {
+      productStorage
+        .findPopular(call.request)
+        .then((result) => {
+          callback(null, {
+            products: result.products,
+            count: result.count,
+          });
+        })
+        .catch((err) => {
+          logger.error(err.message, {
+            function: "find popular products",
+            request: call.request,
+          });
+          callback({
+            code: grpc.status.INTERNAL,
+            message: err.message,
+          });
+        });
+    }
     else {
       productStorage
         .find(call.request)
