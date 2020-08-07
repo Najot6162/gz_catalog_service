@@ -7493,3 +7493,2321 @@
     }
   }
 }
+{
+  message: 'Main function is running',
+  level: 'info',
+  timestamp: '2020-08-07T01:28:24.570Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connecting to db: mongodb://rj:mysecret@dev.goodzone.uz:27017/catalog_service',
+  level: 'info',
+  timestamp: '2020-08-07T01:28:24.574Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'grpc server is running at 7000',
+  level: 'info',
+  timestamp: '2020-08-07T01:28:24.620Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Connected to the databasee',
+  level: 'info',
+  timestamp: '2020-08-07T01:28:26.477Z',
+  label: 'catalog-service',
+  metadata: {}
+}
+{
+  message: 'Shop Create Request',
+  level: 'debug',
+  timestamp: '2020-08-07T01:28:29.946Z',
+  label: 'shop',
+  metadata: {
+    request: {
+      name: 'my Shop',
+      phone: '',
+      working_hours: '',
+      address: 'Address of my shop',
+      address2: '',
+      preview_text: 'preview text of my shop',
+      description: 'description of my shop',
+      loc: { long: 72.2229995727539, lat: 43.2130012512207 },
+      active: true,
+      image: '',
+      order: '0',
+      lang: 'ru'
+    }
+  }
+}
+{
+  message: 'Shop Create response',
+  level: 'debug',
+  timestamp: '2020-08-07T01:28:30.392Z',
+  label: 'test',
+  metadata: {
+    response: {
+      shop: {
+        id: '5f2cae3d90ed93224655d2a8',
+        name: 'my Shop',
+        slug: 'my-shop',
+        phone: '',
+        working_hours: '',
+        address: 'Address of my shop',
+        address2: '',
+        preview_text: 'preview text of my shop',
+        description: 'description of my shop',
+        loc: { long: 72.2229995727539, lat: 43.2130012512207 },
+        active: true,
+        image: '',
+        order: '0',
+        created_at: 'Fri Aug 07 2020 06:28:29 GMT+0500 (Uzbekistan Standard Time)',
+        updated_at: 'Fri Aug 07 2020 06:28:29 GMT+0500 (Uzbekistan Standard Time)',
+        lang: 'ru'
+      }
+    }
+  }
+}
+{
+  message: 'Shop Find Request',
+  level: 'debug',
+  timestamp: '2020-08-07T01:28:30.405Z',
+  label: 'shop',
+  metadata: {
+    request: {
+      page: '0',
+      search: '',
+      active: false,
+      inactive: false,
+      limit: '0',
+      sort: '',
+      lang: ''
+    }
+  }
+}
+{
+  message: 'filtering shops',
+  level: 'debug',
+  timestamp: '2020-08-07T01:28:30.405Z',
+  label: 'catalog-service',
+  metadata: {
+    query: { lang: 'ru' },
+    options: { skip: -0, limit: 50, sort: { created_at: -1 } }
+  }
+}
+{
+  message: 'Shop Update Request',
+  level: 'debug',
+  timestamp: '2020-08-07T01:28:30.413Z',
+  label: 'shop',
+  metadata: {
+    request: {
+      id: 'my-shop',
+      name: 'my updated Shop',
+      phone: '',
+      working_hours: '',
+      address: 'Address of my updated shop',
+      address2: '',
+      preview_text: 'preview text of my updated shop',
+      description: 'description of my updated shop',
+      loc: { long: 72.25199890136719, lat: 43.222999572753906 },
+      active: true,
+      image: '',
+      order: '0',
+      lang: 'ru'
+    }
+  }
+}
+{
+  message: 'shop is created with lang en',
+  level: 'debug',
+  timestamp: '2020-08-07T01:28:30.736Z',
+  label: 'catalog-service',
+  metadata: {
+    result: {
+      phone: '',
+      preview_text: 'preview text of my shop',
+      description: 'description of my shop',
+      active: true,
+      order: 0,
+      lang: 'en',
+      _id: 5f2cae3e90ed93224655d2a9,
+      name: 'my Shop',
+      working_hours: '',
+      address: 'Address of my shop',
+      address2: '',
+      loc: { long: 72.2229995727539, lat: 43.2130012512207 },
+      image: '',
+      created_at: 2020-08-07T01:28:29.946Z,
+      updated_at: 2020-08-07T01:28:29.946Z,
+      slug: 'my-shop',
+      products: [],
+      __v: 0
+    }
+  }
+}
+{
+  message: 'shop is created with lang uz',
+  level: 'debug',
+  timestamp: '2020-08-07T01:28:31.130Z',
+  label: 'catalog-service',
+  metadata: {
+    result: {
+      phone: '',
+      preview_text: 'preview text of my shop',
+      description: 'description of my shop',
+      active: true,
+      order: 0,
+      lang: 'uz',
+      _id: 5f2cae3e90ed93224655d2aa,
+      name: 'my Shop',
+      working_hours: '',
+      address: 'Address of my shop',
+      address2: '',
+      loc: { long: 72.2229995727539, lat: 43.2130012512207 },
+      image: '',
+      created_at: 2020-08-07T01:28:29.946Z,
+      updated_at: 2020-08-07T01:28:29.946Z,
+      slug: 'my-shop',
+      products: [],
+      __v: 0
+    }
+  }
+}
+{
+  message: 'Shop Update response',
+  level: 'debug',
+  timestamp: '2020-08-07T01:28:31.574Z',
+  label: 'test',
+  metadata: {
+    response: {
+      shop: {
+        id: '5f2cae3d90ed93224655d2a8',
+        name: 'my updated Shop',
+        slug: 'my-shop',
+        phone: '',
+        working_hours: '',
+        address: 'Address of my updated shop',
+        address2: '',
+        preview_text: 'preview text of my updated shop',
+        description: 'description of my updated shop',
+        loc: { long: 72.25199890136719, lat: 43.222999572753906 },
+        active: true,
+        image: '',
+        order: '0',
+        created_at: 'Fri Aug 07 2020 06:28:29 GMT+0500 (Uzbekistan Standard Time)',
+        updated_at: 'Fri Aug 07 2020 06:28:31 GMT+0500 (Uzbekistan Standard Time)',
+        lang: 'ru'
+      }
+    }
+  }
+}
+{
+  message: 'Shop Get Request',
+  level: 'debug',
+  timestamp: '2020-08-07T01:28:31.576Z',
+  label: 'shop',
+  metadata: { request: { id: '', slug: 'my-shop', lang: 'ru' } }
+}
+{
+  message: 'finding a shop',
+  level: 'debug',
+  timestamp: '2020-08-07T01:28:31.576Z',
+  label: 'catalog-service',
+  metadata: {
+    query: { lang: 'ru', '$or': [ { slug: 'my-shop' } ] }
+  }
+}
+{
+  message: 'Shop Get response',
+  level: 'debug',
+  timestamp: '2020-08-07T01:28:31.953Z',
+  label: 'test',
+  metadata: {
+    response: {
+      shop: {
+        id: '5f2cae3d90ed93224655d2a8',
+        name: 'my updated Shop',
+        slug: 'my-shop',
+        phone: '',
+        working_hours: '',
+        address: 'Address of my updated shop',
+        address2: '',
+        preview_text: 'preview text of my updated shop',
+        description: 'description of my updated shop',
+        loc: { long: 72.25199890136719, lat: 43.222999572753906 },
+        active: true,
+        image: '',
+        order: '0',
+        created_at: 'Fri Aug 07 2020 06:28:29 GMT+0500 (Uzbekistan Standard Time)',
+        updated_at: 'Fri Aug 07 2020 06:28:31 GMT+0500 (Uzbekistan Standard Time)',
+        lang: 'ru'
+      }
+    }
+  }
+}
+{
+  message: 'Products get request',
+  level: 'debug',
+  timestamp: '2020-08-07T01:28:31.957Z',
+  label: 'product',
+  metadata: {
+    request: {
+      id: '5f2acfd6d3936229f67cb03e',
+      slug: 'goodzone-samarkand',
+      page: '0',
+      limit: '0'
+    }
+  }
+}
+{
+  message: 'Shop Find response',
+  level: 'debug',
+  timestamp: '2020-08-07T01:28:33.372Z',
+  label: 'test',
+  metadata: {
+    response: {
+      shops: [
+        {
+          id: '5f2cae3d90ed93224655d2a8',
+          name: 'my Shop',
+          slug: 'my-shop',
+          phone: '',
+          working_hours: '',
+          address: 'Address of my shop',
+          address2: '',
+          preview_text: 'preview text of my shop',
+          description: 'description of my shop',
+          loc: { long: 72.2229995727539, lat: 43.2130012512207 },
+          active: true,
+          image: '',
+          order: '0',
+          created_at: 'Fri Aug 07 2020 06:28:29 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Fri Aug 07 2020 06:28:29 GMT+0500 (Uzbekistan Standard Time)',
+          lang: 'ru'
+        },
+        {
+          id: '5f2acfd6d3936229f67cb03e',
+          name: 'GOODZONE Самарканд',
+          slug: 'goodzone-samarkand',
+          phone: '(+99898) 1880014, (+99871) 207-03-07',
+          working_hours: 'с 09:00 до 21:00 (без выходных)',
+          address: '<p>г. Самарканд, ул. Гагарина, 178</p>',
+          address2: '<p>Трастбанк</p>',
+          preview_text: '',
+          description: '',
+          loc: { long: 0, lat: 0 },
+          active: true,
+          image: '',
+          order: '6',
+          created_at: 'Wed Aug 05 2020 20:27:18 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Wed Aug 05 2020 20:27:18 GMT+0500 (Uzbekistan Standard Time)',
+          lang: 'ru'
+        },
+        {
+          id: '5f2acfd6d3936229f67cb03b',
+          name: 'GOODZONE Кадышева',
+          slug: 'goodzone-kadysheva',
+          phone: '(+99871) 207-03-07',
+          working_hours: 'с 10-00 до 21-00 (без выходных)',
+          address: '<p>г. Ташкент, Яшнободский р-н, ул. Сивца</p>',
+          address2: '<p>Рынок Авиасозлар (Кадышева), магазин Havas</p>',
+          preview_text: '',
+          description: '',
+          loc: { long: 0, lat: 0 },
+          active: true,
+          image: '',
+          order: '5',
+          created_at: 'Wed Aug 05 2020 20:27:18 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Wed Aug 05 2020 20:27:18 GMT+0500 (Uzbekistan Standard Time)',
+          lang: 'ru'
+        },
+        {
+          id: '5f2acfd6d3936229f67cb038',
+          name: 'GOODZONE Atrium',
+          slug: 'goodzone-atrium',
+          phone: '(+99871) 207−03−07',
+          working_hours: 'с 10-00 до 21-00 (без выходных)',
+          address: '<p>г. Ташкент, Яшнободский р-н, ул. Махтумкули, ТРЦ Atrium</p>',
+          address2: '<p>Парк Ашхабад</p>',
+          preview_text: '',
+          description: '',
+          loc: { long: 0, lat: 0 },
+          active: true,
+          image: '',
+          order: '4',
+          created_at: 'Wed Aug 05 2020 20:27:18 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Wed Aug 05 2020 20:27:18 GMT+0500 (Uzbekistan Standard Time)',
+          lang: 'ru'
+        },
+        {
+          id: '5f2acfd5d3936229f67cb035',
+          name: 'GOODZONE Бунёдкор',
+          slug: 'magazin-2',
+          phone: '(+99871) 207-03-07',
+          working_hours: 'с 10-00 до 21-00 (без выходных)',
+          address: '<p>г. Ташкент, массив Чиланзар-6, ТЦ Bunyodkor</p>',
+          address2: '<p>станция метро Мирзо-Улугбек</p>',
+          preview_text: '',
+          description: '',
+          loc: { long: 0, lat: 0 },
+          active: true,
+          image: '',
+          order: '3',
+          created_at: 'Wed Aug 05 2020 20:27:17 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Wed Aug 05 2020 20:27:17 GMT+0500 (Uzbekistan Standard Time)',
+          lang: 'ru'
+        },
+        {
+          id: '5f2acfd5d3936229f67cb032',
+          name: 'GOODZONE Шахристан',
+          slug: 'magazin-1',
+          phone: '(+99871) 207−03−07',
+          working_hours: 'с 10-00 до 21-00 (без выходных)',
+          address: '<p>г. Ташкент, Юнусабадский р-н, ул. А. Тимура 129Б</p>',
+          address2: '<p>станция метро "Шахристан"</p>',
+          preview_text: '',
+          description: '',
+          loc: { long: 0, lat: 0 },
+          active: true,
+          image: '',
+          order: '2',
+          created_at: 'Wed Aug 05 2020 20:27:17 GMT+0500 (Uzbekistan Standard Time)',
+          updated_at: 'Wed Aug 05 2020 20:27:17 GMT+0500 (Uzbekistan Standard Time)',
+          lang: 'ru'
+        }
+      ],
+      count: '6'
+    }
+  }
+}
+{
+  message: 'Products Get response',
+  level: 'debug',
+  timestamp: '2020-08-07T01:28:34.856Z',
+  label: 'test',
+  metadata: {
+    response: {
+      products: [
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0003�',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 0
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0010�',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 1
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0011�',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 0
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0011,',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 1
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0012"',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 3
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u00112',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 1
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0010�',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 7
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0011P',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 2
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\r\u001e',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 1
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0010T',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 3
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u000f�',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 0
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0004�',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 2
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0007~',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 2
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0007x',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 2
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0011�',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 2
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0011z',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 2
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0007�',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 2
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\r�',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 1
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\r$',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 2
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\r�',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 2
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0010~',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 0
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0004�',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 1
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0005�',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 1
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0005�',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 1
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0005�',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 1
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u000f�',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 1
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u000fv',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 2
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0005�',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 1
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0004�',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 2
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0005�',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 1
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0011b',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 2
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0004�',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 2
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0006�',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 1
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0005�',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 1
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0011h',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 1
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0004�',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 2
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0005�',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 1
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\r�',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 0
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u000e\b',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 1
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u000e>',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 0
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\r�',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 1
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0006^',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 4
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0006R',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 2
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0006F',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 0
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0006X',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 3
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0006.',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 1
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0011�',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 1
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0006:',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 1
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\r�',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 1
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\f�',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 1
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\r�',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 1
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0006@',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 2
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0006�',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 1
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0013�',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 0
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0011V',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 1
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u000fd',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 1
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\r*',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 0
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0012�',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 0
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0010�',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 1
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0004l',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 1
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\n�',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 1
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\t\u0016',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 1
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\b�',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 1
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\t\n',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 1
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\t\u0004',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 1
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\b�',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 1
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\t\u0010',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 1
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0014D',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 2
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0014\u001a',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 2
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0005�',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 2
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0014\u000e',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 2
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0014\b',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 2
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0010$',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 2
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0005�',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 2
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0010\u001e',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 2
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0010<',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 2
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0014>',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 2
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0005�',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 2
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u00148',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 2
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0005�',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 2
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0010B',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 2
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0014&',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 2
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0014 ',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 2
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0014\u0014',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 2
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0005�',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 2
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0014t',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 2
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0014,',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 2
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0005�',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 2
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0005�',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 2
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0010\f',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 1
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0006�',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 6
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0013�',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 2
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0005�',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 2
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0005�',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 0
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u00142',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 2
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0005�',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 2
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0005�',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 2
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0014z',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 2
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\u0010�',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 7
+        },
+        {
+          product: {
+            prices: [],
+            id: '_%n�{�\u0000\u0012�\rH',
+            name: '',
+            slug: '',
+            category: null,
+            brand: null,
+            preview_text: '',
+            active: false,
+            price: null,
+            created_at: '',
+            updated_at: '',
+            image: '',
+            lang: '',
+            external_id: '0'
+          },
+          quantity: 3
+        },
+        ... 782 more items
+      ]
+    }
+  }
+}
+{
+  message: 'Shop Delete Request',
+  level: 'debug',
+  timestamp: '2020-08-07T01:28:34.865Z',
+  label: 'shop',
+  metadata: { request: { id: '', slug: 'my-shop' } }
+}
+{
+  message: 'Shop Delete response',
+  level: 'debug',
+  timestamp: '2020-08-07T01:28:35.252Z',
+  label: 'test',
+  metadata: { response: {} }
+}

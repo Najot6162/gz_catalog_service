@@ -72,7 +72,7 @@ message ProductsRequest {
 message ProductsResponse {
   message ProductResponse{
     ProductSlim product = 1;
-    int64 quantity = 2;
+    int32 quantity = 2;
 }
 repeated ProductResponse products = 1;
 

@@ -92,8 +92,8 @@ function main() {
               console.log(getResponse);
 
               client.GetProducts({
-                id: updateResponse.shop.id,
-                slug: updateResponse.shop.slug,
+                id: "5f2acfd6d3936229f67cb03e",
+                slug: "goodzone-samarkand",
                 lang: "ru"
               }, (err, getResponse) => {
                 if (err) return console.log('Error: ', err.message);

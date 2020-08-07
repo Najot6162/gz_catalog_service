@@ -80,7 +80,7 @@ message ShopsRequest {
 message ShopsResponse {
    message ShopResponse{
    ShopSlim shop = 1;
-   int64 quantity = 2;
+   int32 quantity = 2;
 }
    repeated ShopResponse shops = 1;
 }

@@ -106,7 +106,7 @@ function main() {
                         label: 'test'
                     });
                     client.GetShops({
-                        product_id: updateResponse.product.id,
+                        product_id: "5f256ee8bc7bd40012af03e4",
                     }, (err, getResponse) => {
                         if (err) return console.log('Error: ', err.message);
                         logger.debug('Shop Get response', {

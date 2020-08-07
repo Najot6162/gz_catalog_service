@@ -508,7 +508,7 @@ let productStorage = {
       let productQuery = {};
       productQuery = {
         ...productQuery,
-        lang: cnf.lang,
+        lang: req.lang ? req.lang : cnf.lang,
         $or: [
           {
             slug: req.product_id,
@@ -516,22 +516,19 @@ let productStorage = {
         ],
       };
       if (mongoose.Types.ObjectId.isValid(req.product_id)) productQuery.$or.push({ _id: req.product_id });
-
-      Product.findOne(productQuery, (err, product) => {
+      let query = {
+        lang: req.lang ? req.lang : cnf.lang,
+        active: true,
+      };
+      Shop.find(query, (err, shops) => {
         if (err) return reject(err);
-        if (!product) return reject(new Error("Product not found"));
-
-        let query = {
-          lang: req.lang ? req.lang : cnf.lang,
-          active: true,
-        };
-        Shop.find(query, (err, shops) => {
+        if (!shops) return reject(new Error("Shops are not found"));
+        Product.findOne(productQuery, (err, product) => {
           if (err) return reject(err);
-          if (!shops) return reject(new Error("Shops are not found"));
-
+          if (!product) return reject(new Error("Product not found"));
           shops = shops.map((sh, i) => {
             let products = sh.products.filter((stock) => {
-              return stock.product == product._id;
+              return stock.product.toString() == product._id.toString();
             });
             return {
               shop: sh,
