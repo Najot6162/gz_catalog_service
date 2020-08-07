@@ -52,7 +52,7 @@ let shopStorage = {
       if (!b.id) return reject(new Error("Key is not provided"));
       if (!b.name) return reject(new Error("name is required"));
       if (!b.lang) return reject(new Error("Lang is not provided"));
-      
+
       // making query
       let query = {};
       query = {
@@ -267,16 +267,8 @@ let shopStorage = {
         if (!shop) return reject(new Error("Shops is not found"));
         Product.find().skip(options.skip).limit(options.limit).exec((err, products) => {
           if (err) return reject(err);
-          products = products.map((product, i) => {
-            let p = shop.products.filter((p, i) => {
-              return p.product == product.id
-            });
-            return {
-              product: product,
-              quantity: p.length ? p[0].quantity : 0
-            };
-          });
-          return resolve({ products });
+          let result = shop.products;
+          return resolve({ result });
         })
       });
     });
