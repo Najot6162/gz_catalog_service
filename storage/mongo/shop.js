@@ -259,17 +259,32 @@ let shopStorage = {
         query.$or.push({ _id: req.id });
       let options = {
         skip: ((req.page / 1 - 1) * req.limit) / 1,
-        limit: req.limit / 1 ? req.limit / 1 : 10
+        limit: req.limit / 1 ? req.limit / 1 : 50
       };
 
       Shop.findOne(query, (err, shop) => {
         if (err) return reject(err);
         if (!shop) return reject(new Error("Shops is not found"));
-        Product.find().skip(options.skip).limit(options.limit).exec((err, products) => {
-          if (err) return reject(err);
-          let result = shop.products;
-          return resolve({ result });
-        })
+        Product.find()
+          .populate({
+            path: "category",
+          })
+          .populate({
+            path: "brand",
+          })
+          .skip(options.skip).limit(options.limit).exec((err, allProducts) => {
+            if (err) return reject(err);
+            let shopProducts = allProducts.map((p, i) => {
+              let stock = shop.products.filter((sp, j) => (sp.product.toString() == p._id.toString()));
+              let quantity = stock.length ? stock[0].quantity : 0
+              console.log(quantity);
+              return {
+                product: p,
+                quantity
+              }
+            })
+            return resolve({ shopProducts });
+          })
       });
     });
   },
