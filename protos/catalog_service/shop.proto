@@ -67,6 +67,8 @@ message ProductsRequest {
     string slug = 2;
     int64 page = 3;
     int64 limit = 4;
+    string lang = 5;
+    string search = 6;
 }
 
 message ProductsResponse {
