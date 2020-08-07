@@ -267,6 +267,107 @@ let categoryStorage = {
       });
     });
   },
+  getChildrenWithProducts: (req) => {
+    return new Promise((resolve, reject) => {
+      if (!(req.id || req.slug)) return reject(new Error("Category key is not given"));
+
+
+      let query = {};
+
+      // making query
+      query = {
+        ...query,
+        lang: req.lang ? req.lang : cnf.lang,
+        $or: [
+          {
+            slug: req.slug,
+          },
+        ],
+      };
+      if (mongoose.Types.ObjectId.isValid(req.id))
+        query.$or.push({ _id: req.id });
+      Category.aggregate([
+        { $match: query },
+        { $limit: 1 },
+        {
+          $lookup: {
+						from: "categories",
+						let: {parent_id: "$_id"},
+						as: "children",
+						pipeline: [{
+							$match: {
+								$expr: {
+									$and: [
+										{ $eq: ["$lang", query.lang]},
+										{ $eq: ["$parent", "$$parent_id"]}
+									]
+								}
+							}
+						}, {
+							$lookup: {
+								from: "products",
+								let: {category_id: "$_id"},
+								as: "products",
+								pipeline: [{
+									$match: {
+										$expr: {
+											$and: [
+												{ $eq: ["$lang", query.lang]},
+												{ $eq: ["$category", "$$category_id"]}
+											]
+										}
+									}
+								}, {
+                  $limit: 10
+                }, {
+                  $project: {
+                    _id: 0,
+                    id: "$_id",
+                    name: 1,
+                    slug: 1,
+                    image: 1,
+                    price: 1,
+                    prices: 1
+                  }
+                }]
+							},
+						}, {
+              $project: {
+                id: "$_id",
+                name: 1,
+                slug: 1,
+                products: 1,
+                order: 1,
+                _id: 0
+              }
+            }] // pipeline end
+          },
+        }
+      ]).exec((err, cat) => {
+        if (err) return reject(err);
+        //logger.debug("getting child categories result", { cat });
+        if (!cat.length) return reject(new Error("Document not found"));
+        cat = cat[0];
+
+        return resolve({
+          categories: cat.children.map((c, i) => {
+            return {
+              category: {
+                id: c.id,
+                name: c.name,
+                slug: c.slug,
+                order: c.order
+              },
+              products: c.products.map((p, i) => ({
+                ...p,
+                image: p.image ? cnf.cloudUrl + p.image : ""
+              }))
+            }
+          }).filter((ch, i) => ch.products.length)
+        });
+      });
+    });
+  },
   delete: (req) => {
     return new Promise((resolve, reject) => {
       if (!req.slug) return reject(new Error("Key is not provided"));

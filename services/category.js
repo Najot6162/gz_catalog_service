@@ -78,6 +78,24 @@ const categoryService = {
             });
         });
     },
+    GetChildrenWithProducts: (call, callback) => {
+        logger.debug('Category get children with products request', {
+            request: call.request,
+            label: 'category'
+        })
+        categoryStorage.getChildrenWithProducts(call.request).then((result) => {
+            callback(null, result);
+        }).catch((err) => {
+            logger.error(err.message, {
+                function: 'get child categories',
+                request: call.request
+            });
+            callback({
+                code: grpc.status.INTERNAL,
+                message: err.message
+            });
+        });
+    },
     Delete: (call, callback) => {
         logger.debug('Category delete request', {
             request: call.request,
