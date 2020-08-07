@@ -119,7 +119,7 @@ const shopService = {
     shopStorage
       .getProducts(call.request)
       .then((result) => {
-        callback(null, { products: result.result });
+        callback(null, { products: result.shopProducts });
       })
       .catch((err) => {
         logger.error(err.message, {
