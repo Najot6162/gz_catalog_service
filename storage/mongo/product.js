@@ -618,7 +618,7 @@ let productStorage = {
   findPopular: (filters) => {
     return new Promise((resolve, reject) => {
       let query = {
-        lang: filters.lang ? filters.lang : cnf.lang
+        lang: cnf.lang
       };
       let productQuery = {}
 
