@@ -277,7 +277,7 @@ let categoryStorage = {
       // making query
       query = {
         ...query,
-        lang: req.lang ? req.lang : cnf.lang,
+        lang: cnf.lang,
         $or: [
           {
             slug: req.slug,
@@ -294,53 +294,109 @@ let categoryStorage = {
 						from: "categories",
 						let: {parent_id: "$_id"},
 						as: "children",
-						pipeline: [{
-							$match: {
-								$expr: {
-									$and: [
-										{ $eq: ["$lang", query.lang]},
-										{ $eq: ["$parent", "$$parent_id"]}
-									]
-								}
-							}
-						}, {
-							$lookup: {
-								from: "products",
-								let: {category_id: "$_id"},
-								as: "products",
-								pipeline: [{
-									$match: {
-										$expr: {
-											$and: [
-												{ $eq: ["$lang", query.lang]},
-												{ $eq: ["$category", "$$category_id"]}
-											]
-										}
-									}
-								}, {
-                  $limit: 10
-                }, {
-                  $project: {
-                    _id: 0,
-                    id: "$_id",
-                    name: 1,
-                    slug: 1,
-                    image: 1,
-                    price: 1,
-                    prices: 1
+						pipeline: [
+              {
+                $match: {
+                  $expr: {
+                    $and: [
+                      { $eq: ["$lang", query.lang]},
+                      { $eq: ["$parent", "$$parent_id"]}
+                    ]
                   }
-                }]
-							},
-						}, {
-              $project: {
-                id: "$_id",
-                name: 1,
-                slug: 1,
-                products: 1,
-                order: 1,
-                _id: 0
+                }
+						  }, {
+                $lookup: {
+                  from: "products",
+                  let: {category_id: "$_id"},
+                  as: "products",
+                  pipeline: [{
+                    $match: {
+                      $expr: {
+                        $and: [
+                          { $eq: ["$lang", query.lang]},
+                          { $eq: ["$category", "$$category_id"]}
+                        ]
+                      }
+                    }
+                  }, {
+                    $limit: 10
+                  }, {
+                    $project: {
+                      _id: 0,
+                      id: "$_id",
+                      name: 1,
+                      slug: 1,
+                      image: 1,
+                      price: 1,
+                      prices: 1
+                    }
+                  }]
+                },
+              }, {
+                $lookup: {
+                  from: "categories",
+                  let: {parent_id: "$_id"},
+                  as: "children",
+                  pipeline: [{
+                    $match: {
+                      $expr: {
+                        $and: [
+                          { $eq: ["$lang", query.lang]},
+                          { $eq: ["$parent", "$$parent_id"]}
+                        ]
+                      }
+                    }
+                  }, {
+                    $lookup: {
+                      from: "products",
+                      let: {category_id: "$_id"},
+                      as: "products",
+                      pipeline: [{
+                        $match: {
+                          $expr: {
+                            $and: [
+                              { $eq: ["$lang", query.lang]},
+                              { $eq: ["$category", "$$category_id"]}
+                            ]
+                          }
+                        }
+                      }, {
+                        $limit: 10
+                      }, {
+                        $project: {
+                          _id: 0,
+                          id: "$_id",
+                          name: 1,
+                          slug: 1,
+                          image: 1,
+                          price: 1,
+                          prices: 1
+                        }
+                      }]
+                    }
+                  }, {
+                    $project: {
+                      id: "$_id",
+                      name: 1,
+                      slug: 1,
+                      products: 1,
+                      order: 1,
+                      _id: 0
+                    }
+                  }]
+                },
+              }, {
+                $project: {
+                  id: "$_id",
+                  name: 1,
+                  slug: 1,
+                  products: 1,
+                  children: 1,
+                  order: 1,
+                  _id: 0
+                }
               }
-            }] // pipeline end
+            ] // pipeline end
           },
         }
       ]).exec((err, cat) => {
@@ -348,22 +404,43 @@ let categoryStorage = {
         //logger.debug("getting child categories result", { cat });
         if (!cat.length) return reject(new Error("Document not found"));
         cat = cat[0];
+        let categories = [];
 
-        return resolve({
-          categories: cat.children.map((c, i) => {
-            return {
+        for(let i = 0; i < cat.children.length; i++){
+          let c = cat.children[i];
+
+          for(j = 0; j < c.children.length; j++){
+            let grandChild = c.children[j];
+            categories.push({
               category: {
-                id: c.id,
-                name: c.name,
-                slug: c.slug,
-                order: c.order
+                id: grandChild.id,
+                name: grandChild.name,
+                slug: grandChild.slug,
+                order: grandChild.order
               },
-              products: c.products.map((p, i) => ({
+              products: grandChild.products.map((p, i) => ({
                 ...p,
                 image: p.image ? cnf.cloudUrl + p.image : ""
               }))
-            }
-          }).filter((ch, i) => ch.products.length)
+            })
+          }
+
+          categories.push({
+            category: {
+              id: c.id,
+              name: c.name,
+              slug: c.slug,
+              order: c.order
+            },
+            products: c.products.map((p, i) => ({
+              ...p,
+              image: p.image ? cnf.cloudUrl + p.image : ""
+            }))
+          });
+        }
+
+        return resolve({
+          categories: categories.filter((ch, i) => ch.products.length)
         });
       });
     });
