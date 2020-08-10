@@ -257,6 +257,22 @@ let shopStorage = {
       let productQuery = {
         lang: req.lang ? req.lang : cnf.lang,
       };
+      if (req.search.trim()) {
+        productQuery = {
+          ...productQuery,
+          $or: [
+            {
+              name: { $regex: ".*" + req.search + ".*" },
+            },
+            {
+              slug: { $regex: ".*" + req.search + ".*" },
+            },
+            {
+              description: { $regex: ".*" + req.search + ".*" },
+            },
+          ],
+        };
+      }
 
       if (mongoose.Types.ObjectId.isValid(req.id))
         query.$or.push({ _id: req.id });

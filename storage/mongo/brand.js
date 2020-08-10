@@ -77,7 +77,8 @@ let brandStorage = {
       //     ...query,
       //     category: filters.category,
       //   };
-      // }
+
+      // } else {
       async.parallel(
         [
           (cb) => {
@@ -108,6 +109,7 @@ let brandStorage = {
           });
         }
       );
+      // }
     });
   },
   get: (req) => {
