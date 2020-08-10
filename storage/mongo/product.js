@@ -706,7 +706,7 @@ let productStorage = {
       a.exec((err, categories) => {
         if (err) return reject(err);
 
-        logger.debug("popular products query result", {categories});
+        // logger.debug("popular products query result", {categories});
         return resolve({
           products: categories.map((c, i) => {
             return {

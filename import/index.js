@@ -12,6 +12,7 @@ const logger = require("../config/logger.js");
 const { resolve } = require("path");
 
 const uploadUrl = "https://dev.goodzone.uz/v1/upload";
+const langs = ['en', 'ru', 'uz'];
 
 const importBrands = () => (
     new Promise((resolve, reject) => {
@@ -410,17 +411,54 @@ const uploadImage = (file) => {
 
 const removeDuplicateProducts = () => (
     new Promise((resolve, reject) => {
-        Product.find({}, { _id: 1 }).limit(2648).sort({ created_at: -1 }).exec((err, ids) => {
+        Product.find({}, { 
+            _id: 1, 
+            lang:1, 
+            external_id:1 
+        }).exec((err, products) => {
             if (err) return reject(err);
-            ids = ids.map((p, i) => p._id);
-            Product.remove({
+            let ids = [];
+            let externalIds = [];
+            let duplications = [];
+
+            for(let i=0; i < products.length; i++){
+                if(externalIds.indexOf(products[i].external_id) < 0){
+                    externalIds.push(products[i].external_id);
+                }
+            }
+
+            for(let j=0; j < externalIds.length; j++){
+                let productInstances = products.filter((p, k) => (p.external_id == externalIds[j]));
+                if(productInstances.length !==3){
+                    duplications.push({
+                        external_id: externalIds[j],
+                        items: productInstances.length
+                    });
+                }
+                let necessaryProductIds = langs.map((l, i) => {
+                    return productInstances.filter((p, k) => (p.lang == l))[0]._id;
+                });
+
+                for(let k = 0; k < productInstances.length; k++){
+                    if(necessaryProductIds.indexOf(productInstances[k]._id) < 0) {
+                        ids.push(productInstances[k]._id);
+                    }
+                }
+            }
+
+            logger.debug("duplications", {duplications});
+            logger.debug("unnecessary id's", {ids});
+
+
+            
+            Product.deleteMany({
                 _id: { $in: ids }
             }, (err, result) => {
                 if (err) return reject(err);
+                logger.debug("remove result", {result});
                 resolve(result);
             });
         });
-
     })
 );
 //{ $expr: { $gt: ["$price.price", "$price.old_price"] } }
