@@ -1,5 +1,6 @@
 const Product = require("../../models/Product");
 const Brand = require("../../models/Brand");
+const Category = require("../../models/Category");
 const logger = require("../../config/logger");
 const cnf = require("../../config");
 const mongoose = require("mongoose");
@@ -63,13 +64,20 @@ let brandStorage = {
       }
       let options = {
         skip: ((filters.page / 1 - 1) * filters.limit) / 1,
-        limit: filters.limit / 1 ? filters.limit / 1 : 10,
+        limit: filters.limit / 1 ? filters.limit / 1 : 50,
         sort: { created_at: 1 },
       };
       logger.debug("filtering brands", {
         query,
         options,
       });
+
+      // if (mongoose.Types.ObjectId.isValid(filters.category)) {
+      //   query = {
+      //     ...query,
+      //     category: filters.category,
+      //   };
+      // }
       async.parallel(
         [
           (cb) => {

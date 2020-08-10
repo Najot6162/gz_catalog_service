@@ -1,6 +1,6 @@
 var grpc = require('grpc');
 var protoLoader = require('@grpc/proto-loader');
-
+const logger = require("../config/logger");
 var PROTO_PATH = __dirname + '/../protos/catalog_service/catalog_service.proto';
 var packageDefinition = protoLoader.loadSync(
     PROTO_PATH,
@@ -25,15 +25,18 @@ function main() {
         image: "img.jpg",
         active: true
     }, (err, createResponse) => {
-        console.log('Brand Create');
         if (err) return console.log('Error: ', err.message);
-        console.log(createResponse);
-
+        logger.debug("Brand Create response", {
+            response: createResponse,
+            label: "test",
+        });
         // find Brand
         client.Find({}, (err, findResponse) => {
-            console.log('Brand Find');
             if (err) return console.log('Error: ', err.message);
-            console.log(findResponse);
+            logger.debug("Brand Find response", {
+                response: findResponse,
+                label: "test",
+            });
         });
 
         // update Brand
@@ -45,25 +48,31 @@ function main() {
             image: "img.jpg",
             active: true
         }, (err, updateResponse) => {
-            console.log('Brand Update');
             if (err) return console.log('Error: ', err.message);
-            console.log(updateResponse);
+            logger.debug("Brand Update response", {
+                response: updateResponse,
+                label: "test",
+            });
 
             // get Brand
             client.Get({
                 id: updateResponse.brand.id,
             }, (err, getResponse) => {
-                console.log('Brand Get');
                 if (err) return console.log('Error: ', err.message);
-                console.log(getResponse);
+                logger.debug("Brand Get response", {
+                    response: getResponse,
+                    label: "test",
+                });
 
                 // delete Brand
                 client.Delete({
                     id: updateResponse.brand.id
                 }, (err, deleteResponse) => {
-                    console.log('Brand Delete');
                     if (err) return console.log('Error: ', err.message);
-                    console.log(deleteResponse);
+                    logger.debug("Brand Delete response", {
+                        response: updateResponse,
+                        label: "test",
+                    });
                 });
             });
         });

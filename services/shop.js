@@ -119,7 +119,10 @@ const shopService = {
     shopStorage
       .getProducts(call.request)
       .then((result) => {
-        callback(null, { products: result.shopProducts });
+        callback(null, {
+          products: result.shopProducts,
+          count: result.count
+        });
       })
       .catch((err) => {
         logger.error(err.message, {

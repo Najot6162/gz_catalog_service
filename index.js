@@ -96,7 +96,7 @@ function main() {
       //   console.log("error on adding recommended field: " + err);
       // });
 
-			// importer.importShopStocks().then((result) => {
+      // importer.importShopStocks().then((result) => {
       //   console.log("Shops have been imported");
       // }).catch((err) => {
       //   console.log("error on importing shops: " + err);

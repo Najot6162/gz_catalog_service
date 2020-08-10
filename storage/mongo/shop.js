@@ -254,37 +254,59 @@ let shopStorage = {
           },
         ],
       };
+      let productQuery = {
+        lang: req.lang ? req.lang : cnf.lang,
+      };
 
       if (mongoose.Types.ObjectId.isValid(req.id))
         query.$or.push({ _id: req.id });
       let options = {
         skip: ((req.page / 1 - 1) * req.limit) / 1,
-        limit: req.limit / 1 ? req.limit / 1 : 50
+        limit: req.limit / 1 ? req.limit / 1 : 10
       };
 
       Shop.findOne(query, (err, shop) => {
         if (err) return reject(err);
         if (!shop) return reject(new Error("Shops is not found"));
-        Product.find()
-          .populate({
-            path: "category",
-          })
-          .populate({
-            path: "brand",
-          })
-          .skip(options.skip).limit(options.limit).exec((err, allProducts) => {
+        async.parallel(
+          [
+            (cb) => {
+              Product.find(productQuery, {}, options)
+                .populate({
+                  path: "category",
+                })
+                .populate({
+                  path: "brand",
+                })
+                .exec((err, allProducts) => {
+                  if (err) return reject(err);
+                  let shopProducts = allProducts.map((p, i) => {
+                    let stock = shop.products.filter((sp, j) => (sp.product.toString() == p._id.toString()));
+                    let quantity = stock.length ? stock[0].quantity : 0
+                    return {
+                      product: p,
+                      quantity
+                    }
+                  })
+                  return cb(null, shopProducts || []);
+                });
+            },
+            (cb) => {
+              Product.countDocuments(productQuery, (err, count) => {
+                if (err) return cb(err);
+                return cb(null, count);
+              });
+            },
+          ],
+          (err, results) => {
             if (err) return reject(err);
-            let shopProducts = allProducts.map((p, i) => {
-              let stock = shop.products.filter((sp, j) => (sp.product.toString() == p._id.toString()));
-              let quantity = stock.length ? stock[0].quantity : 0
-              console.log(quantity);
-              return {
-                product: p,
-                quantity
-              }
-            })
-            return resolve({ shopProducts });
-          })
+            let shopProducts = results[0]
+            return resolve({
+              shopProducts,
+              count: results[1],
+            });
+          }
+        );
       });
     });
   },
