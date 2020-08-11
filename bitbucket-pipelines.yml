@@ -9,11 +9,11 @@ pipelines:
             - docker
           script:
             - apk update && apk add make && apk add openssh
-            - docker login $DELEVER_REGISTRY --username $DELEVER_DOCKER_USERNAME --password $DELEVER_DOCKER_PASSWORD
+            - docker login $REGISTRY --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
             - make build-image TAG=$BITBUCKET_BUILD_NUMBER ENV_TAG=test
             - make push-image  TAG=$BITBUCKET_BUILD_NUMBER ENV_TAG=test
             - source .build_info
-            - ssh delever@$DELEVER_TEST_HOST 'docker service update --with-registry-auth --image '$DELEVER_REGISTRY'/'$APP':'$BITBUCKET_BUILD_NUMBER' gz_'$APP''
+            - ssh delever@$TEST_HOST 'docker service update --with-registry-auth --image '$REGISTRY'/'$APP':'$BITBUCKET_BUILD_NUMBER' gz_'$APP''
 
     master:
       - step:
@@ -22,9 +22,9 @@ pipelines:
             - docker
           script:
             - apk update && apk add make && apk add openssh
-            - docker login $DELEVER_REGISTRY --username $DELEVER_DOCKER_USERNAME --password $DELEVER_DOCKER_PASSWORD
+            - docker login $REGISTRY --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
             - make build-image TAG=$BITBUCKET_BUILD_NUMBER
             - make push-image  TAG=$BITBUCKET_BUILD_NUMBER
             - source .build_info
-            - ssh goodzone@$GOODZONE_PROD_HOST 'docker service update --with-registry-auth --image '$DELEVER_REGISTRY'/'$APP':'$BITBUCKET_BUILD_NUMBER' gz_'$APP''
+            - ssh goodzone@$GOODZONE_PROD_HOST 'docker service update --with-registry-auth --image '$REGISTRY'/'$APP':'$BITBUCKET_BUILD_NUMBER' gz_'$APP''
 
