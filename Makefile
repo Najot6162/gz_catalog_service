@@ -10,6 +10,7 @@ TAG=latest
 ENV_TAG=latest
 
 # Including
+include .env
 include .build_info
 
 run:
