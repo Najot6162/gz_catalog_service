@@ -44,21 +44,39 @@ const brandService = {
             label: 'brand',
             request: call.request
         });
-        brandStorage.find(call.request).then((result) => {
-            callback(null, {
-                brands: result.brands,
-                count: result.count
+        if (call.request.category) {
+            brandStorage.findByCategory(call.request).then((result) => {
+                callback(null, {
+                    brands: result.brands,
+                    count: result.count
+                });
+            }).catch((err) => {
+                logger.error(err.message, {
+                    function: 'find brands',
+                    request: call.request
+                });
+                callback({
+                    code: grpc.status.INTERNAL,
+                    message: err.message
+                });
             });
-        }).catch((err) => {
-            logger.error(err.message, {
-                function: 'find brands',
-                request: call.request
+        } else {
+            brandStorage.find(call.request).then((result) => {
+                callback(null, {
+                    brands: result.brands,
+                    count: result.count
+                });
+            }).catch((err) => {
+                logger.error(err.message, {
+                    function: 'find brands',
+                    request: call.request
+                });
+                callback({
+                    code: grpc.status.INTERNAL,
+                    message: err.message
+                });
             });
-            callback({
-                code: grpc.status.INTERNAL,
-                message: err.message
-            });
-        });
+        }
     },
     Get: (call, callback) => {
         logger.debug('Brand Get Request', {

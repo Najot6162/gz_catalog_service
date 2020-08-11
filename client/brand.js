@@ -3,8 +3,7 @@ var protoLoader = require('@grpc/proto-loader');
 const logger = require("../config/logger");
 var PROTO_PATH = __dirname + '/../protos/catalog_service/catalog_service.proto';
 var packageDefinition = protoLoader.loadSync(
-    PROTO_PATH,
-    {
+    PROTO_PATH, {
         keepCase: true,
         longs: String,
         enums: String,
@@ -31,7 +30,7 @@ function main() {
             label: "test",
         });
         // find Brand
-        client.Find({}, (err, findResponse) => {
+        client.Find({ category: "5f24e9d25aa3da35d8946cf9", lang: "ru" }, (err, findResponse) => {
             if (err) return console.log('Error: ', err.message);
             logger.debug("Brand Find response", {
                 response: findResponse,
