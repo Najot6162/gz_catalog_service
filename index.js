@@ -23,26 +23,26 @@ function main() {
 
     //Connecting to database
 
-    // const mongoDBUrl =
-    //   "mongodb://" +
-    //   cfg.mongoUser +
-    //   ":" +
-    //   cfg.mongoPassword +
-    //   "@" +
-    //   cfg.mongoHost +
-    //   ":" +
-    //   cfg.mongoPort +
-    //   "/" +
-    //   cfg.mongoDatabase;
-    mongoDBUrl = "mongodb://localhost:27017/catalog_service";
+    const mongoDBUrl =
+        "mongodb://" +
+        cfg.mongoUser +
+        ":" +
+        cfg.mongoPassword +
+        "@" +
+        cfg.mongoHost +
+        ":" +
+        cfg.mongoPort +
+        "/" +
+        cfg.mongoDatabase;
+    // mongoDBUrl = "mongodb://localhost:27017/catalog_service";
 
     logger.info("Connecting to db: " + mongoDBUrl);
 
     mongoose.connect(
         mongoDBUrl, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-        },
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+    },
         (err) => {
             if (err) {
                 logger.error(
@@ -54,7 +54,7 @@ function main() {
             }
         }
     );
-    mongoose.connection.once("open", function() {
+    mongoose.connection.once("open", function () {
         logger.info("Connected to the databasee");
 
         setTimeout(() => {
