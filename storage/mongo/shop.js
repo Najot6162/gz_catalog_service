@@ -98,32 +98,35 @@ let shopStorage = {
       if (!b.shop_id) return reject(new Error("Shop ID is not provided"));
       if (!b.product_id) return reject(new Error("Product ID is required"));
 
-      Shop.findById(b.shop_id, (err, shop) => {
+      Shop.find({ slug: b.shop_id }, (err, shops) => {
         if (err) return reject(err);
-        if (!shop)
+        if (!shops)
           return reject(
             new Error("Document with id:" + b.shop_id + " not found")
           );
-
         let updated = false;
-        shop.products = shop.products.map((product, i) => {
-          if (product.product.toString() == b.product_id) {
-            product.quantity = b.quantity;
-            updated = true;
+        for (let i = 0; i < shops.length; i++) {
+          shops[i].products = shops[i].products.map((product, i) => {
+            if (product.product.toString() == b.product_id) {
+              product.quantity = b.quantity;
+              updated = true;
+            }
+            return product;
+          });
+
+          if (!updated) {
+            shops[i].products.push({
+              product: b.product_id,
+              quantity: b.quantity,
+            });
           }
-          return product;
-        });
-        if (!updated) {
-          shop.products.push({
-            product: b.product_id,
-            quantity: b.quantity,
+
+
+          shops[i].save((err, updatedShop) => {
+            if (err) return reject(err);
+            resolve(updatedShop);
           });
         }
-
-        shop.save((err, updatedShop) => {
-          if (err) return reject(err);
-          resolve(updatedShop);
-        });
       });
     });
   },

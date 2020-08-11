@@ -20,7 +20,7 @@ function main() {
 
     // create Brand
     client.Create({
-        name: "my Shop",
+        name: "my Shop1",
         preview_text: "preview text of my shop",
         description: "description of my shop",
         address: "Address of my shop",
@@ -75,8 +75,8 @@ function main() {
                     console.log(updateResponse);
 
                     client.UpdateQuantity({
-                        shop_id: "5f32496cdea1bb099e2b1feb",
-                        product_id: "5f3246103b7662080db131a2",
+                        shop_id: updateResponse.shop.slug,
+                        product_id: "5f3273ceb9e5da0bce0ea20b",
                         quantity: 7
                     },
                         (err, updatePriceResponse) => {
@@ -114,7 +114,7 @@ function main() {
                                             label: 'test'
                                         });
 
-                                        // delete Shop
+                                        //delete Shop
                                         client.Delete({
                                             slug: updateResponse.shop.slug,
                                         },
@@ -126,8 +126,7 @@ function main() {
                                                     label: "test",
                                                 });
                                                 console.log("Shop test completed!");
-                                            }
-                                        );
+                                            });
                                     });
                                 }
                             );
