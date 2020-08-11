@@ -10,135 +10,134 @@ mongoose.plugin(slugUpdater);
 // loading proto file
 const PROTO_URL = __dirname + "/protos/catalog_service/catalog_service.proto";
 const packageDefinition = protoLoader.loadSync(PROTO_URL, {
-  keepCase: true,
-  longs: String,
-  enums: String,
-  defaults: true,
-  oneofs: true,
+    keepCase: true,
+    longs: String,
+    enums: String,
+    defaults: true,
+    oneofs: true,
 });
 const catalogProto = grpc.loadPackageDefinition(packageDefinition).catalog;
 
 function main() {
-  logger.info("Main function is running");
+    logger.info("Main function is running");
 
-  //Connecting to database
+    //Connecting to database
 
-  const mongoDBUrl =
-    "mongodb://" +
-    cfg.mongoUser +
-    ":" +
-    cfg.mongoPassword +
-    "@" +
-    cfg.mongoHost +
-    ":" +
-    cfg.mongoPort +
-    "/" +
-    cfg.mongoDatabase;
-  //mongoDBUrl = "mongodb://localhost:27017/catalog_service";
+    // const mongoDBUrl =
+    //   "mongodb://" +
+    //   cfg.mongoUser +
+    //   ":" +
+    //   cfg.mongoPassword +
+    //   "@" +
+    //   cfg.mongoHost +
+    //   ":" +
+    //   cfg.mongoPort +
+    //   "/" +
+    //   cfg.mongoDatabase;
+    mongoDBUrl = "mongodb://localhost:27017/catalog_service";
 
-  logger.info("Connecting to db: " + mongoDBUrl);
+    logger.info("Connecting to db: " + mongoDBUrl);
 
-  mongoose.connect(
-    mongoDBUrl,
-    {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    },
-    (err) => {
-      if (err) {
-        logger.error(
-          "There is an error in connecting db (" +
-          mongoDBUrl +
-          "): " +
-          err.message
-        );
-      }
-    }
-  );
-  mongoose.connection.once("open", function () {
-    logger.info("Connected to the databasee");
+    mongoose.connect(
+        mongoDBUrl, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+        },
+        (err) => {
+            if (err) {
+                logger.error(
+                    "There is an error in connecting db (" +
+                    mongoDBUrl +
+                    "): " +
+                    err.message
+                );
+            }
+        }
+    );
+    mongoose.connection.once("open", function() {
+        logger.info("Connected to the databasee");
 
-    setTimeout(() => {
-      const importer = require("./import");
-      // importer.importBrands().then((result) => {
-      // 	console.log("Brands have been imported");
-      // }).catch((err) => {
-      // 	console.log("error on importing brands: " + err);
-      // });
+        setTimeout(() => {
+            const importer = require("./import");
+            // importer.importBrands().then((result) => {
+            // 	console.log("Brands have been imported");
+            // }).catch((err) => {
+            // 	console.log("error on importing brands: " + err);
+            // });
 
-      // importer.importCategories().then((result) => {
-      // 	console.log("Categories have been imported");
-      // }).catch((err) => {
-      // 	console.log("error on importing Categories: " + err);
-      // });
+            // importer.importCategories().then((result) => {
+            // 	console.log("Categories have been imported");
+            // }).catch((err) => {
+            // 	console.log("error on importing Categories: " + err);
+            // });
 
-      // importer.importProducts().then((result) => {
-      // 	console.log("Products have been imported");
-      // }).catch((err) => {
-      // 	console.log("error on importing Products: " + err);
-      // });
+            // importer.importProducts().then((result) => {
+            // 	console.log("Products have been imported");
+            // }).catch((err) => {
+            // 	console.log("error on importing Products: " + err);
+            // });
 
-      // importer.removeDuplicateProducts().then((result) => {
-      // 	console.log("Duplicate Products have been removed");
-      // }).catch((err) => {
-      // 	console.log("error on removing Products: " + err);
-      // });
+            // importer.removeDuplicateProducts().then((result) => {
+            // 	console.log("Duplicate Products have been removed");
+            // }).catch((err) => {
+            // 	console.log("error on removing Products: " + err);
+            // });
 
-      // importer.importProductImages().then((result) => {
-      // 	console.log("Product images have been processed");
-      // }).catch((err) => {
-      // 	console.log("error on importing files: " + err);
-      // });
+            // importer.importProductImages().then((result) => {
+            // 	console.log("Product images have been processed");
+            // }).catch((err) => {
+            // 	console.log("error on importing files: " + err);
+            // });
 
-      // importer.addRecommendedField().then((result) => {
-      //   console.log("Product recommended field added");
-      // }).catch((err) => {
-      //   console.log("error on adding recommended field: " + err);
-      // });
+            // importer.addRecommendedField().then((result) => {
+            //   console.log("Product recommended field added");
+            // }).catch((err) => {
+            //   console.log("error on adding recommended field: " + err);
+            // });
 
-      // importer.importShopStocks().then((result) => {
-      //   console.log("Shops have been imported");
-      // }).catch((err) => {
-      //   console.log("error on importing shops: " + err);
-      // });
-    }, 5000);
+            // importer.importShopStocks().then((result) => {
+            //   console.log("Shops have been imported");
+            // }).catch((err) => {
+            //   console.log("error on importing shops: " + err);
+            // });
+        }, 5000);
 
-  });
+    });
 
-  // gRPC server
-  var server = new grpc.Server();
+    // gRPC server
+    var server = new grpc.Server();
 
-  server.addService(
-    catalogProto.CategoryService.service,
-    require("./services/category.js")
-  );
-  server.addService(
-    catalogProto.ProductService.service,
-    require("./services/product.js")
-  );
-  server.addService(
-    catalogProto.BrandService.service,
-    require("./services/brand.js")
-  );
-  server.addService(
-    catalogProto.ProductPropertyService.service,
-    require("./services/product_property")
-  );
-  server.addService(
-    catalogProto.ProductPropertyGroupService.service,
-    require("./services/product_property_group")
-  );
-  server.addService(
-    catalogProto.ShopService.service,
-    require("./services/shop")
-  );
+    server.addService(
+        catalogProto.CategoryService.service,
+        require("./services/category.js")
+    );
+    server.addService(
+        catalogProto.ProductService.service,
+        require("./services/product.js")
+    );
+    server.addService(
+        catalogProto.BrandService.service,
+        require("./services/brand.js")
+    );
+    server.addService(
+        catalogProto.ProductPropertyService.service,
+        require("./services/product_property")
+    );
+    server.addService(
+        catalogProto.ProductPropertyGroupService.service,
+        require("./services/product_property_group")
+    );
+    server.addService(
+        catalogProto.ShopService.service,
+        require("./services/shop")
+    );
 
-  server.bind(
-    "0.0.0.0:" + cfg.RPCPort,
-    grpc.ServerCredentials.createInsecure()
-  );
-  server.start();
-  logger.info("grpc server is running at %s", cfg.RPCPort);
+    server.bind(
+        "0.0.0.0:" + cfg.RPCPort,
+        grpc.ServerCredentials.createInsecure()
+    );
+    server.start();
+    logger.info("grpc server is running at %s", cfg.RPCPort);
 }
 
 main();

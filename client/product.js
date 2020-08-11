@@ -4,8 +4,7 @@ const logger = require('../config/logger');
 
 var PROTO_PATH = __dirname + '/../protos/catalog_service/catalog_service.proto';
 var packageDefinition = protoLoader.loadSync(
-    PROTO_PATH,
-    {
+    PROTO_PATH, {
         keepCase: true,
         longs: String,
         enums: String,
@@ -113,7 +112,7 @@ function main() {
                             response: getResponse,
                             label: 'test'
                         });
-                        // delete Product
+                        delete Product
                         client.Delete({
                             slug: updateResponse.product.slug
                         }, (err, deleteResponse) => {
