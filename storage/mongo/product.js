@@ -311,24 +311,6 @@ let productStorage = {
         lang: filters.lang ? filters.lang : cnf.lang,
       };
 
-      // filter by search key
-      if (filters.search.trim()) {
-        query = {
-          ...query,
-          $or: [
-            {
-              name: { $regex: ".*" + filters.search + ".*" },
-            },
-            {
-              slug: { $regex: ".*" + filters.search + ".*" },
-            },
-            {
-              description: { $regex: ".*" + filters.search + ".*" },
-            },
-          ],
-        };
-      }
-
       // filter by category
       if (mongoose.Types.ObjectId.isValid(filters.category)) {
         query = {
@@ -540,6 +522,82 @@ let productStorage = {
       })
     });
   },
+  searchProduct: (filters) => {
+    return new Promise((resolve, reject) => {
+      let query = {
+        lang: filters.lang ? filters.lang : cnf.lang,
+      };
+
+      // filter by search key
+      if (filters.search.trim()) {
+        var searchKey = filters.search
+        // searchKey = searchKey.replace(/ /g, '')
+        query = {
+          ...query,
+          $or: [
+            {
+              name: { $regex: ".*" + searchKey + ".*", $options: 'i' },
+            },
+            {
+              slug: { $regex: ".*" + searchKey + ".*", $options: 'i' },
+            },
+            {
+              description: { $regex: ".*" + searchKey + ".*", $options: 'i' },
+            },
+          ],
+        };
+      }
+
+      let options = {
+        skip: ((filters.page / 1 - 1) * filters.limit) / 1,
+        limit: filters.limit / 1 ? filters.limit / 1 : 50,
+        sort: { created_at: -1 },
+      };
+
+      logger.debug("filtering products", {
+        query,
+        options,
+      });
+
+      async.parallel(
+        [
+          (cb) => {
+            Product.find(query, {}, options)
+              .populate({
+                path: "category",
+              })
+              .populate({
+                path: "brand",
+              })
+              .exec((err, products) => {
+                if (err) return reject(err);
+                return cb(null, products || []);
+              });
+          },
+          (cb) => {
+            Product.countDocuments(query, (err, count) => {
+              if (err) return cb(err);
+              return cb(null, count);
+            });
+          },
+        ],
+        (err, results) => {
+          if (err) return reject(err);
+          let products = results[0];
+          for (let i = 0; i < products.length; i++) {
+            products[i].image = products[i].image
+              ? cnf.cloudUrl + products[i].image
+              : "";
+          }
+
+          return resolve({
+            products,
+            count: results[1],
+          });
+        }
+      );
+    });
+  },
   findRecommended: (filters) => {
     return new Promise((resolve, reject) => {
       let query = {
@@ -663,15 +721,15 @@ let productStorage = {
                   $expr: {
                     $and: [
                       { $eq: ["$lang", query.lang] },
-                      { $eq: ["$category", "$$category_id"]}
+                      { $eq: ["$category", "$$category_id"] }
                     ]
                   },
                   ...productQuery
                 }
-              }, { 
-                $sort: { "price.price": 1 } 
-              }, { 
-                $limit: 1 
+              }, {
+                $sort: { "price.price": 1 }
+              }, {
+                $limit: 1
               }, {
                 $project: {
                   _id: 0,

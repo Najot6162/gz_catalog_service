@@ -44,9 +44,8 @@ function main() {
         });
 
         // find Product
-        client.Find({ recommended: false }, (err, findResponse) => {
+        client.Find({ search: "galaxy note" }, (err, findResponse) => {
             if (err) return console.log('Error: ', err.message);
-
             logger.debug('Product Find response', {
                 response: findResponse,
                 label: 'test'
