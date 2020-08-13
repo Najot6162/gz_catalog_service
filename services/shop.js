@@ -46,7 +46,7 @@ const shopService = {
       });
   },
   UpdateQuantity: (call, callback) => {
-    logger.debug("Shop product create request", {
+    logger.debug("Shop update stock request", {
       request: call.request,
       label: "Shop",
     });
@@ -57,7 +57,7 @@ const shopService = {
       })
       .catch((err) => {
         logger.error(err.message, {
-          function: "create Shop product",
+          function: "update shop stock",
           request: call.request,
         });
         callback({
