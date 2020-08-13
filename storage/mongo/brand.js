@@ -53,11 +53,11 @@ let brandStorage = {
                 query = {
                     ...query,
                     $or: [{
-                            name: { $regex: ".*" + filters.search + ".*" },
-                        },
-                        {
-                            slug: { $regex: ".*" + filters.search + ".*" },
-                        },
+                        name: { $regex: ".*" + filters.search + ".*" },
+                    },
+                    {
+                        slug: { $regex: ".*" + filters.search + ".*" },
+                    },
                     ],
                 };
             }
@@ -110,7 +110,8 @@ let brandStorage = {
             if (filters.search.trim()) {
                 query = {
                     ...query,
-                    $or: [{
+                    $or: [
+                        {
                             name: { $regex: ".*" + filters.search + ".*" },
                         },
                         {
@@ -193,8 +194,8 @@ let brandStorage = {
 
             // update products of this Brand
             Product.update({ brand: req.id }, {
-                    $set: { brand: null, updated_at: Date.now() },
-                }, { many: true },
+                $set: { brand: null, updated_at: Date.now() },
+            }, { many: true },
                 (err, updateResult) => {
                     console.log(
                         "orphan products updated after Brand removal",

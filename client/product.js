@@ -43,8 +43,8 @@ function main() {
             label: 'test'
         });
 
-        // find Product
-        client.Find({ search: "galaxy note" }, (err, findResponse) => {
+        // find Product кондиционер
+        client.Find({ search: "кондиц" }, (err, findResponse) => {
             if (err) return console.log('Error: ', err.message);
             logger.debug('Product Find response', {
                 response: findResponse,

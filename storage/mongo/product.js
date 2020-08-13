@@ -8,7 +8,7 @@ const logger = require("../../config/logger");
 const cnf = require("../../config");
 const langs = ["en", "ru", "uz"];
 
-Product.syncIndexes();
+//Product.syncIndexes();
 
 let productStorage = {
   create: (b) => {
@@ -531,8 +531,16 @@ let productStorage = {
       // filter by search key
       if (filters.search.trim()) {
         var searchKey = filters.search
-        // searchKey = searchKey.replace(/ /g, '')
-        query = {
+        query_text = {
+          ...query,
+          $or: [
+            {
+              $text: { $search: searchKey },
+            },
+
+          ],
+        };
+        query_regex = {
           ...query,
           $or: [
             {
@@ -540,9 +548,6 @@ let productStorage = {
             },
             {
               slug: { $regex: ".*" + searchKey + ".*", $options: 'i' },
-            },
-            {
-              description: { $regex: ".*" + searchKey + ".*", $options: 'i' },
             },
           ],
         };
@@ -553,47 +558,79 @@ let productStorage = {
         limit: filters.limit / 1 ? filters.limit / 1 : 50,
         sort: { created_at: -1 },
       };
-
-      logger.debug("filtering products", {
-        query,
-        options,
-      });
-
       async.parallel(
         [
           (cb) => {
-            Product.find(query, {}, options)
+            Product.find(query_text, {}, options)
               .populate({
                 path: "category",
               })
               .populate({
                 path: "brand",
               })
-              .exec((err, products) => {
+              .exec((err, products_text) => {
                 if (err) return reject(err);
-                return cb(null, products || []);
+                return cb(null, products_text || []);
               });
           },
           (cb) => {
-            Product.countDocuments(query, (err, count) => {
+            Product.countDocuments(query_text, (err, count_text) => {
               if (err) return cb(err);
-              return cb(null, count);
+              return cb(null, count_text);
             });
           },
         ],
         (err, results) => {
           if (err) return reject(err);
           let products = results[0];
-          for (let i = 0; i < products.length; i++) {
-            products[i].image = products[i].image
-              ? cnf.cloudUrl + products[i].image
-              : "";
+          if (products && products.length) {
+            for (let i = 0; i < products.length; i++) {
+              products[i].image = products[i].image
+                ? cnf.cloudUrl + products[i].image
+                : "";
+            }
+            return resolve({
+              products,
+              count: results[1],
+            });
+          } else {
+            async.parallel(
+              [
+                (cb) => {
+                  Product.find(query_regex, {}, options)
+                    .populate({
+                      path: "category",
+                    })
+                    .populate({
+                      path: "brand",
+                    })
+                    .exec((err, products_regex) => {
+                      if (err) return reject(err);
+                      return cb(null, products_regex || []);
+                    });
+                },
+                (cb) => {
+                  Product.countDocuments(query_regex, (err, count_regex) => {
+                    if (err) return cb(err);
+                    return cb(null, count_regex);
+                  });
+                },
+              ],
+              (err, results) => {
+                if (err) return reject(err);
+                let products = results[0];
+                for (let i = 0; i < products.length; i++) {
+                  products[i].image = products[i].image
+                    ? cnf.cloudUrl + products[i].image
+                    : "";
+                }
+                return resolve({
+                  products,
+                  count: results[1],
+                });
+              }
+            );
           }
-
-          return resolve({
-            products,
-            count: results[1],
-          });
         }
       );
     });

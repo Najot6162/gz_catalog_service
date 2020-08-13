@@ -4,12 +4,14 @@ const Types = mongoose.Schema.Types;
 var ProductSchema = new mongoose.Schema({
     name: {
         type: String,
-        required: true
+        required: true,
+        text: true
     },
     slug: {
         type: String,
         slug: 'name',
-        permanent: true
+        permanent: true,
+        text: true
     },
     category: {
         type: Types.ObjectId,
@@ -33,7 +35,8 @@ var ProductSchema = new mongoose.Schema({
     },
     description: {
         type: String,
-        default: ''
+        default: '',
+        text: true
     },
     image: {
         type: String
