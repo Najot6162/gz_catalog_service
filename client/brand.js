@@ -4,12 +4,12 @@ const logger = require("../config/logger");
 var PROTO_PATH = __dirname + '/../protos/catalog_service/catalog_service.proto';
 var packageDefinition = protoLoader.loadSync(
     PROTO_PATH, {
-        keepCase: true,
-        longs: String,
-        enums: String,
-        defaults: true,
-        oneofs: true
-    }
+    keepCase: true,
+    longs: String,
+    enums: String,
+    defaults: true,
+    oneofs: true
+}
 );
 var CatalogProto = grpc.loadPackageDefinition(packageDefinition).catalog;
 
@@ -69,7 +69,7 @@ function main() {
                 }, (err, deleteResponse) => {
                     if (err) return console.log('Error: ', err.message);
                     logger.debug("Brand Delete response", {
-                        response: updateResponse,
+                        response: deleteResponse,
                         label: "test",
                     });
                 });

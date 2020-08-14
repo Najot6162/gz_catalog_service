@@ -208,6 +208,18 @@ message ShopSlim {
     string lang = 17;
 }
 
+message Feedback {
+    string id = 1;
+    string customer_name = 2;
+    string customer_id = 3;
+    string product_id = 4;
+    string comment = 5;
+    bool   active = 6;
+    int64  rate = 7;
+    string created_at = 8;
+    string updated_at = 9;
+}
+
 message GetRequest {
     string id = 1;
     string slug = 2;
