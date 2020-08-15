@@ -30,6 +30,7 @@ let productPropertyStorage = {
 
         pp.name = b.name;
         pp.active = b.active;
+        pp.type = b.type;
         pp.options = b.options;
         pp.description = b.description;
         pp.order = b.order;

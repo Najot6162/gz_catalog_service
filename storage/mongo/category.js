@@ -15,6 +15,12 @@ let categoryStorage = {
 
       c.parent = b.parent_id || null;
       c.lang = b.lang ? b.lang : cnf.lang;
+      c.product_properties = b.product_properties
+        .split(",")
+        .filter((f) => {
+          return mongoose.Types.ObjectId.isValid(f.trim());
+        })
+        .map((f, i) => f.trim());
       c.product_property_groups = b.product_property_groups
         .split(",")
         .filter((f) => {
@@ -91,6 +97,12 @@ let categoryStorage = {
           description: b.meta ? b.meta.description : cat.meta.description,
           tags: b.meta ? b.meta.tags : cat.meta.tags,
         };
+        cat.product_properties = b.product_properties
+          .split(",")
+          .filter((f) => {
+            return mongoose.Types.ObjectId.isValid(f.trim());
+          })
+          .map((f, i) => f.trim());
         cat.product_property_groups = b.product_property_groups
           .split(",")
           .filter((f) => {
@@ -199,7 +211,7 @@ let categoryStorage = {
   },
   get: (req) => {
     return new Promise((resolve, reject) => {
-      if (!(req.id || req.slug)) return reject(new Error("ID is not given"));
+      if (!(req.id || req.slug)) return reject(new Error("Key is not given"));
 
       let query = {};
 
@@ -225,19 +237,24 @@ let categoryStorage = {
             foreignField: "parent",
             as: "children",
           },
-        },
-        {
+        }, {
           $lookup: {
             from: "categories",
             localField: "parent",
             foreignField: "_id",
             as: "parent",
           },
-        },
-        {
+        }, {
           $unwind: {
             path: "$parent",
             preserveNullAndEmptyArrays: true,
+          },
+        }, {
+          $lookup: {
+            from: "productproperties",
+            localField: "product_properties",
+            foreignField: "_id",
+            as: "product_properties",
           },
         },
       ]).exec((err, cat) => {
@@ -261,6 +278,10 @@ let categoryStorage = {
               }
             : null,
           image: cat.image ? cnf.cloudUrl + cat.image : "",
+          product_properties: cat.product_properties.map((pp, i) => ({
+            ...pp,
+            id: pp._id
+          }))
         };
 
         return resolve(cat);

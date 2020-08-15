@@ -63,7 +63,8 @@ message CreateCategoryRequest {
     string image = 6;
     CategoryMeta meta = 7;
     string product_property_groups = 8;
-    string lang = 9;
+    string product_properties = 9;
+    string lang = 10;
 }
 
 message UpdateCategoryRequest {
@@ -81,7 +82,8 @@ message UpdateCategoryRequest {
     string image = 7;
     CategoryMeta meta = 8;
     string product_property_groups = 9;
-    string lang = 10;
+    string product_properties = 10;
+    string lang = 11;
 }
 
 message CategoryResponse {
