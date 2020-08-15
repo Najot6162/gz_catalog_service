@@ -38,6 +38,10 @@ var CategorySchema = new mongoose.Schema(
         ref: "ProductPropertyGroup",
       },
     ],
+    product_properties: [{
+      type: Types.ObjectId,
+      ref: "ProductProperty"
+    }],
     meta: {
       title: {
         type: String,

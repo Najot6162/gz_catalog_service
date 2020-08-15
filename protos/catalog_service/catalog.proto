@@ -96,7 +96,8 @@ message Category {
     string created_at = 10;
     string updated_at = 11;
     repeated ProductPropertyGroup product_property_groups  = 12;
-    string lang = 13;
+    repeated ProductProperty product_properties = 13;
+    string lang = 14;
 }
 
 message Brand {
