@@ -11,7 +11,7 @@ let feedbackStorage = {
         return new Promise((resolve, reject) => {
             if (!b.customer_name) return reject(new Error("Customer name is required"));
             if (!b.product_id) return reject(new Error("Product id is required"));
-            Product.findOne({ slug: b.product_id }, (err, product) => {
+            Product.findOne({ slug: b.product_id, lang: cnf.lang }, (err, product) => {
                 if (err) return reject(err);
                 if (!product) return reject(err);
                 console.log(product);
@@ -71,7 +71,7 @@ let feedbackStorage = {
                     ],
                 };
             }
-            Product.findOne({ slug: filters.product_id }, (err, product) => {
+            Product.findOne({ slug: filters.product_id, lang: cnf.lang }, (err, product) => {
                 if (err) return reject(err);
                 if (!product) return reject(err);
                 if (filters.product_id) {
@@ -124,6 +124,7 @@ let feedbackStorage = {
             let query = {};
             if (req.id) query._id = req.id;
             Feedback.findOne(query, (err, br) => {
+                console.log(br);
                 if (err) return reject(err);
                 if (!br) return reject(new Error("Document not found"));
                 return resolve(br);

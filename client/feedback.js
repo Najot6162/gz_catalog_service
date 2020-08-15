@@ -22,7 +22,7 @@ function main() {
         customer_id: "customer_id",
         product_id: "my-product",
         comment: "my comment",
-        rate: 0,
+        rate: 2,
         active: true
     }, (err, createResponse) => {
         if (err) return console.log('Error: ', err.message);
@@ -31,7 +31,7 @@ function main() {
             label: "test",
         });
         // find Feedback
-        client.Find({ product_id: "my-product" }, (err, findResponse) => {
+        client.Find({ product_id: "my-product", lang: "ru" }, (err, findResponse) => {
             if (err) return console.log('Error: ', err.message);
             logger.debug("Feedback Find response", {
                 response: findResponse,

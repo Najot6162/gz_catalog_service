@@ -66,7 +66,7 @@ const feedbackService = {
             request: call.request
         });
         feedbackStorage.get(call.request).then((result) => {
-            callback(null, { brand: result });
+            callback(null, { feedback: result });
         }).catch((err) => {
             logger.error(err.message, {
                 function: 'get feedback',
