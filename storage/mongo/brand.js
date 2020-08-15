@@ -126,8 +126,8 @@ let brandStorage = {
             };
             let options = {
                 skip: ((filters.page / 1 - 1) * filters.limit) / 1,
-                limit: filters.limit / 1 ? filters.limit / 1 : 20,
-                sort: { created_at: 1 },
+                limit: filters.limit / 1 ? filters.limit / 1 : 50,
+                sort: { created_at: -1 },
             };
             logger.debug("filtering brands", {
                 query,
@@ -136,18 +136,15 @@ let brandStorage = {
             async.parallel(
                 [
                     (cb) => {
-                        Brand.find(query, {}, options, (err, brands) => {
-                            if (err) return reject(err);
-                            Product.find(productQuery, {}, options)
-                                .populate({
-                                    path: "brand",
-                                })
-                                .exec((err, allProducts) => {
-                                    if (err) return reject(err);
-                                    let brandsByCategory = allProducts.map(p => p.brand).filter((value, index, self) => self.indexOf(value) === index)
-                                    return cb(null, brandsByCategory || []);
-                                });
-                        })
+                        Product.find(productQuery, {}, options)
+                            .populate({
+                                path: "brand",
+                            })
+                            .exec((err, allProducts) => {
+                                if (err) return reject(err);
+                                let brandsByCategory = allProducts.map(p => p.brand).filter((value, index, self) => self.indexOf(value) === index)
+                                return cb(null, brandsByCategory || []);
+                            });
                     },
                     (cb) => {
                         Brand.countDocuments(query, (err, count) => {
