@@ -2,11 +2,11 @@ const mongoose = require('mongoose');
 const Types = mongoose.Schema.Types;
 
 var BrandSchema = new mongoose.Schema({
-    name:{
-        type:String,
+    name: {
+        type: String,
         required: true
     },
-    slug:{
+    slug: {
         type: String,
         slug: 'name',
         unique: true
@@ -15,16 +15,16 @@ var BrandSchema = new mongoose.Schema({
         type: String,
         default: ''
     },
-    description:{
-        type:String,
+    description: {
+        type: String,
         default: ''
     },
-    active:{
+    active: {
         type: Boolean,
         default: true
     },
     order: {
-        type:Number,
+        type: Number,
         default: 0
     },
     image: {
@@ -35,7 +35,7 @@ var BrandSchema = new mongoose.Schema({
         type: Number
     },
     created_at: {
-        type:Date,
+        type: Date,
         default: Date.now
     },
     updated_at: {
