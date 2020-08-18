@@ -31,8 +31,6 @@ let feedbackStorage = {
             if (!b.id) return reject(new Error("ID is not provided"));
             if (!b.customer_name) return reject(new Error("name is required"));
             if (!b.customer_id) return reject(new Error("Customer id is required"));
-            if (!b.product_id) return reject(new Error("Product id is required"));
-
             Feedback.findById(b.id, (err, br) => {
                 if (err) return reject(err);
                 if (!br)
@@ -40,7 +38,6 @@ let feedbackStorage = {
 
                 br.customer_name = b.customer_name;
                 br.customer_id = b.customer_id;
-                br.product_id = b.product_id;
                 br.rate = b.rate;
                 br.comment = b.comment;
                 br.active = b.active;
@@ -71,6 +68,45 @@ let feedbackStorage = {
                     ],
                 };
             }
+
+            let options = {
+                skip: ((filters.page / 1 - 1) * filters.limit) / 1,
+                limit: filters.limit / 1 ? filters.limit / 1 : 10,
+                sort: { created_at: -1 },
+            };
+            logger.debug("filtering brands", {
+                query,
+                options,
+            });
+            async.parallel(
+                [
+                    (cb) => {
+                        Feedback.find(query, {}, options, (err, feedbacks) => {
+                            if (err) return reject(err);
+                            return cb(null, feedbacks || []);
+                        });
+                    },
+                    (cb) => {
+                        Feedback.countDocuments(query, (err, count) => {
+                            if (err) return cb(err);
+                            return cb(null, count);
+                        });
+                    },
+                ],
+                (err, results) => {
+                    if (err) return reject(err);
+                    let feedbacks = results[0];
+                    return resolve({
+                        feedbacks,
+                        count: results[1],
+                    });
+                }
+            );
+        });
+    },
+    findByProductId: (filters) => {
+        return new Promise((resolve, reject) => {
+            let query = {};
             Product.findOne({ slug: filters.product_id, lang: cnf.lang }, (err, product) => {
                 if (err) return reject(err);
                 if (!product) return reject(err);
@@ -82,7 +118,7 @@ let feedbackStorage = {
                 }
                 let options = {
                     skip: ((filters.page / 1 - 1) * filters.limit) / 1,
-                    limit: filters.limit / 1 ? filters.limit / 1 : 50,
+                    limit: filters.limit / 1 ? filters.limit / 1 : 10,
                     sort: { created_at: -1 },
                 };
                 logger.debug("filtering brands", {

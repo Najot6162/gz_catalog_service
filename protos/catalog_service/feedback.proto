@@ -7,7 +7,7 @@ import "catalog.proto";
 
 service FeedbackService {
     rpc Create(Feedback) returns (FeedbackResponse) {}
-    rpc Update(Feedback) returns (FeedbackResponse) {}
+    rpc Update(UpdateFeedbackRequest) returns (FeedbackResponse) {}
     rpc Find(FeedbackFindRequest) returns (FeedbacksResponse) {}
     rpc Get(GetRequest) returns (FeedbackResponse) {}
     rpc Delete(DeleteRequest) returns (Empty) {}
@@ -21,6 +21,14 @@ message FeedbackFindRequest {
     string sort = 6;
     string product_id = 7;
 
+}
+message UpdateFeedbackRequest {
+     string id = 1;
+    string customer_name = 2;
+    string customer_id = 3;
+    string comment = 4;
+    bool   active = 5;
+    int64  rate = 6;
 }
 
 message FeedbackResponse {
