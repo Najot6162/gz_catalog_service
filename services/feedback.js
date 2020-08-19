@@ -44,21 +44,40 @@ const feedbackService = {
             label: 'feedback',
             request: call.request
         });
-        feedbackStorage.find(call.request).then((result) => {
-            callback(null, {
-                feedbacks: result.feedbacks,
-                count: result.count
+        if (call.request.product_id) {
+            feedbackStorage.findByProductId(call.request).then((result) => {
+                callback(null, {
+                    feedbacks: result.feedbacks,
+                    count: result.count
+                });
+            }).catch((err) => {
+                logger.error(err.message, {
+                    function: 'find feedbacks',
+                    request: call.request
+                });
+                callback({
+                    code: grpc.status.INTERNAL,
+                    message: err.message
+                });
             });
-        }).catch((err) => {
-            logger.error(err.message, {
-                function: 'find feedbacks',
-                request: call.request
+        } else {
+            feedbackStorage.find(call.request).then((result) => {
+                callback(null, {
+                    feedbacks: result.feedbacks,
+                    count: result.count
+                });
+            }).catch((err) => {
+                logger.error(err.message, {
+                    function: 'find feedbacks',
+                    request: call.request
+                });
+                callback({
+                    code: grpc.status.INTERNAL,
+                    message: err.message
+                });
             });
-            callback({
-                code: grpc.status.INTERNAL,
-                message: err.message
-            });
-        });
+
+        }
     },
     Get: (call, callback) => {
         logger.debug('Feedback Get Request', {
@@ -66,7 +85,7 @@ const feedbackService = {
             request: call.request
         });
         feedbackStorage.get(call.request).then((result) => {
-            callback(null, { brand: result });
+            callback(null, { feedback: result });
         }).catch((err) => {
             logger.error(err.message, {
                 function: 'get feedback',

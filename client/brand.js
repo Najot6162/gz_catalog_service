@@ -30,7 +30,7 @@ function main() {
             label: "test",
         });
         // find Brand
-        client.Find({ category: "5f24e9d25aa3da35d8946cf9", lang: "ru" }, (err, findResponse) => {
+        client.Find({}, (err, findResponse) => {
             if (err) return console.log('Error: ', err.message);
             logger.debug("Brand Find response", {
                 response: findResponse,

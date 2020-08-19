@@ -18,11 +18,11 @@ function main() {
 
     // create Brand
     client.Create({
-        customer_name: 'customer name',
+        customer_name: 'customer2 name',
         customer_id: "customer_id",
         product_id: "my-product",
         comment: "my comment",
-        rate: 0,
+        rate: 2,
         active: true
     }, (err, createResponse) => {
         if (err) return console.log('Error: ', err.message);
@@ -30,8 +30,8 @@ function main() {
             response: createResponse,
             label: "test",
         });
-        // find Feedback
-        client.Find({ product_id: "my-product" }, (err, findResponse) => {
+        // find Feedback   product_id: "my-product", lang: "ru" 
+        client.Find({}, (err, findResponse) => {
             if (err) return console.log('Error: ', err.message);
             logger.debug("Feedback Find response", {
                 response: findResponse,
@@ -44,7 +44,6 @@ function main() {
             id: createResponse.feedback.id,
             customer_name: ' updated customer name',
             customer_id: "customer_id",
-            product_id: createResponse.feedback.product_id,
             comment: "my updated comment",
             rate: 1,
             active: true
@@ -65,7 +64,7 @@ function main() {
                     label: "test",
                 });
 
-                // delete Brand
+                //delete Brand
                 client.Delete({
                     id: updateResponse.feedback.id
                 }, (err, deleteResponse) => {

@@ -16,7 +16,9 @@ var FeedbackSchema = new mongoose.Schema({
     },
     rate: {
         type: Number,
-        default: 0
+        default: 1,
+        min: 1,
+        max: 5
     },
     comment: {
         type: String,

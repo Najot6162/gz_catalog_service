@@ -63,8 +63,8 @@ let brandStorage = {
             }
             let options = {
                 skip: ((filters.page / 1 - 1) * filters.limit) / 1,
-                limit: filters.limit / 1 ? filters.limit / 1 : 50,
-                sort: { created_at: 1 },
+                limit: filters.limit / 1 ? filters.limit / 1 : 10,
+                sort: { created_at: -1 },
             };
             logger.debug("filtering brands", {
                 query,
@@ -124,30 +124,21 @@ let brandStorage = {
                 lang: filters.lang ? filters.lang : cnf.lang,
                 category: filters.category
             };
-            let options = {
-                skip: ((filters.page / 1 - 1) * filters.limit) / 1,
-                limit: filters.limit / 1 ? filters.limit / 1 : 20,
-                sort: { created_at: 1 },
-            };
             logger.debug("filtering brands", {
-                query,
-                options,
+                productQuery
             });
             async.parallel(
                 [
                     (cb) => {
-                        Brand.find(query, {}, options, (err, brands) => {
-                            if (err) return reject(err);
-                            Product.find(productQuery, {}, options)
-                                .populate({
-                                    path: "brand",
-                                })
-                                .exec((err, allProducts) => {
-                                    if (err) return reject(err);
-                                    let brandsByCategory = allProducts.map(p => p.brand).filter((value, index, self) => self.indexOf(value) === index)
-                                    return cb(null, brandsByCategory || []);
-                                });
-                        })
+                        Product.find(productQuery)
+                            .populate({
+                                path: "brand",
+                            })
+                            .exec((err, allProducts) => {
+                                if (err) return reject(err);
+                                let brandsByCategory = allProducts.map(p => p.brand).filter(brand => { if (brand !== null) return brand }).filter((value, index, self) => self.indexOf(value) === index)
+                                return cb(null, brandsByCategory || []);
+                            });
                     },
                     (cb) => {
                         Brand.countDocuments(query, (err, count) => {
@@ -159,11 +150,10 @@ let brandStorage = {
                 (err, results) => {
                     if (err) return reject(err);
                     let brands = results[0];
-                    // setting image
+                    //setting image
                     for (let i = 0; i < brands.length; i++) {
                         brands[i].image = brands[i].image ?
-                            cnf.cloudUrl + brands[i].image :
-                            "";
+                            cnf.cloudUrl + brands[i].image : "";
                     }
                     return resolve({
                         brands,
