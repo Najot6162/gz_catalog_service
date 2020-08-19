@@ -347,12 +347,31 @@ let productStorage = {
           $lte: filters.price_till,
         };
       }
-      //filter by recommended
-
-      //filter by popular
-
       if (Object.keys(priceQuery).length) query["price.price"] = priceQuery;
 
+      // filter by properties
+      if(filters.properties && filters.properties.length){
+        let properties = filters.properties.filter((p, i) => {
+          return p.property_id && mongoose.Types.ObjectId.isValid(p.property_id) && p.value;
+        });
+        let propertiesQuery = [];
+        for(let i = 0; i < properties.length; i++){
+          let p = properties[i];
+          let value = p.value.split(',').map((v, j) => v.trim());
+          propertiesQuery.push({
+            property: p.property_id,
+            value: {$in: value}
+          });
+        }
+        query = {
+          ...query,
+          properties: {
+            $elemMatch: { $or: propertiesQuery }
+          }
+        }
+      }
+
+      // preparing options
       let options = {
         skip: ((filters.page / 1 - 1) * filters.limit) / 1,
         limit: filters.limit / 1 ? filters.limit / 1 : 50,
