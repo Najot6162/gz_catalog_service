@@ -114,17 +114,21 @@ let categoryStorage = {
           .map((f, i) => f.trim());
         Category.updateMany({slug:cat.slug}, {
           $set:{
-            product_properties,
-            product_property_groups
+            product_properties: product_properties,
+            product_property_groups: product_property_groups
           }
         }, (err, updateOtherFields) => {
           if(err){
             logger.error('property fields could not be updated', {
               function: 'update category',
-              updateResult: updateOtherFields
+              err
             });
           }
-          logger.debug('property fields of category ' + cat.slug + ' have been updated');
+          logger.debug('property fields of category ' + cat.slug + ' have been updated', {
+            updateResult: updateOtherFields,
+            product_properties,
+            product_property_groups
+          });
         });
 
         // updating and sending response
