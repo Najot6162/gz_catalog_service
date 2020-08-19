@@ -23,7 +23,7 @@ let feedbackStorage = {
                     if (err) return reject(err);
                     return resolve(newFeedback);
                 });
-            })
+            });
         });
     },
     update: (b) => {
@@ -113,8 +113,7 @@ let feedbackStorage = {
                         });
                     }
                 );
-            })
-
+            });
         });
     },
     get: (req) => {
