@@ -451,6 +451,8 @@ let productStorage = {
         })
         .populate({
           path: "additional_categories",
+        }).populate({
+          path: 'properties.property'
         })
         .exec((err, product) => {
           if (err) return reject(err);

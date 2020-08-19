@@ -8,7 +8,7 @@ var FeedbackSchema = new mongoose.Schema({
     },
     customer_id: {
         type: String,
-        required: true
+        default:""
     },
     product_id: {
         type: Types.ObjectId,

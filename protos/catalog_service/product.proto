@@ -78,11 +78,11 @@ message ShopsRequest {
     string product_slug = 2;
 }
 message ShopsResponse {
-   message ShopResponse{
-   ShopSlim shop = 1;
-   int32 quantity = 2;
-}
-   repeated ShopResponse shops = 1;
+    message ShopResponse{
+        ShopSlim shop = 1;
+        int32 quantity = 2;
+    }
+    repeated ShopResponse shops = 1;
 }
 
 message ProductResponse {
@@ -90,6 +90,10 @@ message ProductResponse {
 }
 
 message FindProductsRequest {
+    message Property {
+        string property_id = 1;
+        string value = 2;
+    }
     int64  page = 1;
     string search = 2;
     bool   active = 3;
@@ -103,6 +107,7 @@ message FindProductsRequest {
     string lang = 11;
     bool   recommended = 12;
     bool   popular = 13;
+    repeated Property properties = 14;
 }
 
 message FindProductsResponse {

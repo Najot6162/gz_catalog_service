@@ -10,10 +10,10 @@ let feedbackStorage = {
     create: (b) => {
         return new Promise((resolve, reject) => {
             if (!b.customer_name) return reject(new Error("Customer name is required"));
-            if (!b.product_id) return reject(new Error("Product id is required"));
+            if (!b.product_id) return reject(new Error("Product key is required"));
             Product.findOne({ slug: b.product_id, lang: cnf.lang }, (err, product) => {
                 if (err) return reject(err);
-                if (!product) return reject(err);
+                if (!product) return reject(new Error("product not found with given key"));
                 console.log(product);
                 let br = new Feedback(b);
                 br.product_id = product.id;
