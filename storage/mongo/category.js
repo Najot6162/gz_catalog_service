@@ -97,19 +97,37 @@ let categoryStorage = {
           description: b.meta ? b.meta.description : cat.meta.description,
           tags: b.meta ? b.meta.tags : cat.meta.tags,
         };
-        cat.product_properties = b.product_properties
-          .split(",")
-          .filter((f) => {
-            return mongoose.Types.ObjectId.isValid(f.trim());
-          })
-          .map((f, i) => f.trim());
-        cat.product_property_groups = b.product_property_groups
+        
+        // fields for updating in all languages
+        let product_properties = b.product_properties
           .split(",")
           .filter((f) => {
             return mongoose.Types.ObjectId.isValid(f.trim());
           })
           .map((f, i) => f.trim());
 
+        let product_property_groups = b.product_property_groups
+          .split(",")
+          .filter((f) => {
+            return mongoose.Types.ObjectId.isValid(f.trim());
+          })
+          .map((f, i) => f.trim());
+        Category.updateMany({slug:cat.slug}, {
+          $set:{
+            product_properties,
+            product_property_groups
+          }
+        }, (err, updateOtherFields) => {
+          if(err){
+            logger.error('property fields could not be updated', {
+              function: 'update category',
+              updateResult: updateOtherFields
+            });
+          }
+          logger.debug('property fields of category ' + cat.slug + ' have been updated');
+        });
+
+        // updating and sending response
         cat.save((err, updatedCategory) => {
           if (err) return reject(err);
           resolve(updatedCategory);
