@@ -112,7 +112,7 @@ message CategorySlim {
     string id = 1;
     string name = 2;
     string slug = 3;
-    SlimCategory parent = 4;
+    Parent parent = 4;
     bool active = 5;
     int64 order = 6;
     string image = 7;
