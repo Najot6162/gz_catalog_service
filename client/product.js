@@ -44,7 +44,7 @@ function main() {
         });
 
         // find Product кондиционер
-        client.Find({ search: "кондиц" }, (err, findResponse) => {
+        client.Find({ search: "Фен" }, (err, findResponse) => {
             if (err) return console.log('Error: ', err.message);
             logger.debug('Product Find response', {
                 response: findResponse,
@@ -95,7 +95,8 @@ function main() {
                 // get Product
                 client.Get({
                     slug: updateResponse.product.slug,
-                    lang: 'ru'
+                    lang: 'ru',
+                    onlyRelatedProducts: false
                 }, (err, getResponse) => {
                     if (err) return console.log('Error: ', err.message);
 

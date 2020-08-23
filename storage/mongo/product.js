@@ -465,20 +465,36 @@ let productStorage = {
             ...product.brand,
             image: product.brand.image ? cnf.cloudUrl + product.brand.image : ""
           } : null;
-
-          getRelatedProducts(product._id, 10)
-            .then((related_products) => {
-              product.related_products = related_products;
-              return resolve(product);
-            })
-            .catch((err) => {
-              logger.error(err.message, {
-                function: "getting related products",
-                product_id,
-                limit,
+          if (req.onlyRelatedProducts == true) {
+            getOnlyRelatedProducts(product._id, 10)
+              .then((related_products) => {
+                product.related_products = related_products;
+                return resolve(product);
+              })
+              .catch((err) => {
+                logger.error(err.message, {
+                  function: "getting related products",
+                  product_id,
+                  limit,
+                });
+                return resolve(product);
               });
-              return resolve(product);
-            });
+          }
+          else {
+            getRelatedProducts(product._id, 10)
+              .then((related_products) => {
+                product.related_products = related_products;
+                return resolve(product);
+              })
+              .catch((err) => {
+                logger.error(err.message, {
+                  function: "getting related products",
+                  product_id,
+                  limit,
+                });
+                return resolve(product);
+              });
+          }
         });
     });
   },
@@ -945,4 +961,36 @@ const getRelatedProducts = (product_id = "", limit = 10) =>
     });
   });
 
+
+const getOnlyRelatedProducts = (product_id = "", limit = 10) =>
+  new Promise((resolve, reject) => {
+    Product.findById(product_id, (err, p) => {
+      if (err) reject(err);
+      Product.find(
+        {
+          _id: { $in: p.related_products },
+        },
+        {},
+        { limit }
+      )
+        .populate({
+          path: "category",
+        })
+        .populate({
+          path: "brand",
+        })
+        .exec((err, relatedProducts) => {
+          if (err) return reject(err);
+
+          // setting images
+          for (let i = 0; i < relatedProducts.length; i++) {
+            relatedProducts[i].image = relatedProducts[i].image
+              ? cnf.cloudUrl + relatedProducts[i].image
+              : "";
+          }
+          return resolve(relatedProducts);
+        }
+        );
+    });
+  });
 module.exports = productStorage;
