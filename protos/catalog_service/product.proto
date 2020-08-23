@@ -11,7 +11,7 @@ service ProductService {
     rpc UpdatePrice(UpdateProductPriceRequest) returns (Empty) {}
     rpc UpdateProperty(UpdateProductPropertyRequest) returns (Empty) {}
     rpc Find(FindProductsRequest) returns (FindProductsResponse) {}
-    rpc Get(GetRequest) returns (ProductResponse) {}
+    rpc Get(GetProductRequest) returns (ProductResponse) {}
     rpc GetShops (ShopsRequest) returns (ShopsResponse) {}
     rpc Delete(DeleteRequest) returns (Empty) {}
 }
@@ -84,6 +84,13 @@ message ShopsResponse {
     }
     repeated ShopResponse shops = 1;
 }
+message GetProductRequest {
+    string id = 1;
+    string slug = 2;
+    string lang = 3;
+    bool onlyRelatedProducts = 4;
+}
+
 
 message ProductResponse {
     Product product = 1;

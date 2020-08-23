@@ -23,7 +23,7 @@ function main() {
         category_id: '5ee1e1b06123a6296c4996af',
         brand_id: '5f2667419be6c18d2c1545cb',
         additional_categories: '5ee1e1b06123a6296c4996bd,5ee1e1b06123a6296c4556bd,5ee1e1b06123a6296c4236bd',
-        related_products: '5ee36f67f8601328a86456df,5ee0d1b06123a6296c4996bd,5ee1sdb06123a6296c4996bd',
+        related_products: '5f256ee9bc7bd40012af047c,5f256ee9bc7bd40012af047e,5f256ee9bc7bd40012af0484',
         preview_text: 'preview text of my product',
         description: 'description of my product',
         external_id: '15',
@@ -59,7 +59,7 @@ function main() {
             category_id: '5ee1e1b06123a6296c4996af',
             brand_id: '5f2667419be6c18d2c1545cb',
             additional_categories: '5ee1e1b06123a6296c4996bd,5ee1e1b06123a6296c4556bd,5ee1e1b06123a6296c4236bd',
-            related_products: '5ee36f67f8601328a86456df,5ee0d1b06123a6296c4996bd,5ee1sdb06123a6296c4996bd',
+            related_products: '5f256ee9bc7bd40012af047c,5f256ee9bc7bd40012af047e,5f256ee9bc7bd40012af0484',
             preview_text: 'preview text of my updated product',
             description: 'description of my updated product',
             external_id: '16',
@@ -96,7 +96,7 @@ function main() {
                 client.Get({
                     slug: updateResponse.product.slug,
                     lang: 'ru',
-                    onlyRelatedProducts: false
+                    onlyRelatedProducts: true
                 }, (err, getResponse) => {
                     if (err) return console.log('Error: ', err.message);
 
@@ -131,37 +131,37 @@ function main() {
     })
 
     // find Product
-    client.GetShops({
-        product_id: "moika-vysokogo-davleniya-karcher-k-7-premium-full-control-plus"
-    }, (err, findResponse) => {
-        if (err) return console.log('Error: ', err.message);
+    // client.GetShops({
+    //     product_id: "moika-vysokogo-davleniya-karcher-k-7-premium-full-control-plus"
+    // }, (err, findResponse) => {
+    //     if (err) return console.log('Error: ', err.message);
 
-        logger.debug('Product get shops response', {
-            response: findResponse,
-            label: 'test'
-        });
-    });
+    //     logger.debug('Product get shops response', {
+    //         response: findResponse,
+    //         label: 'test'
+    //     });
+    // });
 
-    // filtering by attribute
-    client.Find({
-        page: 1,
-        limit: 2,
-        properties: [{
-            property_id: "5f3ca1c35668610012cf747f",  // RAM
-            value: "4,6"
-        }, {
-            property_id: "5f3ca0a75668610012cf7476", // diagonal
-            value: "15-16.4"
-        }]
-    }, (err, filterResponse) => {
-        if (err) return console.log('Error: ', err.message);
+    // // filtering by attribute
+    // client.Find({
+    //     page: 1,
+    //     limit: 2,
+    //     properties: [{
+    //         property_id: "5f3ca1c35668610012cf747f",  // RAM
+    //         value: "4,6"
+    //     }, {
+    //         property_id: "5f3ca0a75668610012cf7476", // diagonal
+    //         value: "15-16.4"
+    //     }]
+    // }, (err, filterResponse) => {
+    //     if (err) return console.log('Error: ', err.message);
 
-        logger.debug('Product Filter by attributes response', {
-            response: filterResponse,
-            label: 'test'
-        });
-        console.log('Product filter by attributes test completed!');
-    });
+    //     logger.debug('Product Filter by attributes response', {
+    //         response: filterResponse,
+    //         label: 'test'
+    //     });
+    //     console.log('Product filter by attributes test completed!');
+    // });
 }
 
 

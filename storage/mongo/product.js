@@ -350,17 +350,17 @@ let productStorage = {
       if (Object.keys(priceQuery).length) query["price.price"] = priceQuery;
 
       // filter by properties
-      if(filters.properties && filters.properties.length){
+      if (filters.properties && filters.properties.length) {
         let properties = filters.properties.filter((p, i) => {
           return p.property_id && mongoose.Types.ObjectId.isValid(p.property_id) && p.value;
         });
         let propertiesQuery = [];
-        for(let i = 0; i < properties.length; i++){
+        for (let i = 0; i < properties.length; i++) {
           let p = properties[i];
           let value = p.value.split(',').map((v, j) => v.trim());
           propertiesQuery.push({
             property: p.property_id,
-            value: {$in: value}
+            value: { $in: value }
           });
         }
         query = {
@@ -985,33 +985,53 @@ const getRelatedProducts = (product_id = "", limit = 10) =>
 
 const getOnlyRelatedProducts = (product_id = "", limit = 10) =>
   new Promise((resolve, reject) => {
+    let related_products = [];
     Product.findById(product_id, (err, p) => {
       if (err) reject(err);
-      Product.find(
-        {
-          _id: { $in: p.related_products },
-        },
-        {},
-        { limit }
-      )
-        .populate({
-          path: "category",
-        })
-        .populate({
-          path: "brand",
-        })
-        .exec((err, relatedProducts) => {
-          if (err) return reject(err);
 
+      async.parallel(
+        {
+          relatedProducts: (cb) => {
+            Product.find(
+              {
+                _id: { $in: p.related_products },
+              },
+              {},
+              { limit }
+            )
+              .populate({
+                path: "category",
+              })
+              .populate({
+                path: "brand",
+              })
+              .exec((err, products) => {
+                if (err) return cb(err);
+                return cb(null, products);
+              });
+          }
+        },
+        (err, results) => {
+          if (err) {
+            logger.error(err.message, {
+              function: "getting related products",
+              product_id,
+              limit,
+            });
+            return resolve([]);
+          }
+
+          related_products = results.relatedProducts;
           // setting images
-          for (let i = 0; i < relatedProducts.length; i++) {
-            relatedProducts[i].image = relatedProducts[i].image
-              ? cnf.cloudUrl + relatedProducts[i].image
+          for (let i = 0; i < related_products.length; i++) {
+            related_products[i].image = related_products[i].image
+              ? cnf.cloudUrl + related_products[i].image
               : "";
           }
-          return resolve(relatedProducts);
+
+          return resolve(related_products);
         }
-        );
+      );
     });
   });
 module.exports = productStorage;
