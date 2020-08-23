@@ -131,16 +131,37 @@ function main() {
     })
 
     // find Product
-    // client.GetShops({ 
-    //     product_id: "moika-vysokogo-davleniya-karcher-k-7-premium-full-control-plus" 
-    // }, (err, findResponse) => {
-    //     if (err) return console.log('Error: ', err.message);
+    client.GetShops({
+        product_id: "moika-vysokogo-davleniya-karcher-k-7-premium-full-control-plus"
+    }, (err, findResponse) => {
+        if (err) return console.log('Error: ', err.message);
 
-    //     logger.debug('Product get shops response', {
-    //         response: findResponse,
-    //         label: 'test'
-    //     });
-    // });
+        logger.debug('Product get shops response', {
+            response: findResponse,
+            label: 'test'
+        });
+    });
+
+    // filtering by attribute
+    client.Find({
+        page: 1,
+        limit: 2,
+        properties: [{
+            property_id: "5f3ca1c35668610012cf747f",  // RAM
+            value: "4,6"
+        }, {
+            property_id: "5f3ca0a75668610012cf7476", // diagonal
+            value: "15-16.4"
+        }]
+    }, (err, filterResponse) => {
+        if (err) return console.log('Error: ', err.message);
+
+        logger.debug('Product Filter by attributes response', {
+            response: filterResponse,
+            label: 'test'
+        });
+        console.log('Product filter by attributes test completed!');
+    });
 }
 
 

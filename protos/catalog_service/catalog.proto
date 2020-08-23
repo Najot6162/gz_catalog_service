@@ -25,9 +25,9 @@ message Product {
     string id = 1;
     string name = 2;
     string slug = 3;
-    Category category = 4;
+    CategorySlim category = 4;
     Brand  brand = 5;
-    repeated Category additional_categories = 6;
+    repeated CategorySlim additional_categories = 6;
     repeated ProductSlim related_products = 7;
     string preview_text = 8;
     string description = 9;
@@ -57,7 +57,7 @@ message ProductSlim {
     string id = 1;
     string name = 2;
     string slug = 3;
-    Category category = 4;
+    CategorySlim category = 4;
     Brand  brand = 5;
     string preview_text = 6;
     bool   active = 7;
@@ -98,6 +98,24 @@ message Category {
     repeated ProductPropertyGroup product_property_groups  = 12;
     repeated ProductProperty product_properties = 13;
     string lang = 14;
+}
+
+message CategorySlim {
+    message Parent {
+        string id = 1;
+        string name = 2;
+        string slug = 3;
+        bool active = 4;
+        int64 order = 5;
+        string image = 6;
+    }
+    string id = 1;
+    string name = 2;
+    string slug = 3;
+    Parent parent = 4;
+    bool active = 5;
+    int64 order = 6;
+    string image = 7;
 }
 
 message Brand {
