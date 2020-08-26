@@ -109,7 +109,7 @@ let feedbackStorage = {
             let query = {};
             Product.findOne({ slug: filters.product_id, lang: cnf.lang }, (err, product) => {
                 if (err) return reject(err);
-                if (!product) return reject(err);
+                if (!product) return reject(new Error("product key is not valid"));
                 if (filters.product_id) {
                     query = {
                         ...query,

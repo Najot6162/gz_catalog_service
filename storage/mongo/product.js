@@ -824,6 +824,7 @@ let productStorage = {
           $project: {
             id: "$_id",
             name: 1,
+            slug: 1,
             product: 1,
             _id: 0
           }
@@ -842,6 +843,11 @@ let productStorage = {
           products: categories.map((c, i) => {
             return {
               ...c.product,
+              category: {
+                id: c.id,
+                name: c.name,
+                slug: c.slug
+              },
               image: c.product.image ? cnf.cloudUrl + c.product.image : ""
             }
           }),
