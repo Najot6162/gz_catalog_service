@@ -1,2 +1,2 @@
-APP=catalog_service
+APP=gz_catalog_service
 REGISTRY=registry.udevs.io

@@ -5,7 +5,7 @@ APP=$(shell basename ${CURRENT_DIR})
 APP_CMD_DIR=${CURRENT_DIR}/cmd
 
 IMG_NAME=${APP}
-REGISTRY=${REGISTRY}
+
 TAG=latest
 ENV_TAG=latest
 

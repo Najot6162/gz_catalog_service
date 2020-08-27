@@ -26,5 +26,5 @@ pipelines:
             - make build-image TAG=$BITBUCKET_BUILD_NUMBER
             - make push-image  TAG=$BITBUCKET_BUILD_NUMBER
             - source .build_info
-            - ssh goodzone@$GOODZONE_PROD_HOST 'docker service update --with-registry-auth --image '$REGISTRY'/'$APP':'$BITBUCKET_BUILD_NUMBER' gz_'$APP''
+            - ssh goodzone@$GOODZONE_PROD_HOST 'docker service update --with-registry-auth --image '$REGISTRY'/'$APP':'$BITBUCKET_BUILD_NUMBER' '$APP''
 
