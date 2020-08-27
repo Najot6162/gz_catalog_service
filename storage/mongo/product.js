@@ -479,27 +479,25 @@ let productStorage = {
 
           // setting image fields
           product.image = product.image ? cnf.cloudUrl + product.image : "";
-          product.gallery = product.gallery
-            ? product.gallery.map((g, j) => (g ? cnf.cloudUrl + g : ""))
-            : [];
-          product.brand = product.brand ? {
-            ...product.brand,
-            image: product.brand.image ? cnf.cloudUrl + product.brand.image : ""
-          } : null;
+          product.gallery = product.gallery ? product.gallery.map((g, j) => (g ? cnf.cloudUrl + g : "")) : [];
+          if(product.brand){
+            product.brand.image = product.brand.image ? (cnf.cloudUrl + product.brand.image) : ""
+          }
+
+          console.log('product brand');
+          console.log(product.brand);
           if (req.onlyRelatedProducts) {
-            getOnlyRelatedProducts(product._id, 10)
-              .then((related_products) => {
-                product.related_products = related_products;
-                return resolve(product);
-              })
-              .catch((err) => {
-                logger.error(err.message, {
-                  function: "getting related products",
-                  product_id,
-                  limit,
-                });
-                return resolve(product);
+            getOnlyRelatedProducts(product._id, 10).then((related_products) => {
+              product.related_products = related_products;
+              return resolve(product);
+            }).catch((err) => {
+              logger.error(err.message, {
+                function: "getting related products",
+                product_id,
+                limit,
               });
+              return resolve(product);
+            });
           } else {
             getRelatedProducts(product._id, 10)
               .then((related_products) => {
@@ -573,7 +571,6 @@ let productStorage = {
             {
               $text: { $search: searchKey },
             },
-
           ],
         };
         query_regex = {
@@ -584,8 +581,18 @@ let productStorage = {
             },
             {
               slug: { $regex: ".*" + searchKey + ".*", $options: 'i' },
-            },
+            }
           ],
+        };
+        category_query = {
+          $or: [
+            {
+              name: { $regex: ".*" + searchKey + ".*", $options: 'i' },
+            },
+            {
+              slug: { $regex: ".*" + searchKey + ".*", $options: 'i' },
+            }
+          ]
         };
       }
 
@@ -594,81 +601,81 @@ let productStorage = {
         limit: filters.limit / 1 ? filters.limit / 1 : 50,
         sort: { created_at: -1 },
       };
-      async.parallel(
-        [
-          (cb) => {
-            Product.find(query_text, {}, options)
-              .populate({
-                path: "category",
-              })
-              .populate({
-                path: "brand",
-              })
-              .exec((err, products_text) => {
-                if (err) return reject(err);
-                return cb(null, products_text || []);
-              });
+      
+      // we first query categories and change query for products according to the result
+      Category.find(category_query, '_id', (err, categories) => {
+        if (err) return reject(err);
+        if(categories.length){
+          // changinf query for product
+          query_regex.$or.push({
+            category: {$in: categories.map((c, i) => c._id)}
+          });
+        }
+
+        async.parallel({
+          products: (cb) => {
+            Product.find(query_regex, {}, options).populate({
+              path: "category",
+            }).populate({
+              path: "brand",
+            }).exec((err, products_regex) => {
+              if (err) return reject(err);
+              return cb(null, products_regex || []);
+            });
           },
-          (cb) => {
-            Product.countDocuments(query_text, (err, count_text) => {
+          count: (cb) => {
+            Product.countDocuments(query_regex, (err, count_text) => {
               if (err) return cb(err);
               return cb(null, count_text);
             });
-          },
-        ],
-        (err, results) => {
+          }
+        }, (err, result) => {
           if (err) return reject(err);
-          let products = results[0];
+          let products = result.products;
           if (products && products.length) {
             for (let i = 0; i < products.length; i++) {
-              products[i].image = products[i].image
-                ? cnf.cloudUrl + products[i].image
-                : "";
+              products[i].image = products[i].image ? cnf.cloudUrl + products[i].image : "";
+            }
+            return resolve({
+              products,
+              count: result.count,
+            });
+          }
+
+          // no results found from first approach, now we are trying with $text operator 
+          async.parallel([
+            (cb) => {
+              Product.find(query_text, {}, options)
+                .populate({
+                  path: "category",
+                })
+                .populate({
+                  path: "brand",
+                })
+                .exec((err, products_regex) => {
+                  if (err) return reject(err);
+                  return cb(null, products_regex || []);
+                });
+            },
+            (cb) => {
+              Product.countDocuments(query_regex, (err, count_regex) => {
+                if (err) return cb(err);
+                return cb(null, count_regex);
+              });
+            },
+          ], (err, results) => {
+            if (err) return reject(err);
+            let products = results[0];
+            for (let i = 0; i < products.length; i++) {
+              products[i].image = products[i].image ? cnf.cloudUrl + products[i].image : "";
             }
             return resolve({
               products,
               count: results[1],
             });
-          } else {
-            async.parallel(
-              [
-                (cb) => {
-                  Product.find(query_regex, {}, options)
-                    .populate({
-                      path: "category",
-                    })
-                    .populate({
-                      path: "brand",
-                    })
-                    .exec((err, products_regex) => {
-                      if (err) return reject(err);
-                      return cb(null, products_regex || []);
-                    });
-                },
-                (cb) => {
-                  Product.countDocuments(query_regex, (err, count_regex) => {
-                    if (err) return cb(err);
-                    return cb(null, count_regex);
-                  });
-                },
-              ],
-              (err, results) => {
-                if (err) return reject(err);
-                let products = results[0];
-                for (let i = 0; i < products.length; i++) {
-                  products[i].image = products[i].image
-                    ? cnf.cloudUrl + products[i].image
-                    : "";
-                }
-                return resolve({
-                  products,
-                  count: results[1],
-                });
-              }
-            );
-          }
-        }
-      );
+          });
+        });
+      });
     });
   },
   findRecommended: (filters) => {
@@ -868,8 +875,8 @@ let productStorage = {
   },
 };
 
-const getRelatedProducts = (product_id = "", limit = 10) =>
-  new Promise((resolve, reject) => {
+const getRelatedProducts = (product_id = "", limit = 10) => {
+  return new Promise((resolve, reject) => {
     let related_products = [];
     Product.findById(product_id, (err, p) => {
       if (err) reject(err);
@@ -986,10 +993,11 @@ const getRelatedProducts = (product_id = "", limit = 10) =>
       );
     });
   });
+}
 
 
-const getOnlyRelatedProducts = (product_id = "", limit = 10) =>
-  new Promise((resolve, reject) => {
+const getOnlyRelatedProducts = (product_id = "", limit = 10) => {
+  return new Promise((resolve, reject) => {
     let related_products = [];
     Product.findById(product_id, (err, p) => {
       if (err) reject(err);
@@ -1039,4 +1047,5 @@ const getOnlyRelatedProducts = (product_id = "", limit = 10) =>
       );
     });
   });
+}
 module.exports = productStorage;

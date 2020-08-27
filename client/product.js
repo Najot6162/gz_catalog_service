@@ -21,7 +21,7 @@ function main() {
     client.Create({
         name: 'my product',
         category_id: '5ee1e1b06123a6296c4996af',
-        brand_id: '5f2667419be6c18d2c1545cb',
+        brand_id: '5f24d71fe5fba43358f294e1', //dell
         additional_categories: '5ee1e1b06123a6296c4996bd,5ee1e1b06123a6296c4556bd,5ee1e1b06123a6296c4236bd',
         related_products: '5f256ee9bc7bd40012af047c,5f256ee9bc7bd40012af047e,5f256ee9bc7bd40012af0484',
         preview_text: 'preview text of my product',
@@ -57,7 +57,7 @@ function main() {
             id: createResponse.product.slug,
             name: 'my updated Product',
             category_id: '5ee1e1b06123a6296c4996af',
-            brand_id: '5f2667419be6c18d2c1545cb',
+            brand_id: '5f24d71fe5fba43358f294e1',
             additional_categories: '5ee1e1b06123a6296c4996bd,5ee1e1b06123a6296c4556bd,5ee1e1b06123a6296c4236bd',
             related_products: '5f256ee9bc7bd40012af047c,5f256ee9bc7bd40012af047e,5f256ee9bc7bd40012af0484',
             preview_text: 'preview text of my updated product',
