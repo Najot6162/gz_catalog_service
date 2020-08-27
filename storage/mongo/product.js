@@ -483,9 +483,7 @@ let productStorage = {
           if(product.brand){
             product.brand.image = product.brand.image ? (cnf.cloudUrl + product.brand.image) : ""
           }
-
-          console.log('product brand');
-          console.log(product.brand);
+          
           if (req.onlyRelatedProducts) {
             getOnlyRelatedProducts(product._id, 10).then((related_products) => {
               product.related_products = related_products;
