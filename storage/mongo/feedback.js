@@ -30,14 +30,12 @@ let feedbackStorage = {
         return new Promise((resolve, reject) => {
             if (!b.id) return reject(new Error("ID is not provided"));
             if (!b.customer_name) return reject(new Error("name is required"));
-            if (!b.customer_id) return reject(new Error("Customer id is required"));
             Feedback.findById(b.id, (err, br) => {
                 if (err) return reject(err);
                 if (!br)
                     return reject(new Error("Document with id:" + b.id + " not found"));
 
                 br.customer_name = b.customer_name;
-                br.customer_id = b.customer_id;
                 br.rate = b.rate;
                 br.comment = b.comment;
                 br.active = b.active;
