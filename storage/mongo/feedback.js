@@ -67,12 +67,19 @@ let feedbackStorage = {
                 };
             }
 
+            if(filters.active == true){
+                query = {
+                    ...query,
+                    active: true
+                }
+            }
+
             let options = {
                 skip: ((filters.page / 1 - 1) * filters.limit) / 1,
                 limit: filters.limit / 1 ? filters.limit / 1 : 10,
                 sort: { created_at: -1 },
             };
-            logger.debug("filtering brands", {
+            logger.debug("filtering feedbacks", {
                 query,
                 options,
             });
