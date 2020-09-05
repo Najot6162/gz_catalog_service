@@ -281,7 +281,7 @@ let categoryStorage = {
         },
       ]).exec((err, cat) => {
         if (err) return reject(err);
-        logger.debug("getting category result", { cat });
+        //logger.debug("getting category result", { cat });
         if (!cat.length) return reject(new Error("Document not found"));
         cat = cat[0];
         cat = {

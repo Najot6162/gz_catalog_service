@@ -483,7 +483,7 @@ let productStorage = {
           if(product.brand){
             product.brand.image = product.brand.image ? (cnf.cloudUrl + product.brand.image) : ""
           }
-          
+
           if (req.onlyRelatedProducts) {
             getOnlyRelatedProducts(product._id, 10).then((related_products) => {
               product.related_products = related_products;
@@ -776,16 +776,11 @@ let productStorage = {
         };
       }
 
-      // let options = {
-      //   skip: ((filters.page / 1 - 1) * filters.limit) / 1,
-      //   limit: filters.limit / 1 ? filters.limit / 1 : 10,
-      //   sort: { created_at: -1 },
-      // };
-
       // logger.debug("filtering products", {
       //   query,
       //   options,
       // });
+      
       const a = Category.aggregate([
         { $match: query },
         {
@@ -835,10 +830,10 @@ let productStorage = {
           }
         }
       ])
-      // if (filters.limit / 1) {
-      //   a.skip((filters.page / 1 - 1) * filters.limit / 1);
-      //   a.limit(filters.limit / 1);
-      // }
+      if (filters.limit / 1) {
+        a.skip((filters.page / 1 - 1) * filters.limit / 1);
+        a.limit(filters.limit / 1);
+      }
 
       a.exec((err, categories) => {
         if (err) return reject(err);
