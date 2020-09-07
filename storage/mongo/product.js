@@ -446,17 +446,17 @@ let productStorage = {
       // making query
       query = {
         ...query,
-        lang: req.lang ? req.lang : cnf.lang,
         $or: [
           {
             slug: req.slug,
+            lang: req.lang ? req.lang : cnf.lang
           },
         ],
       };
       if (mongoose.Types.ObjectId.isValid(req.id))
         query.$or.push({ _id: req.id });
 
-      logger.debug("finding a product", { query });
+      //logger.debug("finding a product", { query });
 
       Product.findOne(query)
         .populate({
@@ -780,7 +780,7 @@ let productStorage = {
       //   query,
       //   options,
       // });
-      
+
       const a = Category.aggregate([
         { $match: query },
         {
