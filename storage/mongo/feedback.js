@@ -87,7 +87,7 @@ let feedbackStorage = {
                 [
                     (cb) => {
                         Feedback.find(query, {}, options, (err, feedbacks) => {
-                            if (err) return reject(err);
+                            if (err) return cb(err);
                             return cb(null, feedbacks || []);
                         });
                     },
