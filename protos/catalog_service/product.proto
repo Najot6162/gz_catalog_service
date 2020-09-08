@@ -84,16 +84,16 @@ message ShopsResponse {
     }
     repeated ShopResponse shops = 1;
 }
+
+message ProductResponse {
+    Product product = 1;
+}
+
 message GetProductRequest {
     string id = 1;
     string slug = 2;
     string lang = 3;
     bool onlyRelatedProducts = 4;
-}
-
-
-message ProductResponse {
-    Product product = 1;
 }
 
 message FindProductsRequest {

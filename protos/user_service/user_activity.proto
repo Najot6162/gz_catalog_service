@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package genproto;
+
+option go_package="genproto/user_service";
+
+import "user.proto";
+
+service UserActivityService {
+    rpc Create(CreateActivityRequest) returns (Empty) {}
+    rpc Find(FindActivitiesRequest) returns (ActivitiesResponse) {}
+}
+
+message FindActivitiesRequest {
+    int64  page = 1;
+    int64  limit = 2;
+    string user_id = 3;
+    string element = 4;
+    string element_id = 5;
+}
+
+message CreateActivityRequest {
+    string user_id = 1;
+    string element = 2;
+    string element_id = 3;
+    string action = 4;
+    string from_value = 5;
+    string to_value = 6;
+}
+
+message ActivitiesResponse {
+    int64 count = 1;
+    repeated UserActivity activities = 2;
+}

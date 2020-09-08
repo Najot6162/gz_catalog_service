@@ -55,8 +55,9 @@ message UpdateOrderRequest {
 message OrderItem {
     string product_id = 1;
     string product_name = 2;
-    float  price = 3;
-    int32  quantity = 4;
+    string image = 3;
+    float  price = 4;
+    int32  quantity = 5;
 }
 
 message OrderResponse {

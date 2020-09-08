@@ -11,11 +11,10 @@ message Admin {
     string password = 5;
     string phone = 6;
     bool   active = 7;
-    string address = 8;
-    string logo = 9;
-    string description = 10;
     string created_at = 11;
     string updated_at = 12;
+    repeated Permission permissions = 13;
+    
 }
 
 message Customer {
@@ -32,6 +31,30 @@ message Customer {
     string updated_at = 11;
     string deleted_at = 12;
 }
+
+message UserActivity {
+    message User {
+        string id = 1;
+        string name = 2;
+        string username = 3;
+        string phone = 4;
+    }
+    string id = 1;
+    User user = 2;
+    string element = 3;
+    string element_id = 4;
+    string action = 5;
+    string from_value = 6;
+    string to_value = 7;
+    string time = 8;
+}
+
+message Permission {
+    string name = 1;
+    string key = 2;
+    string id = 3;
+}
+
 
 message GetRequest {
     string id = 1;
