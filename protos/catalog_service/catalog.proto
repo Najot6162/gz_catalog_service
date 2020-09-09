@@ -235,7 +235,7 @@ message Feedback {
     string product_id = 4;
     string comment = 5;
     bool   active = 6;
-    float  rate = 7;
+    string  rate = 7;
     string created_at = 8;
     string updated_at = 9;
 }
