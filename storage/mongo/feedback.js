@@ -14,7 +14,6 @@ let feedbackStorage = {
             Product.findOne({ slug: b.product_id, lang: cnf.lang }, (err, product) => {
                 if (err) return reject(err);
                 if (!product) return reject(new Error("product not found with given key"));
-                console.log(product);
                 let br = new Feedback(b);
                 br.product_id = product.id;
                 br.created_at = Date.now();
@@ -67,7 +66,7 @@ let feedbackStorage = {
                 };
             }
 
-            if(filters.active == true){
+            if(filters.active){
                 query = {
                     ...query,
                     active: true
@@ -121,6 +120,14 @@ let feedbackStorage = {
                         product_id: product.id
                     }
                 }
+
+                if(filters.active){
+                    query = {
+                        ...query,
+                        active: true
+                    }
+                }
+                
                 let options = {
                     skip: ((filters.page / 1 - 1) * filters.limit) / 1,
                     limit: filters.limit / 1 ? filters.limit / 1 : 10,

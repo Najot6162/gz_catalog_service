@@ -43,6 +43,7 @@ message Product {
     string image = 19;
     string lang = 20;
     float average_rate = 21;
+    int64 reviews_count = 22;
 }
 
 message ProductSlim {

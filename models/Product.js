@@ -95,6 +95,14 @@ var ProductSchema = new mongoose.Schema({
         required: true,
         default: 'ru'
     },
+    average_rate: {
+        type: Number,
+        default: 0
+    },
+    reviews_count: {
+        type: Number,
+        default: 0
+    },
     created_at: {
         type: Date,
         default: Date.now

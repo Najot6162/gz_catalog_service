@@ -483,7 +483,6 @@ let productStorage = {
           if(product.brand){
             product.brand.image = product.brand.image ? (cnf.cloudUrl + product.brand.image) : ""
           }
-          product.average_rate = 3.2;
 
           if (req.onlyRelatedProducts) {
             getOnlyRelatedProducts(product._id, 10).then((related_products) => {
