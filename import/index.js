@@ -18,31 +18,34 @@ const importBrands = () => (
     new Promise((resolve, reject) => {
         fs.readFile(path.join(__dirname, "brands.json"), 'utf8', (err, fileContent) => {
             if (err) return reject(err);
-            brands = JSON.parse(fileContent);
-            console.log("brands file loaded, " + brands.length + " entities");
+            oldBrands = JSON.parse(fileContent);
+            console.log("brands file loaded, " + oldBrands.length + " entities");
 
-            let entities = brands.map((b, i) => {
-                return {
-                    external_id: b.id,
-                    slug: b.slug,
-                    name: b.name,
-                    order: b.sort_order,
-                    description: b.description
-                }
-            });
-
-            // for(let i = 0; i < 1; i++){
-            //     let b = new Brand(entities[i]);
-            //     b.save((err, saveResult) => {
-            //         if(err) return reject(err);
-            //         console.log("brand is saved");
-            //         resolve(saveResult);
-            //     });
-            // }
-
-            Brand.create(entities, (err, result) => {
+            fs.readFile(path.join(__dirname, "brands_11.09.2020.json"), 'utf8', (err, newFileContent) => {
                 if (err) return reject(err);
-                resolve(result);
+                newBrands = JSON.parse(newFileContent);
+                console.log("brands file loaded, " + newBrands.length + " entities");
+
+                brands = newBrands.filter((b, i) => {
+                    let oldBrand = oldBrands.filter((o_c, j) => o_c.id == b.id)
+                    return oldBrand.length ? false : true;
+                });
+                console.log("new brands: " + brands.length);
+
+                let entities = brands.map((b, i) => {
+                    return {
+                        external_id: b.id,
+                        slug: b.slug,
+                        name: b.name,
+                        order: b.sort_order,
+                        description: b.description
+                    }
+                });
+
+                Brand.create(entities, (err, result) => {
+                    if (err) return reject(err);
+                    resolve(result);
+                });
             });
         });
     })
@@ -52,60 +55,98 @@ const importCategories = () => (
     new Promise((resolve, reject) => {
         fs.readFile(path.join(__dirname, "categories.json"), 'utf8', (err, fileContent) => {
             if (err) return reject(err);
-            categories = JSON.parse(fileContent);
-            console.log("categories file loaded, " + categories.length + " entities");
+            oldCategories = JSON.parse(fileContent);
+            console.log("old categories file loaded, " + oldCategories.length + " entities");
 
-
-            let entities = categories.map((b, i) => {
-                return new Category({
-                    external_id: b.id,
-                    slug: b.slug,
-                    name: b.name,
-                    description: b.description,
-                });
-            });
-
-            logger.profile("categories imported");
-            async.eachSeries(categories, (cat, cb) => {
-                let parent = entities.filter((c, i) => {
-                    return cat.parent_id && c.external_id == cat.parent_id;
-                });
-                let self = entities.filter((c, i) => {
-                    return c.external_id == cat.id;
-                })[0];
-                //logger.debug("parent found for category " + cat.id)
-                let entity = {
-                    external_id: cat.id,
-                    slug: cat.slug,
-                    name: cat.name,
-                    description: cat.description,
-                    parent: parent.length ? parent[0]._id : null
-                }
-                let entityRu = self;
-                entityRu.parent = entity.parent;
-
-                let entityLangs = [
-                    entityRu,
-                    new Category({
-                        ...entity,
-                        lang: 'uz'
-                    }),
-                    new Category({
-                        ...entity,
-                        lang: 'en'
-                    })
-                ];
-
-                Category.insertMany(entityLangs, (err, result) => {
-                    if (err) return cb(err);
-                    cb(null)
-                });
-
-            }, (err) => {
+            fs.readFile(path.join(__dirname, "categories_11.09.2020.json"), 'utf8', (err, newFileContent) => {
                 if (err) return reject(err);
+                newCategories = JSON.parse(newFileContent);
+                console.log("new categories file loaded, " + newCategories.length + " entities");
+
+                categories = newCategories.filter((p, i) => {
+                    let oldCategory = oldCategories.filter((o_c, j) => o_c.id == p.id)
+                    return oldCategory.length ? false : true;
+                });
+                console.log("new categories: " + categories.length);
+
+                let entities = categories.map((b, i) => {
+                    return new Category({
+                        external_id: b.id,
+                        slug: b.slug,
+                        name: b.name,
+                        description: b.description,
+                    });
+                });
+
                 logger.profile("categories imported");
-                logger.debug('existing categories', { entities });
-                return resolve();
+                async.eachSeries(categories, (cat, cb) => {
+                    // getting parent
+                    let parent = [];
+                    new Promise((resolvee, rejectt) => {
+                        parent = entities.filter((c, i) => {
+                            return cat.parent_id && c.external_id == cat.parent_id;
+                        });
+                        if(!parent.length && cat.parent_id){
+                            Category.find({
+                                external_id: cat.parent_id
+                            }, (err, parent) => {
+                                if(err) return cb(err);
+                                if(parent.length){
+                                    resolvee({
+                                        ru: parent.filter((p, i) => p.lang == 'ru')[0],
+                                        en: parent.filter((p, i) => p.lang == 'en')[0],
+                                        uz: parent.filter((p, i) => p.lang == 'uz')[0]
+                                    });
+                                }else{
+                                    resolvee({
+                                        ru: null
+                                    });
+                                }
+                            });
+                        }else{
+                            resolvee({
+                                ru: parent
+                            });
+                        }
+                    }).then((parent) => {
+                        let self = entities.filter((c, i) => {
+                            return c.external_id == cat.id;
+                        })[0];
+                        //logger.debug("parent found for category " + cat.id)
+                        let entity = {
+                            external_id: cat.id,
+                            slug: cat.slug,
+                            name: cat.name,
+                            description: cat.description
+                        }
+                        let entityRu = self;
+                        entityRu.parent = parent.ru ? parent.ru._id : null;
+    
+                        let entityLangs = [
+                            entityRu,
+                            new Category({
+                                ...entity,
+                                parent: parent.uz ? parent.uz._id : (parent.ru ? parent.ru._id : null),
+                                lang: 'uz'
+                            }),
+                            new Category({
+                                ...entity,
+                                parent: parent.en ? parent.en._id : (parent.ru ? parent.ru._id : null),
+                                lang: 'en'
+                            })
+                        ];
+    
+                        Category.insertMany(entityLangs, (err, result) => {
+                            if (err) return cb(err);
+                            cb(null)
+                        });
+                    });
+                }, (err) => {
+                    if (err) return reject(err);
+                    logger.profile("categories imported");
+                    //logger.debug('existing categories', { entities });
+                    return resolve();
+                });
             });
         });
     })
@@ -113,97 +154,94 @@ const importCategories = () => (
 
 const importProducts = () => (
     new Promise((resolve, reject) => {
-        fs.readFile(path.join(__dirname, "products.json"), 'utf8', (err, fileContent) => {
+        fs.readFile(path.join(__dirname, "products_31.07.2020.json"), 'utf8', (err, fileContent) => {
             if (err) return reject(err);
-            products = JSON.parse(fileContent);
-            console.log("products file loaded, " + products.length + " entities");
+            oldProducts = JSON.parse(fileContent);
+            console.log("old products file loaded, " + oldProducts.length + " entities");
 
+            fs.readFile(path.join(__dirname, "products_11.09.2020.json"), 'utf-8', (err, newFileContent) => {
+                newProducts = JSON.parse(newFileContent)
+                console.log("all products file loaded, " + newProducts.length + " entities");
 
-            // let entities = products.map((b, i) => {
-            //     return new Category({
-            //         external_id: b.id,
-            //         slug: b.slug,
-            //         name: b.name,
-            //         description: b.description,
-            //     });
-            // });
-
-            async.parallel({
-                brands: (cb) => {
-                    Brand.find({ active: true }, cb);
-                },
-                categories: (cb) => {
-                    Category.find({
-                        active: true,
-                        lang: 'ru'
-                    }, cb);
-                }
-            }, (err, result) => {
-                if (err) return reject(err);
-
-                logger.profile("products imported");
-                async.eachSeries(products, (p, cb) => {
-                    let brand = result.brands.filter((b, i) => {
-                        return p.brand_id && b.external_id == p.brand_id;
-                    });
-                    let category = result.categories.filter((c, i) => {
-                        return c.external_id == p.category_id;
-                    });
-                    let entity = {
-                        external_id: p.id,
-                        name: p.name,
-                        brand: brand.length ? brand[0]._id : null,
-                        category: category.length ? category[0]._id : null,
-                        description: p.description,
-                        price: {
-                            price: p.price,
-                            old_price: p.old_price
-                        },
-                        prices: [{
-                            type: 1, // unired price
-                            price: p.u_price,
-                            old_price: p.u_old_price
-                        }],
-                        updated_at: Date.now()
-                    }
-
-                    let entityLangs = [
-                        new Product({
-                            ...entity,
-                            lang: 'ru'
-                        }),
-                        new Product({
-                            ...entity,
-                            lang: 'uz'
-                        }),
-                        new Product({
-                            ...entity,
-                            lang: 'en'
-                        })
-                    ];
-
-                    //entityLangs[0].save(cb)
-
-                    Product.create(entityLangs, (err, result) => {
-                        if (err) return cb(err);
-                        cb(null)
-                    });
-
-                }, (err) => {
-                    if (err) return reject(err);
-                    logger.profile("products imported");
-                    return resolve();
+                products = newProducts.filter((p, i) => {
+                    let oldProduct = oldProducts.filter((o_p, j) => o_p.id == p.id)
+                    return (oldProduct.length) ? false : true;
                 });
+                console.log("new products: " + products.length);
+
+                async.parallel({
+                    brands: (cb) => {
+                        Brand.find({ active: true }, cb);
+                    },
+                    categories: (cb) => {
+                        Category.find({
+                            active: true,
+                            lang: 'ru'
+                        }, cb);
+                    }
+                }, (err, result) => {
+                    if (err) return reject(err);
+    
+                    logger.profile("products imported");
+                    async.eachSeries(products, (p, cb) => {
+                        let brand = result.brands.filter((b, i) => {
+                            return p.brand_id && b.external_id == p.brand_id;
+                        });
+                        let category = result.categories.filter((c, i) => {
+                            return c.external_id == p.category_id;
+                        });
+                        let entity = {
+                            external_id: p.id,
+                            name: p.name,
+                            brand: brand.length ? brand[0]._id : null,
+                            category: category.length ? category[0]._id : null,
+                            description: p.description,
+                            price: {
+                                price: p.price,
+                                old_price: p.old_price
+                            },
+                            prices: [{
+                                type: 1, // unired price
+                                price: p.u_price,
+                                old_price: p.u_old_price
+                            }],
+                            updated_at: Date.now()
+                        }
+    
+                        let entityLangs = [
+                            new Product({
+                                ...entity,
+                                lang: 'ru'
+                            }),
+                            new Product({
+                                ...entity,
+                                lang: 'uz'
+                            }),
+                            new Product({
+                                ...entity,
+                                lang: 'en'
+                            })
+                        ];
+    
+                        Product.create(entityLangs, (err, result) => {
+                            if (err) return cb(err);
+                            cb(null)
+                        });
+                        //console.log('new product ' + p.id);
+                    }, (err) => {
+                        if (err) return reject(err);
+                        logger.profile("products imported");
+                        return resolve();
+                    });
+                })
             })
-
-
         });
     })
 )
 
 const importProductImages = () => (
     new Promise((resolve, reject) => {
-        fs.readFile(path.join(__dirname, "active_product_files.json"), 'utf8', (err, fileContent) => {
+        fs.readFile(path.join(__dirname, "system_files_11.09.2020.json"), 'utf8', (err, fileContent) => {
             if (err) return reject(err);
             files = JSON.parse(fileContent);
             console.log("files file loaded, " + files.length + " entities");
@@ -211,7 +249,7 @@ const importProductImages = () => (
             Product.find({
                 active: true,
                 lang: 'ru',
-                external_id: { $gt: 26 }
+                external_id: { $gt: 2124 }
             }, (err, products) => {
                 if (err) return reject(err);
 

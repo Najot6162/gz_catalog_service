@@ -1,0 +1,1633 @@
+[
+  {
+    "id": 1,
+    "name": "Lenovo",
+    "sort_order": 1,
+    "description": "",
+    "slug": "lenovo"
+  },
+  {
+    "id": 2,
+    "name": "Asus",
+    "sort_order": 2,
+    "description": "<p>NULL</p>",
+    "slug": "asus"
+  },
+  {
+    "id": 3,
+    "name": "Dell",
+    "sort_order": 3,
+    "description": "<p>NULL</p>",
+    "slug": "dell"
+  },
+  {
+    "id": 4,
+    "name": "Fujitsu",
+    "sort_order": 4,
+    "description": "<p>NULL</p>",
+    "slug": "fujitsu"
+  },
+  {
+    "id": 5,
+    "name": "HP",
+    "sort_order": 5,
+    "description": "<p>NULL</p>",
+    "slug": "hp"
+  },
+  {
+    "id": 6,
+    "name": "Kuppersberg",
+    "sort_order": 6,
+    "description": "<p>NULL</p>",
+    "slug": "kuppersberg"
+  },
+  {
+    "id": 7,
+    "name": "Sony",
+    "sort_order": 7,
+    "description": "<p>NULL</p>",
+    "slug": "sony"
+  },
+  {
+    "id": 8,
+    "name": "Acer",
+    "sort_order": 8,
+    "description": "<p>NULL</p>",
+    "slug": "acer"
+  },
+  {
+    "id": 9,
+    "name": "Logitech",
+    "sort_order": 9,
+    "description": "<p>NULL</p>",
+    "slug": "logitech"
+  },
+  {
+    "id": 10,
+    "name": "Microlab",
+    "sort_order": 10,
+    "description": "<p>NULL</p>",
+    "slug": "microlab"
+  },
+  {
+    "id": 11,
+    "name": "Edifier",
+    "sort_order": 11,
+    "description": "<p>NULL</p>",
+    "slug": "edifier"
+  },
+  {
+    "id": 12,
+    "name": "Sven",
+    "sort_order": 12,
+    "description": "<p>NULL</p>",
+    "slug": "sven"
+  },
+  {
+    "id": 13,
+    "name": "LG",
+    "sort_order": 13,
+    "description": "<p>NULL</p>",
+    "slug": "lg"
+  },
+  {
+    "id": 14,
+    "name": "Samsung",
+    "sort_order": 14,
+    "description": "<p>NULL</p>",
+    "slug": "samsung"
+  },
+  {
+    "id": 15,
+    "name": "Philips",
+    "sort_order": 15,
+    "description": "<p>NULL</p>",
+    "slug": "philips"
+  },
+  {
+    "id": 16,
+    "name": "HTC",
+    "sort_order": 16,
+    "description": "<p>NULL</p>",
+    "slug": "htc"
+  },
+  {
+    "id": 17,
+    "name": "Nokia",
+    "sort_order": 17,
+    "description": "<p>NULL</p>",
+    "slug": "nokia"
+  },
+  {
+    "id": 18,
+    "name": "BlackBerry",
+    "sort_order": 18,
+    "description": "<p>NULL</p>",
+    "slug": "blackberry"
+  },
+  {
+    "id": 19,
+    "name": "Haier",
+    "sort_order": 19,
+    "description": "<p>NULL</p>",
+    "slug": "haier"
+  },
+  {
+    "id": 20,
+    "name": "Hitachi",
+    "sort_order": 20,
+    "description": "<p>NULL</p>",
+    "slug": "hitachi"
+  },
+  {
+    "id": 21,
+    "name": "Бирюса",
+    "sort_order": 21,
+    "description": "<p>NULL</p>",
+    "slug": "biryusa"
+  },
+  {
+    "id": 22,
+    "name": "Snaige",
+    "sort_order": 22,
+    "description": "<p>NULL</p>",
+    "slug": "snaige"
+  },
+  {
+    "id": 23,
+    "name": "Sirius",
+    "sort_order": 23,
+    "description": "<p>NULL</p>",
+    "slug": "sirius"
+  },
+  {
+    "id": 24,
+    "name": "Conford",
+    "sort_order": 24,
+    "description": "<p>NULL</p>",
+    "slug": "conford"
+  },
+  {
+    "id": 25,
+    "name": "Ugur",
+    "sort_order": 25,
+    "description": "<p>NULL</p>",
+    "slug": "ugur"
+  },
+  {
+    "id": 26,
+    "name": "Toshiba",
+    "sort_order": 26,
+    "description": "<p>NULL</p>",
+    "slug": "toshiba"
+  },
+  {
+    "id": 27,
+    "name": "Sharp",
+    "sort_order": 27,
+    "description": "<p>NULL</p>",
+    "slug": "sharp"
+  },
+  {
+    "id": 28,
+    "name": "Swizer",
+    "sort_order": 28,
+    "description": "<p>NULL</p>",
+    "slug": "swizer"
+  },
+  {
+    "id": 29,
+    "name": "Magna",
+    "sort_order": 29,
+    "description": "<p>NULL</p>",
+    "slug": "magna"
+  },
+  {
+    "id": 30,
+    "name": "Electrolux",
+    "sort_order": 30,
+    "description": "<p>NULL</p>",
+    "slug": "electrolux"
+  },
+  {
+    "id": 31,
+    "name": "Babyliss",
+    "sort_order": 31,
+    "description": "<p>NULL</p>",
+    "slug": "babyliss"
+  },
+  {
+    "id": 32,
+    "name": "Panasonic",
+    "sort_order": 32,
+    "description": "<p>NULL</p>",
+    "slug": "panasonic"
+  },
+  {
+    "id": 33,
+    "name": "Delonghi",
+    "sort_order": 33,
+    "description": "<p>NULL</p>",
+    "slug": "delonghi"
+  },
+  {
+    "id": 34,
+    "name": "Braun",
+    "sort_order": 34,
+    "description": "<p>NULL</p>",
+    "slug": "braun"
+  },
+  {
+    "id": 35,
+    "name": "Tefal",
+    "sort_order": 35,
+    "description": "<p>NULL</p>",
+    "slug": "tefal"
+  },
+  {
+    "id": 36,
+    "name": "Mega",
+    "sort_order": 36,
+    "description": "<p>NULL</p>",
+    "slug": "mega"
+  },
+  {
+    "id": 37,
+    "name": "Nikai",
+    "sort_order": 37,
+    "description": "<p>NULL</p>",
+    "slug": "nikai"
+  },
+  {
+    "id": 38,
+    "name": "Artel",
+    "sort_order": 38,
+    "description": "<p>NULL</p>",
+    "slug": "artel"
+  },
+  {
+    "id": 39,
+    "name": "Polaris",
+    "sort_order": 39,
+    "description": "<p>NULL</p>",
+    "slug": "polaris"
+  },
+  {
+    "id": 40,
+    "name": "Kenwood",
+    "sort_order": 40,
+    "description": "<p>NULL</p>",
+    "slug": "kenwood"
+  },
+  {
+    "id": 41,
+    "name": "Redmond",
+    "sort_order": 41,
+    "description": "<p>NULL</p>",
+    "slug": "redmond"
+  },
+  {
+    "id": 42,
+    "name": "Remington",
+    "sort_order": 42,
+    "description": "<p>NULL</p>",
+    "slug": "remington"
+  },
+  {
+    "id": 43,
+    "name": "Rosso",
+    "sort_order": 43,
+    "description": "<p>NULL</p>",
+    "slug": "rosso"
+  },
+  {
+    "id": 44,
+    "name": "Roison",
+    "sort_order": 44,
+    "description": "<p>NULL</p>",
+    "slug": "roison"
+  },
+  {
+    "id": 45,
+    "name": "Indesit",
+    "sort_order": 45,
+    "description": "<p>NULL</p>",
+    "slug": "indesit"
+  },
+  {
+    "id": 46,
+    "name": "Ballu",
+    "sort_order": 46,
+    "description": "<p>NULL</p>",
+    "slug": "ballu"
+  },
+  {
+    "id": 47,
+    "name": "Goodwell",
+    "sort_order": 47,
+    "description": "<p>NULL</p>",
+    "slug": "goodwell"
+  },
+  {
+    "id": 48,
+    "name": "Shivaki",
+    "sort_order": 48,
+    "description": "<p>NULL</p>",
+    "slug": "shivaki"
+  },
+  {
+    "id": 49,
+    "name": "Sitronic",
+    "sort_order": 49,
+    "description": "<p>NULL</p>",
+    "slug": "sitronic"
+  },
+  {
+    "id": 50,
+    "name": "Aux",
+    "sort_order": 50,
+    "description": "<p>NULL</p>",
+    "slug": "aux"
+  },
+  {
+    "id": 51,
+    "name": "Whirlpool",
+    "sort_order": 51,
+    "description": "<p>NULL</p>",
+    "slug": "whirlpool"
+  },
+  {
+    "id": 52,
+    "name": "Beko",
+    "sort_order": 52,
+    "description": "<p>NULL</p>",
+    "slug": "beko"
+  },
+  {
+    "id": 53,
+    "name": "Konig",
+    "sort_order": 53,
+    "description": "<p>NULL</p>",
+    "slug": "konig"
+  },
+  {
+    "id": 54,
+    "name": "Ferre",
+    "sort_order": 54,
+    "description": "<p>NULL</p>",
+    "slug": "ferre"
+  },
+  {
+    "id": 55,
+    "name": "Gefest",
+    "sort_order": 55,
+    "description": "<p>NULL</p>",
+    "slug": "gefest"
+  },
+  {
+    "id": 56,
+    "name": "Femas",
+    "sort_order": 56,
+    "description": "<p>NULL</p>",
+    "slug": "femas"
+  },
+  {
+    "id": 57,
+    "name": "Midea",
+    "sort_order": 57,
+    "description": "<p>NULL</p>",
+    "slug": "midea"
+  },
+  {
+    "id": 58,
+    "name": "Apple",
+    "sort_order": 58,
+    "description": "<p>NULL</p>",
+    "slug": "apple"
+  },
+  {
+    "id": 59,
+    "name": "MDC",
+    "sort_order": 59,
+    "description": "<p>NULL</p>",
+    "slug": "mdc"
+  },
+  {
+    "id": 60,
+    "name": "Xiaomi",
+    "sort_order": 60,
+    "description": "<p>NULL</p>",
+    "slug": "xiaomi"
+  },
+  {
+    "id": 61,
+    "name": "MDV",
+    "sort_order": 61,
+    "description": "<p>NULL</p>",
+    "slug": "mdv"
+  },
+  {
+    "id": 62,
+    "name": "Ariston",
+    "sort_order": 62,
+    "description": "<p>NULL</p>",
+    "slug": "ariston"
+  },
+  {
+    "id": 63,
+    "name": "Janome",
+    "sort_order": 63,
+    "description": "<p>NULL</p>",
+    "slug": "janome"
+  },
+  {
+    "id": 64,
+    "name": "Chayka",
+    "sort_order": 64,
+    "description": "<p>NULL</p>",
+    "slug": "chayka"
+  },
+  {
+    "id": 65,
+    "name": "Twinmos",
+    "sort_order": 65,
+    "description": "<p>NULL</p>",
+    "slug": "twinmos"
+  },
+  {
+    "id": 66,
+    "name": "Micron",
+    "sort_order": 66,
+    "description": "<p>NULL</p>",
+    "slug": "micron"
+  },
+  {
+    "id": 67,
+    "name": "Seagate",
+    "sort_order": 67,
+    "description": "<p>NULL</p>",
+    "slug": "seagate"
+  },
+  {
+    "id": 68,
+    "name": "Sandisk",
+    "sort_order": 68,
+    "description": "<p>NULL</p>",
+    "slug": "sandisk"
+  },
+  {
+    "id": 69,
+    "name": "Gamdias",
+    "sort_order": 69,
+    "description": "<p>NULL</p>",
+    "slug": "gamdias"
+  },
+  {
+    "id": 70,
+    "name": "AvTech",
+    "sort_order": 70,
+    "description": "<p>NULL</p>",
+    "slug": "avtech"
+  },
+  {
+    "id": 71,
+    "name": "Metoo",
+    "sort_order": 71,
+    "description": "<p>NULL</p>",
+    "slug": "metoo"
+  },
+  {
+    "id": 72,
+    "name": "A4Tech",
+    "sort_order": 72,
+    "description": "<p>NULL</p>",
+    "slug": "a4tech"
+  },
+  {
+    "id": 73,
+    "name": "Huawei",
+    "sort_order": 73,
+    "description": "<p>NULL</p>",
+    "slug": "huawei"
+  },
+  {
+    "id": 74,
+    "name": "AORUS",
+    "sort_order": 74,
+    "description": "<p>NULL</p>",
+    "slug": "aorus"
+  },
+  {
+    "id": 75,
+    "name": "PNY",
+    "sort_order": 75,
+    "description": "<p>NULL</p>",
+    "slug": "pny"
+  },
+  {
+    "id": 76,
+    "name": "SAPPHIRE",
+    "sort_order": 76,
+    "description": "<p>NULL</p>",
+    "slug": "sapphire"
+  },
+  {
+    "id": 77,
+    "name": "MSI",
+    "sort_order": 77,
+    "description": "<p>NULL</p>",
+    "slug": "msi"
+  },
+  {
+    "id": 78,
+    "name": "Intel",
+    "sort_order": 78,
+    "description": "<p>NULL</p>",
+    "slug": "intel"
+  },
+  {
+    "id": 79,
+    "name": "Cooler Master",
+    "sort_order": 79,
+    "description": "<p>NULL</p>",
+    "slug": "cooler-master"
+  },
+  {
+    "id": 80,
+    "name": "Aerocool",
+    "sort_order": 80,
+    "description": "<p>NULL</p>",
+    "slug": "aerocool"
+  },
+  {
+    "id": 81,
+    "name": "Gigabyte",
+    "sort_order": 81,
+    "description": "<p>NULL</p>",
+    "slug": "gigabyte"
+  },
+  {
+    "id": 82,
+    "name": "Biostar",
+    "sort_order": 82,
+    "description": "<p>NULL</p>",
+    "slug": "biostar"
+  },
+  {
+    "id": 83,
+    "name": "Huntkey",
+    "sort_order": 83,
+    "description": "<p>NULL</p>",
+    "slug": "huntkey"
+  },
+  {
+    "id": 84,
+    "name": "AOC",
+    "sort_order": 84,
+    "description": "<p>NULL</p>",
+    "slug": "aoc"
+  },
+  {
+    "id": 85,
+    "name": "Canon",
+    "sort_order": 85,
+    "description": "<p>NULL</p>",
+    "slug": "canon"
+  },
+  {
+    "id": 86,
+    "name": "Epson",
+    "sort_order": 86,
+    "description": "<p>NULL</p>",
+    "slug": "epson"
+  },
+  {
+    "id": 87,
+    "name": "Alcatel",
+    "sort_order": 87,
+    "description": "<p>NULL</p>",
+    "slug": "alcatel"
+  },
+  {
+    "id": 88,
+    "name": "Motorola",
+    "sort_order": 88,
+    "description": "<p>NULL</p>",
+    "slug": "motorola"
+  },
+  {
+    "id": 89,
+    "name": "Tenda",
+    "sort_order": 89,
+    "description": "",
+    "slug": "tenda"
+  },
+  {
+    "id": 90,
+    "name": "Eurolux",
+    "sort_order": 90,
+    "description": "",
+    "slug": "eurolux"
+  },
+  {
+    "id": 91,
+    "name": "Alonsa",
+    "sort_order": 91,
+    "description": "",
+    "slug": "alonsa"
+  },
+  {
+    "id": 92,
+    "name": "Kingston",
+    "sort_order": 92,
+    "description": "",
+    "slug": "kingston"
+  },
+  {
+    "id": 93,
+    "name": "Black+Decker",
+    "sort_order": 93,
+    "description": "",
+    "slug": "blackdecker"
+  },
+  {
+    "id": 94,
+    "name": "Wonlex",
+    "sort_order": 94,
+    "description": "",
+    "slug": "wonlex"
+  },
+  {
+    "id": 95,
+    "name": "Lagermania",
+    "sort_order": 95,
+    "description": "",
+    "slug": "lagermania"
+  },
+  {
+    "id": 96,
+    "name": "Esonic",
+    "sort_order": 96,
+    "description": "",
+    "slug": "esonic"
+  },
+  {
+    "id": 97,
+    "name": "Hisense",
+    "sort_order": 97,
+    "description": "",
+    "slug": "hisense"
+  },
+  {
+    "id": 98,
+    "name": "BQ",
+    "sort_order": 98,
+    "description": "",
+    "slug": "bq"
+  },
+  {
+    "id": 99,
+    "name": "Kärcher",
+    "sort_order": 99,
+    "description": "",
+    "slug": "karcher"
+  },
+  {
+    "id": 100,
+    "name": "Tecno",
+    "sort_order": 100,
+    "description": "",
+    "slug": "tecno"
+  },
+  {
+    "id": 101,
+    "name": "Honor",
+    "sort_order": 101,
+    "description": "",
+    "slug": "honor"
+  },
+  {
+    "id": 102,
+    "name": "DORIS",
+    "sort_order": 102,
+    "description": "",
+    "slug": "doris"
+  },
+  {
+    "id": 103,
+    "name": "El Bit",
+    "sort_order": 103,
+    "description": "",
+    "slug": "el-bit"
+  },
+  {
+    "id": 104,
+    "name": "Crown",
+    "sort_order": 104,
+    "description": "",
+    "slug": "crown"
+  },
+  {
+    "id": 105,
+    "name": "Gold AVEX",
+    "sort_order": 105,
+    "description": "",
+    "slug": "gold-avex"
+  },
+  {
+    "id": 106,
+    "name": "GREE",
+    "sort_order": 106,
+    "description": "",
+    "slug": "gree"
+  },
+  {
+    "id": 107,
+    "name": "Bosch",
+    "sort_order": 107,
+    "description": "<p>NULL</p>",
+    "slug": "bosch"
+  },
+  {
+    "id": 108,
+    "name": "ECOCENTER",
+    "sort_order": 108,
+    "description": "",
+    "slug": "ecocenter"
+  },
+  {
+    "id": 109,
+    "name": "Vital",
+    "sort_order": 109,
+    "description": "",
+    "slug": "vital"
+  },
+  {
+    "id": 110,
+    "name": "ITV",
+    "sort_order": 110,
+    "description": "",
+    "slug": "i-tv"
+  },
+  {
+    "id": 111,
+    "name": "PLANTRONICS",
+    "sort_order": 111,
+    "description": "<p>Компания Plantronics &nbsp;занялась разработкой телефонных гарнитур, и на сегодняшний день является безусловным лидером в области производства гарнитур и аппаратуры для их подключения. Благодаря использованию передовых разработок и применению современных материалов, телефонные гарнитуры Plantronics отличает высокое качество передачи звука, исключительная надежность, удобство в обращении и современный дизайн.</p>",
+    "slug": "plantronics"
+  },
+  {
+    "id": 112,
+    "name": "Раптор",
+    "sort_order": 112,
+    "description": "<p>RAPTOR (Раптор) - производитель средств для борьбы с насекомыми дома и на даче.&nbsp;</p>",
+    "slug": "raptor"
+  },
+  {
+    "id": 113,
+    "name": "Lixus",
+    "sort_order": 113,
+    "description": "<p>Lixus - производитель компьютерных комплектующих, базируется в Гонконге.</p>",
+    "slug": "lixus"
+  },
+  {
+    "id": 114,
+    "name": "Lite-On",
+    "sort_order": 114,
+    "description": "<p>Lite-On - производитель компьютерных комплектующих</p>",
+    "slug": "lite-"
+  },
+  {
+    "id": 115,
+    "name": "LUXES",
+    "sort_order": 115,
+    "description": "<p>LUXES - производитель мелкой компьютерной техники</p>",
+    "slug": "luxes"
+  },
+  {
+    "id": 116,
+    "name": "MT-VIKI",
+    "sort_order": 116,
+    "description": "<p>MT-VIKI - мелкая техника и устройства для дома</p>",
+    "slug": "mt-viki"
+  },
+  {
+    "id": 117,
+    "name": "TING SOO",
+    "sort_order": 117,
+    "description": "<p>TING SOO - производитель кабелей для оргтехники</p>",
+    "slug": "ting-soo"
+  },
+  {
+    "id": 118,
+    "name": "XINYA",
+    "sort_order": 118,
+    "description": "<p>XINYA - производитель кабелей для оргтехники</p>",
+    "slug": "xinya"
+  },
+  {
+    "id": 119,
+    "name": "Apacer",
+    "sort_order": 119,
+    "description": "<p>Apacer - производитель micro-USB карт</p>",
+    "slug": "apacer"
+  },
+  {
+    "id": 120,
+    "name": "OCULUS",
+    "sort_order": 120,
+    "description": "<p>OCULUS - VR-гарнитуры и оборудование</p>",
+    "slug": "oculus"
+  },
+  {
+    "id": 121,
+    "name": "Best choice",
+    "sort_order": 121,
+    "description": "<p>Best choice - микрооборудование для оргтехники</p>",
+    "slug": "best-choice"
+  },
+  {
+    "id": 122,
+    "name": "Remax",
+    "sort_order": 122,
+    "description": "<p>Remax - аудиотехника и гарнитуры, повербанки и другие аксессуары для смартфонов.</p>",
+    "slug": "remax"
+  },
+  {
+    "id": 123,
+    "name": "BASEUS",
+    "sort_order": 123,
+    "description": "<p>BASEUS - аудиотехника и гарнитуры, повербанки и другие аксессуары для смартфонов.</p>",
+    "slug": "baseus"
+  },
+  {
+    "id": 124,
+    "name": "Hoco",
+    "sort_order": 124,
+    "description": "<p>Hoco - аудиотехника и гарнитуры, повербанки и другие аксессуары для смартфонов.</p>",
+    "slug": "hoco"
+  },
+  {
+    "id": 125,
+    "name": "VEGER",
+    "sort_order": 125,
+    "description": "<p>VEGER - индонезийский бренд по производству аксессуаров для смартфонов</p>",
+    "slug": "veger"
+  },
+  {
+    "id": 126,
+    "name": "MOXOM",
+    "sort_order": 126,
+    "description": "<p>MOXOM - тайваньский бренд по производству аксессуаров для смартфонов</p>",
+    "slug": "moxom"
+  },
+  {
+    "id": 127,
+    "name": "Proda",
+    "sort_order": 127,
+    "description": "<p>Proda - бренд по производству аксессуаров для смартфонов</p>",
+    "slug": "proda"
+  },
+  {
+    "id": 128,
+    "name": "WK DESIGN",
+    "sort_order": 128,
+    "description": "<p>WK DESIGN - power-банки и комплектующие</p>",
+    "slug": "wk-design"
+  },
+  {
+    "id": 129,
+    "name": "Borofone",
+    "sort_order": 129,
+    "description": "<p>Borofone - power-банки и комплектующие</p>",
+    "slug": "borofone"
+  },
+  {
+    "id": 130,
+    "name": "GoodZone",
+    "sort_order": 130,
+    "description": "<p>Собственный бренд компании</p>",
+    "slug": "goodzone"
+  },
+  {
+    "id": 131,
+    "name": "Joy Rcom",
+    "sort_order": 131,
+    "description": "<p>Joy Rcom - производитель мобильных аксессуаров</p>",
+    "slug": "joy-rcom"
+  },
+  {
+    "id": 132,
+    "name": "R-DRIVE",
+    "sort_order": 132,
+    "description": "<p>R-DRIVE - power-банки и зарядные устройства</p>",
+    "slug": "r-drive"
+  },
+  {
+    "id": 133,
+    "name": "BM",
+    "sort_order": 133,
+    "description": "<p>BM - аксессуары для смартфонов</p>",
+    "slug": "bm"
+  },
+  {
+    "id": 134,
+    "name": "LEXAR",
+    "sort_order": 134,
+    "description": "<p>LEXAR - производитель SSD-дисков и ОЗУ</p>",
+    "slug": "lexar"
+  },
+  {
+    "id": 135,
+    "name": "TP-LINK",
+    "sort_order": 135,
+    "description": "<p>TP-LINK - cетевое оборудование</p>",
+    "slug": "tp-link"
+  },
+  {
+    "id": 136,
+    "name": "МЕРКУРИЙ",
+    "sort_order": 136,
+    "description": "<p>МЕРКУРИЙ - производитель запчастей для бытовой техники и компьютеров</p>",
+    "slug": "merkurij"
+  },
+  {
+    "id": 137,
+    "name": "ION",
+    "sort_order": 137,
+    "description": "<p>ION - южнокорейский производитель UPS-накопителей</p>",
+    "slug": "ion"
+  },
+  {
+    "id": 138,
+    "name": "BUMBLEBEE",
+    "sort_order": 138,
+    "description": "<p>BUMBLEBEE - производитель USB-накопителей памяти и мелких аксессуаров для оргтехники</p>",
+    "slug": "bumblebee"
+  },
+  {
+    "id": 139,
+    "name": "SSK",
+    "sort_order": 139,
+    "description": "<p>SSK - производитель мелкой периферии для оргтехники и принтеров</p>",
+    "slug": "ssk"
+  },
+  {
+    "id": 140,
+    "name": "Western Digital (WD)",
+    "sort_order": 140,
+    "description": "<p>Western Digital - северноамериканский бренд производителей жестких дисков и SSD</p>",
+    "slug": "western-digital"
+  },
+  {
+    "id": 141,
+    "name": "Patriot",
+    "sort_order": 141,
+    "description": "<p>Patriot - известный производитель ОЗУ для киберспорта и мощных компьютеров</p>",
+    "slug": "patriot"
+  },
+  {
+    "id": 142,
+    "name": "Silicone Power",
+    "sort_order": 142,
+    "description": "<p>Silicone - производитель USB-накопителей и жестких дисков</p>",
+    "slug": "silicone"
+  },
+  {
+    "id": 143,
+    "name": "IEASUN",
+    "sort_order": 143,
+    "description": "<p>IEASUN - производитель сетевого оборудования, в основном 3G &amp; 4G модемов</p>",
+    "slug": "ieasun"
+  },
+  {
+    "id": 144,
+    "name": "Wireless-N",
+    "sort_order": 144,
+    "description": "<p>Wireless-N - производитель сетевого оборудования, в основном 3G &amp; 4G модемов</p>",
+    "slug": "wireless-n"
+  },
+  {
+    "id": 145,
+    "name": "OLMIO",
+    "sort_order": 145,
+    "description": "<p>OLMIO - производитель мобильных телефонов и аксессуаров</p>",
+    "slug": "olmio"
+  },
+  {
+    "id": 146,
+    "name": "Terminator",
+    "sort_order": 146,
+    "description": "<p>Terminator - переходники и адаптеры для розеток</p>",
+    "slug": "terminator"
+  },
+  {
+    "id": 147,
+    "name": "GP SUPER",
+    "sort_order": 147,
+    "description": "<p>GP SUPER - производитель батареек и аккумуляторов</p>",
+    "slug": "gp-super"
+  },
+  {
+    "id": 148,
+    "name": "GP ULTRA",
+    "sort_order": 148,
+    "description": "<p>GP ULTRA - улучшенная версия товаров от GP SUPER</p>",
+    "slug": "gp-ultra"
+  },
+  {
+    "id": 149,
+    "name": "VARTA ENERGY",
+    "sort_order": 149,
+    "description": "<p>VARTA ENERGY - производитель батареек и аккумуляторов</p>",
+    "slug": "varta-energy"
+  },
+  {
+    "id": 150,
+    "name": "ENERGIZER",
+    "sort_order": 150,
+    "description": "<p>ENERGIZER - немецкий производитель батареек и аккумуляторов</p>",
+    "slug": "energizer"
+  },
+  {
+    "id": 151,
+    "name": "Duracell",
+    "sort_order": 151,
+    "description": "<p>Duracell - мировой бренд по производству батареек</p>",
+    "slug": "duracell"
+  },
+  {
+    "id": 152,
+    "name": "CAMELION",
+    "sort_order": 152,
+    "description": "<p>CAMELION - производитель батареек из Саудовской Аравии</p>",
+    "slug": "camelion"
+  },
+  {
+    "id": 153,
+    "name": "UNOMAT",
+    "sort_order": 153,
+    "description": "<p>UNOMAT - турецкий бренд по производству батареек</p>",
+    "slug": "unomat"
+  },
+  {
+    "id": 154,
+    "name": "ENCOK",
+    "sort_order": 154,
+    "description": "<p>ENCOK - производитель аудио-гарнитуры</p>",
+    "slug": "encok"
+  },
+  {
+    "id": 155,
+    "name": "awei",
+    "sort_order": 155,
+    "description": "<p>awei - производитель наушников и аудио-техники</p>",
+    "slug": "awei"
+  },
+  {
+    "id": 156,
+    "name": "D-Link",
+    "sort_order": 156,
+    "description": "<p>D-Link - производитель сетевых маршрутизаторов и модемов</p>",
+    "slug": "d-link"
+  },
+  {
+    "id": 157,
+    "name": "BERGAMO",
+    "sort_order": 157,
+    "description": "<p>BERGAMO - производитель бытовой техники</p>",
+    "slug": "bergamo"
+  },
+  {
+    "id": 158,
+    "name": "EzCool",
+    "sort_order": 158,
+    "description": "<p>EzCool - производитель комплектующих для компьютеров</p>",
+    "slug": "ezcool"
+  },
+  {
+    "id": 159,
+    "name": "ZALMAN",
+    "sort_order": 159,
+    "description": "<p>ZALMAN - производитель ОЗУ и блоков питания для компьютеров</p>",
+    "slug": "zalman"
+  },
+  {
+    "id": 160,
+    "name": "COUGAR",
+    "sort_order": 160,
+    "description": "<p>COUGAR - производитель в сфере комплектующих для ПК и периферии</p>",
+    "slug": "cougar"
+  },
+  {
+    "id": 161,
+    "name": "JOWAY",
+    "sort_order": 161,
+    "description": "<p>JOWAY - аудио и видео гарнитуры</p>",
+    "slug": "joway"
+  },
+  {
+    "id": 162,
+    "name": "GEEPAS",
+    "sort_order": 162,
+    "description": "<p>GEEPAS - мелкая бытовая техника и принадлежности для кухни</p>",
+    "slug": "geepas"
+  },
+  {
+    "id": 163,
+    "name": "SARAYLI",
+    "sort_order": 163,
+    "description": "<p>SARAYLI - турецко-узбекский бренд принадлежностей для дома</p>",
+    "slug": "sarayli"
+  },
+  {
+    "id": 164,
+    "name": "EPA",
+    "sort_order": 164,
+    "description": "<p>EPA - производитель инструментов для дома</p>",
+    "slug": "epa"
+  },
+  {
+    "id": 165,
+    "name": "Мечта",
+    "sort_order": 165,
+    "description": "<p>МЕЧТА - сковороды, кастрюли и другая кухонная утварь</p>",
+    "slug": "mechta"
+  },
+  {
+    "id": 166,
+    "name": "bulud",
+    "sort_order": 166,
+    "description": "<p>bulud - аудиотехника и бюджетные наушники с Bluetooth</p>",
+    "slug": "bulud"
+  },
+  {
+    "id": 167,
+    "name": "MICROSOFT",
+    "sort_order": 167,
+    "description": "<p>MICROSOFT - персональный бренд компании для продвижения товаров Xbox</p>",
+    "slug": "microsoft"
+  },
+  {
+    "id": 168,
+    "name": "JITE",
+    "sort_order": 168,
+    "description": "<p>JITE - производитель периферии и атрибутов для консолей</p>",
+    "slug": "jite"
+  },
+  {
+    "id": 169,
+    "name": "NAFUMI",
+    "sort_order": 169,
+    "description": "<p>NAFUMI - малазийский бренд, производящий кабели и аксессуары для компьютеров и смартфонов</p>",
+    "slug": "nafumi"
+  },
+  {
+    "id": 170,
+    "name": "Earldom",
+    "sort_order": 170,
+    "description": "<p>Earldom - тайваньский бренд, производящий аксессуары для смартфонов</p>",
+    "slug": "earldom"
+  },
+  {
+    "id": 171,
+    "name": "Cablexpert",
+    "sort_order": 171,
+    "description": "<p>Cablexpert - бренд, производящий аксессуары для смартфонов и кабели</p>",
+    "slug": "cablexpert"
+  },
+  {
+    "id": 172,
+    "name": "KUKMARA",
+    "sort_order": 172,
+    "description": "<p>Kukmara - российский производитель посуды с антипригарным и декоративным покрытием для дома и отдыха на природе</p>",
+    "slug": "kukmara"
+  },
+  {
+    "id": 173,
+    "name": "Dcase",
+    "sort_order": 173,
+    "description": "<p>Dcase - производитель кейсов (корпусов) для ПК</p>",
+    "slug": "dcase"
+  },
+  {
+    "id": 174,
+    "name": "Defender",
+    "sort_order": 174,
+    "description": "<p>Defender - российский производитель периферии, канцтоваров и продукции для оргтехники</p>",
+    "slug": "defender"
+  },
+  {
+    "id": 175,
+    "name": "DELUX",
+    "sort_order": 175,
+    "description": "<p>DELUX - российский производитель периферии, канцтоваров и продукции для оргтехники</p>",
+    "slug": "delux"
+  },
+  {
+    "id": 176,
+    "name": "CADEVE",
+    "sort_order": 176,
+    "description": "<p>CADEVE - производитель периферии для офисов</p>",
+    "slug": "cadeve"
+  },
+  {
+    "id": 177,
+    "name": "REDRAGON",
+    "sort_order": 177,
+    "description": "<p>REDRAGON - китайско-российский производитель игровой периферии</p>",
+    "slug": "redragon"
+  },
+  {
+    "id": 178,
+    "name": "Sangee",
+    "sort_order": 178,
+    "description": "<p>Sangee - южнокорейский производитель периферии для компьютеров</p>",
+    "slug": "sangee"
+  },
+  {
+    "id": 179,
+    "name": "GENIUS",
+    "sort_order": 179,
+    "description": "<p>GENIUS - очень старый и именитый производитель периферии для офисов</p>",
+    "slug": "genius"
+  },
+  {
+    "id": 180,
+    "name": "Gembird",
+    "sort_order": 180,
+    "description": "<p>Gembird - производитель периферии, как и обычной, так и игровой</p>",
+    "slug": "gembird"
+  },
+  {
+    "id": 181,
+    "name": "Rapoo",
+    "sort_order": 181,
+    "description": "<p>Rapoo - бренд, специализирующийся на беспроводной периферии</p>",
+    "slug": "rapoo"
+  },
+  {
+    "id": 182,
+    "name": "G-SYSTEM",
+    "sort_order": 182,
+    "description": "<p>G-SYSTEM - аудиотехника и периферия для геймеров и меломанов</p>",
+    "slug": "g-system"
+  },
+  {
+    "id": 183,
+    "name": "Fenda",
+    "sort_order": 183,
+    "description": "<p>Fenda - производитель премиальных аудио-систем для авто</p>",
+    "slug": "fenda"
+  },
+  {
+    "id": 184,
+    "name": "DIVOOM",
+    "sort_order": 184,
+    "description": "<p>DIVOOM - аудио для дома</p>",
+    "slug": "divoom"
+  },
+  {
+    "id": 185,
+    "name": "JUM",
+    "sort_order": 185,
+    "description": "<p>JUM - отечественная марка молотого кофе</p>",
+    "slug": "jum"
+  },
+  {
+    "id": 186,
+    "name": "CHAIRMAN",
+    "sort_order": 186,
+    "description": "<p>CHAIRMAN - бренд, производящий офисную и компьютерную мебель</p>",
+    "slug": "chairman"
+  },
+  {
+    "id": 187,
+    "name": "Leostar",
+    "sort_order": 187,
+    "description": "<p>Leostar - производитель кроншейнов</p>",
+    "slug": "leostar"
+  },
+  {
+    "id": 188,
+    "name": "Magic",
+    "sort_order": 188,
+    "description": "<p>Magic - кулеры для воды</p>",
+    "slug": "magic"
+  },
+  {
+    "id": 189,
+    "name": "SELVA",
+    "sort_order": 189,
+    "description": "<p>SELVA - кулеры для воды</p>",
+    "slug": "selva"
+  },
+  {
+    "id": 190,
+    "name": "DeepCool",
+    "sort_order": 190,
+    "description": "<p>DeepCool - охлаждение для компьютеров и ноутбуков</p>",
+    "slug": "deepcool"
+  },
+  {
+    "id": 191,
+    "name": "ID-COOLING",
+    "sort_order": 191,
+    "description": "<p>ID-COOLING - охлаждение для компьютеров и ноутбуков</p>",
+    "slug": "id-cooling"
+  },
+  {
+    "id": 192,
+    "name": "itimat",
+    "sort_order": 192,
+    "description": "<p>itimat - производитель мини-духовок и печей</p>",
+    "slug": "itimat"
+  },
+  {
+    "id": 193,
+    "name": "JBL",
+    "sort_order": 193,
+    "description": "<p>JBL - аудиотехника</p>",
+    "slug": "jbl"
+  },
+  {
+    "id": 194,
+    "name": "BRENNENSTUHL",
+    "sort_order": 194,
+    "description": "<p>BRENNENSTUHL - производитель сетевых фильтров по немецким технологиям</p>",
+    "slug": "brennenstuhl"
+  },
+  {
+    "id": 195,
+    "name": "VIVO",
+    "sort_order": 195,
+    "description": "<p>VIVO -&nbsp;китайский бренд потребительской электроники. Компания<span>&nbsp;</span><strong>Vivo</strong>, основанная в 2009 году, является подразделением китайской корпорации BBK Electronics и производит<span>&nbsp;</span><strong>смартфоны</strong>, периферийные устройства, программное обеспечение и другую продукцию, связанную с мобильными телефонами.</p>",
+    "slug": "vivo"
+  },
+  {
+    "id": 196,
+    "name": "Барьер",
+    "sort_order": 196,
+    "description": "<p><strong>БАРЬЕР</strong> - крупнейший производитель бытовых фильтров для очистки питьевой воды в России</p>",
+    "slug": "barer"
+  },
+  {
+    "id": 197,
+    "name": "ASEL",
+    "sort_order": 197,
+    "description": "<p>NULL</p>",
+    "slug": "asel"
+  },
+  {
+    "id": 198,
+    "name": "SHUNFA",
+    "sort_order": 198,
+    "description": "<p>Классический китайский бренд швейных машинок, родом из 1990-х</p>",
+    "slug": "shunfa"
+  },
+  {
+    "id": 199,
+    "name": "Oppo",
+    "sort_order": 199,
+    "description": "",
+    "slug": "oppo"
+  },
+  {
+    "id": 200,
+    "name": "Realme",
+    "sort_order": 200,
+    "description": "",
+    "slug": "realme"
+  },
+  {
+    "id": 201,
+    "name": "Vista",
+    "sort_order": 201,
+    "description": "",
+    "slug": "vista"
+  },
+  {
+    "id": 202,
+    "name": "Hotpoint",
+    "sort_order": 202,
+    "description": "",
+    "slug": "hotpoint"
+  },
+  {
+    "id": 203,
+    "name": "COMET",
+    "sort_order": 203,
+    "description": "",
+    "slug": "comet"
+  },
+  {
+    "id": 204,
+    "name": "QCY",
+    "sort_order": 204,
+    "description": "",
+    "slug": "qcy"
+  },
+  {
+    "id": 205,
+    "name": "NIA",
+    "sort_order": 205,
+    "description": "",
+    "slug": "nia"
+  },
+  {
+    "id": 206,
+    "name": "MI",
+    "sort_order": 206,
+    "description": "",
+    "slug": "mi"
+  },
+  {
+    "id": 207,
+    "name": "UNI-T",
+    "sort_order": 207,
+    "description": "",
+    "slug": "uni-t"
+  },
+  {
+    "id": 208,
+    "name": "Team Group",
+    "sort_order": 208,
+    "description": "",
+    "slug": "team-group"
+  },
+  {
+    "id": 209,
+    "name": "Crucial",
+    "sort_order": 209,
+    "description": "",
+    "slug": "crucial"
+  },
+  {
+    "id": 210,
+    "name": "Meinaili",
+    "sort_order": 210,
+    "description": "",
+    "slug": "meinaili"
+  },
+  {
+    "id": 211,
+    "name": "WENHAO",
+    "sort_order": 211,
+    "description": "",
+    "slug": "wenhao"
+  },
+  {
+    "id": 212,
+    "name": "Asrock",
+    "sort_order": 212,
+    "description": "",
+    "slug": "asrock"
+  },
+  {
+    "id": 213,
+    "name": "Moulinex",
+    "sort_order": 213,
+    "description": "",
+    "slug": "moulinex"
+  },
+  {
+    "id": 214,
+    "name": "Rowenta",
+    "sort_order": 214,
+    "description": "",
+    "slug": "rowenta"
+  },
+  {
+    "id": 215,
+    "name": "RAZER",
+    "sort_order": 215,
+    "description": "",
+    "slug": "razer"
+  },
+  {
+    "id": 216,
+    "name": "C&Q",
+    "sort_order": 216,
+    "description": "",
+    "slug": "cq"
+  },
+  {
+    "id": 217,
+    "name": "Scishion",
+    "sort_order": 217,
+    "description": "",
+    "slug": "scishion"
+  },
+  {
+    "id": 218,
+    "name": "Siemens",
+    "sort_order": 218,
+    "description": "",
+    "slug": "siemens"
+  },
+  {
+    "id": 219,
+    "name": "Netis",
+    "sort_order": 219,
+    "description": "",
+    "slug": "netis"
+  },
+  {
+    "id": 220,
+    "name": "Hytera",
+    "sort_order": 220,
+    "description": "<p>Производитель раций</p>",
+    "slug": "hytera"
+  },
+  {
+    "id": 221,
+    "name": "FOREV",
+    "sort_order": 221,
+    "description": "",
+    "slug": "forev"
+  },
+  {
+    "id": 222,
+    "name": "Nuoxia",
+    "sort_order": 222,
+    "description": "",
+    "slug": "nuoxia"
+  },
+  {
+    "id": 223,
+    "name": "Meijeiluo",
+    "sort_order": 223,
+    "description": "",
+    "slug": "meijeiluo"
+  },
+  {
+    "id": 224,
+    "name": "Z-mgkiss",
+    "sort_order": 224,
+    "description": "",
+    "slug": "z-mgkiss"
+  },
+  {
+    "id": 225,
+    "name": "Luxtech",
+    "sort_order": 225,
+    "description": "",
+    "slug": "luxtech"
+  },
+  {
+    "id": 226,
+    "name": "AVT",
+    "sort_order": 226,
+    "description": "",
+    "slug": "avt"
+  },
+  {
+    "id": 227,
+    "name": "Theodoor",
+    "sort_order": 227,
+    "description": "",
+    "slug": "theodoor"
+  },
+  {
+    "id": 228,
+    "name": "EVITA",
+    "sort_order": 228,
+    "description": "",
+    "slug": "evita"
+  },
+  {
+    "id": 229,
+    "name": "G-CASE",
+    "sort_order": 229,
+    "description": "<p>G-Case – это лучшие защитные и декоративные аксессуары для ваших мобильных устройств – планшетов и смартфонов. Красивые чехлы и накладки со стильным логотипом являются настоящим произведением искусства, которое мы продаем</p>",
+    "slug": "g-case"
+  },
+  {
+    "id": 230,
+    "name": "KINGXBAR",
+    "sort_order": 230,
+    "description": "<p>Бренд предоставляет чехлы премиум-класса, украшенные блестящими элементами и стразами для флагманских моделей смартфонов.</p>",
+    "slug": "kingxbar"
+  },
+  {
+    "id": 231,
+    "name": "Kovaro",
+    "sort_order": 231,
+    "description": "<p>Производитель силиконовых декоративных чехлов для IPhone, Samsung и Huawei</p>",
+    "slug": "kovaro"
+  },
+  {
+    "id": 232,
+    "name": "MOCCA",
+    "sort_order": 232,
+    "description": "<p>MOCCA - небольшой бренд производителей чехлов для бюджетных смартфонов</p>",
+    "slug": "mocca"
+  },
+  {
+    "id": 233,
+    "name": "YESIDO",
+    "sort_order": 233,
+    "description": "<p>Китайский бренд, специализирующийся на производстве аксессуаров для автомобилей, смартфонов, аудио-систем.</p>",
+    "slug": "yesido"
+  }
+]

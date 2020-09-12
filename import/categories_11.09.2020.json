@@ -1,0 +1,835 @@
+[
+  {
+    "id": 1,
+    "name": "Ноутбуки и компьютеры",
+    "parent_id": null,
+    "description": "<p>NULL</p>",
+    "slug": "noutbuki-i-kompyutery"
+  },
+  {
+    "id": 2,
+    "name": "Ноутбуки",
+    "parent_id": 1,
+    "description": "NULL",
+    "slug": "noutbuki"
+  },
+  {
+    "id": 3,
+    "name": "Смартфоны и гаджеты",
+    "parent_id": null,
+    "description": "<p>NULL</p>",
+    "slug": "smartfoni i gadjeti"
+  },
+  {
+    "id": 4,
+    "name": "Стиральные машины",
+    "parent_id": 57,
+    "description": "NULL",
+    "slug": "stiralnye-mashiny"
+  },
+  {
+    "id": 5,
+    "name": "Холодильники",
+    "parent_id": 55,
+    "description": "<p>NULL</p>",
+    "slug": "kholodilniki"
+  },
+  {
+    "id": 6,
+    "name": "Телевизоры, Hi-Fi, аудио",
+    "parent_id": null,
+    "description": "<p>NULL</p>",
+    "slug": "televizory-hi-fi-audio"
+  },
+  {
+    "id": 7,
+    "name": "Моноблоки",
+    "parent_id": 1,
+    "description": "NULL",
+    "slug": "monobloki"
+  },
+  {
+    "id": 8,
+    "name": "Телевизоры",
+    "parent_id": 6,
+    "description": "<p>NULL</p>",
+    "slug": "televizory"
+  },
+  {
+    "id": 9,
+    "name": "Микроволновые печи",
+    "parent_id": 28,
+    "description": "NULL",
+    "slug": "mikrovolnovye-pechi"
+  },
+  {
+    "id": 10,
+    "name": "Пылесосы",
+    "parent_id": 45,
+    "description": "NULL",
+    "slug": "pylesosy"
+  },
+  {
+    "id": 11,
+    "name": "Кондиционеры",
+    "parent_id": 58,
+    "description": "NULL",
+    "slug": "konditsionery"
+  },
+  {
+    "id": 13,
+    "name": "Электрические водонагреватели",
+    "parent_id": 58,
+    "description": "NULL",
+    "slug": "elektricheskie-vodonagrevateli"
+  },
+  {
+    "id": 15,
+    "name": "Морозильники",
+    "parent_id": 55,
+    "description": "NULL",
+    "slug": "morozilniki"
+  },
+  {
+    "id": 16,
+    "name": "Варочные панели",
+    "parent_id": 55,
+    "description": "NULL",
+    "slug": "varochnye-paneli"
+  },
+  {
+    "id": 17,
+    "name": "Встраиваемые духовки",
+    "parent_id": 55,
+    "description": "NULL",
+    "slug": "vstraivaemye-dukhovki"
+  },
+  {
+    "id": 18,
+    "name": "Вытяжки",
+    "parent_id": 55,
+    "description": "NULL",
+    "slug": "vytyazhki"
+  },
+  {
+    "id": 19,
+    "name": "Газовые плиты",
+    "parent_id": 55,
+    "description": "NULL",
+    "slug": "gazovye-plity"
+  },
+  {
+    "id": 21,
+    "name": "Электрические бритвы",
+    "parent_id": 59,
+    "description": "NULL",
+    "slug": "elektricheskie-britvy"
+  },
+  {
+    "id": 22,
+    "name": "Триммеры",
+    "parent_id": 59,
+    "description": "NULL",
+    "slug": "trimmery"
+  },
+  {
+    "id": 23,
+    "name": "Машинки для стрижки волос",
+    "parent_id": 59,
+    "description": "NULL",
+    "slug": "mashinki-dlya-strizhki-volos"
+  },
+  {
+    "id": 24,
+    "name": "Фены",
+    "parent_id": 59,
+    "description": "NULL",
+    "slug": "feny"
+  },
+  {
+    "id": 25,
+    "name": "Фены-щетки",
+    "parent_id": 59,
+    "description": "NULL",
+    "slug": "feny-shchetki"
+  },
+  {
+    "id": 26,
+    "name": "Паста машины",
+    "parent_id": 28,
+    "description": "NULL",
+    "slug": "pasta-mashiny"
+  },
+  {
+    "id": 27,
+    "name": "Миксеры",
+    "parent_id": 28,
+    "description": "NULL",
+    "slug": "miksery"
+  },
+  {
+    "id": 28,
+    "name": "Мелкая техника для кухни",
+    "parent_id": 56,
+    "description": "<p>NULL</p>",
+    "slug": "melkaya-tekhnika-dlya-kukhni"
+  },
+  {
+    "id": 29,
+    "name": "Соковыжималки",
+    "parent_id": 28,
+    "description": "NULL",
+    "slug": "sokovyzhimalki"
+  },
+  {
+    "id": 30,
+    "name": "Блендеры",
+    "parent_id": 28,
+    "description": "NULL",
+    "slug": "blendery"
+  },
+  {
+    "id": 31,
+    "name": "Эпиляторы",
+    "parent_id": 59,
+    "description": "NULL",
+    "slug": "epilyatory"
+  },
+  {
+    "id": 32,
+    "name": "Mясорубки",
+    "parent_id": 28,
+    "description": "NULL",
+    "slug": "myasorubki"
+  },
+  {
+    "id": 33,
+    "name": "Электрочайники",
+    "parent_id": 28,
+    "description": "<p>NULL</p>",
+    "slug": "elektrochayniki"
+  },
+  {
+    "id": 35,
+    "name": "Выпрямители",
+    "parent_id": 59,
+    "description": "NULL",
+    "slug": "vypryamiteli"
+  },
+  {
+    "id": 38,
+    "name": "Мультиварки",
+    "parent_id": 28,
+    "description": "NULL",
+    "slug": "multivarki"
+  },
+  {
+    "id": 39,
+    "name": "Увлажнители воздуха",
+    "parent_id": 58,
+    "description": "NULL",
+    "slug": "uvlazhniteli-vozdukha"
+  },
+  {
+    "id": 40,
+    "name": "Парогенераторы",
+    "parent_id": 45,
+    "description": "NULL",
+    "slug": "parogeneratory"
+  },
+  {
+    "id": 41,
+    "name": "Утюги",
+    "parent_id": 45,
+    "description": "NULL",
+    "slug": "utyugi"
+  },
+  {
+    "id": 42,
+    "name": "Отпариватели",
+    "parent_id": 45,
+    "description": "<p>NULL</p>",
+    "slug": "otparivateli"
+  },
+  {
+    "id": 43,
+    "name": "Кофемашины",
+    "parent_id": 28,
+    "description": "NULL",
+    "slug": "kofemashiny"
+  },
+  {
+    "id": 44,
+    "name": "Кофеварки",
+    "parent_id": 28,
+    "description": "NULL",
+    "slug": "kofevarki"
+  },
+  {
+    "id": 45,
+    "name": "Мелкая бытовая техника",
+    "parent_id": 61,
+    "description": "NULL",
+    "slug": "melkaya-bytovaya-tekhnika"
+  },
+  {
+    "id": 46,
+    "name": "Тостеры",
+    "parent_id": 28,
+    "description": "NULL",
+    "slug": "tostery"
+  },
+  {
+    "id": 47,
+    "name": "Термопоты",
+    "parent_id": 28,
+    "description": "NULL",
+    "slug": "termopoty"
+  },
+  {
+    "id": 49,
+    "name": "Обогреватели",
+    "parent_id": 58,
+    "description": "NULL",
+    "slug": "obogrevateli"
+  },
+  {
+    "id": 50,
+    "name": "Лапшерезки",
+    "parent_id": 28,
+    "description": "<p>NULL</p>",
+    "slug": "lapsharezki"
+  },
+  {
+    "id": 51,
+    "name": "Рисоварки",
+    "parent_id": 28,
+    "description": "NULL",
+    "slug": "risovarki"
+  },
+  {
+    "id": 52,
+    "name": "Кухонные комбайны",
+    "parent_id": 28,
+    "description": "NULL",
+    "slug": "kukhonnye-kombayny"
+  },
+  {
+    "id": 53,
+    "name": "Смартфоны",
+    "parent_id": 3,
+    "description": "",
+    "slug": "smartfony"
+  },
+  {
+    "id": 54,
+    "name": "Посудомоечные машины",
+    "parent_id": 55,
+    "description": "NULL",
+    "slug": "posudomoechnye-mashiny"
+  },
+  {
+    "id": 55,
+    "name": "Крупная техника для кухни",
+    "parent_id": 56,
+    "description": "NULL",
+    "slug": "krupnaya-tekhnika-dlya-kukhni"
+  },
+  {
+    "id": 56,
+    "name": "Техника для кухни",
+    "parent_id": null,
+    "description": "<p>NULL</p>",
+    "slug": "tekhnika-dlya-kukhni"
+  },
+  {
+    "id": 57,
+    "name": "Крупная бытовая техника",
+    "parent_id": 61,
+    "description": "NULL",
+    "slug": "krupnaya-bytovaya-tekhnika"
+  },
+  {
+    "id": 58,
+    "name": "Климатическая техника",
+    "parent_id": 61,
+    "description": "NULL",
+    "slug": "klimaticheskaya-tekhnika"
+  },
+  {
+    "id": 59,
+    "name": "Красота и здоровье",
+    "parent_id": 0,
+    "description": "NULL",
+    "slug": "krasota-i-zdorove"
+  },
+  {
+    "id": 60,
+    "name": "Кулеры для воды",
+    "parent_id": 61,
+    "description": "<p>NULL</p>",
+    "slug": "kulery-dlya-vody"
+  },
+  {
+    "id": 61,
+    "name": "Техника для дома",
+    "parent_id": null,
+    "description": "<p>NULL</p>",
+    "slug": "tekhnika-dlya-doma"
+  },
+  {
+    "id": 62,
+    "name": "Массажеры",
+    "parent_id": 59,
+    "description": "NULL",
+    "slug": "massazhery"
+  },
+  {
+    "id": 63,
+    "name": "Весы",
+    "parent_id": 59,
+    "description": "NULL",
+    "slug": "vesy"
+  },
+  {
+    "id": 66,
+    "name": "Принтеры",
+    "parent_id": 1170,
+    "description": "NULL",
+    "slug": "printery"
+  },
+  {
+    "id": 68,
+    "name": "Аксессуары",
+    "parent_id": 25,
+    "description": "<p>NULL</p>",
+    "slug": "aksessuary"
+  },
+  {
+    "id": 69,
+    "name": "Аксессуары для смартфонов",
+    "parent_id": 3,
+    "description": "<p>NULL</p>",
+    "slug": "aksessuary-dlya-smartfonov"
+  },
+  {
+    "id": 76,
+    "name": "Комплектующие",
+    "parent_id": 1,
+    "description": "NULL",
+    "slug": "komplektuyushchie"
+  },
+  {
+    "id": 77,
+    "name": "Мониторы",
+    "parent_id": 1164,
+    "description": "NULL",
+    "slug": "monitory"
+  },
+  {
+    "id": 80,
+    "name": "Мышки",
+    "parent_id": 1164,
+    "description": "NULL",
+    "slug": "myshki"
+  },
+  {
+    "id": 83,
+    "name": "Процессоры",
+    "parent_id": 76,
+    "description": "NULL",
+    "slug": "protsessory"
+  },
+  {
+    "id": 86,
+    "name": "Флеш накопители и внешние жесткие диски",
+    "parent_id": 1164,
+    "description": "<p>NULL</p>",
+    "slug": "nakopiteli-dannykh"
+  },
+  {
+    "id": 91,
+    "name": "Электрические камины",
+    "parent_id": 58,
+    "description": "NULL",
+    "slug": "elektricheskie-kaminy"
+  },
+  {
+    "id": 92,
+    "name": "Wifi-роутеры и модемы",
+    "parent_id": 1160,
+    "description": "<p>NULL</p>",
+    "slug": "wifi-routery"
+  },
+  {
+    "id": 94,
+    "name": "DVD-плеееры",
+    "parent_id": 6,
+    "description": "NULL",
+    "slug": "dvd-pleeery"
+  },
+  {
+    "id": 97,
+    "name": "Аксессуары для компьютера",
+    "parent_id": 59,
+    "description": "NULL",
+    "slug": "aksessuary-dlya-kompyutera"
+  },
+  {
+    "id": 100,
+    "name": "Клавиатуры",
+    "parent_id": 1164,
+    "description": "<p>NULL</p>",
+    "slug": "klaviatury"
+  },
+  {
+    "id": 101,
+    "name": "Блоки питания",
+    "parent_id": 76,
+    "description": "NULL",
+    "slug": "bloki-pitaniya"
+  },
+  {
+    "id": 104,
+    "name": "Материнские платы",
+    "parent_id": 76,
+    "description": "NULL",
+    "slug": "materinskie-platy"
+  },
+  {
+    "id": 105,
+    "name": "Швейные машинки",
+    "parent_id": 45,
+    "description": "NULL",
+    "slug": "shveynye-mashinki"
+  },
+  {
+    "id": 106,
+    "name": "Компьютерные очки",
+    "parent_id": 97,
+    "description": "NULL",
+    "slug": "kompyuternye-ochki"
+  },
+  {
+    "id": 107,
+    "name": "Мини-печи",
+    "parent_id": 28,
+    "description": "NULL",
+    "slug": "mini-pechi"
+  },
+  {
+    "id": 108,
+    "name": "Интерьерное освещение",
+    "parent_id": 97,
+    "description": "NULL",
+    "slug": "interernoe-osveshchenie"
+  },
+  {
+    "id": 109,
+    "name": "Тепловые пушки",
+    "parent_id": 58,
+    "description": "NULL",
+    "slug": "teplovye-pushki"
+  },
+  {
+    "id": 110,
+    "name": "Домашний кинотеатр и Hi-Fi техника",
+    "parent_id": 6,
+    "description": "NULL",
+    "slug": "domashniy-kinoteatr-i-hi-fi-tekhnika"
+  },
+  {
+    "id": 111,
+    "name": "Рации",
+    "parent_id": 68,
+    "description": "NULL",
+    "slug": "ratsii"
+  },
+  {
+    "id": 1121,
+    "name": "Цифровое ТВ",
+    "parent_id": 6,
+    "description": "",
+    "slug": "cifrovoe-tv"
+  },
+  {
+    "id": 1122,
+    "name": "Аксессуары",
+    "parent_id": 6,
+    "description": "",
+    "slug": "aksessuary_tv"
+  },
+  {
+    "id": 1123,
+    "name": "Телефоны",
+    "parent_id": 3,
+    "description": "",
+    "slug": "telefony"
+  },
+  {
+    "id": 1124,
+    "name": "Планшеты",
+    "parent_id": 3,
+    "description": "",
+    "slug": "planshety"
+  },
+  {
+    "id": 1125,
+    "name": "Гаджеты",
+    "parent_id": 3,
+    "description": "",
+    "slug": "gadzhety"
+  },
+  {
+    "id": 1126,
+    "name": "Товары для авто",
+    "parent_id": 61,
+    "description": "",
+    "slug": "tovary-dlya-avto"
+  },
+  {
+    "id": 1128,
+    "name": "Вентиляторы",
+    "parent_id": 58,
+    "description": "",
+    "slug": "ventilyatory"
+  },
+  {
+    "id": 1129,
+    "name": "Кресла",
+    "parent_id": 61,
+    "description": "",
+    "slug": "kresla"
+  },
+  {
+    "id": 1130,
+    "name": "Фильтры",
+    "parent_id": 61,
+    "description": "",
+    "slug": "filtry"
+  },
+  {
+    "id": 1131,
+    "name": "Экшн-камеры, Go Pro, камеры для блогеров",
+    "parent_id": 3,
+    "description": "",
+    "slug": "ekshen-kamery-go-pro-kamery-dlya-blogerov"
+  },
+  {
+    "id": 1132,
+    "name": "Электроинструменты",
+    "parent_id": 61,
+    "description": "",
+    "slug": "elektroinstrumenty"
+  },
+  {
+    "id": 1133,
+    "name": "Фритюрницы",
+    "parent_id": 28,
+    "description": "",
+    "slug": "frityurnicy"
+  },
+  {
+    "id": 1134,
+    "name": "Посуда",
+    "parent_id": 56,
+    "description": "",
+    "slug": "posuda"
+  },
+  {
+    "id": 1135,
+    "name": "Казаны",
+    "parent_id": 1134,
+    "description": "",
+    "slug": "kazany"
+  },
+  {
+    "id": 1136,
+    "name": "Кастрюли",
+    "parent_id": 1134,
+    "description": "",
+    "slug": "kastryuli"
+  },
+  {
+    "id": 1137,
+    "name": "Сковородки",
+    "parent_id": 1134,
+    "description": "",
+    "slug": "skovorodki"
+  },
+  {
+    "id": 1138,
+    "name": "Чайники",
+    "parent_id": 1134,
+    "description": "",
+    "slug": "chajniki"
+  },
+  {
+    "id": 1139,
+    "name": "Хозяйственные товары",
+    "parent_id": 61,
+    "description": "",
+    "slug": "hozyajstvennye-tovary"
+  },
+  {
+    "id": 1140,
+    "name": "Гриль",
+    "parent_id": 28,
+    "description": "",
+    "slug": "gril"
+  },
+  {
+    "id": 1142,
+    "name": "Наушники",
+    "parent_id": 3,
+    "description": "",
+    "slug": "naushniki"
+  },
+  {
+    "id": 1144,
+    "name": "Тонеры",
+    "parent_id": 1170,
+    "description": "",
+    "slug": "toner"
+  },
+  {
+    "id": 1149,
+    "name": "Комплектующие для пылесосов",
+    "parent_id": 61,
+    "description": "",
+    "slug": "pylesborniki"
+  },
+  {
+    "id": 1150,
+    "name": "Мультистайлеры",
+    "parent_id": 59,
+    "description": "",
+    "slug": "multistajlery"
+  },
+  {
+    "id": 1151,
+    "name": "Электрические устройства для дома",
+    "parent_id": 61,
+    "description": "",
+    "slug": "elektricheskie-ustrojstva-dlya-doma"
+  },
+  {
+    "id": 1152,
+    "name": "Powerbank",
+    "parent_id": 3,
+    "description": "",
+    "slug": "powerbank"
+  },
+  {
+    "id": 1153,
+    "name": "Приставки ITV",
+    "parent_id": 6,
+    "description": "",
+    "slug": "pristavki-itv"
+  },
+  {
+    "id": 1154,
+    "name": "Кофемолки",
+    "parent_id": 28,
+    "description": "",
+    "slug": "kofemolki"
+  },
+  {
+    "id": 1156,
+    "name": "Инструменты для ремонта и строительства",
+    "parent_id": 61,
+    "description": "",
+    "slug": "instrumenty-dlya-remonta-i-stroitelstva"
+  },
+  {
+    "id": 1157,
+    "name": "Аксессуары Xiaomi",
+    "parent_id": 3,
+    "description": "<p>Xiaomi Corporation — китайская корпорация, основанная Лэй Цзюнем в &nbsp;2010 году, занимает третье место в мире и Китае по объёму производства &nbsp;смартфонов. С 2018 года является публичной.</p>",
+    "slug": "aksessuary-xiaomi"
+  },
+  {
+    "id": 1158,
+    "name": "Карты памяти",
+    "parent_id": 3,
+    "description": "<p>Карта памяти - компактное электронное запоминающее устройство, используемое для хранения цифровой информации.&nbsp;</p>",
+    "slug": "karty-pamyati"
+  },
+  {
+    "id": 1160,
+    "name": "Сетевое оборудование",
+    "parent_id": 1,
+    "description": "",
+    "slug": "setevoe-oborudovanie"
+  },
+  {
+    "id": 1161,
+    "name": "Коммутаторы",
+    "parent_id": 1160,
+    "description": "",
+    "slug": "routery-i-kommutatory"
+  },
+  {
+    "id": 1162,
+    "name": "Усилители сигнала и репитеры",
+    "parent_id": 1160,
+    "description": "",
+    "slug": "usiliteli-signala-i-repitery"
+  },
+  {
+    "id": 1163,
+    "name": "Wi-Fi адаптеры",
+    "parent_id": 1160,
+    "description": "",
+    "slug": "wi-fi-adaptery"
+  },
+  {
+    "id": 1164,
+    "name": "Периферийные устройства",
+    "parent_id": 1,
+    "description": "",
+    "slug": "periferijnye-ustrojstva"
+  },
+  {
+    "id": 1165,
+    "name": "HDD и SSD",
+    "parent_id": 76,
+    "description": "",
+    "slug": "hdd-i-ssd"
+  },
+  {
+    "id": 1166,
+    "name": "Щипцы",
+    "parent_id": 59,
+    "description": "",
+    "slug": "shchipcy"
+  },
+  {
+    "id": 1167,
+    "name": "Батарейки",
+    "parent_id": 61,
+    "description": "",
+    "slug": "batarejki"
+  },
+  {
+    "id": 1168,
+    "name": "Видеонаблюдение, HIK",
+    "parent_id": 98,
+    "description": "",
+    "slug": "videonablyudenie-hik"
+  },
+  {
+    "id": 1169,
+    "name": "МФУ",
+    "parent_id": 1170,
+    "description": "",
+    "slug": "mfu"
+  },
+  {
+    "id": 1170,
+    "name": "Принтеры и МФУ",
+    "parent_id": 1,
+    "description": "",
+    "slug": "printery-i-mfu"
+  }
+]
