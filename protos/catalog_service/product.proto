@@ -31,11 +31,12 @@ message CreateProductRequest {
     string description = 7;
     string gallery = 8;
     int64 external_id = 9;
-    Meta meta = 10;
-    bool   active = 11;
-    int64  order = 12;
-    string image = 13;
-    string lang = 14;
+    string code = 10;
+    Meta meta = 11;
+    bool   active = 12;
+    int64  order = 13;
+    string image = 14;
+    string lang = 15;
 }
 
 message UpdateProductRequest {
@@ -54,11 +55,12 @@ message UpdateProductRequest {
     string description = 8;
     string gallery = 9;
     int64 external_id = 10;
-    Meta meta = 11;
-    bool   active = 12;
-    int64  order = 13;
-    string image = 14;
-    string lang = 15;
+    string code = 11;
+    Meta meta = 12;
+    bool   active = 13;
+    int64  order = 14;
+    string image = 15;
+    string lang = 16;
 }
 
 message UpdateProductPriceRequest {

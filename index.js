@@ -89,6 +89,12 @@ function main() {
             // 	console.log("error on importing files: " + err);
             // });
 
+            // importer.importProductCodes().then((result) => {
+            // 	console.log("Product codes have been imported");
+            // }).catch((err) => {
+            // 	console.log("error on importing product codes: " + err);
+            // });
+
             // importer.addRecommendedField().then((result) => {
             //   console.log("Product recommended field added");
             // }).catch((err) => {

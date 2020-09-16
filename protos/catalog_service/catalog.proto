@@ -34,16 +34,17 @@ message Product {
     bool   active = 10;
     repeated string gallery = 11;
     int64 external_id = 12;
-    Meta meta = 13;
-    repeated Property properties = 14;
-    repeated Price prices = 15;
-    DefaultPrice price = 16;
-    string created_at = 17;
-    string updated_at = 18;
-    string image = 19;
-    string lang = 20;
-    float average_rate = 21;
-    int64 reviews_count = 22;
+    string code = 13;
+    Meta meta = 14;
+    repeated Property properties = 15;
+    repeated Price prices = 16;
+    DefaultPrice price = 17;
+    string created_at = 18;
+    string updated_at = 19;
+    string image = 20;
+    string lang = 21;
+    float average_rate = 22;
+    int64 reviews_count = 23;
 }
 
 message ProductSlim {
@@ -70,6 +71,7 @@ message ProductSlim {
     string image = 12;
     string lang = 13;
     int64 external_id = 14;
+    string code = 15;
 }
 
 message Category {

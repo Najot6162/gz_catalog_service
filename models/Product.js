@@ -71,6 +71,10 @@ var ProductSchema = new mongoose.Schema({
         type: Number,
         default: null
     },
+    code: {
+        type: String,
+        default: ""
+    },
     meta: {
         title: {
             type: String,

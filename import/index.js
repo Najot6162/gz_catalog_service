@@ -310,6 +310,34 @@ const importProductImages = () => (
     })
 )
 
+const importProductCodes = () => {
+    return new Promise((resolve, reject) => {
+        fs.readFile(path.join(__dirname, "products_with_code_16.09.2020.json"), 'utf8', (err, fileContent) => {
+            if (err) return reject(err);
+            products = JSON.parse(fileContent);
+            console.log("products file loaded, " + products.length + " entities");
+
+            async.eachLimit(products, 10, (p, cb) => {
+                if(!p.code) return cb();
+                Product.updateMany({
+                    external_id: p.id
+                }, {
+                    $set: {
+                        code: p.code
+                    }
+                }, (err, updateResult) => {
+                    if (err) return cb(err);
+                    console.log("product " + p.id + " is updated");
+                    return cb();
+                });
+            }, (err) => {
+                if (err) return reject(err);
+                return resolve();
+            });
+        });
+    });
+}
+
 const importShops = () => (
     new Promise((resolve, reject) => {
         fs.readFile(path.join(__dirname, "shops.json"), 'utf8', (err, fileContent) => {
@@ -522,5 +550,6 @@ module.exports = {
     importShopStocks,
     removeDuplicateProducts,
     importProductImages,
+    importProductCodes,
     addRecommendedField
 }

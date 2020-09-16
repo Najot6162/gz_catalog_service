@@ -48,59 +48,63 @@ let productStorage = {
       p.created_at = Date.now();
       p.updated_at = Date.now();
 
-      let pCopy = p;
-      p = new Product(p);
+      // external ID (auto increment)
+      getLatestExternalId().then((external_id) => {
+        p.external_id = external_id/1 + 1;
+        let pCopy = p;
+        p = new Product(p);
 
-      p.save((err, product) => {
-        if (err) return reject(err);
+        p.save((err, product) => {
+          if (err) return reject(err);
 
-        // creating for other languages
-        let otherLangs = langs.filter((lang, i) => lang != product.lang);
-        async.eachSeries(
-          otherLangs,
-          (otherLang, cb) => {
-            let productWithOtherLang = pCopy;
-            productWithOtherLang.lang = otherLang;
-            productWithOtherLang.slug = product.slug;
-            productWithOtherLang = new Product(productWithOtherLang);
-            productWithOtherLang.save((err, r) => {
-              if (err) return cb(err);
-              logger.debug("product is created with lang " + otherLang, {
-                result: r,
+          // creating for other languages
+          let otherLangs = langs.filter((lang, i) => lang != product.lang);
+          async.eachSeries(
+            otherLangs,
+            (otherLang, cb) => {
+              let productWithOtherLang = pCopy;
+              productWithOtherLang.lang = otherLang;
+              productWithOtherLang.slug = product.slug;
+              productWithOtherLang = new Product(productWithOtherLang);
+              productWithOtherLang.save((err, r) => {
+                if (err) return cb(err);
+                logger.debug("product is created with lang " + otherLang, {
+                  result: r,
+                });
+                cb(null, r);
               });
-              cb(null, r);
+            },
+            (err) => {
+              if (err)
+                logger.error(err.message, {
+                  function: "create product for other lang",
+                  product,
+                });
+            }
+          );
+
+          product
+            .populate({
+              path: "category",
+            })
+            .populate({
+              path: "brand",
+            })
+            .populate({
+              path: "additional_categories",
+            })
+            .populate({
+              path: "related_products",
+            })
+            .execPopulate()
+            .then((populatedProduct) => {
+              if (err) return reject(err);
+              return resolve(populatedProduct);
+            })
+            .catch((err) => {
+              return reject(err);
             });
-          },
-          (err) => {
-            if (err)
-              logger.error(err.message, {
-                function: "create product for other lang",
-                product,
-              });
-          }
-        );
-
-        product
-          .populate({
-            path: "category",
-          })
-          .populate({
-            path: "brand",
-          })
-          .populate({
-            path: "additional_categories",
-          })
-          .populate({
-            path: "related_products",
-          })
-          .execPopulate()
-          .then((populatedProduct) => {
-            if (err) return reject(err);
-            return resolve(populatedProduct);
-          })
-          .catch((err) => {
-            return reject(err);
-          });
+        });
       });
     });
   },
@@ -172,6 +176,7 @@ let productStorage = {
           tags: b.meta ? b.meta.tags : product.meta.tags,
         };
         product.external_id = b.external_id;
+        product.code = b.code;
         product.order = b.order;
         product.image = b.image;
 
@@ -991,7 +996,6 @@ const getRelatedProducts = (product_id = "", limit = 10) => {
   });
 }
 
-
 const getOnlyRelatedProducts = (product_id = "", limit = 10) => {
   return new Promise((resolve, reject) => {
     let related_products = [];
@@ -1044,4 +1048,17 @@ const getOnlyRelatedProducts = (product_id = "", limit = 10) => {
     });
   });
 }
+
+const getLatestExternalId = () => {
+  return new Promise((resolve, reject) => {
+    Product.findOne({},'external_id', {
+      sort: {created_at: -1}
+    }, (err, latestProduct) => {
+      if(err) return reject(err);
+      if(!latestProduct) return resolve(1);
+      return resolve(latestProduct.external_id);
+    });
+  });
+}
+
 module.exports = productStorage;
