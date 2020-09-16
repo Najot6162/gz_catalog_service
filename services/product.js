@@ -144,7 +144,7 @@ const productService = {
         })
         .catch((err) => {
           logger.error(err.message, {
-            function: "find popular products",
+            function: "search products",
             request: call.request,
           });
           callback({

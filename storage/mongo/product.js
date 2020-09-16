@@ -586,7 +586,7 @@ let productStorage = {
               slug: { $regex: ".*" + searchKey + ".*", $options: 'i' },
             },
             {
-              external_id: searchKey/1
+              external_id: searchKey/1 ? searchKey/1 : 0
             }
           ],
         };
