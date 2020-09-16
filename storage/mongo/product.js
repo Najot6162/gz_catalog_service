@@ -579,6 +579,9 @@ let productStorage = {
             },
             {
               slug: { $regex: ".*" + searchKey + ".*", $options: 'i' },
+            },
+            {
+              external_id: searchKey/1
             }
           ],
         };

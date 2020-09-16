@@ -101,7 +101,6 @@ function main() {
             //   console.log("error on importing shops: " + err);
             // });
         }, 5000);
-
     });
 
     // gRPC server
