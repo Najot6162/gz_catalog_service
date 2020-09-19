@@ -376,6 +376,14 @@ let productStorage = {
         }
       }
 
+      // filter by status
+      if(filters.active) {
+        query = {
+          ...query,
+          active: true
+        }
+      }
+
       // preparing options
       let options = {
         skip: ((filters.page / 1 - 1) * filters.limit) / 1,
@@ -602,6 +610,14 @@ let productStorage = {
         };
       }
 
+      // filter by status
+      if(filters.active) {
+        query = {
+          ...query,
+          active: true
+        }
+      }
+
       let options = {
         skip: ((filters.page / 1 - 1) * filters.limit) / 1,
         limit: filters.limit / 1 ? filters.limit / 1 : 50,
@@ -709,6 +725,14 @@ let productStorage = {
         };
       }
 
+      // filter by status
+      if(filters.active) {
+        query = {
+          ...query,
+          active: true
+        }
+      }
+
       let options = {
         skip: ((filters.page / 1 - 1) * filters.limit) / 1,
         limit: filters.limit / 1 ? filters.limit / 1 : 10,
@@ -782,6 +806,14 @@ let productStorage = {
             },
           ],
         };
+      }
+
+      // filter by status
+      if(filters.active) {
+        productQuery = {
+          ...productQuery,
+          active: true
+        }
       }
 
       // logger.debug("filtering products", {
