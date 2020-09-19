@@ -573,6 +573,14 @@ let productStorage = {
         lang: filters.lang ? filters.lang : cnf.lang,
       };
 
+      // filter by status
+      if(filters.active) {
+        query = {
+          ...query,
+          active: true
+        }
+      }
+
       // filter by search key
       if (filters.search.trim()) {
         var searchKey = filters.search
@@ -594,7 +602,7 @@ let productStorage = {
               slug: { $regex: ".*" + searchKey + ".*", $options: 'i' },
             },
             {
-              external_id: searchKey/1 ? searchKey/1 : 0
+              external_id: searchKey/1 ? searchKey/1 : -1
             }
           ],
         };
@@ -608,14 +616,6 @@ let productStorage = {
             }
           ]
         };
-      }
-
-      // filter by status
-      if(filters.active) {
-        query = {
-          ...query,
-          active: true
-        }
       }
 
       let options = {
