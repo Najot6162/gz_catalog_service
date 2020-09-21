@@ -83,11 +83,11 @@ function main() {
             // 	console.log("error on removing Products: " + err);
             // });
 
-            // importer.importProductImages().then((result) => {
-            // 	console.log("Product images have been processed");
-            // }).catch((err) => {
-            // 	console.log("error on importing files: " + err);
-            // });
+            importer.importProductImages().then((result) => {
+            	console.log("Product images have been processed");
+            }).catch((err) => {
+            	console.log("error on importing files: " + err);
+            });
 
             // importer.importProductCodes().then((result) => {
             // 	console.log("Product codes have been imported");

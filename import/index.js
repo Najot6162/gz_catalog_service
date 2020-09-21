@@ -249,7 +249,7 @@ const importProductImages = () => (
             Product.find({
                 active: true,
                 lang: 'ru',
-                external_id: { $gt: 2124 }
+                image: null
             }, (err, products) => {
                 if (err) return reject(err);
 
@@ -259,6 +259,7 @@ const importProductImages = () => (
                 console.log('products ' + products.length); // 1
 
                 logger.profile("files processed");
+                let productsProcessed = 0;
                 async.eachSeries(products, (p, cb) => {
                     let images = files.filter((f, i) => {
                         return f.attachment_id / 1 == p.external_id;
@@ -293,6 +294,7 @@ const importProductImages = () => (
                             }, (err, updateResult) => {
                                 if (err) return cb(err);
                                 console.log("product " + p.external_id + " is updated");
+                                productsProcessed++;
                                 cb();
                             });
                         } else {
@@ -303,6 +305,7 @@ const importProductImages = () => (
                 }, (err) => {
                     if (err) return reject(err);
                     logger.profile("files processed");
+                    console.log(productsProcessed + " products updated");
                     return resolve();
                 });
             });
