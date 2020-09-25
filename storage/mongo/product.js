@@ -303,6 +303,9 @@ let productStorage = {
           });
         }
 
+        // removing empty properties
+        product.properties = product.properties.filter((property, i) => property.value != "");
+
         product.save((err, updatedProduct) => {
           if (err) return reject(err);
           resolve(updatedProduct);
