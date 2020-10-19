@@ -320,6 +320,7 @@ let categoryStorage = {
       // making query
       query = {
         ...query,
+        active: true,
         lang: cnf.lang,
         $or: [
           {
@@ -357,7 +358,8 @@ let categoryStorage = {
                       $expr: {
                         $and: [
                           { $eq: ["$lang", query.lang]},
-                          { $eq: ["$category", "$$category_id"]}
+                          { $eq: ["$category", "$$category_id"]},
+                          { $eq: ["$active", true]}
                         ]
                       }
                     }
@@ -367,6 +369,7 @@ let categoryStorage = {
                     $project: {
                       _id: 0,
                       id: "$_id",
+                      active: 1,
                       name: 1,
                       slug: 1,
                       image: 1,
@@ -399,7 +402,8 @@ let categoryStorage = {
                           $expr: {
                             $and: [
                               { $eq: ["$lang", query.lang]},
-                              { $eq: ["$category", "$$category_id"]}
+                              { $eq: ["$category", "$$category_id"]},
+                              { $eq: ["$active", true]}
                             ]
                           }
                         }
@@ -409,6 +413,7 @@ let categoryStorage = {
                         $project: {
                           _id: 0,
                           id: "$_id",
+                          active: 1,
                           name: 1,
                           slug: 1,
                           image: 1,
