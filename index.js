@@ -4,6 +4,8 @@ const mongoose = require("mongoose");
 const slugUpdater = require("mongoose-slug-updater");
 const logger = require("./config/logger.js");
 const cfg = require("./config");
+const hatch = require("./hatch/hatch_csv");
+const uploadCsv = require("./hatch/update&upload");
 
 mongoose.plugin(slugUpdater);
 
@@ -105,8 +107,18 @@ function main() {
             //   console.log("Shops have been imported");
             // }).catch((err) => {
             //   console.log("error on importing shops: " + err);
-            // });
-        }, 5000);
+            // }); 24 * 3600 * 1000
+         
+            setInterval(() => {
+                hatch.convertToCsv().then((result) => {
+                    console.log("Csv have been generated");
+                    uploadCsv.upload()
+                }).catch((err) => {
+                    console.log("error on generating csv: " + err);
+                })
+            }, 5000)
+
+        }, 24 * 3600 * 1000);
     });
 
     // gRPC server
