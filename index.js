@@ -116,9 +116,9 @@ function main() {
                 }).catch((err) => {
                     console.log("error on generating csv: " + err);
                 })
-            }, 5000)
+            }, 24 * 3600 * 1000)
 
-        }, 24 * 3600 * 1000);
+        }, 5000);
     });
 
     // gRPC server
