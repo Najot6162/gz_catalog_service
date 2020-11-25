@@ -1,2 +1,3 @@
 APP=gz_catalog_service
-REGISTRY=registry.udevs.io
+REGISTRY=gitlab.udevs.io:5050
+PROJECT_NAME=goodzone
