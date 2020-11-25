@@ -1,9 +1,9 @@
 const config = {
     environment: getConf('NODE_ENV', 'dev'),
-    mongoHost: getConf('MONGO_HOST', 'dev.goodzone.uz'),
+    mongoHost: getConf('MONGO_HOST', '206.81.17.88'),
     mongoPort: getConf('MONGO_PORT', '27017'),
-    mongoUser: getConf('MONGO_USER', 'rj'),
-    mongoPassword: getConf('MONGO_PASSWORD', 'mysecret'),
+    mongoUser: getConf('MONGO_USER', 'catalog_service'),
+    mongoPassword: getConf('MONGO_PASSWORD', 'eS37CqC2wMd6Fwkw'),
     mongoDatabase: getConf('MONGO_DATABASE', 'catalog_service'),
     RPCPort: getConf('RPC_PORT', 7000),
     cloudUrl: getConf('CLOUD_URL', 'https://cdn.delever.uz/goodzone/'),

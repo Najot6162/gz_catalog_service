@@ -56,7 +56,11 @@ let productStorage = {
 
         p.save((err, product) => {
           if (err) return reject(err);
-
+          // logger.debug("Creating product", {
+          //   before_save: p,
+          //   after_save: product
+          // });
+          
           // creating for other languages
           let otherLangs = langs.filter((lang, i) => lang != product.lang);
           async.eachSeries(

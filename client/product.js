@@ -44,7 +44,11 @@ function main() {
         });
 
         // find Product кондиционер
-        client.Find({ search: "Фен" }, (err, findResponse) => {
+        client.Find({ 
+            search: "Фен",
+            page: 1,
+            limit: 5  
+        }, (err, findResponse) => {
             if (err) return console.log('Error: ', err.message);
             logger.debug('Product Find response', {
                 response: findResponse,

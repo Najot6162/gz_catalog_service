@@ -4,10 +4,10 @@ const mongoose = require("mongoose");
 const slugUpdater = require("mongoose-slug-updater");
 const logger = require("./config/logger.js");
 const cfg = require("./config");
-const hatch = require("./hatch/hatch_csv");
 const uploadCsv = require("./hatch/update&upload");
 
 mongoose.plugin(slugUpdater);
+
 
 // loading proto file
 const PROTO_URL = __dirname + "/protos/catalog_service/catalog_service.proto";
@@ -109,6 +109,10 @@ function main() {
             //   console.log("error on importing shops: " + err);
             // }); 24 * 3600 * 1000
          
+
+            /* HATCH INTEGRATION PART */
+            // Function to generate csv file with information of products once a day
+            const hatch = require("./hatch/hatch_csv");
             setInterval(() => {
                 hatch.convertToCsv().then((result) => {
                     console.log("Csv have been generated");
