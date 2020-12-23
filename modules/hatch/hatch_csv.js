@@ -13,20 +13,19 @@ const convertToCsv = () => {
         }, {
             _id: 1,
             slug: 1,
-            "brand.name": 1,
+            brand: 1,
             name: 1,
             "price.price": 1,
-            "category.name": 1,
+            category: 1,
             average_rate: 1,
             reviews_count: 1,
             code: 1
         }).populate({
             path: "category",
-            populate: {
-                path: "parent",
-            },
+            select: ["name"]
         }).populate({
             path: "brand",
+            select: ["name"]
         }).exec((err, results) => {
             if (err) return reject(err);
             Shop.find({ lang: "ru" }, {},(err, shops) => {
@@ -69,10 +68,9 @@ const convertToCsv = () => {
                     console.log("writing to csv ...")
                     if (err) return reject(err);
                     console.log('file saved');
+                    return resolve(results);
                 });
             })
-            // -> Convert JSON to CSV data
-            return resolve(results);
         });
     });
 

@@ -70,7 +70,7 @@ function main() {
             setInterval(() => {
                 hatch.convertToCsv().then((result) => {
                     console.log("Csv have been generated");
-                    uploadCsv.upload()
+                    uploadCsv.upload();
                 }).catch((err) => {
                     console.log("error on generating csv: " + err);
                 })
