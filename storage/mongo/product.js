@@ -203,8 +203,7 @@ let productStorage = {
             .then((populatedProduct) => {
               if (err) return reject(err);
               return resolve(populatedProduct);
-            })
-            .catch((err) => {
+            }).catch((err) => {
               return reject(err);
             });
         });

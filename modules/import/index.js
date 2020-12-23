@@ -3,15 +3,15 @@ const path = require("path");
 const async = require("async");
 const mongoose = require("mongoose");
 const request = require("request")
-const Brand = require("../models/Brand");
-const Category = require("../models/Category");
-const Product = require("../models/Product");
-const Shop = require("../models/Shop");
+const Brand = require("../../models/Brand");
+const Category = require("../../models/Category");
+const Product = require("../../models/Product");
+const Shop = require("../../models/Shop");
 
-const logger = require("../config/logger.js");
+const logger = require("../../config/logger.js");
 const { resolve } = require("path");
 
-const uploadUrl = "https://dev.goodzone.uz/v1/upload";
+const uploadUrl = "https://api.goodzone.uz/v1/upload";
 const langs = ['en', 'ru', 'uz'];
 
 const importBrands = () => (
@@ -531,6 +531,7 @@ const removeDuplicateProducts = () => (
     })
 );
 //{ $expr: { $gt: ["$price.price", "$price.old_price"] } }
+
 const addRecommendedField = () => {
     return new Promise((resolve, reject) => {
         Product.update({ $expr: { $gt: ["$price.price", "$price.old_price"] } },

@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const slugUpdater = require("mongoose-slug-updater");
 const logger = require("./config/logger.js");
 const cfg = require("./config");
-const uploadCsv = require("./hatch/update&upload");
+const uploadCsv = require("./modules/hatch/update&upload");
 
 mongoose.plugin(slugUpdater);
 
@@ -60,59 +60,13 @@ function main() {
         logger.info("Connected to the databasee");
 
         setTimeout(() => {
-            const importer = require("./import");
-            // importer.importBrands().then((result) => {
-            // 	console.log("Brands have been imported");
-            // }).catch((err) => {
-            // 	console.log("error on importing brands: " + err);
-            // });
 
-            // importer.importCategories().then((result) => {
-            // 	console.log("Categories have been imported");
-            // }).catch((err) => {
-            // 	console.log("error on importing Categories: " + err);
-            // });
-
-            // importer.importProducts().then((result) => {
-            // 	console.log("Products have been imported");
-            // }).catch((err) => {
-            // 	console.log("error on importing Products: " + err);
-            // });
-
-            // importer.removeDuplicateProducts().then((result) => {
-            // 	console.log("Duplicate Products have been removed");
-            // }).catch((err) => {
-            // 	console.log("error on removing Products: " + err);
-            // });
-
-            // importer.importProductImages().then((result) => {
-            // 	console.log("Product images have been processed");
-            // }).catch((err) => {
-            // 	console.log("error on importing files: " + err);
-            // });
-
-            // importer.importProductCodes().then((result) => {
-            // 	console.log("Product codes have been imported");
-            // }).catch((err) => {
-            // 	console.log("error on importing product codes: " + err);
-            // });
-
-            // importer.addRecommendedField().then((result) => {
-            //   console.log("Product recommended field added");
-            // }).catch((err) => {
-            //   console.log("error on adding recommended field: " + err);
-            // });
-
-            // importer.importShopStocks().then((result) => {
-            //   console.log("Shops have been imported");
-            // }).catch((err) => {
-            //   console.log("error on importing shops: " + err);
-            // }); 24 * 3600 * 1000
-         
+            // DATABASE MIGRATIONS & OPERATIONS
+            require('./modules/migrations');
 
             /* HATCH INTEGRATION PART */
-            // Function to generate csv file with information of products once a day
-            const hatch = require("./hatch/hatch_csv");
+            // Function to generate csv file with information of products and upload it to minio once a day
+            const hatch = require("./modules/hatch/hatch_csv");
             setInterval(() => {
                 hatch.convertToCsv().then((result) => {
                     console.log("Csv have been generated");
@@ -121,6 +75,11 @@ function main() {
                     console.log("error on generating csv: " + err);
                 })
             }, 24 * 3600 * 1000)
+
+
+            /* SITEMAP */
+            const sitemap = require('./modules/sitemap/sitemap.js');
+            // sitemap.generateXML();
 
         }, 5000);
     });

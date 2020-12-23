@@ -2,8 +2,8 @@ const Json2csvParser = require("json2csv").Parser;
 const { reject } = require("async");
 const fs = require("fs");
 const { resolve } = require("path");
-const Product = require("../models/Product");
-const Shop = require("../models/Shop");
+const Product = require("../../models/Product");
+const Shop = require("../../models/Shop");
 const convertToCsv = () => {
     return new Promise((resolve, reject) => {
         Product.find({

@@ -7,6 +7,7 @@ const config = {
     mongoDatabase: getConf('MONGO_DATABASE', 'catalog_service'),
     RPCPort: getConf('RPC_PORT', 7000),
     cloudUrl: getConf('CLOUD_URL', 'https://cdn.delever.uz/goodzone/'),
+    langs: ['en','ru','uz'],
     lang: getConf('DEFAULT_LANG', 'ru'),
     minioEndpoint: getConf('MINIO_ENDPOINT', 'api.delever.uz'),
     minioPort: getConf('MINIO_PORT', 9001),

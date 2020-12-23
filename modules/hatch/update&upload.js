@@ -1,7 +1,7 @@
 const grpc = require('grpc');
 var Minio = require("minio");
-const logger = require('../config/logger');
-const cfg = require('../config');
+const logger = require('../../config/logger');
+const cfg = require('../../config');
 
 var minioClient = new Minio.Client({
     endPoint: cfg.minioEndpoint,
