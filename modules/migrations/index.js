@@ -49,8 +49,8 @@ const syncronizer = require('./sync');
 //   console.log("error on importing shops: " + err);
 // }); 24 * 3600 * 1000
 
-syncronizer.syncProductsFieldsForLangs().then((result) => {
-    console.log(result.products + " products fields synchronized for all languages");
-}).catch((err) => {
-    console.log("error on synchronizing product fields: " + err);
-});
+// syncronizer.syncProductsFieldsForLangs().then((result) => {
+//     console.log(result.products + " products fields synchronized for all languages");
+// }).catch((err) => {
+//     console.log("error on synchronizing product fields: " + err);
+// });

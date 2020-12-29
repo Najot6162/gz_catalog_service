@@ -5,6 +5,7 @@ const slugUpdater = require("mongoose-slug-updater");
 const logger = require("./config/logger.js");
 const cfg = require("./config");
 const uploadCsv = require("./modules/hatch/update&upload");
+const uploadSitemap = require("./modules/sitemap/upload_sitemap");
 
 mongoose.plugin(slugUpdater);
 
@@ -67,6 +68,7 @@ function main() {
             /* HATCH INTEGRATION PART */
             // Function to generate csv file with information of products and upload it to minio once a day
             const hatch = require("./modules/hatch/hatch_csv");
+            const sitemap = require('./modules/sitemap/sitemap.js');
             setInterval(() => {
                 hatch.convertToCsv().then((result) => {
                     console.log("Csv have been generated");
@@ -74,13 +76,13 @@ function main() {
                 }).catch((err) => {
                     console.log("error on generating csv: " + err);
                 })
-            }, 24 * 3600 * 1000)
-
-
-            /* SITEMAP */
-            const sitemap = require('./modules/sitemap/sitemap.js');
-            // sitemap.generateXML();
-
+                sitemap.generateXML().then((result) => {
+                    console.log("SiteMap have been generated");
+                    uploadSitemap.uploadSiteMap();
+                }).catch((err) => {
+                    console.log("error on generating sitemap: " + err);
+                })
+           }, 24 * 3600 * 1000)    
         }, 5000);
     });
 

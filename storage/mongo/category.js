@@ -147,7 +147,7 @@ let categoryStorage = {
         lang: filters.lang ? filters.lang : cnf.lang,
         parent: null,
       };
-      if (filters.search.trim()) {
+      if (filters.search) {
         query = {
           ...query,
           $or: [
