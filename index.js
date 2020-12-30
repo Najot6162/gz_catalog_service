@@ -64,7 +64,7 @@ function main() {
 
             // DATABASE MIGRATIONS & OPERATIONS
             require('./modules/migrations');
-
+            
             /* HATCH INTEGRATION PART */
             // Function to generate csv file with information of products and upload it to minio once a day
             const hatch = require("./modules/hatch/hatch_csv");

@@ -32,6 +32,7 @@ message CreateShopRequest {
     string image = 10;
     int64  order = 11;
     string lang = 12;
+    string area = 13;
 }
 
 message UpdateShopRequest {
@@ -52,6 +53,7 @@ message UpdateShopRequest {
     string image = 11;
     int64  order = 12;
     string lang = 13;
+    string area = 14;
 }
 
 message UpdateProductQuantityRequest {

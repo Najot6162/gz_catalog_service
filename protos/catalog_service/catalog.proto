@@ -57,6 +57,10 @@ message ProductSlim {
         int64 price = 1;
         int64 old_price = 2;
     }
+    message InStock {
+        bool samarkand = 1;
+        bool tashkent_city = 2;
+    }
     string id = 1;
     string name = 2;
     string slug = 3;
@@ -72,6 +76,7 @@ message ProductSlim {
     string lang = 13;
     int64 external_id = 14;
     string code = 15;
+    InStock inStock = 16;
 }
 
 message Category {
@@ -206,6 +211,7 @@ message Shop {
     string created_at = 14;
     string updated_at = 15;
     string lang = 16;
+    string area = 17;
 }
 
 message ShopSlim {

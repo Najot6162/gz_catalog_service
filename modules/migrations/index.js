@@ -37,12 +37,11 @@ const syncronizer = require('./sync');
 // 	console.log("error on importing product codes: " + err);
 // });
 
-// importer.addRecommendedField().then((result) => {
-//   console.log("Product recommended field added");
+// importer.updateInStockField().then((result) => {
+//   console.log("Product inStock field updated");
 // }).catch((err) => {
-//   console.log("error on adding recommended field: " + err);
+//   console.log("error on updating inStock field: " + err);
 // });
-
 // importer.importShopStocks().then((result) => {
 //   console.log("Shops have been imported");
 // }).catch((err) => {

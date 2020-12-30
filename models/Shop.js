@@ -64,6 +64,12 @@ var ShopSchema = new mongoose.Schema(
     image: {
       type: String,
     },
+    // area to check in_stock quantity, if other region is added: just add to enum and write script 
+    //(dont forget to add to inStock object boolean value of this region)
+    area: {
+      type: String,
+      required: true,
+    },
     created_at: {
       type: Date,
       default: Date.now,
@@ -78,8 +84,8 @@ var ShopSchema = new mongoose.Schema(
       default: "ru",
     },
     external_id: {
-      type: Number
-    }
+      type: Number,
+    },
   },
   {
     minimize: false,

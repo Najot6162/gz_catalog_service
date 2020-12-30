@@ -67,6 +67,16 @@ var ProductSchema = new mongoose.Schema({
         type: Boolean,
         default: true
     },
+    inStock: {
+        samarkand: {
+            type: Boolean,
+            default: false
+        },
+        tashkent_city: {
+            type: Boolean,
+            default: false
+        }
+    },
     external_id: {
         type: Number,
         default: null
