@@ -687,37 +687,47 @@ const removeDuplicateProducts = () =>
 
 const updateInStockField = () => {
   return new Promise((resolve, reject) => {
-    Shop.findOne(
-      { area: "samarkand", lang: "ru"},
-      {},
-      (err, shop) => {
-        if (err) return reject(err);
-        let productIdsInStock = shop.products.filter((stock, i) => {
-          return stock.quantity > 0;
+    Shop.find({ area: "tashkent_city", lang: "ru" }, {}, (err, shops) => {
+      if (err) return reject(err);
+      let productIdsInStock = [];
+      shops.forEach((sh, i) => {
+        let productIdsInThisShop = sh.products.filter((p, i) => {
+          return p.quantity > 0;
         });
-        Product.find(
-          { _id: { $in: productIdsInStock.map((p, i) => p.product) } },
-          {},
-          (err, products) => {
-            console.log(products);
-            if (err) return reject(err);
-            Product.updateMany(
-              { slug: { $in: products.map((p, i) => p.slug) } },
-              {
-                $set: {
-                  "inStock.samarkand": true,
-                },
-              },
-              (err, r) => {
-                if (err) return reject(err);
-                console.log("Updated all products");
-                return resolve();
-              }
-            );
+        productIdsInThisShop.forEach(element => {
+          if (productIdsInStock.indexOf(element) == -1) {
+            productIdsInStock.push(element);
           }
-        );
-      }
-    );
+        });
+      });
+      console.log(productIdsInStock);
+      Product.find(
+        { _id: { $in: productIdsInStock.map((p, i) => p.product) } },
+        {},
+        (err, products) => {
+          console.log(products);
+          if (err) return reject(err);
+
+          Product.updateMany(
+            {
+              slug: {
+                $in: products.map((p, i) => p.slug),
+              },
+            },
+            {
+              $set: {
+                "inStock.tashkent_city": true,
+              },
+            },
+            (err, r) => {
+              if (err) return reject(err);
+              console.log("Updated all products");
+              return resolve();
+            }
+          );
+        }
+      );
+    });
   });
 };
 

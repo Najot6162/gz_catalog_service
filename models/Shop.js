@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
 const Types = mongoose.Schema.Types;
+const Product = require("./Product");
+const logger = require("../config/logger");
 
 var ShopSchema = new mongoose.Schema(
   {
@@ -64,7 +66,7 @@ var ShopSchema = new mongoose.Schema(
     image: {
       type: String,
     },
-    // area to check in_stock quantity, if other region is added: just add to enum and write script 
+    // area to check in_stock quantity, if other region is added: just add to enum and write script
     //(dont forget to add to inStock object boolean value of this region)
     area: {
       type: String,
@@ -91,5 +93,149 @@ var ShopSchema = new mongoose.Schema(
     minimize: false,
   }
 );
+
+ShopSchema.post("save", function (shop, next) {
+  // updating inStock field of product
+  // if products[i].quantity > 0 (make samarkand or tashkent_city true for that product)
+  let productIdsInStock = shop.products.filter((stock, i) => {
+    return stock.quantity > 0;
+  });
+  let productIdsNotInStock = shop.products.filter((stock, i) => {
+    return (stock.quantity == 0);
+  });
+  Product.find(
+    { _id: { $in: productIdsInStock.map((p, i) => p.product) } },
+    {},
+    (err, products) => {
+      if (shop.area == "samarkand") {
+        Product.updateMany(
+          { slug: { $in: products.map((p, i) => p.slug) } },
+          {
+            $set: {
+              "inStock.samarkand": true,
+            },
+          },
+          (err, r) => {
+            if (err) {
+              logger.error("cannot update", {
+                function: "update inStock.samarkand field of a product to true",
+                shop,
+              });
+            }
+            logger.info("inStock.samarkand field of the product has been updated to true", {
+              r,
+            });
+          }
+        );
+      } else {
+        Product.updateMany(
+          { slug: { $in: products.map((p, i) => p.slug) } },
+          {
+            $set: {
+              "inStock.tashkent_city": true,
+            },
+          },
+          (err, r) => {
+            if (err) {
+              logger.error("cannot update", {
+                function: "update inStock.tashkent_city field of a product to true",
+                shop,
+              });
+            }
+            logger.info("inStock.tashkent_city field of the product has been updated to true", {
+              r,
+            });
+          }
+        );
+      }
+    }
+  );
+
+  if (shop.area == "samarkand") {
+    mongoose
+      .model("Shop")
+      .find({ area: "samarkand", lang: "ru" }, {}, (err, shops) => {
+        console.log(shops);
+        shops.forEach((sh, i) => {
+          productIdsNotInStock = productIdsNotInStock.filter((p, i) => {
+            let inStock = sh.products.filter(
+              (sp, j) => sp.product.toString() == p._id.toString()
+            );
+            return !inStock.length || inStock[0].quantity == 0;
+          });
+        });
+        console.log(productIdsNotInStock);
+        Product.find(
+          { _id: { $in: productIdsNotInStock.map((p, i) => p.product) } },
+          {},
+          (err, products) => {
+            if (err) return next();
+            Product.updateMany(
+              { slug: { $in: products.map((p, i) => p.slug) } },
+              {
+                $set: {
+                  "inStock.samarkand": false,
+                },
+              },
+              (err, r) => {
+                if (err) {
+                  logger.error("cannot update", {
+                    function: "update inStock.samarkand of a product to false (quantity = 0)",
+                    shop,
+                  });
+                  return next();
+                }
+                logger.info("inStock.samarkand field of the product has been updated to false", {
+                  r,
+                });
+                return next();
+              }
+            );
+          }
+        );
+      });
+  } else {
+    mongoose
+      .model("Shop")
+      .find({ area: "tashkent_city", lang: "ru" }, {}, (err, shops) => {
+        shops.forEach((sh, i) => {
+          productIdsNotInStock = productIdsNotInStock.filter((p, i) => {
+            let inStock = sh.products.filter(
+              (sp, j) => sp.product.toString() == p._id.toString()
+            );
+            return !inStock.length || inStock[0].quantity == 0;
+          });
+        });
+        Product.find(
+          { _id: { $in: productIdsNotInStock.map((p, i) => p.product) } },
+          {},
+          (err, products) => {
+            if (err) return next();
+            Product.updateMany(
+              { slug: { $in: products.map((p, i) => p.slug) } },
+              {
+                $set: {
+                  "inStock.tashkent_city": false,
+                },
+              },
+              (err, r) => {
+                if (err) {
+                  logger.error("cannot update", {
+                    function: "update inStock.tashkent_city of a product to false",
+                    shop,
+                  });
+                  return next();
+                }
+                logger.info("inStock.tashkent_city field of the product has been updated to false", {
+                  r,
+                });
+                return next();
+              }
+            );
+          }
+        );
+      });
+  }
+});
 
 module.exports = mongoose.model("Shop", ShopSchema);

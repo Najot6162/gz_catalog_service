@@ -26,7 +26,7 @@ function main() {
         related_products: '5f256ee9bc7bd40012af047c,5f256ee9bc7bd40012af047e,5f256ee9bc7bd40012af0484',
         preview_text: 'preview text of my product',
         description: 'description of my product',
-        external_id: '15',
+        //external_id: '15',
         image: 'some.jpg',
         gallery: 'img/somephoto.jpg',
         meta: {
@@ -57,81 +57,97 @@ function main() {
         });
 
         // update Product
-        client.Update({
+        client.Update(
+          {
             id: createResponse.product.slug,
-            name: 'my updated Product',
-            category_id: '5ee1e1b06123a6296c4996af',
-            brand_id: '5f24d71fe5fba43358f294e1',
-            additional_categories: '5ee1e1b06123a6296c4996bd,5ee1e1b06123a6296c4556bd,5ee1e1b06123a6296c4236bd',
-            related_products: '5f256ee9bc7bd40012af047c,5f256ee9bc7bd40012af047e,5f256ee9bc7bd40012af0484',
-            preview_text: 'preview text of my updated product',
-            description: 'description of my updated product',
-            external_id: '16',
-            image: 'some.jpg',
-            gallery: 'img/some.jpg',
+            name: "my updated Product",
+            category_id: "5ee1e1b06123a6296c4996af",
+            brand_id: "5f24d71fe5fba43358f294e1",
+            additional_categories:
+              "5ee1e1b06123a6296c4996bd,5ee1e1b06123a6296c4556bd,5ee1e1b06123a6296c4236bd",
+            related_products:
+              "5f256ee9bc7bd40012af047c,5f256ee9bc7bd40012af047e,5f256ee9bc7bd40012af0484",
+            preview_text: "preview text of my updated product",
+            description: "description of my updated product",
+            external_id: "16",
+            image: "some.jpg",
+            gallery: "img/some.jpg",
             meta: {
-                title: ' Updated Product Meta',
-                description: 'Updatet Description of Meta',
-                tags: 'Updated Tag of meta'
+              title: " Updated Product Meta",
+              description: "Updatet Description of Meta",
+              tags: "Updated Tag of meta",
             },
-            lang: 'ru'
-        }, (err, updateResponse) => {
-            if (err) return console.log('Error: ', err.message);
+            lang: "ru",
+          },
+          (err, updateResponse) => {
+            if (err) return console.log("Error: ", err.message);
 
-            logger.debug('Product Update response', {
-                response: updateResponse,
-                label: 'test'
+            logger.debug("Product Update response", {
+              response: updateResponse,
+              label: "test",
             });
-            client.UpdatePrice({
+            client.UpdatePrice(
+              {
                 product_id: updateResponse.product.slug,
                 old_price: "10000",
                 price: "1000",
-                price_type_id: ""
+                price_type_id: "",
+              },
+              (err, updatePriceResponse) => {
+                if (err) return console.log("Error: ", err.message);
 
-            }, (err, updatePriceResponse) => {
-                if (err) return console.log('Error: ', err.message);
-
-                logger.debug('Product price Update response', {
-                    response: updatePriceResponse,
-                    label: 'test'
-                })
+                logger.debug("Product price Update response", {
+                  response: updatePriceResponse,
+                  label: "test",
+                });
 
                 // get Product
-                client.Get({
+                client.Get(
+                  {
                     slug: updateResponse.product.slug,
-                    lang: 'ru',
-                    onlyRelatedProducts: true
-                }, (err, getResponse) => {
-                    if (err) return console.log('Error: ', err.message);
+                    lang: "ru",
+                    onlyRelatedProducts: true,
+                  },
+                  (err, getResponse) => {
+                    if (err) return console.log("Error: ", err.message);
 
-                    logger.debug('Product Get response', {
-                        response: getResponse,
-                        label: 'test'
+                    logger.debug("Product Get response", {
+                      response: getResponse,
+                      label: "test",
                     });
-                    client.GetShops({
+                    client.GetShops(
+                      {
                         product_id: "5f256ee8bc7bd40012af03e4",
-                    }, (err, getResponse) => {
-                        if (err) return console.log('Error: ', err.message);
-                        logger.debug('Shop Get response', {
-                            response: getResponse,
-                            label: 'test'
+                      },
+                      (err, getResponse) => {
+                        if (err) return console.log("Error: ", err.message);
+                        logger.debug("Shop Get response", {
+                          response: getResponse,
+                          label: "test",
                         });
                         //delete Product
-                        client.Delete({
-                            slug: updateResponse.product.slug
-                        }, (err, deleteResponse) => {
-                            if (err) return console.log('Error: ', err.message);
+                        client.Delete(
+                          {
+                            slug: updateResponse.product.slug,
+                          },
+                          (err, deleteResponse) => {
+                            if (err) return console.log("Error: ", err.message);
 
-                            logger.debug('Product Delete response', {
-                                response: deleteResponse,
-                                label: 'test'
+                            logger.debug("Product Delete response", {
+                              response: deleteResponse,
+                              label: "test",
                             });
-                            console.log('Product test completed!');
-                        });
-                    });
-                });
-            });
-        });
+                            console.log("Product test completed!");
+                          }
+                        );
+                      }
+                    );
+                  }
+                );
+              }
+            );
+          }
+        );
     })
 
     // find Product
