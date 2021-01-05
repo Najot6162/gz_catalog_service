@@ -926,6 +926,7 @@ const getRelatedProducts = (product_id = "", limit = 10) => {
             Product.find(
               {
                 _id: { $in: p.related_products },
+                active: true
               },
               {},
               { limit }
@@ -950,6 +951,7 @@ const getRelatedProducts = (product_id = "", limit = 10) => {
                 },
                 category: p.category,
                 lang: p.lang,
+                active: true
               },
               {},
               { limit }
@@ -974,6 +976,7 @@ const getRelatedProducts = (product_id = "", limit = 10) => {
                 },
                 category: { $ne: p.category },
                 lang: p.lang,
+                active: true
               },
               {},
               { limit }

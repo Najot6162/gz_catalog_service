@@ -4,7 +4,7 @@
   "description": "Catalog service for online shop projects, built with NodeJS & gRPC & MongoDB",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "test-category": "node client/category.js",
     "test-product": "node client/product.js",
