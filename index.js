@@ -42,7 +42,7 @@ function main() {
     logger.info("Connecting to db: " + mongoDBUrl);
 
     mongoose.connect(
-        mongoDBUrl + "fa", {
+        mongoDBUrl, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
     })
