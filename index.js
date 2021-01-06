@@ -42,21 +42,15 @@ function main() {
     logger.info("Connecting to db: " + mongoDBUrl);
 
     mongoose.connect(
-        mongoDBUrl, {
+        mongoDBUrl + "fa", {
         useNewUrlParser: true,
         useUnifiedTopology: true,
-    },
-        (err) => {
-            if (err) {
-                logger.error(
-                    "There is an error in connecting db (" +
-                    mongoDBUrl +
-                    "): " +
-                    err.message
-                );
-            }
-        }
-    );
+    })
+    .catch(err =>{
+        logger.error("There is an error in connecting db (" + mongoDBUrl + "): " + err.message)
+        process.exit()
+    })
+
     mongoose.connection.once("open", function () {
         logger.info("Connected to the databasee");
 
