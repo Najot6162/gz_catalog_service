@@ -77,6 +77,7 @@ let shopStorage = {
         sh.active = b.active;
         sh.preview_text = b.preview_text;
         sh.description = b.description;
+        sh.external_id = b.external_id;
         sh.area = b.area;
         sh.working_hours = b.working_hours;
         sh.loc = {
