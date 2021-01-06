@@ -1,0 +1,3 @@
+[submodule "gz_protos"]
+	path = gz_protos
+	url = git@gitlab.udevs.io:goodzone/gz_protos.git

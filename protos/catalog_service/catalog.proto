@@ -212,6 +212,7 @@ message Shop {
     string updated_at = 15;
     string lang = 16;
     string area = 17;
+    int64 external_id = 18;
 }
 
 message ShopSlim {
@@ -235,6 +236,7 @@ message ShopSlim {
     string created_at = 15;
     string updated_at = 16;
     string lang = 17;
+    int64 external_id = 18;
 }
 
 message Feedback {
