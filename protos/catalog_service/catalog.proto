@@ -22,6 +22,10 @@ message Product {
         string description = 2;
         string tags = 3;
     }
+    message InStock {
+        bool samarkand = 1;
+        bool tashkent_city = 2;
+    }
     string id = 1;
     string name = 2;
     string slug = 3;
@@ -45,6 +49,7 @@ message Product {
     string lang = 21;
     float average_rate = 22;
     int64 reviews_count = 23;
+    InStock inStock = 24;
 }
 
 message ProductSlim {
