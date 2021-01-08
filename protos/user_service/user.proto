@@ -64,9 +64,10 @@ message GetRequest {
 message FindRequest {
     int64  page = 1;
     string  search = 2;
-    bool    active = 3;
-    bool    inactive = 4;
-    int64  limit = 5;
+    string  phone = 3;
+    bool    active = 4;
+    bool    inactive = 5;
+    int64  limit = 6;
 }
 
 message DeleteRequest {

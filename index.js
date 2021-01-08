@@ -6,6 +6,7 @@ const logger = require("./config/logger.js");
 const cfg = require("./config");
 const uploadCsv = require("./modules/hatch/update&upload");
 const uploadSitemap = require("./modules/sitemap/upload_sitemap");
+const Product = require("./models/Product");
 
 mongoose.plugin(slugUpdater);
 

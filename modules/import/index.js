@@ -687,7 +687,7 @@ const removeDuplicateProducts = () =>
 
 const updateInStockField = () => {
   return new Promise((resolve, reject) => {
-    Shop.find({ area: "tashkent_city", lang: "ru" }, {}, (err, shops) => {
+    Shop.find({ area: "samarkand", lang: "ru" }, {}, (err, shops) => {
       if (err) return reject(err);
       let productIdsInStock = [];
       shops.forEach((sh, i) => {
@@ -716,7 +716,7 @@ const updateInStockField = () => {
             },
             {
               $set: {
-                "inStock.tashkent_city": true,
+                "in_stock.samarkand": true,
               },
             },
             (err, r) => {
@@ -731,7 +731,26 @@ const updateInStockField = () => {
   });
 };
 
+const updateNewInStockField = () => {
+  return new Promise((resolve, reject) => {
+    Product.updateMany({}, {
+      $set: {
+        in_stock: {
+          samarkand: false,
+          tashkent_city:false
+       }
+      }
+    }, (err, products) => {
+        if (err) return reject(err);
+        console.log("in_stock field updated")
+        console.log(products[0]);
+        return resolve();
+    })
+  })
+};
+
 module.exports = {
+  updateNewInStockField,
   importBrands,
   importCategories,
   importProducts,

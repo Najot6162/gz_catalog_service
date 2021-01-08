@@ -33,6 +33,7 @@ message CreateShopRequest {
     int64  order = 11;
     string lang = 12;
     string area = 13;
+    int64 external_id = 14;
 }
 
 message UpdateShopRequest {
@@ -54,6 +55,7 @@ message UpdateShopRequest {
     int64  order = 12;
     string lang = 13;
     string area = 14;
+    int64 external_id = 15;
 }
 
 message UpdateProductQuantityRequest {
