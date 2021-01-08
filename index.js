@@ -46,18 +46,12 @@ function main() {
         mongoDBUrl, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
-    },
-        (err) => {
-            if (err) {
-                logger.error(
-                    "There is an error in connecting db (" +
-                    mongoDBUrl +
-                    "): " +
-                    err.message
-                );
-            }
-        }
-    );
+    })
+    .catch(err =>{
+        logger.error("There is an error in connecting db (" + mongoDBUrl + "): " + err.message)
+        process.exit()
+    })
+
     mongoose.connection.once("open", function () {
         logger.info("Connected to the databasee");
 
