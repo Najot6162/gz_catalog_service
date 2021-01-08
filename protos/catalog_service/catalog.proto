@@ -49,7 +49,7 @@ message Product {
     string lang = 21;
     float average_rate = 22;
     int64 reviews_count = 23;
-    InStock inStock = 24;
+    InStock in_stock = 24;
 }
 
 message ProductSlim {
