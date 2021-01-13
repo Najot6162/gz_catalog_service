@@ -731,26 +731,27 @@ const updateInStockField = () => {
   });
 };
 
-const updateNewInStockField = () => {
+const deleteInStockField = () => {
   return new Promise((resolve, reject) => {
-    Product.updateMany({}, {
-      $set: {
-        in_stock: {
-          samarkand: false,
-          tashkent_city:false
-       }
-      }
-    }, (err, products) => {
+    Product.updateMany(
+      {inStock:{$exists:true}},
+      {
+        $unset: {
+          inStock: 1
+        },
+      },
+      { multi: true },
+      (err, products) => {
         if (err) return reject(err);
-        console.log("in_stock field updated")
-        console.log(products[0]);
+        console.log("inStock field removed");
         return resolve();
-    })
+      }
+    );
   })
 };
 
 module.exports = {
-  updateNewInStockField,
+  deleteInStockField,
   importBrands,
   importCategories,
   importProducts,

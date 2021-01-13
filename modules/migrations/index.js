@@ -43,12 +43,12 @@ const syncronizer = require('./sync');
 //   console.log("error on updating inStock field: " + err);
 // });
 // importer
-//   .updateNewInStockField()
+//   .deleteInStockField()
 //   .then((result) => {
-//     console.log("Product in_stock field updated");
+//     console.log("Product inStock field deleted");
 //   })
 //   .catch((err) => {
-//     console.log("error on updating in_stock field: " + err);
+//     console.log("error on deleting inStock field: " + err);
 //   });
 // importer.importShopStocks().then((result) => {
 //   console.log("Shops have been imported");
