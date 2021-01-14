@@ -64,7 +64,7 @@ let brandStorage = {
             let options = {
                 skip: ((filters.page / 1 - 1) * filters.limit) / 1,
                 limit: filters.limit / 1 ? filters.limit / 1 : 10,
-                sort: { created_at: -1 },
+                sort: { order: -1 },
             };
             logger.debug("filtering brands", {
                 query,
