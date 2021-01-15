@@ -36,11 +36,28 @@ const generateXML = () => {
         });
         categoryPages()
           .then((result) => {
+            let d = (new Date()).toISOString().split('T')[0];
             for (let i = 0; i < result.length; i++) {
-              arrForSitemap[i].url.category_url = result[i];
+              let category_data = {
+                    url: {
+                      loc: result[i],
+                      lastmod: d,
+                      changefreq: "daily",
+                      priority: 1,
+                }
+              }
+              arrForSitemap.push(category_data);
             }
             for (let j = 0; j < pages.length; j++) {
-                arrForSitemap[j].url.static_page = host+'/'+pages[j];
+              let static_page = {
+                    url: {
+                      loc: host+'/'+pages[j],
+                      lastmod: d,
+                      changefreq: "daily",
+                      priority: 1,
+                }
+              }
+              arrForSitemap.push(static_page);
             }
             fs.writeFile(
               __dirname + "/sitemap.xml",

@@ -12,9 +12,11 @@ var minioClient = new Minio.Client({
     secretKey: cfg.minioSecretAccesKey_1,
     region: "us-east-1",
 });
+
 const uploadSiteMap = () => {
     fs.readFile(__dirname+'/sitemap.xml', (err, data) => {
         if (err) return console.log(err);
+
         if (data) {
             minioClient.putObject('goodzone', 'sitemap/sitemap.xml', data, (err, result) => {
                 if (err) return console.log(err)
@@ -23,6 +25,6 @@ const uploadSiteMap = () => {
         } else {
             return console.log("File does not exist");
         }
-    });
+     });
 }
 module.exports = { uploadSiteMap };

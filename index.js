@@ -77,7 +77,7 @@ function main() {
                 }).catch((err) => {
                     console.log("error on generating sitemap: " + err);
                 })
-           }, 24 * 3600 * 1000)    
+            }, 24 * 3600 * 1000)    
         }, 5000);
     });
 
