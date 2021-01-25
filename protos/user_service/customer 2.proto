@@ -11,7 +11,6 @@ service CustomerService {
     rpc Get(GetCustomerRequest) returns (CustomerResponse) {}
     rpc Find(FindRequest) returns (CustomersResponse) {}
     rpc Update(Customer) returns (CustomerResponse) {}
-    rpc UpdateArea(UpdateCustomerAreaRequest) returns (CustomerResponse) {}
     rpc Delete(DeleteRequest) returns (Empty) {}
     rpc ExistsCustomer(ExistsCustomerRequest) returns (ExistsCustomerResponse) {}
     rpc GetByLogin(Customer) returns (Customer) {}
@@ -26,11 +25,6 @@ message CustomerResponse {
 message CustomersResponse {
     repeated Customer customers = 1;
     int64 count = 2;
-}
-
-message UpdateCustomerAreaRequest {
-    string id = 1;
-    string area = 2;
 }
 
 message GetCustomerRequest {

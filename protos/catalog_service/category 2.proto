@@ -1,0 +1,111 @@
+syntax="proto3";
+
+package catalog;
+option go_package="genproto/catalog_service";
+
+import "catalog.proto";
+
+service CategoryService {
+    rpc Create(CreateCategoryRequest) returns (CategoryResponse) {}
+    rpc Update(UpdateCategoryRequest) returns (CategoryResponse) {}
+    rpc Find(FindRequest) returns (FindCategoriesResponse) {}
+    rpc Get(GetRequest) returns (CategoryResponse) {}
+    rpc GetChildrenWithProducts(GetRequest) returns (GetChildCategoriesResponse) {}
+    rpc Delete(DeleteRequest) returns (Empty) {}
+}
+
+message MainCategorySlim {
+    message ChildCategory {
+        string id = 1;
+        string name = 2;
+        string slug = 3;
+        bool active = 4;
+        string description = 5;
+        int64 order = 6;
+        string image = 7;
+        string created_at = 8;
+        string updated_at = 9;
+        repeated GrandChildCategory children = 10;
+    }
+    message GrandChildCategory {
+        string id = 1;
+        string name = 2;
+        string slug = 3;
+        bool active = 4;
+        string description = 5;
+        int64 order = 6;
+        string image = 7;
+        string created_at = 8;
+        string updated_at = 9;
+    }
+    string id = 1;
+    string name = 2;
+    string slug = 3;
+    bool active = 4;
+    string description = 5;
+    int64 order = 6;
+    string image = 7;
+    repeated ChildCategory children = 8;
+    string lang = 9;
+}
+
+message CreateCategoryRequest {
+    message CategoryMeta {
+        string title = 1;
+        string description = 2;
+        string tags = 3;
+    }
+    string name = 1;
+    string parent_id = 2;
+    bool active = 3;
+    string description = 4;
+    int64 order = 5;
+    string image = 6;
+    CategoryMeta meta = 7;
+    string product_property_groups = 8;
+    string product_properties = 9;
+    string lang = 10;
+}
+
+message UpdateCategoryRequest {
+    message CategoryMeta {
+        string title = 1;
+        string description = 2;
+        string tags = 3;
+    }
+    string id = 1;
+    string name = 2;
+    string parent_id = 3;
+    bool active = 4;
+    string description = 5;
+    int64 order = 6;
+    string image = 7;
+    CategoryMeta meta = 8;
+    string product_property_groups = 9;
+    string product_properties = 10;
+    string lang = 11;
+}
+
+message CategoryResponse {
+    Category category = 1;
+}
+
+message FindCategoriesResponse {
+    repeated MainCategorySlim categories = 1;
+    int64 count = 2;
+}
+
+message GetChildCategoriesResponse {
+    message ChildWithProducts {
+        message ChildCategorySlim {
+            string id = 1;
+            string name = 2;
+            string slug = 3;
+            bool active = 4;
+            int64 order = 5;
+        }
+        ChildCategorySlim category = 1;
+        repeated ProductSlim products = 2;
+    }
+    repeated ChildWithProducts categories = 1;
+}

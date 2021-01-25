@@ -1,0 +1,35 @@
+syntax="proto3";
+
+package content;
+option go_package="genproto/content_service";
+
+import "content.proto";
+
+service PageService {
+    rpc Create(Page) returns (PageResponse) {}
+    rpc Update(Page) returns (PageResponse) {}
+    rpc Find(FindRequest) returns (PagesResponse) {}
+    rpc Get(GetRequest) returns (PageResponse) {}
+    rpc Delete(DeleteRequest) returns (Empty) {}
+}
+
+message PageSlim {
+    string id = 1;
+    string title = 2;
+    string slug = 3;
+    bool   active = 4;
+    string content = 5;
+    string preview_image = 6;
+    string created_at = 7;
+    string updated_at = 8;
+    string lang = 9;
+}
+
+message PageResponse {
+    Page page = 1;
+}
+
+message PagesResponse {
+    repeated PageSlim pages = 1;
+    int64 count = 2;
+}

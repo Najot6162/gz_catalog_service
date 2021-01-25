@@ -1,0 +1,6 @@
+syntax="proto3";
+
+package settings;
+option go_package="genproto/settings_service";
+
+import "installment.proto";

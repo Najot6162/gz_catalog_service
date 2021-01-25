@@ -1,0 +1,23 @@
+syntax="proto3";
+
+package content;
+option go_package="genproto/content_service";
+
+import "content.proto";
+
+service MenuService {
+    rpc Create(Menu) returns (MenuResponse) {}
+    rpc Update(Menu) returns (MenuResponse) {}
+    rpc Find(FindRequest) returns (MenusResponse) {}
+    rpc Get(GetRequest) returns (MenuResponse) {}
+    rpc Delete(DeleteRequest) returns (Empty) {}
+}
+
+message MenuResponse {
+    Menu menu = 1;
+}
+
+message MenusResponse {
+    repeated Menu menu = 1;
+    int64 count = 2;
+}

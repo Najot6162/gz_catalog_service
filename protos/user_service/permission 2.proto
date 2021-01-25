@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package genproto;
+
+option go_package="genproto/user_service";
+
+import "user.proto";
+
+service PermissionService {
+    rpc Create(Permission) returns (PermissionResponse) {}
+    rpc Get(GetPermissionRequest) returns (PermissionResponse) {}
+    rpc Find(FindRequest) returns (PermissionsResponse) {}
+    rpc Update(Permission) returns (PermissionResponse) {}
+    rpc Delete(DeleteRequest) returns (Empty) {}
+}
+
+message CreatePermission {
+    string name = 1;
+    string key = 2;
+}
+
+message GetPermissionRequest {
+    string id = 1;
+}
+
+message PermissionResponse {
+    Permission permission = 1;
+}
+
+message PermissionsResponse {
+    repeated Permission permissions = 1;
+    int64 count = 2;
+}

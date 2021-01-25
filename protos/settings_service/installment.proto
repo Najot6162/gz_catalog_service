@@ -1,0 +1,23 @@
+syntax="proto3";
+
+package settings;
+option go_package="genproto/settings_service";
+
+import "settings.proto";
+
+service InstallmentService {
+    rpc Create(Installment) returns (InstallmentResponse) {}
+    rpc Update(Installment) returns (InstallmentResponse) {}
+    rpc Find(FindRequest) returns (InstallmentsResponse) {}
+    rpc Get(GetRequest) returns (InstallmentResponse) {}
+    rpc Delete(DeleteRequest) returns (Empty) {}
+}
+
+message InstallmentResponse {
+    Installment installment = 1;
+}
+
+message InstallmentsResponse {
+    repeated Installment installments = 1;
+    int64 count = 2;
+}

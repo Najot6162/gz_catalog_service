@@ -99,5 +99,3 @@ message FindShopsResponse {
     repeated Shop shops = 1;
     int64 count = 2;
 }
-
-

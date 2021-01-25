@@ -6,7 +6,6 @@ const logger = require("./config/logger.js");
 const cfg = require("./config");
 const uploadCsv = require("./modules/hatch/update&upload");
 const uploadSitemap = require("./modules/sitemap/upload_sitemap");
-const Product = require("./models/Product");
 
 mongoose.plugin(slugUpdater);
 
@@ -27,18 +26,18 @@ function main() {
 
     //Connecting to database
 
-    const mongoDBUrl =
-        "mongodb://" +
-        cfg.mongoUser +
-        ":" +
-        cfg.mongoPassword +
-        "@" +
-        cfg.mongoHost +
-        ":" +
-        cfg.mongoPort +
-        "/" +
-        cfg.mongoDatabase;
-    //const mongoDBUrl = "mongodb://localhost:27017/catalog_service";
+    // const mongoDBUrl =
+    //     "mongodb://" +
+    //     cfg.mongoUser +
+    //     ":" +
+    //     cfg.mongoPassword +
+    //     "@" +
+    //     cfg.mongoHost +
+    //     ":" +
+    //     cfg.mongoPort +
+    //     "/" +
+    //     cfg.mongoDatabase;
+    const mongoDBUrl = "mongodb://localhost:27017/catalog_service";
 
     logger.info("Connecting to db: " + mongoDBUrl);
 
