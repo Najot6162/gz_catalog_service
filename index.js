@@ -63,7 +63,8 @@ function main() {
             // Function to generate csv file with information of products and upload it to minio once a day
             const hatch = require("./modules/hatch/hatch_csv");
             const sitemap = require('./modules/sitemap/sitemap.js');
-            setInterval(() => {
+
+            // setInterval(() => {
                 hatch.convertToCsv().then((result) => {
                     console.log("Csv have been generated");
                     uploadCsv.upload();
@@ -76,7 +77,7 @@ function main() {
                 }).catch((err) => {
                     console.log("error on generating sitemap: " + err);
                 })
-            }, 24 * 3600 * 1000)    
+            // }, 24 * 3600 * 1000)    
         }, 5000);
     });
 

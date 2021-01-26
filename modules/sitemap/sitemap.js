@@ -30,7 +30,7 @@ const generateXML = () => {
               loc: host + "/product/" + product.slug,
               lastmod: d,
               changefreq: "daily",
-              priority: 1,
+              priority: 0.8,
             },
           };
         });
@@ -81,21 +81,21 @@ const generateXML = () => {
           .catch((error) => {
             return console.log(error);
           });
-        // let arrForProducts = products.map((product, i) => {
-        //     return {
-        //         product: {
-        //             url: host + '/product/' + product.slug,
-        //             product: product.name
-        //         }
-        //     }
-        // });
-        // fs.writeFile(__dirname+'/products.xml', json2xml({
-        //     products: arrForProducts
-        // }, { headers: true }), function (err) {
-        //     console.log("writing to xml ...")
-        //     if (err) return reject(err);
-        //     console.log('file saved');
-        // });
+        let arrForProducts = products.map((product, i) => {
+            return {
+                product: {
+                    url: host + '/product/' + product.slug,
+                    product: product.name
+                }
+            }
+        });
+        fs.writeFile(__dirname+'/products.xml', json2xml({
+            products: arrForProducts
+        }, { headers: true }), function (err) {
+            console.log("writing to xml ...")
+            if (err) return reject(err);
+            console.log('file saved');
+        });
       }
     );
   });

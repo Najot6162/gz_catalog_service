@@ -16,9 +16,8 @@ var minioClient = new Minio.Client({
 const uploadSiteMap = () => {
     fs.readFile(__dirname+'/sitemap.xml', (err, data) => {
         if (err) return console.log(err);
-
         if (data) {
-            minioClient.putObject('goodzone', 'sitemap/sitemap.xml', data, (err, result) => {
+            minioClient.putObject('goodzone', 'sitemap.xml', data,(err, result) => {
                 if (err) return console.log(err)
                 console.log('File uploaded successfully.')
             });
