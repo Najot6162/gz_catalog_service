@@ -65,18 +65,18 @@ function main() {
             const sitemap = require('./modules/sitemap/sitemap.js');
 
             // setInterval(() => {
-                hatch.convertToCsv().then((result) => {
-                    console.log("Csv have been generated");
-                    uploadCsv.upload();
-                }).catch((err) => {
-                    console.log("error on generating csv: " + err);
-                })
-                sitemap.generateXML().then((result) => {
-                    console.log("SiteMap have been generated");
-                    uploadSitemap.uploadSiteMap();
-                }).catch((err) => {
-                    console.log("error on generating sitemap: " + err);
-                })
+            //     hatch.convertToCsv().then((result) => {
+            //         console.log("Csv have been generated");
+            //         uploadCsv.upload();
+            //     }).catch((err) => {
+            //         console.log("error on generating csv: " + err);
+            //     })
+            //     sitemap.generateXML().then((result) => {
+            //         console.log("SiteMap have been generated");
+            //         uploadSitemap.uploadSiteMap();
+            //     }).catch((err) => {
+            //         console.log("error on generating sitemap: " + err);
+            //     })
             // }, 24 * 3600 * 1000)    
         }, 5000);
     });
@@ -111,6 +111,10 @@ function main() {
     server.addService(
         catalogProto.FeedbackService.service,
         require("./services/feedback")
+    );
+    server.addService(
+      catalogProto.FeaturedListService.service,
+      require("./services/featured_list")
     );
 
     server.bind(

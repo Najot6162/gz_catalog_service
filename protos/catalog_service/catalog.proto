@@ -256,6 +256,19 @@ message Feedback {
     string updated_at = 9;
 }
 
+message FeaturedList {
+  string id = 1;
+  string title = 2;
+  string slug = 3;
+  repeated ProductSlim products = 4;
+  string created_at = 5;
+  string updated_at = 6;
+  string lang = 7;
+  int64 order = 8;
+  bool active = 9;
+  string description = 10;
+}
+
 message GetRequest {
     string id = 1;
     string slug = 2;

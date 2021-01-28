@@ -16,7 +16,6 @@ message Installment {
     bool active = 6;
     string created_at = 7;
     string updated_at = 8;
-    string title = 9;
 }
 
 message GetRequest {
