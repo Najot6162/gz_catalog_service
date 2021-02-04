@@ -64,20 +64,20 @@ function main() {
             const hatch = require("./modules/hatch/hatch_csv");
             const sitemap = require('./modules/sitemap/sitemap.js');
 
-            // setInterval(() => {
-            //     hatch.convertToCsv().then((result) => {
-            //         console.log("Csv have been generated");
-            //         uploadCsv.upload();
-            //     }).catch((err) => {
-            //         console.log("error on generating csv: " + err);
-            //     })
-            //     sitemap.generateXML().then((result) => {
-            //         console.log("SiteMap have been generated");
-            //         uploadSitemap.uploadSiteMap();
-            //     }).catch((err) => {
-            //         console.log("error on generating sitemap: " + err);
-            //     })
-            // }, 24 * 3600 * 1000)    
+            setInterval(() => {
+                hatch.convertToCsv().then((result) => {
+                    console.log("Csv have been generated");
+                    uploadCsv.upload();
+                }).catch((err) => {
+                    console.log("error on generating csv: " + err);
+                })
+                sitemap.generateXML().then((result) => {
+                    console.log("SiteMap have been generated");
+                    uploadSitemap.uploadSiteMap();
+                }).catch((err) => {
+                    console.log("error on generating sitemap: " + err);
+                })
+            }, 24 * 3600 * 1000)    
         }, 5000);
     });
 

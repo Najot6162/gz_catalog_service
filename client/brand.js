@@ -30,52 +30,58 @@ function main() {
     //         label: "test",
     //     });
         // find Brand
-        client.Find({}, (err, findResponse) => {
-            if (err) return console.log('Error: ', err.message);
-            logger.debug("Brand Find response", {
-                response: findResponse,
-                label: "test",
-            });
-        });
-
-        // update Brand
-        // client.Update({
-        //     id: createResponse.brand.id,
-        //     name: 'my updated Brand',
-        //     preview_text: 'preview text of my updated brand',
-        //     description: 'description of my updated brand',
-        //     image: "img.jpg",
-        //     active: true
-        // }, (err, updateResponse) => {
+        // client.Find({}, (err, findResponse) => {
         //     if (err) return console.log('Error: ', err.message);
-        //     logger.debug("Brand Update response", {
-        //         response: updateResponse,
+        //     logger.debug("Brand Find response", {
+        //         response: findResponse,
         //         label: "test",
         //     });
-
-        //     // get Brand
-        //     client.Get({
-        //         id: updateResponse.brand.id,
-        //     }, (err, getResponse) => {
-        //         if (err) return console.log('Error: ', err.message);
-        //         logger.debug("Brand Get response", {
-        //             response: getResponse,
-        //             label: "test",
-        //         });
-
-        //         // delete Brand
-        //         client.Delete({
-        //             id: updateResponse.brand.id
-        //         }, (err, deleteResponse) => {
-        //             if (err) return console.log('Error: ', err.message);
-        //             logger.debug("Brand Delete response", {
-        //                 response: deleteResponse,
-        //                 label: "test",
-        //             });
-        //         });
-        //     });
         // });
-   // });
+
+        // update Brand
+        // client.Update(
+        //   {
+        //     id: "5f24d71fe5fba43358f294eb",
+        //     name: "LG",
+        //     image:
+        //       "0fcd3e01-1884-4a87-934c-ea4c7ce6ca41",
+        //     preview_text: " ",
+        //     active: true,
+        //     order: 240
+        //   },
+        //   (err, updateResponse) => {
+        //     if (err) return console.log("Error: ", err.message);
+        //     logger.debug("Brand Update response", {
+        //       response: updateResponse,
+        //       label: "test",
+        //     });
+
+            //     // get Brand
+            client.Get(
+              {
+                id: "5f24d71fe5fba43358f294eb",
+              },
+              (err, getResponse) => {
+                if (err) return console.log("Error: ", err.message);
+                logger.debug("Brand Get response", {
+                  response: getResponse,
+                  label: "test",
+                });
+
+            //         // delete Brand
+            //         client.Delete({
+            //             id: updateResponse.brand.id
+            //         }, (err, deleteResponse) => {
+            //             if (err) return console.log('Error: ', err.message);
+            //             logger.debug("Brand Delete response", {
+            //                 response: deleteResponse,
+            //                 label: "test",
+            //             });
+            //         });
+            //     });
+            //  });
+          }
+        );
 }
 
 main();
