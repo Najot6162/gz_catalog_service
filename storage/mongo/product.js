@@ -406,6 +406,7 @@ let productStorage = {
           let value = p.value.split(",").map((v, j) => v.trim());
           propertiesQuery.push({
             property: p.property_id,
+            // filtering when more than one attribute
             value: { $regex: ".*" + value + ".*" },
           });
         }
