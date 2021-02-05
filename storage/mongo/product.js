@@ -50,7 +50,7 @@ let productStorage = {
 
       // external ID (auto increment)
       getLatestExternalId().then((external_id) => {
-        p.external_id = external_id/1 + 1;
+        p.external_id = external_id / 1 + 1;
         let pCopy = p;
         p = new Product(p);
 
@@ -60,7 +60,7 @@ let productStorage = {
           //   before_save: p,
           //   after_save: product
           // });
-          
+
           // creating for other languages
           let otherLangs = langs.filter((lang, i) => lang != product.lang);
           async.eachSeries(
@@ -140,10 +140,10 @@ let productStorage = {
           return reject(
             new Error(
               "Document with key:" +
-              b.id +
-              " and with lang: " +
-              b.lang +
-              " not found"
+                b.id +
+                " and with lang: " +
+                b.lang +
+                " not found"
             )
           );
 
@@ -203,7 +203,8 @@ let productStorage = {
             .then((populatedProduct) => {
               if (err) return reject(err);
               return resolve(populatedProduct);
-            }).catch((err) => {
+            })
+            .catch((err) => {
               return reject(err);
             });
         });
@@ -227,10 +228,10 @@ let productStorage = {
           return reject(
             new Error(
               "With key: " +
-              b.product_id +
-              ", found " +
-              products.length +
-              " documents. It seems there is duplication error"
+                b.product_id +
+                ", found " +
+                products.length +
+                " documents. It seems there is duplication error"
             )
           );
 
@@ -241,7 +242,7 @@ let productStorage = {
               // valid price type is given, so we are updating 'prices' field
               let updated = false;
               product.prices = product.prices.map((price, i) => {
-                if (price.type == '1') {
+                if (price.type == "1") {
                   price.price = b.price;
                   price.old_price = b.old_price;
                   updated = true;
@@ -261,8 +262,7 @@ let productStorage = {
                 price: b.price,
                 old_price: b.old_price,
               };
-            }
-            else {
+            } else {
               return cb(new Error("Invalid Price Type!"));
             }
 
@@ -307,7 +307,9 @@ let productStorage = {
         }
 
         // removing empty properties
-        product.properties = product.properties.filter((property, i) => property.value != "");
+        product.properties = product.properties.filter(
+          (property, i) => property.value != ""
+        );
 
         product.save((err, updatedProduct) => {
           if (err) return reject(err);
@@ -363,31 +365,36 @@ let productStorage = {
       // filter by properties
       if (filters.properties && filters.properties.length) {
         let properties = filters.properties.filter((p, i) => {
-          return p.property_id && mongoose.Types.ObjectId.isValid(p.property_id) && p.value;
+          return (
+            p.property_id &&
+            mongoose.Types.ObjectId.isValid(p.property_id) &&
+            p.value
+          );
         });
         let propertiesQuery = [];
         for (let i = 0; i < properties.length; i++) {
           let p = properties[i];
-          let value = p.value.split(',').map((v, j) => v.trim());
+          let value = p.value.split(",").map((v, j) => v.trim());
           propertiesQuery.push({
             property: p.property_id,
-            value: { $in: value }
+            value: { $regex: ".*" + value + ".*" },
           });
         }
         query = {
           ...query,
           properties: {
-            $elemMatch: { $or: propertiesQuery }
-          }
-        }
+            $elemMatch: { $or: propertiesQuery },
+          },
+        };
       }
+      console.log("query", query);
 
       // filter by status
-      if(filters.active) {
+      if (filters.active) {
         query = {
           ...query,
-          active: true
-        }
+          active: true,
+        };
       }
 
       // preparing options
@@ -468,7 +475,7 @@ let productStorage = {
         $or: [
           {
             slug: req.slug,
-            lang: req.lang ? req.lang : cnf.lang
+            lang: req.lang ? req.lang : cnf.lang,
           },
         ],
       };
@@ -489,8 +496,9 @@ let productStorage = {
         })
         .populate({
           path: "additional_categories",
-        }).populate({
-          path: 'properties.property'
+        })
+        .populate({
+          path: "properties.property",
         })
         .exec((err, product) => {
           if (err) return reject(err);
@@ -498,23 +506,29 @@ let productStorage = {
 
           // setting image fields
           product.image = product.image ? cnf.cloudUrl + product.image : "";
-          product.gallery = product.gallery ? product.gallery.map((g, j) => (g ? cnf.cloudUrl + g : "")) : [];
-          if(product.brand){
-            product.brand.image = product.brand.image ? (cnf.cloudUrl + product.brand.image) : ""
+          product.gallery = product.gallery
+            ? product.gallery.map((g, j) => (g ? cnf.cloudUrl + g : ""))
+            : [];
+          if (product.brand) {
+            product.brand.image = product.brand.image
+              ? cnf.cloudUrl + product.brand.image
+              : "";
           }
 
           if (req.onlyRelatedProducts) {
-            getOnlyRelatedProducts(product._id, 10).then((related_products) => {
-              product.related_products = related_products;
-              return resolve(product);
-            }).catch((err) => {
-              logger.error(err.message, {
-                function: "getting related products",
-                product_id,
-                limit,
+            getOnlyRelatedProducts(product._id, 10)
+              .then((related_products) => {
+                product.related_products = related_products;
+                return resolve(product);
+              })
+              .catch((err) => {
+                logger.error(err.message, {
+                  function: "getting related products",
+                  product_id,
+                  limit,
+                });
+                return resolve(product);
               });
-              return resolve(product);
-            });
           } else {
             getRelatedProducts(product._id, 10)
               .then((related_products) => {
@@ -548,7 +562,8 @@ let productStorage = {
           },
         ],
       };
-      if (mongoose.Types.ObjectId.isValid(req.product_id)) productQuery.$or.push({ _id: req.product_id });
+      if (mongoose.Types.ObjectId.isValid(req.product_id))
+        productQuery.$or.push({ _id: req.product_id });
       let query = {
         lang: req.lang ? req.lang : cnf.lang,
         active: true,
@@ -570,7 +585,7 @@ let productStorage = {
           });
           return resolve({ shops });
         });
-      })
+      });
     });
   },
   searchProduct: (filters) => {
@@ -580,16 +595,16 @@ let productStorage = {
       };
 
       // filter by status
-      if(filters.active) {
+      if (filters.active) {
         query = {
           ...query,
-          active: true
-        }
+          active: true,
+        };
       }
 
       // filter by search key
       if (filters.search.trim()) {
-        var searchKey = filters.search
+        var searchKey = filters.search;
         query_text = {
           ...query,
           $or: [
@@ -602,25 +617,25 @@ let productStorage = {
           ...query,
           $or: [
             {
-              name: { $regex: ".*" + searchKey + ".*", $options: 'i' },
+              name: { $regex: ".*" + searchKey + ".*", $options: "i" },
             },
             {
-              slug: { $regex: ".*" + searchKey + ".*", $options: 'i' },
+              slug: { $regex: ".*" + searchKey + ".*", $options: "i" },
             },
             {
-              external_id: searchKey/1 ? searchKey/1 : -1
-            }
+              external_id: searchKey / 1 ? searchKey / 1 : -1,
+            },
           ],
         };
         category_query = {
           $or: [
             {
-              name: { $regex: ".*" + searchKey + ".*", $options: 'i' },
+              name: { $regex: ".*" + searchKey + ".*", $options: "i" },
             },
             {
-              slug: { $regex: ".*" + searchKey + ".*", $options: 'i' },
-            }
-          ]
+              slug: { $regex: ".*" + searchKey + ".*", $options: "i" },
+            },
+          ],
         };
       }
 
@@ -629,51 +644,21 @@ let productStorage = {
         limit: filters.limit / 1 ? filters.limit / 1 : 50,
         sort: { created_at: -1 },
       };
-      
+
       // we first query categories and change query for products according to the result
-      Category.find(category_query, '_id', (err, categories) => {
+      Category.find(category_query, "_id", (err, categories) => {
         if (err) return reject(err);
-        if(categories.length){
+        if (categories.length) {
           // changinf query for product
           query_regex.$or.push({
-            category: {$in: categories.map((c, i) => c._id)}
+            category: { $in: categories.map((c, i) => c._id) },
           });
         }
 
-        async.parallel({
-          products: (cb) => {
-            Product.find(query_regex, {}, options).populate({
-              path: "category",
-            }).populate({
-              path: "brand",
-            }).exec((err, products_regex) => {
-              if (err) return reject(err);
-              return cb(null, products_regex || []);
-            });
-          },
-          count: (cb) => {
-            Product.countDocuments(query_regex, (err, count_text) => {
-              if (err) return cb(err);
-              return cb(null, count_text);
-            });
-          }
-        }, (err, result) => {
-          if (err) return reject(err);
-          let products = result.products;
-          if (products && products.length) {
-            for (let i = 0; i < products.length; i++) {
-              products[i].image = products[i].image ? cnf.cloudUrl + products[i].image : "";
-            }
-            return resolve({
-              products,
-              count: result.count,
-            });
-          }
-
-          // no results found from first approach, now we are trying with $text operator 
-          async.parallel([
-            (cb) => {
-              Product.find(query_text, {}, options)
+        async.parallel(
+          {
+            products: (cb) => {
+              Product.find(query_regex, {}, options)
                 .populate({
                   path: "category",
                 })
@@ -685,24 +670,67 @@ let productStorage = {
                   return cb(null, products_regex || []);
                 });
             },
-            (cb) => {
-              Product.countDocuments(query_regex, (err, count_regex) => {
+            count: (cb) => {
+              Product.countDocuments(query_regex, (err, count_text) => {
                 if (err) return cb(err);
-                return cb(null, count_regex);
+                return cb(null, count_text);
               });
             },
-          ], (err, results) => {
+          },
+          (err, result) => {
             if (err) return reject(err);
-            let products = results[0];
-            for (let i = 0; i < products.length; i++) {
-              products[i].image = products[i].image ? cnf.cloudUrl + products[i].image : "";
+            let products = result.products;
+            if (products && products.length) {
+              for (let i = 0; i < products.length; i++) {
+                products[i].image = products[i].image
+                  ? cnf.cloudUrl + products[i].image
+                  : "";
+              }
+              return resolve({
+                products,
+                count: result.count,
+              });
             }
-            return resolve({
-              products,
-              count: results[1],
-            });
-          });
-        });
+
+            // no results found from first approach, now we are trying with $text operator
+            async.parallel(
+              [
+                (cb) => {
+                  Product.find(query_text, {}, options)
+                    .populate({
+                      path: "category",
+                    })
+                    .populate({
+                      path: "brand",
+                    })
+                    .exec((err, products_regex) => {
+                      if (err) return reject(err);
+                      return cb(null, products_regex || []);
+                    });
+                },
+                (cb) => {
+                  Product.countDocuments(query_regex, (err, count_regex) => {
+                    if (err) return cb(err);
+                    return cb(null, count_regex);
+                  });
+                },
+              ],
+              (err, results) => {
+                if (err) return reject(err);
+                let products = results[0];
+                for (let i = 0; i < products.length; i++) {
+                  products[i].image = products[i].image
+                    ? cnf.cloudUrl + products[i].image
+                    : "";
+                }
+                return resolve({
+                  products,
+                  count: results[1],
+                });
+              }
+            );
+          }
+        );
       });
     });
   },
@@ -710,7 +738,7 @@ let productStorage = {
     return new Promise((resolve, reject) => {
       let query = {
         lang: filters.lang ? filters.lang : cnf.lang,
-        recommended: true
+        recommended: true,
       };
 
       // filter by search key
@@ -732,11 +760,11 @@ let productStorage = {
       }
 
       // filter by status
-      if(filters.active) {
+      if (filters.active) {
         query = {
           ...query,
-          active: true
-        }
+          active: true,
+        };
       }
 
       let options = {
@@ -792,9 +820,9 @@ let productStorage = {
   findPopular: (filters) => {
     return new Promise((resolve, reject) => {
       let query = {
-        lang: cnf.lang
+        lang: cnf.lang,
       };
-      let productQuery = {}
+      let productQuery = {};
 
       // filter by search key
       if (filters.search.trim()) {
@@ -815,11 +843,11 @@ let productStorage = {
       }
 
       // filter by status
-      if(filters.active) {
+      if (filters.active) {
         productQuery = {
           ...productQuery,
-          active: true
-        }
+          active: true,
+        };
       }
 
       // logger.debug("filtering products", {
@@ -840,16 +868,19 @@ let productStorage = {
                   $expr: {
                     $and: [
                       { $eq: ["$lang", query.lang] },
-                      { $eq: ["$category", "$$category_id"] }
-                    ]
+                      { $eq: ["$category", "$$category_id"] },
+                    ],
                   },
-                  ...productQuery
-                }
-              }, {
-                $sort: { "price.price": 1 }
-              }, {
-                $limit: 1
-              }, {
+                  ...productQuery,
+                },
+              },
+              {
+                $sort: { "price.price": 1 },
+              },
+              {
+                $limit: 1,
+              },
+              {
                 $project: {
                   _id: 0,
                   id: "$_id",
@@ -857,27 +888,30 @@ let productStorage = {
                   slug: 1,
                   image: 1,
                   price: 1,
-                  prices: 1
-                }
-              }
-            ]
-          }
-        }, {
-          $unwind: "$product"
-        }, {
-          $limit: 10
-        }, {
+                  prices: 1,
+                },
+              },
+            ],
+          },
+        },
+        {
+          $unwind: "$product",
+        },
+        {
+          $limit: 10,
+        },
+        {
           $project: {
             id: "$_id",
             name: 1,
             slug: 1,
             product: 1,
-            _id: 0
-          }
-        }
-      ])
+            _id: 0,
+          },
+        },
+      ]);
       if (filters.limit / 1) {
-        a.skip((filters.page / 1 - 1) * filters.limit / 1);
+        a.skip(((filters.page / 1 - 1) * filters.limit) / 1);
         a.limit(filters.limit / 1);
       }
 
@@ -892,14 +926,14 @@ let productStorage = {
               category: {
                 id: c.id,
                 name: c.name,
-                slug: c.slug
+                slug: c.slug,
               },
-              image: c.product.image ? cnf.cloudUrl + c.product.image : ""
-            }
+              image: c.product.image ? cnf.cloudUrl + c.product.image : "",
+            };
           }),
-          count: categories.length
+          count: categories.length,
         });
-      })
+      });
     });
   },
   delete: (req) => {
@@ -926,7 +960,7 @@ const getRelatedProducts = (product_id = "", limit = 10) => {
             Product.find(
               {
                 _id: { $in: p.related_products },
-                active: true
+                active: true,
               },
               {},
               { limit }
@@ -951,7 +985,7 @@ const getRelatedProducts = (product_id = "", limit = 10) => {
                 },
                 category: p.category,
                 lang: p.lang,
-                active: true
+                active: true,
               },
               {},
               { limit }
@@ -976,7 +1010,7 @@ const getRelatedProducts = (product_id = "", limit = 10) => {
                 },
                 category: { $ne: p.category },
                 lang: p.lang,
-                active: true
+                active: true,
               },
               {},
               { limit }
@@ -1035,7 +1069,7 @@ const getRelatedProducts = (product_id = "", limit = 10) => {
       );
     });
   });
-}
+};
 
 const getOnlyRelatedProducts = (product_id = "", limit = 10) => {
   return new Promise((resolve, reject) => {
@@ -1063,7 +1097,7 @@ const getOnlyRelatedProducts = (product_id = "", limit = 10) => {
                 if (err) return cb(err);
                 return cb(null, products);
               });
-          }
+          },
         },
         (err, results) => {
           if (err) {
@@ -1088,18 +1122,23 @@ const getOnlyRelatedProducts = (product_id = "", limit = 10) => {
       );
     });
   });
-}
+};
 
 const getLatestExternalId = () => {
   return new Promise((resolve, reject) => {
-    Product.findOne({},'external_id', {
-      sort: {created_at: -1}
-    }, (err, latestProduct) => {
-      if(err) return reject(err);
-      if(!latestProduct) return resolve(1);
-      return resolve(latestProduct.external_id);
-    });
+    Product.findOne(
+      {},
+      "external_id",
+      {
+        sort: { created_at: -1 },
+      },
+      (err, latestProduct) => {
+        if (err) return reject(err);
+        if (!latestProduct) return resolve(1);
+        return resolve(latestProduct.external_id);
+      }
+    );
   });
-}
+};
 
 module.exports = productStorage;
