@@ -45,18 +45,12 @@ function main() {
         mongoDBUrl, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
-    },
-        (err) => {
-            if (err) {
-                logger.error(
-                    "There is an error in connecting db (" +
-                    mongoDBUrl +
-                    "): " +
-                    err.message
-                );
-            }
-        }
-    );
+    })
+    .catch(err =>{
+        logger.error("There is an error in connecting db (" + mongoDBUrl + "): " + err.message)
+        process.exit()
+    })
+
     mongoose.connection.once("open", function () {
         logger.info("Connected to the databasee");
 
@@ -69,6 +63,7 @@ function main() {
             // Function to generate csv file with information of products and upload it to minio once a day
             const hatch = require("./modules/hatch/hatch_csv");
             const sitemap = require('./modules/sitemap/sitemap.js');
+
             setInterval(() => {
                 hatch.convertToCsv().then((result) => {
                     console.log("Csv have been generated");
@@ -82,7 +77,7 @@ function main() {
                 }).catch((err) => {
                     console.log("error on generating sitemap: " + err);
                 })
-           }, 24 * 3600 * 1000)    
+            }, 24 * 3600 * 1000)    
         }, 5000);
     });
 
@@ -116,6 +111,10 @@ function main() {
     server.addService(
         catalogProto.FeedbackService.service,
         require("./services/feedback")
+    );
+    server.addService(
+      catalogProto.FeaturedListService.service,
+      require("./services/featured_list")
     );
 
     server.bind(

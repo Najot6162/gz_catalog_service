@@ -22,6 +22,10 @@ message Product {
         string description = 2;
         string tags = 3;
     }
+    message InStock {
+        bool samarkand = 1;
+        bool tashkent_city = 2;
+    }
     string id = 1;
     string name = 2;
     string slug = 3;
@@ -45,6 +49,7 @@ message Product {
     string lang = 21;
     float average_rate = 22;
     int64 reviews_count = 23;
+    InStock in_stock = 24;
 }
 
 message ProductSlim {
@@ -76,7 +81,7 @@ message ProductSlim {
     string lang = 13;
     int64 external_id = 14;
     string code = 15;
-    InStock inStock = 16;
+    InStock in_stock = 16;
 }
 
 message Category {
@@ -249,6 +254,19 @@ message Feedback {
     string  rate = 7;
     string created_at = 8;
     string updated_at = 9;
+}
+
+message FeaturedList {
+  string id = 1;
+  string title = 2;
+  string slug = 3;
+  repeated ProductSlim products = 4;
+  string created_at = 5;
+  string updated_at = 6;
+  string lang = 7;
+  int64 order = 8;
+  bool active = 9;
+  string description = 10;
 }
 
 message GetRequest {

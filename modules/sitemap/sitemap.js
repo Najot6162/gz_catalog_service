@@ -4,7 +4,7 @@ const fs = require("fs");
 const { resolve } = require("path");
 const Product = require("../../models/Product");
 const categoryStorage = require("../../storage/mongo/category");
-const pages = ['faq','how-to-order','delivery','exchange-return-repair','payment-plan','bonuses','about']
+const pages = ['faq','how-to-order','delivery','exchange-return-repair','rassrochka','bonuses','about']
 
 const host = "https://goodzone.uz";
 const catUrl = "https://goodzone.uz/shop/";
@@ -30,17 +30,34 @@ const generateXML = () => {
               loc: host + "/product/" + product.slug,
               lastmod: d,
               changefreq: "daily",
-              priority: 1,
+              priority: 0.8,
             },
           };
         });
         categoryPages()
           .then((result) => {
+            let d = (new Date()).toISOString().split('T')[0];
             for (let i = 0; i < result.length; i++) {
-              arrForSitemap[i].url.category_url = result[i];
+              let category_data = {
+                    url: {
+                      loc: result[i],
+                      lastmod: d,
+                      changefreq: "daily",
+                      priority: 1,
+                }
+              }
+              arrForSitemap.push(category_data);
             }
             for (let j = 0; j < pages.length; j++) {
-                arrForSitemap[j].url.static_page = host+'/'+pages[j];
+              let static_page = {
+                    url: {
+                      loc: host+'/'+pages[j],
+                      lastmod: d,
+                      changefreq: "daily",
+                      priority: 1,
+                }
+              }
+              arrForSitemap.push(static_page);
             }
             fs.writeFile(
               __dirname + "/sitemap.xml",
@@ -64,21 +81,21 @@ const generateXML = () => {
           .catch((error) => {
             return console.log(error);
           });
-        // let arrForProducts = products.map((product, i) => {
-        //     return {
-        //         product: {
-        //             url: host + '/product/' + product.slug,
-        //             product: product.name
-        //         }
-        //     }
-        // });
-        // fs.writeFile(__dirname+'/products.xml', json2xml({
-        //     products: arrForProducts
-        // }, { headers: true }), function (err) {
-        //     console.log("writing to xml ...")
-        //     if (err) return reject(err);
-        //     console.log('file saved');
-        // });
+        let arrForProducts = products.map((product, i) => {
+            return {
+                product: {
+                    url: host + '/product/' + product.slug,
+                    product: product.name
+                }
+            }
+        });
+        fs.writeFile(__dirname+'/products.xml', json2xml({
+            products: arrForProducts
+        }, { headers: true }), function (err) {
+            console.log("writing to xml ...")
+            if (err) return reject(err);
+            console.log('file saved');
+        });
       }
     );
   });

@@ -1,5 +1,6 @@
 const grpc = require("grpc");
 const productStorage = require("../storage/mongo/product");
+const featuredListStorage = require("../storage/mongo/featured_list");
 const logger = require("../config/logger.js");
 
 const productService = {
@@ -113,8 +114,7 @@ const productService = {
             message: err.message,
           });
         });
-    }
-    else if (call.request.popular) {
+    } else if (call.request.popular) {
       productStorage
         .findPopular(call.request)
         .then((result) => {
@@ -152,8 +152,7 @@ const productService = {
             message: err.message,
           });
         });
-    }
-    else {
+    } else {
       productStorage
         .find(call.request)
         .then((result) => {

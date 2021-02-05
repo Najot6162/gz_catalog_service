@@ -112,19 +112,22 @@ ShopSchema.post("save", function (shop, next) {
           { slug: { $in: products.map((p, i) => p.slug) } },
           {
             $set: {
-              "inStock.samarkand": true,
+              "in_stock.samarkand": true,
             },
           },
           (err, r) => {
             if (err) {
               logger.error("cannot update", {
-                function: "update inStock.samarkand field of a product to true",
+                function: "update in_stock.samarkand field of a product to true",
                 shop,
               });
             }
-            logger.info("inStock.samarkand field of the product has been updated to true", {
-              r,
-            });
+            logger.info(
+              "in_stock.samarkand field of the product has been updated to true",
+              {
+                r,
+              }
+            );
           }
         );
       } else {
@@ -132,19 +135,23 @@ ShopSchema.post("save", function (shop, next) {
           { slug: { $in: products.map((p, i) => p.slug) } },
           {
             $set: {
-              "inStock.tashkent_city": true,
+              "in_stock.tashkent_city": true,
             },
           },
           (err, r) => {
             if (err) {
               logger.error("cannot update", {
-                function: "update inStock.tashkent_city field of a product to true",
+                function:
+                  "update in_stock.tashkent_city field of a product to true",
                 shop,
               });
             }
-            logger.info("inStock.tashkent_city field of the product has been updated to true", {
-              r,
-            });
+            logger.info(
+              "in_stock.tashkent_city field of the product has been updated to true",
+              {
+                r,
+              }
+            );
           }
         );
       }
@@ -158,13 +165,12 @@ ShopSchema.post("save", function (shop, next) {
         console.log(shops);
         shops.forEach((sh, i) => {
           productIdsNotInStock = productIdsNotInStock.filter((p, i) => {
-            let inStock = sh.products.filter(
+            let in_stock = sh.products.filter(
               (sp, j) => sp.product.toString() == p._id.toString()
             );
-            return !inStock.length || inStock[0].quantity == 0;
+            return !in_stock.length || in_stock[0].quantity == 0;
           });
         });
-        console.log(productIdsNotInStock);
         Product.find(
           { _id: { $in: productIdsNotInStock.map((p, i) => p.product) } },
           {},
@@ -174,20 +180,24 @@ ShopSchema.post("save", function (shop, next) {
               { slug: { $in: products.map((p, i) => p.slug) } },
               {
                 $set: {
-                  "inStock.samarkand": false,
+                  "in_stock.samarkand": false,
                 },
               },
               (err, r) => {
                 if (err) {
                   logger.error("cannot update", {
-                    function: "update inStock.samarkand of a product to false (quantity = 0)",
+                    function:
+                      "update in_stock.samarkand of a product to false (quantity = 0)",
                     shop,
                   });
                   return next();
                 }
-                logger.info("inStock.samarkand field of the product has been updated to false", {
-                  r,
-                });
+                logger.info(
+                  "in_stock.samarkand field of the product has been updated to false",
+                  {
+                    r,
+                  }
+                );
                 return next();
               }
             );
@@ -200,10 +210,10 @@ ShopSchema.post("save", function (shop, next) {
       .find({ area: "tashkent_city", lang: "ru" }, {}, (err, shops) => {
         shops.forEach((sh, i) => {
           productIdsNotInStock = productIdsNotInStock.filter((p, i) => {
-            let inStock = sh.products.filter(
+            let in_stock = sh.products.filter(
               (sp, j) => sp.product.toString() == p._id.toString()
             );
-            return !inStock.length || inStock[0].quantity == 0;
+            return !in_stock.length || in_stock[0].quantity == 0;
           });
         });
         Product.find(
@@ -215,20 +225,24 @@ ShopSchema.post("save", function (shop, next) {
               { slug: { $in: products.map((p, i) => p.slug) } },
               {
                 $set: {
-                  "inStock.tashkent_city": false,
+                  "in_stock.tashkent_city": false,
                 },
               },
               (err, r) => {
                 if (err) {
                   logger.error("cannot update", {
-                    function: "update inStock.tashkent_city of a product to false",
+                    function:
+                      "update in_stock.tashkent_city of a product to false",
                     shop,
                   });
                   return next();
                 }
-                logger.info("inStock.tashkent_city field of the product has been updated to false", {
-                  r,
-                });
+                logger.info(
+                  "in_stock.tashkent_city field of the product has been updated to false",
+                  {
+                    r,
+                  }
+                );
                 return next();
               }
             );

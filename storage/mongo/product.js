@@ -183,9 +183,38 @@ let productStorage = {
         product.code = b.code;
         product.order = b.order;
         product.image = b.image;
+        product.lang = b.lang;
 
         product.save((err, updatedProduct) => {
           if (err) return reject(err);
+          let otherLangs = langs.filter(
+            (lang, i) => lang != updatedProduct.lang
+          );
+          async.eachSeries(
+            otherLangs,
+            (otherLang, cb) => {
+              Product.updateOne(
+                { slug: updatedProduct.slug, lang: otherLang },
+                {
+                  active: updatedProduct.active,
+                },
+                (err, r) => {
+                  if (err) return cb(err);
+                  logger.debug("product is updated for lang " + otherLang, {
+                    result: r,
+                  });
+                  cb(null, r);
+                }
+              );
+            },
+            (err) => {
+              if (err)
+                logger.error(err.message, {
+                  function: "update movie for other lang",
+                  updatedProduct,
+                });
+            }
+          );
           product
             .populate({
               path: "category",
@@ -644,6 +673,21 @@ let productStorage = {
         limit: filters.limit / 1 ? filters.limit / 1 : 50,
         sort: { created_at: -1 },
       };
+
+      if (filters.sort) {
+        let sortParams = filters.sort.split("|");
+        if (
+          sortParams.length == 2 &&
+          (sortParams[1] == "asc" || sortParams[1] == "desc")
+        ) {
+          options.sort = {};
+          if (sortParams[0] == "price") {
+            options.sort["price.price"] = sortParams[1] == "asc" ? 1 : -1;
+          } else {
+            options.sort[sortParams[0]] = sortParams[1] == "asc" ? 1 : -1;
+          }
+        }
+      }
 
       // we first query categories and change query for products according to the result
       Category.find(category_query, "_id", (err, categories) => {
