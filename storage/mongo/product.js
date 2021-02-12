@@ -406,7 +406,8 @@ let productStorage = {
           let value = p.value.split(",").map((v, j) => v.trim());
           propertiesQuery.push({
             property: p.property_id,
-            value: { $in: value },
+            // filtering when more than one attribute
+            value: { $regex: ".*" + value + ".*" },
           });
         }
         query = {
@@ -416,6 +417,7 @@ let productStorage = {
           },
         };
       }
+      console.log("query", query);
 
       // filter by status
       if (filters.active) {
@@ -679,6 +681,7 @@ let productStorage = {
         limit: filters.limit / 1 ? filters.limit / 1 : 50,
         sort: { created_at: -1 },
       };
+
       if (filters.sort) {
         let sortParams = filters.sort.split("|");
         if (
