@@ -1,0 +1,23 @@
+syntax="proto3";
+
+package catalog;
+option go_package="genproto/catalog_service";
+
+import "catalog.proto";
+
+service ProductPropertyService {
+    rpc Create(ProductProperty) returns (ProductPropertyResponse) {}
+    rpc Update(ProductProperty) returns (ProductPropertyResponse) {}
+    rpc Find(FindRequest) returns (FindProductPropertiesResponse) {}
+    rpc Get(GetRequest) returns (ProductPropertyResponse) {}
+    rpc Delete(DeleteRequest) returns (Empty) {}
+}
+
+message ProductPropertyResponse {
+    ProductProperty product_property = 1;
+}
+
+message FindProductPropertiesResponse {
+    repeated ProductProperty product_properties = 1;
+    int64 count = 2;
+}

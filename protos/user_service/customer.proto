@@ -1,0 +1,52 @@
+syntax = "proto3";
+
+package genproto;
+
+option go_package="genproto/user_service";
+
+import "user.proto";
+
+service CustomerService {
+    rpc Create(Customer) returns (CustomerResponse) {}
+    rpc Get(GetCustomerRequest) returns (CustomerResponse) {}
+    rpc Find(FindRequest) returns (CustomersResponse) {}
+    rpc Update(Customer) returns (CustomerResponse) {}
+    rpc UpdateArea(UpdateCustomerAreaRequest) returns (CustomerResponse) {}
+    rpc Delete(DeleteRequest) returns (Empty) {}
+    rpc ExistsCustomer(ExistsCustomerRequest) returns (ExistsCustomerResponse) {}
+    rpc GetByLogin(Customer) returns (Customer) {}
+    rpc SendVerificationCode(PhoneVerification) returns (Empty) {}
+    rpc VerifyPhone(PhoneVerification) returns (PhoneVerification) {}
+}
+
+message CustomerResponse {
+    Customer customer = 1;
+}
+
+message CustomersResponse {
+    repeated Customer customers = 1;
+    int64 count = 2;
+}
+
+message UpdateCustomerAreaRequest {
+    string id = 1;
+    string area = 2;
+}
+
+message GetCustomerRequest {
+    string id = 1;
+    string phone = 2;
+}
+
+message ExistsCustomerRequest {
+    string phone = 1;
+}
+
+message ExistsCustomerResponse {
+    bool exists = 1;
+}
+
+message PhoneVerification {
+    string phone = 1;
+    string code = 2;
+}

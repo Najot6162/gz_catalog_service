@@ -1,0 +1,51 @@
+syntax="proto3";
+
+package catalog;
+option go_package="genproto/catalog_service";
+
+import "catalog.proto";
+
+service FeedbackService {
+    rpc Create(CreateFeedbackRequest) returns (FeedbackResponse) {}
+    rpc Update(UpdateFeedbackRequest) returns (FeedbackResponse) {}
+    rpc Find(FeedbackFindRequest) returns (FeedbacksResponse) {}
+    rpc Get(GetRequest) returns (FeedbackResponse) {}
+    rpc Delete(DeleteRequest) returns (Empty) {}
+}
+message FeedbackFindRequest {
+    int64  page = 1;
+    string search = 2;
+    bool   active = 3;
+    bool   inactive = 4;
+    int64  limit = 5;
+    string sort = 6;
+    string product_id = 7;
+
+}
+
+message CreateFeedbackRequest {
+    string customer_name = 1;
+    string customer_id = 2;
+    string product_id = 3;
+    string comment = 4;
+    bool   active = 5;
+    float  rate = 6;
+}
+
+message UpdateFeedbackRequest {
+    string id = 1;
+    string customer_name = 2;
+    string customer_id = 3;
+    string comment = 4;
+    bool   active = 5;
+    float  rate = 6;
+}
+
+message FeedbackResponse {
+    Feedback feedback = 1;
+}
+
+message FeedbacksResponse {
+    repeated Feedback feedbacks = 1;
+    int64 count = 2;
+}

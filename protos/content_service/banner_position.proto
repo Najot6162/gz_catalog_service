@@ -1,0 +1,23 @@
+syntax="proto3";
+
+package content;
+option go_package="genproto/content_service";
+
+import "content.proto";
+
+service BannerPositionService {
+    rpc Create(BannerPosition) returns (BannerPositionResponse) {}
+    rpc Update(BannerPosition) returns (BannerPositionResponse) {}
+    rpc Find(FindRequest) returns (BannerPositionsResponse) {}
+    rpc Get(GetRequest) returns (BannerPositionResponse) {}
+    rpc Delete(DeleteRequest) returns (Empty) {}
+}
+
+message BannerPositionResponse {
+    BannerPosition position = 1;
+}
+
+message BannerPositionsResponse {
+    repeated BannerPosition positions = 1;
+    int64 count = 2;
+}

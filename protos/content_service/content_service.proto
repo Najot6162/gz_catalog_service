@@ -1,0 +1,11 @@
+syntax="proto3";
+
+package content;
+option go_package="genproto/content_service";
+
+import "news.proto";
+import "promo&discounts.proto";
+import "menu.proto";
+import "page.proto";
+import "banner.proto";
+import "banner_position.proto";

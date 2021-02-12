@@ -1,0 +1,38 @@
+syntax="proto3";
+
+package content;
+option go_package="genproto/content_service";
+
+import "content.proto";
+
+service PromoService {
+    rpc Create(Promo) returns (PromoResponse) {}
+    rpc Update(Promo) returns (PromoResponse) {}
+    rpc Find(FindRequest) returns (PromosResponse) {}
+    rpc Get(GetRequest) returns (PromoResponse) {}
+    rpc Delete(DeleteRequest) returns (Empty) {}
+}
+message PromoSlim {
+    string id = 1;
+    string title = 2;
+    string slug = 3;
+    bool   active = 4;
+    string preview_text = 5;
+    string preview_image = 6;
+    string start_time = 7;
+    string end_time = 8;
+    string created_at = 9;
+    string updated_at = 10;
+    string formatted_start_date = 11;
+    string formatted_end_date = 12;
+    string formatted_date = 13;
+    string lang = 14;
+}
+message PromoResponse {
+    Promo promo = 1;
+}
+
+message PromosResponse {
+    repeated PromoSlim promos = 1;
+    int64 count = 2;
+}

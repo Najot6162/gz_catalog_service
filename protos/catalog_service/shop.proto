@@ -1,0 +1,103 @@
+syntax="proto3";
+
+package catalog;
+option go_package="genproto/catalog_service";
+
+import "catalog.proto";
+
+service ShopService {
+    rpc Create(CreateShopRequest) returns (ShopResponse) {}
+    rpc Update(UpdateShopRequest) returns (ShopResponse) {}
+    rpc Find(FindShopsRequest) returns (FindShopsResponse) {}
+    rpc Get(GetRequest) returns (ShopResponse) {}
+    rpc GetProducts(ProductsRequest) returns (ProductsResponse) {}
+    rpc Delete(DeleteRequest) returns (Empty) {}
+    rpc UpdateQuantity(UpdateProductQuantityRequest) returns (Empty) {}
+}
+
+message CreateShopRequest {
+     message Loc {
+        float long = 1;
+        float lat = 2;
+    }
+    string name = 1;
+    string phone = 2;
+    string working_hours = 3;
+    string address = 4;
+    string address2 = 5;
+    string preview_text = 6;
+    string description = 7;
+    Loc loc = 8;
+    bool   active = 9;
+    string image = 10;
+    int64  order = 11;
+    string lang = 12;
+    string area = 13;
+    int64 external_id = 14;
+}
+
+message UpdateShopRequest {
+     message Loc {
+        float long = 1;
+        float lat = 2;
+    }
+    string id = 1;
+    string name = 2;
+    string phone = 3;
+    string working_hours = 4;
+    string address = 5;
+    string address2 = 6;
+    string preview_text = 7;
+    string description = 8;
+    Loc loc = 9;
+    bool   active = 10;
+    string image = 11;
+    int64  order = 12;
+    string lang = 13;
+    string area = 14;
+    int64 external_id = 15;
+}
+
+message UpdateProductQuantityRequest {
+    string shop_id = 1;
+    string product_id = 2;
+    int32  quantity = 3;
+}
+message ShopResponse {
+    Shop shop = 1;
+}
+message ProductsRequest {
+    string id = 1;
+    string slug = 2;
+    int64 page = 3;
+    int64 limit = 4;
+    string lang = 5;
+    string search = 6;
+}
+
+message ProductsResponse {
+  message ProductResponse{
+    ProductSlim product = 1;
+    int32 quantity = 2;
+}
+repeated ProductResponse products = 1;
+  int64 count = 2;
+
+}
+
+message FindShopsRequest {
+    int64  page = 1;
+    string search = 2;
+    bool   active = 3;
+    bool   inactive = 4;
+    int64  limit = 5;
+    string sort = 6;
+    string lang = 7;
+}
+
+message FindShopsResponse {
+    repeated Shop shops = 1;
+    int64 count = 2;
+}
+
+

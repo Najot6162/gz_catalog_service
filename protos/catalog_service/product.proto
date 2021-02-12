@@ -1,0 +1,126 @@
+syntax="proto3";
+
+package catalog;
+option go_package="genproto/catalog_service";
+
+import "catalog.proto";
+
+service ProductService {
+    rpc Create(CreateProductRequest) returns (ProductResponse) {}
+    rpc Update(UpdateProductRequest) returns (ProductResponse) {}
+    rpc UpdatePrice(UpdateProductPriceRequest) returns (Empty) {}
+    rpc UpdateProperty(UpdateProductPropertyRequest) returns (Empty) {}
+    rpc Find(FindProductsRequest) returns (FindProductsResponse) {}
+    rpc Get(GetProductRequest) returns (ProductResponse) {}
+    rpc GetShops (ShopsRequest) returns (ShopsResponse) {}
+    rpc Delete(DeleteRequest) returns (Empty) {}
+}
+
+message CreateProductRequest {
+    message Meta {
+        string title = 1;
+        string description = 2;
+        string tags = 3;
+    }
+    string name = 1;
+    string category_id = 2;
+    string brand_id = 3;
+    string additional_categories = 4;
+    string related_products = 5;
+    string preview_text = 6;
+    string description = 7;
+    string gallery = 8;
+    int64 external_id = 9;
+    string code = 10;
+    Meta meta = 11;
+    bool   active = 12;
+    int64  order = 13;
+    string image = 14;
+    string lang = 15;
+}
+
+message UpdateProductRequest {
+    message Meta {
+        string title = 1;
+        string description = 2;
+        string tags = 3;
+    }
+    string id = 1;
+    string name = 2;
+    string category_id = 3;
+    string brand_id = 4;
+    string additional_categories = 5;
+    string related_products = 6;
+    string preview_text = 7;
+    string description = 8;
+    string gallery = 9;
+    int64 external_id = 10;
+    string code = 11;
+    Meta meta = 12;
+    bool   active = 13;
+    int64  order = 14;
+    string image = 15;
+    string lang = 16;
+}
+
+message UpdateProductPriceRequest {
+    string product_id = 1;
+    string price_type_id = 2;
+    int64  price = 3;
+    int64  old_price = 4;
+}
+
+message UpdateProductPropertyRequest {
+    string product_id = 1;
+    string property_id = 2;
+    string value = 3;
+}
+message ShopsRequest {
+    string product_id = 1;
+    string product_slug = 2;
+}
+message ShopsResponse {
+    message ShopResponse{
+        ShopSlim shop = 1;
+        int32 quantity = 2;
+    }
+    repeated ShopResponse shops = 1;
+}
+
+message ProductResponse {
+    Product product = 1;
+}
+
+message GetProductRequest {
+    string id = 1;
+    string slug = 2;
+    string lang = 3;
+    bool onlyRelatedProducts = 4;
+}
+
+message FindProductsRequest {
+    message Property {
+        string property_id = 1;
+        string value = 2;
+    }
+    int64  page = 1;
+    string search = 2;
+    bool   active = 3;
+    bool   inactive = 4;
+    string category = 5;
+    string brand = 6;
+    int64  limit = 7;
+    string sort = 8;
+    int64  price_from = 9;
+    int64  price_till = 10;
+    string lang = 11;
+    bool   recommended = 12;
+    bool   popular = 13;
+    repeated Property properties = 14;
+    bool in_stock = 15;
+}
+
+message FindProductsResponse {
+    repeated ProductSlim products = 1;
+    int64    count = 2;
+}
