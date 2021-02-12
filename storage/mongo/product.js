@@ -425,6 +425,13 @@ let productStorage = {
         };
       }
 
+      if (filters.in_stock) {
+        query = {
+          ...query,
+          "in_stock.tashkent_city": true,
+        };
+      }
+
       // preparing options
       let options = {
         skip: ((filters.page / 1 - 1) * filters.limit) / 1,
