@@ -273,6 +273,7 @@ ShopSchema.post("save", function (shop, next) {
         );
       })
   };
+  next();
 });
 
 module.exports = mongoose.model("Shop", ShopSchema);
