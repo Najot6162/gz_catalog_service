@@ -42,6 +42,11 @@ const syncronizer = require('./sync');
 // }).catch((err) => {
 //   console.log("error on updating inStock field: " + err);
 // });
+// importer.updateProductMeta().then((result) => {
+//   console.log("Product meta field updated");
+// }).catch((err) => {
+//   console.log("error on updating meta field: " + err);
+// });
 // importer
 //   .deleteInStockField()
 //   .then((result) => {

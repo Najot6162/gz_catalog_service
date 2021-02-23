@@ -18,40 +18,40 @@ function main() {
     var client = new CatalogProto.ProductService('localhost:7000', grpc.credentials.createInsecure());
 
     // create Product
-    // client.Create({
-    //     name: 'my product',
-    //     category_id: '5ee1e1b06123a6296c4996af',
-    //     brand_id: '5f24d71fe5fba43358f294e1', //dell
-    //     // additional_categories: '5ee1e1b06123a6296c4996bd,5ee1e1b06123a6296c4556bd,5ee1e1b06123a6296c4236bd',
-    //     // related_products: '5f256ee9bc7bd40012af047c,5f256ee9bc7bd40012af047e,5f256ee9bc7bd40012af0484',
-    //     preview_text: 'preview text of my product',
-    //     description: 'description of my product',
-    //     //external_id: '15',
-    //     image: 'some.jpg',
-    //     gallery: 'img/somephoto.jpg',
-    //     meta: {
-    //         title: 'Product Meta',
-    //         description: 'Description of Meta',
-    //         tags: 'Tag of meta'
-    //     },
-    //   lang: 'ru',
-    //     active: false
-    // }, (err, createResponse) => {
-    //     if (err) return console.log('Error: ', err.message);
-    //     console.log(createResponse);
-    //     logger.debug('Product Create response', {
-    //         response: createResponse,
-    //         label: 'test'
-    //     });
+    client.Create({
+        name: 'my product',
+        category_id: '5ee1e1b06123a6296c4996af',
+        brand_id: '5f24d71fe5fba43358f294e1', //dell
+        // additional_categories: '5ee1e1b06123a6296c4996bd,5ee1e1b06123a6296c4556bd,5ee1e1b06123a6296c4236bd',
+        // related_products: '5f256ee9bc7bd40012af047c,5f256ee9bc7bd40012af047e,5f256ee9bc7bd40012af0484',
+        preview_text: 'preview text of my product',
+        description: 'description of my product',
+        //external_id: '15',
+        image: 'some.jpg',
+        gallery: 'img/somephoto.jpg',
+        meta: {
+            title: 'Product Meta',
+            description: 'Description of Meta',
+            tags: 'Tag of meta'
+        },
+       lang: 'ru',
+        active: false
+    }, (err, createResponse) => {
+        if (err) return console.log('Error: ', err.message);
+        console.log(createResponse);
+        logger.debug('Product Create response', {
+            response: createResponse,
+            label: 'test'
+        });
 
         // find Product кондиционер
-        client.Find({in_stock:true}, (err, findResponse) => {
-            if (err) return console.log('Error: ', err.message);
-            logger.debug('Product Find response', {
-                response: findResponse,
-                label: 'test'
-            });
-        });
+        // client.Find({in_stock:true}, (err, findResponse) => {
+        //     if (err) return console.log('Error: ', err.message);
+        //     logger.debug('Product Find response', {
+        //         response: findResponse,
+        //         label: 'test'
+        //     });
+        // });
 
         // update Product
         // client.Update(
@@ -179,7 +179,7 @@ function main() {
     //         label: 'test'
     //     });
     //     console.log('Product filter by attributes test completed!');
-    // });
+    });
 }
 
 

@@ -4,7 +4,7 @@ const fs = require("fs");
 const { resolve } = require("path");
 const Product = require("../../models/Product");
 const categoryStorage = require("../../storage/mongo/category");
-const pages = ['faq','how-to-order','delivery','exchange-return-repair','rassrochka','bonuses','about','credit']
+const pages = ['faq','how-to-order','delivery','exchange-return-repair','payment-plan','bonuses','about','credit']
 
 const host = "https://goodzone.uz";
 const catUrl = "https://goodzone.uz/shop/";

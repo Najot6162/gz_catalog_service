@@ -51,7 +51,7 @@ function main() {
       client.UpdateQuantity(
         {
           shop_id: "my-shop1",
-          product_id: "5ff2a8fb4d2151f1acb7f16c",
+          product_id: "6034e99ced84cb0511854c47",
           quantity: 0,
         },
         (err, updateResponse) => {

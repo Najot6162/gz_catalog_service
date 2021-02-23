@@ -694,7 +694,7 @@ const updateInStockField = () => {
         let productIdsInThisShop = sh.products.filter((p, i) => {
           return p.quantity > 0;
         });
-        productIdsInThisShop.forEach(element => {
+        productIdsInThisShop.forEach((element) => {
           if (productIdsInStock.indexOf(element) == -1) {
             productIdsInStock.push(element);
           }
@@ -734,10 +734,10 @@ const updateInStockField = () => {
 const deleteInStockField = () => {
   return new Promise((resolve, reject) => {
     Product.updateMany(
-      {inStock:{$exists:true}},
+      { inStock: { $exists: true } },
       {
         $unset: {
-          inStock: 1
+          inStock: 1,
         },
       },
       { multi: true },
@@ -747,7 +747,50 @@ const deleteInStockField = () => {
         return resolve();
       }
     );
-  })
+  });
+};
+
+const updateProductMeta = () => {
+  return new Promise((resolve, reject) => {
+    Product.find(
+      {
+        lang: "uz",
+      },
+      {
+        name: 1
+      },
+      (err, products) => {
+        if (err) return reject(err);
+        async.eachSeries(
+          products,
+          (product, cb) => {
+            console.log(product);
+            Product.updateOne(
+              { _id: product._id },
+              {
+                $set: {
+                  "meta.title": product.name + " narxi",
+                  "meta.description":
+                    product.name +
+                    " narxlari va xarakteristka GOODZONE saytida bor. Kreditga sotib olish mumkin. Toshkent shahrida bepul etkazib berish",
+                },
+              },
+              (err, r) => {
+                if (err) return cb(err);
+                cb(null, r);
+              }
+            );
+          },
+          (err) => {
+            if (err)
+              logger.error(err.message, {
+                function: "product meta update didn't work",
+              });
+          }
+        );
+      }
+    );
+  });
 };
 
 module.exports = {
@@ -761,4 +804,5 @@ module.exports = {
   importProductImages,
   importProductCodes,
   updateInStockField,
+  updateProductMeta,
 };
