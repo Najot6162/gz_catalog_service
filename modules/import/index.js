@@ -687,7 +687,7 @@ const removeDuplicateProducts = () =>
 
 const updateInStockField = () => {
   return new Promise((resolve, reject) => {
-    Shop.find({ area: "samarkand", lang: "ru" }, {}, (err, shops) => {
+    Shop.find({ area: "tashkent_city", lang: "ru" }, {}, (err, shops) => {
       if (err) return reject(err);
       let productIdsInStock = [];
       shops.forEach((sh, i) => {
@@ -716,7 +716,7 @@ const updateInStockField = () => {
             },
             {
               $set: {
-                "in_stock.samarkand": true,
+                "in_stock.tashkent_city": true,
               },
             },
             (err, r) => {
