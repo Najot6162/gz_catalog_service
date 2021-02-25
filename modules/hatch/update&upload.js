@@ -4,11 +4,11 @@ const logger = require('../../config/logger');
 const cfg = require('../../config');
 
 var minioClient = new Minio.Client({
-    endPoint: cfg.minioEndpoint_1,
+    endPoint: cfg.minioEndpoint,
     port: cfg.minioPort,
     useSSL: false,
-    accessKey: cfg.minioAccessKeyID_1,
-    secretKey: cfg.minioSecretAccesKey_1,
+    accessKey: cfg.minioAccessKeyID,
+    secretKey: cfg.minioSecretAccesKey,
     region: "us-east-1",
 });
 const upload = () => {
