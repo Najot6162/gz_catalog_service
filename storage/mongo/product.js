@@ -404,11 +404,15 @@ let productStorage = {
         for (let i = 0; i < properties.length; i++) {
           let p = properties[i];
           let value = p.value.split(",").map((v, j) => v.trim());
-          propertiesQuery.push({
+          console.log(value);
+          value.forEach(v => {
+           propertiesQuery.push({
             property: p.property_id,
             // filtering when more than one attribute
-            value: { $regex: ".*" + value + ".*" },
+            value: v,
           });
+          })
+        
         }
         query = {
           ...query,

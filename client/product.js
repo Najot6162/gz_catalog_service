@@ -164,8 +164,13 @@ function main() {
   // // filtering by attribute
   client.Find(
     {
-      properties: [{ property_id: "5f3ca1c35668610012cf747f", value: "4" }],
-      category: "5f24e9d25aa3da35d8946cf9",
+      properties: [
+        {
+          property_id: "5f69a0a8c2ab890012fdd0d7",
+          value: "ЖК-телевизор,LED телевизор",
+        },
+      ],
+      category: "5f24e9d25aa3da35d8946cff",
       lang: "ru",
     },
     (err, filterResponse) => {
