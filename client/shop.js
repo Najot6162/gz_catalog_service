@@ -19,40 +19,40 @@ function main() {
   );
 
   // create Brand
-//   client.Create(
-//     {
-//       name: "my Shop1",
-//       preview_text: "preview text of my shop",
-//       description: "description of my shop",
-//       address: "Address of my shop",
-//       loc: {
-//         long: 72.223,
-//         lat: 43.213,
-//       },
-//       active: true,
-//       lang: "ru",
-//       area: "samarkand",
-//       // products: [
-//       //     {
-//       //         product: "",
-//       //         quantity:""
-//       //     }
-//       // ]
-//     },
-//     (err, createResponse) => {
-//       console.log("Shop Create");
-//       if (err) return console.log("Error: ", err.message);
-//       logger.debug("Shop Create response", {
-//         response: createResponse,
-//         label: "test",
-//       });
-//       console.log(createResponse);
+  // client.Create(
+  //   {
+  //     name: "my Shop2",
+  //     preview_text: "preview text of my shop",
+  //     description: "description of my shop",
+  //     address: "Address of my shop",
+  //     loc: {
+  //       long: 72.223,
+  //       lat: 43.213,
+  //     },
+  //     active: true,
+  //     lang: "ru",
+  //     area: "samarkand",
+  //     // products: [
+  //     //     {
+  //     //         product: "",
+  //     //         quantity:""
+  //     //     }
+  //     // ]
+  //   },
+  //   (err, createResponse) => {
+  //     console.log("Shop Create");
+  //     if (err) return console.log("Error: ", err.message);
+  //     logger.debug("Shop Create response", {
+  //       response: createResponse,
+  //       label: "test",
+  //     });
+  //     console.log(createResponse);
 
       client.UpdateQuantity(
         {
-          shop_id: "my-shop1",
+          shop_id: "my-shop2",
           product_id: "6034e99ced84cb0511854c47",
-          quantity: 0,
+          quantity: 5,
         },
         (err, updateResponse) => {
           console.log("Shop Update Quantity");
@@ -156,7 +156,7 @@ function main() {
       //             )
       //         }
       //     );
-//     }
-//   );
+  //   }
+  // );
 }
 main();

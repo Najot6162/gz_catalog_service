@@ -101,17 +101,19 @@ ShopSchema.post("save", function (shop, next) {
   let shop_products = shop.products.map((stock, i) => {
     return {
       product: stock.product,
-      quantity: stock.quantity
+      quantity: stock.quantity,
     };
   });
   if (shop.area == "samarkand") {
     async.eachSeries(
       shop_products,
       (shop_product, cb) => {
-        Product.find({ _id: shop_product.product },
-          (err, product) => {
-            if (err) return cb(err);
-            if (shop_product.quantity > 0) {
+        Product.findOne({ _id: shop_product.product }, (err, product) => {
+          if (err) return cb(err);
+          if (shop_product.quantity > 0) {
+            if (product.in_stock.samarkand) {
+              return cb(null);
+            } else {
               Product.updateMany(
                 { slug: product.slug },
                 {
@@ -137,7 +139,9 @@ ShopSchema.post("save", function (shop, next) {
                   return cb(null);
                 }
               );
-            } else {
+            }
+          } else {
+            if (product.in_stock.samarkand) {
               Product.updateMany(
                 { slug: product.slug },
                 {
@@ -163,8 +167,11 @@ ShopSchema.post("save", function (shop, next) {
                   return cb(null);
                 }
               );
+            } else {
+              return cb(null);
             }
-          })
+          } 
+        });
       },
       (err) => {
         if (err) {
@@ -185,16 +192,22 @@ ShopSchema.post("save", function (shop, next) {
           let productIdsInThisShop = sh.products.map((p, i) => {
             return {
               product: p.product,
-              quantity: p.quantity
+              quantity: p.quantity,
             };
           });
+          
           for (let j = 0; j < productIdsInThisShop.length; j++) {
             for (let k = 0; k < shop_products.length; k++) {
-              if (shop_products[k].product.toString() == productIdsInThisShop[j].product.toString()) {
+              if (
+                shop_products[k].product.toString() ==
+                productIdsInThisShop[j].product.toString()
+              ) {
                 if (shop_products[k].quantity) {
-                  shop_products[k].quantity = shop_products[k].quantity + productIdsInThisShop[j].quantity
+                  shop_products[k].quantity =
+                    shop_products[k].quantity +
+                    productIdsInThisShop[j].quantity;
                 } else {
-                  shop_products[k].quantity = productIdsInThisShop[j].quantity
+                  shop_products[k].quantity = productIdsInThisShop[j].quantity;
                 }
               }
             }
@@ -203,60 +216,69 @@ ShopSchema.post("save", function (shop, next) {
         async.eachSeries(
           shop_products,
           (shop_product, cb) => {
-            Product.find({ _id: shop_product.product }, (err, product) => {
+            Product.findOne({ _id: shop_product.product }, (err, product) => {
               if (err) return cb(err);
               if (shop_product.quantity > 0) {
-                Product.updateMany(
-                  { slug: product.slug },
-                  {
-                    $set: {
-                      "in_stock.tashkent_city": true,
-                    },
-                  },
-                  (err, r) => {
-                    if (err) {
-                      logger.error("cannot update", {
-                        function:
-                          "update in_stock.tashkent_city field of a product to true",
-                        shop,
-                      });
-                      return next(err);
-                    }
-                    logger.info(
-                      "in_stock.tashkent_city field of the product has been updated to true",
-                      {
-                        r,
-                      }
-                    );
-                    return cb(null);
-                  }
-                );
+                if (product.in_stock.tashkent_city) {
+                  return cb(null);
+                }
+                else {
+                   Product.updateMany(
+                     { slug: product.slug },
+                     {
+                       $set: {
+                         "in_stock.tashkent_city": true,
+                       },
+                     },
+                     (err, r) => {
+                       if (err) {
+                         logger.error("cannot update", {
+                           function:
+                             "update in_stock.tashkent_city field of a product to true",
+                           shop,
+                         });
+                         return next(err);
+                       }
+                       logger.info(
+                         "in_stock.tashkent_city field of the product has been updated to true",
+                         {
+                           r,
+                         }
+                       );
+                       return cb(null);
+                     }
+                   ); 
+                }
               } else {
-                Product.updateMany(
-                  { slug: product.slug },
-                  {
-                    $set: {
-                      "in_stock.tashkent_city": false,
+                if (product.in_stock.tashkent_city) {
+                  Product.updateMany(
+                    { slug: product.slug },
+                    {
+                      $set: {
+                        "in_stock.tashkent_city": false,
+                      },
                     },
-                  },
-                  (err, r) => {
-                    if (err) {
-                      logger.error("cannot update", {
-                        function:
-                          "update in_stock.tashkent_city field of a product to false",
-                        shop,
-                      });
-                      return next(err);
-                    }
-                    logger.info(
-                      "in_stock.tashkent_city field of the product has been updated to false",
-                      {
-                        r,
+                    (err, r) => {
+                      if (err) {
+                        logger.error("cannot update", {
+                          function:
+                            "update in_stock.tashkent_city field of a product to false",
+                          shop,
+                        });
+                        return next(err);
                       }
-                    );
-                    return cb(null);
-                  }
-                );
+                      logger.info(
+                        "in_stock.tashkent_city field of the product has been updated to false",
+                        {
+                          r,
+                        }
+                      );
+                      return cb(null);
+                    }
+                  );
+                } else {
+                  return cb(null);
+                }
               }
             });
           },
@@ -266,14 +288,14 @@ ShopSchema.post("save", function (shop, next) {
                 function: "product stock update failed",
                 shop,
               });
-              return next(err)
+              return next(err);
             }
             return next();
           }
         );
-      })
-  };
-  next();
+      });
+  }
+  return next();
 });
 
 module.exports = mongoose.model("Shop", ShopSchema);
