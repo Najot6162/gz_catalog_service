@@ -50,8 +50,8 @@ function main() {
 
       client.UpdateQuantity(
         {
-          shop_id: "my-shop2",
-          product_id: "6034e99ced84cb0511854c47",
+          shop_id: "magazin-1",
+          product_id: "5fbe734ed78a8400185997b2",
           quantity: 5,
         },
         (err, updateResponse) => {
