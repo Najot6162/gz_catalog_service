@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const slugUpdater = require("mongoose-slug-updater");
 const logger = require("./config/logger.js");
 const cfg = require("./config");
-const uploadCsv = require("./modules/hatch/update&upload");
+const uploadCsv = require("./modules/upload");
 const uploadSitemap = require("./modules/sitemap/upload_sitemap");
 
 mongoose.plugin(slugUpdater);
@@ -62,22 +62,39 @@ function main() {
             /* HATCH INTEGRATION PART */
             // Function to generate csv file with information of products and upload it to minio once a day
             const hatch = require("./modules/hatch/hatch_csv");
-            const sitemap = require('./modules/sitemap/sitemap.js');
 
-            setInterval(() => {
+            setInterval(function(){
                 hatch.convertToCsv().then((result) => {
                     console.log("Csv have been generated");
-                    uploadCsv.upload();
+                    uploadCsv.upload('hatch/samsung_products.csv', __dirname + '/modules/hatch/hatch.csv');
                 }).catch((err) => {
                     console.log("error on generating csv: " + err);
                 })
+            }, 24 * 3600 * 1000);
+
+            /* SITEMAP GENERATOR */
+            const sitemap = require('./modules/sitemap/sitemap.js');
+            setInterval(function(){
                 sitemap.generateXML().then((result) => {
                     console.log("SiteMap have been generated");
                     uploadSitemap.uploadSiteMap();
                 }).catch((err) => {
                     console.log("error on generating sitemap: " + err);
                 })
-            }, 24 * 3600 * 1000)    
+            }, 24 * 3600 * 1000);
+
+            /* UNISAVDO INTEGRATION PART */
+            // Function to generate csv file with information of products and upload it to minio once a day
+            const unisavdo = require("./modules/unisavdo/unisavdo_csv");
+            let unisavdoInterval = setInterval(function(){
+                console.log('generating unisavdo csv file');
+                unisavdo.convertToCsv().then((result) => {
+                    console.log("Csv have been generated");
+                    uploadCsv.upload('unisavdo/products.csv', __dirname + '/modules/unisavdo/products.csv');
+                }).catch((err) => {
+                    console.log("error on generating csv: " + err);
+                })
+            }, 10000);    
         }, 5000);
     });
 
