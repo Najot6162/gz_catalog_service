@@ -86,15 +86,15 @@ function main() {
             /* UNISAVDO INTEGRATION PART */
             // Function to generate csv file with information of products and upload it to minio once a day
             const unisavdo = require("./modules/unisavdo/unisavdo_csv");
-            let unisavdoInterval = setInterval(function(){
-                console.log('generating unisavdo csv file');
+            setInterval(function(){
+                logger.info('generating unisavdo csv file');
                 unisavdo.convertToCsv().then((result) => {
                     console.log("Csv have been generated");
                     uploadCsv.upload('unisavdo/products.csv', __dirname + '/modules/unisavdo/products.csv');
                 }).catch((err) => {
                     console.log("error on generating csv: " + err);
                 })
-            }, 10000);    
+            }, 24 * 3600 * 1000);   
         }, 5000);
     });
 

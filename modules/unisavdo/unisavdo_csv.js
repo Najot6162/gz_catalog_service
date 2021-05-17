@@ -27,8 +27,10 @@ const convertToCsv = () => {
             select: ["name"]
         }).exec((err, results) => {
             if (err) return reject(err);
+            console.log(results.length + " products found. Getting shops...");
             Shop.find({ lang: "ru" }, {products: 1},(err, shops) => {
                 if (err) return reject(err);
+                console.log(shops.length + " shops found");
                 for (let i = 0; i < shops.length; i++) {
                     if (shops[i].products) {
                         for (let j = 0; j < shops[i].products.length; j++) {
@@ -48,13 +50,13 @@ const convertToCsv = () => {
                 let obj = {};
                 for (let i = 0; i < results.length; i++) {
                     obj = {
-                        "Бренд": results[i].brand.name,
-                        "MPN": results[i].code.length ? results[i].code : " ",
+                        "Бренд": results[i].brand ? results[i].brand.name : "-",
+                        "MPN": results[i].code.length ? results[i].code : "-",
                         "Наименование продукта": results[i].name,
                         "Цена": results[i].price.price,
                         "URL-адрес страницы": "https://goodzone.uz/product/" + results[i].slug,
                         "Данные о наличии продукта": results[i].quantity ? results[i].quantity : 0,
-                        "Категория товара": results[i].category.name,
+                        "Категория товара": results[i].category ? results[i].category.name : "-",
                         "Оценка товара": results[i].average_rate,
                         "Количество отзывов": results[i].reviews_count
                     }
