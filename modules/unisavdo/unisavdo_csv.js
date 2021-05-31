@@ -2,6 +2,7 @@ const Json2csvParser = require("json2csv").Parser;
 const { reject } = require("async");
 const fs = require("fs");
 const { resolve } = require("path");
+const config = require("../../config");
 const Product = require("../../models/Product");
 const Shop = require("../../models/Shop");
 const convertToCsv = () => {
@@ -18,7 +19,9 @@ const convertToCsv = () => {
             category: 1,
             average_rate: 1,
             reviews_count: 1,
-            code: 1
+            code: 1,
+            image: 1,
+            description: 1
         }).populate({
             path: "category",
             select: ["name"]
@@ -55,6 +58,8 @@ const convertToCsv = () => {
                         "Наименование продукта": results[i].name,
                         "Цена": results[i].price.price,
                         "URL-адрес страницы": "https://goodzone.uz/product/" + results[i].slug,
+                        "URL изображения": results[i].image ? (config.cloudUrl + results[i].image) : "",
+                        "Описание": results[i].description,
                         "Данные о наличии продукта": results[i].quantity ? results[i].quantity : 0,
                         "Категория товара": results[i].category ? results[i].category.name : "-",
                         "Оценка товара": results[i].average_rate,
@@ -62,17 +67,17 @@ const convertToCsv = () => {
                     }
                     arr.push(obj);
                 }
-                const csvFields = ["Бренд", "MPN", "Наименование продукта", "Цена", "URL-адрес страницы", "Данные о наличии продукта", "Категория товара", "Оценка товара", "Количество отзывов"];
+                const csvFields = ["Бренд", "MPN", "Наименование продукта", "Цена", "URL-адрес страницы", "URL изображения", "Описание", "Данные о наличии продукта", "Категория товара", "Оценка товара", "Количество отзывов"];
                 const json2csvParser = new Json2csvParser({ csvFields });
                 const csv = json2csvParser.parse(arr);
 
+                console.log("writing to csv ...")
                 fs.writeFile(__dirname+'/products.csv', csv, function (err) {
-                    console.log("writing to csv ...")
                     if (err) return reject(err);
                     console.log('file saved');
                     return resolve(results);
                 });
-            })
+            });
         });
     });
 
