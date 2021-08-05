@@ -37,6 +37,7 @@ message CreateProductRequest {
     int64  order = 13;
     string image = 14;
     string lang = 15;
+    int64  weight = 16;
 }
 
 message UpdateProductRequest {
@@ -61,6 +62,7 @@ message UpdateProductRequest {
     int64  order = 14;
     string image = 15;
     string lang = 16;
+    int64  weight = 17;
 }
 
 message UpdateProductPriceRequest {
@@ -118,6 +120,7 @@ message FindProductsRequest {
     bool   popular = 13;
     repeated Property properties = 14;
     bool in_stock = 15;
+    int64  weight = 16;
 }
 
 message FindProductsResponse {
