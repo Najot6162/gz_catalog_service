@@ -1,17 +1,31 @@
-prod:
+services:
+  - name: gitlab.udevs.io:5050/docker/docker:dind
+    alias: docker
+
+stages:
+  - build
+  - deploy
+
+before_script:
+  - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+  - apk update && apk --no-cache --update add build-base openssh curl
+
+build-image:
   stage: build
-  before_script:
+  script:
+    - make build-image TAG=$CI_PIPELINE_IID REGISTRY=$CI_REGISTRY PROJECT_NAME=$CI_PROJECT_NAMESPACE
+    - make push-image TAG=$CI_PIPELINE_IID REGISTRY=$CI_REGISTRY PROJECT_NAME=$CI_PROJECT_NAMESPACE
+  only:
+    - master
+deploy-prod:
+  stage: deploy
+  before_script: 
     - eval $(ssh-agent -s)
     - echo "$GITLAB_PRIVATE_KEY" | tr -d '\r' | ssh-add -
     - mkdir -p ~/.ssh
     - chmod 700 ~/.ssh
-    - echo $REGISTRY $REGISTRY_USER $REGISTRY_PASSWORD
-    - docker login $REGISTRY --username $REGISTRY_USER --password $REGISTRY_PASSWORD
   script:
-    - make build-image TAG=$CI_PIPELINE_IID REGISTRY=$REGISTRY
-    - make push-image TAG=$CI_PIPELINE_IID REGISTRY=$REGISTRY
-    - source .build_info
     - ssh -o StrictHostKeyChecking=no $GOODZONE_PROD_USER@$GOODZONE_PROD_HOST 'docker service update --with-registry-auth
-      --image '$REGISTRY'/'$PROJECT_NAME'/'$APP'/'$APP':'$CI_PIPELINE_IID' '$APP''
+      --image '$CI_REGISTRY'/'$CI_PROJECT_NAMESPACE'/'$CI_PROJECT_NAME'/'$CI_PROJECT_NAME':'$CI_PIPELINE_IID' '$CI_PROJECT_NAME''
   only:
     - master
