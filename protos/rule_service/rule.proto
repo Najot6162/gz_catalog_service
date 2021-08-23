@@ -1,0 +1,82 @@
+syntax = "proto3";
+
+package rule_service;
+
+option go_package="genproto/rule_service";
+
+
+
+service RuleService {
+    rpc Create(RuleCreateRequest) returns (RuleResponse) {}
+    rpc Get(GetRequest) returns (RuleResponse) {}
+    rpc Find(RuleFindRequest) returns (RulesResponse) {}
+    rpc Update(RuleCreateRequest) returns (RuleResponse) {}
+    rpc Delete(DeleteRequest) returns (Empty) {}
+}
+message Options {
+    string id=1;
+    string name=2;
+}
+message Rule {
+    string id = 1;
+    repeated Options category = 2;
+    repeated Options brand = 3;
+    repeated Options model = 4;
+    int64 discount = 5;
+    int64 cash_back = 6;
+    bool free_delivery = 7;
+    string created_at = 8;
+    string updated_at = 9;  
+    int64  order = 10;  
+    bool   active = 11;
+    bool   inactive = 12; 
+    string start_time = 13;
+    string end_time = 14;      
+    string lang = 15;                                                                                              
+}
+
+message RuleCreateRequest {
+    string id = 1;
+    repeated Options category = 2;
+    repeated Options brand = 3;
+    repeated Options model = 4;
+    int64 discount = 5;
+    int64 cash_back = 6;
+    bool free_delivery = 7;
+    string created_at = 8;
+    string updated_at = 9;  
+    int64  order = 10;   
+    bool   active = 11;
+    bool   inactive = 12; 
+    string start_time = 13;
+    string end_time = 14;  
+    string lang = 15;     
+}
+message GetRequest {
+    string id = 1;
+}
+message RuleResponse {
+    Rule rule = 1;
+}
+message DeleteRequest {
+   string id = 1;
+}
+
+message Empty {
+}
+
+
+
+message RuleFindRequest {
+    int64  page = 1;
+    string search = 2;
+    int64  limit = 3;
+    string sort = 4;
+    string lang = 5;
+    bool   active = 7;
+    bool   inactive = 8;  
+}
+message RulesResponse {
+    repeated Rule rules = 1;
+    int64 count = 2;
+}

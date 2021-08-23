@@ -96,6 +96,20 @@ var ProductSchema = new mongoose.Schema(
       type: String,
       default: "",
     },
+    rules:{
+      discount:{
+        type: Number,
+        default: 0
+    },
+    cash_back:{
+        type: Number,
+        default: 0
+    },
+    free_delivery: {
+        type : Boolean,
+        default: true
+    },
+    },
     meta: {
       title: {
         type: String,

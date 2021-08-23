@@ -6,6 +6,7 @@ const logger = require("./config/logger.js");
 const cfg = require("./config");
 const uploadCsv = require("./modules/upload");
 const uploadSitemap = require("./modules/sitemap/upload_sitemap");
+const rulesCronjop = require("./modules/rules")
 
 mongoose.plugin(slugUpdater);
 
@@ -45,6 +46,7 @@ function main() {
         mongoDBUrl, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
+        useFindAndModify:false
     })
     .catch(err =>{
         logger.error("There is an error in connecting db (" + mongoDBUrl + "): " + err.message)
@@ -96,6 +98,11 @@ function main() {
                 })
             }, 24 * 3600 * 1000);   
         }, 5000);
+        //Strarting Rule Cronjop 
+        setInterval(function(){
+            logger.info("starting rule cronjop...")
+            rulesCronjop.Rules()
+        }, 12 * 3600 * 1000)
     });
 
     // gRPC server
