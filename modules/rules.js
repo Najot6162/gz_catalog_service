@@ -1,6 +1,7 @@
 const grpc = require("grpc");
 const protoLoader = require("@grpc/proto-loader");
 const Product = require('../models/Product')
+const cfg = require("../config/index")
 
 const PROTO_PATH = __dirname + "../../protos/rule_service/rule.proto";
 const packageDefinition = protoLoader.loadSync(PROTO_PATH, {
@@ -18,7 +19,7 @@ const Rules = async () => {
     products = await Product.find().limit(5)
 
     var client = new RuleProto.RuleService(
-        "localhost:7007",
+        cfg.ruleServicePort,
         grpc.credentials.createInsecure()
     );
     // create server connection

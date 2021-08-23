@@ -12,7 +12,9 @@ const config = {
     minioEndpoint: getConf('MINIO_ENDPOINT', 'cdn.goodzone.uz'),
     minioPort: getConf('MINIO_PORT', 9001),
     minioAccessKeyID: getConf('MINIO_ACCESS_KEY', 'YdrxMxxWQ4B6QXXYYGJbFM6EGttGKCBpUL2qrkV3nV6Kd8Gy5ajHqjy4aqpjtACT'),
-    minioSecretAccesKey: getConf('MINIO_SECRET_KEY', 'Hfdxjym6QUjaPUaS2ygf3754xdPRHVunbXhRvncaQXXrnG2kg4dYaquc8WN6KgnJ')
+    minioSecretAccesKey: getConf('MINIO_SECRET_KEY', 'Hfdxjym6QUjaPUaS2ygf3754xdPRHVunbXhRvncaQXXrnG2kg4dYaquc8WN6KgnJ'),
+    ruleServiceHost: getConf('RuleServiceHost', "rules_service"),
+    ruleServicePort: getConf('RuleServicePort',"7007")
 }
 
 function getConf(name, def = ''){
