@@ -101,11 +101,11 @@ var ProductSchema = new mongoose.Schema(
         type: Number,
         default: 0
     },
-    cash_back:{
+     cash_back:{
         type: Number,
         default: 0
     },
-    free_delivery: {
+     free_delivery: {
         type : Boolean,
         default: true
     },

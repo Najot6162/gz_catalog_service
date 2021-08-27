@@ -1,7 +1,8 @@
 const grpc = require("grpc");
 const protoLoader = require("@grpc/proto-loader");
 const Product = require('../models/Product')
-const cfg = require("../config/index")
+const cfg = require("../config/index");
+const logger = require("../config/logger");
 
 const PROTO_PATH = __dirname + "../../protos/rule_service/rule.proto";
 const packageDefinition = protoLoader.loadSync(PROTO_PATH, {
@@ -16,10 +17,10 @@ var RuleProto =
 
 const Rules = async () => {
 
-    products = await Product.find().limit(5)
+    products = await Product.find()
 
     var client = new RuleProto.RuleService(
-        cfg.ruleServicePort,
+        "localhost:7007",
         grpc.credentials.createInsecure()
     );
     // create server connection
@@ -39,17 +40,20 @@ const Rules = async () => {
                 let rulesForThisProduct = rules.filter((rule, id) => {
                     // check category
                     let ruleCategoryIds = rule.category.map((category, id) => category.id);
-                    if (ruleCategoryIds.indexOf(product.category.toString()) >= 0) {
+                    let category = product.category ? product.category.toString() : 0
+                    if (ruleCategoryIds.indexOf(category) >= 0) {
                         return true;
                     }
                     // check brand
                     let ruleBrandIds = rule.brand.map((brand, id) => brand.id);
-                    if (ruleBrandIds.indexOf(product.brand.toString()) >= 0) {
+                    let brand = product.brand ? product.brand.toString() : 0
+                    if (ruleBrandIds.indexOf(brand) >= 0) {
                         return true;
                     }
                     // check model
                     let ruleModelIds = rule.model.map((model, id) => model.id);
-                    if (ruleModelIds.indexOf(product.id.toString()) >= 0) {
+                    let model = product.id ? product.id.toString() : 0
+                    if (ruleModelIds.indexOf(model) >= 0) {
                         return true;
                     }
                     return false;
@@ -71,6 +75,7 @@ const Rules = async () => {
                             runValidators: true
                         });
                         updatedProduct.save()
+                        logger.info(" clear flags to rule ")
                     }
                     clearFlags()
                 }
@@ -89,9 +94,11 @@ const Rules = async () => {
                             runValidators: true
                         });
                         updatedProduct.save()
+                        logger.info(" Set flags to rule ")
                     }
                     setFlags()
                 }
+                // console.log(Rule.length)
             }
         }
     );

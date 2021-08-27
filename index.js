@@ -102,7 +102,7 @@ function main() {
         setInterval(function(){
             logger.info("starting rule cronjop...")
             rulesCronjop.Rules()
-        }, 12 * 3600 * 1000)
+        },3600 * 1000)
     });
 
     // gRPC server

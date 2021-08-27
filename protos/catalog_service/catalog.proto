@@ -50,7 +50,7 @@ message Product {
     float average_rate = 22;
     int64 reviews_count = 23;
     InStock in_stock = 24;
-    int64 weight = 25;
+    Rule rules = 25;
 }
 
 message ProductSlim {
@@ -83,7 +83,7 @@ message ProductSlim {
     int64 external_id = 14;
     string code = 15;
     InStock in_stock = 16;
-    int64 weight = 17;
+    Rule rules = 17;
 }
 
 message Category {
@@ -175,7 +175,6 @@ message ProductProperty {
     Unit   unit = 9;
     string created_at = 10;
     string updated_at = 11;
-    int64 weight = 12;
 }
 
 message PriceType {
@@ -296,4 +295,11 @@ message DeleteRequest {
 
 message Empty {
 
+}
+
+message Rule {
+    int64 discount = 1;
+    int64 cash_back = 2;
+    bool free_delivery = 3;
+                                                                                            
 }
