@@ -104,6 +104,8 @@ function main() {
             rulesCronjop.Rules()
         },3600 * 1000)
     });
+    logger.info("starting rule cronjop...")
+            rulesCronjop.Rules()
 
     // gRPC server
     var server = new grpc.Server();
