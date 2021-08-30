@@ -17,7 +17,7 @@ var RuleProto =
 
 const Rules = async () => {
 
-    products = await Product.find().limit(5)
+    products = await Product.find()
 
     var client = new RuleProto.RuleService(
           `${cfg.ruleServiceHost}:${cfg.ruleServicePort}`,
