@@ -20,7 +20,7 @@ const Rules = async () => {
     products = await Product.find()
 
     var client = new RuleProto.RuleService(
-        "localhost:7007",
+          `${cfg.ruleServiceHost}:${cfg.ruleServicePort}`,
         grpc.credentials.createInsecure()
     );
     // create server connection
