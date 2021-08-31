@@ -149,9 +149,6 @@ var ProductSchema = new mongoose.Schema(
     updated_at: {
       type: Date,
     },
-    weight : {
-      type: Number,
-    },
   },
   {
     minimize: false,

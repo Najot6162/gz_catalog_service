@@ -23,7 +23,6 @@ let productStorage = {
       p.category = b.category_id || null;
       p.brand = b.brand_id || null;
       p.lang = b.lang ? b.lang : cnf.lang;
-      p.weight = b.weight;
       p.additional_categories = b.additional_categories
         .split(",")
         .filter((f) => {
@@ -150,7 +149,6 @@ let productStorage = {
         product.name = b.name;
         product.category = b.category_id || null;
         product.brand = b.brand_id || null;
-        product.weight = b.weight;
         product.additional_categories = b.additional_categories
           .split(",")
           .filter((f) => {
