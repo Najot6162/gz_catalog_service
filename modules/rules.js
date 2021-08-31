@@ -17,10 +17,14 @@ var RuleProto =
 
 const Rules = async () => {
 
-    products = await Product.find()
+    let query = {
+        active: true,
+        lang: "ru"
+    }
+    products = await Product.find(query)
 
     var client = new RuleProto.RuleService(
-          `${cfg.ruleServiceHost}:${cfg.ruleServicePort}`,
+        `${cfg.ruleServiceHost}:${cfg.ruleServicePort}`,
         grpc.credentials.createInsecure()
     );
     // create server connection
@@ -61,9 +65,22 @@ const Rules = async () => {
 
                 // get first rule
                 let Rule = rulesForThisProduct[0]
+                
+                //Check active or inactive 
+                if (Rule) {
+                    let start_time = new Date(Rule.start_time).getTime()
+                    let end_time = new Date(Rule.end_time).getTime()
+                    let current_time = Date.now()
 
-                // if there is no rule, clear flags
-                if (!Rule) {
+                    if (start_time <= current_time && current_time <= end_time) {
+                        Rule.active = true;
+                    } else {
+                        Rule.active = false;
+                    }
+                }
+
+                // if there is no rule or active false , clear flags
+                if (!Rule || Rule.active == false) {
                     const clearFlags = async () => {
                         product.rules = {
                             discount: 0,
@@ -75,6 +92,7 @@ const Rules = async () => {
                             runValidators: true
                         });
                         updatedProduct.save()
+
                         logger.info(" clear flags to rule ")
                     }
                     clearFlags()
@@ -84,6 +102,7 @@ const Rules = async () => {
                 // set flags
                 if (Rule) {
                     const setFlags = async () => {
+
                         product.rules = {
                             discount: Rule.discount,
                             cash_back: Rule.cash_back,
