@@ -19,7 +19,6 @@ const Rules = async () => {
 
     let query = {
         active: true,
-        lang: "ru"
     }
     products = await Product.find(query)
 
