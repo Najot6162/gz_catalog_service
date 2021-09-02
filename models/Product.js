@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 const Types = mongoose.Schema.Types;
+slug = require('mongoose-slug-updater'),
+mongoose.plugin(slug)
 
 var ProductSchema = new mongoose.Schema(
   {
