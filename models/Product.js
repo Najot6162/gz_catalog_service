@@ -107,7 +107,7 @@ var ProductSchema = new mongoose.Schema(
     },
      free_delivery: {
         type : Boolean,
-        default: true
+        default: false
     },
     },
     meta: {
