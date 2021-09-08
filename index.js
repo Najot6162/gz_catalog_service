@@ -99,8 +99,7 @@ function main() {
             }, 24 * 3600 * 1000);   
         }, 5000);
         //Strarting Rule Cronjop 
-        setInterval(function(){
-            logger.info("starting rule cronjop...")
+        setInterval(function(){ 
             rulesCronjop.Rules()
         },3600 * 1000)
     });
