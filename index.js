@@ -43,15 +43,15 @@ function main() {
     logger.info("Connecting to db: " + mongoDBUrl);
 
     mongoose.connect(
-        mongoDBUrl, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-        useFindAndModify:false
-    })
-    .catch(err =>{
-        logger.error("There is an error in connecting db (" + mongoDBUrl + "): " + err.message)
-        process.exit()
-    })
+            mongoDBUrl, {
+                useNewUrlParser: true,
+                useUnifiedTopology: true,
+                useFindAndModify: false
+            })
+        .catch(err => {
+            logger.error("There is an error in connecting db (" + mongoDBUrl + "): " + err.message)
+            process.exit()
+        })
 
     mongoose.connection.once("open", function () {
         logger.info("Connected to the databasee");
@@ -60,12 +60,12 @@ function main() {
 
             // DATABASE MIGRATIONS & OPERATIONS
             require('./modules/migrations');
-            
+
             /* HATCH INTEGRATION PART */
             // Function to generate csv file with information of products and upload it to minio once a day
             const hatch = require("./modules/hatch/hatch_csv");
 
-            setInterval(function(){
+            setInterval(function () {
                 hatch.convertToCsv().then((result) => {
                     console.log("Csv have been generated");
                     uploadCsv.upload('hatch/samsung_products.csv', __dirname + '/modules/hatch/hatch.csv');
@@ -76,19 +76,21 @@ function main() {
 
             /* SITEMAP GENERATOR */
             const sitemap = require('./modules/sitemap/sitemap.js');
-            setInterval(function(){
+            setInterval(function () {
                 sitemap.generateXML().then((result) => {
                     console.log("SiteMap have been generated");
-                    uploadSitemap.uploadSiteMap();
                 }).catch((err) => {
                     console.log("error on generating sitemap: " + err);
                 })
-            }, 24 * 3600 * 1000);
+            }, 23 * 3600 * 1000);
+            setInterval(function () {
+                uploadSitemap.uploadSiteMap();
+            }, 24 * 3600 * 1000)
 
             /* UNISAVDO INTEGRATION PART */
             // Function to generate csv file with information of products and upload it to minio once a day
             const unisavdo = require("./modules/unisavdo/unisavdo_csv");
-            setInterval(function(){
+            setInterval(function () {
                 logger.info('generating unisavdo csv file');
                 unisavdo.convertToCsv().then((result) => {
                     console.log("Csv have been generated");
@@ -96,14 +98,13 @@ function main() {
                 }).catch((err) => {
                     console.log("error on generating csv: " + err);
                 })
-            }, 24 * 3600 * 1000);   
+            }, 24 * 3600 * 1000);
         }, 5000);
         //Strarting Rule Cronjop 
-        setInterval(function(){ 
+        setInterval(function () {
             rulesCronjop.Rules()
-        },3600 * 1000)
+        }, 3600 * 1000)
     });
-
     // gRPC server
     var server = new grpc.Server();
 
@@ -136,8 +137,8 @@ function main() {
         require("./services/feedback")
     );
     server.addService(
-      catalogProto.FeaturedListService.service,
-      require("./services/featured_list")
+        catalogProto.FeaturedListService.service,
+        require("./services/featured_list")
     );
 
     server.bind(
