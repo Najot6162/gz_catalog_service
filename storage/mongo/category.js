@@ -374,7 +374,8 @@ let categoryStorage = {
                       slug: 1,
                       image: 1,
                       price: 1,
-                      prices: 1
+                      prices: 1,
+                      rules:1
                     }
                   }]
                 },
@@ -418,7 +419,8 @@ let categoryStorage = {
                           slug: 1,
                           image: 1,
                           price: 1,
-                          prices: 1
+                          prices: 1,
+                          rules:1
                         }
                       }]
                     }

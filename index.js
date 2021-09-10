@@ -79,11 +79,14 @@ function main() {
             setInterval(function(){
                 sitemap.generateXML().then((result) => {
                     console.log("SiteMap have been generated");
-                    uploadSitemap.uploadSiteMap();
                 }).catch((err) => {
                     console.log("error on generating sitemap: " + err);
                 })
-            }, 24 * 3600 * 1000);
+            }, 23 * 3600 * 1000);
+
+            setInterval(function () {
+                uploadSitemap.uploadSiteMap();
+            }, 24 * 3600 * 1000)
 
             /* UNISAVDO INTEGRATION PART */
             // Function to generate csv file with information of products and upload it to minio once a day
