@@ -458,7 +458,6 @@ let categoryStorage = {
 
         for(let i = 0; i < cat.children.length; i++){
           let c = cat.children[i];
-
           for(j = 0; j < c.children.length; j++){
             let grandChild = c.children[j];
             categories.push({
@@ -488,7 +487,6 @@ let categoryStorage = {
             }))
           });
         }
-
         return resolve({
           categories: categories.filter((ch, i) => ch.products.length)
         });
