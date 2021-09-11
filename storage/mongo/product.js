@@ -555,7 +555,7 @@ let productStorage = {
           }
 
           if (req.onlyRelatedProducts) {
-            getOnlyRelatedProducts(product._id, 10)
+            getOnlyRelatedProducts(product._id, 50)
               .then((related_products) => {
                 product.related_products = related_products;
                 return resolve(product);
@@ -569,7 +569,7 @@ let productStorage = {
                 return resolve(product);
               });
           } else {
-            getRelatedProducts(product._id, 10)
+            getRelatedProducts(product._id, 50)
               .then((related_products) => {
                 product.related_products = related_products;
                 return resolve(product);
@@ -1002,7 +1002,7 @@ let productStorage = {
   },
 };
 
-const getRelatedProducts = (product_id = "", limit = 10) => {
+const getRelatedProducts = (product_id = "", limit = 50) => {
   return new Promise((resolve, reject) => {
     let related_products = [];
     Product.findById(product_id, (err, p) => {
@@ -1125,7 +1125,7 @@ const getRelatedProducts = (product_id = "", limit = 10) => {
   });
 };
 
-const getOnlyRelatedProducts = (product_id = "", limit = 10) => {
+const getOnlyRelatedProducts = (product_id = "", limit = 50) => {
   return new Promise((resolve, reject) => {
     let related_products = [];
     Product.findById(product_id, (err, p) => {
