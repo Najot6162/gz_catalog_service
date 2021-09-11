@@ -1002,7 +1002,7 @@ let productStorage = {
   },
 };
 
-const getRelatedProducts = (product_id = "", limit = 50) => {
+const getRelatedProducts = (product_id = "", limit = 10) => {
   return new Promise((resolve, reject) => {
     let related_products = [];
     Product.findById(product_id, (err, p) => {
