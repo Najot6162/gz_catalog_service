@@ -23,13 +23,12 @@ const reviewService = {
     },
 
     Find: (call, callback) => {
-        logger.debug('review Find Request', {
+        logger.debug('Review Find Request', {
             label: 'review',
             request: call.request
         });
-        if (call.request.category) {
-            reviewStorage.findByCategory(call.request).then((result) => {
-                callback(null, {
+       reviewStorage.find(call.request).then((result) => {
+                callback(null,{
                     reviews: result.reviews,
                     count: result.count
                 });
@@ -43,24 +42,8 @@ const reviewService = {
                     message: err.message
                 });
             });
-        } else {
-            reviewStorage.find(call.request).then((result) => {
-                callback(null, {
-                    reveiws: result.reviews,
-                    count: result.count
-                });
-            }).catch((err) => {
-                logger.error(err.message, {
-                    function: 'find reviews',
-                    request: call.request
-                });
-                callback({
-                    code: grpc.status.INTERNAL,
-                    message: err.message
-                });
-            });
-        }
-    },
+           
+        },
  
 }
 
