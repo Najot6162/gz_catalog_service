@@ -439,6 +439,7 @@ let productStorage = {
       // preparing options
       let options = {
         skip: ((filters.page / 1 - 1) * filters.limit) / 1,
+        limit: filters.limit / 1 ? filters.limit / 1 : 50,
         sort: { created_at: -1 },
       };
 
