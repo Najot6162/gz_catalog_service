@@ -117,10 +117,10 @@ function main() {
         catalogProto.ProductService.service,
         require("./services/product.js")
     );
-    // server.addService(
-    //     catalogProto.BrandService.service,
-    //     require("./services/brand.js")
-    // );
+    server.addService(
+        catalogProto.BrandService.service,
+        require("./services/brand.js")
+    );
     server.addService(
         catalogProto.ProductPropertyService.service,
         require("./services/product_property")
