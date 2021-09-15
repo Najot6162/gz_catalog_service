@@ -44,7 +44,24 @@ const reviewService = {
             });
            
         },
- 
+    Delete: (call, callback) => {
+            logger.debug('Review Delete Request', {
+                label: 'review',
+                request: call.request
+            });
+            reviewStorage.delete(call.request).then((result) => {
+                callback(null);
+            }).catch((err) => {
+                logger.error(err.message, {
+                    function: 'delete review',
+                    request: call.request
+                });
+                callback({
+                    code: grpc.status.INTERNAL,
+                    message: err.message
+                });
+            });
+        }
 }
 
 module.exports = reviewService;

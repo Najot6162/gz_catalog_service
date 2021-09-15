@@ -71,7 +71,16 @@ let reviewStorage = {
             // }
         });
     },
+    delete: (req) => {
+        return new Promise((resolve, reject) => {
+            if (!req.id) return reject(new Error("ID is not provided"));
 
+            Review.findByIdAndDelete(req.id, (err, result) => {
+                if (err) return reject(err);
+                return resolve(result);
+            });
+        });
+    },
 
 
 

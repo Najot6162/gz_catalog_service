@@ -8,6 +8,7 @@ import "catalog.proto";
 service ReviewService {
     rpc Create(ReviewCreateRequest) returns (ReviewRespone) {}
     rpc Find(ReviewFindRequest) returns (ReviewsResponse) {}
+    rpc Delete(ReviewDeleteRequest) returns (Empty) {}
 }
 
 message ReviewFindRequest {
@@ -46,6 +47,10 @@ message ReviewRespone{
 message ReviewsResponse {
     repeated Review reviews = 1;
     int64 count = 2;
+}
+
+message ReviewDeleteRequest {
+   string id = 1;
 }
 
 
