@@ -296,9 +296,9 @@ message DeleteRequest {
 message Empty {
 
 }
-
 message Rule {
     int64 discount = 1;
     int64 cash_back = 2;
-    bool free_delivery = 3;                                                                                         
+    bool free_delivery = 3;
+                                                                                            
 }

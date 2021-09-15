@@ -11,4 +11,5 @@ import "product_property_group.proto";
 import "shop.proto";
 import "feedback.proto";
 import "featured_list.proto";
+import "review.proto";
 

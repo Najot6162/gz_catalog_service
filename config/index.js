@@ -13,7 +13,7 @@ const config = {
     minioPort: getConf('MINIO_PORT', 9001),
     minioAccessKeyID: getConf('MINIO_ACCESS_KEY', 'YdrxMxxWQ4B6QXXYYGJbFM6EGttGKCBpUL2qrkV3nV6Kd8Gy5ajHqjy4aqpjtACT'),
     minioSecretAccesKey: getConf('MINIO_SECRET_KEY', 'Hfdxjym6QUjaPUaS2ygf3754xdPRHVunbXhRvncaQXXrnG2kg4dYaquc8WN6KgnJ'),
-    ruleServiceHost: getConf('RULE_SERVICE_HOST', "rules_service"),
+    ruleServiceHost: getConf('RULE_SERVICE_HOST', "localhost"),
     ruleServicePort: getConf('RULE_SERVICE_PORT',"7007")
 }
 

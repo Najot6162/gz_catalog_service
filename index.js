@@ -10,7 +10,6 @@ const rulesCronjop = require("./modules/rules")
 
 mongoose.plugin(slugUpdater);
 
-
 // loading proto file
 const PROTO_URL = __dirname + "/protos/catalog_service/catalog_service.proto";
 const packageDefinition = protoLoader.loadSync(PROTO_URL, {
@@ -103,7 +102,6 @@ function main() {
         }, 5000);
         //Strarting Rule Cronjop 
         setInterval(function(){
-            logger.info("starting rule cronjop...")
             rulesCronjop.Rules()
         },3600 * 1000)
     });
@@ -119,10 +117,10 @@ function main() {
         catalogProto.ProductService.service,
         require("./services/product.js")
     );
-    server.addService(
-        catalogProto.BrandService.service,
-        require("./services/brand.js")
-    );
+    // server.addService(
+    //     catalogProto.BrandService.service,
+    //     require("./services/brand.js")
+    // );
     server.addService(
         catalogProto.ProductPropertyService.service,
         require("./services/product_property")
@@ -142,6 +140,11 @@ function main() {
     server.addService(
       catalogProto.FeaturedListService.service,
       require("./services/featured_list")
+    );
+
+    server.addService(
+        catalogProto.ReviewService.service,
+        require("./services/review.js")
     );
 
     server.bind(
