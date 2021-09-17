@@ -10,7 +10,7 @@ var ReviewSchema = new mongoose.Schema({
         type: String
     },
     phone: {
-        type: Number
+        type: String
     },
     shop: {
         type: String,
