@@ -106,6 +106,7 @@ function main() {
         },3600 * 1000)
     });
 
+
     // gRPC server
     var server = new grpc.Server();
 

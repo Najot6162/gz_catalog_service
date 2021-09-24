@@ -23,6 +23,17 @@ FeaturedListSchema = new mongoose.Schema(
     order: {
       type: Number,
     },
+    properties: [
+      {
+        property: {
+          type: Types.ObjectId,
+          ref: "ProductProperty",
+        },
+        value: {
+          type: String,
+        },
+      },
+    ],
     active: {
       type: Boolean,
       default: false,

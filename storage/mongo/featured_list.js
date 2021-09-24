@@ -180,6 +180,9 @@ let featuredListStore = {
             path: "category",
           },
         })
+        .populate({
+          path: "properties.property",
+        })  
         .exec((err, result) => {
           if (err) return reject(err);
           if (!result)
@@ -194,6 +197,7 @@ let featuredListStore = {
                 ? cnf.cloudUrl + result.products[i].image
                 : "";
             }
+            console.log(result)
             return resolve(result);
           }
         });
@@ -245,6 +249,9 @@ let featuredListStore = {
                   path: "category",
                 },
               })
+              .populate({
+                path: "properties.property",
+              }) 
               .exec((err, featured_lists) => {
                 if (err) return reject(err);
                 return cb(null, featured_lists || []);
@@ -275,6 +282,7 @@ let featuredListStore = {
             };
             return simpleObject;
           });
+          console.log(featured_lists)
           return resolve({
             featured_lists,
             count: results[1],
