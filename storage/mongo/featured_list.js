@@ -316,9 +316,7 @@ let featuredListStore = {
       )
         .populate({
           path: "products",
-          populate: {
-            path: "category",
-          },
+          populate: {path: "category"},
         })
         .populate({
           path:"products",

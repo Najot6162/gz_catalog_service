@@ -473,6 +473,9 @@ let productStorage = {
               .populate({
                 path: "brand",
               })
+              .populate({
+                path: "properties.property",
+              })
               .exec((err, products) => {
                 if (err) return reject(err);
                 return cb(null, products || []);
@@ -719,6 +722,9 @@ let productStorage = {
                 .populate({
                   path: "brand",
                 })
+                .populate({
+                  path: "properties.property",
+                })
                 .exec((err, products_regex) => {
                   if (err) return reject(err);
                   return cb(null, products_regex || []);
@@ -756,6 +762,9 @@ let productStorage = {
                     })
                     .populate({
                       path: "brand",
+                    })
+                    .populate({
+                      path: "properties.property",
                     })
                     .exec((err, products_regex) => {
                       if (err) return reject(err);
@@ -841,6 +850,9 @@ let productStorage = {
               })
               .populate({
                 path: "brand",
+              })
+              .populate({
+                path: "properties.property",
               })
               .exec((err, products) => {
                 if (err) return reject(err);
