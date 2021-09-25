@@ -320,6 +320,11 @@ let featuredListStore = {
             path: "category",
           },
         })
+        .populate({
+          path:"products",
+          populate:{path: "properties.property",
+          },
+        })
         .exec((err, results) => {
           if (err) {
             logger.error(err.message, {
