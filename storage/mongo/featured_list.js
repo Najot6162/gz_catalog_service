@@ -322,10 +322,15 @@ let featuredListStore = {
         })
         .populate({
           path:"products",
+          populate:{path: "brand"},
+        })
+        .populate({
+          path:"products",
           populate:{path: "properties.property",
           },
         })
         .exec((err, results) => {
+          console.log(results[0].products);
           if (err) {
             logger.error(err.message, {
               function: "getting featured lists",
