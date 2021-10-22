@@ -197,7 +197,6 @@ let featuredListStore = {
                 ? cnf.cloudUrl + result.products[i].image
                 : "";
             }
-            console.log(result)
             return resolve(result);
           }
         });
@@ -282,7 +281,6 @@ let featuredListStore = {
             };
             return simpleObject;
           });
-          console.log(featured_lists)
           return resolve({
             featured_lists,
             count: results[1],
@@ -328,7 +326,6 @@ let featuredListStore = {
           },
         })
         .exec((err, results) => {
-          console.log(results[0].products);
           if (err) {
             logger.error(err.message, {
               function: "getting featured lists",

@@ -171,7 +171,6 @@ let feedbackStorage = {
             let query = {};
             if (req.id) query._id = req.id;
             Feedback.findOne(query, (err, br) => {
-                console.log(br);
                 if (err) return reject(err);
                 if (!br) return reject(new Error("Document not found"));
                 return resolve(br);
