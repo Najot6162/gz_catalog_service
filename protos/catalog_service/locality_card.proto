@@ -1,0 +1,38 @@
+syntax="proto3";
+
+package catalog;
+option go_package="genproto/catalog_service";
+
+import "catalog.proto";
+
+service LocalityCardService {
+    rpc CheckCustomer(Customer) returns (Customer){}
+    rpc CreateVerificationCode(PhoneVerification) returns(PhoneVerification){}
+    rpc CheckVerificationCode(PhoneVerification) returns (PhoneVerificationCodeResponse) {}
+    rpc GetCustomerCard(GetCustomerCardRequest)returns (GetCustomerCardResponse){}
+}
+
+message PhoneVerification {
+    string phone = 1;
+    string code = 2;
+    string user_id = 3;
+}
+message PhoneVerificationCodeResponse {
+  string user_id = 1;
+}
+message Customer {
+    string number = 1;
+    string phone = 2;
+}
+
+message CustomerCard {
+    string number = 1;
+    string phone = 2;
+    string balance = 3;
+}
+message GetCustomerCardRequest {
+    string user_id = 1;
+}
+message GetCustomerCardResponse {
+        repeated CustomerCard customer_card = 1;
+}

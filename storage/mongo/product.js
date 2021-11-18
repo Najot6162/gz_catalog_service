@@ -476,7 +476,7 @@ let productStorage = {
               })
               .populate({
                 path: "properties.property",
-              })
+              }) 
               .exec((err, products) => {
                 if (err) return reject(err);
                 return cb(null, products || []);
@@ -497,7 +497,6 @@ let productStorage = {
               ? cnf.cloudUrl + products[i].image
               : "";
           }
-
           return resolve({
             products,
             count: results[1],
@@ -593,7 +592,6 @@ let productStorage = {
   getShops: (req) => {
     return new Promise((resolve, reject) => {
       if (!req.product_id) return reject(new Error("Key is not given"));
-
       // making query
       let productQuery = {};
       productQuery = {
@@ -636,7 +634,6 @@ let productStorage = {
       let query = {
         lang: filters.lang ? filters.lang : cnf.lang,
       };
-
       // filter by status
       if (filters.active) {
         query = {
@@ -804,7 +801,6 @@ let productStorage = {
         lang: filters.lang ? filters.lang : cnf.lang,
         recommended: true,
       };
-
       // filter by search key
       if (filters.search.trim()) {
         query = {
@@ -846,14 +842,18 @@ let productStorage = {
         [
           (cb) => {
             Product.find(query, {}, options)
+            .populate({
+              path: "products",
+              populate: {path: "category"},
+            })
               .populate({
-                path: "category",
+                path:"products",
+                populate:{path: "brand"},
               })
               .populate({
-                path: "brand",
-              })
-              .populate({
-                path: "properties.property",
+                path:"products",
+                populate:{path: "properties.property",
+                },
               })
               .exec((err, products) => {
                 if (err) return reject(err);

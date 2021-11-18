@@ -6,6 +6,7 @@ option go_package="genproto/excel_service";
 
 service ExcelService {
 	rpc GetOrdersReportExcel(GetOrdersReportExcelRequest) returns (GetOrdersReportExcelResponse) {}
+	rpc GetCustomersReportExcel(GetCustomersReportExcelRequest)returns(GetCustomersReportExcelResponse){}
 }
 
 message GetOrdersReportExcelRequest {
@@ -13,5 +14,13 @@ message GetOrdersReportExcelRequest {
 }
 
 message GetOrdersReportExcelResponse {
+	string file = 1;
+}
+
+message GetCustomersReportExcelRequest {
+
+}
+
+message GetCustomersReportExcelResponse {
 	string file = 1;
 }

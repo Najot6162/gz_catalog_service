@@ -12,4 +12,5 @@ import "shop.proto";
 import "feedback.proto";
 import "featured_list.proto";
 import "review.proto";
+import "locality_card.proto";
 

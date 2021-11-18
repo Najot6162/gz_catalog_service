@@ -147,6 +147,10 @@ function main() {
         catalogProto.ReviewService.service,
         require("./services/review.js")
     );
+    server.addService(
+        catalogProto.LocalityCardService.service,
+        require("./services/locality_card.js")
+    )
 
     server.bind(
         "0.0.0.0:" + cfg.RPCPort,
