@@ -476,7 +476,7 @@ let productStorage = {
               })
               .populate({
                 path: "properties.property",
-              }) 
+              })
               .exec((err, products) => {
                 if (err) return reject(err);
                 return cb(null, products || []);
@@ -851,11 +851,10 @@ let productStorage = {
                 populate:{path: "brand"},
               })
               .populate({
-                path:"products",
-                populate:{path: "properties.property",
-                },
+                path: "properties.property",
               })
               .exec((err, products) => {
+                console.log(products);
                 if (err) return reject(err);
                 return cb(null, products || []);
               });
@@ -875,7 +874,7 @@ let productStorage = {
               ? cnf.cloudUrl + products[i].image
               : "";
           }
-
+           console.log(products);
           return resolve({
             products,
             count: results[1],
