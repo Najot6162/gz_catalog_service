@@ -475,7 +475,9 @@ let productStorage = {
                 path: "brand",
               })
               .populate({
-                path: "properties.property",
+                path:"products",
+                populate:{path: "properties.property",
+                },
               })
               .exec((err, products) => {
                 if (err) return reject(err);
@@ -541,7 +543,9 @@ let productStorage = {
           path: "additional_categories",
         })
         .populate({
-          path: "properties.property",
+          path:"products",
+          populate:{path: "properties.property",
+          },
         })
         .exec((err, product) => {
           if (err) return reject(err);
@@ -852,7 +856,9 @@ let productStorage = {
                 populate:{path: "brand"},
               })
               .populate({
-                path: "properties.property",
+                path:"products",
+                populate:{path: "properties.property",
+                },
               })
               .exec((err, products) => {
                 console.log(products);
