@@ -497,6 +497,7 @@ let productStorage = {
               ? cnf.cloudUrl + products[i].image
               : "";
           }
+          console.log(products, "   storage find method");
           return resolve({
             products,
             count: results[1],
@@ -874,7 +875,6 @@ let productStorage = {
               ? cnf.cloudUrl + products[i].image
               : "";
           }
-           console.log(products);
           return resolve({
             products,
             count: results[1],

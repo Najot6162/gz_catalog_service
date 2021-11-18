@@ -99,6 +99,7 @@ const productService = {
       productStorage
         .findRecommended(call.request)
         .then((result) => {
+          console.log(result.products, "   service find method");
           callback(null, {
             products: result.products,
             count: result.count,
