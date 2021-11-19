@@ -99,7 +99,7 @@ const productService = {
       productStorage
         .findRecommended(call.request)
         .then((result) => {
-          console.log(result.products, "   service find method");
+          console.log(result, "   recom");
           callback(null, {
             products: result.products,
             count: result.count,
@@ -119,6 +119,7 @@ const productService = {
       productStorage
         .findPopular(call.request)
         .then((result) => {
+          console.log(result, " popular");
           callback(null, {
             products: result.products,
             count: result.count,
@@ -138,6 +139,7 @@ const productService = {
       productStorage
         .searchProduct(call.request)
         .then((result) => {
+          console.log(result, "   search");
           callback(null, {
             products: result.products,
             count: result.count,
@@ -157,6 +159,7 @@ const productService = {
       productStorage
         .find(call.request)
         .then((result) => {
+          console.log(result, "  find");
           callback(null, {
             products: result.products,
             count: result.count,

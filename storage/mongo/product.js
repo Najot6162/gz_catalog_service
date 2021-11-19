@@ -499,7 +499,6 @@ let productStorage = {
               ? cnf.cloudUrl + products[i].image
               : "";
           }
-          console.log(products, "   storage find method");
           return resolve({
             products,
             count: results[1],
@@ -726,7 +725,9 @@ let productStorage = {
                   path: "brand",
                 })
                 .populate({
-                  path: "properties.property",
+                  path:"products",
+                  populate:{path: "properties.property",
+                  },
                 })
                 .exec((err, products_regex) => {
                   if (err) return reject(err);
@@ -767,7 +768,9 @@ let productStorage = {
                       path: "brand",
                     })
                     .populate({
-                      path: "properties.property",
+                      path:"products",
+                      populate:{path: "properties.property",
+                      },
                     })
                     .exec((err, products_regex) => {
                       if (err) return reject(err);
@@ -801,6 +804,7 @@ let productStorage = {
     });
   },
   findRecommended: (filters) => {
+    console.log("ok");
     return new Promise((resolve, reject) => {
       let query = {
         lang: filters.lang ? filters.lang : cnf.lang,
@@ -1068,6 +1072,11 @@ const getRelatedProducts = (product_id = "", limit = 50) => {
               .populate({
                 path: "brand",
               })
+              .populate({
+                path:"products",
+                populate:{path: "properties.property",
+                },
+              })
               .exec((err, products) => {
                 if (err) return cb(err);
                 return cb(null, products);
@@ -1092,6 +1101,11 @@ const getRelatedProducts = (product_id = "", limit = 50) => {
               })
               .populate({
                 path: "brand",
+              })
+              .populate({
+                path:"products",
+                populate:{path: "properties.property",
+                },
               })
               .exec((err, products) => {
                 if (err) return cb(err);
