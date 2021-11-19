@@ -804,7 +804,6 @@ let productStorage = {
     });
   },
   findRecommended: (filters) => {
-    console.log("ok");
     return new Promise((resolve, reject) => {
       let query = {
         lang: filters.lang ? filters.lang : cnf.lang,
@@ -865,7 +864,6 @@ let productStorage = {
                 },
               })
               .exec((err, products) => {
-                console.log(products);
                 if (err) return reject(err);
                 return cb(null, products || []);
               });
@@ -965,6 +963,7 @@ let productStorage = {
                   image: 1,
                   price: 1,
                   prices: 1,
+                  properties:1,
                 },
               },
             ],
