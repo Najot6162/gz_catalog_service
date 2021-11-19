@@ -353,6 +353,7 @@ let productStorage = {
     return new Promise((resolve, reject) => {
       let query = {
         lang: filters.lang ? filters.lang : cnf.lang,
+        recommended: true, 
       };
 
       // filter by category
@@ -900,7 +901,6 @@ let productStorage = {
               "";
           }
           // console.log(results, "  res");
-          console.log(products[0].properties, "   prod");
           return resolve({
             products,
             count: results[1],
