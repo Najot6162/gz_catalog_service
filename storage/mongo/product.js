@@ -125,13 +125,13 @@ let productStorage = {
       query = {
         ...query,
         lang: b.lang,
-        $or: [
-          {
-            slug: b.id,
-          },
-        ],
+        $or: [{
+          slug: b.id,
+        }, ],
       };
-      if (mongoose.Types.ObjectId.isValid(b.id)) query.$or.push({ _id: b.id });
+      if (mongoose.Types.ObjectId.isValid(b.id)) query.$or.push({
+        _id: b.id
+      });
 
       Product.findOne(query, (err, product) => {
         if (err) return reject(err);
@@ -139,10 +139,10 @@ let productStorage = {
           return reject(
             new Error(
               "Document with key:" +
-                b.id +
-                " and with lang: " +
-                b.lang +
-                " not found"
+              b.id +
+              " and with lang: " +
+              b.lang +
+              " not found"
             )
           );
 
@@ -191,9 +191,10 @@ let productStorage = {
           async.eachSeries(
             otherLangs,
             (otherLang, cb) => {
-              Product.updateOne(
-                { slug: updatedProduct.slug, lang: otherLang },
-                {
+              Product.updateOne({
+                  slug: updatedProduct.slug,
+                  lang: otherLang
+                }, {
                   active: updatedProduct.active,
                 },
                 (err, r) => {
@@ -245,7 +246,9 @@ let productStorage = {
         return reject(new Error("Product key is not provided"));
       //if(!b.price_type_id) return reject(new Error('price type ID is required'));
 
-      Product.find({ slug: b.product_id }, (err, products) => {
+      Product.find({
+        slug: b.product_id
+      }, (err, products) => {
         if (err) return reject(err);
         if (!products.length)
           return reject(
@@ -255,10 +258,10 @@ let productStorage = {
           return reject(
             new Error(
               "With key: " +
-                b.product_id +
-                ", found " +
-                products.length +
-                " documents. It seems there is duplication error"
+              b.product_id +
+              ", found " +
+              products.length +
+              " documents. It seems there is duplication error"
             )
           );
 
@@ -270,7 +273,7 @@ let productStorage = {
               // valid price type is given, so we are updating 'prices' field
               let updated = false;
               product.prices = product.prices.map((price, i) => {
-                if (price.type/1 == b.price_type_id/1) {
+                if (price.type / 1 == b.price_type_id / 1) {
                   price.price = b.price;
                   price.old_price = b.old_price;
                   updated = true;
@@ -370,7 +373,9 @@ let productStorage = {
       if (brands.length) {
         query = {
           ...query,
-          brand: { $in: brands },
+          brand: {
+            $in: brands
+          },
         };
       }
 
@@ -405,18 +410,20 @@ let productStorage = {
           let value = p.value.split(",").map((v, j) => v.trim());
           console.log(value);
           value.forEach(v => {
-           propertiesQuery.push({
-            property: p.property_id,
-            // filtering when more than one attribute
-            value: v,
-          });
+            propertiesQuery.push({
+              property: p.property_id,
+              // filtering when more than one attribute
+              value: v,
+            });
           })
-        
+
         }
         query = {
           ...query,
           properties: {
-            $elemMatch: { $or: propertiesQuery },
+            $elemMatch: {
+              $or: propertiesQuery
+            },
           },
         };
       }
@@ -441,7 +448,9 @@ let productStorage = {
       let options = {
         skip: ((filters.page / 1 - 1) * filters.limit) / 1,
         limit: filters.limit / 1 ? filters.limit / 1 : 50,
-        sort: { created_at: -1 },
+        sort: {
+          created_at: -1
+        },
       };
 
       if (filters.sort) {
@@ -475,9 +484,7 @@ let productStorage = {
                 path: "brand",
               })
               .populate({
-                path:"products",
-                populate:{path: "properties.property",
-                },
+                path: "properties.property",
               })
               .exec((err, products) => {
                 if (err) return reject(err);
@@ -495,9 +502,9 @@ let productStorage = {
           if (err) return reject(err);
           let products = results[0];
           for (let i = 0; i < products.length; i++) {
-            products[i].image = products[i].image
-              ? cnf.cloudUrl + products[i].image
-              : "";
+            products[i].image = products[i].image ?
+              cnf.cloudUrl + products[i].image :
+              "";
           }
           return resolve({
             products,
@@ -516,35 +523,30 @@ let productStorage = {
       // making query
       query = {
         ...query,
-        $or: [
-          {
-            slug: req.slug,
-            lang: req.lang ? req.lang : cnf.lang,
-          },
-        ],
+        $or: [{
+          slug: req.slug,
+          lang: req.lang ? req.lang : cnf.lang,
+        }, ],
       };
       if (mongoose.Types.ObjectId.isValid(req.id))
-        query.$or.push({ _id: req.id });
+        query.$or.push({
+          _id: req.id
+        });
 
       //logger.debug("finding a product", { query });
 
       Product.findOne(query)
         .populate({
           path: "category",
-          populate: {
-            path: "parent",
-          },
         })
         .populate({
           path: "brand",
         })
         .populate({
-          path: "additional_categories",
+          path: "properties.property",
         })
         .populate({
-          path:"products",
-          populate:{path: "properties.property",
-          },
+          path: "additional_categories",
         })
         .exec((err, product) => {
           if (err) return reject(err);
@@ -552,13 +554,13 @@ let productStorage = {
 
           // setting image fields
           product.image = product.image ? cnf.cloudUrl + product.image : "";
-          product.gallery = product.gallery
-            ? product.gallery.map((g, j) => (g ? cnf.cloudUrl + g : ""))
-            : [];
+          product.gallery = product.gallery ?
+            product.gallery.map((g, j) => (g ? cnf.cloudUrl + g : "")) :
+            [];
           if (product.brand) {
-            product.brand.image = product.brand.image
-              ? cnf.cloudUrl + product.brand.image
-              : "";
+            product.brand.image = product.brand.image ?
+              cnf.cloudUrl + product.brand.image :
+              "";
           }
 
           if (req.onlyRelatedProducts) {
@@ -601,14 +603,14 @@ let productStorage = {
       productQuery = {
         ...productQuery,
         lang: req.lang ? req.lang : cnf.lang,
-        $or: [
-          {
-            slug: req.product_id,
-          },
-        ],
+        $or: [{
+          slug: req.product_id,
+        }, ],
       };
       if (mongoose.Types.ObjectId.isValid(req.product_id))
-        productQuery.$or.push({ _id: req.product_id });
+        productQuery.$or.push({
+          _id: req.product_id
+        });
       let query = {
         lang: req.lang ? req.lang : cnf.lang,
         active: true,
@@ -628,7 +630,9 @@ let productStorage = {
               quantity: products.length ? products[0].quantity : 0,
             };
           });
-          return resolve({ shops });
+          return resolve({
+            shops
+          });
         });
       });
     });
@@ -651,20 +655,25 @@ let productStorage = {
         var searchKey = filters.search;
         query_text = {
           ...query,
-          $or: [
-            {
-              $text: { $search: searchKey },
+          $or: [{
+            $text: {
+              $search: searchKey
             },
-          ],
+          }, ],
         };
         query_regex = {
           ...query,
-          $or: [
-            {
-              name: { $regex: ".*" + searchKey + ".*", $options: "i" },
+          $or: [{
+              name: {
+                $regex: ".*" + searchKey + ".*",
+                $options: "i"
+              },
             },
             {
-              slug: { $regex: ".*" + searchKey + ".*", $options: "i" },
+              slug: {
+                $regex: ".*" + searchKey + ".*",
+                $options: "i"
+              },
             },
             {
               external_id: searchKey / 1 ? searchKey / 1 : -1,
@@ -672,12 +681,17 @@ let productStorage = {
           ],
         };
         category_query = {
-          $or: [
-            {
-              name: { $regex: ".*" + searchKey + ".*", $options: "i" },
+          $or: [{
+              name: {
+                $regex: ".*" + searchKey + ".*",
+                $options: "i"
+              },
             },
             {
-              slug: { $regex: ".*" + searchKey + ".*", $options: "i" },
+              slug: {
+                $regex: ".*" + searchKey + ".*",
+                $options: "i"
+              },
             },
           ],
         };
@@ -686,7 +700,9 @@ let productStorage = {
       let options = {
         skip: ((filters.page / 1 - 1) * filters.limit) / 1,
         limit: filters.limit / 1 ? filters.limit / 1 : 50,
-        sort: { created_at: -1 },
+        sort: {
+          created_at: -1
+        },
       };
 
       if (filters.sort) {
@@ -710,12 +726,13 @@ let productStorage = {
         if (categories.length) {
           // changinf query for product
           query_regex.$or.push({
-            category: { $in: categories.map((c, i) => c._id) },
+            category: {
+              $in: categories.map((c, i) => c._id)
+            },
           });
         }
 
-        async.parallel(
-          {
+        async.parallel({
             products: (cb) => {
               Product.find(query_regex, {}, options)
                 .populate({
@@ -725,9 +742,7 @@ let productStorage = {
                   path: "brand",
                 })
                 .populate({
-                  path:"products",
-                  populate:{path: "properties.property",
-                  },
+                  path: "properties.property",
                 })
                 .exec((err, products_regex) => {
                   if (err) return reject(err);
@@ -746,9 +761,9 @@ let productStorage = {
             let products = result.products;
             if (products && products.length) {
               for (let i = 0; i < products.length; i++) {
-                products[i].image = products[i].image
-                  ? cnf.cloudUrl + products[i].image
-                  : "";
+                products[i].image = products[i].image ?
+                  cnf.cloudUrl + products[i].image :
+                  "";
               }
               return resolve({
                 products,
@@ -768,9 +783,7 @@ let productStorage = {
                       path: "brand",
                     })
                     .populate({
-                      path:"products",
-                      populate:{path: "properties.property",
-                      },
+                      path: "properties.property",
                     })
                     .exec((err, products_regex) => {
                       if (err) return reject(err);
@@ -788,9 +801,9 @@ let productStorage = {
                 if (err) return reject(err);
                 let products = results[0];
                 for (let i = 0; i < products.length; i++) {
-                  products[i].image = products[i].image
-                    ? cnf.cloudUrl + products[i].image
-                    : "";
+                  products[i].image = products[i].image ?
+                    cnf.cloudUrl + products[i].image :
+                    "";
                 }
                 return resolve({
                   products,
@@ -813,15 +826,20 @@ let productStorage = {
       if (filters.search.trim()) {
         query = {
           ...query,
-          $or: [
-            {
-              name: { $regex: ".*" + filters.search + ".*" },
+          $or: [{
+              name: {
+                $regex: ".*" + filters.search + ".*"
+              },
             },
             {
-              slug: { $regex: ".*" + filters.search + ".*" },
+              slug: {
+                $regex: ".*" + filters.search + ".*"
+              },
             },
             {
-              description: { $regex: ".*" + filters.search + ".*" },
+              description: {
+                $regex: ".*" + filters.search + ".*"
+              },
             },
           ],
         };
@@ -838,7 +856,9 @@ let productStorage = {
       let options = {
         skip: ((filters.page / 1 - 1) * filters.limit) / 1,
         limit: filters.limit / 1 ? filters.limit / 1 : 10,
-        sort: { created_at: -1 },
+        sort: {
+          created_at: -1
+        },
       };
 
       logger.debug("filtering products", {
@@ -850,18 +870,14 @@ let productStorage = {
         [
           (cb) => {
             Product.find(query, {}, options)
-            .populate({
-              path: "products",
-              populate: {path: "category"},
-            })
               .populate({
-                path:"products",
-                populate:{path: "brand"},
+                path: "category",
               })
               .populate({
-                path:"products",
-                populate:{path: "properties.property",
-                },
+                path: "brand",
+              })
+              .populate({
+                path: "properties.property",
               })
               .exec((err, products) => {
                 if (err) return reject(err);
@@ -879,10 +895,12 @@ let productStorage = {
           if (err) return reject(err);
           let products = results[0];
           for (let i = 0; i < products.length; i++) {
-            products[i].image = products[i].image
-              ? cnf.cloudUrl + products[i].image
-              : "";
+            products[i].image = products[i].image ?
+              cnf.cloudUrl + products[i].image :
+              "";
           }
+          // console.log(results, "  res");
+          console.log(products[0].properties, "   prod");
           return resolve({
             products,
             count: results[1],
@@ -902,15 +920,20 @@ let productStorage = {
       if (filters.search.trim()) {
         productQuery = {
           ...productQuery,
-          $or: [
-            {
-              name: { $regex: ".*" + filters.search + ".*" },
+          $or: [{
+              name: {
+                $regex: ".*" + filters.search + ".*"
+              },
             },
             {
-              slug: { $regex: ".*" + filters.search + ".*" },
+              slug: {
+                $regex: ".*" + filters.search + ".*"
+              },
             },
             {
-              description: { $regex: ".*" + filters.search + ".*" },
+              description: {
+                $regex: ".*" + filters.search + ".*"
+              },
             },
           ],
         };
@@ -929,27 +952,34 @@ let productStorage = {
       //   options,
       // });
 
-      const a = Category.aggregate([
-        { $match: query },
+      const a = Category.aggregate([{
+          $match: query
+        },
         {
           $lookup: {
             from: "products",
-            let: { category_id: "$_id" },
+            let: {
+              category_id: "$_id"
+            },
             as: "product",
-            pipeline: [
-              {
+            pipeline: [{
                 $match: {
                   $expr: {
-                    $and: [
-                      { $eq: ["$lang", query.lang] },
-                      { $eq: ["$category", "$$category_id"] },
+                    $and: [{
+                        $eq: ["$lang", query.lang]
+                      },
+                      {
+                        $eq: ["$category", "$$category_id"]
+                      },
                     ],
                   },
                   ...productQuery,
                 },
               },
               {
-                $sort: { "price.price": 1 },
+                $sort: {
+                  "price.price": 1
+                },
               },
               {
                 $limit: 1,
@@ -963,7 +993,7 @@ let productStorage = {
                   image: 1,
                   price: 1,
                   prices: 1,
-                  properties:1,
+                  properties: 1,
                 },
               },
             ],
@@ -1015,7 +1045,9 @@ let productStorage = {
     return new Promise((resolve, reject) => {
       if (!req.slug) return reject(new Error("Key is not provided"));
 
-      Product.deleteMany({ slug: req.slug }, (err, result) => {
+      Product.deleteMany({
+        slug: req.slug
+      }, (err, result) => {
         if (err) return reject(err);
         return resolve(result);
       });
@@ -1029,22 +1061,24 @@ const getRelatedProducts = (product_id = "", limit = 50) => {
     Product.findById(product_id, (err, p) => {
       if (err) reject(err);
 
-      async.parallel(
-        {
+      async.parallel({
           relatedProducts: (cb) => {
-            Product.find(
-              {
-                _id: { $in: p.related_products },
+            Product.find({
+                _id: {
+                  $in: p.related_products
+                },
                 active: true,
-              },
-              {},
-              { limit }
-            )
+              }, {}, {
+                limit
+              })
               .populate({
                 path: "category",
               })
               .populate({
                 path: "brand",
+              })
+              .populate({
+                path: "properties.property",
               })
               .exec((err, products) => {
                 if (err) return cb(err);
@@ -1052,8 +1086,7 @@ const getRelatedProducts = (product_id = "", limit = 50) => {
               });
           },
           productsOfSameCategory: (cb) => {
-            Product.find(
-              {
+            Product.find({
                 _id: {
                   $nin: p.related_products,
                   $ne: p._id,
@@ -1061,10 +1094,9 @@ const getRelatedProducts = (product_id = "", limit = 50) => {
                 category: p.category,
                 lang: p.lang,
                 active: true,
-              },
-              {},
-              { limit }
-            )
+              }, {}, {
+                limit
+              })
               .populate({
                 path: "category",
               })
@@ -1072,9 +1104,7 @@ const getRelatedProducts = (product_id = "", limit = 50) => {
                 path: "brand",
               })
               .populate({
-                path:"products",
-                populate:{path: "properties.property",
-                },
+                path: "properties.property",
               })
               .exec((err, products) => {
                 if (err) return cb(err);
@@ -1082,19 +1112,19 @@ const getRelatedProducts = (product_id = "", limit = 50) => {
               });
           },
           randomProducts: (cb) => {
-            Product.find(
-              {
+            Product.find({
                 _id: {
                   $nin: p.related_products,
                   $ne: p._id,
                 },
-                category: { $ne: p.category },
+                category: {
+                  $ne: p.category
+                },
                 lang: p.lang,
                 active: true,
-              },
-              {},
-              { limit }
-            )
+              }, {}, {
+                limit
+              })
               .populate({
                 path: "category",
               })
@@ -1102,9 +1132,7 @@ const getRelatedProducts = (product_id = "", limit = 50) => {
                 path: "brand",
               })
               .populate({
-                path:"products",
-                populate:{path: "properties.property",
-                },
+                path: "properties.property",
               })
               .exec((err, products) => {
                 if (err) return cb(err);
@@ -1144,9 +1172,9 @@ const getRelatedProducts = (product_id = "", limit = 50) => {
 
           // setting images
           for (let i = 0; i < related_products.length; i++) {
-            related_products[i].image = related_products[i].image
-              ? cnf.cloudUrl + related_products[i].image
-              : "";
+            related_products[i].image = related_products[i].image ?
+              cnf.cloudUrl + related_products[i].image :
+              "";
           }
 
           return resolve(related_products);
@@ -1162,21 +1190,23 @@ const getOnlyRelatedProducts = (product_id = "", limit = 50) => {
     Product.findById(product_id, (err, p) => {
       if (err) reject(err);
 
-      async.parallel(
-        {
+      async.parallel({
           relatedProducts: (cb) => {
-            Product.find(
-              {
-                _id: { $in: p.related_products },
-              },
-              {},
-              { limit }
-            )
+            Product.find({
+                _id: {
+                  $in: p.related_products
+                },
+              }, {}, {
+                limit
+              })
               .populate({
                 path: "category",
               })
               .populate({
                 path: "brand",
+              })
+              .populate({
+                path: "properties.property",
               })
               .exec((err, products) => {
                 if (err) return cb(err);
@@ -1197,9 +1227,9 @@ const getOnlyRelatedProducts = (product_id = "", limit = 50) => {
           related_products = results.relatedProducts;
           // setting images
           for (let i = 0; i < related_products.length; i++) {
-            related_products[i].image = related_products[i].image
-              ? cnf.cloudUrl + related_products[i].image
-              : "";
+            related_products[i].image = related_products[i].image ?
+              cnf.cloudUrl + related_products[i].image :
+              "";
           }
 
           return resolve(related_products);
@@ -1211,11 +1241,11 @@ const getOnlyRelatedProducts = (product_id = "", limit = 50) => {
 
 const getLatestExternalId = () => {
   return new Promise((resolve, reject) => {
-    Product.findOne(
-      {},
-      "external_id",
-      {
-        sort: { created_at: -1 },
+    Product.findOne({},
+      "external_id", {
+        sort: {
+          created_at: -1
+        },
       },
       (err, latestProduct) => {
         if (err) return reject(err);
