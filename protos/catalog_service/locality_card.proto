@@ -29,6 +29,7 @@ message CustomerCard {
     string number = 1;
     string phone = 2;
     string balance = 3;
+    string verified = 4;
 }
 message GetCustomerCardRequest {
     string user_id = 1;

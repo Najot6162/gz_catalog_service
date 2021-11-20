@@ -41,6 +41,8 @@ let localityCardStorage = {
                 if (err) return reject(err);
                 if (!cv) return reject(new Error("Document with phone or number:" + c.phone + c.code + " " + " not found"));
                 if (cv.otp !== c.code) return reject(new Error("wrong code "))
+                cv.verified = true
+                cv.save()
                 resolve(cv.user_id)
             })
         });
