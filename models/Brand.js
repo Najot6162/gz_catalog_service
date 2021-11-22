@@ -31,6 +31,20 @@ var BrandSchema = new mongoose.Schema({
         type: String,
         default: ""
     },
+    meta: {
+        title: {
+          type: String,
+          default: "",
+        },
+        description: {
+          type: String,
+          default: "",
+        },
+        tags: {
+          type: String,
+          default: "",
+        },
+      },
     external_id: {
         type: Number
     },

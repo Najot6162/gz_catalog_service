@@ -37,6 +37,11 @@ let brandStorage = {
                 br.description = b.description;
                 br.order = b.order;
                 br.image = b.image;
+                br.meta = {
+                    title: b.meta ? b.meta.title : br.meta.title,
+                    description: b.meta ? b.meta.description : br.meta.description,
+                    tags: b.meta ? b.meta.tags : br.meta.tags,
+                  };
                 br.updated_at = Date.now();
 
                 br.save((err, updatedBrand) => {

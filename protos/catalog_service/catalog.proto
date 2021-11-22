@@ -148,8 +148,15 @@ message Brand {
     string description = 6;
     bool   active = 7;
     int64  order = 8;
-    string created_at = 9;
-    string updated_at = 10;
+    Meta meta = 9;
+    string created_at = 10;
+    string updated_at = 11;
+}
+
+message Meta {
+    string title = 1;
+    string description = 2;
+    string tags = 3;
 }
 
 message ProductPropertyGroup {
