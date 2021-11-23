@@ -5,7 +5,7 @@ const logger = require('../config/logger');
 const localityCardService = {
     checkCustomer: (call, callback) => {
         logger.debug('Check Customer Request', {
-            label: 'brand',
+            label: 'customer card',
             request: call.request
         });
         localityCardStorage.checkCustomer(call.request).then((result) => {

@@ -1,4 +1,5 @@
 const LocalityCard = require("../../models/LocalityCard");
+
 let localityCardStorage = {
     checkCustomer: (l) => {
         return new Promise((resolve, reject) => {
@@ -57,7 +58,7 @@ let localityCardStorage = {
                 user_id: req.user_id
             }, (err, br) => {
                 if (err) return reject(err);
-                if (!br) return reject(new Error("Document not found"));
+                if (!br.length) return reject(new Error("Document not found User"));
                 return resolve(br);
             });
         });
