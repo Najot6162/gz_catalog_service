@@ -16,7 +16,7 @@ const localityCardService = {
                 request: call.request
             });
             callback({
-                code: grpc.status.INTERNAL,
+                code: grpc.status.NOT_FOUND,
                 message: err.message
             });
         });
@@ -34,7 +34,7 @@ const localityCardService = {
                 request: call.request
             });
             callback({
-                code: grpc.status.INTERNAL,
+                code: grpc.status.NOT_FOUND,
                 message: err.message
             });
         });
@@ -53,7 +53,7 @@ const localityCardService = {
                 request: call.request
             });
             callback({
-                code: grpc.status.INTERNAL,
+                code: grpc.status.NOT_FOUND,
                 message: err.message
             });
         });
@@ -71,7 +71,7 @@ const localityCardService = {
                 request: call.request
             });
             callback({
-                code: grpc.status.INTERNAL,
+                code: grpc.status.NOT_FOUND,
                 message: err.message
             });
         });
