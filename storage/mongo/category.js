@@ -376,7 +376,7 @@ let categoryStorage = {
                       price: 1,
                       prices: 1,
                       rules:1,
-                      product_properties:1,
+                      properties:1,
                     }
                   }]
                 },
@@ -422,7 +422,7 @@ let categoryStorage = {
                           price: 1,
                           prices: 1,
                           rules:1,
-                          product_properties:1,
+                          properties:1,
                         }
                       }]
                     }
