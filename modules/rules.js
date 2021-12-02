@@ -94,7 +94,7 @@ const Rule = {
                             });
                             updatedProduct.save()
     
-                            logger.info(" clear flags to rule ")
+                            // logger.info(" clear flags to rule ")
                         }
                         clearFlags()
                     }
@@ -114,7 +114,7 @@ const Rule = {
                                 runValidators: true
                             });
                             updatedProduct.save()
-                            logger.info(" Set flags to rule ")
+                            // logger.info(" Set flags to rule ")
                         }
                         setFlags()
                     }
