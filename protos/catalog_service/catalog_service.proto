@@ -13,4 +13,5 @@ import "feedback.proto";
 import "featured_list.proto";
 import "review.proto";
 import "locality_card.proto";
+import "popular_category.proto";
 

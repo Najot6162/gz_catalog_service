@@ -151,7 +151,10 @@ function main() {
         catalogProto.LocalityCardService.service,
         require("./services/locality_card.js")
     )
-
+    server.addService(
+        catalogProto.PopularCategoryService.service,
+        require("./services/popular_category")
+    )    
     server.bind(
         "0.0.0.0:" + cfg.RPCPort,
         grpc.ServerCredentials.createInsecure()
