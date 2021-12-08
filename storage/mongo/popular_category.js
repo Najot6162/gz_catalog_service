@@ -30,7 +30,7 @@ let popularCategoryStorage = {
 
                 pc.name = p.name;
                 pc.active = p.active;
-                pc.image = p.image;
+                pc.image =cnf.cloudUrl + p.image;
                 pc.order = p.order;
                 pc.slug = p.slug;
                 pc.updated_at = Date.now();
@@ -60,7 +60,7 @@ let popularCategoryStorage = {
             let options = {
                 skip: ((filters.page / 1 - 1) * filters.limit) / 1,
                 limit: filters.limit / 1 ? filters.limit / 1 : 10,
-                sort: { order: -1 },
+                sort: { created_at: -1 },
             };
             logger.debug("filtering popular categories", {
                 query,
