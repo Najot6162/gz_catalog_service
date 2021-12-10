@@ -30,7 +30,7 @@ let popularCategoryStorage = {
 
                 pc.name = p.name;
                 pc.active = p.active;
-                pc.image =cnf.cloudUrl + p.image;
+                pc.image = p.image;
                 pc.order = p.order;
                 pc.slug = p.slug;
                 pc.updated_at = Date.now();
