@@ -89,6 +89,7 @@ message ProductSlim {
     InStock in_stock = 16;
     Rule rules = 17;
     repeated Property properties = 18;
+    float average_rate = 19;
 }
 
 message Category {
