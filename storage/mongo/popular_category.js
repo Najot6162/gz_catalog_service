@@ -33,6 +33,7 @@ let popularCategoryStorage = {
                 pc.image = p.image;
                 pc.order = p.order;
                 pc.slug = p.slug;
+                pc.size = p.size;
                 pc.updated_at = Date.now();
 
                 pc.save((err, updatedPopularCategory) => {

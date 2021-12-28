@@ -24,6 +24,9 @@ var PopularCategorySchema = new mongoose.Schema(
       type: Boolean,
       default: true,
     },
+    size: {
+      type: String
+    },
     lang: {
       type: String,
       enum: ["uz", "ru", "en"],

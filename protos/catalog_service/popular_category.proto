@@ -18,8 +18,9 @@ message PopularCategory {
     string image = 4;
     bool   active = 5;
     int64  order = 6;
-    string created_at = 7;
-    string updated_at = 8;                                                                                          
+    string size = 7;
+    string created_at = 8;
+    string updated_at = 9;                                                                                          
 }
 
 message PopularCategoryUpdateRequest {
@@ -29,6 +30,7 @@ message PopularCategoryUpdateRequest {
     string image = 4;
     bool   active = 5;
     int64  order = 6;
+    string size = 7;
 }
 message PopularCategoryFindRequest {
     int64  page = 1;
@@ -50,7 +52,8 @@ message PopularCategoryCreateRequest {
     string name = 1;
     string image = 2;
     bool   active = 3;
-    int64  order = 4;    
+    int64  order = 4; 
+    string size  = 5;   
 }
 
 
